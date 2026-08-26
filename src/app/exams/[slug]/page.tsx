@@ -1,0 +1,191 @@
+import { Metadata } from 'next';
+import { notFound } from 'next/navigation';
+import { getExamBySlug, getExamsByCategory, getAllSlugs, categories, exams as allExams } from '@/data/exams';
+import ExamCard from '@/components/cards/ExamCard';
+import RequirementCard from '@/components/cards/RequirementCard';
+import Breadcrumbs from '@/components/layout/Breadcrumbs';
+import FAQSection from '@/components/seo/FAQSection';
+import RelatedTools from '@/components/seo/RelatedTools';
+import Link from 'next/link';
+
+export function generateStaticParams() {
+  const examSlugs = getAllSlugs().map(slug => ({ slug }));
+  const categorySlugs = categories.map(c => ({ slug: c.slug }));
+  return [...categorySlugs, ...examSlugs];
+}
+
+type Props = {
+  params: Promise<{ slug: string }>;
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  
+  const category = categories.find(c => c.slug === slug);
+  if (category) {
+    return {
+      title: `${category.name} Exam Photo & Signature Tools | 20KB Photo`,
+      description: category.description,
+      alternates: { canonical: `/exams/${slug}` }
+    };
+  }
+
+  const exam = getExamBySlug(slug);
+  if (exam) {
+    return {
+      title: `${exam.name} Photo & Signature Resizer | 20KB Photo`,
+      description: `Resize your photo and signature exactly to ${exam.authority} requirements for ${exam.fullName}.`,
+      alternates: { canonical: `/exams/${slug}` }
+    };
+  }
+
+  return { title: 'Not Found' };
+}
+
+export default async function ExamHubPage({ params }: Props) {
+  const { slug } = await params;
+  
+  // Check if it's a category
+  const category = categories.find(c => c.slug === slug);
+  if (category) {
+    const categoryExams = getExamsByCategory(slug);
+    
+    return (
+      <div className="container mx-auto px-4 py-8 max-w-6xl">
+        <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Exams', href: '/exams' }, { label: category.name }]} />
+        <h1 className="text-3xl font-bold mt-4 mb-2">{category.name} Photo & Signature Tools</h1>
+        <p className="text-gray-600 mb-8">{category.description}</p>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {categoryExams.map(exam => (
+            <ExamCard
+              key={exam.slug}
+              name={exam.name}
+              slug={exam.slug}
+              category={exam.category}
+              photo={exam.photo}
+              signature={exam.signature}
+              verificationStatus={exam.verificationStatus}
+            />
+          ))}
+        </div>
+      </div>
+    );
+  }
+
+  // Check if it's an exam
+  const exam = getExamBySlug(slug);
+  if (!exam) {
+    notFound();
+  }
+
+  const categoryData = categories.find(c => c.slug === exam.category);
+  const breadcrumbs = [
+    { label: 'Home', href: '/' },
+    { label: 'Exams', href: '/exams' },
+    { label: categoryData?.name || exam.category, href: `/exams/${exam.category}` },
+    { label: exam.name }
+  ];
+
+  const faqs = [
+    {
+      question: `What are the photo dimensions for ${exam.name}?`,
+      answer: `The official requirement is ${exam.photo.width}x${exam.photo.height} pixels. The file size must be between ${exam.photo.minKB}KB and ${exam.photo.maxKB}KB in ${exam.photo.format} format.`
+    },
+    {
+      question: `What is the signature requirement for ${exam.name}?`,
+      answer: `Your signature must be ${exam.signature.width}x${exam.signature.height} pixels, and file size must be between ${exam.signature.minKB}KB and ${exam.signature.maxKB}KB in ${exam.signature.format} format.`
+    }
+  ];
+
+  return (
+    <div className="container mx-auto px-4 py-8 max-w-6xl">
+      <Breadcrumbs items={breadcrumbs} />
+      
+      <div className="mt-6 mb-8">
+        <h1 className="text-4xl font-bold mb-2">{exam.fullName} Photo & Signature Resizer</h1>
+        <p className="text-lg text-gray-600">
+          Official requirements for {exam.authority} • Last verified: {exam.lastVerified}
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        <RequirementCard 
+          title="Photo Requirements"
+          width={exam.photo.width}
+          height={exam.photo.height}
+          minKB={exam.photo.minKB}
+          maxKB={exam.photo.maxKB}
+          format={exam.photo.format}
+          dpi={exam.photo.dpi}
+          notes={exam.photo.notes}
+          ctaHref={`/exams/${slug}/photo-resizer`}
+          ctaLabel="Resize Photo"
+        />
+        <RequirementCard 
+          title="Signature Requirements"
+          width={exam.signature.width}
+          height={exam.signature.height}
+          minKB={exam.signature.minKB}
+          maxKB={exam.signature.maxKB}
+          format={exam.signature.format}
+          dpi={exam.signature.dpi}
+          notes={exam.signature.notes}
+          ctaHref={`/exams/${slug}/signature-resizer`}
+          ctaLabel="Resize Signature"
+        />
+      </div>
+
+      <div className="mb-12">
+        <div className="bg-indigo-50/70 border border-indigo-100 p-4.5 rounded-xl text-indigo-900 text-sm leading-relaxed">
+          <p>
+            <strong className="font-bold text-indigo-950">Disclaimer:</strong> This is an independent tool to help candidates format their documents. 
+            We are not affiliated with {exam.authority} or any government body. Always cross-check with the official notification.
+          </p>
+        </div>
+      </div>
+
+      <div className="mb-12">
+        <h2 className="text-2xl font-bold mb-4">How to resize your {exam.name} documents</h2>
+        <ol className="list-decimal list-inside space-y-2 text-gray-700">
+          <li>Select the specific tool (Photo or Signature) from above.</li>
+          <li>Upload your original scanned image or photo.</li>
+          <li>Our tool will automatically crop and resize to the required dimensions.</li>
+          <li>We'll compress the file to ensure it falls exactly between the required KB limits.</li>
+          <li>Download the final validated file, ready for upload.</li>
+        </ol>
+      </div>
+
+      <FAQSection faqs={faqs} title={`Frequently Asked Questions for ${exam.name}`} />
+      
+      <div className="mt-12">
+        <h2 className="text-2xl font-bold mb-4">Related Exams</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {exam.relatedExams.map(relSlug => {
+            const relExam = getExamBySlug(relSlug);
+            if (!relExam) return null;
+            return (
+              <Link key={relSlug} href={`/exams/${relSlug}`} className="block p-4 border border-gray-200 rounded-xl hover:border-indigo-300 hover:shadow-md transition">
+                <h3 className="font-semibold text-indigo-600">{relExam.name}</h3>
+                <p className="text-sm text-gray-500">{relExam.category}</p>
+              </Link>
+            );
+          })}
+        </div>
+      </div>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            "name": `${exam.name} Photo & Signature Tool`,
+            "applicationCategory": "UtilitiesApplication",
+            "operatingSystem": "Any"
+          })
+        }}
+      />
+    </div>
+  );
+}
