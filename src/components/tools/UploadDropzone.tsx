@@ -15,7 +15,7 @@ export default function UploadDropzone({
   accept = "image/jpeg,image/png,image/webp",
   maxSizeMB = 10,
   label = "Click or drop image to start",
-  sublabel = "JPG, PNG, HEIC, or WEBP up to 10MB",
+  sublabel = "JPG, PNG, or WEBP up to 10MB",
 }: UploadDropzoneProps) {
   const [isDragging, setIsDragging] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -30,17 +30,39 @@ export default function UploadDropzone({
       return;
     }
 
-    const acceptedTypes = accept.split(",").map((t) => t.trim());
-    const fileType = file.type;
+    const acceptedTypes = accept.split(",").map((t) => t.trim().toLowerCase());
+    const fileType = (file.type || "").toLowerCase();
+    const fileName = (file.name || "").toLowerCase();
+
     const isAccepted = acceptedTypes.some((type) => {
+      if (type.startsWith(".")) {
+        return fileName.endsWith(type);
+      }
       if (type.endsWith("/*")) {
         return fileType.startsWith(type.replace("/*", ""));
+      }
+      if (type === "image/jpeg" || type === "image/jpg") {
+        return fileType === "image/jpeg" || fileType === "image/jpg" || fileName.endsWith(".jpg") || fileName.endsWith(".jpeg");
+      }
+      if (type === "image/png") {
+        return fileType === "image/png" || fileName.endsWith(".png");
+      }
+      if (type === "image/webp") {
+        return fileType === "image/webp" || fileName.endsWith(".webp");
       }
       return type === fileType;
     });
 
-    if (!isAccepted && fileType) {
-      setError("Invalid file format. Please upload JPG, PNG, or WEBP.");
+    if (!isAccepted) {
+      if (accept === "image/png") {
+        setError("Invalid file format. Please upload a PNG image file (.png).");
+      } else if (accept === "image/webp") {
+        setError("Invalid file format. Please upload a WebP image file (.webp).");
+      } else if (accept === "image/jpeg,image/jpg" || accept === "image/jpeg" || accept === "image/jpg") {
+        setError("Invalid file format. Please upload a JPG or JPEG image file (.jpg, .jpeg).");
+      } else {
+        setError("Invalid file format. Please upload an allowed image format.");
+      }
       return;
     }
 
@@ -127,7 +149,7 @@ export default function UploadDropzone({
 
         {/* Error message */}
         {error && (
-          <div className="mt-4 p-3 bg-red-50 text-red-700 text-xs sm:text-sm rounded-xl border border-red-200 w-full text-center">
+          <div className="mt-4 p-3 bg-red-50 text-red-700 text-xs sm:text-sm rounded-xl border border-red-200 w-full text-center font-medium">
             {error}
           </div>
         )}

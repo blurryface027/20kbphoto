@@ -7,7 +7,7 @@ import PreviewPanel from "@/components/tools/PreviewPanel";
 import ValidationBadges from "@/components/tools/ValidationBadges";
 import DownloadPanel from "@/components/tools/DownloadPanel";
 import {
-  compressToRange,
+  processImage,
   getImageInfo,
   type ImageInfo,
   type ProcessingResult,
@@ -35,7 +35,13 @@ export default function PanCardToolClient() {
       const h = m === "photo" ? 213 : 205;
       const kb = m === "photo" ? 50 : 30;
 
-      const res = await compressToRange(file, 10, kb, w, h, "image/jpeg");
+      const res = await processImage(file, {
+        width: w,
+        height: h,
+        targetKB: kb,
+        format: "image/jpeg",
+        dpi: 300,
+      });
       setResult(res);
     } catch (err) {
       console.error("PAN card image processing failed:", err);

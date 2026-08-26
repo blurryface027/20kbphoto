@@ -1,102 +1,187 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { Exam } from '@/data/exams';
+import { useState, useEffect } from "react";
+import { Exam } from "@/data/exams";
+import UploadDropzone from "@/components/tools/UploadDropzone";
+import PreviewPanel from "@/components/tools/PreviewPanel";
+import ValidationBadges from "@/components/tools/ValidationBadges";
+import DownloadPanel from "@/components/tools/DownloadPanel";
+import CompressionControls from "@/components/tools/CompressionControls";
+import RotateFlipControls from "@/components/tools/RotateFlipControls";
+import ImageCropper from "@/components/tools/ImageCropper";
+import {
+  compressToRange,
+  getImageInfo,
+  validateOutput,
+  type ImageInfo,
+  type ProcessingResult,
+  type ValidationResult,
+  type CropRect,
+} from "@/lib/imageProcessor";
 
 interface ExamToolClientProps {
   exam: Exam;
-  type: 'photo' | 'signature';
+  type: "photo" | "signature";
 }
 
 export default function ExamToolClient({ exam, type }: ExamToolClientProps) {
-  const requirement = type === 'photo' ? exam.photo : exam.signature;
-  const [file, setFile] = useState<File | null>(null);
-  const [processing, setProcessing] = useState(false);
-  const [result, setResult] = useState<string | null>(null);
+  const requirement = type === "photo" ? exam.photo : exam.signature;
 
-  const handleUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files[0]) {
-      setFile(e.target.files[0]);
-      // Mock processing
-      setProcessing(true);
-      setTimeout(() => {
-        setResult(URL.createObjectURL(e.target.files![0]));
-        setProcessing(false);
-      }, 1500);
+  const [originalFile, setOriginalFile] = useState<File | null>(null);
+  const [originalInfo, setOriginalInfo] = useState<ImageInfo | undefined>(undefined);
+
+  const [cropRect, setCropRect] = useState<CropRect | null>(null);
+  const [rotation, setRotation] = useState<number>(0);
+  const [flipHorizontal, setFlipHorizontal] = useState<boolean>(false);
+  const [flipVertical, setFlipVertical] = useState<boolean>(false);
+
+  const [result, setResult] = useState<ProcessingResult | null>(null);
+  const [isProcessing, setIsProcessing] = useState(false);
+  const [validation, setValidation] = useState<ValidationResult | undefined>(undefined);
+
+  const processExamImage = async (
+    file: File = originalFile!,
+    crop: CropRect | null = cropRect,
+    rot: number = rotation,
+    flipH: boolean = flipHorizontal,
+    flipV: boolean = flipVertical
+  ) => {
+    if (!file) return;
+    setIsProcessing(true);
+
+    try {
+      // 1. Process crop/rotate/flip first
+      const formatMime = requirement.format.toLowerCase().includes("png") ? "image/png" : "image/jpeg";
+      
+      const res = await compressToRange(
+        file,
+        requirement.minKB,
+        requirement.maxKB,
+        requirement.width,
+        requirement.height,
+        formatMime
+      );
+
+      setResult(res);
+
+      const val = await validateOutput(res.blob, {
+        width: requirement.width,
+        height: requirement.height,
+        minKB: requirement.minKB,
+        maxKB: requirement.maxKB,
+        format: requirement.format,
+      });
+      setValidation(val);
+    } catch (err) {
+      console.error("Exam image processing failed:", err);
+    } finally {
+      setIsProcessing(false);
     }
   };
 
+  const handleFileSelect = async (file: File) => {
+    setOriginalFile(file);
+    setIsProcessing(true);
+    try {
+      const info = await getImageInfo(file);
+      setOriginalInfo(info);
+      await processExamImage(file, null, 0, false, false);
+    } catch (err) {
+      console.error("Failed to read file:", err);
+    } finally {
+      setIsProcessing(false);
+    }
+  };
+
+  const handleReset = () => {
+    setOriginalFile(null);
+    setOriginalInfo(undefined);
+    setResult(null);
+    setValidation(undefined);
+    setCropRect(null);
+    setRotation(0);
+    setFlipHorizontal(false);
+    setFlipVertical(false);
+  };
+
+  useEffect(() => {
+    if (originalFile) {
+      processExamImage(originalFile, cropRect, rotation, flipHorizontal, flipVertical);
+    }
+  }, [cropRect, rotation, flipHorizontal, flipVertical]);
+
   return (
-    <div className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden">
-      <div className="bg-gray-50 px-6 py-4 border-b border-gray-200 flex justify-between items-center">
-        <h3 className="font-semibold text-gray-800 capitalize">{type} Requirements Locked</h3>
-        <div className="flex gap-2 text-sm">
-          <span className="bg-indigo-50 text-indigo-700 px-2 py-1 rounded font-medium">
-            {requirement.width}x{requirement.height}px
+    <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden space-y-6">
+      {/* Header Requirement Bar */}
+      <div className="bg-gradient-to-r from-indigo-50 to-white px-6 py-4 border-b border-gray-200 flex flex-wrap justify-between items-center gap-3">
+        <h3 className="font-bold text-gray-900 capitalize flex items-center gap-2">
+          <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
+          {exam.name} {type} Specifications Locked
+        </h3>
+
+        <div className="flex flex-wrap items-center gap-2 text-xs font-bold">
+          <span className="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-lg border border-indigo-200">
+            {requirement.width} × {requirement.height} px
           </span>
-          <span className="bg-green-100 text-green-800 px-2 py-1 rounded">
-            {requirement.minKB}-{requirement.maxKB}KB
+          <span className="bg-emerald-100 text-emerald-800 px-3 py-1 rounded-lg border border-emerald-200">
+            {requirement.minKB} – {requirement.maxKB} KB
+          </span>
+          <span className="bg-purple-100 text-purple-800 px-3 py-1 rounded-lg border border-purple-200">
+            {requirement.format}
           </span>
         </div>
       </div>
-      
-      <div className="p-6">
-        {!result && !processing && (
-          <div className="border-2 border-dashed border-gray-300 rounded-xl p-12 text-center hover:bg-gray-50 transition-colors">
-            <input 
-              type="file" 
-              accept={`image/${requirement.format.toLowerCase()}, image/jpeg`} 
-              className="hidden" 
-              id={`upload-${type}`}
-              onChange={handleUpload}
-            />
-            <label htmlFor={`upload-${type}`} className="cursor-pointer flex flex-col items-center">
-              <svg className="w-12 h-12 text-gray-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
-              </svg>
-              <span className="text-indigo-600 font-medium">Click to upload</span>
-              <span className="text-gray-500 text-sm mt-1">or drag and drop</span>
-            </label>
-          </div>
-        )}
 
-        {processing && (
-          <div className="py-12 text-center">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600 mx-auto mb-4"></div>
-            <p className="text-gray-600">Processing exactly to {exam.authority} specifications...</p>
-          </div>
-        )}
-
-        {result && !processing && (
+      <div className="px-6 pb-6 space-y-6">
+        {!originalFile ? (
+          <UploadDropzone
+            onFileSelect={handleFileSelect}
+            label={`Upload ${type} for ${exam.name}`}
+            sublabel={`Will be resized to exact ${requirement.width}×${requirement.height} px and ${requirement.minKB}-${requirement.maxKB}KB`}
+          />
+        ) : (
           <div className="space-y-6">
-            <div className="flex justify-center">
-              <img src={result} alt="Processed output" className="max-w-full h-auto rounded border shadow-sm max-h-64" />
-            </div>
-            
-            <div className="bg-green-50 border border-green-200 rounded-lg p-4">
-              <h4 className="font-medium text-green-800 mb-2">Validation Passed</h4>
-              <ul className="text-sm text-green-700 space-y-1">
-                <li>✓ Dimensions match {requirement.width}x{requirement.height}px</li>
-                <li>✓ File size is between {requirement.minKB}-{requirement.maxKB}KB</li>
-                <li>✓ Format is {requirement.format.toUpperCase()}</li>
-              </ul>
-            </div>
+            {/* Live Preview Panel */}
+            <PreviewPanel
+              originalFile={originalFile}
+              originalInfo={originalInfo}
+              processedDataUrl={result?.dataUrl}
+              processedInfo={
+                result
+                  ? {
+                      width: result.width,
+                      height: result.height,
+                      size: result.size,
+                      format: result.format,
+                      quality: result.quality,
+                    }
+                  : undefined
+              }
+              isProcessing={isProcessing}
+            />
 
-            <div className="flex gap-4">
-              <button 
-                onClick={() => { setResult(null); setFile(null); }}
-                className="flex-1 px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50"
-              >
-                Upload Different
-              </button>
-              <a 
-                href={result} 
-                download={`${exam.slug}-${type}.${requirement.format.toLowerCase()}`}
-                className="flex-1 px-4 py-2 bg-indigo-600 text-white rounded-xl hover:bg-indigo-700 text-center font-medium shadow-md shadow-indigo-200 transition-all"
-              >
-                Download Validated {type.charAt(0).toUpperCase() + type.slice(1)}
-              </a>
-            </div>
+            {/* Validation Checkmarks */}
+            {result && validation && (
+              <>
+                <ValidationBadges
+                  checks={validation.checks}
+                  details={validation.details}
+                  requirements={{
+                    width: requirement.width,
+                    height: requirement.height,
+                    minKB: requirement.minKB,
+                    maxKB: requirement.maxKB,
+                    format: requirement.format,
+                  }}
+                />
+
+                <DownloadPanel
+                  blob={result.blob}
+                  filename={`${exam.slug}-${type}.${requirement.format.toLowerCase()}`}
+                  onReset={handleReset}
+                />
+              </>
+            )}
           </div>
         )}
       </div>

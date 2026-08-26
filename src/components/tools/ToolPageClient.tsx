@@ -4,6 +4,9 @@ import { useState, useEffect } from "react";
 import ToolShell from "@/components/tools/ToolShell";
 import UploadDropzone from "@/components/tools/UploadDropzone";
 import CompressionControls from "@/components/tools/CompressionControls";
+import ImageCropper from "@/components/tools/ImageCropper";
+import RotateFlipControls from "@/components/tools/RotateFlipControls";
+import DpiControls from "@/components/tools/DpiControls";
 import PreviewPanel from "@/components/tools/PreviewPanel";
 import ValidationBadges from "@/components/tools/ValidationBadges";
 import DownloadPanel from "@/components/tools/DownloadPanel";
@@ -13,7 +16,14 @@ import {
   validateOutput,
   type ImageInfo,
   type ValidationResult,
+  type CropRect,
 } from "@/lib/imageProcessor";
+import {
+  HiOutlineScissors,
+  HiOutlineArrowPath,
+  HiOutlineAdjustmentsVertical,
+  HiOutlineAdjustmentsHorizontal,
+} from "react-icons/hi2";
 
 interface ToolConfig {
   title: string;
@@ -27,6 +37,9 @@ interface ToolConfig {
   presetKBs?: number[];
   defaultWidth?: number;
   defaultHeight?: number;
+  accept?: string;
+  uploadLabel?: string;
+  uploadSublabel?: string;
 }
 
 const toolConfigs: Record<string, ToolConfig> = {
@@ -80,6 +93,9 @@ const toolConfigs: Record<string, ToolConfig> = {
     showCompression: true,
     outputFormat: "image/jpeg",
     defaultFormat: "image/jpeg",
+    accept: "image/png,image/webp,image/gif,image/bmp",
+    uploadLabel: "Upload image (PNG, WebP, GIF) to convert to JPG",
+    uploadSublabel: "Select a PNG, WebP, GIF, or BMP image file",
   },
   "png-to-jpg": {
     title: "Convert PNG to JPG",
@@ -90,6 +106,9 @@ const toolConfigs: Record<string, ToolConfig> = {
     showCompression: true,
     outputFormat: "image/jpeg",
     defaultFormat: "image/jpeg",
+    accept: "image/png",
+    uploadLabel: "Upload PNG image to convert to JPG",
+    uploadSublabel: "Please select a PNG file (.png) only",
   },
   "webp-to-jpg": {
     title: "Convert WebP to JPG",
@@ -100,6 +119,9 @@ const toolConfigs: Record<string, ToolConfig> = {
     showCompression: true,
     outputFormat: "image/jpeg",
     defaultFormat: "image/jpeg",
+    accept: "image/webp",
+    uploadLabel: "Upload WebP image to convert to JPG",
+    uploadSublabel: "Please select a WebP file (.webp) only",
   },
   "jpg-to-png": {
     title: "Convert JPG to PNG",
@@ -110,6 +132,9 @@ const toolConfigs: Record<string, ToolConfig> = {
     showCompression: true,
     outputFormat: "image/png",
     defaultFormat: "image/png",
+    accept: "image/jpeg,image/jpg",
+    uploadLabel: "Upload JPG image to convert to PNG",
+    uploadSublabel: "Please select a JPG or JPEG file (.jpg, .jpeg) only",
   },
   "jpg-to-webp": {
     title: "Convert JPG to WebP",
@@ -120,6 +145,9 @@ const toolConfigs: Record<string, ToolConfig> = {
     showCompression: true,
     outputFormat: "image/webp",
     defaultFormat: "image/webp",
+    accept: "image/jpeg,image/jpg",
+    uploadLabel: "Upload JPG image to convert to WebP",
+    uploadSublabel: "Please select a JPG or JPEG file (.jpg, .jpeg) only",
   },
   "png-to-webp": {
     title: "Convert PNG to WebP",
@@ -130,6 +158,9 @@ const toolConfigs: Record<string, ToolConfig> = {
     showCompression: true,
     outputFormat: "image/webp",
     defaultFormat: "image/webp",
+    accept: "image/png",
+    uploadLabel: "Upload PNG image to convert to WebP",
+    uploadSublabel: "Please select a PNG file (.png) only",
   },
   "signature-to-jpg": {
     title: "Signature to JPG Converter",
@@ -235,6 +266,29 @@ export default function ToolPageClient({ slug }: Props) {
   const [originalFile, setOriginalFile] = useState<File | null>(null);
   const [originalInfo, setOriginalInfo] = useState<ImageInfo | undefined>(undefined);
 
+  // Active Tool Tab
+  const [activeTab, setActiveTab] = useState<"crop" | "rotate" | "dpi" | "resize">(
+    config.category === "crop"
+      ? "crop"
+      : config.category === "rotate" || config.category === "flip"
+      ? "rotate"
+      : config.category === "dpi"
+      ? "dpi"
+      : "resize"
+  );
+
+  // Crop State
+  const [cropRect, setCropRect] = useState<CropRect | null>(null);
+
+  // Rotate & Flip State
+  const [rotation, setRotation] = useState<number>(0);
+  const [flipHorizontal, setFlipHorizontal] = useState<boolean>(false);
+  const [flipVertical, setFlipVertical] = useState<boolean>(false);
+
+  // DPI State
+  const [dpi, setDpi] = useState<number>(300);
+
+  // Resize & Format State
   const [resizeMode, setResizeMode] = useState<"percentage" | "dimensions">(
     config.defaultWidth || config.defaultHeight ? "dimensions" : "percentage"
   );
@@ -243,10 +297,12 @@ export default function ToolPageClient({ slug }: Props) {
   const [targetHeight, setTargetHeight] = useState<number>(config.defaultHeight || 0);
   const [keepAspectRatio, setKeepAspectRatio] = useState<boolean>(true);
 
+  // Compression State
   const [enableTargetKB, setEnableTargetKB] = useState<boolean>(config.category === "compress");
   const [targetKB, setTargetKB] = useState<number>(50);
   const [format, setFormat] = useState<string>(config.outputFormat || config.defaultFormat || "image/jpeg");
 
+  // Output Results State
   const [processedDataUrl, setProcessedDataUrl] = useState<string | undefined>(undefined);
   const [processedInfo, setProcessedInfo] = useState<ImageInfo | undefined>(undefined);
   const [processedBlob, setProcessedBlob] = useState<Blob | undefined>(undefined);
@@ -269,7 +325,21 @@ export default function ToolPageClient({ slug }: Props) {
       setTargetHeight(initialH);
       setScalePercent(100);
 
-      await process(file, initialW, initialH, scalePercent, resizeMode, enableTargetKB, targetKB, format);
+      await process(
+        file,
+        initialW,
+        initialH,
+        100,
+        resizeMode,
+        enableTargetKB,
+        targetKB,
+        format,
+        null,
+        0,
+        false,
+        false,
+        dpi
+      );
     } catch (err) {
       console.error("Error loading image:", err);
     } finally {
@@ -285,13 +355,23 @@ export default function ToolPageClient({ slug }: Props) {
     mode: "percentage" | "dimensions" = resizeMode,
     useKB: boolean = enableTargetKB,
     kb: number = targetKB,
-    fmt: string = format
+    fmt: string = format,
+    crop: CropRect | null = cropRect,
+    rot: number = rotation,
+    flipH: boolean = flipHorizontal,
+    flipV: boolean = flipVertical,
+    targetDpi: number = dpi
   ) => {
     if (!file) return;
     setIsProcessing(true);
 
     try {
       const result = await processImage(file, {
+        crop: crop || undefined,
+        rotation: rot,
+        flipHorizontal: flipH,
+        flipVertical: flipV,
+        dpi: targetDpi,
         width: mode === "dimensions" ? w : undefined,
         height: mode === "dimensions" ? h : undefined,
         scalePercent: mode === "percentage" ? pct : undefined,
@@ -307,6 +387,7 @@ export default function ToolPageClient({ slug }: Props) {
         size: result.size,
         format: result.format,
         name: file.name,
+        dpi: result.dpi,
       });
 
       const val = await validateOutput(result.blob, {
@@ -369,13 +450,46 @@ export default function ToolPageClient({ slug }: Props) {
     setProcessedInfo(undefined);
     setProcessedBlob(undefined);
     setValidation(undefined);
+    setCropRect(null);
+    setRotation(0);
+    setFlipHorizontal(false);
+    setFlipVertical(false);
+    setDpi(300);
   };
 
   useEffect(() => {
     if (originalFile) {
-      process(originalFile, targetWidth, targetHeight, scalePercent, resizeMode, enableTargetKB, targetKB, format);
+      process(
+        originalFile,
+        targetWidth,
+        targetHeight,
+        scalePercent,
+        resizeMode,
+        enableTargetKB,
+        targetKB,
+        format,
+        cropRect,
+        rotation,
+        flipHorizontal,
+        flipVertical,
+        dpi
+      );
     }
-  }, [targetWidth, targetHeight, scalePercent, resizeMode, enableTargetKB, targetKB, format, keepAspectRatio]);
+  }, [
+    targetWidth,
+    targetHeight,
+    scalePercent,
+    resizeMode,
+    enableTargetKB,
+    targetKB,
+    format,
+    keepAspectRatio,
+    cropRect,
+    rotation,
+    flipHorizontal,
+    flipVertical,
+    dpi,
+  ]);
 
   const breadcrumbs = [
     { label: "Home", href: "/" },
@@ -389,7 +503,7 @@ export default function ToolPageClient({ slug }: Props) {
     const lastDot = name.lastIndexOf(".");
     const baseName = lastDot > 0 ? name.substring(0, lastDot) : name;
     const ext = format === "image/jpeg" ? "jpg" : format === "image/png" ? "png" : "webp";
-    return `${baseName}-converted.${ext}`;
+    return `${baseName}-processed.${ext}`;
   };
 
   return (
@@ -397,12 +511,100 @@ export default function ToolPageClient({ slug }: Props) {
       {!originalFile ? (
         <UploadDropzone
           onFileSelect={handleFileSelect}
-          label={`Upload image to use ${config.title}`}
-          sublabel="Supports JPG, PNG, WEBP, GIF files up to 10MB"
+          accept={config.accept || "image/jpeg,image/png,image/webp"}
+          label={config.uploadLabel || `Upload image to use ${config.title}`}
+          sublabel={config.uploadSublabel || "Supports JPG, PNG, WEBP, GIF files up to 10MB"}
         />
       ) : (
         <div className="space-y-6 max-w-4xl mx-auto">
-          {(config.showDimensions || config.showCompression || config.showFormat) && (
+          {/* Tool Navigation Bar */}
+          <div className="bg-gray-100 p-1.5 rounded-2xl flex flex-wrap items-center gap-1 border border-gray-200">
+            <button
+              type="button"
+              onClick={() => setActiveTab("crop")}
+              className={`flex-1 min-w-[120px] py-2.5 px-3 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 ${
+                activeTab === "crop"
+                  ? "bg-white text-indigo-600 shadow-sm border border-gray-200"
+                  : "text-gray-600 hover:text-gray-900"
+              }`}
+            >
+              <HiOutlineScissors className="w-4 h-4" />
+              Crop Image
+            </button>
+
+            <button
+              type="button"
+              onClick={() => setActiveTab("rotate")}
+              className={`flex-1 min-w-[120px] py-2.5 px-3 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 ${
+                activeTab === "rotate"
+                  ? "bg-white text-indigo-600 shadow-sm border border-gray-200"
+                  : "text-gray-600 hover:text-gray-900"
+              }`}
+            >
+              <HiOutlineArrowPath className="w-4 h-4" />
+              Rotate & Flip
+            </button>
+
+            <button
+              type="button"
+              onClick={() => setActiveTab("dpi")}
+              className={`flex-1 min-w-[120px] py-2.5 px-3 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 ${
+                activeTab === "dpi"
+                  ? "bg-white text-indigo-600 shadow-sm border border-gray-200"
+                  : "text-gray-600 hover:text-gray-900"
+              }`}
+            >
+              <HiOutlineAdjustmentsVertical className="w-4 h-4" />
+              Change DPI
+            </button>
+
+            <button
+              type="button"
+              onClick={() => setActiveTab("resize")}
+              className={`flex-1 min-w-[120px] py-2.5 px-3 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 ${
+                activeTab === "resize"
+                  ? "bg-white text-indigo-600 shadow-sm border border-gray-200"
+                  : "text-gray-600 hover:text-gray-900"
+              }`}
+            >
+              <HiOutlineAdjustmentsHorizontal className="w-4 h-4" />
+              Resize & Compress
+            </button>
+          </div>
+
+          {/* Active Tab Panel */}
+          {activeTab === "crop" && (
+            <ImageCropper
+              file={originalFile}
+              originalInfo={originalInfo}
+              cropRect={cropRect}
+              onCropChange={setCropRect}
+              onResetCrop={() => setCropRect(null)}
+              isSignatureTool={slug === "signature-cropper"}
+            />
+          )}
+
+          {activeTab === "rotate" && (
+            <RotateFlipControls
+              rotation={rotation}
+              onRotationChange={setRotation}
+              flipHorizontal={flipHorizontal}
+              onFlipHorizontalChange={setFlipHorizontal}
+              flipVertical={flipVertical}
+              onFlipVerticalChange={setFlipVertical}
+              onReset={() => {
+                setRotation(0);
+                setFlipHorizontal(false);
+                setFlipVertical(false);
+              }}
+            />
+          )}
+
+          {activeTab === "dpi" && (
+            <DpiControls dpi={dpi} onDpiChange={setDpi} />
+          )}
+
+          {activeTab === "resize" && (
             <CompressionControls
               targetKB={targetKB}
               onTargetKBChange={setTargetKB}
@@ -428,6 +630,7 @@ export default function ToolPageClient({ slug }: Props) {
             />
           )}
 
+          {/* Interactive Live Preview Panel */}
           <PreviewPanel
             originalFile={originalFile}
             originalInfo={originalInfo}
@@ -461,10 +664,10 @@ export default function ToolPageClient({ slug }: Props) {
           )}
         </div>
       )}
+
+      {/* SEO Section */}
       <section className="mt-12 pt-8 border-t border-gray-200">
-        <h2 className="text-2xl font-bold text-gray-900 mb-4">
-          {config.title}
-        </h2>
+        <h2 className="text-2xl font-bold text-gray-900 mb-4">{config.title}</h2>
 
         <div className="space-y-4 text-gray-700 leading-7">
           <p>{config.subtitle}</p>
@@ -474,34 +677,29 @@ export default function ToolPageClient({ slug }: Props) {
           </h3>
 
           <ol className="list-decimal list-inside space-y-2">
-            <li>Select the image you want to process.</li>
-            <li>Choose the required settings.</li>
-            <li>Preview the processed image.</li>
-            <li>Check the output dimensions, format, and file size.</li>
-            <li>Download the finished image.</li>
+            <li>Upload your photo or document image.</li>
+            <li>Use the top navigation bar to access Crop, Rotate & Flip, DPI, or Resize controls.</li>
+            <li>Adjust settings with instant live preview.</li>
+            <li>Check output dimensions, file size, format, and DPI validation.</li>
+            <li>Download your high-quality processed image instantly.</li>
           </ol>
 
-          <h3 className="text-xl font-semibold text-gray-900">
-            Who can use this tool?
-          </h3>
+          <h3 className="text-xl font-semibold text-gray-900">Who can use this tool?</h3>
 
           <p>
-            This tool is useful for websites, online forms, recruitment
-            applications, examination portals, document submissions, and other
-            situations where an image needs specific technical requirements.
+            This tool is built for students, job applicants, and professionals preparing photos,
+            signatures, and documents for official exam portals (SSC, UPSC, State PSC, NSDL PAN, NTA, IBPS)
+            and web applications.
           </p>
 
-          <h3 className="text-xl font-semibold text-gray-900">
-            Is image processing performed online?
-          </h3>
+          <h3 className="text-xl font-semibold text-gray-900">Is image processing secure?</h3>
 
           <p>
-            Image processing is performed locally in your browser. Your image
-            does not need to be uploaded to our server.
+            Yes! All cropping, rotating, DPI modification, and compression happens locally inside your
+            web browser using HTML5 Canvas. Your sensitive documents are never uploaded to any external server.
           </p>
         </div>
       </section>
-
     </ToolShell>
   );
 }
