@@ -126,7 +126,7 @@ export function generateBreadcrumbStructuredData(breadcrumbs: { name: string; ur
       "@type": "ListItem",
       "position": index + 1,
       "name": bc.name,
-      "item": `https://20kbphoto.com${bc.url}`
+      "item": `https://20kbphoto.in${bc.url}`
     }))
   };
 }

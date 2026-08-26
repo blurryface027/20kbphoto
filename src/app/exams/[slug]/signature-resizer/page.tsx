@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${exam.name} Signature Resizer — Resize Signature to ${exam.signature.width}×${exam.signature.height}`,
     description: `Resize your signature to ${exam.signature.width}×${exam.signature.height} pixels and ${exam.signature.minKB}-${exam.signature.maxKB} KB for ${exam.fullName} application. Free, instant, private.`,
-    alternates: { canonical: `https://20kbphoto.com/exams/${slug}/signature-resizer/` },
+    alternates: { canonical: `https://20kbphoto.in/exams/${slug}/signature-resizer/` },
   };
 }
 

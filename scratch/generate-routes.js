@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   title: "Resize Image to ${kb}KB Online Free | 20KB Photo",
   description: "Compress and resize any photo or signature image to exactly ${kb}KB or less for online exam applications and government recruitment forms.",
   alternates: {
-    canonical: "https://20kbphoto.com/resize-image-to-${kb}kb",
+    canonical: "https://20kbphoto.in/resize-image-to-${kb}kb",
   },
 };
 
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   title: "Resize Signature to ${w}×${h} Pixels Online | 20KB Photo",
   description: "Resize your signature image to exact ${w}x${h} pixels online for exam applications and government recruitment portals.",
   alternates: {
-    canonical: "https://20kbphoto.com/signature-resizer-${dims}",
+    canonical: "https://20kbphoto.in/signature-resizer-${dims}",
   },
 };
 
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
   title: "Resize Image to ${w}×${h} Pixels Online | 20KB Photo",
   description: "Resize your image to exactly ${w}x${h} pixels for exam and form applications online free.",
   alternates: {
-    canonical: "https://20kbphoto.com/image-resizer-${dims}",
+    canonical: "https://20kbphoto.in/image-resizer-${dims}",
   },
 };
 

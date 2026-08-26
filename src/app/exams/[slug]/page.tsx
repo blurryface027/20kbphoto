@@ -20,26 +20,41 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  
+
   const category = categories.find(c => c.slug === slug);
+
   if (category) {
     return {
-      title: `${category.name} Exam Photo & Signature Tools | 20KB Photo`,
-      description: category.description,
-      alternates: { canonical: `/exams/${slug}` }
+      title: `${category.name} Exam Photo & Signature Size | 20KB Photo`,
+      description: `Find ${category.name} exam photo and signature requirements, including image dimensions, file size and format. Resize application photos and signatures online for free.`,
+      alternates: {
+        canonical: `/exams/${slug}/`,
+      },
     };
   }
 
   const exam = getExamBySlug(slug);
+
   if (exam) {
+    const photo = exam.photo;
+    const signature = exam.signature;
+
     return {
-      title: `${exam.name} Photo & Signature Resizer | 20KB Photo`,
-      description: `Resize your photo and signature exactly to ${exam.authority} requirements for ${exam.fullName}.`,
-      alternates: { canonical: `/exams/${slug}` }
+      title: `${exam.name} Photo Size & Signature Size | 20KB Photo`,
+      description: `${exam.name} photo size: ${photo.width}x${photo.height}px, ${photo.minKB}-${photo.maxKB}KB ${photo.format}. Signature: ${signature.width}x${signature.height}px, ${signature.minKB}-${signature.maxKB}KB. Resize online for free.`,
+      alternates: {
+        canonical: `/exams/${slug}/`,
+      },
     };
   }
 
-  return { title: 'Not Found' };
+  return {
+    title: 'Not Found',
+    robots: {
+      index: false,
+      follow: false,
+    },
+  };
 }
 
 export default async function ExamHubPage({ params }: Props) {
@@ -135,6 +150,30 @@ export default async function ExamHubPage({ params }: Props) {
           ctaLabel="Resize Signature"
         />
       </div>
+
+            <RelatedTools
+        title={`${exam.name} Photo & Signature Tools`}
+        tools={[
+          {
+            name: `${exam.name} Photo Resizer`,
+            href: `/exams/${slug}/photo-resizer`,
+            description: `Resize your ${exam.name} photo to ${exam.photo.width}×${exam.photo.height}px and ${exam.photo.minKB}-${exam.photo.maxKB}KB.`,
+            icon: 'HiOutlinePhoto',
+          },
+          {
+            name: `${exam.name} Signature Resizer`,
+            href: `/exams/${slug}/signature-resizer`,
+            description: `Resize your ${exam.name} signature to ${exam.signature.width}×${exam.signature.height}px and ${exam.signature.minKB}-${exam.signature.maxKB}KB.`,
+            icon: 'HiOutlinePencilSquare',
+          },
+          {
+            name: `${exam.name} Photo & Signature Resizer`,
+            href: `/exams/${slug}/photo-signature-resizer`,
+            description: `Prepare both your ${exam.name} photo and signature for online application requirements.`,
+            icon: 'HiOutlineIdentification',
+          },
+        ]}
+      />
 
       <div className="mb-12">
         <div className="bg-indigo-50/70 border border-indigo-100 p-4.5 rounded-xl text-indigo-900 text-sm leading-relaxed">

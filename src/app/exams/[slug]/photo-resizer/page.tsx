@@ -15,13 +15,25 @@ type Props = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const exam = getExamBySlug(slug);
-  
-  if (!exam) return { title: 'Not Found' };
+
+  if (!exam) {
+    return {
+      title: 'Not Found',
+      robots: {
+        index: false,
+        follow: false,
+      },
+    };
+  }
+
+  const { photo } = exam;
 
   return {
-    title: `${exam.name} Photo Resizer | 20KB Photo`,
-    description: `Resize your photo exactly to ${exam.photo.width}x${exam.photo.height} pixels and between ${exam.photo.minKB}-${exam.photo.maxKB}KB for ${exam.fullName}.`,
-    alternates: { canonical: `/exams/${slug}/photo-resizer` }
+    title: `${exam.name} Photo Resizer – ${photo.width}x${photo.height}px, ${photo.minKB}-${photo.maxKB}KB`,
+    description: `Resize your ${exam.name} photo to ${photo.width}x${photo.height}px and ${photo.minKB}-${photo.maxKB}KB ${photo.format}. Free online photo resizer for ${exam.fullName} applications.`,
+    alternates: {
+      canonical: `/exams/${slug}/photo-resizer/`,
+    },
   };
 }
 

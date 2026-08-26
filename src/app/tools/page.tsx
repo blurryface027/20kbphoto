@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "All Online Image & Photo Resizer Tools | 20KB Photo",
   description:
     "Browse our complete collection of free, browser-based image resizers, KB compressors, photo format converters, signature resizers, and document tools.",
-  alternates: { canonical: "https://20kbphoto.com/tools" },
+  alternates: { canonical: "https://20kbphoto.in/tools" },
 };
 
 export default function ToolsDirectoryPage() {

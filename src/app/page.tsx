@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: "20KB Photo — Resize Photos & Signatures for Applications & Exams",
   description:
     "Free online tools to resize, compress, convert and prepare your photos, signatures and documents for exams, government forms, admissions and applications. 100% private — processed in your browser.",
-  alternates: { canonical: "https://20kbphoto.com" },
+  alternates: { canonical: "https://20kbphoto.in" },
 };
 
 export default function HomePage() {
@@ -30,7 +30,7 @@ export default function HomePage() {
             "@context": "https://schema.org",
             "@type": "WebApplication",
             name: "20KB Photo",
-            url: "https://20kbphoto.com",
+            url: "https://20kbphoto.in",
             applicationCategory: "UtilitiesApplication",
             operatingSystem: "All",
             browserRequirements: "Requires JavaScript",

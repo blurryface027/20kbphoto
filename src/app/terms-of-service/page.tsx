@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Terms of Service | 20KB Photo",
   description:
     "Review the Terms of Service for using 20KB Photo's free browser-based image resizing and compression utilities.",
-  alternates: { canonical: "https://20kbphoto.com/terms-of-service" },
+  alternates: { canonical: "https://20kbphoto.in/terms-of-service" },
 };
 
 export default function TermsOfServicePage() {
@@ -29,7 +29,7 @@ export default function TermsOfServicePage() {
         <section className="space-y-3">
           <h2 className="text-xl font-bold text-gray-900">1. Acceptance of Terms</h2>
           <p>
-            By accessing and using 20KB Photo (<span className="text-gray-900 font-medium">20kbphoto.com</span>), you agree to be bound by these Terms of Service. If you do not agree with any part of these terms, please refrain from using our platform.
+            By accessing and using 20KB Photo (<span className="text-gray-900 font-medium">20kbphoto.in</span>), you agree to be bound by these Terms of Service. If you do not agree with any part of these terms, please refrain from using our platform.
           </p>
         </section>
 

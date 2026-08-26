@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Disclaimer | 20KB Photo",
   description:
     "Disclaimer regarding exam portal specifications, third-party government trademarks, and image processing tools.",
-  alternates: { canonical: "https://20kbphoto.com/disclaimer" },
+  alternates: { canonical: "https://20kbphoto.in/disclaimer" },
 };
 
 export default function DisclaimerPage() {
@@ -29,7 +29,7 @@ export default function DisclaimerPage() {
         <section className="space-y-3">
           <h2 className="text-xl font-bold text-gray-900">1. Non-Affiliation with Government Authorities</h2>
           <p>
-            20KB Photo (<span className="text-gray-900 font-medium">20kbphoto.com</span>) is an independent utility website. We are <strong>NOT affiliated, associated, authorized, endorsed by, or in any way officially connected</strong> with the Staff Selection Commission (SSC), Union Public Service Commission (UPSC), Institute of Banking Personnel Selection (IBPS), National Testing Agency (NTA), Railway Recruitment Boards (RRB), or any state/central government recruitment authorities.
+            20KB Photo (<span className="text-gray-900 font-medium">20kbphoto.in</span>) is an independent utility website. We are <strong>NOT affiliated, associated, authorized, endorsed by, or in any way officially connected</strong> with the Staff Selection Commission (SSC), Union Public Service Commission (UPSC), Institute of Banking Personnel Selection (IBPS), National Testing Agency (NTA), Railway Recruitment Boards (RRB), or any state/central government recruitment authorities.
           </p>
         </section>
 

@@ -162,6 +162,51 @@ export default function KBToolClient({ targetKB: initialTargetKB }: KBToolClient
 
   const isSizeValid = result ? (result.size / 1024) <= currentTargetKB : false;
 
+  const sizeGuidance =
+  currentTargetKB <= 30
+    ? {
+        title: `How to get good quality at ${currentTargetKB}KB`,
+        text: `A ${currentTargetKB}KB limit is a strict image-size constraint. If your original photo is large, reducing unnecessary pixel dimensions before compression can help preserve more detail. For application uploads, keep the required dimensions unchanged when the official instructions specify exact pixel sizes.`,
+        tips: [
+          `Use the exact pixel dimensions required by the application.`,
+          `Prefer JPEG for photographs when the application accepts it.`,
+          `Avoid repeatedly re-saving an already compressed image.`,
+          `Check the final file size before uploading.`,
+        ],
+      }
+    : currentTargetKB <= 70
+      ? {
+          title: `Preparing a photo for a ${currentTargetKB}KB upload limit`,
+          text: `${currentTargetKB}KB is a common type of file-size constraint for online forms. The best result usually comes from keeping the required dimensions while adjusting image encoding quality until the file fits the permitted size.`,
+          tips: [
+            `Start with the original image rather than a previously compressed copy.`,
+            `Keep the required width and height when an application specifies them.`,
+            `Use JPEG for ordinary photographs when permitted.`,
+            `Verify both file size and image dimensions before submission.`,
+          ],
+        }
+      : currentTargetKB <= 200
+        ? {
+            title: `How to prepare a higher-quality ${currentTargetKB}KB image`,
+            text: `A ${currentTargetKB}KB limit gives an image more room for visual detail than very small upload limits. This can be useful when an application permits a larger photograph or document image while still imposing a maximum file size.`,
+            tips: [
+              `Keep the original resolution when the application allows it.`,
+              `Resize only when the required dimensions are different.`,
+              `Choose an appropriate output format for the type of image.`,
+              `Confirm that the final file stays within the application's maximum size.`,
+            ],
+          }
+        : {
+            title: `When to use a ${currentTargetKB}KB image`,
+            text: `A ${currentTargetKB}KB limit is suitable for upload systems that allow relatively larger image files. A larger file-size allowance can help retain image detail, but the official application requirements should always determine the final dimensions and format.`,
+            tips: [
+              `Follow the application's specified pixel dimensions.`,
+              `Use the largest permitted file size only when it is useful for image quality.`,
+              `Avoid unnecessarily increasing dimensions just to reach the file-size limit.`,
+              `Check the final format and file size before submission.`,
+            ],
+          };
+
   return (
     <ToolShell
       title={`Resize Image to ${currentTargetKB}KB Online`}
@@ -249,6 +294,87 @@ export default function KBToolClient({ targetKB: initialTargetKB }: KBToolClient
           )}
         </div>
       )}
+
+      <section className="mt-12 pt-8 border-t border-gray-200">
+        <h2 className="text-2xl font-bold text-gray-900 mb-4">
+          Resize an Image to {currentTargetKB}KB Online
+        </h2>
+        
+        <h3 className="text-xl font-semibold text-gray-900 pt-2">
+          {sizeGuidance.title}
+        </h3>
+
+        <p>
+          {sizeGuidance.text}
+        </p>
+
+        <ul className="list-disc list-inside space-y-2">
+          {sizeGuidance.tips.map((tip) => (
+            <li key={tip}>{tip}</li>
+          ))}
+        </ul>
+
+        <div className="space-y-4 text-gray-700 leading-7">
+          <p>
+            Need an image with a maximum size of {currentTargetKB}KB? This free
+            {currentTargetKB}KB image compressor is designed for photos,
+            signatures, scanned documents, and other files that need to meet a
+            specific upload-size limit.
+          </p>
+
+          <p>
+            Smaller targets such as {currentTargetKB}KB are useful when an
+            application has a strict upload limit. Larger targets such as
+            {currentTargetKB}KB can preserve more image detail while still
+            keeping the file within a required size limit. The correct target
+            should always match the instructions of the website or application
+            where you are uploading the file.
+          </p>
+
+          <h3 className="text-xl font-semibold text-gray-900 pt-2">
+            What can you use a {currentTargetKB}KB image for?
+          </h3>
+
+          <p>
+            A {currentTargetKB}KB image may be suitable for recruitment forms,
+            examination applications, scholarship forms, government portals,
+            identity-document submissions, profile photographs, and signature
+            uploads when those services specify a {currentTargetKB}KB limit.
+            File-size requirements vary between applications, so verify the
+            official instructions before submitting an image.
+          </p>
+
+          <h3 className="text-xl font-semibold text-gray-900 pt-2">
+            How to reduce an image to {currentTargetKB}KB
+          </h3>
+
+          <ol className="list-decimal list-inside space-y-2">
+            <li>Upload your original JPG, PNG, or WEBP image.</li>
+            <li>Set the target file size to {currentTargetKB}KB.</li>
+            <li>Choose suitable image dimensions and output format.</li>
+            <li>Let the browser compress the image toward the selected target.</li>
+            <li>Check the final file size and download the result.</li>
+          </ol>
+
+          <h3 className="text-xl font-semibold text-gray-900 pt-2">
+            {currentTargetKB}KB photo compression tips
+          </h3>
+
+          <p>
+            If the original image is much larger than {currentTargetKB}KB,
+            reducing unnecessary dimensions before compression can help retain
+            better visual quality. JPEG is often useful for photographs, while
+            PNG can be preferable for graphics or images requiring transparency.
+            Do not change the format or dimensions if an application requires a
+            specific format or pixel size.
+          </p>
+
+          <p>
+            Your image is processed locally in your browser. The image does not
+            need to be uploaded to our server for compression.
+          </p>
+        </div>
+      </section>
 
       <div className="mt-12 pt-8 border-t border-gray-200">
         <h3 className="font-bold text-gray-900 mb-4">Other Exact Size Compressors</h3>

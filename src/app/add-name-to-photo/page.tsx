@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Add Name to Photo Online | 20KB Photo",
   description:
     "Overlay candidate name onto your photo for exam applications easily online. 100% free, private, and instant.",
-  alternates: { canonical: "https://20kbphoto.com/add-name-to-photo" },
+  alternates: { canonical: "https://20kbphoto.in/add-name-to-photo" },
 };
 
 export default function AddNamePage() {

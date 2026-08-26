@@ -108,7 +108,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${config.title} Online | 20KB Photo`,
     description: config.subtitle,
     alternates: {
-      canonical: `https://20kbphoto.com/tools/${resolvedParams.slug}`,
+      canonical: `https://20kbphoto.in/tools/${resolvedParams.slug}`,
     },
   };
 }

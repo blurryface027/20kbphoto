@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Resize Signature to 240×80 Pixels Online | 20KB Photo",
   description: "Resize your signature image to exact 240x80 pixels online for exam applications and government recruitment portals.",
   alternates: {
-    canonical: "https://20kbphoto.com/signature-resizer-240x80",
+    canonical: "https://20kbphoto.in/signature-resizer-240x80",
   },
 };
 

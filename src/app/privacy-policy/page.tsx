@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Privacy Policy | 20KB Photo - 100% Client-Side Local Image Resizer",
   description:
     "Read our Privacy Policy. 20KB Photo processes all images locally inside your browser memory. We never collect, store, or upload your photos or personal data.",
-  alternates: { canonical: "https://20kbphoto.com/privacy-policy" },
+  alternates: { canonical: "https://20kbphoto.in/privacy-policy" },
 };
 
 export default function PrivacyPolicyPage() {
@@ -33,7 +33,7 @@ export default function PrivacyPolicyPage() {
         <section className="space-y-3">
           <h2 className="text-xl font-bold text-gray-900">1. Client-Side Image Processing Guarantee</h2>
           <p>
-            At 20KB Photo (<span className="text-gray-900 font-medium">20kbphoto.com</span>), user privacy is our highest priority. All image resizing, compression, format conversion, cropping, and text overlay operations occur strictly within your Web Browser's local RAM memory using HTML5 Canvas API technology.
+            At 20KB Photo (<span className="text-gray-900 font-medium">20kbphoto.in</span>), user privacy is our highest priority. All image resizing, compression, format conversion, cropping, and text overlay operations occur strictly within your Web Browser's local RAM memory using HTML5 Canvas API technology.
           </p>
           <p className="bg-emerald-50 p-4 rounded-xl border border-emerald-200 text-emerald-900 text-sm font-medium flex items-center gap-2">
             <HiOutlineLockClosed className="w-5 h-5 text-emerald-700 shrink-0" />

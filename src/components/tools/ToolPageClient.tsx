@@ -461,6 +461,47 @@ export default function ToolPageClient({ slug }: Props) {
           )}
         </div>
       )}
+      <section className="mt-12 pt-8 border-t border-gray-200">
+        <h2 className="text-2xl font-bold text-gray-900 mb-4">
+          {config.title}
+        </h2>
+
+        <div className="space-y-4 text-gray-700 leading-7">
+          <p>{config.subtitle}</p>
+
+          <h3 className="text-xl font-semibold text-gray-900">
+            How to use this {config.title.toLowerCase()}
+          </h3>
+
+          <ol className="list-decimal list-inside space-y-2">
+            <li>Select the image you want to process.</li>
+            <li>Choose the required settings.</li>
+            <li>Preview the processed image.</li>
+            <li>Check the output dimensions, format, and file size.</li>
+            <li>Download the finished image.</li>
+          </ol>
+
+          <h3 className="text-xl font-semibold text-gray-900">
+            Who can use this tool?
+          </h3>
+
+          <p>
+            This tool is useful for websites, online forms, recruitment
+            applications, examination portals, document submissions, and other
+            situations where an image needs specific technical requirements.
+          </p>
+
+          <h3 className="text-xl font-semibold text-gray-900">
+            Is image processing performed online?
+          </h3>
+
+          <p>
+            Image processing is performed locally in your browser. Your image
+            does not need to be uploaded to our server.
+          </p>
+        </div>
+      </section>
+
     </ToolShell>
   );
 }

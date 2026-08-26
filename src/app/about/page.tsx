@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: "About Us | 20KB Photo - Client-Side Image Resizer for Exams",
   description:
     "Learn about 20KB Photo, the 100% private, browser-based image and photo preparation platform built for Indian government exam applicants.",
-  alternates: { canonical: "https://20kbphoto.com/about" },
+  alternates: { canonical: "https://20kbphoto.in/about" },
 };
 
 export default function AboutPage() {

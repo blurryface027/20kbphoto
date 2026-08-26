@@ -124,6 +124,51 @@ export default function DimensionToolClient({
           )}
         </div>
       )}
+      <section className="mt-12 pt-8 border-t border-gray-200">
+        <h2 className="text-2xl font-bold text-gray-900 mb-4">
+          {isSig ? "Signature" : "Photo"} Resizer for {targetWidth}×{targetHeight} Pixels
+        </h2>
+
+        <div className="space-y-4 text-gray-700 leading-7">
+          <p>
+            Resize your {isSig ? "signature" : "photo"} to exactly {targetWidth}×{targetHeight} pixels
+            using this free browser-based image tool. The output dimensions are fixed to the
+            selected width and height for forms and online applications.
+          </p>
+
+          <h3 className="text-xl font-semibold text-gray-900">
+            When do you need {targetWidth}×{targetHeight}px?
+          </h3>
+
+          <p>
+            Exact pixel dimensions are often required when an application portal specifies a
+            fixed image size. Always check the official application instructions for the
+            required file format, maximum file size, background, and other requirements.
+          </p>
+
+          <h3 className="text-xl font-semibold text-gray-900">
+            How to resize to {targetWidth}×{targetHeight}px
+          </h3>
+
+          <ol className="list-decimal list-inside space-y-2">
+            <li>Upload your {isSig ? "signature" : "photo"}.</li>
+            <li>The tool reads the original image dimensions in your browser.</li>
+            <li>The image is cropped and resized to {targetWidth}×{targetHeight}px.</li>
+            <li>Review the generated image and its dimensions.</li>
+            <li>Download the resized file.</li>
+          </ol>
+
+          <h3 className="text-xl font-semibold text-gray-900">
+            Is the uploaded image stored?
+          </h3>
+
+          <p>
+            No. Image processing is performed locally in your browser. Your original image
+            does not need to be sent to our server for resizing.
+          </p>
+        </div>
+      </section>
+
     </ToolShell>
   );
 }

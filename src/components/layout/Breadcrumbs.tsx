@@ -12,7 +12,11 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
       '@type': 'ListItem',
       position: index + 1,
       name: item.label,
-      ...(item.href ? { item: `https://20kbphoto.com${item.href}` } : {})
+      ...(item.href ? { item: `https://20kbphoto.in${
+  item.href === '/'
+    ? '/'
+    : `${item.href.replace(/\/+$/, '')}/`
+}` } : {})
     }))
   };
 

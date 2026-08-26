@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Contact Us | 20KB Photo",
   description:
     "Get in touch with the 20KB Photo team for feedback, feature requests, or report incorrect exam presets.",
-  alternates: { canonical: "https://20kbphoto.com/contact" },
+  alternates: { canonical: "https://20kbphoto.in/contact" },
 };
 
 export default function ContactPage() {

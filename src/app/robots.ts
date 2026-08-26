@@ -8,9 +8,9 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/api/", "/_next/", "/private/"],
+        disallow: ["/api/", "/private/"],
       },
     ],
-    sitemap: "https://20kbphoto.com/sitemap.xml",
+    sitemap: "https://20kbphoto.in/sitemap.xml",
   };
 }

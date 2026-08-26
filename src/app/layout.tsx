@@ -11,10 +11,10 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://20kbphoto.com"),
+  metadataBase: new URL("https://20kbphoto.in"),
   title: {
     default: "20KB Photo — Resize Photos & Signatures for Applications & Exams",
-    template: "%s | 20KB Photo",
+    template: "%s",
   },
   description:
     "Free online tools to resize, compress, convert and prepare your photos, signatures and documents for exams, government forms, admissions and applications. 100% private — processed in your browser.",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "https://20kbphoto.com",
+    url: "https://20kbphoto.in",
     siteName: "20KB Photo",
     title: "20KB Photo — Resize Photos & Signatures for Applications & Exams",
     description:
@@ -82,7 +82,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/apple-icon.png" />
-        <link rel="canonical" href="https://20kbphoto.com" />
       </head>
       <body className="min-h-full flex flex-col bg-bg text-text font-sans antialiased">
         <a
@@ -104,7 +103,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               "@context": "https://schema.org",
               "@type": "Organization",
               name: "20KB Photo",
-              url: "https://20kbphoto.com",
+              url: "https://20kbphoto.in",
               description:
                 "Free online tools for preparing photos, signatures and documents for applications and forms.",
               sameAs: [],

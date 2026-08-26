@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Resize Image to 200×230 Pixels Online | 20KB Photo",
   description: "Resize your image to exactly 200x230 pixels for exam and form applications online free.",
   alternates: {
-    canonical: "https://20kbphoto.com/image-resizer-200x230",
+    canonical: "https://20kbphoto.in/image-resizer-200x230",
   },
 };
 
