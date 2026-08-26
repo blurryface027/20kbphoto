@@ -85,10 +85,12 @@ export function loadImage(file: File): Promise<HTMLImageElement> {
   });
 }
 
-function getMimeType(format?: string): string {
+export function getMimeType(format?: string): string {
   if (!format) return 'image/jpeg';
-  if (format.includes('png')) return 'image/png';
-  if (format.includes('webp')) return 'image/webp';
+  const fmt = format.toLowerCase();
+  if (fmt.includes('png')) return 'image/png';
+  if (fmt.includes('webp')) return 'image/webp';
+  if (fmt.includes('jpg') || fmt.includes('jpeg')) return 'image/jpeg';
   return 'image/jpeg';
 }
 
@@ -111,105 +113,197 @@ function blobToResult(blob: Blob, width: number, height: number, quality: number
   });
 }
 
-export async function resizeImage(file: File, targetWidth: number, targetHeight: number, format?: string): Promise<ProcessingResult> {
-  const img = await loadImage(file);
-  const canvas = document.createElement('canvas');
-  canvas.width = targetWidth;
-  canvas.height = targetHeight;
-  const ctx = canvas.getContext('2d')!;
-  ctx.drawImage(img, 0, 0, targetWidth, targetHeight);
-  
-  const mimeType = getMimeType(format || file.type);
-  const blob = await new Promise<Blob>((resolve) => canvas.toBlob(b => resolve(b!), mimeType, 0.92));
-  return blobToResult(blob, targetWidth, targetHeight, 0.92);
+export interface ProcessOptions {
+  width?: number;
+  height?: number;
+  scalePercent?: number;
+  format?: string;
+  targetKB?: number;
+  quality?: number;
+  backgroundColor?: string;
 }
 
-export async function compressToSize(file: File, targetKB: number, format?: string): Promise<ProcessingResult> {
-  return compressToRange(file, targetKB * 0.9, targetKB, -1, -1, format);
-}
-
-export async function compressToRange(file: File, minKB: number, maxKB: number, targetWidth: number, targetHeight: number, format?: string): Promise<ProcessingResult> {
+export async function processImage(file: File, options: ProcessOptions = {}): Promise<ProcessingResult> {
   const img = await loadImage(file);
-  const w = targetWidth > 0 ? targetWidth : img.width;
-  const h = targetHeight > 0 ? targetHeight : img.height;
-  
+
+  let targetWidth = options.width;
+  let targetHeight = options.height;
+
+  if (options.scalePercent && options.scalePercent > 0 && (!options.width || !options.height)) {
+    const factor = options.scalePercent / 100;
+    targetWidth = Math.max(1, Math.round(img.width * factor));
+    targetHeight = Math.max(1, Math.round(img.height * factor));
+  }
+
+  const w = targetWidth && targetWidth > 0 ? targetWidth : img.width;
+  const h = targetHeight && targetHeight > 0 ? targetHeight : img.height;
+  const mimeType = getMimeType(options.format || file.type);
+  const targetKB = options.targetKB && options.targetKB > 0 ? options.targetKB : 0;
+
+  if (targetKB > 0) {
+    return compressToRange(file, Math.max(1, targetKB * 0.85), targetKB, w, h, mimeType);
+  }
+
   const canvas = document.createElement('canvas');
   canvas.width = w;
   canvas.height = h;
   const ctx = canvas.getContext('2d')!;
-  ctx.fillStyle = '#FFFFFF';
-  ctx.fillRect(0, 0, w, h);
+
+  if (mimeType === 'image/jpeg' || options.backgroundColor) {
+    ctx.fillStyle = options.backgroundColor || '#FFFFFF';
+    ctx.fillRect(0, 0, w, h);
+  }
+
   ctx.drawImage(img, 0, 0, w, h);
-  
+
+  const quality = options.quality ?? 0.92;
+  const blob = await new Promise<Blob>((resolve) => canvas.toBlob((b) => resolve(b!), mimeType, quality));
+  return blobToResult(blob, w, h, quality);
+}
+
+export async function resizeImage(file: File, targetWidth: number, targetHeight: number, format?: string): Promise<ProcessingResult> {
+  return processImage(file, { width: targetWidth, height: targetHeight, format });
+}
+
+export async function compressToSize(file: File, targetKB: number, format?: string, width?: number, height?: number): Promise<ProcessingResult> {
+  return processImage(file, { targetKB, format, width, height });
+}
+
+export async function compressToRange(
+  file: File,
+  minKB: number,
+  maxKB: number,
+  targetWidth: number,
+  targetHeight: number,
+  format?: string
+): Promise<ProcessingResult> {
+  const img = await loadImage(file);
+  const w = targetWidth > 0 ? targetWidth : img.width;
+  const h = targetHeight > 0 ? targetHeight : img.height;
+
   const mimeType = getMimeType(format || file.type);
-  const minBytes = minKB * 1024;
-  const maxBytes = maxKB * 1024;
-  
-  let low = 0.05;
-  let high = 1.0;
-  let quality = 0.92;
-  let bestBlob: Blob | null = null;
-  let bestQuality = quality;
-  let iterations = 0;
-  
+  // Ensure strict upper bound with a safety margin so output size is strictly <= maxKB
+  const maxBytes = Math.max(1024, Math.floor(maxKB * 1024 - 50));
+  const minBytes = Math.max(0, Math.floor(minKB * 1024));
+
   let currentWidth = w;
   let currentHeight = h;
-  
-  while (iterations < 25) {
-    const blob = await new Promise<Blob>((resolve) => canvas.toBlob(b => resolve(b!), mimeType, quality));
-    const size = blob.size;
-    
-    if (size >= minBytes && size <= maxBytes) {
-      bestBlob = blob;
-      bestQuality = quality;
-      break;
-    }
-    
-    if (size > maxBytes) {
-      high = quality;
-      quality = low + (high - low) / 2;
-      bestBlob = blob;
-      bestQuality = quality;
-      
-      if (quality <= 0.06) {
-        currentWidth = Math.floor(currentWidth * 0.95);
-        currentHeight = Math.floor(currentHeight * 0.95);
-        canvas.width = currentWidth;
-        canvas.height = currentHeight;
-        ctx.fillStyle = '#FFFFFF';
-        ctx.fillRect(0, 0, currentWidth, currentHeight);
-        ctx.drawImage(img, 0, 0, currentWidth, currentHeight);
-        quality = 0.8;
-        low = 0.05;
-        high = 1.0;
-      }
+
+  const canvas = document.createElement("canvas");
+  canvas.width = currentWidth;
+  canvas.height = currentHeight;
+  const ctx = canvas.getContext("2d")!;
+
+  const renderCanvas = (cw: number, ch: number) => {
+    canvas.width = cw;
+    canvas.height = ch;
+    if (mimeType === "image/jpeg") {
+      ctx.fillStyle = "#FFFFFF";
+      ctx.fillRect(0, 0, cw, ch);
     } else {
-      low = quality;
-      quality = low + (high - low) / 2;
-      if (!bestBlob || Math.abs(size - (minBytes+maxBytes)/2) < Math.abs(bestBlob.size - (minBytes+maxBytes)/2)) {
-         bestBlob = blob;
-         bestQuality = quality;
+      ctx.clearRect(0, 0, cw, ch);
+    }
+    ctx.drawImage(img, 0, 0, cw, ch);
+  };
+
+  renderCanvas(currentWidth, currentHeight);
+
+  let bestBlob: Blob | null = null;
+  let bestQuality = 0.92;
+
+  if (mimeType === "image/png") {
+    let blob = await new Promise<Blob>((resolve) => canvas.toBlob((b) => resolve(b!), mimeType));
+    let iterations = 0;
+    while (blob.size > maxBytes && iterations < 50 && currentWidth > 15 && currentHeight > 15) {
+      currentWidth = Math.max(10, Math.floor(currentWidth * 0.9));
+      currentHeight = Math.max(10, Math.floor(currentHeight * 0.9));
+      renderCanvas(currentWidth, currentHeight);
+      blob = await new Promise<Blob>((resolve) => canvas.toBlob((b) => resolve(b!), mimeType));
+      iterations++;
+    }
+    bestBlob = blob;
+    bestQuality = 1.0;
+  } else {
+    // JPEG or WEBP quality tuning
+    let low = 0.01;
+    let high = 0.98;
+    let quality = 0.85;
+    let iterations = 0;
+
+    while (iterations < 30) {
+      const blob = await new Promise<Blob>((resolve) => canvas.toBlob((b) => resolve(b!), mimeType, quality));
+      const size = blob.size;
+
+      if (size <= maxBytes && size >= minBytes) {
+        bestBlob = blob;
+        bestQuality = quality;
+        break;
+      }
+
+      if (size > maxBytes) {
+        high = quality;
+        quality = low + (high - low) / 2;
+
+        if (quality <= 0.05 && currentWidth > 20 && currentHeight > 20) {
+          currentWidth = Math.max(15, Math.floor(currentWidth * 0.88));
+          currentHeight = Math.max(15, Math.floor(currentHeight * 0.88));
+          renderCanvas(currentWidth, currentHeight);
+          quality = 0.75;
+          low = 0.01;
+          high = 0.98;
+        }
+      } else {
+        bestBlob = blob;
+        bestQuality = quality;
+        low = quality;
+        quality = low + (high - low) / 2;
+      }
+      iterations++;
+    }
+
+    if (!bestBlob || bestBlob.size > maxBytes) {
+      let fallbackQuality = 0.85;
+      while (fallbackQuality >= 0.02) {
+        const testBlob = await new Promise<Blob>((resolve) => canvas.toBlob((b) => resolve(b!), mimeType, fallbackQuality));
+        if (testBlob.size <= maxBytes) {
+          bestBlob = testBlob;
+          bestQuality = fallbackQuality;
+          break;
+        }
+        fallbackQuality -= 0.05;
       }
     }
-    iterations++;
   }
-  
-  if (!bestBlob) {
-    bestBlob = await new Promise<Blob>((resolve) => canvas.toBlob(b => resolve(b!), mimeType, 0.92));
+
+  // ABSOLUTE GUARANTEE: If blob is still larger than maxBytes, resize dimensions until strictly <= maxBytes
+  if (!bestBlob || bestBlob.size > maxBytes) {
+    let finalBlob = bestBlob || (await new Promise<Blob>((resolve) => canvas.toBlob((b) => resolve(b!), mimeType, 0.5)));
+    let guard = 0;
+    while (finalBlob.size > maxBytes && guard < 40 && currentWidth > 10 && currentHeight > 10) {
+      currentWidth = Math.max(10, Math.floor(currentWidth * 0.85));
+      currentHeight = Math.max(10, Math.floor(currentHeight * 0.85));
+      renderCanvas(currentWidth, currentHeight);
+      finalBlob = await new Promise<Blob>((resolve) => canvas.toBlob((b) => resolve(b!), mimeType, mimeType === "image/jpeg" ? 0.7 : 0.92));
+      guard++;
+    }
+    bestBlob = finalBlob;
   }
-  
+
   return blobToResult(bestBlob, currentWidth, currentHeight, bestQuality);
 }
 
-export async function convertFormat(file: File, outputFormat: 'image/jpeg' | 'image/png' | 'image/webp'): Promise<ProcessingResult> {
-  const img = await loadImage(file);
-  const canvas = document.createElement('canvas');
-  canvas.width = img.width;
-  canvas.height = img.height;
-  const ctx = canvas.getContext('2d')!;
-  ctx.drawImage(img, 0, 0);
-  const blob = await new Promise<Blob>((resolve) => canvas.toBlob(b => resolve(b!), outputFormat, 0.92));
-  return blobToResult(blob, img.width, img.height, 0.92);
+export async function convertFormat(
+  file: File,
+  outputFormat: 'image/jpeg' | 'image/png' | 'image/webp',
+  options?: { width?: number; height?: number; scalePercent?: number; targetKB?: number }
+): Promise<ProcessingResult> {
+  return processImage(file, {
+    format: outputFormat,
+    width: options?.width,
+    height: options?.height,
+    scalePercent: options?.scalePercent,
+    targetKB: options?.targetKB,
+  });
 }
 
 export async function cropImage(file: File, cropRect: CropRect): Promise<ProcessingResult> {

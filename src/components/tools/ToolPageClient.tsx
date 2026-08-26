@@ -8,9 +8,7 @@ import PreviewPanel from "@/components/tools/PreviewPanel";
 import ValidationBadges from "@/components/tools/ValidationBadges";
 import DownloadPanel from "@/components/tools/DownloadPanel";
 import {
-  resizeImage,
-  compressToSize,
-  convertFormat,
+  processImage,
   getImageInfo,
   validateOutput,
   type ImageInfo,
@@ -34,10 +32,11 @@ interface ToolConfig {
 const toolConfigs: Record<string, ToolConfig> = {
   "image-resizer": {
     title: "Image Resizer",
-    subtitle: "Resize any image to exact pixel dimensions. Free, fast, browser-based.",
+    subtitle: "Resize any image to exact pixel dimensions or percentage scale. Free, fast, browser-based.",
     category: "resize",
     showDimensions: true,
     showFormat: true,
+    showCompression: true,
     defaultFormat: "image/jpeg",
   },
   "image-compressor": {
@@ -45,6 +44,7 @@ const toolConfigs: Record<string, ToolConfig> = {
     subtitle: "Compress any image to a specific file size in KB. Perfect for form uploads.",
     category: "compress",
     showCompression: true,
+    showDimensions: true,
     showFormat: true,
     defaultFormat: "image/jpeg",
     presetKBs: [20, 30, 50, 100, 200],
@@ -55,6 +55,7 @@ const toolConfigs: Record<string, ToolConfig> = {
     category: "resize",
     showDimensions: true,
     showFormat: true,
+    showCompression: true,
     defaultWidth: 140,
     defaultHeight: 60,
     defaultFormat: "image/jpeg",
@@ -65,45 +66,80 @@ const toolConfigs: Record<string, ToolConfig> = {
     category: "resize",
     showDimensions: true,
     showFormat: true,
+    showCompression: true,
     defaultWidth: 275,
     defaultHeight: 354,
     defaultFormat: "image/jpeg",
   },
   "image-to-jpg": {
     title: "Convert Image to JPG",
-    subtitle: "Convert PNG, WebP, GIF images into standard JPG format instantly.",
+    subtitle: "Convert PNG, WebP, GIF images into standard JPG format instantly with resize & size options.",
     category: "convert",
+    showDimensions: true,
+    showFormat: true,
+    showCompression: true,
     outputFormat: "image/jpeg",
+    defaultFormat: "image/jpeg",
   },
   "png-to-jpg": {
     title: "Convert PNG to JPG",
-    subtitle: "Convert PNG images to JPG format for government forms.",
+    subtitle: "Convert PNG images to JPG format for government forms with custom dimensions & file size.",
     category: "convert",
+    showDimensions: true,
+    showFormat: true,
+    showCompression: true,
     outputFormat: "image/jpeg",
+    defaultFormat: "image/jpeg",
   },
   "webp-to-jpg": {
     title: "Convert WebP to JPG",
-    subtitle: "Convert WebP images to standard JPG format.",
+    subtitle: "Convert WebP images to standard JPG format with resize & size controls.",
     category: "convert",
+    showDimensions: true,
+    showFormat: true,
+    showCompression: true,
     outputFormat: "image/jpeg",
+    defaultFormat: "image/jpeg",
   },
   "jpg-to-png": {
     title: "Convert JPG to PNG",
-    subtitle: "Convert JPG images to high-quality PNG format.",
+    subtitle: "Convert JPG images to high-quality PNG format with custom resize options.",
     category: "convert",
+    showDimensions: true,
+    showFormat: true,
+    showCompression: true,
     outputFormat: "image/png",
+    defaultFormat: "image/png",
   },
   "jpg-to-webp": {
     title: "Convert JPG to WebP",
     subtitle: "Convert JPG images to lightweight WebP format for fast web pages.",
     category: "convert",
+    showDimensions: true,
+    showFormat: true,
+    showCompression: true,
     outputFormat: "image/webp",
+    defaultFormat: "image/webp",
   },
   "png-to-webp": {
     title: "Convert PNG to WebP",
     subtitle: "Convert PNG images to modern WebP format with small file size.",
     category: "convert",
+    showDimensions: true,
+    showFormat: true,
+    showCompression: true,
     outputFormat: "image/webp",
+    defaultFormat: "image/webp",
+  },
+  "signature-to-jpg": {
+    title: "Signature to JPG Converter",
+    subtitle: "Convert signature images to standard JPG format with dimension & KB compression controls.",
+    category: "convert",
+    showDimensions: true,
+    showFormat: true,
+    showCompression: true,
+    outputFormat: "image/jpeg",
+    defaultFormat: "image/jpeg",
   },
   "change-image-dpi": {
     title: "Change Image DPI",
@@ -111,22 +147,31 @@ const toolConfigs: Record<string, ToolConfig> = {
     category: "dpi",
     showDimensions: true,
     showFormat: true,
+    showCompression: true,
   },
   "crop-image": {
     title: "Crop Image Online",
     subtitle: "Crop photo or document to custom aspect ratio or passport dimensions.",
     category: "crop",
     showDimensions: true,
+    showFormat: true,
+    showCompression: true,
   },
   "rotate-image": {
     title: "Rotate Image Online",
     subtitle: "Rotate image 90, 180, or 270 degrees clockwise or counterclockwise.",
     category: "rotate",
+    showDimensions: true,
+    showFormat: true,
+    showCompression: true,
   },
   "flip-image": {
     title: "Flip Image Online",
     subtitle: "Flip image horizontally or vertically instantly in browser.",
     category: "flip",
+    showDimensions: true,
+    showFormat: true,
+    showCompression: true,
   },
   "passport-photo-maker": {
     title: "Passport Photo Maker",
@@ -134,6 +179,7 @@ const toolConfigs: Record<string, ToolConfig> = {
     category: "resize",
     showDimensions: true,
     showFormat: true,
+    showCompression: true,
     defaultWidth: 413,
     defaultHeight: 531,
     defaultFormat: "image/jpeg",
@@ -143,6 +189,7 @@ const toolConfigs: Record<string, ToolConfig> = {
     subtitle: "Reduce photo file size in KB for job applications and online portals.",
     category: "compress",
     showCompression: true,
+    showDimensions: true,
     showFormat: true,
     defaultFormat: "image/jpeg",
     presetKBs: [20, 50, 100, 200],
@@ -152,6 +199,7 @@ const toolConfigs: Record<string, ToolConfig> = {
     subtitle: "Compress signature image file size to under 20KB or 50KB.",
     category: "compress",
     showCompression: true,
+    showDimensions: true,
     showFormat: true,
     defaultFormat: "image/jpeg",
     presetKBs: [10, 20, 30, 50],
@@ -161,12 +209,8 @@ const toolConfigs: Record<string, ToolConfig> = {
     subtitle: "Crop white margins around handwritten signatures accurately.",
     category: "crop",
     showDimensions: true,
-  },
-  "signature-to-jpg": {
-    title: "Signature to JPG Converter",
-    subtitle: "Convert signature images to standard JPG format.",
-    category: "convert",
-    outputFormat: "image/jpeg",
+    showFormat: true,
+    showCompression: true,
   },
   "document-image-resizer": {
     title: "Document Image Resizer",
@@ -174,6 +218,7 @@ const toolConfigs: Record<string, ToolConfig> = {
     category: "resize",
     showDimensions: true,
     showFormat: true,
+    showCompression: true,
     defaultWidth: 600,
     defaultHeight: 800,
     defaultFormat: "image/jpeg",
@@ -189,10 +234,18 @@ export default function ToolPageClient({ slug }: Props) {
 
   const [originalFile, setOriginalFile] = useState<File | null>(null);
   const [originalInfo, setOriginalInfo] = useState<ImageInfo | undefined>(undefined);
-  const [targetWidth, setTargetWidth] = useState<number>(config.defaultWidth || 275);
-  const [targetHeight, setTargetHeight] = useState<number>(config.defaultHeight || 354);
+
+  const [resizeMode, setResizeMode] = useState<"percentage" | "dimensions">(
+    config.defaultWidth || config.defaultHeight ? "dimensions" : "percentage"
+  );
+  const [scalePercent, setScalePercent] = useState<number>(100);
+  const [targetWidth, setTargetWidth] = useState<number>(config.defaultWidth || 0);
+  const [targetHeight, setTargetHeight] = useState<number>(config.defaultHeight || 0);
+  const [keepAspectRatio, setKeepAspectRatio] = useState<boolean>(true);
+
+  const [enableTargetKB, setEnableTargetKB] = useState<boolean>(config.category === "compress");
   const [targetKB, setTargetKB] = useState<number>(50);
-  const [format, setFormat] = useState<string>(config.defaultFormat || "image/jpeg");
+  const [format, setFormat] = useState<string>(config.outputFormat || config.defaultFormat || "image/jpeg");
 
   const [processedDataUrl, setProcessedDataUrl] = useState<string | undefined>(undefined);
   const [processedInfo, setProcessedInfo] = useState<ImageInfo | undefined>(undefined);
@@ -209,10 +262,14 @@ export default function ToolPageClient({ slug }: Props) {
       const info = await getImageInfo(file);
       setOriginalInfo(info);
 
-      if (!config.defaultWidth && info.width) setTargetWidth(info.width);
-      if (!config.defaultHeight && info.height) setTargetHeight(info.height);
+      let initialW = config.defaultWidth || info.width;
+      let initialH = config.defaultHeight || info.height;
 
-      await process(file, targetWidth || info.width, targetHeight || info.height, targetKB, format);
+      setTargetWidth(initialW);
+      setTargetHeight(initialH);
+      setScalePercent(100);
+
+      await process(file, initialW, initialH, scalePercent, resizeMode, enableTargetKB, targetKB, format);
     } catch (err) {
       console.error("Error loading image:", err);
     } finally {
@@ -224,6 +281,9 @@ export default function ToolPageClient({ slug }: Props) {
     file: File = originalFile!,
     w: number = targetWidth,
     h: number = targetHeight,
+    pct: number = scalePercent,
+    mode: "percentage" | "dimensions" = resizeMode,
+    useKB: boolean = enableTargetKB,
     kb: number = targetKB,
     fmt: string = format
   ) => {
@@ -231,15 +291,13 @@ export default function ToolPageClient({ slug }: Props) {
     setIsProcessing(true);
 
     try {
-      let result;
-
-      if (config.category === "convert" && config.outputFormat) {
-        result = await convertFormat(file, config.outputFormat);
-      } else if (config.category === "compress") {
-        result = await compressToSize(file, kb, fmt);
-      } else {
-        result = await resizeImage(file, w, h, fmt);
-      }
+      const result = await processImage(file, {
+        width: mode === "dimensions" ? w : undefined,
+        height: mode === "dimensions" ? h : undefined,
+        scalePercent: mode === "percentage" ? pct : undefined,
+        format: fmt,
+        targetKB: useKB ? kb : undefined,
+      });
 
       setProcessedDataUrl(result.dataUrl);
       setProcessedBlob(result.blob);
@@ -252,10 +310,10 @@ export default function ToolPageClient({ slug }: Props) {
       });
 
       const val = await validateOutput(result.blob, {
-        width: w,
-        height: h,
+        width: result.width,
+        height: result.height,
         minKB: 0,
-        maxKB: kb,
+        maxKB: useKB ? kb : 5000,
         format: fmt === "image/jpeg" ? "JPG" : fmt === "image/png" ? "PNG" : "WEBP",
       });
       setValidation(val);
@@ -263,6 +321,44 @@ export default function ToolPageClient({ slug }: Props) {
       console.error("Error processing image:", err);
     } finally {
       setIsProcessing(false);
+    }
+  };
+
+  const handleScalePercentChange = (pct: number) => {
+    setScalePercent(pct);
+    if (originalInfo) {
+      const w = Math.max(1, Math.round(originalInfo.width * (pct / 100)));
+      const h = Math.max(1, Math.round(originalInfo.height * (pct / 100)));
+      setTargetWidth(w);
+      setTargetHeight(h);
+    }
+  };
+
+  const handleTargetWidthChange = (w: number) => {
+    setTargetWidth(w);
+    if (keepAspectRatio && originalInfo && originalInfo.width > 0) {
+      const h = Math.max(1, Math.round(w / (originalInfo.width / originalInfo.height)));
+      setTargetHeight(h);
+      setScalePercent(Math.round((w / originalInfo.width) * 100));
+    }
+  };
+
+  const handleTargetHeightChange = (h: number) => {
+    setTargetHeight(h);
+    if (keepAspectRatio && originalInfo && originalInfo.height > 0) {
+      const w = Math.max(1, Math.round(h * (originalInfo.width / originalInfo.height)));
+      setTargetWidth(w);
+      setScalePercent(Math.round((h / originalInfo.height) * 100));
+    }
+  };
+
+  const handleResizeModeChange = (mode: "percentage" | "dimensions") => {
+    setResizeMode(mode);
+    if (mode === "percentage" && originalInfo) {
+      const w = Math.max(1, Math.round(originalInfo.width * (scalePercent / 100)));
+      const h = Math.max(1, Math.round(originalInfo.height * (scalePercent / 100)));
+      setTargetWidth(w);
+      setTargetHeight(h);
     }
   };
 
@@ -277,9 +373,9 @@ export default function ToolPageClient({ slug }: Props) {
 
   useEffect(() => {
     if (originalFile) {
-      process(originalFile, targetWidth, targetHeight, targetKB, format);
+      process(originalFile, targetWidth, targetHeight, scalePercent, resizeMode, enableTargetKB, targetKB, format);
     }
-  }, [targetWidth, targetHeight, targetKB, format]);
+  }, [targetWidth, targetHeight, scalePercent, resizeMode, enableTargetKB, targetKB, format, keepAspectRatio]);
 
   const breadcrumbs = [
     { label: "Home", href: "/" },
@@ -287,13 +383,22 @@ export default function ToolPageClient({ slug }: Props) {
     { label: config.title },
   ];
 
+  const getDownloadFilename = () => {
+    if (!originalFile) return "converted-photo.jpg";
+    const name = originalFile.name;
+    const lastDot = name.lastIndexOf(".");
+    const baseName = lastDot > 0 ? name.substring(0, lastDot) : name;
+    const ext = format === "image/jpeg" ? "jpg" : format === "image/png" ? "png" : "webp";
+    return `${baseName}-converted.${ext}`;
+  };
+
   return (
     <ToolShell title={config.title} subtitle={config.subtitle} breadcrumbs={breadcrumbs}>
       {!originalFile ? (
         <UploadDropzone
           onFileSelect={handleFileSelect}
-          label={`Upload photo to use ${config.title}`}
-          sublabel="Supports JPG, PNG, WEBP files up to 10MB"
+          label={`Upload image to use ${config.title}`}
+          sublabel="Supports JPG, PNG, WEBP, GIF files up to 10MB"
         />
       ) : (
         <div className="space-y-6 max-w-4xl mx-auto">
@@ -301,14 +406,24 @@ export default function ToolPageClient({ slug }: Props) {
             <CompressionControls
               targetKB={targetKB}
               onTargetKBChange={setTargetKB}
+              enableTargetKB={enableTargetKB}
+              onEnableTargetKBChange={setEnableTargetKB}
               targetWidth={targetWidth}
-              onTargetWidthChange={setTargetWidth}
+              onTargetWidthChange={handleTargetWidthChange}
               targetHeight={targetHeight}
-              onTargetHeightChange={setTargetHeight}
+              onTargetHeightChange={handleTargetHeightChange}
+              scalePercent={scalePercent}
+              onScalePercentChange={handleScalePercentChange}
+              resizeMode={resizeMode}
+              onResizeModeChange={handleResizeModeChange}
+              keepAspectRatio={keepAspectRatio}
+              onKeepAspectRatioChange={setKeepAspectRatio}
               format={format}
               onFormatChange={setFormat}
+              originalInfo={originalInfo}
               showDimensions={config.showDimensions}
               showFormat={config.showFormat}
+              showCompression={config.showCompression}
               presetKBs={config.presetKBs}
             />
           )}
@@ -328,10 +443,10 @@ export default function ToolPageClient({ slug }: Props) {
                   checks={validation.checks}
                   details={validation.details}
                   requirements={{
-                    width: targetWidth,
-                    height: targetHeight,
+                    width: processedInfo.width,
+                    height: processedInfo.height,
                     minKB: 0,
-                    maxKB: targetKB,
+                    maxKB: enableTargetKB ? targetKB : Math.ceil(processedInfo.size / 1024),
                     format: format === "image/jpeg" ? "JPG" : format === "image/png" ? "PNG" : "WEBP",
                   }}
                 />
@@ -339,7 +454,7 @@ export default function ToolPageClient({ slug }: Props) {
 
               <DownloadPanel
                 blob={processedBlob}
-                filename={`processed-${originalFile.name}`}
+                filename={getDownloadFilename()}
                 onReset={handleReset}
               />
             </>
