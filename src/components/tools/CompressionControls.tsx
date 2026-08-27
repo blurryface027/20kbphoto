@@ -67,7 +67,7 @@ export default function CompressionControls({
   showDimensions = true,
   showFormat = true,
   showCompression = true,
-  presetKBs = [10, 20, 30, 50, 100, 200, 500],
+  presetKBs = [10, 20, 30, 40, 50, 60, 100, 150, 200, 300, 500],
   locked = false,
 }: CompressionControlsProps) {
   const percentagePresets = [25, 50, 75, 100, 125, 150, 200];
@@ -353,9 +353,14 @@ export default function CompressionControls({
                       key={kb}
                       type="button"
                       disabled={locked}
-                      onClick={() => onTargetKBChange?.(kb)}
+                      onClick={() => {
+                        onTargetKBChange?.(kb);
+                        if (onEnableTargetKBChange && !enableTargetKB) {
+                          onEnableTargetKBChange(true);
+                        }
+                      }}
                       className={`px-3 py-1 text-xs font-bold rounded-lg transition-colors ${
-                        targetKB === kb
+                        targetKB === kb && enableTargetKB
                           ? "bg-indigo-600 text-white shadow-sm"
                           : "bg-white text-gray-700 hover:bg-gray-100 border border-gray-200"
                       } ${locked ? "opacity-50 cursor-not-allowed" : ""}`}
@@ -372,7 +377,13 @@ export default function CompressionControls({
                   type="number"
                   disabled={locked}
                   value={targetKB}
-                  onChange={(e) => onTargetKBChange?.(Math.max(1, Number(e.target.value)))}
+                  onChange={(e) => {
+                    const val = Math.max(1, Number(e.target.value));
+                    onTargetKBChange?.(val);
+                    if (onEnableTargetKBChange && !enableTargetKB) {
+                      onEnableTargetKBChange(true);
+                    }
+                  }}
                   className={`w-24 text-xs font-bold border border-gray-300 rounded-lg p-2 bg-white focus:ring-2 focus:ring-indigo-500 focus:outline-none ${
                     locked ? "bg-gray-100 cursor-not-allowed text-gray-500" : ""
                   }`}
@@ -383,7 +394,7 @@ export default function CompressionControls({
 
               {(minKB || maxKB) && (
                 <p className="text-[11px] text-amber-700 bg-amber-50 px-2.5 py-1 rounded-md border border-amber-200 inline-block font-medium">
-                  Portal Requirements: {minKB || 0} KB - {maxKB || "Any"} KB
+                  Portal Requirements: {minKB && minKB > 0 ? `${minKB} KB – ${maxKB || "Any"} KB` : `≤${maxKB || "Any"} KB`}
                 </p>
               )}
             </div>

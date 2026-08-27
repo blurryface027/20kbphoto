@@ -84,7 +84,11 @@ export default function ValidationBadges({
           label={checks.fileSize ? "File Size Matched" : "Invalid File Size"}
           info={
             requirements ? (
-              <>Actual: {formatSize(details.size)} (Req: {requirements.minKB}-{requirements.maxKB}KB)</>
+              requirements.minKB && requirements.minKB > 0 ? (
+                <>Actual: {formatSize(details.size)} (Req: {requirements.minKB}–{requirements.maxKB} KB)</>
+              ) : (
+                <>Actual: {formatSize(details.size)} (Req: ≤{requirements.maxKB} KB)</>
+              )
             ) : (
               <>{formatSize(details.size)}</>
             )

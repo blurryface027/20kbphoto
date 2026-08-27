@@ -302,6 +302,29 @@ export default function ToolPageClient({ slug }: Props) {
   const [targetKB, setTargetKB] = useState<number>(50);
   const [format, setFormat] = useState<string>(config.outputFormat || config.defaultFormat || "image/jpeg");
 
+  const handleTargetKBChange = (kb: number) => {
+    const validKB = Math.max(1, kb);
+    setTargetKB(validKB);
+    setEnableTargetKB(true);
+    if (originalFile) {
+      process(
+        originalFile,
+        targetWidth,
+        targetHeight,
+        scalePercent,
+        resizeMode,
+        true,
+        validKB,
+        format,
+        cropRect,
+        rotation,
+        flipHorizontal,
+        flipVertical,
+        dpi
+      );
+    }
+  };
+
   // Output Results State
   const [processedDataUrl, setProcessedDataUrl] = useState<string | undefined>(undefined);
   const [processedInfo, setProcessedInfo] = useState<ImageInfo | undefined>(undefined);
@@ -608,9 +631,28 @@ export default function ToolPageClient({ slug }: Props) {
           {activeTab === "resize" && (
             <CompressionControls
               targetKB={targetKB}
-              onTargetKBChange={setTargetKB}
+              onTargetKBChange={handleTargetKBChange}
               enableTargetKB={enableTargetKB}
-              onEnableTargetKBChange={setEnableTargetKB}
+              onEnableTargetKBChange={(enabled) => {
+                setEnableTargetKB(enabled);
+                if (originalFile) {
+                  process(
+                    originalFile,
+                    targetWidth,
+                    targetHeight,
+                    scalePercent,
+                    resizeMode,
+                    enabled,
+                    targetKB,
+                    format,
+                    cropRect,
+                    rotation,
+                    flipHorizontal,
+                    flipVertical,
+                    dpi
+                  );
+                }
+              }}
               targetWidth={targetWidth}
               onTargetWidthChange={handleTargetWidthChange}
               targetHeight={targetHeight}
@@ -627,7 +669,7 @@ export default function ToolPageClient({ slug }: Props) {
               showDimensions={config.showDimensions}
               showFormat={config.showFormat}
               showCompression={config.showCompression}
-              presetKBs={config.presetKBs}
+              presetKBs={config.presetKBs || [10, 20, 30, 40, 50, 60, 100, 150, 200, 300, 500]}
             />
           )}
 

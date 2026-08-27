@@ -71,7 +71,7 @@ export default function NameDateToolClient({ includeDate = true }: NameDateToolC
       const tempFile = new File([overlayResult.blob], file.name, { type: "image/jpeg" });
 
       // 3. Compress & Resize to exact boundaries
-      const finalResult = await compressToRange(tempFile, 10, kb, w, h, "image/jpeg");
+      const finalResult = await compressToRange(tempFile, 0, kb, w, h, "image/jpeg");
       setResult(finalResult);
     } catch (err) {
       console.error("Processing with overlay failed:", err);
@@ -302,7 +302,7 @@ export default function NameDateToolClient({ includeDate = true }: NameDateToolC
               <ValidationBadges
                 checks={{
                   dimensions: true,
-                  fileSize: (result.size / 1024) >= 10 && (result.size / 1024) <= targetKB,
+                  fileSize: (result.size / 1024) <= targetKB,
                   format: true,
                 }}
                 details={{
@@ -314,7 +314,7 @@ export default function NameDateToolClient({ includeDate = true }: NameDateToolC
                 requirements={{
                   width: targetWidth,
                   height: targetHeight,
-                  minKB: 10,
+                  minKB: 0,
                   maxKB: targetKB,
                   format: "JPG",
                 }}
@@ -324,7 +324,7 @@ export default function NameDateToolClient({ includeDate = true }: NameDateToolC
                 blob={result.blob}
                 filename="photo-with-name-date.jpg"
                 onReset={handleReset}
-                isValid={(result.size / 1024) >= 10 && (result.size / 1024) <= targetKB}
+                isValid={(result.size / 1024) <= targetKB}
               />
             </>
           )}

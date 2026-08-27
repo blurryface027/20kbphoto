@@ -29,6 +29,28 @@ export default function KBToolClient({ targetKB: initialTargetKB }: KBToolClient
   const [targetHeight, setTargetHeight] = useState<number>(0);
   const [keepAspectRatio, setKeepAspectRatio] = useState<boolean>(true);
 
+  useEffect(() => {
+    setCurrentTargetKB(initialTargetKB);
+  }, [initialTargetKB]);
+
+  const handleTargetKBChange = (kb: number) => {
+    const validKB = Math.max(1, kb);
+    setCurrentTargetKB(validKB);
+    setEnableTargetKB(true);
+    if (originalFile) {
+      process(
+        originalFile,
+        validKB,
+        format,
+        scalePercent,
+        resizeMode,
+        targetWidth,
+        targetHeight,
+        true
+      );
+    }
+  };
+
   const handleFileSelect = async (file: File) => {
     setOriginalFile(file);
     setIsProcessing(true);
@@ -223,9 +245,23 @@ export default function KBToolClient({ targetKB: initialTargetKB }: KBToolClient
         <div className="space-y-6 max-w-4xl mx-auto">
           <CompressionControls
             targetKB={currentTargetKB}
-            onTargetKBChange={setCurrentTargetKB}
+            onTargetKBChange={handleTargetKBChange}
             enableTargetKB={enableTargetKB}
-            onEnableTargetKBChange={setEnableTargetKB}
+            onEnableTargetKBChange={(enabled) => {
+              setEnableTargetKB(enabled);
+              if (originalFile) {
+                process(
+                  originalFile,
+                  currentTargetKB,
+                  format,
+                  scalePercent,
+                  resizeMode,
+                  targetWidth,
+                  targetHeight,
+                  enabled
+                );
+              }
+            }}
             targetWidth={targetWidth}
             onTargetWidthChange={handleTargetWidthChange}
             targetHeight={targetHeight}
@@ -385,7 +421,7 @@ export default function KBToolClient({ targetKB: initialTargetKB }: KBToolClient
             <button
               key={size}
               type="button"
-              onClick={() => setCurrentTargetKB(size)}
+              onClick={() => handleTargetKBChange(size)}
               className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all border ${
                 currentTargetKB === size
                   ? "bg-indigo-600 text-white border-indigo-600 shadow-sm"

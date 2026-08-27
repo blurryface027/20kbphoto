@@ -457,6 +457,21 @@ export async function processImage(file: File | Blob, options: ProcessOptions = 
       compressed.blob = await setDPIInBlob(compressed.blob, options.dpi);
       compressed.dpi = options.dpi;
       compressed.size = compressed.blob.size;
+      const maxB = maxKB > 0 ? Math.floor(maxKB * 1024) : 0;
+      if (maxB > 0 && compressed.blob.size > maxB) {
+        const retryCompressed = await compressToRange(
+          compressed.blob,
+          minKB,
+          Math.floor(maxKB * 0.97),
+          compressed.width,
+          compressed.height,
+          mimeType
+        );
+        retryCompressed.blob = await setDPIInBlob(retryCompressed.blob, options.dpi);
+        retryCompressed.dpi = options.dpi;
+        retryCompressed.size = retryCompressed.blob.size;
+        return retryCompressed;
+      }
     }
     return compressed;
   }
@@ -490,20 +505,19 @@ export async function compressToRange(
   const img = await loadImage(file);
   const origW = img.width;
   const origH = img.height;
-  const w = targetWidth > 0 ? targetWidth : origW;
-  const h = targetHeight > 0 ? targetHeight : origH;
+  const initialW = targetWidth > 0 ? targetWidth : origW;
+  const initialH = targetHeight > 0 ? targetHeight : origH;
 
   const mimeType = getMimeType(format || (file as File).type);
   const minBytes = Math.max(0, Math.ceil(minKB * 1024));
   const maxBytes = maxKB > 0 ? Math.floor(maxKB * 1024) : 5000 * 1024;
   
-  // Aim for upper budget (98% of maxBytes to leave tiny headroom for DPI headers)
-  const maxTargetBytes = Math.max(minBytes, Math.floor(maxBytes * 0.98));
-  // Target bytes for padding when size < minBytes (92% of allowed range budget)
+  // Aim for 98.5% of maxBytes to leave a tiny safety buffer for metadata/DPI header insertion
+  const maxTargetBytes = Math.max(minBytes, Math.floor(maxBytes * 0.985));
   const targetPadBytes = Math.floor(minBytes + (maxBytes - minBytes) * 0.92);
 
-  let currentWidth = w;
-  let currentHeight = h;
+  let currentWidth = initialW;
+  let currentHeight = initialH;
 
   const canvas = document.createElement('canvas');
   canvas.width = currentWidth;
@@ -530,9 +544,9 @@ export async function compressToRange(
     let blob = await new Promise<Blob>((resolve) => canvas.toBlob((b) => resolve(b!), mimeType));
     
     let iterations = 0;
-    while (blob.size > maxTargetBytes && iterations < 25 && targetWidth === 0 && currentWidth > 20 && currentHeight > 20) {
-      currentWidth = Math.max(10, Math.floor(currentWidth * 0.92));
-      currentHeight = Math.max(10, Math.floor(currentHeight * 0.92));
+    while (blob.size > maxTargetBytes && iterations < 35 && currentWidth > 10 && currentHeight > 10) {
+      currentWidth = Math.max(10, Math.floor(currentWidth * 0.90));
+      currentHeight = Math.max(10, Math.floor(currentHeight * 0.90));
       renderCanvas(currentWidth, currentHeight);
       blob = await new Promise<Blob>((resolve) => canvas.toBlob((b) => resolve(b!), mimeType));
       iterations++;
@@ -545,10 +559,9 @@ export async function compressToRange(
     return blobToResult(blob, currentWidth, currentHeight, 1.0);
   }
 
-  // Adaptive Quality Binary Search for JPEG / WebP
-  // 1. Try maximum quality (1.0) first
+  // --- JPEG / WebP adaptive quality + downscaling algorithm ---
+  // 1. Try maximum quality (1.0) first at initial dimensions
   let maxQBlob = await new Promise<Blob>((resolve) => canvas.toBlob((b) => resolve(b!), mimeType, 1.0));
-  
   if (maxQBlob.size <= maxTargetBytes) {
     let finalBlob = maxQBlob;
     if (minBytes > 0 && finalBlob.size < minBytes) {
@@ -557,69 +570,86 @@ export async function compressToRange(
     return blobToResult(finalBlob, currentWidth, currentHeight, 1.0);
   }
 
-  // 2. Binary search to find HIGHEST quality q in [0.01, 0.99] where blob.size <= maxTargetBytes
-  let low = 0.01;
-  let high = 0.99;
-  let bestBlob: Blob | null = null;
-  let bestQuality = 0.95;
-  let iterations = 0;
+  // Helper to binary search JPEG/WebP quality on canvas for targetBytes
+  const searchQuality = async (targetB: number): Promise<{ blob: Blob | null; quality: number }> => {
+    let low = 0.01;
+    let high = 0.99;
+    let bestB: Blob | null = null;
+    let bestQ = 0.95;
 
-  while (iterations < 14) {
-    const q = low + (high - low) / 2;
-    const blob = await new Promise<Blob>((resolve) => canvas.toBlob((b) => resolve(b!), mimeType, q));
-    const size = blob.size;
+    for (let i = 0; i < 15; i++) {
+      const q = low + (high - low) / 2;
+      const b = await new Promise<Blob>((resolve) => canvas.toBlob((res) => resolve(res!), mimeType, q));
+      if (b.size <= targetB) {
+        bestB = b;
+        bestQ = q;
+        low = q; // try higher quality
+      } else {
+        high = q; // try lower quality
+      }
+    }
+    return { blob: bestB, quality: bestQ };
+  };
 
-    if (size <= maxTargetBytes) {
-      bestBlob = blob;
-      bestQuality = q;
-      low = q; // try higher quality
-    } else {
-      high = q; // try lower quality
+  // 2. Binary search quality at initial requested dimensions
+  let { blob: bestBlob, quality: bestQuality } = await searchQuality(maxTargetBytes);
+
+  // 3. If quality reduction alone cannot satisfy target size (e.g. 2560x2560 px at q=0.01 is > maxTargetBytes),
+  // iteratively scale down dimensions and retry quality binary search until blob.size <= maxTargetBytes
+  let scaleCount = 0;
+  while (!bestBlob && scaleCount < 30 && currentWidth > 15 && currentHeight > 15) {
+    currentWidth = Math.max(10, Math.floor(currentWidth * 0.88));
+    currentHeight = Math.max(10, Math.floor(currentHeight * 0.88));
+    renderCanvas(currentWidth, currentHeight);
+
+    const testMax = await new Promise<Blob>((resolve) => canvas.toBlob((b) => resolve(b!), mimeType, 0.95));
+    if (testMax.size <= maxTargetBytes) {
+      bestBlob = testMax;
+      bestQuality = 0.95;
+      break;
     }
 
-    iterations++;
+    const res = await searchQuality(maxTargetBytes);
+    if (res.blob) {
+      bestBlob = res.blob;
+      bestQuality = res.quality;
+      break;
+    }
+
+    scaleCount++;
   }
 
-  // Fallback: If unfixed dimensions, downscale iteratively directly from img
-  if (!bestBlob && targetWidth === 0 && currentWidth > 30) {
-    let scaleIter = 0;
-    while (!bestBlob && scaleIter < 20 && currentWidth > 30 && currentHeight > 30) {
-      currentWidth = Math.max(20, Math.floor(currentWidth * 0.88));
-      currentHeight = Math.max(20, Math.floor(currentHeight * 0.88));
+  // 4. Final Safety Guarantee — Ensure returned blob NEVER exceeds maxBytes!
+  let finalBlob = bestBlob;
+  let finalQuality = bestQuality;
+
+  if (!finalBlob || finalBlob.size > maxBytes) {
+    let emergencyIter = 0;
+    while ((!finalBlob || finalBlob.size > maxBytes) && emergencyIter < 20 && currentWidth > 10 && currentHeight > 10) {
+      currentWidth = Math.max(10, Math.floor(currentWidth * 0.85));
+      currentHeight = Math.max(10, Math.floor(currentHeight * 0.85));
       renderCanvas(currentWidth, currentHeight);
-      
-      const testMaxBlob = await new Promise<Blob>((resolve) => canvas.toBlob((b) => resolve(b!), mimeType, 0.95));
-      if (testMaxBlob.size <= maxTargetBytes) {
-        bestBlob = testMaxBlob;
-        bestQuality = 0.95;
+
+      const q = Math.max(0.01, (finalQuality || 0.5) * 0.8);
+      const b = await new Promise<Blob>((resolve) => canvas.toBlob((res) => resolve(res!), mimeType, q));
+      if (b.size <= maxBytes) {
+        finalBlob = b;
+        finalQuality = q;
         break;
       }
-
-      low = 0.01;
-      high = 0.95;
-      for (let i = 0; i < 10; i++) {
-        const q = low + (high - low) / 2;
-        const b = await new Promise<Blob>((resolve) => canvas.toBlob((b) => resolve(b!), mimeType, q));
-        if (b.size <= maxTargetBytes) {
-          bestBlob = b;
-          bestQuality = q;
-          low = q;
-        } else {
-          high = q;
-        }
-      }
-      scaleIter++;
+      finalBlob = b;
+      finalQuality = q;
+      emergencyIter++;
     }
   }
 
-  let finalBlob = bestBlob || (await new Promise<Blob>((resolve) => canvas.toBlob((b) => resolve(b!), mimeType, 0.1)));
-  const finalQuality = bestBlob ? bestQuality : 0.1;
-
-  if (minBytes > 0 && finalBlob.size < minBytes) {
-    finalBlob = await padBlobToMinBytes(finalBlob, minBytes, targetPadBytes);
+  const resultBlob = finalBlob || maxQBlob;
+  let validatedBlob = resultBlob;
+  if (minBytes > 0 && validatedBlob.size < minBytes) {
+    validatedBlob = await padBlobToMinBytes(validatedBlob, minBytes, targetPadBytes);
   }
 
-  return blobToResult(finalBlob, currentWidth, currentHeight, finalQuality);
+  return blobToResult(validatedBlob, currentWidth, currentHeight, finalQuality || 0.1);
 }
 
 export async function convertFormat(
