@@ -12,6 +12,7 @@ import {
   type ImageInfo,
   type ProcessingResult,
 } from "@/lib/imageProcessor";
+import { trackEvent } from "@/lib/gtag";
 import { HiOutlineCreditCard, HiOutlineCamera, HiOutlinePencilSquare, HiOutlineCheckCircle } from "react-icons/hi2";
 
 export default function PanCardToolClient() {
@@ -34,6 +35,7 @@ export default function PanCardToolClient() {
       const w = m === "photo" ? 213 : 444;
       const h = m === "photo" ? 213 : 205;
       const kb = m === "photo" ? 50 : 30;
+      const toolSlug = `pan-card-${m}-resizer`;
 
       const res = await processImage(file, {
         width: w,
@@ -44,6 +46,28 @@ export default function PanCardToolClient() {
         dpi: 300,
       });
       setResult(res);
+
+      if (m === "signature") {
+        trackEvent("signature_resize", {
+          tool_name: toolSlug,
+          target_width: w,
+          target_height: h,
+          output_format: res.format,
+        });
+      } else {
+        trackEvent("image_resize", {
+          tool_name: toolSlug,
+          target_width: w,
+          target_height: h,
+          output_format: res.format,
+        });
+      }
+
+      trackEvent("image_compress", {
+        tool_name: toolSlug,
+        target_kb: kb,
+        output_format: res.format,
+      });
     } catch (err) {
       console.error("PAN card image processing failed:", err);
     } finally {
@@ -155,6 +179,7 @@ export default function PanCardToolClient() {
           onFileSelect={handleFileSelect}
           label={`Upload ${mode === "photo" ? "Photograph" : "Signature"} for PAN Card`}
           sublabel={`Will be resized to exact ${currentWidth}×${currentHeight} px and compressed to 10–${maxKB}KB`}
+          toolName={`pan-card-${mode}-resizer`}
         />
       ) : (
         <div className="space-y-6 max-w-4xl mx-auto">
@@ -205,6 +230,11 @@ export default function PanCardToolClient() {
                 filename={mode === "photo" ? "pancard-photo-213x213.jpg" : "pancard-signature-444x205.jpg"}
                 onReset={handleReset}
                 isValid={isSizeValid}
+                toolName={`pan-card-${mode}-resizer`}
+                outputFormat={result.format}
+                targetKB={maxKB}
+                targetWidth={currentWidth}
+                targetHeight={currentHeight}
               />
             </>
           )}

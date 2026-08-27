@@ -20,6 +20,7 @@ import {
   type ValidationResult,
   type CropRect,
 } from "@/lib/imageProcessor";
+import { trackEvent } from "@/lib/gtag";
 
 interface ExamToolClientProps {
   exam: Exam;
@@ -69,6 +70,31 @@ export default function ExamToolClient({ exam, type }: ExamToolClientProps) {
       });
 
       setResult(res);
+
+      const examToolSlug = `${exam.slug}-${type}-resizer`;
+      if (type === "signature") {
+        trackEvent("signature_resize", {
+          tool_name: examToolSlug,
+          target_width: requirement.width,
+          target_height: requirement.height,
+          output_format: res.format,
+        });
+      } else {
+        trackEvent("image_resize", {
+          tool_name: examToolSlug,
+          target_width: requirement.width,
+          target_height: requirement.height,
+          output_format: res.format,
+        });
+      }
+
+      if (requirement.maxKB) {
+        trackEvent("image_compress", {
+          tool_name: examToolSlug,
+          target_kb: requirement.maxKB,
+          output_format: res.format,
+        });
+      }
 
       const val = await validateOutput(res.blob, {
         width: requirement.width,
@@ -150,6 +176,7 @@ export default function ExamToolClient({ exam, type }: ExamToolClientProps) {
             onFileSelect={handleFileSelect}
             label={`Upload ${type} for ${exam.name}`}
             sublabel={`Will be resized to exact ${requirement.width}×${requirement.height} px and ${requirement.minKB}-${requirement.maxKB}KB (${targetDpi} DPI)`}
+            toolName={`${exam.slug}-${type}-resizer`}
           />
         ) : (
           <div className="space-y-6">
@@ -194,6 +221,11 @@ export default function ExamToolClient({ exam, type }: ExamToolClientProps) {
                   filename={`${exam.slug}-${type}.${requirement.format.toLowerCase()}`}
                   onReset={handleReset}
                   isValid={validation.valid}
+                  toolName={`${exam.slug}-${type}-resizer`}
+                  outputFormat={result.format}
+                  targetKB={requirement.maxKB}
+                  targetWidth={requirement.width}
+                  targetHeight={requirement.height}
                 />
               </>
             )}

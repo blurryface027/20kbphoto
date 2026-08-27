@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { trackEvent } from "@/lib/gtag";
 import {
   HiOutlineAdjustmentsHorizontal,
   HiOutlineLockClosed,
@@ -42,6 +43,7 @@ interface CompressionControlsProps {
   showCompression?: boolean;
   presetKBs?: number[];
   locked?: boolean;
+  toolName?: string;
 }
 
 export default function CompressionControls({
@@ -69,6 +71,7 @@ export default function CompressionControls({
   showCompression = true,
   presetKBs = [10, 20, 30, 40, 50, 60, 100, 150, 200, 300, 500],
   locked = false,
+  toolName = "image-resizer",
 }: CompressionControlsProps) {
   const percentagePresets = [25, 50, 75, 100, 125, 150, 200];
 
@@ -303,6 +306,11 @@ export default function CompressionControls({
                       key={preset.label}
                       type="button"
                       onClick={() => {
+                        trackEvent("dimension_preset_selected", {
+                          tool_name: toolName,
+                          target_width: preset.w,
+                          target_height: preset.h,
+                        });
                         onTargetWidthChange?.(preset.w);
                         onTargetHeightChange?.(preset.h);
                       }}
@@ -354,6 +362,10 @@ export default function CompressionControls({
                       type="button"
                       disabled={locked}
                       onClick={() => {
+                        trackEvent("kb_preset_selected", {
+                          tool_name: toolName,
+                          target_kb: kb,
+                        });
                         onTargetKBChange?.(kb);
                         if (onEnableTargetKBChange && !enableTargetKB) {
                           onEnableTargetKBChange(true);

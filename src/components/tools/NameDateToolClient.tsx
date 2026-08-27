@@ -13,6 +13,7 @@ import {
   type ImageInfo,
   type ProcessingResult,
 } from "@/lib/imageProcessor";
+import { trackEvent } from "@/lib/gtag";
 import { HiOutlinePencilSquare } from "react-icons/hi2";
 
 function getTodayDDMMYYYY(): string {
@@ -28,6 +29,7 @@ interface NameDateToolClientProps {
 }
 
 export default function NameDateToolClient({ includeDate = true }: NameDateToolClientProps) {
+  const toolSlug = includeDate ? "add-name-and-date-to-photo" : "add-name-to-photo";
   const [originalFile, setOriginalFile] = useState<File | null>(null);
   const [originalInfo, setOriginalInfo] = useState<ImageInfo | undefined>(undefined);
   const [name, setName] = useState<string>("CANDIDATE NAME");
@@ -73,6 +75,19 @@ export default function NameDateToolClient({ includeDate = true }: NameDateToolC
       // 3. Compress & Resize to exact boundaries
       const finalResult = await compressToRange(tempFile, 0, kb, w, h, "image/jpeg");
       setResult(finalResult);
+
+      trackEvent("image_resize", {
+        tool_name: toolSlug,
+        target_width: finalResult.width,
+        target_height: finalResult.height,
+        output_format: finalResult.format,
+      });
+
+      trackEvent("image_compress", {
+        tool_name: toolSlug,
+        target_kb: kb,
+        output_format: finalResult.format,
+      });
     } catch (err) {
       console.error("Processing with overlay failed:", err);
     } finally {
@@ -130,6 +145,7 @@ export default function NameDateToolClient({ includeDate = true }: NameDateToolC
           onFileSelect={handleFileSelect}
           label="Upload photo to add name & date"
           sublabel="Supports JPG, PNG, WEBP files up to 10MB"
+          toolName={toolSlug}
         />
       ) : (
         <div className="space-y-6 max-w-4xl mx-auto">
@@ -325,6 +341,11 @@ export default function NameDateToolClient({ includeDate = true }: NameDateToolC
                 filename="photo-with-name-date.jpg"
                 onReset={handleReset}
                 isValid={(result.size / 1024) <= targetKB}
+                toolName={toolSlug}
+                outputFormat={result.format}
+                targetKB={targetKB}
+                targetWidth={result.width}
+                targetHeight={result.height}
               />
             </>
           )}

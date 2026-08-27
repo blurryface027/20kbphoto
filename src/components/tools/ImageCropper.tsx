@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef, useCallback } from "react";
+import { trackEvent } from "@/lib/gtag";
 import {
   HiOutlineScissors,
   HiSparkles,
@@ -17,6 +18,7 @@ interface ImageCropperProps {
   onCropChange: (rect: CropRect) => void;
   onResetCrop: () => void;
   isSignatureTool?: boolean;
+  toolName?: string;
 }
 
 type AspectRatioOption = "free" | "1:1" | "4:3" | "3:4" | "16:9" | "passport" | "signature";
@@ -28,6 +30,7 @@ export default function ImageCropper({
   onCropChange,
   onResetCrop,
   isSignatureTool = false,
+  toolName = "crop-image",
 }: ImageCropperProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -138,6 +141,9 @@ export default function ImageCropper({
     try {
       const autoRect = await autoCropSignature(file, 240, 16);
       if (autoRect) {
+        trackEvent("image_crop", {
+          tool_name: toolName,
+        });
         onCropChange(autoRect);
       }
     } catch (err) {

@@ -9,6 +9,7 @@ import PreviewPanel from "@/components/tools/PreviewPanel";
 import ValidationBadges from "@/components/tools/ValidationBadges";
 import DownloadPanel from "@/components/tools/DownloadPanel";
 import { processImage, getImageInfo, getMimeType, type ImageInfo, type ProcessingResult } from "@/lib/imageProcessor";
+import { trackEvent } from "@/lib/gtag";
 
 interface KBToolClientProps {
   targetKB: number;
@@ -91,6 +92,12 @@ export default function KBToolClient({ targetKB: initialTargetKB }: KBToolClient
         height: mode === "dimensions" ? h : undefined,
       });
       setResult(res);
+
+      trackEvent("image_compress", {
+        tool_name: `resize-image-to-${currentTargetKB}kb`,
+        target_kb: kb,
+        output_format: res.format,
+      });
     } catch (err) {
       console.error("Compression processing error:", err);
     } finally {
@@ -240,6 +247,7 @@ export default function KBToolClient({ targetKB: initialTargetKB }: KBToolClient
         <UploadDropzone
           onFileSelect={handleFileSelect}
           label={`Upload image to resize to ${currentTargetKB}KB`}
+          toolName={`resize-image-to-${currentTargetKB}kb`}
         />
       ) : (
         <div className="space-y-6 max-w-4xl mx-auto">
@@ -279,6 +287,7 @@ export default function KBToolClient({ targetKB: initialTargetKB }: KBToolClient
             showFormat={true}
             showCompression={true}
             presetKBs={[10, 20, 30, 40, 50, 60, 100, 150, 200, 300, 500]}
+            toolName={`resize-image-to-${currentTargetKB}kb`}
           />
 
           <PreviewPanel
@@ -327,6 +336,11 @@ export default function KBToolClient({ targetKB: initialTargetKB }: KBToolClient
                 filename={getDownloadFilename()}
                 onReset={handleReset}
                 isValid={isSizeValid}
+                toolName={`resize-image-to-${currentTargetKB}kb`}
+                outputFormat={result.format}
+                targetKB={currentTargetKB}
+                targetWidth={result.width}
+                targetHeight={result.height}
               />
             </>
           )}

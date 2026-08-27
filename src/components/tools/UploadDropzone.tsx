@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useRef, DragEvent, ChangeEvent } from "react";
+import { trackEvent } from "@/lib/gtag";
 
 interface UploadDropzoneProps {
   onFileSelect: (file: File) => void;
@@ -8,6 +9,7 @@ interface UploadDropzoneProps {
   maxSizeMB?: number;
   label?: string;
   sublabel?: string;
+  toolName?: string;
 }
 
 export default function UploadDropzone({
@@ -16,6 +18,7 @@ export default function UploadDropzone({
   maxSizeMB = 10,
   label = "Click or drop image to start",
   sublabel = "JPG, PNG, or WEBP up to 10MB",
+  toolName,
 }: UploadDropzoneProps) {
   const [isDragging, setIsDragging] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -65,6 +68,11 @@ export default function UploadDropzone({
       }
       return;
     }
+
+    trackEvent("image_upload", {
+      tool_name: toolName || "image_upload_dropzone",
+      file_type: file.type || "image/unknown",
+    });
 
     onFileSelect(file);
   };

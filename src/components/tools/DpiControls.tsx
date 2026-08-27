@@ -2,13 +2,15 @@
 
 import React from "react";
 import { HiOutlineAdjustmentsVertical, HiOutlineInformationCircle } from "react-icons/hi2";
+import { trackEvent } from "@/lib/gtag";
 
 interface DpiControlsProps {
   dpi: number;
   onDpiChange: (dpi: number) => void;
+  toolName?: string;
 }
 
-export default function DpiControls({ dpi, onDpiChange }: DpiControlsProps) {
+export default function DpiControls({ dpi, onDpiChange, toolName = "change-image-dpi" }: DpiControlsProps) {
   const presets = [
     { value: 72, label: "72 DPI", desc: "Web & Screen Display" },
     { value: 96, label: "96 DPI", desc: "Standard Monitor" },
@@ -17,6 +19,14 @@ export default function DpiControls({ dpi, onDpiChange }: DpiControlsProps) {
     { value: 300, label: "300 DPI", desc: "Print & PAN/SSC Standard" },
     { value: 600, label: "600 DPI", desc: "Ultra High Resolution" },
   ];
+
+  const handleSelectDpi = (val: number) => {
+    trackEvent("dpi_change", {
+      tool_name: toolName,
+      target_dpi: val,
+    });
+    onDpiChange(val);
+  };
 
   return (
     <div className="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm space-y-4">
@@ -41,7 +51,7 @@ export default function DpiControls({ dpi, onDpiChange }: DpiControlsProps) {
             <button
               key={p.value}
               type="button"
-              onClick={() => onDpiChange(p.value)}
+              onClick={() => handleSelectDpi(p.value)}
               className={`p-3 rounded-xl border text-left transition-all ${
                 dpi === p.value
                   ? "bg-indigo-600 text-white border-indigo-600 shadow-sm"

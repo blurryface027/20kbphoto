@@ -18,6 +18,7 @@ import {
   type ValidationResult,
   type CropRect,
 } from "@/lib/imageProcessor";
+import { trackEvent } from "@/lib/gtag";
 import {
   HiOutlineScissors,
   HiOutlineArrowPath,
@@ -413,6 +414,31 @@ export default function ToolPageClient({ slug }: Props) {
         dpi: result.dpi,
       });
 
+      // Track successful processing events
+      if (slug.includes("signature")) {
+        trackEvent("signature_resize", {
+          tool_name: slug,
+          target_width: result.width,
+          target_height: result.height,
+          output_format: result.format,
+        });
+      } else if (config.category === "resize" || mode === "dimensions" || pct !== 100) {
+        trackEvent("image_resize", {
+          tool_name: slug,
+          target_width: result.width,
+          target_height: result.height,
+          output_format: result.format,
+        });
+      }
+
+      if (useKB || config.category === "compress") {
+        trackEvent("image_compress", {
+          tool_name: slug,
+          target_kb: kb,
+          output_format: result.format,
+        });
+      }
+
       const val = await validateOutput(result.blob, {
         width: result.width,
         height: result.height,
@@ -538,6 +564,7 @@ export default function ToolPageClient({ slug }: Props) {
           accept={config.accept || "image/jpeg,image/png,image/webp"}
           label={config.uploadLabel || `Upload image to use ${config.title}`}
           sublabel={config.uploadSublabel || "Supports JPG, PNG, WEBP, GIF files up to 10MB"}
+          toolName={slug}
         />
       ) : (
         <div className="space-y-6 max-w-4xl mx-auto">
@@ -605,6 +632,7 @@ export default function ToolPageClient({ slug }: Props) {
               onCropChange={setCropRect}
               onResetCrop={() => setCropRect(null)}
               isSignatureTool={slug === "signature-cropper"}
+              toolName={slug}
             />
           )}
 
@@ -621,11 +649,12 @@ export default function ToolPageClient({ slug }: Props) {
                 setFlipHorizontal(false);
                 setFlipVertical(false);
               }}
+              toolName={slug}
             />
           )}
 
           {activeTab === "dpi" && (
-            <DpiControls dpi={dpi} onDpiChange={setDpi} />
+            <DpiControls dpi={dpi} onDpiChange={setDpi} toolName={slug} />
           )}
 
           {activeTab === "resize" && (
@@ -670,6 +699,7 @@ export default function ToolPageClient({ slug }: Props) {
               showFormat={config.showFormat}
               showCompression={config.showCompression}
               presetKBs={config.presetKBs || [10, 20, 30, 40, 50, 60, 100, 150, 200, 300, 500]}
+              toolName={slug}
             />
           )}
 
@@ -704,6 +734,11 @@ export default function ToolPageClient({ slug }: Props) {
                 filename={getDownloadFilename()}
                 onReset={handleReset}
                 isValid={validation?.valid}
+                toolName={slug}
+                outputFormat={processedInfo.format}
+                targetKB={enableTargetKB ? targetKB : undefined}
+                targetWidth={processedInfo.width}
+                targetHeight={processedInfo.height}
               />
             </>
           )}

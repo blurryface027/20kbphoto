@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import { trackEvent } from "@/lib/gtag";
 
 interface DownloadPanelProps {
   blob?: Blob;
@@ -8,6 +9,11 @@ interface DownloadPanelProps {
   onReset: () => void;
   examName?: string;
   isValid?: boolean;
+  toolName?: string;
+  outputFormat?: string;
+  targetKB?: number;
+  targetWidth?: number;
+  targetHeight?: number;
 }
 
 export default function DownloadPanel({
@@ -16,6 +22,11 @@ export default function DownloadPanel({
   onReset,
   examName,
   isValid = true,
+  toolName,
+  outputFormat,
+  targetKB,
+  targetWidth,
+  targetHeight,
 }: DownloadPanelProps) {
   const [downloadUrl, setDownloadUrl] = useState<string | null>(null);
 
@@ -31,6 +42,14 @@ export default function DownloadPanel({
 
   const handleDownload = () => {
     if (downloadUrl) {
+      trackEvent("image_download", {
+        tool_name: toolName || examName || "photo-resizer",
+        output_format: outputFormat || (blob?.type || "image/jpeg"),
+        target_kb: targetKB,
+        target_width: targetWidth,
+        target_height: targetHeight,
+      });
+
       const a = document.createElement("a");
       a.href = downloadUrl;
       a.download = filename;

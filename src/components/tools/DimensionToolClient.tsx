@@ -7,6 +7,7 @@ import PreviewPanel from "@/components/tools/PreviewPanel";
 import ValidationBadges from "@/components/tools/ValidationBadges";
 import DownloadPanel from "@/components/tools/DownloadPanel";
 import { resizeImage, getImageInfo, type ImageInfo, type ProcessingResult } from "@/lib/imageProcessor";
+import { trackEvent } from "@/lib/gtag";
 
 interface DimensionToolClientProps {
   targetWidth: number;
@@ -24,6 +25,9 @@ export default function DimensionToolClient({
   const [result, setResult] = useState<ProcessingResult | null>(null);
   const [isProcessing, setIsProcessing] = useState(false);
 
+  const isSig = type === "signature";
+  const toolSlug = `${isSig ? "signature" : "image"}-resizer-${targetWidth}x${targetHeight}`;
+
   const handleFileSelect = async (file: File) => {
     setOriginalFile(file);
     setIsProcessing(true);
@@ -32,6 +36,22 @@ export default function DimensionToolClient({
       setOriginalInfo(info);
       const res = await resizeImage(file, targetWidth, targetHeight);
       setResult(res);
+
+      if (isSig) {
+        trackEvent("signature_resize", {
+          tool_name: toolSlug,
+          target_width: targetWidth,
+          target_height: targetHeight,
+          output_format: res.format,
+        });
+      } else {
+        trackEvent("image_resize", {
+          tool_name: toolSlug,
+          target_width: targetWidth,
+          target_height: targetHeight,
+          output_format: res.format,
+        });
+      }
     } catch (err) {
       console.error("Resizing failed:", err);
     } finally {
@@ -45,7 +65,6 @@ export default function DimensionToolClient({
     setResult(null);
   };
 
-  const isSig = type === "signature";
   const title = `Resize ${isSig ? "Signature" : "Image"} to ${targetWidth}×${targetHeight} Pixels`;
   const subtitle = `Crop and resize your ${isSig ? "signature" : "photo"} to exactly ${targetWidth}×${targetHeight} px online. Perfect for official exam forms.`;
 
@@ -72,6 +91,7 @@ export default function DimensionToolClient({
         <UploadDropzone
           onFileSelect={handleFileSelect}
           label={`Upload ${isSig ? "signature" : "image"} to resize to ${targetWidth}×${targetHeight} px`}
+          toolName={toolSlug}
         />
       ) : (
         <div className="space-y-6 max-w-4xl mx-auto">
@@ -121,6 +141,10 @@ export default function DimensionToolClient({
                 filename={`${isSig ? "signature" : "photo"}-${targetWidth}x${targetHeight}.jpg`}
                 onReset={handleReset}
                 isValid={result.width === targetWidth && result.height === targetHeight}
+                toolName={toolSlug}
+                outputFormat={result.format}
+                targetWidth={targetWidth}
+                targetHeight={targetHeight}
               />
             </>
           )}

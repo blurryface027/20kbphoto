@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { trackEvent } from "@/lib/gtag";
 import {
   HiOutlineArrowPath,
   HiOutlineArrowsRightLeft,
@@ -17,6 +18,7 @@ interface RotateFlipControlsProps {
   flipVertical: boolean;
   onFlipVerticalChange: (flip: boolean) => void;
   onReset: () => void;
+  toolName?: string;
 }
 
 export default function RotateFlipControls({
@@ -27,10 +29,16 @@ export default function RotateFlipControls({
   flipVertical,
   onFlipVerticalChange,
   onReset,
+  toolName = "rotate-image",
 }: RotateFlipControlsProps) {
   const handleRotateStep = (step: number) => {
     const next = (rotation + step) % 360;
-    onRotationChange(next < 0 ? next + 360 : next);
+    const finalAngle = next < 0 ? next + 360 : next;
+    trackEvent("image_rotate", {
+      tool_name: toolName,
+      rotation_angle: finalAngle,
+    });
+    onRotationChange(finalAngle);
   };
 
   return (
@@ -114,7 +122,16 @@ export default function RotateFlipControls({
           <div className="grid grid-cols-2 gap-3">
             <button
               type="button"
-              onClick={() => onFlipHorizontalChange(!flipHorizontal)}
+              onClick={() => {
+                const nextVal = !flipHorizontal;
+                if (nextVal) {
+                  trackEvent("image_flip", {
+                    tool_name: toolName,
+                    flip_direction: "horizontal",
+                  });
+                }
+                onFlipHorizontalChange(nextVal);
+              }}
               className={`flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs font-bold border transition-all ${
                 flipHorizontal
                   ? "bg-indigo-600 text-white border-indigo-600 shadow-sm"
@@ -127,7 +144,16 @@ export default function RotateFlipControls({
 
             <button
               type="button"
-              onClick={() => onFlipVerticalChange(!flipVertical)}
+              onClick={() => {
+                const nextVal = !flipVertical;
+                if (nextVal) {
+                  trackEvent("image_flip", {
+                    tool_name: toolName,
+                    flip_direction: "vertical",
+                  });
+                }
+                onFlipVerticalChange(nextVal);
+              }}
               className={`flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs font-bold border transition-all ${
                 flipVertical
                   ? "bg-indigo-600 text-white border-indigo-600 shadow-sm"
