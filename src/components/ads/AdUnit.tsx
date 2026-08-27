@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 declare global {
   interface Window {
@@ -28,7 +28,9 @@ export default function AdUnit({
   label = "Advertisement",
 }: AdUnitProps) {
   const containerRef = useRef<HTMLDivElement>(null);
+  const insRef = useRef<HTMLModElement>(null);
   const initializedRef = useRef<boolean>(false);
+  const [isFilled, setIsFilled] = useState<boolean>(false);
 
   useEffect(() => {
     if (initializedRef.current) return;
@@ -44,18 +46,70 @@ export default function AdUnit({
     }
   }, []);
 
+  useEffect(() => {
+    const insEl = insRef.current;
+    if (!insEl) return;
+
+    const checkFilledStatus = () => {
+      const status = insEl.getAttribute("data-ad-status");
+      const hasIframe = insEl.querySelector("iframe") !== null;
+      const computedStyle = window.getComputedStyle(insEl);
+      const isHidden = insEl.style.display === "none" || computedStyle.display === "none";
+      const height = insEl.getBoundingClientRect().height;
+
+      if (status === "filled" || (hasIframe && !isHidden && height > 0)) {
+        setIsFilled(true);
+      } else if (status === "unfilled" || isHidden) {
+        setIsFilled(false);
+      }
+    };
+
+    checkFilledStatus();
+
+    const observer = new MutationObserver(() => {
+      checkFilledStatus();
+    });
+
+    observer.observe(insEl, {
+      attributes: true,
+      attributeFilter: ["data-ad-status", "style", "data-adsbygoogle-status"],
+      childList: true,
+      subtree: true,
+    });
+
+    let resizeObserver: ResizeObserver | null = null;
+    if (typeof ResizeObserver !== "undefined") {
+      resizeObserver = new ResizeObserver(() => {
+        checkFilledStatus();
+      });
+      resizeObserver.observe(insEl);
+    }
+
+    return () => {
+      observer.disconnect();
+      if (resizeObserver) {
+        resizeObserver.disconnect();
+      }
+    };
+  }, []);
+
   return (
     <div
       ref={containerRef}
-      className={`my-8 flex flex-col items-center justify-center overflow-hidden ${className}`}
+      className={`transition-all duration-300 ${
+        isFilled
+          ? `my-6 sm:my-8 flex flex-col items-center justify-center w-full max-w-full overflow-hidden ${className}`
+          : "h-0 min-h-0 overflow-hidden opacity-0 pointer-events-none"
+      }`}
     >
-      {label && (
+      {isFilled && label && (
         <span className="text-[11px] uppercase tracking-wider text-gray-400 mb-1.5 font-medium select-none">
           {label}
         </span>
       )}
-      <div className="w-full min-h-[100px] md:min-h-[250px] flex items-center justify-center bg-gray-50/60 rounded-xl border border-gray-100 p-2">
+      <div className="w-full flex items-center justify-center">
         <ins
+          ref={insRef}
           className="adsbygoogle"
           style={style}
           data-ad-client={client}
@@ -67,3 +121,4 @@ export default function AdUnit({
     </div>
   );
 }
+
