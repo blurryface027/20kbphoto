@@ -10,6 +10,7 @@ import CompressionControls from "@/components/tools/CompressionControls";
 import RotateFlipControls from "@/components/tools/RotateFlipControls";
 import ImageCropper from "@/components/tools/ImageCropper";
 import {
+  processImage,
   compressToRange,
   getImageInfo,
   validateOutput,
@@ -51,22 +52,21 @@ export default function ExamToolClient({ exam, type }: ExamToolClientProps) {
     setIsProcessing(true);
 
     try {
-      // 1. Process crop/rotate/flip first
       const formatMime = requirement.format.toLowerCase().includes("png") ? "image/png" : "image/jpeg";
       const targetDpi = requirement.dpi || 300;
       
-      const res = await compressToRange(
-        file,
-        requirement.minKB,
-        requirement.maxKB,
-        requirement.width,
-        requirement.height,
-        formatMime
-      );
-
-      res.blob = await setDPIInBlob(res.blob, targetDpi);
-      res.dpi = targetDpi;
-      res.size = res.blob.size;
+      const res = await processImage(file, {
+        crop: crop || undefined,
+        rotation: rot,
+        flipHorizontal: flipH,
+        flipVertical: flipV,
+        width: requirement.width,
+        height: requirement.height,
+        minKB: requirement.minKB,
+        maxKB: requirement.maxKB,
+        format: formatMime,
+        dpi: targetDpi,
+      });
 
       setResult(res);
 

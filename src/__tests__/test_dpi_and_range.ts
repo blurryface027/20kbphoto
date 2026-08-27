@@ -65,7 +65,7 @@ async function runDpiAndRangeTests() {
   for (const r of rangeTests) {
     const minBytes = r.minKB * 1024;
     const maxBytes = r.maxKB * 1024;
-    const targetBytes = minBytes + Math.floor((maxBytes - minBytes) * 0.55);
+    const targetBytes = minBytes + Math.floor((maxBytes - minBytes) * 0.92);
 
     // Small 5KB JPEG blob
     const smallBuffer = new Uint8Array(5120);
