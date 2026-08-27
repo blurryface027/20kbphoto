@@ -6,6 +6,7 @@ import RequirementCard from '@/components/cards/RequirementCard';
 import Breadcrumbs from '@/components/layout/Breadcrumbs';
 import FAQSection from '@/components/seo/FAQSection';
 import RelatedTools from '@/components/seo/RelatedTools';
+import AdUnit from '@/components/ads/AdUnit';
 import Link from 'next/link';
 
 export function generateStaticParams() {
@@ -226,6 +227,8 @@ export default async function ExamHubPage({ params }: Props) {
           <li>Download the final validated file, ready for upload.</li>
         </ol>
       </div>
+
+      <AdUnit className="my-10" />
 
       <FAQSection faqs={faqs} title={`Frequently Asked Questions for ${exam.name}`} />
       

@@ -1,6 +1,7 @@
 import Breadcrumbs from '../layout/Breadcrumbs';
 import FAQSection from '../seo/FAQSection';
 import RelatedTools from '../seo/RelatedTools';
+import AdUnit from '../ads/AdUnit';
 
 interface ToolShellProps {
   title: string;
@@ -55,6 +56,8 @@ export default function ToolShell({
       <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-4 sm:p-6 lg:p-8 mb-12">
         {children}
       </div>
+
+      <AdUnit className="my-10" />
       
       {faqs && faqs.length > 0 && <FAQSection faqs={faqs} />}
       

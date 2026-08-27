@@ -5,6 +5,7 @@ import PopularTools from "@/components/home/PopularTools";
 import PopularExams from "@/components/home/PopularExams";
 import BrowseCategories from "@/components/home/BrowseCategories";
 import WhyUseSection from "@/components/home/WhyUseSection";
+import AdUnit from "@/components/ads/AdUnit";
 
 export const metadata: Metadata = {
   title: "20KB Photo - Resize Photos and Signatures for Applications and Exams",
@@ -19,6 +20,9 @@ export default function HomePage() {
       <HomeHero />
       <PopularTools />
       <PopularExams />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <AdUnit className="my-8" />
+      </div>
       <BrowseCategories />
       <WhyUseSection />
 
