@@ -27,6 +27,16 @@ export default function RequirementCard({
 }: RequirementCardProps) {
   const isPhoto = title.toLowerCase().includes('photo');
   
+  // Clean title to strictly avoid duplicate words (e.g. "Photo Requirements Requirements")
+  let cardTitle = title.replace(/(requirements\s*)+/gi, 'Requirements').trim();
+  if (cardTitle.toLowerCase() === 'photo' || cardTitle.toLowerCase() === 'photo requirements') {
+    cardTitle = 'Photo Requirements';
+  } else if (cardTitle.toLowerCase() === 'signature' || cardTitle.toLowerCase() === 'signature requirements') {
+    cardTitle = 'Signature Requirements';
+  } else if (!cardTitle.toLowerCase().endsWith('requirements')) {
+    cardTitle = `${cardTitle} Requirements`;
+  }
+
   return (
     <div className="bg-white border border-gray-200 rounded-2xl p-6 md:p-8 flex flex-col shadow-sm">
       <div className="flex items-center gap-3 mb-6">
@@ -42,7 +52,7 @@ export default function RequirementCard({
             </svg>
           )}
         </div>
-        <h3 className="text-2xl font-bold text-gray-900">{title} Requirements</h3>
+        <h3 className="text-2xl font-bold text-gray-900">{cardTitle}</h3>
       </div>
 
       <div className="grid grid-cols-2 gap-4 mb-8 flex-grow">

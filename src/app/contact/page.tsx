@@ -3,10 +3,25 @@ import Breadcrumbs from "@/components/layout/Breadcrumbs";
 import ContactClient from "@/components/contact/ContactClient";
 
 export const metadata: Metadata = {
-  title: "Contact Us | 20KB Photo",
+  title: "Contact Us - 20KB Photo",
   description:
-    "Get in touch with the 20KB Photo team for feedback, feature requests, or report incorrect exam presets.",
+    "Get in touch with the 20KB Photo team for feedback, feature requests, or to report exam preset updates.",
   alternates: { canonical: "https://20kbphoto.in/contact" },
+  openGraph: {
+    title: "Contact Us - 20KB Photo",
+    description:
+      "Get in touch with the 20KB Photo team for feedback, feature requests, or to report exam preset updates.",
+    url: "https://20kbphoto.in/contact",
+    siteName: "20KB Photo",
+    locale: "en_IN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact Us - 20KB Photo",
+    description:
+      "Get in touch with the 20KB Photo team for feedback, feature requests, or to report exam preset updates.",
+  },
 };
 
 export default function ContactPage() {

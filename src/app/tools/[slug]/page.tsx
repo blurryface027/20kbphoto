@@ -102,13 +102,35 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const resolvedParams = await params;
   const config = toolConfigs[resolvedParams?.slug];
   if (!config) {
-    return { title: "Tool Not Found" };
+    return { title: "Tool Not Found - 20KB Photo" };
   }
+
+  let formattedTitle = config.title;
+  if (!formattedTitle.includes("Online") && !formattedTitle.includes("Converter") && !formattedTitle.includes("Maker")) {
+    formattedTitle = `${config.title} Online`;
+  }
+  const title = `${formattedTitle} - 20KB Photo`;
+  const description = config.subtitle;
+  const canonical = `https://20kbphoto.in/tools/${resolvedParams.slug}`;
+
   return {
-    title: `${config.title} Online | 20KB Photo`,
-    description: config.subtitle,
+    title,
+    description,
     alternates: {
-      canonical: `https://20kbphoto.in/tools/${resolvedParams.slug}`,
+      canonical,
+    },
+    openGraph: {
+      title,
+      description,
+      url: canonical,
+      siteName: '20KB Photo',
+      locale: 'en_IN',
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
     },
   };
 }

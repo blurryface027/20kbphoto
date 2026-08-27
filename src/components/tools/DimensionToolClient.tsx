@@ -87,6 +87,7 @@ export default function DimensionToolClient({
                     size: result.size,
                     format: result.format,
                     quality: result.quality,
+                    dpi: result.dpi,
                   }
                 : undefined
             }
@@ -119,6 +120,7 @@ export default function DimensionToolClient({
                 blob={result.blob}
                 filename={`${isSig ? "signature" : "photo"}-${targetWidth}x${targetHeight}.jpg`}
                 onReset={handleReset}
+                isValid={result.width === targetWidth && result.height === targetHeight}
               />
             </>
           )}

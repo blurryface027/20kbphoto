@@ -396,6 +396,7 @@ export default function ToolPageClient({ slug }: Props) {
         minKB: 0,
         maxKB: useKB ? kb : 5000,
         format: fmt === "image/jpeg" ? "JPG" : fmt === "image/png" ? "PNG" : "WEBP",
+        dpi: targetDpi,
       });
       setValidation(val);
     } catch (err) {
@@ -651,6 +652,7 @@ export default function ToolPageClient({ slug }: Props) {
                     minKB: 0,
                     maxKB: enableTargetKB ? targetKB : Math.ceil(processedInfo.size / 1024),
                     format: format === "image/jpeg" ? "JPG" : format === "image/png" ? "PNG" : "WEBP",
+                    dpi: dpi,
                   }}
                 />
               )}
@@ -659,6 +661,7 @@ export default function ToolPageClient({ slug }: Props) {
                 blob={processedBlob}
                 filename={getDownloadFilename()}
                 onReset={handleReset}
+                isValid={validation?.valid}
               />
             </>
           )}

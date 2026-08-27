@@ -38,7 +38,8 @@ export default function PanCardToolClient() {
       const res = await processImage(file, {
         width: w,
         height: h,
-        targetKB: kb,
+        minKB: 10,
+        maxKB: kb,
         format: "image/jpeg",
         dpi: 300,
       });
@@ -95,6 +96,8 @@ export default function PanCardToolClient() {
     },
   ];
 
+  const isSizeValid = result ? (result.size / 1024) >= 10 && (result.size / 1024) <= maxKB : false;
+
   return (
     <ToolShell
       title="PAN Card Photo & Signature Resizer Online"
@@ -139,7 +142,7 @@ export default function PanCardToolClient() {
             300 DPI
           </span>
           <span className="bg-white px-2.5 py-1 rounded-lg border border-indigo-200 text-indigo-700 font-bold">
-            Max {maxKB} KB
+            10 – {maxKB} KB
           </span>
           <span className="bg-emerald-100 text-emerald-800 px-2.5 py-1 rounded-lg border border-emerald-200 font-bold">
             NSDL / UTIITSL Ready
@@ -151,7 +154,7 @@ export default function PanCardToolClient() {
         <UploadDropzone
           onFileSelect={handleFileSelect}
           label={`Upload ${mode === "photo" ? "Photograph" : "Signature"} for PAN Card`}
-          sublabel={`Will be resized to exact ${currentWidth}×${currentHeight} px and compressed to under ${maxKB}KB`}
+          sublabel={`Will be resized to exact ${currentWidth}×${currentHeight} px and compressed to 10–${maxKB}KB`}
         />
       ) : (
         <div className="space-y-6 max-w-4xl mx-auto">
@@ -167,6 +170,7 @@ export default function PanCardToolClient() {
                     size: result.size,
                     format: result.format,
                     quality: result.quality,
+                    dpi: result.dpi,
                   }
                 : undefined
             }
@@ -178,7 +182,7 @@ export default function PanCardToolClient() {
               <ValidationBadges
                 checks={{
                   dimensions: result.width === currentWidth && result.height === currentHeight,
-                  fileSize: result.size / 1024 <= maxKB,
+                  fileSize: isSizeValid,
                   format: true,
                 }}
                 details={{
@@ -200,6 +204,7 @@ export default function PanCardToolClient() {
                 blob={result.blob}
                 filename={mode === "photo" ? "pancard-photo-213x213.jpg" : "pancard-signature-444x205.jpg"}
                 onReset={handleReset}
+                isValid={isSizeValid}
               />
             </>
           )}

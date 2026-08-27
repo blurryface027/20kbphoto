@@ -5,8 +5,8 @@ import React, { useEffect, useState } from "react";
 interface PreviewPanelProps {
   originalFile?: File;
   processedDataUrl?: string;
-  originalInfo?: { width: number; height: number; size: number; format: string };
-  processedInfo?: { width: number; height: number; size: number; format: string; quality?: number };
+  originalInfo?: { width: number; height: number; size: number; format: string; dpi?: number };
+  processedInfo?: { width: number; height: number; size: number; format: string; quality?: number; dpi?: number };
   isProcessing?: boolean;
 }
 
@@ -72,7 +72,7 @@ export default function PreviewPanel({
             </div>
             <div className="flex flex-col">
               <span className="text-gray-500 uppercase">Format</span>
-              <span className="font-medium text-primary">{originalInfo.format}</span>
+              <span className="font-medium text-primary">{originalInfo.format.replace('image/', '').toUpperCase()}</span>
             </div>
           </div>
         )}
@@ -103,25 +103,44 @@ export default function PreviewPanel({
             <span className="text-gray-400">Waiting for processing...</span>
           )}
         </div>
+
+        {/* DPI Updated Banner directly below processed image */}
+        {processedInfo?.dpi !== undefined && !isProcessing && (
+          <div className="bg-emerald-50 text-emerald-900 text-xs px-4 py-2 border-t border-emerald-200 flex items-center justify-between font-bold">
+            <span className="flex items-center gap-1.5 text-emerald-700">
+              <svg className="w-4 h-4 text-emerald-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+              </svg>
+              ✓ DPI Updated
+            </span>
+            <span className="bg-white px-2.5 py-0.5 rounded border border-emerald-300 text-emerald-800 font-extrabold">
+              Image DPI: {processedInfo.dpi} DPI
+            </span>
+          </div>
+        )}
         
         {processedInfo && !isProcessing && (
-          <div className="p-3 bg-surface grid grid-cols-3 gap-2 text-xs text-center border-t border-border">
+          <div className="p-3 bg-surface grid grid-cols-4 gap-2 text-xs text-center border-t border-border">
             <div className="flex flex-col">
               <span className="text-gray-500 uppercase">Dimensions</span>
               <span className="font-medium text-primary">{processedInfo.width} × {processedInfo.height} px</span>
             </div>
-            <div className="flex flex-col border-x border-border relative">
+            <div className="flex flex-col border-l border-border relative">
               <span className="text-gray-500 uppercase">Size</span>
               <span className="font-medium text-primary">{formatSize(processedInfo.size)}</span>
               {calcReduction() && (
-                <span className="absolute -top-10 left-1/2 -translate-x-1/2 bg-success text-white px-2 py-0.5 rounded-full text-[10px] whitespace-nowrap shadow-sm">
+                <span className="absolute -top-9 left-1/2 -translate-x-1/2 bg-success text-white px-2 py-0.5 rounded-full text-[10px] whitespace-nowrap shadow-sm">
                   {calcReduction()}
                 </span>
               )}
             </div>
-            <div className="flex flex-col">
+            <div className="flex flex-col border-l border-border">
               <span className="text-gray-500 uppercase">Format</span>
-              <span className="font-medium text-primary">{processedInfo.format}</span>
+              <span className="font-medium text-primary">{processedInfo.format.replace('image/', '').toUpperCase()}</span>
+            </div>
+            <div className="flex flex-col border-l border-border">
+              <span className="text-gray-500 uppercase">DPI</span>
+              <span className="font-bold text-emerald-700">{processedInfo.dpi ? `${processedInfo.dpi} DPI` : '72 DPI'}</span>
             </div>
           </div>
         )}

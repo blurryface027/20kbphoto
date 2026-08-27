@@ -7,6 +7,7 @@ interface DownloadPanelProps {
   filename?: string;
   onReset: () => void;
   examName?: string;
+  isValid?: boolean;
 }
 
 export default function DownloadPanel({
@@ -14,6 +15,7 @@ export default function DownloadPanel({
   filename = "photo.jpg",
   onReset,
   examName,
+  isValid = true,
 }: DownloadPanelProps) {
   const [downloadUrl, setDownloadUrl] = useState<string | null>(null);
 
@@ -44,8 +46,20 @@ export default function DownloadPanel({
 
   return (
     <div className="w-full bg-surface border border-border rounded-xl p-6 text-center shadow-sm">
-      <h3 className="text-xl font-semibold text-primary mb-2">Ready to Download</h3>
-      {examName && (
+      <h3 className="text-xl font-semibold text-primary mb-2">
+        {isValid ? "Ready to Download" : "Generated Output (Check Validation)"}
+      </h3>
+
+      {!isValid && (
+        <div className="mb-4 p-3 bg-amber-50 border border-amber-200 rounded-xl text-amber-800 text-xs font-semibold flex items-center justify-center gap-2 max-w-xl mx-auto">
+          <svg className="w-4 h-4 text-amber-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+          </svg>
+          <span>Warning: Generated file size or parameters do not satisfy official requirements.</span>
+        </div>
+      )}
+
+      {examName && isValid && (
         <p className="text-sm text-success font-medium mb-4 flex items-center justify-center">
           <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -57,7 +71,9 @@ export default function DownloadPanel({
       <div className="flex flex-col sm:flex-row items-center justify-center gap-4 my-6">
         <button
           onClick={handleDownload}
-          className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-xl shadow-md shadow-indigo-200 transition-all duration-200 flex items-center transform hover:scale-105"
+          className={`${
+            isValid ? "bg-indigo-600 hover:bg-indigo-700 shadow-indigo-200" : "bg-amber-600 hover:bg-amber-700 shadow-amber-200"
+          } text-white font-bold py-3 px-8 rounded-xl shadow-md transition-all duration-200 flex items-center transform hover:scale-105`}
           aria-label="Download processed image"
         >
           <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

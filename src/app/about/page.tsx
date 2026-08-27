@@ -9,10 +9,25 @@ import {
 } from "react-icons/hi2";
 
 export const metadata: Metadata = {
-  title: "About Us | 20KB Photo - Client-Side Image Resizer for Exams",
+  title: "About Us - 20KB Photo",
   description:
     "Learn about 20KB Photo, the 100% private, browser-based image and photo preparation platform built for Indian government exam applicants.",
   alternates: { canonical: "https://20kbphoto.in/about" },
+  openGraph: {
+    title: "About Us - 20KB Photo",
+    description:
+      "Learn about 20KB Photo, the 100% private, browser-based image and photo preparation platform built for Indian government exam applicants.",
+    url: "https://20kbphoto.in/about",
+    siteName: "20KB Photo",
+    locale: "en_IN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Us - 20KB Photo",
+    description:
+      "Learn about 20KB Photo, the 100% private, browser-based image and photo preparation platform built for Indian government exam applicants.",
+  },
 };
 
 export default function AboutPage() {

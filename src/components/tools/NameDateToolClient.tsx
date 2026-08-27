@@ -289,6 +289,7 @@ export default function NameDateToolClient({ includeDate = true }: NameDateToolC
                     size: result.size,
                     format: result.format,
                     quality: result.quality,
+                    dpi: result.dpi,
                   }
                 : undefined
             }
@@ -301,7 +302,7 @@ export default function NameDateToolClient({ includeDate = true }: NameDateToolC
               <ValidationBadges
                 checks={{
                   dimensions: true,
-                  fileSize: result.size / 1024 <= targetKB + 1,
+                  fileSize: (result.size / 1024) >= 10 && (result.size / 1024) <= targetKB,
                   format: true,
                 }}
                 details={{
@@ -323,6 +324,7 @@ export default function NameDateToolClient({ includeDate = true }: NameDateToolC
                 blob={result.blob}
                 filename="photo-with-name-date.jpg"
                 onReset={handleReset}
+                isValid={(result.size / 1024) >= 10 && (result.size / 1024) <= targetKB}
               />
             </>
           )}

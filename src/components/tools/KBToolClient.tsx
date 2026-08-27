@@ -257,6 +257,7 @@ export default function KBToolClient({ targetKB: initialTargetKB }: KBToolClient
                     size: result.size,
                     format: result.format,
                     quality: result.quality,
+                    dpi: result.dpi,
                   }
                 : undefined
             }
@@ -289,6 +290,7 @@ export default function KBToolClient({ targetKB: initialTargetKB }: KBToolClient
                 blob={result.blob}
                 filename={getDownloadFilename()}
                 onReset={handleReset}
+                isValid={isSizeValid}
               />
             </>
           )}

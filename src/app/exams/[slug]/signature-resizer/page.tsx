@@ -16,12 +16,30 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const exam = getExamBySlug(slug);
-  if (!exam) return { title: "Exam Not Found" };
+  if (!exam) return { title: "Exam Not Found - 20KB Photo" };
+
+  const { signature } = exam;
+  const title = `${exam.name} Signature Resizer - ${signature.width}x${signature.height}px, ${signature.minKB}-${signature.maxKB}KB - 20KB Photo`;
+  const description = `Resize the signature required for ${exam.name} applications to ${signature.width}x${signature.height}px and ${signature.minKB}-${signature.maxKB}KB ${signature.format} format online. Free signature resizer for ${exam.fullName} forms.`;
+  const canonical = `https://20kbphoto.in/exams/${slug}/signature-resizer`;
 
   return {
-    title: `${exam.name} Signature Resizer — Resize Signature to ${exam.signature.width}×${exam.signature.height}`,
-    description: `Resize your signature to ${exam.signature.width}×${exam.signature.height} pixels and ${exam.signature.minKB}-${exam.signature.maxKB} KB for ${exam.fullName} application. Free, instant, private.`,
-    alternates: { canonical: `https://20kbphoto.in/exams/${slug}/signature-resizer/` },
+    title,
+    description,
+    alternates: { canonical },
+    openGraph: {
+      title,
+      description,
+      url: canonical,
+      siteName: '20KB Photo',
+      locale: 'en_IN',
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+    },
   };
 }
 

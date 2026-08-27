@@ -43,12 +43,14 @@ export interface ValidationResult {
     dimensions: boolean;
     fileSize: boolean;
     format: boolean;
+    dpi?: boolean;
   };
   details: {
     width: number;
     height: number;
     size: number;
     format: string;
+    dpi?: number;
   };
 }
 
@@ -58,16 +60,71 @@ export interface Requirements {
   minKB: number;
   maxKB: number;
   format: string;
+  dpi?: number;
+}
+
+export async function readDPIFromBlob(fileOrBlob: File | Blob): Promise<number | undefined> {
+  try {
+    const buffer = await fileOrBlob.arrayBuffer();
+    const bytes = new Uint8Array(buffer);
+    const view = new DataView(buffer);
+
+    // 1. Check JPEG
+    if (fileOrBlob.type === 'image/jpeg' || (bytes[0] === 0xff && bytes[1] === 0xd8)) {
+      let offset = 2;
+      while (offset < bytes.length - 4) {
+        if (bytes[offset] !== 0xff) break;
+        const marker = bytes[offset + 1];
+        if (marker === 0xd9 || marker === 0xda) break; // SOS or EOI
+        const length = view.getUint16(offset + 2, false);
+        if (marker === 0xe0 && length >= 14) {
+          // Check "JFIF\0"
+          if (bytes[offset + 4] === 0x4a && bytes[offset + 5] === 0x46 && bytes[offset + 6] === 0x49 && bytes[offset + 7] === 0x46) {
+            const unit = bytes[offset + 11];
+            const xDensity = view.getUint16(offset + 12, false);
+            if (unit === 1 && xDensity > 0) {
+              return xDensity;
+            } else if (unit === 2 && xDensity > 0) {
+              return Math.round(xDensity * 2.54);
+            }
+          }
+        }
+        offset += 2 + length;
+      }
+    }
+
+    // 2. Check PNG
+    if (fileOrBlob.type === 'image/png' || (bytes[0] === 0x89 && bytes[1] === 0x50 && bytes[2] === 0x4e && bytes[3] === 0x47)) {
+      let offset = 8; // skip 8-byte PNG header
+      while (offset < bytes.length - 12) {
+        const length = view.getUint32(offset, false);
+        const chunkType = String.fromCharCode(bytes[offset + 4], bytes[offset + 5], bytes[offset + 6], bytes[offset + 7]);
+        if (chunkType === 'pHYs' && length >= 9) {
+          const xPpm = view.getUint32(offset + 8, false);
+          const unit = bytes[offset + 16];
+          if (unit === 1 && xPpm > 0) {
+            return Math.round(xPpm / 39.3700787);
+          }
+        }
+        offset += 12 + length;
+      }
+    }
+  } catch (err) {
+    console.warn('Could not parse DPI from blob:', err);
+  }
+  return undefined;
 }
 
 export async function getImageInfo(file: File): Promise<ImageInfo> {
   const img = await loadImage(file);
+  const dpi = await readDPIFromBlob(file);
   return {
     width: img.width,
     height: img.height,
     size: file.size,
     format: file.type,
-    name: file.name
+    name: file.name,
+    dpi
   };
 }
 
@@ -94,6 +151,70 @@ export function getMimeType(format?: string): string {
   if (fmt.includes('webp')) return 'image/webp';
   if (fmt.includes('jpg') || fmt.includes('jpeg')) return 'image/jpeg';
   return 'image/jpeg';
+}
+
+/**
+ * Safely pads JPEG or PNG binary with comment metadata if the size is below minBytes.
+ */
+export async function padBlobToMinBytes(blob: Blob, minBytes: number, targetBytes: number): Promise<Blob> {
+  if (blob.size >= minBytes) return blob;
+  const mimeType = blob.type;
+  const padSize = Math.max(16, targetBytes - blob.size);
+
+  try {
+    const buffer = await blob.arrayBuffer();
+    const bytes = new Uint8Array(buffer);
+
+    if (mimeType === 'image/jpeg' && bytes[0] === 0xff && bytes[1] === 0xd8) {
+      // Create COM marker (0xFF 0xFE)
+      const comLength = padSize + 2;
+      const com = new Uint8Array(2 + comLength);
+      com[0] = 0xff;
+      com[1] = 0xfe;
+      com[2] = (comLength >> 8) & 0xff;
+      com[3] = comLength & 0xff;
+      // Fill dummy data bytes
+      com.fill(0x00, 4);
+
+      const newBytes = new Uint8Array(bytes.length + com.length);
+      newBytes.set(bytes.subarray(0, 2), 0);
+      newBytes.set(com, 2);
+      newBytes.set(bytes.subarray(2), 2 + com.length);
+      return new Blob([newBytes], { type: 'image/jpeg' });
+    } else if (mimeType === 'image/png' && bytes[0] === 0x89 && bytes[1] === 0x50 && bytes[2] === 0x4e && bytes[3] === 0x47) {
+      // Create tEXt chunk
+      const textData = new Uint8Array(padSize);
+      textData.set([0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x00], 0); // "Comment\0"
+      
+      const chunkLen = textData.length;
+      const textChunk = new Uint8Array(12 + chunkLen);
+      const textVal = new DataView(textChunk.buffer);
+      textVal.setUint32(0, chunkLen, false);
+      textChunk[4] = 0x74; textChunk[5] = 0x45; textChunk[6] = 0x58; textChunk[7] = 0x74; // 'tEXt'
+      textChunk.set(textData, 8);
+
+      let crc = 0xffffffff;
+      for (let i = 4; i < 8 + chunkLen; i++) {
+        crc ^= textChunk[i];
+        for (let j = 0; j < 8; j++) {
+          crc = (crc >>> 1) ^ (crc & 1 ? 0xedb88320 : 0);
+        }
+      }
+      crc = (crc ^ 0xffffffff) >>> 0;
+      textVal.setUint32(8 + chunkLen, crc, false);
+
+      const insertPos = 33;
+      const newBytes = new Uint8Array(bytes.length + textChunk.length);
+      newBytes.set(bytes.subarray(0, insertPos), 0);
+      newBytes.set(textChunk, insertPos);
+      newBytes.set(bytes.subarray(insertPos), insertPos + textChunk.length);
+      return new Blob([newBytes], { type: 'image/png' });
+    }
+  } catch (err) {
+    console.warn('Could not pad blob size:', err);
+  }
+
+  return blob;
 }
 
 /**
@@ -177,7 +298,8 @@ export async function setDPIInBlob(blob: Blob, dpi: number): Promise<Blob> {
   return blob;
 }
 
-function blobToResult(blob: Blob, width: number, height: number, quality: number, dpi?: number): Promise<ProcessingResult> {
+async function blobToResult(blob: Blob, width: number, height: number, quality: number, requestedDpi?: number): Promise<ProcessingResult> {
+  const actualDpi = (await readDPIFromBlob(blob)) || requestedDpi;
   return new Promise((resolve, reject) => {
     const reader = new FileReader();
     reader.onload = () => {
@@ -189,7 +311,7 @@ function blobToResult(blob: Blob, width: number, height: number, quality: number
         format: blob.type,
         quality,
         dataUrl: reader.result as string,
-        dpi,
+        dpi: actualDpi,
       });
     };
     reader.onerror = reject;
@@ -203,6 +325,8 @@ export interface ProcessOptions {
   scalePercent?: number;
   format?: string;
   targetKB?: number;
+  minKB?: number;
+  maxKB?: number;
   quality?: number;
   backgroundColor?: string;
   rotation?: number; // degrees: 0, 90, 180, 270, or custom angle
@@ -278,14 +402,16 @@ export async function processImage(file: File | Blob, options: ProcessOptions = 
   const finalH = targetHeight && targetHeight > 0 ? targetHeight : rotatedH;
   const mimeType = getMimeType(options.format || (file as File).type);
   const targetKB = options.targetKB && options.targetKB > 0 ? options.targetKB : 0;
+  const minKB = options.minKB !== undefined ? options.minKB : 0;
+  const maxKB = options.maxKB !== undefined ? options.maxKB : (targetKB > 0 ? targetKB : 0);
 
-  if (targetKB > 0) {
+  if (maxKB > 0 || minKB > 0) {
     // Convert transformCanvas to temporary blob for compressToRange
     const tempBlob = await new Promise<Blob>((resolve) => transformCanvas.toBlob((b) => resolve(b!), mimeType, 0.95));
     const compressed = await compressToRange(
       new File([tempBlob], 'temp.jpg', { type: mimeType }),
-      Math.max(1, targetKB * 0.85),
-      targetKB,
+      minKB,
+      maxKB > 0 ? maxKB : 5000,
       finalW,
       finalH,
       mimeType
@@ -293,6 +419,7 @@ export async function processImage(file: File | Blob, options: ProcessOptions = 
     if (options.dpi) {
       compressed.blob = await setDPIInBlob(compressed.blob, options.dpi);
       compressed.dpi = options.dpi;
+      compressed.size = compressed.blob.size;
     }
     return compressed;
   }
@@ -328,7 +455,7 @@ export async function compressToSize(file: File, targetKB: number, format?: stri
 }
 
 export async function compressToRange(
-  file: File,
+  file: File | Blob,
   minKB: number,
   maxKB: number,
   targetWidth: number,
@@ -339,9 +466,10 @@ export async function compressToRange(
   const w = targetWidth > 0 ? targetWidth : img.width;
   const h = targetHeight > 0 ? targetHeight : img.height;
 
-  const mimeType = getMimeType(format || file.type);
-  const maxBytes = Math.max(1024, Math.floor(maxKB * 1024 - 50));
-  const minBytes = Math.max(0, Math.floor(minKB * 1024));
+  const mimeType = getMimeType(format || (file as File).type);
+  const minBytes = Math.max(0, Math.ceil(minKB * 1024));
+  const maxBytes = Math.floor(maxKB * 1024);
+  const targetBytes = Math.floor(minBytes + (maxBytes - minBytes) * 0.55);
 
   let currentWidth = w;
   let currentHeight = h;
@@ -365,86 +493,102 @@ export async function compressToRange(
 
   renderCanvas(currentWidth, currentHeight);
 
-  let bestBlob: Blob | null = null;
-  let bestQuality = 0.92;
+  let bestValidBlob: Blob | null = null;
+  let bestValidQuality = 0.92;
+
+  let closestBlob: Blob | null = null;
+  let closestQuality = 0.92;
+  let closestDiff = Infinity;
+
+  const updateCandidate = (blob: Blob, q: number) => {
+    const size = blob.size;
+    if (size >= minBytes && size <= maxBytes) {
+      const diff = Math.abs(size - targetBytes);
+      if (!bestValidBlob || diff < closestDiff) {
+        bestValidBlob = blob;
+        bestValidQuality = q;
+        closestDiff = diff;
+      }
+    }
+    const diff = Math.abs(size - targetBytes);
+    if (!closestBlob || diff < closestDiff) {
+      if (!bestValidBlob) {
+        closestBlob = blob;
+        closestQuality = q;
+      }
+    }
+  };
 
   if (mimeType === 'image/png') {
     let blob = await new Promise<Blob>((resolve) => canvas.toBlob((b) => resolve(b!), mimeType));
+    updateCandidate(blob, 1.0);
+
     let iterations = 0;
-    while (blob.size > maxBytes && iterations < 50 && currentWidth > 15 && currentHeight > 15) {
+    while (blob.size > maxBytes && iterations < 30 && targetWidth === 0 && currentWidth > 20 && currentHeight > 20) {
       currentWidth = Math.max(10, Math.floor(currentWidth * 0.9));
       currentHeight = Math.max(10, Math.floor(currentHeight * 0.9));
       renderCanvas(currentWidth, currentHeight);
       blob = await new Promise<Blob>((resolve) => canvas.toBlob((b) => resolve(b!), mimeType));
+      updateCandidate(blob, 1.0);
       iterations++;
     }
-    bestBlob = blob;
-    bestQuality = 1.0;
   } else {
     let low = 0.01;
-    let high = 0.98;
+    let high = 1.0;
     let quality = 0.85;
     let iterations = 0;
 
     while (iterations < 30) {
       const blob = await new Promise<Blob>((resolve) => canvas.toBlob((b) => resolve(b!), mimeType, quality));
       const size = blob.size;
+      updateCandidate(blob, quality);
 
-      if (size <= maxBytes && size >= minBytes) {
-        bestBlob = blob;
-        bestQuality = quality;
-        break;
-      }
-
-      if (size > maxBytes) {
+      if (size >= minBytes && size <= maxBytes) {
+        if (Math.abs(size - targetBytes) < 512) {
+          break;
+        }
+        if (size > targetBytes) {
+          high = quality;
+          quality = low + (high - low) / 2;
+        } else {
+          low = quality;
+          quality = low + (high - low) / 2;
+        }
+      } else if (size > maxBytes) {
         high = quality;
         quality = low + (high - low) / 2;
-
-        if (quality <= 0.05 && currentWidth > 20 && currentHeight > 20) {
+        if (quality <= 0.02 && targetWidth === 0 && currentWidth > 20 && currentHeight > 20) {
           currentWidth = Math.max(15, Math.floor(currentWidth * 0.88));
           currentHeight = Math.max(15, Math.floor(currentHeight * 0.88));
           renderCanvas(currentWidth, currentHeight);
           quality = 0.75;
           low = 0.01;
-          high = 0.98;
+          high = 1.0;
         }
       } else {
-        bestBlob = blob;
-        bestQuality = quality;
         low = quality;
         quality = low + (high - low) / 2;
       }
       iterations++;
     }
 
-    if (!bestBlob || bestBlob.size > maxBytes) {
-      let fallbackQuality = 0.85;
-      while (fallbackQuality >= 0.02) {
-        const testBlob = await new Promise<Blob>((resolve) => canvas.toBlob((b) => resolve(b!), mimeType, fallbackQuality));
-        if (testBlob.size <= maxBytes) {
-          bestBlob = testBlob;
-          bestQuality = fallbackQuality;
-          break;
-        }
-        fallbackQuality -= 0.05;
+    if (!bestValidBlob) {
+      for (const testQ of [0.98, 1.0, 0.95, 0.90, 0.80, 0.70, 0.50, 0.30, 0.10, 0.05]) {
+        const testBlob = await new Promise<Blob>((resolve) => canvas.toBlob((b) => resolve(b!), mimeType, testQ));
+        updateCandidate(testBlob, testQ);
+        if (bestValidBlob) break;
       }
     }
   }
 
-  if (!bestBlob || bestBlob.size > maxBytes) {
-    let finalBlob = bestBlob || (await new Promise<Blob>((resolve) => canvas.toBlob((b) => resolve(b!), mimeType, 0.5)));
-    let guard = 0;
-    while (finalBlob.size > maxBytes && guard < 40 && currentWidth > 10 && currentHeight > 10) {
-      currentWidth = Math.max(10, Math.floor(currentWidth * 0.85));
-      currentHeight = Math.max(10, Math.floor(currentHeight * 0.85));
-      renderCanvas(currentWidth, currentHeight);
-      finalBlob = await new Promise<Blob>((resolve) => canvas.toBlob((b) => resolve(b!), mimeType, mimeType === 'image/jpeg' ? 0.7 : 0.92));
-      guard++;
-    }
-    bestBlob = finalBlob;
+  let finalBlob = bestValidBlob || closestBlob || (await new Promise<Blob>((resolve) => canvas.toBlob((b) => resolve(b!), mimeType, 0.92)));
+  const finalQuality = bestValidBlob ? bestValidQuality : closestQuality;
+
+  if (minBytes > 0 && finalBlob.size < minBytes) {
+    finalBlob = await padBlobToMinBytes(finalBlob, minBytes, targetBytes);
   }
 
-  return blobToResult(bestBlob, currentWidth, currentHeight, bestQuality);
+  return blobToResult(finalBlob, currentWidth, currentHeight, finalQuality);
 }
 
 export async function convertFormat(
@@ -672,23 +816,27 @@ export async function addTextOverlay(file: File, overlay: TextOverlay): Promise<
 export async function validateOutput(blob: Blob, requirements: Requirements): Promise<ValidationResult> {
   const img = await loadImage(new File([blob], 'validate.jpg', { type: blob.type }));
   const sizeKB = blob.size / 1024;
+  const actualDpi = await readDPIFromBlob(blob);
   
   const dimValid = img.width === requirements.width && img.height === requirements.height;
   const sizeValid = sizeKB >= requirements.minKB && sizeKB <= requirements.maxKB;
   const formatValid = getMimeType(blob.type) === getMimeType(requirements.format);
+  const dpiValid = requirements.dpi !== undefined ? actualDpi === requirements.dpi : true;
   
   return {
-    valid: dimValid && sizeValid && formatValid,
+    valid: dimValid && sizeValid && formatValid && dpiValid,
     checks: {
       dimensions: dimValid,
       fileSize: sizeValid,
-      format: formatValid
+      format: formatValid,
+      ...(requirements.dpi !== undefined ? { dpi: dpiValid } : {})
     },
     details: {
       width: img.width,
       height: img.height,
       size: blob.size,
-      format: blob.type
+      format: blob.type,
+      dpi: actualDpi
     }
   };
 }
@@ -699,5 +847,11 @@ export async function processForExam(file: File, photo: Requirements, overlay?: 
     const res = await addTextOverlay(currentFile, overlay);
     currentFile = new File([res.blob], 'overlay.jpg', { type: res.format });
   }
-  return compressToRange(currentFile, photo.minKB, photo.maxKB, photo.width, photo.height, photo.format);
+  const result = await compressToRange(currentFile, photo.minKB, photo.maxKB, photo.width, photo.height, photo.format);
+  if (photo.dpi) {
+    result.blob = await setDPIInBlob(result.blob, photo.dpi);
+    result.dpi = photo.dpi;
+    result.size = result.blob.size;
+  }
+  return result;
 }

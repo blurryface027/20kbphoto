@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   if (!exam) {
     return {
-      title: 'Not Found',
+      title: 'Not Found - 20KB Photo',
       robots: {
         index: false,
         follow: false,
@@ -27,12 +27,28 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   const { photo } = exam;
+  const title = `${exam.name} Photo Resizer - ${photo.width}x${photo.height}px, ${photo.minKB}-${photo.maxKB}KB - 20KB Photo`;
+  const description = `Resize the photo required for ${exam.name} applications to ${photo.width}x${photo.height}px and ${photo.minKB}-${photo.maxKB}KB ${photo.format} format online. Free resizer tool for ${exam.fullName} online forms.`;
+  const canonical = `https://20kbphoto.in/exams/${slug}/photo-resizer`;
 
   return {
-    title: `${exam.name} Photo Resizer – ${photo.width}x${photo.height}px, ${photo.minKB}-${photo.maxKB}KB`,
-    description: `Resize your ${exam.name} photo to ${photo.width}x${photo.height}px and ${photo.minKB}-${photo.maxKB}KB ${photo.format}. Free online photo resizer for ${exam.fullName} applications.`,
+    title,
+    description,
     alternates: {
-      canonical: `/exams/${slug}/photo-resizer/`,
+      canonical,
+    },
+    openGraph: {
+      title,
+      description,
+      url: canonical,
+      siteName: '20KB Photo',
+      locale: 'en_IN',
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
     },
   };
 }

@@ -5,10 +5,25 @@ import Breadcrumbs from "@/components/layout/Breadcrumbs";
 import ToolsDirectoryClient from "@/components/tools/ToolsDirectoryClient";
 
 export const metadata: Metadata = {
-  title: "All Online Image & Photo Resizer Tools | 20KB Photo",
+  title: "All Image and Photo Resizer Tools - 20KB Photo",
   description:
     "Browse our complete collection of free, browser-based image resizers, KB compressors, photo format converters, signature resizers, and document tools.",
   alternates: { canonical: "https://20kbphoto.in/tools" },
+  openGraph: {
+    title: "All Image and Photo Resizer Tools - 20KB Photo",
+    description:
+      "Browse our complete collection of free, browser-based image resizers, KB compressors, photo format converters, signature resizers, and document tools.",
+    url: "https://20kbphoto.in/tools",
+    siteName: "20KB Photo",
+    locale: "en_IN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "All Image and Photo Resizer Tools - 20KB Photo",
+    description:
+      "Browse our complete collection of free, browser-based image resizers, KB compressors, photo format converters, signature resizers, and document tools.",
+  },
 };
 
 export default function ToolsDirectoryPage() {

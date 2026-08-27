@@ -7,9 +7,9 @@ import BrowseCategories from "@/components/home/BrowseCategories";
 import WhyUseSection from "@/components/home/WhyUseSection";
 
 export const metadata: Metadata = {
-  title: "20KB Photo — Resize Photos & Signatures for Applications & Exams",
+  title: "20KB Photo - Resize Photos and Signatures for Applications and Exams",
   description:
-    "Free online tools to resize, compress, convert and prepare your photos, signatures and documents for exams, government forms, admissions and applications. 100% private — processed in your browser.",
+    "Free online tools to resize, compress, convert and prepare your photos, signatures and documents for exams, government forms, admissions and applications. 100% private - processed in your browser.",
   alternates: { canonical: "https://20kbphoto.in" },
 };
 

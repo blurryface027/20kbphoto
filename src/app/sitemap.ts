@@ -84,6 +84,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: exam.priority === "P0" ? 0.7 : 0.5,
   }));
 
+  // Exam photo & signature pages
+  const examPhotoSigPages: MetadataRoute.Sitemap = exams.map((exam) => ({
+    url: `${BASE_URL}/exams/${exam.slug}/photo-signature-resizer/`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: exam.priority === "P0" ? 0.7 : 0.5,
+  }));
+
   // Special pages
   const specialPages: MetadataRoute.Sitemap = [
     { url: `${BASE_URL}/add-name-and-date-to-photo/`, lastModified: now, changeFrequency: "monthly" as const, priority: 0.8 },
@@ -102,6 +110,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...examHubPages,
     ...examPhotoPages,
     ...examSigPages,
+    ...examPhotoSigPages,
     ...specialPages,
   ];
 }

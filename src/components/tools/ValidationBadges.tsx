@@ -7,12 +7,14 @@ interface ValidationBadgesProps {
     dimensions: boolean;
     fileSize: boolean;
     format: boolean;
+    dpi?: boolean;
   };
   details: {
     width: number;
     height: number;
     size: number;
     format: string;
+    dpi?: number;
   };
   requirements?: {
     width: number;
@@ -20,6 +22,7 @@ interface ValidationBadgesProps {
     minKB: number;
     maxKB: number;
     format: string;
+    dpi?: number;
   };
 }
 
@@ -57,10 +60,12 @@ export default function ValidationBadges({
     </div>
   );
 
+  const hasDpi = checks.dpi !== undefined || requirements?.dpi !== undefined;
+
   return (
     <div className="w-full bg-surface p-4 rounded-xl shadow-sm border border-border">
       <h3 className="text-primary font-semibold mb-4 text-sm uppercase tracking-wider">Validation Status</h3>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className={`grid grid-cols-1 ${hasDpi ? 'md:grid-cols-4' : 'md:grid-cols-3'} gap-4`}>
         
         <Badge 
           success={checks.dimensions} 
@@ -91,12 +96,26 @@ export default function ValidationBadges({
           label={checks.format ? "Format Matched" : "Invalid Format"}
           info={
             requirements ? (
-              <>Actual: {details.format} (Req: {requirements.format})</>
+              <>Actual: {details.format.replace('image/', '').toUpperCase()} (Req: {requirements.format})</>
             ) : (
-              <>{details.format}</>
+              <>{details.format.replace('image/', '').toUpperCase()}</>
             )
           } 
         />
+
+        {hasDpi && (
+          <Badge
+            success={checks.dpi ?? false}
+            label={checks.dpi ? "DPI Matched" : "DPI Mismatch"}
+            info={
+              requirements?.dpi ? (
+                <>Actual: {details.dpi ?? "Unknown"} DPI (Req: {requirements.dpi} DPI)</>
+              ) : (
+                <>Actual: {details.dpi ?? "Unknown"} DPI</>
+              )
+            }
+          />
+        )}
         
       </div>
     </div>

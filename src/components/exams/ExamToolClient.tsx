@@ -13,6 +13,7 @@ import {
   compressToRange,
   getImageInfo,
   validateOutput,
+  setDPIInBlob,
   type ImageInfo,
   type ProcessingResult,
   type ValidationResult,
@@ -52,6 +53,7 @@ export default function ExamToolClient({ exam, type }: ExamToolClientProps) {
     try {
       // 1. Process crop/rotate/flip first
       const formatMime = requirement.format.toLowerCase().includes("png") ? "image/png" : "image/jpeg";
+      const targetDpi = requirement.dpi || 300;
       
       const res = await compressToRange(
         file,
@@ -62,6 +64,10 @@ export default function ExamToolClient({ exam, type }: ExamToolClientProps) {
         formatMime
       );
 
+      res.blob = await setDPIInBlob(res.blob, targetDpi);
+      res.dpi = targetDpi;
+      res.size = res.blob.size;
+
       setResult(res);
 
       const val = await validateOutput(res.blob, {
@@ -70,6 +76,7 @@ export default function ExamToolClient({ exam, type }: ExamToolClientProps) {
         minKB: requirement.minKB,
         maxKB: requirement.maxKB,
         format: requirement.format,
+        dpi: targetDpi,
       });
       setValidation(val);
     } catch (err) {
@@ -110,6 +117,8 @@ export default function ExamToolClient({ exam, type }: ExamToolClientProps) {
     }
   }, [cropRect, rotation, flipHorizontal, flipVertical]);
 
+  const targetDpi = requirement.dpi || 300;
+
   return (
     <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden space-y-6">
       {/* Header Requirement Bar */}
@@ -129,6 +138,9 @@ export default function ExamToolClient({ exam, type }: ExamToolClientProps) {
           <span className="bg-purple-100 text-purple-800 px-3 py-1 rounded-lg border border-purple-200">
             {requirement.format}
           </span>
+          <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-lg border border-blue-200">
+            {targetDpi} DPI
+          </span>
         </div>
       </div>
 
@@ -137,7 +149,7 @@ export default function ExamToolClient({ exam, type }: ExamToolClientProps) {
           <UploadDropzone
             onFileSelect={handleFileSelect}
             label={`Upload ${type} for ${exam.name}`}
-            sublabel={`Will be resized to exact ${requirement.width}×${requirement.height} px and ${requirement.minKB}-${requirement.maxKB}KB`}
+            sublabel={`Will be resized to exact ${requirement.width}×${requirement.height} px and ${requirement.minKB}-${requirement.maxKB}KB (${targetDpi} DPI)`}
           />
         ) : (
           <div className="space-y-6">
@@ -154,6 +166,7 @@ export default function ExamToolClient({ exam, type }: ExamToolClientProps) {
                       size: result.size,
                       format: result.format,
                       quality: result.quality,
+                      dpi: result.dpi,
                     }
                   : undefined
               }
@@ -172,6 +185,7 @@ export default function ExamToolClient({ exam, type }: ExamToolClientProps) {
                     minKB: requirement.minKB,
                     maxKB: requirement.maxKB,
                     format: requirement.format,
+                    dpi: targetDpi,
                   }}
                 />
 
@@ -179,6 +193,7 @@ export default function ExamToolClient({ exam, type }: ExamToolClientProps) {
                   blob={result.blob}
                   filename={`${exam.slug}-${type}.${requirement.format.toLowerCase()}`}
                   onReset={handleReset}
+                  isValid={validation.valid}
                 />
               </>
             )}

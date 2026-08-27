@@ -16,12 +16,29 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const exam = getExamBySlug(slug);
   
-  if (!exam) return { title: 'Not Found' };
+  if (!exam) return { title: 'Not Found - 20KB Photo' };
+
+  const title = `${exam.name} Photo and Signature Resizer - 20KB Photo`;
+  const description = `Resize the photo and signature required for ${exam.name} applications online. Format both documents to official pixel dimensions and file size limits for ${exam.fullName}.`;
+  const canonical = `https://20kbphoto.in/exams/${slug}/photo-signature-resizer`;
 
   return {
-    title: `${exam.name} Photo & Signature Resizer | 20KB Photo`,
-    description: `Resize both your photo and signature exactly to official requirements for ${exam.fullName}.`,
-    alternates: { canonical: `/exams/${slug}/photo-signature-resizer` }
+    title,
+    description,
+    alternates: { canonical },
+    openGraph: {
+      title,
+      description,
+      url: canonical,
+      siteName: '20KB Photo',
+      locale: 'en_IN',
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+    },
   };
 }
 

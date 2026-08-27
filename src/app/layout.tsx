@@ -13,11 +13,11 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://20kbphoto.in"),
   title: {
-    default: "20KB Photo — Resize Photos & Signatures for Applications & Exams",
+    default: "20KB Photo - Resize Photos and Signatures for Applications and Exams",
     template: "%s",
   },
   description:
-    "Free online tools to resize, compress, convert and prepare your photos, signatures and documents for exams, government forms, admissions and applications. 100% private — processed in your browser.",
+    "Free online tools to resize, compress, convert and prepare your photos, signatures and documents for exams, government forms, admissions and applications. 100% private - processed in your browser.",
   keywords: [
     "photo resizer",
     "signature resizer",
@@ -43,13 +43,13 @@ export const metadata: Metadata = {
     locale: "en_IN",
     url: "https://20kbphoto.in",
     siteName: "20KB Photo",
-    title: "20KB Photo — Resize Photos & Signatures for Applications & Exams",
+    title: "20KB Photo - Resize Photos and Signatures for Applications and Exams",
     description:
       "Free online tools to resize, compress and prepare your application files in seconds. Exact size. Exact dimensions. Ready for upload.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "20KB Photo — Resize Photos & Signatures for Applications & Exams",
+    title: "20KB Photo - Resize Photos and Signatures for Applications and Exams",
     description:
       "Free online tools to resize, compress and prepare your application files in seconds.",
   },

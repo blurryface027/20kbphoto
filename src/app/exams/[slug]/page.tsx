@@ -24,11 +24,27 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const category = categories.find(c => c.slug === slug);
 
   if (category) {
+    const title = `${category.name} Exam Photo and Signature Size - 20KB Photo`;
+    const description = `Check photo and signature requirements for ${category.name} exams. Resize application photos and signatures online to exact pixel dimensions and file size limits.`;
+    const canonical = `https://20kbphoto.in/exams/${slug}`;
     return {
-      title: `${category.name} Exam Photo & Signature Size | 20KB Photo`,
-      description: `Find ${category.name} exam photo and signature requirements, including image dimensions, file size and format. Resize application photos and signatures online for free.`,
+      title,
+      description,
       alternates: {
-        canonical: `/exams/${slug}/`,
+        canonical,
+      },
+      openGraph: {
+        title,
+        description,
+        url: canonical,
+        siteName: '20KB Photo',
+        locale: 'en_IN',
+        type: 'website',
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title,
+        description,
       },
     };
   }
@@ -38,18 +54,34 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (exam) {
     const photo = exam.photo;
     const signature = exam.signature;
+    const title = `${exam.name} Photo and Signature Size - 20KB Photo`;
+    const description = `Check official photo and signature requirements for ${exam.name} applications. View required dimensions (${photo.width}x${photo.height}px photo, ${signature.width}x${signature.height}px signature), file size limits (${photo.minKB}-${photo.maxKB}KB photo, ${signature.minKB}-${signature.maxKB}KB signature), format, and online resizer tools for ${exam.fullName}.`;
+    const canonical = `https://20kbphoto.in/exams/${slug}`;
 
     return {
-      title: `${exam.name} Photo Size & Signature Size | 20KB Photo`,
-      description: `${exam.name} photo size: ${photo.width}x${photo.height}px, ${photo.minKB}-${photo.maxKB}KB ${photo.format}. Signature: ${signature.width}x${signature.height}px, ${signature.minKB}-${signature.maxKB}KB. Resize online for free.`,
+      title,
+      description,
       alternates: {
-        canonical: `/exams/${slug}/`,
+        canonical,
+      },
+      openGraph: {
+        title,
+        description,
+        url: canonical,
+        siteName: '20KB Photo',
+        locale: 'en_IN',
+        type: 'website',
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title,
+        description,
       },
     };
   }
 
   return {
-    title: 'Not Found',
+    title: 'Not Found - 20KB Photo',
     robots: {
       index: false,
       follow: false,
@@ -118,9 +150,9 @@ export default async function ExamHubPage({ params }: Props) {
       <Breadcrumbs items={breadcrumbs} />
       
       <div className="mt-6 mb-8">
-        <h1 className="text-4xl font-bold mb-2">{exam.fullName} Photo & Signature Resizer</h1>
+        <h1 className="text-4xl font-bold mb-2">{exam.name} Photo & Signature Resizer</h1>
         <p className="text-lg text-gray-600">
-          Official requirements for {exam.authority} • Last verified: {exam.lastVerified}
+          Official photo and signature requirements for {exam.name} ({exam.fullName}) applications • {exam.authority} • Last verified: {exam.lastVerified}
         </p>
       </div>
 
@@ -175,7 +207,7 @@ export default async function ExamHubPage({ params }: Props) {
         ]}
       />
 
-      <div className="mb-12">
+      <div className="mt-8 sm:mt-10 mb-12">
         <div className="bg-indigo-50/70 border border-indigo-100 p-4.5 rounded-xl text-indigo-900 text-sm leading-relaxed">
           <p>
             <strong className="font-bold text-indigo-950">Disclaimer:</strong> This is an independent tool to help candidates format their documents. 
@@ -190,7 +222,7 @@ export default async function ExamHubPage({ params }: Props) {
           <li>Select the specific tool (Photo or Signature) from above.</li>
           <li>Upload your original scanned image or photo.</li>
           <li>Our tool will automatically crop and resize to the required dimensions.</li>
-          <li>We'll compress the file to ensure it falls exactly between the required KB limits.</li>
+          <li>We'll compress the file to ensure it falls strictly between the required {exam.photo.minKB}–{exam.photo.maxKB}KB and {exam.signature.minKB}–{exam.signature.maxKB}KB limits.</li>
           <li>Download the final validated file, ready for upload.</li>
         </ol>
       </div>
@@ -218,10 +250,34 @@ export default async function ExamHubPage({ params }: Props) {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "WebApplication",
-            "name": `${exam.name} Photo & Signature Tool`,
-            "applicationCategory": "UtilitiesApplication",
-            "operatingSystem": "Any"
+            "@graph": [
+              {
+                "@type": "BreadcrumbList",
+                "itemListElement": breadcrumbs.map((bc, index) => ({
+                  "@type": "ListItem",
+                  "position": index + 1,
+                  "name": bc.label,
+                  "item": bc.href ? `https://20kbphoto.in${bc.href}` : `https://20kbphoto.in/exams/${slug}`
+                }))
+              },
+              {
+                "@type": "WebApplication",
+                "name": `${exam.name} Photo & Signature Tool`,
+                "applicationCategory": "UtilitiesApplication",
+                "operatingSystem": "Any"
+              },
+              {
+                "@type": "FAQPage",
+                "mainEntity": faqs.map(faq => ({
+                  "@type": "Question",
+                  "name": faq.question,
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": faq.answer
+                  }
+                }))
+              }
+            ]
           })
         }}
       />

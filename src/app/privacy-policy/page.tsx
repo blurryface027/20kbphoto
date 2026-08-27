@@ -3,10 +3,25 @@ import Breadcrumbs from "@/components/layout/Breadcrumbs";
 import { HiOutlineShieldCheck, HiOutlineLockClosed } from "react-icons/hi2";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | 20KB Photo - 100% Client-Side Local Image Resizer",
+  title: "Privacy Policy - 20KB Photo",
   description:
     "Read our Privacy Policy. 20KB Photo processes all images locally inside your browser memory. We never collect, store, or upload your photos or personal data.",
   alternates: { canonical: "https://20kbphoto.in/privacy-policy" },
+  openGraph: {
+    title: "Privacy Policy - 20KB Photo",
+    description:
+      "Read our Privacy Policy. 20KB Photo processes all images locally inside your browser memory. We never collect, store, or upload your photos or personal data.",
+    url: "https://20kbphoto.in/privacy-policy",
+    siteName: "20KB Photo",
+    locale: "en_IN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Privacy Policy - 20KB Photo",
+    description:
+      "Read our Privacy Policy. 20KB Photo processes all images locally inside your browser memory. We never collect, store, or upload your photos or personal data.",
+  },
 };
 
 export default function PrivacyPolicyPage() {
@@ -26,7 +41,7 @@ export default function PrivacyPolicyPage() {
         <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">
           Privacy Policy
         </h1>
-        <p className="text-xs text-gray-400 mt-2">Last updated: January 2026</p>
+        <p className="text-xs text-gray-400 mt-2">Last updated: August 27, 2026</p>
       </div>
 
       <div className="bg-white p-8 sm:p-10 rounded-2xl border border-gray-200 shadow-xs space-y-8 text-gray-600 text-sm sm:text-base leading-relaxed">

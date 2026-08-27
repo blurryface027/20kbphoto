@@ -2,10 +2,25 @@ import type { Metadata } from "next";
 import Breadcrumbs from "@/components/layout/Breadcrumbs";
 
 export const metadata: Metadata = {
-  title: "Terms of Service | 20KB Photo",
+  title: "Terms of Service - 20KB Photo",
   description:
     "Review the Terms of Service for using 20KB Photo's free browser-based image resizing and compression utilities.",
   alternates: { canonical: "https://20kbphoto.in/terms-of-service" },
+  openGraph: {
+    title: "Terms of Service - 20KB Photo",
+    description:
+      "Review the Terms of Service for using 20KB Photo's free browser-based image resizing and compression utilities.",
+    url: "https://20kbphoto.in/terms-of-service",
+    siteName: "20KB Photo",
+    locale: "en_IN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Terms of Service - 20KB Photo",
+    description:
+      "Review the Terms of Service for using 20KB Photo's free browser-based image resizing and compression utilities.",
+  },
 };
 
 export default function TermsOfServicePage() {
@@ -22,7 +37,7 @@ export default function TermsOfServicePage() {
         <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">
           Terms of Service
         </h1>
-        <p className="text-xs text-gray-400 mt-2">Effective date: January 1, 2026</p>
+        <p className="text-xs text-gray-400 mt-2">Last updated: August 27, 2026</p>
       </div>
 
       <div className="bg-white p-8 sm:p-10 rounded-2xl border border-gray-200 shadow-xs space-y-8 text-gray-600 text-sm sm:text-base leading-relaxed">

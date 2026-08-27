@@ -5,8 +5,22 @@ import ExamDirectoryClient from '@/components/exams/ExamDirectoryClient';
 import Breadcrumbs from '@/components/layout/Breadcrumbs';
 
 export const metadata: Metadata = {
-  title: 'All Exam Photo & Signature Resizer Tools | 20KB Photo',
+  title: 'All Exam Photo and Signature Tools - 20KB Photo',
   description: 'Find photo and signature resizer tools for all major Indian exams including SSC, UPSC, Banking, and State exams.',
+  alternates: { canonical: 'https://20kbphoto.in/exams' },
+  openGraph: {
+    title: 'All Exam Photo and Signature Tools - 20KB Photo',
+    description: 'Find photo and signature resizer tools for all major Indian exams including SSC, UPSC, Banking, and State exams.',
+    url: 'https://20kbphoto.in/exams',
+    siteName: '20KB Photo',
+    locale: 'en_IN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'All Exam Photo and Signature Tools - 20KB Photo',
+    description: 'Find photo and signature resizer tools for all major Indian exams including SSC, UPSC, Banking, and State exams.',
+  },
 };
 
 export default function ExamsDirectoryPage() {

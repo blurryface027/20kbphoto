@@ -88,8 +88,8 @@ export function generateExamStructuredData(exam: Exam): object {
   return {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": `${exam.name} Photo and Signature Maker`,
-    "description": `Free online tool to resize and compress photos for ${exam.name}.`
+    "name": `${exam.name} Photo and Signature Size`,
+    "description": `Official photo and signature size requirements and resizer tool for ${exam.fullName}.`
   };
 }
 
