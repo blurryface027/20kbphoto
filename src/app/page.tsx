@@ -1,10 +1,13 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import HomeHero from "@/components/home/HomeHero";
+import HowItWorksSection from "@/components/home/HowItWorksSection";
 import PopularTools from "@/components/home/PopularTools";
 import PopularExams from "@/components/home/PopularExams";
 import BrowseCategories from "@/components/home/BrowseCategories";
 import WhyUseSection from "@/components/home/WhyUseSection";
+import WhyChooseTable from "@/components/home/WhyChooseTable";
+import HomeFAQSection from "@/components/home/HomeFAQSection";
 import AdUnit from "@/components/ads/AdUnit";
 
 export const metadata: Metadata = {
@@ -18,13 +21,16 @@ export default function HomePage() {
   return (
     <>
       <HomeHero />
+      <HowItWorksSection />
       <PopularTools />
       <PopularExams />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AdUnit className="my-8" />
       </div>
       <BrowseCategories />
+      <WhyChooseTable />
       <WhyUseSection />
+      <HomeFAQSection />
 
       {/* Structured Data */}
       <script
@@ -51,3 +57,4 @@ export default function HomePage() {
     </>
   );
 }
+

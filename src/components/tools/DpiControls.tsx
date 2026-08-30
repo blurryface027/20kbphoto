@@ -33,7 +33,7 @@ export default function DpiControls({ dpi, onDpiChange, toolName = "change-image
       <div className="flex items-center justify-between pb-3 border-b border-gray-100">
         <div className="flex items-center gap-2">
           <HiOutlineAdjustmentsVertical className="w-5 h-5 text-indigo-600" />
-          <h3 className="text-lg font-bold text-gray-900">Image DPI Settings</h3>
+          <h3 className="text-base sm:text-lg font-bold text-slate-900 tracking-tight">Image DPI Settings</h3>
         </div>
 
         <div className="text-xs font-bold text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full border border-indigo-200">

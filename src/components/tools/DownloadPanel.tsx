@@ -1,7 +1,14 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useMemo, useEffect } from "react";
 import { trackEvent } from "@/lib/gtag";
+import {
+  HiOutlineArrowDownTray,
+  HiOutlineArrowPath,
+  HiOutlineCheckCircle,
+  HiOutlineExclamationTriangle,
+  HiOutlineSparkles,
+} from "react-icons/hi2";
 
 interface DownloadPanelProps {
   blob?: Blob;
@@ -28,17 +35,20 @@ export default function DownloadPanel({
   targetWidth,
   targetHeight,
 }: DownloadPanelProps) {
-  const [downloadUrl, setDownloadUrl] = useState<string | null>(null);
+  const downloadUrl = useMemo(() => {
+    if (blob) {
+      return URL.createObjectURL(blob);
+    }
+    return null;
+  }, [blob]);
 
   useEffect(() => {
-    if (blob) {
-      const url = URL.createObjectURL(blob);
-      setDownloadUrl(url);
-      return () => URL.revokeObjectURL(url);
-    } else {
-      setDownloadUrl(null);
-    }
-  }, [blob]);
+    return () => {
+      if (downloadUrl) {
+        URL.revokeObjectURL(downloadUrl);
+      }
+    };
+  }, [downloadUrl]);
 
   const handleDownload = () => {
     if (downloadUrl) {
@@ -64,57 +74,64 @@ export default function DownloadPanel({
   }
 
   return (
-    <div className="w-full bg-surface border border-border rounded-xl p-6 text-center shadow-sm">
-      <h3 className="text-xl font-semibold text-primary mb-2">
-        {isValid ? "Ready to Download" : "Generated Output (Check Validation)"}
-      </h3>
+    <div className="w-full bg-white border border-slate-200/80 rounded-3xl p-6 sm:p-8 text-center shadow-xl shadow-slate-200/40 space-y-6">
+      <div className="space-y-2 max-w-xl mx-auto">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-indigo-50 border border-indigo-200/80 text-indigo-700 text-xs font-extrabold">
+          <HiOutlineSparkles className="w-4 h-4 text-indigo-600" />
+          <span>Output Ready</span>
+        </div>
+        <h3 className="text-base sm:text-lg font-bold text-slate-900 tracking-tight">
+          {isValid ? "Download Your Optimized Image" : "Generated Output (Review Specifications)"}
+        </h3>
+        <p className="text-xs text-slate-500 font-medium">
+          Processed with exact DPI resolution, file size constraints, and portal formatting
+        </p>
+      </div>
 
       {!isValid && (
-        <div className="mb-4 p-3 bg-amber-50 border border-amber-200 rounded-xl text-amber-800 text-xs font-semibold flex items-center justify-center gap-2 max-w-xl mx-auto">
-          <svg className="w-4 h-4 text-amber-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-          </svg>
-          <span>Warning: Generated file size or parameters do not satisfy official requirements.</span>
+        <div className="p-3.5 bg-amber-50 border border-amber-200/80 rounded-2xl text-amber-800 text-xs font-semibold flex items-center justify-center gap-2 max-w-xl mx-auto">
+          <HiOutlineExclamationTriangle className="w-5 h-5 text-amber-600 shrink-0" />
+          <span>Notice: File parameters differ slightly from portal recommendations.</span>
         </div>
       )}
 
       {examName && isValid && (
-        <p className="text-sm text-success font-medium mb-4 flex items-center justify-center">
-          <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
-          Optimized for {examName}
-        </p>
+        <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-bold">
+          <HiOutlineCheckCircle className="w-4 h-4 text-emerald-600" />
+          <span>Optimized for {examName} Portal</span>
+        </div>
       )}
 
-      <div className="flex flex-col sm:flex-row items-center justify-center gap-4 my-6">
+      {/* Action Buttons */}
+      <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 pt-2">
         <button
           onClick={handleDownload}
           className={`${
-            isValid ? "bg-indigo-600 hover:bg-indigo-700 shadow-indigo-200" : "bg-amber-600 hover:bg-amber-700 shadow-amber-200"
-          } text-white font-bold py-3 px-8 rounded-xl shadow-md transition-all duration-200 flex items-center transform hover:scale-105`}
+            isValid
+              ? "bg-indigo-600 hover:bg-indigo-700 text-white shadow-md shadow-indigo-200"
+              : "bg-amber-600 hover:bg-amber-700 text-white shadow-md shadow-amber-200"
+          } text-sm font-black py-4 px-8 rounded-2xl transition-all duration-200 flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-[0.98] w-full sm:w-auto min-w-[220px]`}
           aria-label="Download processed image"
         >
-          <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-          </svg>
-          Download Image
+          <HiOutlineArrowDownTray className="w-5 h-5" />
+          <span>Download Image</span>
         </button>
-        
+
         <button
           onClick={onReset}
-          className="bg-white hover:bg-gray-50 text-primary font-medium py-3 px-6 rounded-lg border border-border shadow-sm transition-all duration-200"
+          className="bg-slate-100 hover:bg-slate-200/80 text-slate-700 text-sm font-bold py-4 px-6 rounded-2xl border border-slate-200 transition-all flex items-center justify-center gap-2 w-full sm:w-auto"
           aria-label="Process another image"
         >
-          Process Another
+          <HiOutlineArrowPath className="w-4.5 h-4.5 text-slate-500" />
+          <span>Process Another Image</span>
         </button>
       </div>
 
-      <div className="text-sm text-gray-500 bg-gray-50 p-3 rounded-lg inline-block">
-        <span className="font-semibold">File will be saved as:</span> {filename}
-        <p className="text-xs mt-1 text-gray-400">
-          Auto-renamed for error-free upload to official portals.
-        </p>
+      <div className="pt-2">
+        <div className="inline-flex items-center gap-2 text-xs text-slate-600 bg-slate-50 px-4 py-2 rounded-xl border border-slate-200">
+          <span className="font-semibold text-slate-500">Save Filename:</span>
+          <span className="font-mono text-indigo-600 font-bold">{filename}</span>
+        </div>
       </div>
     </div>
   );

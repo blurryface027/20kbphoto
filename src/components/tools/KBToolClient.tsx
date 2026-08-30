@@ -10,6 +10,7 @@ import ValidationBadges from "@/components/tools/ValidationBadges";
 import DownloadPanel from "@/components/tools/DownloadPanel";
 import { processImage, getImageInfo, getMimeType, type ImageInfo, type ProcessingResult } from "@/lib/imageProcessor";
 import { trackEvent } from "@/lib/gtag";
+import { getShortDownloadFilename } from "@/lib/filenameUtils";
 
 interface KBToolClientProps {
   targetKB: number;
@@ -156,12 +157,7 @@ export default function KBToolClient({ targetKB: initialTargetKB }: KBToolClient
   };
 
   const getDownloadFilename = () => {
-    if (!originalFile) return `image-${currentTargetKB}kb.jpg`;
-    const name = originalFile.name;
-    const lastDot = name.lastIndexOf(".");
-    const baseName = lastDot > 0 ? name.substring(0, lastDot) : name;
-    const ext = format === "image/jpeg" ? "jpg" : format === "image/png" ? "png" : "webp";
-    return `${baseName}-${currentTargetKB}kb.${ext}`;
+    return getShortDownloadFilename(originalFile, `${currentTargetKB}kb`, format);
   };
 
   const relatedSizes = [10, 20, 30, 40, 50, 60, 100, 150, 200, 300, 500].filter(
@@ -246,8 +242,18 @@ export default function KBToolClient({ targetKB: initialTargetKB }: KBToolClient
       {!originalFile ? (
         <UploadDropzone
           onFileSelect={handleFileSelect}
-          label={`Upload image to resize to ${currentTargetKB}KB`}
+          label={`Click or drop image to resize to ${currentTargetKB}KB`}
+          sublabel="JPG, PNG, HEIC, or WEBP up to 15MB"
           toolName={`resize-image-to-${currentTargetKB}kb`}
+          toolTitle={`Resize Image to ${currentTargetKB}KB`}
+          initialDocType="photo"
+          customRequirements={{
+            width: 300,
+            height: 300,
+            minKB: Math.max(1, Math.floor(currentTargetKB * 0.5)),
+            maxKB: currentTargetKB,
+            format: "JPG",
+          }}
         />
       ) : (
         <div className="space-y-6 max-w-4xl mx-auto">

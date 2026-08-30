@@ -143,9 +143,18 @@ export default function NameDateToolClient({ includeDate = true }: NameDateToolC
       {!originalFile ? (
         <UploadDropzone
           onFileSelect={handleFileSelect}
-          label="Upload photo to add name & date"
+          label="Click or drop photo to add name & date"
           sublabel="Supports JPG, PNG, WEBP files up to 10MB"
           toolName={toolSlug}
+          toolTitle={includeDate ? "Add Name & Date to Photo" : "Add Name to Photo"}
+          initialDocType="photo"
+          customRequirements={{
+            width: 400,
+            height: 400,
+            minKB: 20,
+            maxKB: 300,
+            format: "JPG",
+          }}
         />
       ) : (
         <div className="space-y-6 max-w-4xl mx-auto">

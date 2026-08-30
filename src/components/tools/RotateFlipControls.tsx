@@ -8,6 +8,7 @@ import {
   HiOutlineArrowsUpDown,
   HiOutlineArrowUturnRight,
   HiOutlineArrowUturnLeft,
+  HiOutlineCheck,
 } from "react-icons/hi2";
 
 interface RotateFlipControlsProps {
@@ -31,91 +32,86 @@ export default function RotateFlipControls({
   onReset,
   toolName = "rotate-image",
 }: RotateFlipControlsProps) {
-  const handleRotateStep = (step: number) => {
-    const next = (rotation + step) % 360;
-    const finalAngle = next < 0 ? next + 360 : next;
+  const normalizedRotation = ((rotation % 360) + 360) % 360;
+
+  const handleSelectAngle = (angle: number) => {
     trackEvent("image_rotate", {
       tool_name: toolName,
-      rotation_angle: finalAngle,
+      rotation_angle: angle,
     });
-    onRotationChange(finalAngle);
+    onRotationChange(angle);
   };
 
   return (
-    <div className="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm space-y-5">
+    <div className="w-full bg-white border border-slate-200/80 rounded-3xl p-6 sm:p-7 shadow-xl shadow-slate-200/40 space-y-6">
       {/* Header */}
-      <div className="flex items-center justify-between pb-4 border-b border-gray-100">
-        <div className="flex items-center gap-2">
-          <HiOutlineArrowPath className="w-5 h-5 text-indigo-600" />
-          <h3 className="text-lg font-bold text-gray-900">Rotate & Flip Options</h3>
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 border-b border-slate-100">
+        <div className="flex items-center gap-3">
+          <div className="p-2.5 rounded-2xl bg-indigo-600 text-white shadow-sm">
+            <HiOutlineArrowPath className="w-6 h-6" />
+          </div>
+          <div>
+            <h3 className="text-base sm:text-lg font-bold text-slate-900 tracking-tight">
+              Rotate & Mirror Orientation
+            </h3>
+            <p className="text-xs text-slate-500 font-medium">
+              Correct photograph angle or flip signature orientation for official form uploads
+            </p>
+          </div>
         </div>
 
         <button
           type="button"
           onClick={onReset}
-          className="text-xs font-semibold text-gray-500 hover:text-gray-900 bg-gray-100 px-3 py-1.5 rounded-xl border border-gray-200 transition-colors"
+          className="flex items-center gap-1.5 text-xs font-bold text-slate-600 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 px-3.5 py-2 rounded-xl border border-slate-200 transition-all self-start sm:self-auto"
         >
+          <HiOutlineArrowPath className="w-4 h-4" />
           Reset Orientation
         </button>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {/* Section 1: Quick Rotation Controls */}
-        <div className="space-y-3">
-          <label className="block text-xs font-bold uppercase tracking-wider text-gray-500">
-            Rotate Image Angle
+        {/* Section 1: Rotation Controls */}
+        <div className="space-y-3 bg-slate-50/70 p-4 sm:p-5 rounded-2xl border border-slate-200/70">
+          <label className="block text-xs font-extrabold uppercase tracking-wider text-slate-600">
+            Rotate Image Orientation
           </label>
 
-          <div className="grid grid-cols-3 gap-2">
-            <button
-              type="button"
-              onClick={() => handleRotateStep(-90)}
-              className="flex items-center justify-center gap-1.5 py-2.5 px-3 bg-gray-50 hover:bg-indigo-50 hover:text-indigo-600 border border-gray-200 rounded-xl text-xs font-bold text-gray-700 transition-all"
-            >
-              <HiOutlineArrowUturnLeft className="w-4 h-4" />
-              -90° Left
-            </button>
-
-            <button
-              type="button"
-              onClick={() => handleRotateStep(90)}
-              className="flex items-center justify-center gap-1.5 py-2.5 px-3 bg-gray-50 hover:bg-indigo-50 hover:text-indigo-600 border border-gray-200 rounded-xl text-xs font-bold text-gray-700 transition-all"
-            >
-              <HiOutlineArrowUturnRight className="w-4 h-4" />
-              +90° Right
-            </button>
-
-            <button
-              type="button"
-              onClick={() => handleRotateStep(180)}
-              className="flex items-center justify-center gap-1.5 py-2.5 px-3 bg-gray-50 hover:bg-indigo-50 hover:text-indigo-600 border border-gray-200 rounded-xl text-xs font-bold text-gray-700 transition-all"
-            >
-              <HiOutlineArrowPath className="w-4 h-4" />
-              180° Flip
-            </button>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+            {[
+              { angle: 0, label: "0° Normal", icon: HiOutlineArrowPath },
+              { angle: 90, label: "+90° Right", icon: HiOutlineArrowUturnRight },
+              { angle: 180, label: "180° Flip", icon: HiOutlineArrowPath },
+              { angle: 270, label: "-90° Left", icon: HiOutlineArrowUturnLeft },
+            ].map((item) => {
+              const Icon = item.icon;
+              const isActive = normalizedRotation === item.angle;
+              return (
+                <button
+                  key={item.angle}
+                  type="button"
+                  onClick={() => handleSelectAngle(item.angle)}
+                  className={`py-3 px-2 rounded-xl text-xs font-extrabold border transition-all flex flex-col items-center justify-center gap-1.5 ${
+                    isActive
+                      ? "bg-indigo-600 text-white border-indigo-600 shadow-sm"
+                      : "bg-white text-slate-700 hover:bg-slate-100 border-slate-200/80"
+                  }`}
+                >
+                  <Icon className="w-4 h-4" />
+                  <span>{item.label}</span>
+                </button>
+              );
+            })}
           </div>
 
-          {/* Slider angle */}
-          <div className="space-y-1.5 pt-2">
-            <div className="flex items-center justify-between text-xs font-semibold text-gray-600">
-              <span>Fine Angle Slider</span>
-              <span className="font-bold text-indigo-600">{rotation}°</span>
-            </div>
-            <input
-              type="range"
-              min={0}
-              max={360}
-              step={1}
-              value={rotation}
-              onChange={(e) => onRotationChange(Number(e.target.value))}
-              className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-indigo-600"
-            />
-          </div>
+          <p className="text-[11px] text-slate-500 font-medium pt-1">
+            Rotate photo in 90-degree steps for official passport and portal uploads.
+          </p>
         </div>
 
         {/* Section 2: Flip Mirror Controls */}
-        <div className="space-y-3">
-          <label className="block text-xs font-bold uppercase tracking-wider text-gray-500">
+        <div className="space-y-3 bg-slate-50/70 p-4 sm:p-5 rounded-2xl border border-slate-200/70">
+          <label className="block text-xs font-extrabold uppercase tracking-wider text-slate-600">
             Flip Image (Mirror)
           </label>
 
@@ -132,14 +128,15 @@ export default function RotateFlipControls({
                 }
                 onFlipHorizontalChange(nextVal);
               }}
-              className={`flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs font-bold border transition-all ${
+              className={`flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs font-extrabold border transition-all ${
                 flipHorizontal
                   ? "bg-indigo-600 text-white border-indigo-600 shadow-sm"
-                  : "bg-gray-50 text-gray-700 border-gray-200 hover:bg-gray-100"
+                  : "bg-white text-slate-700 border-slate-200/80 hover:bg-slate-100"
               }`}
             >
               <HiOutlineArrowsRightLeft className="w-4 h-4" />
-              Flip Horizontal
+              <span>Flip Horizontal</span>
+              {flipHorizontal && <HiOutlineCheck className="w-4 h-4 ml-auto text-white" />}
             </button>
 
             <button
@@ -154,19 +151,20 @@ export default function RotateFlipControls({
                 }
                 onFlipVerticalChange(nextVal);
               }}
-              className={`flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs font-bold border transition-all ${
+              className={`flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs font-extrabold border transition-all ${
                 flipVertical
                   ? "bg-indigo-600 text-white border-indigo-600 shadow-sm"
-                  : "bg-gray-50 text-gray-700 border-gray-200 hover:bg-gray-100"
+                  : "bg-white text-slate-700 border-slate-200/80 hover:bg-slate-100"
               }`}
             >
               <HiOutlineArrowsUpDown className="w-4 h-4" />
-              Flip Vertical
+              <span>Flip Vertical</span>
+              {flipVertical && <HiOutlineCheck className="w-4 h-4 ml-auto text-white" />}
             </button>
           </div>
 
-          <p className="text-xs text-gray-500 pt-1">
-            Mirror your photograph or signature horizontally or vertically for correct orientation in form portals.
+          <p className="text-[11px] text-slate-500 font-medium pt-1">
+            Mirror photograph or signature horizontally or vertically for correct alignment.
           </p>
         </div>
       </div>

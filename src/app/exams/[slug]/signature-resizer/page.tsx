@@ -4,6 +4,8 @@ import type { Metadata } from "next";
 import { exams, getExamBySlug, getAllSlugs } from "@/data/exams";
 import Breadcrumbs from "@/components/layout/Breadcrumbs";
 import ExamToolClient from "@/components/exams/ExamToolClient";
+import OfficialExamGuidelines from "@/components/exams/OfficialExamGuidelines";
+import ExamFAQSection from "@/components/exams/ExamFAQSection";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -60,10 +62,10 @@ export default async function ExamSignatureResizerPage({ params }: Props) {
       <Breadcrumbs items={breadcrumbs} />
 
       <div className="mt-6 mb-8">
-        <h1 className="text-2xl sm:text-3xl font-bold text-text">
+        <h1 className="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight">
           {exam.name} Signature Resizer
         </h1>
-        <p className="mt-2 text-text-secondary">
+        <p className="mt-2 text-xs sm:text-sm text-gray-600 leading-relaxed">
           Resize your signature to exactly{" "}
           <strong>
             {exam.signature.width}×{exam.signature.height} pixels
@@ -85,8 +87,14 @@ export default async function ExamSignatureResizerPage({ params }: Props) {
         type="signature"
       />
 
+      {/* Official Guidelines Section */}
+      <OfficialExamGuidelines exam={exam} />
+
+      {/* FAQ Section */}
+      <ExamFAQSection exam={exam} />
+
       {/* Disclaimer */}
-      <div className="mt-12 p-4 bg-bg-alt rounded-xl border border-border text-xs text-text-muted leading-relaxed">
+      <div className="mt-12 p-4 bg-gray-50 rounded-xl border border-gray-200 text-xs text-gray-500 leading-relaxed">
         <strong>Disclaimer:</strong> This is an independent tool and is not affiliated with{" "}
         {exam.authority} or any government organization. Always verify the latest requirements from
         the official notification before uploading your application.

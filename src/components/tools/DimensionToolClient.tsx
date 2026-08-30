@@ -90,8 +90,18 @@ export default function DimensionToolClient({
       {!originalFile ? (
         <UploadDropzone
           onFileSelect={handleFileSelect}
-          label={`Upload ${isSig ? "signature" : "image"} to resize to ${targetWidth}×${targetHeight} px`}
+          label={`Click or drop ${isSig ? "signature" : "image"} to resize to ${targetWidth}×${targetHeight} px`}
+          sublabel="JPG, PNG, HEIC, or WEBP up to 15MB"
           toolName={toolSlug}
+          toolTitle={`${targetWidth}×${targetHeight} px ${isSig ? "Signature" : "Image"} Resizer`}
+          initialDocType={isSig ? "signature" : "photo"}
+          customRequirements={{
+            width: targetWidth,
+            height: targetHeight,
+            minKB: 10,
+            maxKB: 100,
+            format: "JPG",
+          }}
         />
       ) : (
         <div className="space-y-6 max-w-4xl mx-auto">

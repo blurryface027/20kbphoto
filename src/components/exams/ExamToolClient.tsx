@@ -24,11 +24,17 @@ import { trackEvent } from "@/lib/gtag";
 
 interface ExamToolClientProps {
   exam: Exam;
-  type: "photo" | "signature";
+  type?: "photo" | "signature";
+  allowDocTypeToggle?: boolean;
 }
 
-export default function ExamToolClient({ exam, type }: ExamToolClientProps) {
-  const requirement = type === "photo" ? exam.photo : exam.signature;
+export default function ExamToolClient({
+  exam,
+  type = "photo",
+  allowDocTypeToggle = false,
+}: ExamToolClientProps) {
+  const [activeDocType, setActiveDocType] = useState<"photo" | "signature">(type);
+  const requirement = activeDocType === "photo" ? exam.photo : exam.signature;
 
   const [originalFile, setOriginalFile] = useState<File | null>(null);
   const [originalInfo, setOriginalInfo] = useState<ImageInfo | undefined>(undefined);
@@ -47,61 +53,63 @@ export default function ExamToolClient({ exam, type }: ExamToolClientProps) {
     crop: CropRect | null = cropRect,
     rot: number = rotation,
     flipH: boolean = flipHorizontal,
-    flipV: boolean = flipVertical
+    flipV: boolean = flipVertical,
+    docType: "photo" | "signature" = activeDocType
   ) => {
     if (!file) return;
     setIsProcessing(true);
 
     try {
-      const formatMime = requirement.format.toLowerCase().includes("png") ? "image/png" : "image/jpeg";
-      const targetDpi = requirement.dpi || 300;
+      const activeReq = docType === "photo" ? exam.photo : exam.signature;
+      const formatMime = activeReq.format.toLowerCase().includes("png") ? "image/png" : "image/jpeg";
+      const targetDpi = activeReq.dpi || 300;
       
       const res = await processImage(file, {
         crop: crop || undefined,
         rotation: rot,
         flipHorizontal: flipH,
         flipVertical: flipV,
-        width: requirement.width,
-        height: requirement.height,
-        minKB: requirement.minKB,
-        maxKB: requirement.maxKB,
+        width: activeReq.width,
+        height: activeReq.height,
+        minKB: activeReq.minKB,
+        maxKB: activeReq.maxKB,
         format: formatMime,
         dpi: targetDpi,
       });
 
       setResult(res);
 
-      const examToolSlug = `${exam.slug}-${type}-resizer`;
-      if (type === "signature") {
+      const examToolSlug = `${exam.slug}-${docType}-resizer`;
+      if (docType === "signature") {
         trackEvent("signature_resize", {
           tool_name: examToolSlug,
-          target_width: requirement.width,
-          target_height: requirement.height,
+          target_width: activeReq.width,
+          target_height: activeReq.height,
           output_format: res.format,
         });
       } else {
         trackEvent("image_resize", {
           tool_name: examToolSlug,
-          target_width: requirement.width,
-          target_height: requirement.height,
+          target_width: activeReq.width,
+          target_height: activeReq.height,
           output_format: res.format,
         });
       }
 
-      if (requirement.maxKB) {
+      if (activeReq.maxKB) {
         trackEvent("image_compress", {
           tool_name: examToolSlug,
-          target_kb: requirement.maxKB,
+          target_kb: activeReq.maxKB,
           output_format: res.format,
         });
       }
 
       const val = await validateOutput(res.blob, {
-        width: requirement.width,
-        height: requirement.height,
-        minKB: requirement.minKB,
-        maxKB: requirement.maxKB,
-        format: requirement.format,
+        width: activeReq.width,
+        height: activeReq.height,
+        minKB: activeReq.minKB,
+        maxKB: activeReq.maxKB,
+        format: activeReq.format,
         dpi: targetDpi,
       });
       setValidation(val);
@@ -112,13 +120,18 @@ export default function ExamToolClient({ exam, type }: ExamToolClientProps) {
     }
   };
 
-  const handleFileSelect = async (file: File) => {
+  const handleFileSelect = async (
+    file: File,
+    options?: { docType?: "photo" | "signature" }
+  ) => {
+    const selectedType = options?.docType || activeDocType;
+    setActiveDocType(selectedType);
     setOriginalFile(file);
     setIsProcessing(true);
     try {
       const info = await getImageInfo(file);
       setOriginalInfo(info);
-      await processExamImage(file, null, 0, false, false);
+      await processExamImage(file, null, 0, false, false, selectedType);
     } catch (err) {
       console.error("Failed to read file:", err);
     } finally {
@@ -174,9 +187,15 @@ export default function ExamToolClient({ exam, type }: ExamToolClientProps) {
         {!originalFile ? (
           <UploadDropzone
             onFileSelect={handleFileSelect}
-            label={`Upload ${type} for ${exam.name}`}
-            sublabel={`Will be resized to exact ${requirement.width}×${requirement.height} px and ${requirement.minKB}-${requirement.maxKB}KB (${targetDpi} DPI)`}
-            toolName={`${exam.slug}-${type}-resizer`}
+            label={`Click or drop ${activeDocType} for ${exam.name}`}
+            sublabel={`JPG, PNG, HEIC, or WEBP up to 15MB`}
+            toolName={`${exam.slug}-${activeDocType}-resizer`}
+            selectedExamName={exam.name}
+            selectedExamSlug={exam.slug}
+            showDocTypeSelector={allowDocTypeToggle}
+            initialDocType={activeDocType}
+            photoRequirements={exam.photo}
+            signatureRequirements={exam.signature}
           />
         ) : (
           <div className="space-y-6">

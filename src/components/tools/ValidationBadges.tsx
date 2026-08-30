@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { HiOutlineCheckCircle, HiOutlineXCircle, HiOutlineShieldCheck } from "react-icons/hi2";
 
 interface ValidationBadgesProps {
   checks: {
@@ -30,97 +31,120 @@ const formatSize = (bytes: number) => {
   return (bytes / 1024).toFixed(2) + " KB";
 };
 
+const formatTypeName = (fmt: string) => {
+  if (!fmt) return "JPG";
+  if (fmt.includes("jpeg") || fmt.includes("jpg") || fmt === "JPEG" || fmt === "JPG") return "JPG";
+  if (fmt.includes("png") || fmt === "PNG") return "PNG";
+  if (fmt.includes("webp") || fmt === "WEBP") return "WEBP";
+  return fmt.replace("image/", "").toUpperCase();
+};
+
+interface BadgeCardProps {
+  success: boolean;
+  label: string;
+  actualText: string;
+  reqText?: string;
+}
+
+function BadgeCard({ success, label, actualText, reqText }: BadgeCardProps) {
+  return (
+    <div
+      className={`flex items-start p-4 rounded-2xl border transition-all ${
+        success
+          ? "bg-emerald-50/70 border-emerald-200/80 text-emerald-950 shadow-xs"
+          : "bg-rose-50/70 border-rose-200/80 text-rose-950 shadow-xs"
+      }`}
+    >
+      {success ? (
+        <HiOutlineCheckCircle className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5 mr-3" />
+      ) : (
+        <HiOutlineXCircle className="w-5 h-5 text-rose-600 shrink-0 mt-0.5 mr-3" />
+      )}
+      <div className="flex flex-col min-w-0">
+        <span className={`text-xs font-black tracking-tight ${success ? "text-emerald-900" : "text-rose-900"}`}>
+          {label}
+        </span>
+        <div className="text-[11px] font-medium text-slate-600 mt-1 space-y-0.5">
+          <div className="truncate">
+            <span className="font-bold text-slate-800">Actual:</span> {actualText}
+          </div>
+          {reqText && (
+            <div className="truncate text-slate-500">
+              <span className="font-semibold text-slate-600">Req:</span> {reqText}
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function ValidationBadges({
   checks,
   details,
   requirements,
 }: ValidationBadgesProps) {
-  
-  const CheckIcon = () => (
-    <svg className="w-5 h-5 text-success mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-    </svg>
-  );
-
-  const CrossIcon = () => (
-    <svg className="w-5 h-5 text-error mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-    </svg>
-  );
-
-  const Badge = ({ success, label, info }: { success: boolean, label: string, info: React.ReactNode }) => (
-    <div className={`flex items-center p-3 rounded-lg border ${success ? 'bg-success/5 border-success/20' : 'bg-error/5 border-error/20'}`}>
-      {success ? <CheckIcon /> : <CrossIcon />}
-      <div className="flex flex-col">
-        <span className={`text-sm font-semibold ${success ? 'text-success' : 'text-error'}`}>
-          {label}
-        </span>
-        <span className="text-xs text-gray-600">{info}</span>
-      </div>
-    </div>
-  );
-
   const hasDpi = checks.dpi !== undefined || requirements?.dpi !== undefined;
+  const allPassed =
+    checks.dimensions && checks.fileSize && checks.format && (checks.dpi === undefined || checks.dpi);
 
   return (
-    <div className="w-full bg-surface p-4 rounded-xl shadow-sm border border-border">
-      <h3 className="text-primary font-semibold mb-4 text-sm uppercase tracking-wider">Validation Status</h3>
-      <div className={`grid grid-cols-1 ${hasDpi ? 'md:grid-cols-4' : 'md:grid-cols-3'} gap-4`}>
-        
-        <Badge 
-          success={checks.dimensions} 
+    <div className="w-full bg-white p-6 rounded-3xl shadow-xl shadow-slate-200/40 border border-slate-200/80 space-y-4">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 border-b border-slate-100">
+        <div className="flex items-center gap-2">
+          <HiOutlineShieldCheck className="w-5 h-5 text-indigo-600" />
+          <h3 className="text-sm font-extrabold text-slate-900 uppercase tracking-wider">
+            Portal Requirement Validation
+          </h3>
+        </div>
+
+        <div
+          className={`text-xs font-bold px-3 py-1 rounded-full border ${
+            allPassed
+              ? "bg-emerald-50 text-emerald-800 border-emerald-200"
+              : "bg-rose-50 text-rose-800 border-rose-200"
+          }`}
+        >
+          {allPassed ? "✓ 100% Spec Compliant" : "⚠️ Requirements Mismatch"}
+        </div>
+      </div>
+
+      <div className={`grid grid-cols-1 sm:grid-cols-2 ${hasDpi ? "lg:grid-cols-4" : "lg:grid-cols-3"} gap-3.5`}>
+        <BadgeCard
+          success={checks.dimensions}
           label={checks.dimensions ? "Dimensions Matched" : "Invalid Dimensions"}
-          info={
-            requirements ? (
-              <>Actual: {details.width}×{details.height}px (Req: {requirements.width}×{requirements.height}px)</>
-            ) : (
-              <>{details.width} × {details.height} px</>
-            )
-          } 
+          actualText={`${details.width} × ${details.height} px`}
+          reqText={requirements ? `${requirements.width} × ${requirements.height} px` : undefined}
         />
-        
-        <Badge 
-          success={checks.fileSize} 
+
+        <BadgeCard
+          success={checks.fileSize}
           label={checks.fileSize ? "File Size Matched" : "Invalid File Size"}
-          info={
-            requirements ? (
-              requirements.minKB && requirements.minKB > 0 ? (
-                <>Actual: {formatSize(details.size)} (Req: {requirements.minKB}–{requirements.maxKB} KB)</>
-              ) : (
-                <>Actual: {formatSize(details.size)} (Req: ≤{requirements.maxKB} KB)</>
-              )
-            ) : (
-              <>{formatSize(details.size)}</>
-            )
-          } 
+          actualText={formatSize(details.size)}
+          reqText={
+            requirements
+              ? requirements.minKB && requirements.minKB > 0
+                ? `${requirements.minKB}–${requirements.maxKB} KB`
+                : `≤ ${requirements.maxKB} KB`
+              : undefined
+          }
         />
-        
-        <Badge 
-          success={checks.format} 
+
+        <BadgeCard
+          success={checks.format}
           label={checks.format ? "Format Matched" : "Invalid Format"}
-          info={
-            requirements ? (
-              <>Actual: {details.format.replace('image/', '').toUpperCase()} (Req: {requirements.format})</>
-            ) : (
-              <>{details.format.replace('image/', '').toUpperCase()}</>
-            )
-          } 
+          actualText={formatTypeName(details.format)}
+          reqText={requirements ? formatTypeName(requirements.format) : undefined}
         />
 
         {hasDpi && (
-          <Badge
+          <BadgeCard
             success={checks.dpi ?? false}
             label={checks.dpi ? "DPI Matched" : "DPI Mismatch"}
-            info={
-              requirements?.dpi ? (
-                <>Actual: {details.dpi ?? "Unknown"} DPI (Req: {requirements.dpi} DPI)</>
-              ) : (
-                <>Actual: {details.dpi ?? "Unknown"} DPI</>
-              )
-            }
+            actualText={`${details.dpi ?? "Unknown"} DPI`}
+            reqText={requirements?.dpi ? `${requirements.dpi} DPI` : undefined}
           />
         )}
-        
       </div>
     </div>
   );

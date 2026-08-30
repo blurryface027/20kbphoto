@@ -2,7 +2,9 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getExamBySlug, getExamsByCategory, getAllSlugs, categories, exams as allExams } from '@/data/exams';
 import ExamCard from '@/components/cards/ExamCard';
-import RequirementCard from '@/components/cards/RequirementCard';
+import ExamToolClient from '@/components/exams/ExamToolClient';
+import OfficialExamGuidelines from '@/components/exams/OfficialExamGuidelines';
+import ExamFAQSection from '@/components/exams/ExamFAQSection';
 import Breadcrumbs from '@/components/layout/Breadcrumbs';
 import FAQSection from '@/components/seo/FAQSection';
 import RelatedTools from '@/components/seo/RelatedTools';
@@ -151,40 +153,20 @@ export default async function ExamHubPage({ params }: Props) {
       <Breadcrumbs items={breadcrumbs} />
       
       <div className="mt-6 mb-8">
-        <h1 className="text-4xl font-bold mb-2">{exam.name} Photo & Signature Resizer</h1>
-        <p className="text-lg text-gray-600">
+        <h1 className="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight mb-2">{exam.name} Photo & Signature Resizer</h1>
+        <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
           Official photo and signature requirements for {exam.name} ({exam.fullName}) applications • {exam.authority} • Last verified: {exam.lastVerified}
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-        <RequirementCard 
-          title="Photo Requirements"
-          width={exam.photo.width}
-          height={exam.photo.height}
-          minKB={exam.photo.minKB}
-          maxKB={exam.photo.maxKB}
-          format={exam.photo.format}
-          dpi={exam.photo.dpi}
-          notes={exam.photo.notes}
-          ctaHref={`/exams/${slug}/photo-resizer`}
-          ctaLabel="Resize Photo"
-        />
-        <RequirementCard 
-          title="Signature Requirements"
-          width={exam.signature.width}
-          height={exam.signature.height}
-          minKB={exam.signature.minKB}
-          maxKB={exam.signature.maxKB}
-          format={exam.signature.format}
-          dpi={exam.signature.dpi}
-          notes={exam.signature.notes}
-          ctaHref={`/exams/${slug}/signature-resizer`}
-          ctaLabel="Resize Signature"
-        />
+      <div className="mb-12">
+        <ExamToolClient exam={exam} type="photo" allowDocTypeToggle={true} />
       </div>
 
-            <RelatedTools
+      {/* Official Requirements Section */}
+      <OfficialExamGuidelines exam={exam} />
+
+      <RelatedTools
         title={`${exam.name} Photo & Signature Tools`}
         tools={[
           {
@@ -218,9 +200,9 @@ export default async function ExamHubPage({ params }: Props) {
       </div>
 
       <div className="mb-12">
-        <h2 className="text-2xl font-bold mb-4">How to resize your {exam.name} documents</h2>
-        <ol className="list-decimal list-inside space-y-2 text-gray-700">
-          <li>Select the specific tool (Photo or Signature) from above.</li>
+        <h2 className="text-2xl font-bold mb-4 text-gray-900">How to resize your {exam.name} documents</h2>
+        <ol className="list-decimal list-inside space-y-2 text-gray-700 leading-relaxed text-sm sm:text-base">
+          <li>Select the specific document type (Photo or Signature) from above.</li>
           <li>Upload your original scanned image or photo.</li>
           <li>Our tool will automatically crop and resize to the required dimensions.</li>
           <li>We'll compress the file to ensure it falls strictly between the required {exam.photo.minKB}–{exam.photo.maxKB}KB and {exam.signature.minKB}–{exam.signature.maxKB}KB limits.</li>
@@ -230,7 +212,8 @@ export default async function ExamHubPage({ params }: Props) {
 
       <AdUnit className="my-10" />
 
-      <FAQSection faqs={faqs} title={`Frequently Asked Questions for ${exam.name}`} />
+      {/* 2-Column Grid FAQ Section */}
+      <ExamFAQSection exam={exam} />
       
       <div className="mt-12">
         <h2 className="text-2xl font-bold mb-4">Related Exams</h2>

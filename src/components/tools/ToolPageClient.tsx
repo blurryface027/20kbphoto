@@ -19,6 +19,7 @@ import {
   type CropRect,
 } from "@/lib/imageProcessor";
 import { trackEvent } from "@/lib/gtag";
+import { getShortDownloadFilename } from "@/lib/filenameUtils";
 import {
   HiOutlineScissors,
   HiOutlineArrowPath,
@@ -334,7 +335,10 @@ export default function ToolPageClient({ slug }: Props) {
   const [isProcessing, setIsProcessing] = useState(false);
   const [validation, setValidation] = useState<ValidationResult | undefined>(undefined);
 
-  const handleFileSelect = async (file: File) => {
+  const handleFileSelect = async (
+    file: File,
+    options?: { docType?: "photo" | "signature"; requirement?: { width: number; height: number; minKB: number; maxKB: number; format: string } }
+  ) => {
     setOriginalFile(file);
     setIsProcessing(true);
 
@@ -342,21 +346,26 @@ export default function ToolPageClient({ slug }: Props) {
       const info = await getImageInfo(file);
       setOriginalInfo(info);
 
-      let initialW = config.defaultWidth || info.width;
-      let initialH = config.defaultHeight || info.height;
+      let initialW = options?.requirement?.width || config.defaultWidth || info.width;
+      let initialH = options?.requirement?.height || config.defaultHeight || info.height;
+      let targetSizeKB = options?.requirement?.maxKB || (config.presetKBs ? config.presetKBs[0] : 50);
 
       setTargetWidth(initialW);
       setTargetHeight(initialH);
       setScalePercent(100);
+      if (options?.requirement?.maxKB) {
+        setTargetKB(targetSizeKB);
+        setEnableTargetKB(true);
+      }
 
       await process(
         file,
         initialW,
         initialH,
         100,
-        resizeMode,
-        enableTargetKB,
-        targetKB,
+        options?.requirement ? "dimensions" : resizeMode,
+        options?.requirement?.maxKB ? true : enableTargetKB,
+        targetSizeKB,
         format,
         null,
         0,
@@ -548,12 +557,7 @@ export default function ToolPageClient({ slug }: Props) {
   ];
 
   const getDownloadFilename = () => {
-    if (!originalFile) return "converted-photo.jpg";
-    const name = originalFile.name;
-    const lastDot = name.lastIndexOf(".");
-    const baseName = lastDot > 0 ? name.substring(0, lastDot) : name;
-    const ext = format === "image/jpeg" ? "jpg" : format === "image/png" ? "png" : "webp";
-    return `${baseName}-processed.${ext}`;
+    return getShortDownloadFilename(originalFile, "edit", format);
   };
 
   return (
@@ -565,18 +569,29 @@ export default function ToolPageClient({ slug }: Props) {
           label={config.uploadLabel || `Upload image to use ${config.title}`}
           sublabel={config.uploadSublabel || "Supports JPG, PNG, WEBP, GIF files up to 10MB"}
           toolName={slug}
+          toolTitle={config.title}
+          showExamSelector={slug === "image-resizer"}
+          showDocTypeSelector={slug === "image-resizer"}
+          initialDocType={slug.includes("signature") ? "signature" : "photo"}
+          customRequirements={{
+            width: config.defaultWidth || targetWidth || 300,
+            height: config.defaultHeight || targetHeight || 300,
+            minKB: 10,
+            maxKB: enableTargetKB ? targetKB : (config.presetKBs ? config.presetKBs[0] : 50),
+            format: format === "image/png" ? "PNG" : format === "image/webp" ? "WEBP" : "JPG",
+          }}
         />
       ) : (
         <div className="space-y-6 max-w-4xl mx-auto">
           {/* Tool Navigation Bar */}
-          <div className="bg-gray-100 p-1.5 rounded-2xl flex flex-wrap items-center gap-1 border border-gray-200">
+          <div className="bg-slate-100 p-1.5 rounded-2xl flex flex-wrap items-center gap-1.5 border border-slate-200/80 shadow-xs">
             <button
               type="button"
               onClick={() => setActiveTab("crop")}
-              className={`flex-1 min-w-[120px] py-2.5 px-3 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 ${
+              className={`flex-1 min-w-[120px] py-2.5 px-3.5 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 ${
                 activeTab === "crop"
-                  ? "bg-white text-indigo-600 shadow-sm border border-gray-200"
-                  : "text-gray-600 hover:text-gray-900"
+                  ? "bg-indigo-600 text-white shadow-sm"
+                  : "text-slate-600 hover:text-slate-900 hover:bg-slate-200/60"
               }`}
             >
               <HiOutlineScissors className="w-4 h-4" />
@@ -586,10 +601,10 @@ export default function ToolPageClient({ slug }: Props) {
             <button
               type="button"
               onClick={() => setActiveTab("rotate")}
-              className={`flex-1 min-w-[120px] py-2.5 px-3 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 ${
+              className={`flex-1 min-w-[120px] py-2.5 px-3.5 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 ${
                 activeTab === "rotate"
-                  ? "bg-white text-indigo-600 shadow-sm border border-gray-200"
-                  : "text-gray-600 hover:text-gray-900"
+                  ? "bg-indigo-600 text-white shadow-sm"
+                  : "text-slate-600 hover:text-slate-900 hover:bg-slate-200/60"
               }`}
             >
               <HiOutlineArrowPath className="w-4 h-4" />
@@ -599,10 +614,10 @@ export default function ToolPageClient({ slug }: Props) {
             <button
               type="button"
               onClick={() => setActiveTab("dpi")}
-              className={`flex-1 min-w-[120px] py-2.5 px-3 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 ${
+              className={`flex-1 min-w-[120px] py-2.5 px-3.5 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 ${
                 activeTab === "dpi"
-                  ? "bg-white text-indigo-600 shadow-sm border border-gray-200"
-                  : "text-gray-600 hover:text-gray-900"
+                  ? "bg-indigo-600 text-white shadow-sm"
+                  : "text-slate-600 hover:text-slate-900 hover:bg-slate-200/60"
               }`}
             >
               <HiOutlineAdjustmentsVertical className="w-4 h-4" />
@@ -612,10 +627,10 @@ export default function ToolPageClient({ slug }: Props) {
             <button
               type="button"
               onClick={() => setActiveTab("resize")}
-              className={`flex-1 min-w-[120px] py-2.5 px-3 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 ${
+              className={`flex-1 min-w-[120px] py-2.5 px-3.5 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 ${
                 activeTab === "resize"
-                  ? "bg-white text-indigo-600 shadow-sm border border-gray-200"
-                  : "text-gray-600 hover:text-gray-900"
+                  ? "bg-indigo-600 text-white shadow-sm"
+                  : "text-slate-600 hover:text-slate-900 hover:bg-slate-200/60"
               }`}
             >
               <HiOutlineAdjustmentsHorizontal className="w-4 h-4" />

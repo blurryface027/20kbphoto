@@ -364,13 +364,16 @@ export async function processImage(file: File | Blob, options: ProcessOptions = 
     cropH = Math.min(srcH - cropY, options.crop!.height);
   }
 
-  const rotation = (options.rotation || 0) % 360;
-  const rad = (rotation * Math.PI) / 180;
-  const sin = Math.abs(Math.sin(rad));
-  const cos = Math.abs(Math.cos(rad));
+  let rotation = ((options.rotation || 0) % 360 + 360) % 360;
+  if (Math.abs(rotation - 0) < 1 || Math.abs(rotation - 360) < 1) rotation = 0;
+  else if (Math.abs(rotation - 90) < 1) rotation = 90;
+  else if (Math.abs(rotation - 180) < 1) rotation = 180;
+  else if (Math.abs(rotation - 270) < 1) rotation = 270;
 
-  const rotatedW = Math.max(1, Math.round(cropW * cos + cropH * sin));
-  const rotatedH = Math.max(1, Math.round(cropW * sin + cropH * cos));
+  const rad = (rotation * Math.PI) / 180;
+  const is90or270 = rotation === 90 || rotation === 270;
+  const rotatedW = is90or270 ? cropH : (rotation === 0 || rotation === 180 ? cropW : Math.max(1, Math.round(cropW * Math.abs(Math.cos(rad)) + cropH * Math.abs(Math.sin(rad)))));
+  const rotatedH = is90or270 ? cropW : (rotation === 0 || rotation === 180 ? cropH : Math.max(1, Math.round(cropW * Math.abs(Math.sin(rad)) + cropH * Math.abs(Math.cos(rad)))));
 
   let targetWidth = options.width;
   let targetHeight = options.height;
@@ -822,13 +825,13 @@ export async function addTextOverlay(file: File, overlay: TextOverlay): Promise<
       Math.round(stripHeight / (lineCount === 3 ? 3.6 : lineCount === 2 ? 2.6 : 1.8))
     );
 
-    ctx.font = `bold ${fontSize}px Arial, -apple-system, sans-serif`;
+    ctx.font = `bold ${fontSize}px "Plus Jakarta Sans", Arial, -apple-system, sans-serif`;
     const maxMeasuredWidth = Math.max(...linesToDraw.map((l) => ctx.measureText(l).width));
 
     if (maxMeasuredWidth > maxAvailableWidth && maxMeasuredWidth > 0) {
       const scale = maxAvailableWidth / maxMeasuredWidth;
       fontSize = Math.max(9, Math.floor(fontSize * scale * 0.95));
-      ctx.font = `bold ${fontSize}px Arial, -apple-system, sans-serif`;
+      ctx.font = `bold ${fontSize}px "Plus Jakarta Sans", Arial, -apple-system, sans-serif`;
     }
 
     ctx.fillStyle = overlay.fontColor || '#000000';

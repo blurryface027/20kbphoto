@@ -177,9 +177,18 @@ export default function PanCardToolClient() {
       {!originalFile ? (
         <UploadDropzone
           onFileSelect={handleFileSelect}
-          label={`Upload ${mode === "photo" ? "Photograph" : "Signature"} for PAN Card`}
-          sublabel={`Will be resized to exact ${currentWidth}×${currentHeight} px and compressed to 10–${maxKB}KB`}
+          label={`Click or drop ${mode === "photo" ? "Photograph" : "Signature"} for PAN Card`}
+          sublabel="JPG, PNG, HEIC, or WEBP up to 15MB"
           toolName={`pan-card-${mode}-resizer`}
+          toolTitle={`PAN Card ${mode === "photo" ? "Photo" : "Signature"} Resizer`}
+          initialDocType={mode}
+          customRequirements={{
+            width: currentWidth,
+            height: currentHeight,
+            minKB: 10,
+            maxKB: maxKB,
+            format: "JPG",
+          }}
         />
       ) : (
         <div className="space-y-6 max-w-4xl mx-auto">

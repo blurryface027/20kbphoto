@@ -2,6 +2,8 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getExamBySlug, getAllSlugs, categories } from '@/data/exams';
 import ExamToolClient from '@/components/exams/ExamToolClient';
+import OfficialExamGuidelines from '@/components/exams/OfficialExamGuidelines';
+import ExamFAQSection from '@/components/exams/ExamFAQSection';
 import Breadcrumbs from '@/components/layout/Breadcrumbs';
 
 export function generateStaticParams() {
@@ -64,8 +66,8 @@ export default async function CombinedResizerPage({ params }: Props) {
       <Breadcrumbs items={breadcrumbs} />
       
       <div className="mt-6 mb-8 text-center">
-        <h1 className="text-3xl font-bold mb-2">{exam.name} Photo & Signature Resizer</h1>
-        <p className="text-gray-600">
+        <h1 className="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight mb-1.5">{exam.name} Photo & Signature Resizer</h1>
+        <p className="text-xs sm:text-sm text-gray-600">
           Prepare all documents for your {exam.authority} application in one go.
         </p>
       </div>
@@ -81,6 +83,12 @@ export default async function CombinedResizerPage({ params }: Props) {
           <ExamToolClient exam={exam} type="signature" />
         </div>
       </div>
+
+      {/* Official Guidelines Section */}
+      <OfficialExamGuidelines exam={exam} />
+
+      {/* FAQ Section */}
+      <ExamFAQSection exam={exam} />
       
       <div className="mt-12 text-sm text-gray-500 text-center">
         <p>Disclaimer: This is an independent tool. Not affiliated with {exam.authority}.</p>

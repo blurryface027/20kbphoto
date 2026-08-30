@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
+import { HiOutlinePhoto, HiSparkles, HiOutlineCheckCircle, HiOutlineBolt } from "react-icons/hi2";
 
 interface PreviewPanelProps {
   originalFile?: File;
@@ -16,6 +17,14 @@ const formatSize = (bytes: number) => {
   return (bytes / k).toFixed(2) + " KB";
 };
 
+const formatTypeName = (fmt: string) => {
+  if (!fmt) return "JPG";
+  if (fmt.includes("jpeg") || fmt.includes("jpg") || fmt === "JPEG" || fmt === "JPG") return "JPG";
+  if (fmt.includes("png") || fmt === "PNG") return "PNG";
+  if (fmt.includes("webp") || fmt === "WEBP") return "WEBP";
+  return fmt.replace("image/", "").toUpperCase();
+};
+
 export default function PreviewPanel({
   originalFile,
   processedDataUrl,
@@ -26,121 +35,150 @@ export default function PreviewPanel({
   const [originalDataUrl, setOriginalDataUrl] = useState<string>("");
 
   useEffect(() => {
-    if (originalFile) {
-      const url = URL.createObjectURL(originalFile);
-      setOriginalDataUrl(url);
-      return () => URL.revokeObjectURL(url);
+    if (!originalFile) {
+      setOriginalDataUrl("");
+      return;
     }
+
+    let isMounted = true;
+    const reader = new FileReader();
+    reader.onload = () => {
+      if (isMounted && typeof reader.result === "string") {
+        setOriginalDataUrl(reader.result);
+      }
+    };
+    reader.readAsDataURL(originalFile);
+
+    return () => {
+      isMounted = false;
+    };
   }, [originalFile]);
 
   const calcReduction = () => {
     if (originalInfo?.size && processedInfo?.size) {
       const diff = originalInfo.size - processedInfo.size;
       const pct = (diff / originalInfo.size) * 100;
-      return pct > 0 ? pct.toFixed(1) + "% smaller" : "Larger";
+      if (pct > 0) return `${pct.toFixed(1)}% smaller`;
+      if (pct < 0) return `${Math.abs(pct).toFixed(1)}% larger`;
+      return "Same size";
     }
     return null;
   };
 
+  const reductionStr = calcReduction();
+
   return (
     <div className="flex flex-col lg:flex-row gap-6 w-full">
-      {/* Original Image Panel */}
-      <div className="flex-1 flex flex-col bg-surface border border-border rounded-xl overflow-hidden shadow-sm">
-        <div className="bg-gray-50 border-b border-border p-3">
-          <h3 className="font-semibold text-primary text-center">Original Image</h3>
+      {/* Original Image Card */}
+      <div className="flex-1 flex flex-col bg-white border border-slate-200/80 rounded-3xl overflow-hidden shadow-xl shadow-slate-200/40">
+        <div className="bg-slate-50/80 px-5 py-3.5 border-b border-slate-100 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <HiOutlinePhoto className="w-4 h-4 text-slate-500" />
+            <h3 className="font-extrabold text-slate-800 text-xs uppercase tracking-wider">
+              Original Image
+            </h3>
+          </div>
+          <span className="text-[11px] font-bold text-slate-500 bg-slate-200/60 px-2.5 py-0.5 rounded-full">
+            Before
+          </span>
         </div>
-        <div className="flex-1 min-h-[250px] relative flex items-center justify-center p-4 bg-gray-100">
+
+        <div className="flex-1 min-h-[260px] relative flex items-center justify-center p-5 bg-slate-100/60">
           {originalDataUrl ? (
             <img
               src={originalDataUrl}
-              alt="Original"
-              className="max-h-[300px] object-contain rounded drop-shadow-md"
+              alt="Original Input"
+              className="max-h-[300px] object-contain shadow-md border border-slate-300 rounded-none"
             />
           ) : (
-            <span className="text-gray-400">No image loaded</span>
+            <div className="text-slate-400 text-xs font-semibold">No image loaded</div>
           )}
         </div>
+
         {originalInfo && (
-          <div className="p-3 bg-surface grid grid-cols-3 gap-2 text-xs text-center border-t border-border">
-            <div className="flex flex-col">
-              <span className="text-gray-500 uppercase">Dimensions</span>
-              <span className="font-medium text-primary">{originalInfo.width} × {originalInfo.height} px</span>
+          <div className="p-4 bg-white grid grid-cols-3 gap-2 text-xs border-t border-slate-100 text-center">
+            <div className="flex flex-col items-center">
+              <span className="text-[10px] font-extrabold text-slate-400 uppercase tracking-wider">Dimensions</span>
+              <span className="font-extrabold text-slate-900 mt-0.5">{originalInfo.width} × {originalInfo.height} px</span>
             </div>
-            <div className="flex flex-col border-x border-border">
-              <span className="text-gray-500 uppercase">Size</span>
-              <span className="font-medium text-primary">{formatSize(originalInfo.size)}</span>
+            <div className="flex flex-col items-center border-x border-slate-100">
+              <span className="text-[10px] font-extrabold text-slate-400 uppercase tracking-wider">Size</span>
+              <span className="font-extrabold text-slate-900 mt-0.5">{formatSize(originalInfo.size)}</span>
             </div>
-            <div className="flex flex-col">
-              <span className="text-gray-500 uppercase">Format</span>
-              <span className="font-medium text-primary">{originalInfo.format.replace('image/', '').toUpperCase()}</span>
+            <div className="flex flex-col items-center">
+              <span className="text-[10px] font-extrabold text-slate-400 uppercase tracking-wider">Format</span>
+              <span className="font-extrabold text-slate-900 mt-0.5">{formatTypeName(originalInfo.format)}</span>
             </div>
           </div>
         )}
       </div>
 
-      {/* Processed Image Panel */}
-      <div className="flex-1 flex flex-col bg-surface border border-border rounded-xl overflow-hidden shadow-sm relative">
-        <div className="bg-gray-50 border-b border-border p-3 flex justify-between items-center">
-          <h3 className="font-semibold text-accent text-center w-full">Processed Image</h3>
+      {/* Processed Output Image Card */}
+      <div className="flex-1 flex flex-col bg-white border border-slate-200/80 rounded-3xl overflow-hidden shadow-xl shadow-slate-200/40 relative">
+        <div className="bg-indigo-50/70 px-5 py-3.5 border-b border-indigo-100 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <HiSparkles className="w-4 h-4 text-indigo-600" />
+            <h3 className="font-extrabold text-indigo-950 text-xs uppercase tracking-wider">
+              Processed & Optimized Output
+            </h3>
+          </div>
+          <span className="text-[11px] font-bold text-emerald-800 bg-emerald-100/90 px-2.5 py-0.5 rounded-full border border-emerald-200">
+            Ready
+          </span>
         </div>
-        
-        <div className="flex-1 min-h-[250px] relative flex items-center justify-center p-4 bg-gray-100">
+
+        <div className="flex-1 min-h-[260px] relative flex items-center justify-center p-5 bg-slate-100/60">
+          {/* Floating Badges */}
+          {processedInfo && !isProcessing && (
+            <div className="absolute top-3 inset-x-3 flex items-center justify-between pointer-events-none z-10">
+              {reductionStr && (
+                <span className="bg-gradient-to-r from-emerald-600 to-teal-600 text-white text-[11px] font-extrabold px-3 py-1 rounded-full shadow-md flex items-center gap-1">
+                  <HiOutlineBolt className="w-3.5 h-3.5" />
+                  {reductionStr}
+                </span>
+              )}
+              {processedInfo.dpi !== undefined && (
+                <span className="ml-auto bg-white/90 backdrop-blur-md text-indigo-700 text-[11px] font-extrabold px-3 py-1 rounded-full border border-indigo-200 shadow-sm flex items-center gap-1">
+                  <HiOutlineCheckCircle className="w-3.5 h-3.5 text-indigo-600" />
+                  DPI: {processedInfo.dpi}
+                </span>
+              )}
+            </div>
+          )}
+
           {isProcessing ? (
-            <div className="flex flex-col items-center">
-              <svg className="animate-spin h-10 w-10 text-accent mb-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-              </svg>
-              <span className="text-gray-600 text-sm font-medium">Processing...</span>
+            <div className="flex flex-col items-center gap-3">
+              <div className="w-10 h-10 border-4 border-indigo-600 border-t-transparent rounded-full animate-spin" />
+              <span className="text-slate-600 text-xs font-bold">Optimizing Image...</span>
             </div>
           ) : processedDataUrl ? (
             <img
               src={processedDataUrl}
-              alt="Processed"
-              className="max-h-[300px] object-contain rounded drop-shadow-md"
+              alt="Processed Output"
+              className="max-h-[300px] object-contain shadow-md border border-slate-300 rounded-none"
             />
           ) : (
-            <span className="text-gray-400">Waiting for processing...</span>
+            <span className="text-slate-400 text-xs font-semibold">Waiting for processing...</span>
           )}
         </div>
 
-        {/* DPI Updated Banner directly below processed image */}
-        {processedInfo?.dpi !== undefined && !isProcessing && (
-          <div className="bg-emerald-50 text-emerald-900 text-xs px-4 py-2 border-t border-emerald-200 flex items-center justify-between font-bold">
-            <span className="flex items-center gap-1.5 text-emerald-700">
-              <svg className="w-4 h-4 text-emerald-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-              </svg>
-              ✓ DPI Updated
-            </span>
-            <span className="bg-white px-2.5 py-0.5 rounded border border-emerald-300 text-emerald-800 font-extrabold">
-              Image DPI: {processedInfo.dpi} DPI
-            </span>
-          </div>
-        )}
-        
         {processedInfo && !isProcessing && (
-          <div className="p-3 bg-surface grid grid-cols-4 gap-2 text-xs text-center border-t border-border">
-            <div className="flex flex-col">
-              <span className="text-gray-500 uppercase">Dimensions</span>
-              <span className="font-medium text-primary">{processedInfo.width} × {processedInfo.height} px</span>
+          <div className="p-4 bg-white grid grid-cols-4 gap-2 text-xs border-t border-slate-100 text-center">
+            <div className="flex flex-col items-center">
+              <span className="text-[10px] font-extrabold text-slate-400 uppercase tracking-wider">Dimensions</span>
+              <span className="font-extrabold text-slate-900 mt-0.5">{processedInfo.width} × {processedInfo.height} px</span>
             </div>
-            <div className="flex flex-col border-l border-border relative">
-              <span className="text-gray-500 uppercase">Size</span>
-              <span className="font-medium text-primary">{formatSize(processedInfo.size)}</span>
-              {calcReduction() && (
-                <span className="absolute -top-9 left-1/2 -translate-x-1/2 bg-success text-white px-2 py-0.5 rounded-full text-[10px] whitespace-nowrap shadow-sm">
-                  {calcReduction()}
-                </span>
-              )}
+            <div className="flex flex-col items-center border-l border-slate-100">
+              <span className="text-[10px] font-extrabold text-slate-400 uppercase tracking-wider">Size</span>
+              <span className="font-extrabold text-indigo-600 mt-0.5">{formatSize(processedInfo.size)}</span>
             </div>
-            <div className="flex flex-col border-l border-border">
-              <span className="text-gray-500 uppercase">Format</span>
-              <span className="font-medium text-primary">{processedInfo.format.replace('image/', '').toUpperCase()}</span>
+            <div className="flex flex-col items-center border-l border-slate-100">
+              <span className="text-[10px] font-extrabold text-slate-400 uppercase tracking-wider">Format</span>
+              <span className="font-extrabold text-slate-900 mt-0.5">{formatTypeName(processedInfo.format)}</span>
             </div>
-            <div className="flex flex-col border-l border-border">
-              <span className="text-gray-500 uppercase">DPI</span>
-              <span className="font-bold text-emerald-700">{processedInfo.dpi ? `${processedInfo.dpi} DPI` : '72 DPI'}</span>
+            <div className="flex flex-col items-center border-l border-slate-100">
+              <span className="text-[10px] font-extrabold text-slate-400 uppercase tracking-wider">DPI</span>
+              <span className="font-extrabold text-emerald-700 mt-0.5">{processedInfo.dpi ? `${processedInfo.dpi} DPI` : "72 DPI"}</span>
             </div>
           </div>
         )}

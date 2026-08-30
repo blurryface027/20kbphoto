@@ -2,6 +2,8 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getExamBySlug, getAllSlugs, categories } from '@/data/exams';
 import ExamToolClient from '@/components/exams/ExamToolClient';
+import OfficialExamGuidelines from '@/components/exams/OfficialExamGuidelines';
+import ExamFAQSection from '@/components/exams/ExamFAQSection';
 import Breadcrumbs from '@/components/layout/Breadcrumbs';
 
 export function generateStaticParams() {
@@ -75,13 +77,19 @@ export default async function PhotoResizerPage({ params }: Props) {
       <Breadcrumbs items={breadcrumbs} />
       
       <div className="mt-6 mb-8 text-center">
-        <h1 className="text-3xl font-bold mb-2">{exam.name} Photo Resizer</h1>
-        <p className="text-gray-600">
+        <h1 className="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight mb-1.5">{exam.name} Photo Resizer</h1>
+        <p className="text-xs sm:text-sm text-gray-600">
           Auto-formats to {exam.photo.width}x{exam.photo.height}px, {exam.photo.minKB}-{exam.photo.maxKB}KB
         </p>
       </div>
 
       <ExamToolClient exam={exam} type="photo" />
+
+      {/* Official Guidelines Section */}
+      <OfficialExamGuidelines exam={exam} />
+
+      {/* FAQ Section */}
+      <ExamFAQSection exam={exam} />
       
       <div className="mt-8 text-sm text-gray-500 text-center">
         <p>Disclaimer: This is an independent tool. Not affiliated with {exam.authority}.</p>
