@@ -9,10 +9,10 @@ interface LogoProps {
 export default function Logo({ className = "", size = "md", dark = false }: LogoProps) {
   const badgeSizeClass =
     size === "sm"
-      ? "w-8 h-8 rounded-lg text-xs"
+      ? "w-8 h-8 rounded-full text-xs"
       : size === "lg"
-      ? "w-12 h-12 rounded-2xl text-base"
-      : "w-10 h-10 rounded-xl text-sm";
+      ? "w-12 h-12 rounded-full text-base"
+      : "w-10 h-10 rounded-full text-sm";
 
   const textSizeClass =
     size === "sm" ? "text-lg" : size === "lg" ? "text-2xl" : "text-xl";

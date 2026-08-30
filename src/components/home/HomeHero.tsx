@@ -180,7 +180,7 @@ export default function HomeHero() {
           </div>
 
           {/* Main H1 */}
-          <h1 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight tracking-tight">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight tracking-tight">
             Free Indian Exam Photo &{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1B2CC1] via-blue-600 to-[#15239B]">
               Signature Resizer
@@ -341,22 +341,27 @@ export default function HomeHero() {
                 <>
                   {/* Validation Badges */}
                   <ValidationBadges
-                    checks={{
-                      dimensions:
-                        result.width === activeReq.width &&
-                        result.height === activeReq.height,
-                      fileSize:
-                        result.size / 1024 >= activeReq.minKB &&
-                        result.size / 1024 <= activeReq.maxKB,
-                      format: true,
-                    }}
-                    details={{
-                      width: result.width,
-                      height: result.height,
-                      size: result.size,
-                      format: result.format,
-                      dpi: result.dpi,
-                    }}
+                    checks={
+                      validation?.checks || {
+                        dimensions:
+                          result.width === activeReq.width &&
+                          result.height === activeReq.height,
+                        fileSize:
+                          result.size / 1024 >= activeReq.minKB &&
+                          result.size / 1024 <= activeReq.maxKB,
+                        format: true,
+                        dpi: (result.dpi || 300) === 300,
+                      }
+                    }
+                    details={
+                      validation?.details || {
+                        width: result.width,
+                        height: result.height,
+                        size: result.size,
+                        format: result.format,
+                        dpi: result.dpi || 300,
+                      }
+                    }
                     requirements={{
                       width: activeReq.width,
                       height: activeReq.height,

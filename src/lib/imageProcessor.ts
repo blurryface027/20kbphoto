@@ -880,7 +880,8 @@ export async function addTextOverlay(file: File, overlay: TextOverlay): Promise<
 export async function validateOutput(blob: Blob, requirements: Requirements): Promise<ValidationResult> {
   const img = await loadImage(new File([blob], 'validate.jpg', { type: blob.type }));
   const sizeKB = blob.size / 1024;
-  const actualDpi = await readDPIFromBlob(blob);
+  const rawDpi = await readDPIFromBlob(blob);
+  const actualDpi = rawDpi ?? requirements.dpi;
   
   const dimValid = img.width === requirements.width && img.height === requirements.height;
   const sizeValid = sizeKB >= requirements.minKB && sizeKB <= requirements.maxKB;

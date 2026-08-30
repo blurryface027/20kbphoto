@@ -85,8 +85,14 @@ export default function ValidationBadges({
   requirements,
 }: ValidationBadgesProps) {
   const hasDpi = checks.dpi !== undefined || requirements?.dpi !== undefined;
+  const dpiSuccess = checks.dpi !== undefined
+    ? checks.dpi
+    : (details.dpi !== undefined && requirements?.dpi !== undefined
+        ? details.dpi === requirements.dpi
+        : true);
+
   const allPassed =
-    checks.dimensions && checks.fileSize && checks.format && (checks.dpi === undefined || checks.dpi);
+    checks.dimensions && checks.fileSize && checks.format && (checks.dpi === undefined || dpiSuccess);
 
   return (
     <div className="w-full bg-white p-6 rounded-3xl shadow-xl shadow-slate-200/40 border border-slate-200/80 space-y-4">
@@ -139,8 +145,8 @@ export default function ValidationBadges({
 
         {hasDpi && (
           <BadgeCard
-            success={checks.dpi ?? false}
-            label={checks.dpi ? "DPI Matched" : "DPI Mismatch"}
+            success={dpiSuccess}
+            label={dpiSuccess ? "DPI Matched" : "DPI Mismatch"}
             actualText={`${details.dpi ?? "Unknown"} DPI`}
             reqText={requirements?.dpi ? `${requirements.dpi} DPI` : undefined}
           />
