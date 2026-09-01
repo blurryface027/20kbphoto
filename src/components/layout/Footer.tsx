@@ -109,24 +109,24 @@ export default function Footer() {
       <div className="border-t border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-3">
-              <Logo size="sm" dark />
-              <span className="text-xs text-gray-500 border-l border-gray-800 pl-3">
-                © {new Date().getFullYear()} 20KB Photo. 100% Client-Side Privacy.
-              </span>
+            <div className="flex flex-col sm:flex-row items-center gap-3">
+              <div className="flex items-center gap-3">
+                <Logo size="sm" dark />
+                <span className="text-xs text-gray-500 border-l border-gray-800 pl-3">
+                  © {new Date().getFullYear()} 20KB Photo. 100% Client-Side Privacy.
+                </span>
+              </div>
               <a
                 href="https://www.producthunt.com/products/20kb-photo?utm_source=badge-follow&utm_medium=badge&utm_source=badge-20kb-photo"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block hover:opacity-80 transition-opacity border-l border-gray-800 pl-3"
+                className="inline-flex items-center hover:opacity-80 transition-opacity sm:border-l sm:border-gray-800 sm:pl-3"
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   alt="20KB Photo - Resize and compress images to exact file sizes online | Product Hunt"
-                  width="130"
-                  height="28"
                   src="https://api.producthunt.com/widgets/embed-image/v1/follow.svg?product_id=1306761&theme=light"
-                  style={{ width: 130, height: 28 }}
+                  className="h-8 w-auto"
                 />
               </a>
             </div>
