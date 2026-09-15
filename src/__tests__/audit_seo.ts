@@ -50,7 +50,7 @@ function checkMetadata(route: string, title: string, description: string) {
 // 1. Audit Categories
 categories.forEach(c => {
   const route = `/exams/${c.slug}`;
-  const title = `${c.name} Exam Photo and Signature Size - 20KB Photo`;
+  const title = `${c.name} Photo & Signature Resizer - 20KB Photo`;
   const desc = `Check photo and signature requirements for ${c.name} exams. Resize application photos and signatures online to exact pixel dimensions and file size limits.`;
   checkMetadata(route, title, desc);
 });
@@ -62,8 +62,8 @@ exams.forEach(exam => {
 
   // Main Page
   const mainRoute = `/exams/${exam.slug}`;
-  const mainTitle = `${exam.name} Photo and Signature Size - 20KB Photo`;
-  const mainDesc = `Check official photo and signature requirements for ${exam.name} applications. View required dimensions (${p.width}x${p.height}px photo, ${s.width}x${s.height}px signature), file size limits (${p.minKB}-${p.maxKB}KB photo, ${s.minKB}-${s.maxKB}KB signature), format, and online resizer tools for ${exam.fullName}.`;
+  const mainTitle = `${exam.name} Photo & Signature Resizer - Requirements & Tool`;
+  const mainDesc = `Official photo and signature requirements for ${exam.name} applications. View required dimensions (${p.width}x${p.height}px photo, ${s.width}x${s.height}px signature), file size limits (${p.minKB}-${p.maxKB}KB photo, ${s.minKB}-${s.maxKB}KB signature), format, and online resizer tools for ${exam.fullName}.`;
   checkMetadata(mainRoute, mainTitle, mainDesc);
 
   // Photo Resizer Page

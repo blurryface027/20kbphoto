@@ -27,8 +27,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const category = categories.find(c => c.slug === slug);
 
   if (category) {
-    const title = `${category.name} Exam Photo and Signature Size - 20KB Photo`;
-    const description = `Check photo and signature requirements for ${category.name} exams. Resize application photos and signatures online to exact pixel dimensions and file size limits.`;
+    const title = `${category.name} Photo & Signature Resizer - 20KB Photo`;
+    const description = `Check photo and signature requirements for ${category.name} exams. View official pixel dimensions, file size limits in KB, accepted formats, and resize tools online.`;
     const canonical = `https://20kbphoto.in/exams/${slug}`;
     return {
       title,
@@ -57,8 +57,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (exam) {
     const photo = exam.photo;
     const signature = exam.signature;
-    const title = `${exam.name} Photo and Signature Size - 20KB Photo`;
-    const description = `Check official photo and signature requirements for ${exam.name} applications. View required dimensions (${photo.width}x${photo.height}px photo, ${signature.width}x${signature.height}px signature), file size limits (${photo.minKB}-${photo.maxKB}KB photo, ${signature.minKB}-${signature.maxKB}KB signature), format, and online resizer tools for ${exam.fullName}.`;
+    const title = `${exam.name} Photo & Signature Resizer - Requirements & Tool`;
+    const description = `Official photo and signature requirements for ${exam.name} applications. Verified dimensions (${photo.width}x${photo.height}px photo, ${signature.width}x${signature.height}px signature), file size range (${photo.minKB}-${photo.maxKB}KB photo, ${signature.minKB}-${signature.maxKB}KB signature), format rules, and instant browser resizer tools for ${exam.fullName}.`;
     const canonical = `https://20kbphoto.in/exams/${slug}`;
 
     return {
@@ -103,7 +103,7 @@ export default async function ExamHubPage({ params }: Props) {
     return (
       <div className="container mx-auto px-4 py-8 max-w-6xl">
         <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Exams', href: '/exams' }, { label: category.name }]} />
-        <h1 className="text-3xl font-bold mt-4 mb-2">{category.name} Photo & Signature Tools</h1>
+        <h1 className="text-3xl font-bold mt-4 mb-2">{category.name} Photo & Signature Resizer</h1>
         <p className="text-gray-600 mb-8">{category.description}</p>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -134,17 +134,17 @@ export default async function ExamHubPage({ params }: Props) {
     { label: 'Home', href: '/' },
     { label: 'Exams', href: '/exams' },
     { label: categoryData?.name || exam.category, href: `/exams/${exam.category}` },
-    { label: exam.name }
+    { label: `${exam.name} Resizer` }
   ];
 
   const faqs = [
     {
-      question: `What are the photo dimensions for ${exam.name}?`,
-      answer: `The official requirement is ${exam.photo.width}x${exam.photo.height} pixels. The file size must be between ${exam.photo.minKB}KB and ${exam.photo.maxKB}KB in ${exam.photo.format} format.`
+      question: `What is the official ${exam.name} photo size?`,
+      answer: `The official photo requirement for ${exam.name} is ${exam.photo.width}x${exam.photo.height} pixels (${exam.photo.minKB}KB to ${exam.photo.maxKB}KB in ${exam.photo.format} format).`
     },
     {
-      question: `What is the signature requirement for ${exam.name}?`,
-      answer: `Your signature must be ${exam.signature.width}x${exam.signature.height} pixels, and file size must be between ${exam.signature.minKB}KB and ${exam.signature.maxKB}KB in ${exam.signature.format} format.`
+      question: `What is the official ${exam.name} signature size?`,
+      answer: `The official signature requirement for ${exam.name} is ${exam.signature.width}x${exam.signature.height} pixels (${exam.signature.minKB}KB to ${exam.signature.maxKB}KB in ${exam.signature.format} format).`
     }
   ];
 
@@ -155,7 +155,7 @@ export default async function ExamHubPage({ params }: Props) {
       <div className="mt-6 mb-8">
         <h1 className="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight mb-2">{exam.name} Photo & Signature Resizer</h1>
         <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
-          Official photo and signature requirements for {exam.name} ({exam.fullName}) applications • {exam.authority} • Last verified: {exam.lastVerified}
+          Official photo and signature requirements for {exam.name} ({exam.fullName}) online applications • {exam.authority} • Verified specifications: {exam.lastVerified}
         </p>
       </div>
 

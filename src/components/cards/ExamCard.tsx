@@ -33,7 +33,7 @@ export default function ExamCard({
           </div>
           <div className="min-w-0">
             <h3 className="text-sm sm:text-base font-bold text-gray-900 group-hover:text-indigo-600 transition-colors truncate">
-              {name}
+              {name} Photo & Signature Resizer
             </h3>
             <p className="text-[10px] sm:text-xs text-gray-400 font-medium truncate">
               Photo: {photo.width}x{photo.height}px

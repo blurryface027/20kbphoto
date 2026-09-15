@@ -249,6 +249,83 @@ export default function PanCardToolClient() {
           )}
         </div>
       )}
+
+      {/* HIGH DENSITY CONTENT & SEO SECTION FOR ADSENSE COMPLIANCE */}
+      <section className="mt-14 pt-10 border-t border-gray-200/90 space-y-10">
+        {/* Main Title & Overview */}
+        <div className="text-center max-w-3xl mx-auto space-y-3">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight">
+            Complete PAN Card Photo & Signature Specifications Guide
+          </h2>
+          <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+            Applying for a new PAN card or correcting details on NSDL (Protean) or UTIITSL online portals? Both portals strictly enforce physical millimeter & pixel dimensions, maximum file size in KB, and 300 DPI resolution.
+          </p>
+        </div>
+
+        {/* NSDL & UTIITSL SPECIFICATIONS MATRIX TABLE */}
+        <div className="bg-white rounded-3xl border border-gray-200 shadow-xs overflow-hidden max-w-4xl mx-auto">
+          <div className="p-4 sm:p-5 bg-gradient-to-r from-slate-900 to-indigo-950 text-white flex items-center justify-between">
+            <h3 className="font-extrabold text-sm sm:text-base">
+              PAN Card Document Specification Summary
+            </h3>
+            <span className="text-[11px] font-semibold bg-white/10 px-2.5 py-1 rounded-full text-indigo-200">
+              NSDL / UTIITSL Official Specs
+            </span>
+          </div>
+          <div className="overflow-x-auto">
+            <table className="w-full text-left border-collapse text-xs sm:text-sm">
+              <thead>
+                <tr className="bg-gray-50 border-b border-gray-200 text-gray-500 font-bold uppercase tracking-wider text-[11px]">
+                  <th className="py-3 px-4">Parameter</th>
+                  <th className="py-3 px-4">PAN Photo Requirements</th>
+                  <th className="py-3 px-4">PAN Signature Requirements</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-100 text-gray-700">
+                <tr className="hover:bg-gray-50/50">
+                  <td className="py-3 px-4 font-bold text-gray-900 bg-gray-50/40">Pixel Dimensions</td>
+                  <td className="py-3 px-4 text-indigo-600 font-bold">213 × 213 pixels</td>
+                  <td className="py-3 px-4 text-indigo-600 font-bold">444 × 205 pixels</td>
+                </tr>
+                <tr className="hover:bg-gray-50/50">
+                  <td className="py-3 px-4 font-bold text-gray-900 bg-gray-50/40">Physical Size</td>
+                  <td className="py-3 px-4 text-gray-700 font-medium">2.5 cm × 2.5 cm</td>
+                  <td className="py-3 px-4 text-gray-700 font-medium">4.5 cm × 2.0 cm</td>
+                </tr>
+                <tr className="hover:bg-gray-50/50">
+                  <td className="py-3 px-4 font-bold text-gray-900 bg-gray-50/40">File Size Limit</td>
+                  <td className="py-3 px-4 text-gray-800 font-semibold">Max 50 KB (10KB – 50KB)</td>
+                  <td className="py-3 px-4 text-gray-800 font-semibold">Max 30 KB (10KB – 30KB)</td>
+                </tr>
+                <tr className="hover:bg-gray-50/50">
+                  <td className="py-3 px-4 font-bold text-gray-900 bg-gray-50/40">Resolution (DPI)</td>
+                  <td className="py-3 px-4 text-emerald-700 font-bold">300 DPI Required</td>
+                  <td className="py-3 px-4 text-emerald-700 font-bold">300 DPI Required</td>
+                </tr>
+                <tr className="hover:bg-gray-50/50">
+                  <td className="py-3 px-4 font-bold text-gray-900 bg-gray-50/40">File Format</td>
+                  <td className="py-3 px-4 font-mono">JPEG / JPG</td>
+                  <td className="py-3 px-4 font-mono">JPEG / JPG</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {/* INSTRUCTIONS */}
+        <div className="bg-gray-50/70 border border-gray-200/80 rounded-3xl p-6 sm:p-8 max-w-4xl mx-auto space-y-4">
+          <h3 className="text-lg sm:text-xl font-extrabold text-gray-900">
+            How to Prepare Photo & Signature for Online PAN Card Portal
+          </h3>
+          <ol className="list-decimal list-inside space-y-2.5 text-xs sm:text-sm text-gray-700 leading-relaxed">
+            <li>Select &ldquo;PAN Photo (213×213 px)&rdquo; or &ldquo;PAN Signature (444×205 px)&rdquo; from the top toggle bar.</li>
+            <li>Upload your original photo scan or signature photo.</li>
+            <li>Our tool automatically resizes the image to exact NSDL pixel dimensions and embeds 300 DPI EXIF headers.</li>
+            <li>The binary compressor adjusts JPEG quality to keep file size strictly under 50KB (for photo) or 30KB (for signature).</li>
+            <li>Download the processed JPEG file and upload directly to NSDL e-Gov / UTIITSL PAN portal.</li>
+          </ol>
+        </div>
+      </section>
     </ToolShell>
   );
 }

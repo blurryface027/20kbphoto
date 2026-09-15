@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useState, useRef, DragEvent, ChangeEvent } from "react";
+import React, { useState, useRef, useMemo, useEffect, DragEvent, ChangeEvent } from "react";
 import { trackEvent } from "@/lib/gtag";
+import { exams, Exam } from "@/data/exams";
 import {
   HiCheckCircle,
   HiOutlineCamera,
@@ -44,48 +45,15 @@ interface UploadDropzoneProps {
   onRequirementChange?: (req: RequirementSpec, docType: "photo" | "signature") => void;
 }
 
-const defaultPopularExams: { name: string; photo: RequirementSpec; signature: RequirementSpec }[] = [
-  {
-    name: "UPSC CSE",
-    photo: { width: 400, height: 400, minKB: 20, maxKB: 300, format: "JPG" },
-    signature: { width: 350, height: 350, minKB: 20, maxKB: 300, format: "JPG" },
-  },
-  {
-    name: "SSC CGL",
-    photo: { width: 275, height: 354, minKB: 20, maxKB: 50, format: "JPG" },
-    signature: { width: 140, height: 60, minKB: 10, maxKB: 20, format: "JPG" },
-  },
-  {
-    name: "SSC CHSL",
-    photo: { width: 200, height: 240, minKB: 20, maxKB: 50, format: "JPG" },
-    signature: { width: 200, height: 80, minKB: 10, maxKB: 20, format: "JPG" },
-  },
-  {
-    name: "IBPS PO / Clerk",
-    photo: { width: 200, height: 230, minKB: 20, maxKB: 50, format: "JPG" },
-    signature: { width: 140, height: 60, minKB: 10, maxKB: 20, format: "JPG" },
-  },
-  {
-    name: "NEET UG",
-    photo: { width: 350, height: 450, minKB: 10, maxKB: 200, format: "JPG" },
-    signature: { width: 275, height: 118, minKB: 4, maxKB: 30, format: "JPG" },
-  },
-  {
-    name: "JEE Main",
-    photo: { width: 350, height: 450, minKB: 10, maxKB: 200, format: "JPG" },
-    signature: { width: 275, height: 118, minKB: 4, maxKB: 30, format: "JPG" },
-  },
-  {
-    name: "PAN Card",
-    photo: { width: 213, height: 213, minKB: 10, maxKB: 50, format: "JPG" },
-    signature: { width: 444, height: 205, minKB: 10, maxKB: 30, format: "JPG" },
-  },
-  {
-    name: "Passport Photo",
-    photo: { width: 350, height: 450, minKB: 20, maxKB: 100, format: "JPG" },
-    signature: { width: 200, height: 80, minKB: 10, maxKB: 50, format: "JPG" },
-  },
-];
+interface ExamPresetItem {
+  name: string;
+  fullName?: string;
+  category: string;
+  authority?: string;
+  keywords?: string[];
+  photo: RequirementSpec;
+  signature: RequirementSpec;
+}
 
 export default function UploadDropzone({
   onFileSelect,
@@ -114,10 +82,114 @@ export default function UploadDropzone({
   const [error, setError] = useState<string | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState<string>("all");
 
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const modalInputRef = useRef<HTMLInputElement>(null);
 
   const activeReq = customRequirements || (docType === "photo" ? photoReq : sigReq);
+
+  // Compile full exam presets list including special non-exam application tools
+  const allExamPresets = useMemo<ExamPresetItem[]>(() => {
+    const list: ExamPresetItem[] = [
+      {
+        name: "PAN Card",
+        fullName: "Permanent Account Number Card Photo & Signature",
+        category: "document",
+        authority: "Income Tax Department / NSDL / UTITSL",
+        keywords: ["pan card", "nsdl", "utitsl", "income tax"],
+        photo: { width: 213, height: 213, minKB: 10, maxKB: 50, format: "JPG" },
+        signature: { width: 444, height: 205, minKB: 10, maxKB: 30, format: "JPG" },
+      },
+      {
+        name: "Passport Photo",
+        fullName: "Standard Indian Passport Size Photograph",
+        category: "document",
+        authority: "Ministry of External Affairs / Passport Seva",
+        keywords: ["passport photo", "3.5x4.5cm", "passport size", "mea"],
+        photo: { width: 350, height: 450, minKB: 20, maxKB: 100, format: "JPG" },
+        signature: { width: 200, height: 80, minKB: 10, maxKB: 50, format: "JPG" },
+      },
+    ];
+
+    exams.forEach((e: Exam) => {
+      list.push({
+        name: e.name,
+        fullName: e.fullName,
+        category: e.category,
+        authority: e.authority,
+        keywords: e.keywords || [],
+        photo: {
+          width: e.photo.width,
+          height: e.photo.height,
+          minKB: e.photo.minKB,
+          maxKB: e.photo.maxKB,
+          format: e.photo.format || "JPG",
+        },
+        signature: {
+          width: e.signature.width,
+          height: e.signature.height,
+          minKB: e.signature.minKB,
+          maxKB: e.signature.maxKB,
+          format: e.signature.format || "JPG",
+        },
+      });
+    });
+
+    return list;
+  }, []);
+
+  // Categories list for filter pills
+  const categoriesList = useMemo(() => {
+    return [
+      { id: "all", label: "All Exams" },
+      { id: "ssc", label: "SSC" },
+      { id: "upsc", label: "UPSC" },
+      { id: "banking", label: "Banking" },
+      { id: "railway", label: "Railways" },
+      { id: "admissions", label: "Entrance (NEET/JEE)" },
+      { id: "state-psc", label: "State PSC" },
+      { id: "police", label: "Police" },
+      { id: "teaching", label: "Teaching" },
+    ];
+  }, []);
+
+  // Filter exams based on query & category
+  const filteredExams = useMemo(() => {
+    const q = searchQuery.toLowerCase().trim();
+
+    return allExamPresets.filter((item) => {
+      if (selectedCategory !== "all" && item.category !== selectedCategory) {
+        return false;
+      }
+
+      if (!q) return true;
+
+      const matchName = item.name.toLowerCase().includes(q);
+      const matchFullName = (item.fullName || "").toLowerCase().includes(q);
+      const matchAuthority = (item.authority || "").toLowerCase().includes(q);
+      const matchCat = (item.category || "").toLowerCase().includes(q);
+      const matchKeywords = (item.keywords || []).some((k) => k.toLowerCase().includes(q));
+
+      return matchName || matchFullName || matchAuthority || matchCat || matchKeywords;
+    });
+  }, [allExamPresets, searchQuery, selectedCategory]);
+
+  useEffect(() => {
+    if (isModalOpen) {
+      setTimeout(() => {
+        modalInputRef.current?.focus();
+      }, 50);
+
+      const handleKeyDown = (e: KeyboardEvent) => {
+        if (e.key === "Escape") {
+          setIsModalOpen(false);
+        }
+      };
+      window.addEventListener("keydown", handleKeyDown);
+      return () => window.removeEventListener("keydown", handleKeyDown);
+    }
+  }, [isModalOpen]);
 
   const handleDocTypeChange = (newType: "photo" | "signature") => {
     setDocType(newType);
@@ -127,7 +199,7 @@ export default function UploadDropzone({
     }
   };
 
-  const handleSelectExamPreset = (examItem: { name: string; photo: RequirementSpec; signature: RequirementSpec }) => {
+  const handleSelectExamPreset = (examItem: ExamPresetItem) => {
     setCurrentExamName(examItem.name);
     setPhotoReq(examItem.photo);
     setSigReq(examItem.signature);
@@ -185,10 +257,6 @@ export default function UploadDropzone({
       validateAndProcessFile(e.target.files[0]);
     }
   };
-
-  const filteredExams = defaultPopularExams.filter((e) =>
-    e.name.toLowerCase().includes(searchQuery.toLowerCase())
-  );
 
   return (
     <div className="w-full max-w-5xl mx-auto">
@@ -453,56 +521,135 @@ export default function UploadDropzone({
 
       {/* CHANGE EXAM PRESET MODAL (Only when showExamSelector is true) */}
       {showExamSelector && isModalOpen && (
-        <div className="fixed inset-0 bg-black/40 backdrop-blur-xs z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-3xl max-w-lg w-full p-6 shadow-2xl border border-gray-200 animate-scale-in">
+        <div
+          className="fixed inset-0 bg-gray-900/60 backdrop-blur-xs z-50 flex items-center justify-center p-4 sm:p-6"
+          onClick={() => setIsModalOpen(false)}
+        >
+          <div
+            className="bg-white rounded-3xl max-w-xl w-full p-6 shadow-2xl border border-gray-200 animate-scale-in flex flex-col max-h-[85vh]"
+            onClick={(e) => e.stopPropagation()}
+          >
             {/* Modal Header */}
-            <div className="flex items-center justify-between mb-4">
-              <h3 className="text-lg font-extrabold text-gray-900">
-                Select Exam Preset
-              </h3>
+            <div className="flex items-center justify-between pb-3 border-b border-gray-100">
+              <div>
+                <h3 className="text-lg font-extrabold text-gray-900">
+                  Select Exam Preset
+                </h3>
+                <p className="text-xs text-gray-500 font-medium">
+                  Showing {filteredExams.length} of {allExamPresets.length} presets
+                </p>
+              </div>
               <button
                 type="button"
                 onClick={() => setIsModalOpen(false)}
                 className="w-8 h-8 rounded-full bg-gray-100 text-gray-500 flex items-center justify-center hover:bg-gray-200 transition-colors"
+                aria-label="Close modal"
               >
                 <HiXMark className="w-5 h-5" />
               </button>
             </div>
 
-            {/* Search Input */}
-            <div className="relative mb-4">
+            {/* Search Input & Clear */}
+            <div className="relative my-4">
               <HiMagnifyingGlass className="absolute left-3.5 top-3 w-4 h-4 text-gray-400" />
               <input
+                ref={modalInputRef}
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search exam (e.g. UPSC, SSC, NEET, PAN)..."
-                className="w-full pl-10 pr-4 py-2.5 text-sm bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:border-indigo-500 focus:bg-white"
+                placeholder="Search exam by name, acronym, category, or authority..."
+                className="w-full pl-10 pr-10 py-2.5 text-sm bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:border-indigo-500 focus:bg-white text-gray-900 placeholder:text-gray-400"
               />
+              {searchQuery && (
+                <button
+                  type="button"
+                  onClick={() => setSearchQuery("")}
+                  className="absolute right-3 top-3 text-gray-400 hover:text-gray-600"
+                >
+                  <HiXMark className="w-4 h-4" />
+                </button>
+              )}
             </div>
 
-            {/* Exam List */}
-            <div className="max-h-72 overflow-y-auto space-y-2 pr-1">
-              {filteredExams.map((item) => (
+            {/* Category Filter Pills */}
+            <div className="flex flex-wrap gap-1.5 mb-3 pb-2 border-b border-gray-100 overflow-x-auto">
+              {categoriesList.map((cat) => (
                 <button
-                  key={item.name}
+                  key={cat.id}
                   type="button"
-                  onClick={() => handleSelectExamPreset(item)}
-                  className={`w-full flex items-center justify-between p-3.5 rounded-xl border text-left transition-all ${
-                    currentExamName === item.name
-                      ? "bg-indigo-50/80 border-indigo-300 text-indigo-900 font-bold"
-                      : "bg-white border-gray-200 text-gray-700 hover:bg-gray-50 hover:border-indigo-200"
+                  onClick={() => setSelectedCategory(cat.id)}
+                  className={`text-xs px-3 py-1.5 rounded-full font-semibold transition-colors shrink-0 ${
+                    selectedCategory === cat.id
+                      ? "bg-indigo-600 text-white shadow-xs"
+                      : "bg-gray-100 text-gray-600 hover:bg-indigo-50 hover:text-indigo-600"
                   }`}
                 >
-                  <div>
-                    <span className="font-bold text-sm block">{item.name}</span>
-                    <span className="text-[11px] text-gray-400 font-medium block mt-0.5">
-                      Photo: {item.photo.width}×{item.photo.height}px ({item.photo.minKB}–{item.photo.maxKB}KB) • Sig: {item.signature.width}×{item.signature.height}px
-                    </span>
-                  </div>
-                  <HiChevronRight className="w-4 h-4 text-gray-400 shrink-0" />
+                  {cat.label}
                 </button>
               ))}
+            </div>
+
+            {/* Exam List Container */}
+            <div className="flex-1 overflow-y-auto space-y-2 pr-1 min-h-[220px]">
+              {filteredExams.length > 0 ? (
+                filteredExams.map((item) => (
+                  <button
+                    key={`${item.name}-${item.category}`}
+                    type="button"
+                    onClick={() => handleSelectExamPreset(item)}
+                    className={`w-full flex items-center justify-between p-3.5 rounded-2xl border text-left transition-all ${
+                      currentExamName === item.name
+                        ? "bg-indigo-50/80 border-indigo-300 text-indigo-900 font-bold"
+                        : "bg-white border-gray-200 text-gray-700 hover:bg-gray-50 hover:border-indigo-200"
+                    }`}
+                  >
+                    <div className="min-w-0 flex-1 pr-3">
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <span className="font-bold text-sm text-gray-900">{item.name}</span>
+                        {item.category && (
+                          <span className="text-[10px] px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 font-semibold uppercase tracking-wider">
+                            {item.category}
+                          </span>
+                        )}
+                      </div>
+                      {item.fullName && item.fullName !== item.name && (
+                        <span className="text-xs text-gray-500 font-medium truncate block mt-0.5">
+                          {item.fullName}
+                        </span>
+                      )}
+                      <span className="text-[11px] text-indigo-600 font-semibold block mt-1">
+                        Photo: {item.photo.width}×{item.photo.height}px ({item.photo.minKB}–{item.photo.maxKB}KB) • Sig: {item.signature.width}×{item.signature.height}px ({item.signature.minKB}–{item.signature.maxKB}KB)
+                      </span>
+                    </div>
+                    <HiChevronRight className="w-5 h-5 text-gray-400 shrink-0" />
+                  </button>
+                ))
+              ) : (
+                <div className="p-8 text-center bg-gray-50/50 rounded-2xl border border-dashed border-gray-200">
+                  <div className="text-gray-500 text-sm font-semibold mb-1">
+                    No presets found for &ldquo;{searchQuery}&rdquo;
+                  </div>
+                  <p className="text-xs text-gray-400 max-w-xs mx-auto mb-4">
+                    Try searching by full name, authority (e.g. NTA, SSC, UPSC), or select a category filter above.
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setSearchQuery("");
+                      setSelectedCategory("all");
+                    }}
+                    className="text-xs px-3.5 py-1.5 bg-indigo-600 text-white font-bold rounded-xl hover:bg-indigo-700 transition-colors shadow-xs"
+                  >
+                    Reset Search & Filters
+                  </button>
+                </div>
+              )}
+            </div>
+
+            {/* Modal Footer Note */}
+            <div className="pt-3 border-t border-gray-100 flex items-center justify-between text-[11px] text-gray-400 font-medium">
+              <span>Press <kbd className="px-1.5 py-0.5 bg-gray-100 rounded text-gray-600 font-mono">ESC</kbd> to close</span>
+              <span>100+ Verified Exam Specifications</span>
             </div>
           </div>
         </div>

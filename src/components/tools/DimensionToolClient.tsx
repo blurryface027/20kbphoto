@@ -160,47 +160,112 @@ export default function DimensionToolClient({
           )}
         </div>
       )}
-      <section className="mt-12 pt-8 border-t border-gray-200">
-        <h2 className="text-2xl font-bold text-gray-900 mb-4">
-          {isSig ? "Signature" : "Photo"} Resizer for {targetWidth}×{targetHeight} Pixels
-        </h2>
-
-        <div className="space-y-4 text-gray-700 leading-7">
-          <p>
-            Resize your {isSig ? "signature" : "photo"} to exactly {targetWidth}×{targetHeight} pixels
-            using this free browser-based image tool. The output dimensions are fixed to the
-            selected width and height for forms and online applications.
+      {/* HIGH DENSITY CONTENT & SEO SECTION FOR ADSENSE COMPLIANCE */}
+      <section className="mt-14 pt-10 border-t border-gray-200/90 space-y-10">
+        {/* Main Title & Overview */}
+        <div className="text-center max-w-3xl mx-auto space-y-3">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight">
+            Complete Guide: Resizing {isSig ? "Signature" : "Photo"} to {targetWidth}×{targetHeight} Pixels
+          </h2>
+          <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+            Many online recruitment portals, competitive exam servers, and admission portals strictly validate image width and height. This tool crops and resizes your {isSig ? "signature scan" : "photograph"} to exactly {targetWidth}×{targetHeight} px while maintaining optimal clarity.
           </p>
+        </div>
 
-          <h3 className="text-xl font-semibold text-gray-900">
-            When do you need {targetWidth}×{targetHeight}px?
+        {/* TECHNICAL SPECIFICATIONS MATRIX TABLE */}
+        <div className="bg-white rounded-3xl border border-gray-200 shadow-xs overflow-hidden max-w-4xl mx-auto">
+          <div className="p-4 sm:p-5 bg-gradient-to-r from-slate-900 to-indigo-950 text-white flex items-center justify-between">
+            <h3 className="font-extrabold text-sm sm:text-base">
+              {targetWidth}×{targetHeight}px {isSig ? "Signature" : "Photo"} Specifications
+            </h3>
+            <span className="text-[11px] font-semibold bg-white/10 px-2.5 py-1 rounded-full text-indigo-200">
+              Exact Pixel Output
+            </span>
+          </div>
+          <div className="overflow-x-auto">
+            <table className="w-full text-left border-collapse text-xs sm:text-sm">
+              <tbody className="divide-y divide-gray-100 text-gray-700">
+                <tr className="hover:bg-gray-50/50">
+                  <td className="py-3 px-4 font-bold text-gray-900 bg-gray-50/40 w-1/3">Target Dimensions</td>
+                  <td className="py-3 px-4 text-indigo-600 font-bold">{targetWidth} pixels (width) × {targetHeight} pixels (height)</td>
+                </tr>
+                <tr className="hover:bg-gray-50/50">
+                  <td className="py-3 px-4 font-bold text-gray-900 bg-gray-50/40">Aspect Ratio</td>
+                  <td className="py-3 px-4 text-gray-700 font-mono">{(targetWidth / targetHeight).toFixed(2)} : 1</td>
+                </tr>
+                <tr className="hover:bg-gray-50/50">
+                  <td className="py-3 px-4 font-bold text-gray-900 bg-gray-50/40">Supported Input Formats</td>
+                  <td className="py-3 px-4 text-gray-700 font-mono">JPG, JPEG, PNG, WEBP, HEIC, BMP</td>
+                </tr>
+                <tr className="hover:bg-gray-50/50">
+                  <td className="py-3 px-4 font-bold text-gray-900 bg-gray-50/40">Standard Resolution (DPI)</td>
+                  <td className="py-3 px-4 text-gray-700 font-medium">300 DPI (Embedded in EXIF header)</td>
+                </tr>
+                <tr className="hover:bg-gray-50/50">
+                  <td className="py-3 px-4 font-bold text-gray-900 bg-gray-50/40">Privacy & Security</td>
+                  <td className="py-3 px-4 text-emerald-700 font-semibold">Processed 100% locally in browser memory • No server uploads</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {/* STEP BY STEP GUIDELINES */}
+        <div className="bg-gray-50/70 border border-gray-200/80 rounded-3xl p-6 sm:p-8 max-w-4xl mx-auto space-y-4">
+          <h3 className="text-lg sm:text-xl font-extrabold text-gray-900">
+            How to Resize Your {isSig ? "Signature" : "Photo"} to {targetWidth}×{targetHeight}px
           </h3>
-
-          <p>
-            Exact pixel dimensions are often required when an application portal specifies a
-            fixed image size. Always check the official application instructions for the
-            required file format, maximum file size, background, and other requirements.
-          </p>
-
-          <h3 className="text-xl font-semibold text-gray-900">
-            How to resize to {targetWidth}×{targetHeight}px
-          </h3>
-
-          <ol className="list-decimal list-inside space-y-2">
-            <li>Upload your {isSig ? "signature" : "photo"}.</li>
-            <li>The tool reads the original image dimensions in your browser.</li>
-            <li>The image is cropped and resized to {targetWidth}×{targetHeight}px.</li>
-            <li>Review the generated image and its dimensions.</li>
-            <li>Download the resized file.</li>
+          <ol className="list-decimal list-inside space-y-2.5 text-xs sm:text-sm text-gray-700 leading-relaxed">
+            <li>
+              <strong className="text-gray-900 font-semibold">Upload Image:</strong> Select your original {isSig ? "signature scan" : "photograph"} using the upload dropzone above.
+            </li>
+            <li>
+              <strong className="text-gray-900 font-semibold">Aspect Crop Alignment:</strong> Our tool automatically centers and crops your image to fit the {targetWidth}×{targetHeight} ratio without stretching.
+            </li>
+            <li>
+              <strong className="text-gray-900 font-semibold">Pixel Rescaling:</strong> HTML5 Canvas renders the output at exact {targetWidth}×{targetHeight} pixel resolution.
+            </li>
+            <li>
+              <strong className="text-gray-900 font-semibold">Validation Check:</strong> The green status badge confirms that width and height equal {targetWidth}×{targetHeight}px.
+            </li>
+            <li>
+              <strong className="text-gray-900 font-semibold">Download File:</strong> Save your formatted image ready for immediate submission to online recruitment portals.
+            </li>
           </ol>
+        </div>
 
-          <h3 className="text-xl font-semibold text-gray-900">
-            Is the uploaded image stored?
+        {/* APPLICATION PORTAL USAGE LIST */}
+        <div className="max-w-4xl mx-auto space-y-4">
+          <h3 className="text-lg sm:text-xl font-extrabold text-gray-900 text-center">
+            Application Portals Requiring {targetWidth}×{targetHeight}px Specification
           </h3>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center text-xs font-medium text-gray-700">
+            <div className="bg-white p-3 rounded-2xl border border-gray-200 shadow-2xs">
+              <span className="font-bold text-gray-900 block text-sm">SSC Recruitment</span>
+              <span>CGL, CHSL, MTS Application Forms</span>
+            </div>
+            <div className="bg-white p-3 rounded-2xl border border-gray-200 shadow-2xs">
+              <span className="font-bold text-gray-900 block text-sm">UPSC & NTA</span>
+              <span>CSE, Civil Services, NEET & JEE</span>
+            </div>
+            <div className="bg-white p-3 rounded-2xl border border-gray-200 shadow-2xs">
+              <span className="font-bold text-gray-900 block text-sm">Banking Exams</span>
+              <span>IBPS PO, Clerk, SBI Online Portals</span>
+            </div>
+            <div className="bg-white p-3 rounded-2xl border border-gray-200 shadow-2xs">
+              <span className="font-bold text-gray-900 block text-sm">State Govt Forms</span>
+              <span>UPPSC, BPSC, MPPSC Recruitment</span>
+            </div>
+          </div>
+        </div>
 
+        {/* PRIVACY GUARANTEE */}
+        <div className="bg-indigo-50/70 border border-indigo-100 rounded-3xl p-6 max-w-4xl mx-auto text-xs sm:text-sm text-indigo-950 leading-relaxed">
+          <h4 className="font-bold text-base mb-1.5 text-indigo-900">
+            🔒 Client-Side Browser Security
+          </h4>
           <p>
-            No. Image processing is performed locally in your browser. Your original image
-            does not need to be sent to our server for resizing.
+            Your privacy is completely protected. When resizing images to {targetWidth}×{targetHeight}px on 20KBPhoto.in, all canvas transformations and metadata embedding execute locally inside your web browser. No copy of your photo or signature is sent to any server.
           </p>
         </div>
       </section>

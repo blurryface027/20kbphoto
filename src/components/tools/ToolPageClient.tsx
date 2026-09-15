@@ -760,38 +760,128 @@ export default function ToolPageClient({ slug }: Props) {
         </div>
       )}
 
-      {/* SEO Section */}
-      <section className="mt-12 pt-8 border-t border-gray-200">
-        <h2 className="text-2xl font-bold text-gray-900 mb-4">{config.title}</h2>
-
-        <div className="space-y-4 text-gray-700 leading-7">
-          <p>{config.subtitle}</p>
-
-          <h3 className="text-xl font-semibold text-gray-900">
-            How to use this {config.title.toLowerCase()}
-          </h3>
-
-          <ol className="list-decimal list-inside space-y-2">
-            <li>Upload your photo or document image.</li>
-            <li>Use the top navigation bar to access Crop, Rotate & Flip, DPI, or Resize controls.</li>
-            <li>Adjust settings with instant live preview.</li>
-            <li>Check output dimensions, file size, format, and DPI validation.</li>
-            <li>Download your high-quality processed image instantly.</li>
-          </ol>
-
-          <h3 className="text-xl font-semibold text-gray-900">Who can use this tool?</h3>
-
-          <p>
-            This tool is built for students, job applicants, and professionals preparing photos,
-            signatures, and documents for official exam portals (SSC, UPSC, State PSC, NSDL PAN, NTA, IBPS)
-            and web applications.
+      {/* HIGH DENSITY CONTENT & SEO SECTION FOR ADSENSE COMPLIANCE */}
+      <section className="mt-14 pt-10 border-t border-gray-200/90 space-y-10">
+        {/* Main Title & Overview */}
+        <div className="text-center max-w-3xl mx-auto space-y-3">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight">
+            Complete Guide to {config.title}
+          </h2>
+          <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+            {config.subtitle} Designed specifically for Indian government job applications, entrance examinations, admissions, and competitive exam portals.
           </p>
+        </div>
 
-          <h3 className="text-xl font-semibold text-gray-900">Is image processing secure?</h3>
+        {/* TECHNICAL SPECIFICATIONS MATRIX TABLE */}
+        <div className="bg-white rounded-3xl border border-gray-200 shadow-xs overflow-hidden max-w-4xl mx-auto">
+          <div className="p-4 sm:p-5 bg-gradient-to-r from-slate-900 to-indigo-950 text-white flex items-center justify-between">
+            <h3 className="font-extrabold text-sm sm:text-base">
+              {config.title} Technical Specifications
+            </h3>
+            <span className="text-[11px] font-semibold bg-white/10 px-2.5 py-1 rounded-full text-indigo-200">
+              100% Browser Local Processing
+            </span>
+          </div>
+          <div className="overflow-x-auto">
+            <table className="w-full text-left border-collapse text-xs sm:text-sm">
+              <tbody className="divide-y divide-gray-100 text-gray-700">
+                <tr className="hover:bg-gray-50/50">
+                  <td className="py-3 px-4 font-bold text-gray-900 bg-gray-50/40 w-1/3">Supported Input Formats</td>
+                  <td className="py-3 px-4 text-gray-700 font-mono">JPG, JPEG, PNG, WEBP, HEIC, HEIF, BMP</td>
+                </tr>
+                <tr className="hover:bg-gray-50/50">
+                  <td className="py-3 px-4 font-bold text-gray-900 bg-gray-50/40">Supported Output Formats</td>
+                  <td className="py-3 px-4 text-indigo-600 font-mono font-semibold">JPG, PNG, WEBP</td>
+                </tr>
+                <tr className="hover:bg-gray-50/50">
+                  <td className="py-3 px-4 font-bold text-gray-900 bg-gray-50/40">Maximum File Upload Size</td>
+                  <td className="py-3 px-4 text-gray-700 font-medium">15 MB per file</td>
+                </tr>
+                <tr className="hover:bg-gray-50/50">
+                  <td className="py-3 px-4 font-bold text-gray-900 bg-gray-50/40">DPI / Resolution Control</td>
+                  <td className="py-3 px-4 text-gray-700">72 DPI, 96 DPI, 200 DPI, 300 DPI, 600 DPI (Metadata embedded)</td>
+                </tr>
+                <tr className="hover:bg-gray-50/50">
+                  <td className="py-3 px-4 font-bold text-gray-900 bg-gray-50/40">Privacy & Data Storage</td>
+                  <td className="py-3 px-4 text-emerald-700 font-semibold">Zero Server Uploads • Processed strictly inside local browser memory</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
 
+        {/* STEP BY STEP HOW-TO GUIDE */}
+        <div className="bg-gray-50/70 border border-gray-200/80 rounded-3xl p-6 sm:p-8 max-w-4xl mx-auto space-y-4">
+          <h3 className="text-lg sm:text-xl font-extrabold text-gray-900">
+            Step-by-Step Instructions: How to Use {config.title}
+          </h3>
+          <ol className="list-decimal list-inside space-y-2.5 text-xs sm:text-sm text-gray-700 leading-relaxed">
+            <li>
+              <strong className="text-gray-900 font-semibold">Select and Upload Your Image:</strong> Click the dropzone above or drag your photograph, signature, or document file into the box.
+            </li>
+            <li>
+              <strong className="text-gray-900 font-semibold">Crop & Align Aspect Ratio:</strong> Use the &ldquo;Crop Image&rdquo; tab to select exact passport size dimensions or trim unnecessary white margins.
+            </li>
+            <li>
+              <strong className="text-gray-900 font-semibold">Adjust Target Dimensions & DPI:</strong> Switch to &ldquo;Resize & Compress&rdquo; or &ldquo;Change DPI&rdquo; to set exact pixel width, pixel height, and target resolution (e.g. 300 DPI).
+            </li>
+            <li>
+              <strong className="text-gray-900 font-semibold">Compress File Size in KB:</strong> Enable the target KB compressor slider to match official portal limits (e.g. 20KB, 50KB, 100KB).
+            </li>
+            <li>
+              <strong className="text-gray-900 font-semibold">Verify & Instant Download:</strong> Check the live green validation badges to confirm exact compliance before clicking &ldquo;Download Processed Image&rdquo;.
+            </li>
+          </ol>
+        </div>
+
+        {/* APPLICATION PORTAL COMPATIBILITY GRID */}
+        <div className="max-w-4xl mx-auto space-y-4">
+          <h3 className="text-lg sm:text-xl font-extrabold text-gray-900 text-center">
+            Compatible Government & Recruitment Application Portals
+          </h3>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center text-xs font-medium text-gray-700">
+            <div className="bg-white p-3 rounded-2xl border border-gray-200 shadow-2xs">
+              <span className="font-bold text-gray-900 block text-sm">SSC Portals</span>
+              <span>CGL, CHSL, MTS, GD, CPO</span>
+            </div>
+            <div className="bg-white p-3 rounded-2xl border border-gray-200 shadow-2xs">
+              <span className="font-bold text-gray-900 block text-sm">UPSC Portals</span>
+              <span>CSE IAS, NDA, CDS, CAPF</span>
+            </div>
+            <div className="bg-white p-3 rounded-2xl border border-gray-200 shadow-2xs">
+              <span className="font-bold text-gray-900 block text-sm">Banking Exams</span>
+              <span>IBPS PO, Clerk, SBI PO, RBI</span>
+            </div>
+            <div className="bg-white p-3 rounded-2xl border border-gray-200 shadow-2xs">
+              <span className="font-bold text-gray-900 block text-sm">NTA Exams</span>
+              <span>NEET UG, JEE Main, CUET</span>
+            </div>
+            <div className="bg-white p-3 rounded-2xl border border-gray-200 shadow-2xs">
+              <span className="font-bold text-gray-900 block text-sm">Railway RRB</span>
+              <span>NTPC, Group D, ALP, JE</span>
+            </div>
+            <div className="bg-white p-3 rounded-2xl border border-gray-200 shadow-2xs">
+              <span className="font-bold text-gray-900 block text-sm">State PSCs</span>
+              <span>UPPSC, BPSC, MPPSC, RPSC</span>
+            </div>
+            <div className="bg-white p-3 rounded-2xl border border-gray-200 shadow-2xs">
+              <span className="font-bold text-gray-900 block text-sm">PAN Card</span>
+              <span>NSDL (Protean) & UTIITSL</span>
+            </div>
+            <div className="bg-white p-3 rounded-2xl border border-gray-200 shadow-2xs">
+              <span className="font-bold text-gray-900 block text-sm">Passport Seva</span>
+              <span>MEA Passport Size 3.5x4.5cm</span>
+            </div>
+          </div>
+        </div>
+
+        {/* PRIVACY & SECURITY NOTE */}
+        <div className="bg-indigo-50/70 border border-indigo-100 rounded-3xl p-6 max-w-4xl mx-auto text-xs sm:text-sm text-indigo-950 leading-relaxed">
+          <h4 className="font-bold text-base mb-1.5 text-indigo-900">
+            🔒 Privacy Guarantee: Local Client-Side Processing
+          </h4>
           <p>
-            Yes! All cropping, rotating, DPI modification, and compression happens locally inside your
-            web browser using HTML5 Canvas. Your sensitive documents are never uploaded to any external server.
+            Your security is our top priority. When you use {config.title}, all image manipulation algorithms (canvas resizing, aspect ratio cropping, binary EXIF/JFIF DPI injection, and JPEG quality quantization) execute 100% locally inside your browser memory via Web APIs. Your uploaded photographs, signatures, and personal identity documents are never transmitted over the internet or stored on external servers.
           </p>
         </div>
       </section>

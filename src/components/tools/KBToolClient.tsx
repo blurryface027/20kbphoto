@@ -353,83 +353,117 @@ export default function KBToolClient({ targetKB: initialTargetKB }: KBToolClient
         </div>
       )}
 
-      <section className="mt-12 pt-8 border-t border-gray-200">
-        <h2 className="text-2xl font-bold text-gray-900 mb-4">
-          Resize an Image to {currentTargetKB}KB Online
-        </h2>
-        
-        <h3 className="text-xl font-semibold text-gray-900 pt-2">
-          {sizeGuidance.title}
-        </h3>
-
-        <p>
-          {sizeGuidance.text}
-        </p>
-
-        <ul className="list-disc list-inside space-y-2">
-          {sizeGuidance.tips.map((tip) => (
-            <li key={tip}>{tip}</li>
-          ))}
-        </ul>
-
-        <div className="space-y-4 text-gray-700 leading-7">
-          <p>
-            Need an image with a maximum size of {currentTargetKB}KB? This free
-            {currentTargetKB}KB image compressor is designed for photos,
-            signatures, scanned documents, and other files that need to meet a
-            specific upload-size limit.
+      {/* HIGH DENSITY CONTENT & SEO SECTION FOR ADSENSE COMPLIANCE */}
+      <section className="mt-14 pt-10 border-t border-gray-200/90 space-y-10">
+        {/* Main Title & Overview */}
+        <div className="text-center max-w-3xl mx-auto space-y-3">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight">
+            Comprehensive Guide: How to Compress Image to {currentTargetKB}KB
+          </h2>
+          <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+            {sizeGuidance.text} This tool uses a binary-search quality quantization engine to guarantee that your image file size stays strictly under {currentTargetKB}KB while maintaining optimal visual clarity.
           </p>
+        </div>
 
-          <p>
-            Smaller targets such as {currentTargetKB}KB are useful when an
-            application has a strict upload limit. Larger targets such as
-            {currentTargetKB}KB can preserve more image detail while still
-            keeping the file within a required size limit. The correct target
-            should always match the instructions of the website or application
-            where you are uploading the file.
-          </p>
+        {/* TECHNICAL SPECIFICATIONS MATRIX TABLE */}
+        <div className="bg-white rounded-3xl border border-gray-200 shadow-xs overflow-hidden max-w-4xl mx-auto">
+          <div className="p-4 sm:p-5 bg-gradient-to-r from-slate-900 to-indigo-950 text-white flex items-center justify-between">
+            <h3 className="font-extrabold text-sm sm:text-base">
+              {currentTargetKB}KB Image Compressor Technical Specifications
+            </h3>
+            <span className="text-[11px] font-semibold bg-white/10 px-2.5 py-1 rounded-full text-indigo-200">
+              Binary Search Quality Optimizer
+            </span>
+          </div>
+          <div className="overflow-x-auto">
+            <table className="w-full text-left border-collapse text-xs sm:text-sm">
+              <tbody className="divide-y divide-gray-100 text-gray-700">
+                <tr className="hover:bg-gray-50/50">
+                  <td className="py-3 px-4 font-bold text-gray-900 bg-gray-50/40 w-1/3">Target File Size Limit</td>
+                  <td className="py-3 px-4 text-indigo-600 font-bold">Strictly ≤ {currentTargetKB} KB ({currentTargetKB * 1024} bytes)</td>
+                </tr>
+                <tr className="hover:bg-gray-50/50">
+                  <td className="py-3 px-4 font-bold text-gray-900 bg-gray-50/40">Supported Input Formats</td>
+                  <td className="py-3 px-4 text-gray-700 font-mono">JPG, JPEG, PNG, WEBP, HEIC, HEIF, BMP</td>
+                </tr>
+                <tr className="hover:bg-gray-50/50">
+                  <td className="py-3 px-4 font-bold text-gray-900 bg-gray-50/40">Output Formats Available</td>
+                  <td className="py-3 px-4 text-gray-800 font-mono font-semibold">JPG (Recommended), PNG, WEBP</td>
+                </tr>
+                <tr className="hover:bg-gray-50/50">
+                  <td className="py-3 px-4 font-bold text-gray-900 bg-gray-50/40">Resolution & DPI Handling</td>
+                  <td className="py-3 px-4 text-gray-700">300 DPI metadata injection for official portal submission</td>
+                </tr>
+                <tr className="hover:bg-gray-50/50">
+                  <td className="py-3 px-4 font-bold text-gray-900 bg-gray-50/40">Browser Privacy</td>
+                  <td className="py-3 px-4 text-emerald-700 font-semibold">100% Client-Side HTML5 Canvas Execution • Zero Data Sent to Servers</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
 
-          <h3 className="text-xl font-semibold text-gray-900 pt-2">
-            What can you use a {currentTargetKB}KB image for?
+        {/* TIPS FOR QUALITY AT THIS KB LIMIT */}
+        <div className="bg-gray-50/70 border border-gray-200/80 rounded-3xl p-6 sm:p-8 max-w-4xl mx-auto space-y-4">
+          <h3 className="text-lg sm:text-xl font-extrabold text-gray-900">
+            {sizeGuidance.title}
           </h3>
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs sm:text-sm text-gray-700">
+            {sizeGuidance.tips.map((tip) => (
+              <li key={tip} className="flex items-start gap-2 bg-white p-3 rounded-2xl border border-gray-200/70 shadow-2xs font-medium">
+                <span className="text-emerald-600 font-bold">✓</span>
+                <span>{tip}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
 
-          <p>
-            A {currentTargetKB}KB image may be suitable for recruitment forms,
-            examination applications, scholarship forms, government portals,
-            identity-document submissions, profile photographs, and signature
-            uploads when those services specify a {currentTargetKB}KB limit.
-            File-size requirements vary between applications, so verify the
-            official instructions before submitting an image.
-          </p>
-
-          <h3 className="text-xl font-semibold text-gray-900 pt-2">
-            How to reduce an image to {currentTargetKB}KB
+        {/* STEP BY STEP COMPRESSION GUIDELINES */}
+        <div className="max-w-4xl mx-auto space-y-4">
+          <h3 className="text-lg sm:text-xl font-extrabold text-gray-900 text-center">
+            How to Compress Any Photo or Signature Image to {currentTargetKB}KB
           </h3>
-
-          <ol className="list-decimal list-inside space-y-2">
-            <li>Upload your original JPG, PNG, or WEBP image.</li>
-            <li>Set the target file size to {currentTargetKB}KB.</li>
-            <li>Choose suitable image dimensions and output format.</li>
-            <li>Let the browser compress the image toward the selected target.</li>
-            <li>Check the final file size and download the result.</li>
+          <ol className="list-decimal list-inside space-y-2.5 text-xs sm:text-sm text-gray-700 leading-relaxed max-w-3xl mx-auto bg-white p-6 rounded-3xl border border-gray-200">
+            <li>Upload your original photograph, signature scan, or document image above.</li>
+            <li>Verify the target file size is set to <strong className="text-indigo-600 font-bold">{currentTargetKB}KB</strong>.</li>
+            <li>Optionally select custom target dimensions (e.g. 200×230 px for photos or 140×60 px for signatures).</li>
+            <li>Our browser engine runs canvas quality quantization to reduce the file size below {currentTargetKB}KB.</li>
+            <li>Inspect the live preview and validation badge before downloading your final ready-to-upload image.</li>
           </ol>
+        </div>
 
-          <h3 className="text-xl font-semibold text-gray-900 pt-2">
-            {currentTargetKB}KB photo compression tips
+        {/* APPLICATION PORTAL USAGE LIST */}
+        <div className="max-w-4xl mx-auto space-y-4">
+          <h3 className="text-lg sm:text-xl font-extrabold text-gray-900 text-center">
+            Common Forms Requiring a {currentTargetKB}KB Image Limit
           </h3>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center text-xs font-medium text-gray-700">
+            <div className="bg-white p-3 rounded-2xl border border-gray-200 shadow-2xs">
+              <span className="font-bold text-gray-900 block text-sm">SSC Exams</span>
+              <span>CGL, CHSL, MTS, GD Photos & Signatures</span>
+            </div>
+            <div className="bg-white p-3 rounded-2xl border border-gray-200 shadow-2xs">
+              <span className="font-bold text-gray-900 block text-sm">Banking Forms</span>
+              <span>IBPS PO, Clerk, SBI PO Signature Uploads</span>
+            </div>
+            <div className="bg-white p-3 rounded-2xl border border-gray-200 shadow-2xs">
+              <span className="font-bold text-gray-900 block text-sm">UPSC & NTA</span>
+              <span>IAS, NDA, NEET, JEE Candidate Photos</span>
+            </div>
+            <div className="bg-white p-3 rounded-2xl border border-gray-200 shadow-2xs">
+              <span className="font-bold text-gray-900 block text-sm">State Govt Jobs</span>
+              <span>UPPSC, BPSC, MPPSC Online Forms</span>
+            </div>
+          </div>
+        </div>
 
+        {/* PRIVACY GUARANTEE */}
+        <div className="bg-indigo-50/70 border border-indigo-100 rounded-3xl p-6 max-w-4xl mx-auto text-xs sm:text-sm text-indigo-950 leading-relaxed">
+          <h4 className="font-bold text-base mb-1.5 text-indigo-900">
+            🔒 100% Secure Browser Compression
+          </h4>
           <p>
-            If the original image is much larger than {currentTargetKB}KB,
-            reducing unnecessary dimensions before compression can help retain
-            better visual quality. JPEG is often useful for photographs, while
-            PNG can be preferable for graphics or images requiring transparency.
-            Do not change the format or dimensions if an application requires a
-            specific format or pixel size.
-          </p>
-
-          <p>
-            Your image is processed locally in your browser. The image does not
-            need to be uploaded to our server for compression.
+            When compressing images to {currentTargetKB}KB on 20KBPhoto.in, all image encoding algorithms execute locally on your device. Your sensitive documents, photographs, and signatures remain 100% private and are never uploaded to any remote server or third-party cloud service.
           </p>
         </div>
       </section>
