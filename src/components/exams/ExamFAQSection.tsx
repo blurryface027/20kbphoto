@@ -24,11 +24,11 @@ export default function ExamFAQSection({ exam }: ExamFAQSectionProps) {
     },
     {
       question: `What are the required photo dimensions and file size for ${exam.name}?`,
-      answer: `According to the official notification, your photograph for ${exam.name} must be exactly ${exam.photo.width} × ${exam.photo.height} pixels. The file size must strictly be between ${exam.photo.minKB} KB and ${exam.photo.maxKB} KB in ${exam.photo.format} format.`,
+      answer: `According to the official notification, your photograph for ${exam.name} must be ${exam.photo.isDimensionFlexible ? "formatted to recommended resolution of " : "exactly "}${exam.photo.width} × ${exam.photo.height} pixels${exam.photo.physicalWidthCm ? ` (${exam.photo.physicalWidthCm} cm × ${exam.photo.physicalHeightCm} cm)` : ""}. The file size must strictly be between ${exam.photo.minKB} KB and ${exam.photo.maxKB} KB in ${exam.photo.format} format.`,
     },
     {
       question: `What is the required signature size and dimension for ${exam.name}?`,
-      answer: `The official signature image requirement for ${exam.name} is ${exam.signature.width} × ${exam.signature.height} pixels, formatted as JPEG/JPG, with a file size strictly between ${exam.signature.minKB} KB and ${exam.signature.maxKB} KB.`,
+      answer: `The official signature image requirement for ${exam.name} is ${exam.signature.isDimensionFlexible ? "recommended resolution of " : "exactly "}${exam.signature.width} × ${exam.signature.height} pixels${exam.signature.physicalWidthCm ? ` (${exam.signature.physicalWidthCm} cm × ${exam.signature.physicalHeightCm} cm)` : ""}, formatted as ${exam.signature.format}, with a file size strictly between ${exam.signature.minKB} KB and ${exam.signature.maxKB} KB.`,
     },
     {
       question: `What background is acceptable for ${exam.name} photos?`,

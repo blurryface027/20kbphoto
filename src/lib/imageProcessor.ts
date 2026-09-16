@@ -292,7 +292,7 @@ export async function setDPIInBlob(blob: Blob, dpi: number): Promise<Blob> {
         physView.setUint32(17, crc, false);
 
         // Find position of IHDR (usually at byte 8, length 13 + 12 = 25 bytes => byte 33)
-        let insertPos = 33;
+        const insertPos = 33;
         const newBytes = new Uint8Array(bytes.length + phys.length);
         newBytes.set(bytes.subarray(0, insertPos), 0);
         newBytes.set(phys, insertPos);
@@ -348,8 +348,8 @@ export interface ProcessOptions {
 export async function processImage(file: File | Blob, options: ProcessOptions = {}): Promise<ProcessingResult> {
   const img = await loadImage(file);
 
-  let srcW = img.width;
-  let srcH = img.height;
+  const srcW = img.width;
+  const srcH = img.height;
 
   let cropX = 0;
   let cropY = 0;

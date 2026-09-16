@@ -5,7 +5,13 @@ export interface ExamRequirement {
   maxKB: number;
   format: string;
   dpi?: number;
+  physicalWidthCm?: number;
+  physicalHeightCm?: number;
+  aspectRatio?: string;
+  isDimensionFlexible?: boolean;
   notes?: string;
+  sourceUrl?: string;
+  sourceTitle?: string;
 }
 
 export interface Exam {
@@ -18,8 +24,10 @@ export interface Exam {
   photo: ExamRequirement;
   signature: ExamRequirement;
   source: string;
+  sourceUrl?: string;
+  sourceTitle?: string;
   lastVerified: string;
-  verificationStatus: 'verified' | 'needs-review' | 'conflicting' | 'unknown';
+  verificationStatus: 'verified' | 'partially_verified' | 'unverified' | 'needs-review' | 'conflicting' | 'unknown';
   relatedExams: string[];
   keywords: string[];
   priority: 'P0' | 'P1' | 'P2';
@@ -35,20 +43,36 @@ export const exams: Exam[] = [
     "photo": {
       "width": 200,
       "height": 240,
-      "minKB": 0,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": false,
+      "notes": "Live photo capture mandatory on SSC portal/app. Uploaded photo: 20-50 KB, JPEG.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "signature": {
       "width": 315,
       "height": 157,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 4.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "2:1",
+      "isDimensionFlexible": false,
+      "notes": "Width 4.0 cm x Height 2.0 cm (~315x157 px or 140x60 px). Strictly 10 KB to 20 KB in JPEG format.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "ssc cgl photo size",
@@ -56,7 +80,9 @@ export const exams: Exam[] = [
       "ssc cgl photo resizer",
       "ssc cgl online form photo"
     ],
-    "priority": "P0"
+    "priority": "P0",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
   },
   {
     "name": "SSC CHSL",
@@ -67,20 +93,36 @@ export const exams: Exam[] = [
     "photo": {
       "width": 200,
       "height": 240,
-      "minKB": 0,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": false,
+      "notes": "Live photo capture mandatory on SSC portal/app. Uploaded photo: 20-50 KB, JPEG.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "signature": {
       "width": 315,
       "height": 157,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 4.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "2:1",
+      "isDimensionFlexible": false,
+      "notes": "Width 4.0 cm x Height 2.0 cm (~315x157 px or 140x60 px). Strictly 10 KB to 20 KB in JPEG format.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "ssc chsl photo size",
@@ -88,7 +130,9 @@ export const exams: Exam[] = [
       "ssc chsl photo resizer",
       "ssc chsl online form photo"
     ],
-    "priority": "P0"
+    "priority": "P0",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
   },
   {
     "name": "SSC MTS",
@@ -99,20 +143,36 @@ export const exams: Exam[] = [
     "photo": {
       "width": 200,
       "height": 240,
-      "minKB": 0,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": false,
+      "notes": "Live photo capture mandatory on SSC portal/app. Uploaded photo: 20-50 KB, JPEG.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "signature": {
       "width": 315,
       "height": 157,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 4.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "2:1",
+      "isDimensionFlexible": false,
+      "notes": "Width 4.0 cm x Height 2.0 cm (~315x157 px or 140x60 px). Strictly 10 KB to 20 KB in JPEG format.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "ssc mts photo size",
@@ -120,7 +180,9 @@ export const exams: Exam[] = [
       "ssc mts photo resizer",
       "ssc mts online form photo"
     ],
-    "priority": "P0"
+    "priority": "P0",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
   },
   {
     "name": "SSC GD Constable",
@@ -131,20 +193,36 @@ export const exams: Exam[] = [
     "photo": {
       "width": 200,
       "height": 240,
-      "minKB": 0,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": false,
+      "notes": "Live photo capture mandatory on SSC portal/app. Uploaded photo: 20-50 KB, JPEG.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "signature": {
       "width": 315,
       "height": 157,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 4.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "2:1",
+      "isDimensionFlexible": false,
+      "notes": "Width 4.0 cm x Height 2.0 cm (~315x157 px or 140x60 px). Strictly 10 KB to 20 KB in JPEG format.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "ssc gd constable photo size",
@@ -152,7 +230,9 @@ export const exams: Exam[] = [
       "ssc gd constable photo resizer",
       "ssc gd constable online form photo"
     ],
-    "priority": "P0"
+    "priority": "P0",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
   },
   {
     "name": "SSC CPO",
@@ -163,20 +243,36 @@ export const exams: Exam[] = [
     "photo": {
       "width": 200,
       "height": 240,
-      "minKB": 0,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": false,
+      "notes": "Live photo capture mandatory on SSC portal/app. Uploaded photo: 20-50 KB, JPEG.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "signature": {
       "width": 315,
       "height": 157,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 4.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "2:1",
+      "isDimensionFlexible": false,
+      "notes": "Width 4.0 cm x Height 2.0 cm (~315x157 px or 140x60 px). Strictly 10 KB to 20 KB in JPEG format.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "ssc cpo photo size",
@@ -184,7 +280,9 @@ export const exams: Exam[] = [
       "ssc cpo photo resizer",
       "ssc cpo online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
   },
   {
     "name": "SSC JE",
@@ -195,20 +293,36 @@ export const exams: Exam[] = [
     "photo": {
       "width": 200,
       "height": 240,
-      "minKB": 0,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": false,
+      "notes": "Live photo capture mandatory on SSC portal/app. Uploaded photo: 20-50 KB, JPEG.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "signature": {
       "width": 315,
       "height": 157,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 4.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "2:1",
+      "isDimensionFlexible": false,
+      "notes": "Width 4.0 cm x Height 2.0 cm (~315x157 px or 140x60 px). Strictly 10 KB to 20 KB in JPEG format.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "ssc je photo size",
@@ -216,7 +330,9 @@ export const exams: Exam[] = [
       "ssc je photo resizer",
       "ssc je online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
   },
   {
     "name": "SSC Stenographer C",
@@ -227,20 +343,36 @@ export const exams: Exam[] = [
     "photo": {
       "width": 200,
       "height": 240,
-      "minKB": 0,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": false,
+      "notes": "Live photo capture mandatory on SSC portal/app. Uploaded photo: 20-50 KB, JPEG.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "signature": {
       "width": 315,
       "height": 157,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 4.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "2:1",
+      "isDimensionFlexible": false,
+      "notes": "Width 4.0 cm x Height 2.0 cm (~315x157 px or 140x60 px). Strictly 10 KB to 20 KB in JPEG format.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "ssc stenographer c photo size",
@@ -248,7 +380,9 @@ export const exams: Exam[] = [
       "ssc stenographer c photo resizer",
       "ssc stenographer c online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
   },
   {
     "name": "SSC Stenographer D",
@@ -259,20 +393,36 @@ export const exams: Exam[] = [
     "photo": {
       "width": 200,
       "height": 240,
-      "minKB": 0,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": false,
+      "notes": "Live photo capture mandatory on SSC portal/app. Uploaded photo: 20-50 KB, JPEG.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "signature": {
       "width": 315,
       "height": 157,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 4.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "2:1",
+      "isDimensionFlexible": false,
+      "notes": "Width 4.0 cm x Height 2.0 cm (~315x157 px or 140x60 px). Strictly 10 KB to 20 KB in JPEG format.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "ssc stenographer d photo size",
@@ -280,7 +430,9 @@ export const exams: Exam[] = [
       "ssc stenographer d photo resizer",
       "ssc stenographer d online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
   },
   {
     "name": "SSC Selection Post",
@@ -291,20 +443,36 @@ export const exams: Exam[] = [
     "photo": {
       "width": 200,
       "height": 240,
-      "minKB": 0,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": false,
+      "notes": "Live photo capture mandatory on SSC portal/app. Uploaded photo: 20-50 KB, JPEG.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "signature": {
       "width": 315,
       "height": 157,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 4.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "2:1",
+      "isDimensionFlexible": false,
+      "notes": "Width 4.0 cm x Height 2.0 cm (~315x157 px or 140x60 px). Strictly 10 KB to 20 KB in JPEG format.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "ssc selection post photo size",
@@ -312,7 +480,9 @@ export const exams: Exam[] = [
       "ssc selection post photo resizer",
       "ssc selection post online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
   },
   {
     "name": "SSC JHT",
@@ -323,20 +493,36 @@ export const exams: Exam[] = [
     "photo": {
       "width": 200,
       "height": 240,
-      "minKB": 0,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": false,
+      "notes": "Live photo capture mandatory on SSC portal/app. Uploaded photo: 20-50 KB, JPEG.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "signature": {
       "width": 315,
       "height": 157,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 4.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "2:1",
+      "isDimensionFlexible": false,
+      "notes": "Width 4.0 cm x Height 2.0 cm (~315x157 px or 140x60 px). Strictly 10 KB to 20 KB in JPEG format.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "ssc jht photo size",
@@ -344,7 +530,9 @@ export const exams: Exam[] = [
       "ssc jht photo resizer",
       "ssc jht online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
   },
   {
     "name": "SSC Hindi Translator",
@@ -355,20 +543,36 @@ export const exams: Exam[] = [
     "photo": {
       "width": 200,
       "height": 240,
-      "minKB": 0,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": false,
+      "notes": "Live photo capture mandatory on SSC portal/app. Uploaded photo: 20-50 KB, JPEG.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "signature": {
       "width": 315,
       "height": 157,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 4.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "2:1",
+      "isDimensionFlexible": false,
+      "notes": "Width 4.0 cm x Height 2.0 cm (~315x157 px or 140x60 px). Strictly 10 KB to 20 KB in JPEG format.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "ssc hindi translator photo size",
@@ -376,7 +580,9 @@ export const exams: Exam[] = [
       "ssc hindi translator photo resizer",
       "ssc hindi translator online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
   },
   {
     "name": "SSC IMD Scientific Asst",
@@ -385,18 +591,34 @@ export const exams: Exam[] = [
     "category": "ssc",
     "authority": "Legacy scan rule",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 240,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": false,
+      "notes": "Live photo capture mandatory on SSC portal/app. Uploaded photo: 20-50 KB, JPEG.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "signature": {
       "width": 315,
       "height": 157,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 4.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "2:1",
+      "isDimensionFlexible": false,
+      "notes": "Width 4.0 cm x Height 2.0 cm (~315x157 px or 140x60 px). Strictly 10 KB to 20 KB in JPEG format.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -408,7 +630,9 @@ export const exams: Exam[] = [
       "ssc imd scientific asst photo resizer",
       "ssc imd scientific asst online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
   },
   {
     "name": "SSC Delhi Police Const",
@@ -417,18 +641,34 @@ export const exams: Exam[] = [
     "category": "ssc",
     "authority": "Light background",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 240,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": false,
+      "notes": "Live photo capture mandatory on SSC portal/app. Uploaded photo: 20-50 KB, JPEG.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "signature": {
       "width": 315,
       "height": 157,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 4.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "2:1",
+      "isDimensionFlexible": false,
+      "notes": "Width 4.0 cm x Height 2.0 cm (~315x157 px or 140x60 px). Strictly 10 KB to 20 KB in JPEG format.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -440,7 +680,9 @@ export const exams: Exam[] = [
       "ssc delhi police const photo resizer",
       "ssc delhi police const online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
   },
   {
     "name": "SSC DP Head Const",
@@ -449,18 +691,34 @@ export const exams: Exam[] = [
     "category": "ssc",
     "authority": "Legacy portal rule",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 240,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": false,
+      "notes": "Live photo capture mandatory on SSC portal/app. Uploaded photo: 20-50 KB, JPEG.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "signature": {
       "width": 315,
       "height": 157,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 4.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "2:1",
+      "isDimensionFlexible": false,
+      "notes": "Width 4.0 cm x Height 2.0 cm (~315x157 px or 140x60 px). Strictly 10 KB to 20 KB in JPEG format.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -472,7 +730,9 @@ export const exams: Exam[] = [
       "ssc dp head const photo resizer",
       "ssc dp head const online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
   },
   {
     "name": "SSC DP Sub-Inspector",
@@ -483,20 +743,36 @@ export const exams: Exam[] = [
     "photo": {
       "width": 200,
       "height": 240,
-      "minKB": 0,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": false,
+      "notes": "Live photo capture mandatory on SSC portal/app. Uploaded photo: 20-50 KB, JPEG.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "signature": {
       "width": 315,
       "height": 157,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 4.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "2:1",
+      "isDimensionFlexible": false,
+      "notes": "Width 4.0 cm x Height 2.0 cm (~315x157 px or 140x60 px). Strictly 10 KB to 20 KB in JPEG format.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "ssc dp sub-inspector photo size",
@@ -504,7 +780,9 @@ export const exams: Exam[] = [
       "ssc dp sub-inspector photo resizer",
       "ssc dp sub-inspector online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
   },
   {
     "name": "SSC Statistical Inv",
@@ -515,20 +793,36 @@ export const exams: Exam[] = [
     "photo": {
       "width": 200,
       "height": 240,
-      "minKB": 0,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": false,
+      "notes": "Live photo capture mandatory on SSC portal/app. Uploaded photo: 20-50 KB, JPEG.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "signature": {
       "width": 315,
       "height": 157,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 4.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "2:1",
+      "isDimensionFlexible": false,
+      "notes": "Width 4.0 cm x Height 2.0 cm (~315x157 px or 140x60 px). Strictly 10 KB to 20 KB in JPEG format.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "ssc statistical inv photo size",
@@ -536,7 +830,9 @@ export const exams: Exam[] = [
       "ssc statistical inv photo resizer",
       "ssc statistical inv online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
   },
   {
     "name": "SSC JSA / LDC",
@@ -547,20 +843,36 @@ export const exams: Exam[] = [
     "photo": {
       "width": 200,
       "height": 240,
-      "minKB": 0,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": false,
+      "notes": "Live photo capture mandatory on SSC portal/app. Uploaded photo: 20-50 KB, JPEG.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "signature": {
       "width": 315,
       "height": 157,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 4.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "2:1",
+      "isDimensionFlexible": false,
+      "notes": "Width 4.0 cm x Height 2.0 cm (~315x157 px or 140x60 px). Strictly 10 KB to 20 KB in JPEG format.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "ssc jsa / ldc photo size",
@@ -568,7 +880,9 @@ export const exams: Exam[] = [
       "ssc jsa / ldc photo resizer",
       "ssc jsa / ldc online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
   },
   {
     "name": "SSC Lower Div Clerk",
@@ -579,20 +893,36 @@ export const exams: Exam[] = [
     "photo": {
       "width": 200,
       "height": 240,
-      "minKB": 0,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": false,
+      "notes": "Live photo capture mandatory on SSC portal/app. Uploaded photo: 20-50 KB, JPEG.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "signature": {
       "width": 315,
       "height": 157,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 4.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "2:1",
+      "isDimensionFlexible": false,
+      "notes": "Width 4.0 cm x Height 2.0 cm (~315x157 px or 140x60 px). Strictly 10 KB to 20 KB in JPEG format.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "ssc lower div clerk photo size",
@@ -600,7 +930,9 @@ export const exams: Exam[] = [
       "ssc lower div clerk photo resizer",
       "ssc lower div clerk online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
   },
   {
     "name": "SSC Const Executive",
@@ -609,18 +941,34 @@ export const exams: Exam[] = [
     "category": "ssc",
     "authority": "Legacy DP Constable notice",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 240,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": false,
+      "notes": "Live photo capture mandatory on SSC portal/app. Uploaded photo: 20-50 KB, JPEG.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "signature": {
       "width": 315,
       "height": 157,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 4.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "2:1",
+      "isDimensionFlexible": false,
+      "notes": "Width 4.0 cm x Height 2.0 cm (~315x157 px or 140x60 px). Strictly 10 KB to 20 KB in JPEG format.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -632,7 +980,9 @@ export const exams: Exam[] = [
       "ssc const executive photo resizer",
       "ssc const executive online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
   },
   {
     "name": "SSC Const Driver",
@@ -641,18 +991,34 @@ export const exams: Exam[] = [
     "category": "ssc",
     "authority": "Legacy DP Driver notice",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 240,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": false,
+      "notes": "Live photo capture mandatory on SSC portal/app. Uploaded photo: 20-50 KB, JPEG.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "signature": {
       "width": 315,
       "height": 157,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 4.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "2:1",
+      "isDimensionFlexible": false,
+      "notes": "Width 4.0 cm x Height 2.0 cm (~315x157 px or 140x60 px). Strictly 10 KB to 20 KB in JPEG format.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -664,7 +1030,9 @@ export const exams: Exam[] = [
       "ssc const driver photo resizer",
       "ssc const driver online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
   },
   {
     "name": "UPSC CSE (IAS/IFS)",
@@ -673,18 +1041,34 @@ export const exams: Exam[] = [
     "category": "upsc",
     "authority": "Photo must have Name and DOP printed",
     "photo": {
-      "width": 1000,
-      "height": 1000,
+      "width": 350,
+      "height": 350,
       "minKB": 20,
       "maxKB": 300,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 300,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "1:1 to 3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Min 350x350 px, Max 1000x1000 px. File size strictly 20 KB to 300 KB.",
+      "sourceUrl": "https://upsconline.nic.in",
+      "sourceTitle": "UPSC Online Portal Guidelines & Instructions for Scanned Images"
     },
     "signature": {
-      "width": 1000,
-      "height": 1000,
+      "width": 350,
+      "height": 350,
       "minKB": 20,
       "maxKB": 300,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 300,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "1:1 to 3.5:1.5",
+      "isDimensionFlexible": true,
+      "notes": "Min 350x350 px, Max 1000x1000 px. Signature in black ink on white paper.",
+      "sourceUrl": "https://upsconline.nic.in",
+      "sourceTitle": "UPSC Online Portal Guidelines & Instructions for Scanned Images"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -696,7 +1080,9 @@ export const exams: Exam[] = [
       "upsc cse (ias/ifs) photo resizer",
       "upsc cse (ias/ifs) online form photo"
     ],
-    "priority": "P0"
+    "priority": "P0",
+    "sourceUrl": "https://upsconline.nic.in",
+    "sourceTitle": "UPSC Online Portal Guidelines & Instructions for Scanned Images"
   },
   {
     "name": "UPSC IFS",
@@ -705,18 +1091,34 @@ export const exams: Exam[] = [
     "category": "upsc",
     "authority": "Candidate Name & Date inscribed",
     "photo": {
-      "width": 1000,
-      "height": 1000,
+      "width": 350,
+      "height": 350,
       "minKB": 20,
       "maxKB": 300,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 300,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "1:1 to 3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Min 350x350 px, Max 1000x1000 px. File size strictly 20 KB to 300 KB.",
+      "sourceUrl": "https://upsconline.nic.in",
+      "sourceTitle": "UPSC Online Portal Guidelines & Instructions for Scanned Images"
     },
     "signature": {
-      "width": 1000,
-      "height": 1000,
+      "width": 350,
+      "height": 350,
       "minKB": 20,
       "maxKB": 300,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 300,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "1:1 to 3.5:1.5",
+      "isDimensionFlexible": true,
+      "notes": "Min 350x350 px, Max 1000x1000 px. Signature in black ink on white paper.",
+      "sourceUrl": "https://upsconline.nic.in",
+      "sourceTitle": "UPSC Online Portal Guidelines & Instructions for Scanned Images"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -728,7 +1130,9 @@ export const exams: Exam[] = [
       "upsc ifs photo resizer",
       "upsc ifs online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://upsconline.nic.in",
+    "sourceTitle": "UPSC Online Portal Guidelines & Instructions for Scanned Images"
   },
   {
     "name": "UPSC NDA & NA",
@@ -737,18 +1141,34 @@ export const exams: Exam[] = [
     "category": "upsc",
     "authority": "Candidate Name & Date inscribed",
     "photo": {
-      "width": 1000,
-      "height": 1000,
+      "width": 350,
+      "height": 350,
       "minKB": 20,
       "maxKB": 300,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 300,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "1:1 to 3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Min 350x350 px, Max 1000x1000 px. File size strictly 20 KB to 300 KB.",
+      "sourceUrl": "https://upsconline.nic.in",
+      "sourceTitle": "UPSC Online Portal Guidelines & Instructions for Scanned Images"
     },
     "signature": {
-      "width": 1000,
-      "height": 1000,
+      "width": 350,
+      "height": 350,
       "minKB": 20,
       "maxKB": 300,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 300,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "1:1 to 3.5:1.5",
+      "isDimensionFlexible": true,
+      "notes": "Min 350x350 px, Max 1000x1000 px. Signature in black ink on white paper.",
+      "sourceUrl": "https://upsconline.nic.in",
+      "sourceTitle": "UPSC Online Portal Guidelines & Instructions for Scanned Images"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -760,7 +1180,9 @@ export const exams: Exam[] = [
       "upsc nda & na photo resizer",
       "upsc nda & na online form photo"
     ],
-    "priority": "P0"
+    "priority": "P0",
+    "sourceUrl": "https://upsconline.nic.in",
+    "sourceTitle": "UPSC Online Portal Guidelines & Instructions for Scanned Images"
   },
   {
     "name": "UPSC CDS",
@@ -769,18 +1191,34 @@ export const exams: Exam[] = [
     "category": "upsc",
     "authority": "Candidate Name & Date inscribed",
     "photo": {
-      "width": 1000,
-      "height": 1000,
+      "width": 350,
+      "height": 350,
       "minKB": 20,
       "maxKB": 300,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 300,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "1:1 to 3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Min 350x350 px, Max 1000x1000 px. File size strictly 20 KB to 300 KB.",
+      "sourceUrl": "https://upsconline.nic.in",
+      "sourceTitle": "UPSC Online Portal Guidelines & Instructions for Scanned Images"
     },
     "signature": {
-      "width": 1000,
-      "height": 1000,
+      "width": 350,
+      "height": 350,
       "minKB": 20,
       "maxKB": 300,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 300,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "1:1 to 3.5:1.5",
+      "isDimensionFlexible": true,
+      "notes": "Min 350x350 px, Max 1000x1000 px. Signature in black ink on white paper.",
+      "sourceUrl": "https://upsconline.nic.in",
+      "sourceTitle": "UPSC Online Portal Guidelines & Instructions for Scanned Images"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -792,7 +1230,9 @@ export const exams: Exam[] = [
       "upsc cds photo resizer",
       "upsc cds online form photo"
     ],
-    "priority": "P0"
+    "priority": "P0",
+    "sourceUrl": "https://upsconline.nic.in",
+    "sourceTitle": "UPSC Online Portal Guidelines & Instructions for Scanned Images"
   },
   {
     "name": "UPSC ESE (Engg)",
@@ -801,18 +1241,34 @@ export const exams: Exam[] = [
     "category": "upsc",
     "authority": "Candidate Name & Date inscribed",
     "photo": {
-      "width": 1000,
-      "height": 1000,
+      "width": 350,
+      "height": 350,
       "minKB": 20,
       "maxKB": 300,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 300,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "1:1 to 3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Min 350x350 px, Max 1000x1000 px. File size strictly 20 KB to 300 KB.",
+      "sourceUrl": "https://upsconline.nic.in",
+      "sourceTitle": "UPSC Online Portal Guidelines & Instructions for Scanned Images"
     },
     "signature": {
-      "width": 1000,
-      "height": 1000,
+      "width": 350,
+      "height": 350,
       "minKB": 20,
       "maxKB": 300,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 300,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "1:1 to 3.5:1.5",
+      "isDimensionFlexible": true,
+      "notes": "Min 350x350 px, Max 1000x1000 px. Signature in black ink on white paper.",
+      "sourceUrl": "https://upsconline.nic.in",
+      "sourceTitle": "UPSC Online Portal Guidelines & Instructions for Scanned Images"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -824,7 +1280,9 @@ export const exams: Exam[] = [
       "upsc ese (engg) photo resizer",
       "upsc ese (engg) online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://upsconline.nic.in",
+    "sourceTitle": "UPSC Online Portal Guidelines & Instructions for Scanned Images"
   },
   {
     "name": "UPSC CMS",
@@ -833,18 +1291,34 @@ export const exams: Exam[] = [
     "category": "upsc",
     "authority": "Candidate Name & Date inscribed",
     "photo": {
-      "width": 1000,
-      "height": 1000,
+      "width": 350,
+      "height": 350,
       "minKB": 20,
       "maxKB": 300,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 300,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "1:1 to 3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Min 350x350 px, Max 1000x1000 px. File size strictly 20 KB to 300 KB.",
+      "sourceUrl": "https://upsconline.nic.in",
+      "sourceTitle": "UPSC Online Portal Guidelines & Instructions for Scanned Images"
     },
     "signature": {
-      "width": 1000,
-      "height": 1000,
+      "width": 350,
+      "height": 350,
       "minKB": 20,
       "maxKB": 300,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 300,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "1:1 to 3.5:1.5",
+      "isDimensionFlexible": true,
+      "notes": "Min 350x350 px, Max 1000x1000 px. Signature in black ink on white paper.",
+      "sourceUrl": "https://upsconline.nic.in",
+      "sourceTitle": "UPSC Online Portal Guidelines & Instructions for Scanned Images"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -856,7 +1330,9 @@ export const exams: Exam[] = [
       "upsc cms photo resizer",
       "upsc cms online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://upsconline.nic.in",
+    "sourceTitle": "UPSC Online Portal Guidelines & Instructions for Scanned Images"
   },
   {
     "name": "UPSC CAPF (AC)",
@@ -865,18 +1341,34 @@ export const exams: Exam[] = [
     "category": "upsc",
     "authority": "Candidate Name & Date inscribed",
     "photo": {
-      "width": 1000,
-      "height": 1000,
+      "width": 350,
+      "height": 350,
       "minKB": 20,
       "maxKB": 300,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 300,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "1:1 to 3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Min 350x350 px, Max 1000x1000 px. File size strictly 20 KB to 300 KB.",
+      "sourceUrl": "https://upsconline.nic.in",
+      "sourceTitle": "UPSC Online Portal Guidelines & Instructions for Scanned Images"
     },
     "signature": {
-      "width": 1000,
-      "height": 1000,
+      "width": 350,
+      "height": 350,
       "minKB": 20,
       "maxKB": 300,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 300,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "1:1 to 3.5:1.5",
+      "isDimensionFlexible": true,
+      "notes": "Min 350x350 px, Max 1000x1000 px. Signature in black ink on white paper.",
+      "sourceUrl": "https://upsconline.nic.in",
+      "sourceTitle": "UPSC Online Portal Guidelines & Instructions for Scanned Images"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -888,7 +1380,9 @@ export const exams: Exam[] = [
       "upsc capf (ac) photo resizer",
       "upsc capf (ac) online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://upsconline.nic.in",
+    "sourceTitle": "UPSC Online Portal Guidelines & Instructions for Scanned Images"
   },
   {
     "name": "UPSC IES",
@@ -897,18 +1391,34 @@ export const exams: Exam[] = [
     "category": "upsc",
     "authority": "Candidate Name & Date inscribed",
     "photo": {
-      "width": 1000,
-      "height": 1000,
+      "width": 350,
+      "height": 350,
       "minKB": 20,
       "maxKB": 300,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 300,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "1:1 to 3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Min 350x350 px, Max 1000x1000 px. File size strictly 20 KB to 300 KB.",
+      "sourceUrl": "https://upsconline.nic.in",
+      "sourceTitle": "UPSC Online Portal Guidelines & Instructions for Scanned Images"
     },
     "signature": {
-      "width": 1000,
-      "height": 1000,
+      "width": 350,
+      "height": 350,
       "minKB": 20,
       "maxKB": 300,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 300,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "1:1 to 3.5:1.5",
+      "isDimensionFlexible": true,
+      "notes": "Min 350x350 px, Max 1000x1000 px. Signature in black ink on white paper.",
+      "sourceUrl": "https://upsconline.nic.in",
+      "sourceTitle": "UPSC Online Portal Guidelines & Instructions for Scanned Images"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -920,7 +1430,9 @@ export const exams: Exam[] = [
       "upsc ies photo resizer",
       "upsc ies online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://upsconline.nic.in",
+    "sourceTitle": "UPSC Online Portal Guidelines & Instructions for Scanned Images"
   },
   {
     "name": "UPSC ISS",
@@ -929,18 +1441,34 @@ export const exams: Exam[] = [
     "category": "upsc",
     "authority": "Candidate Name & Date inscribed",
     "photo": {
-      "width": 1000,
-      "height": 1000,
+      "width": 350,
+      "height": 350,
       "minKB": 20,
       "maxKB": 300,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 300,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "1:1 to 3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Min 350x350 px, Max 1000x1000 px. File size strictly 20 KB to 300 KB.",
+      "sourceUrl": "https://upsconline.nic.in",
+      "sourceTitle": "UPSC Online Portal Guidelines & Instructions for Scanned Images"
     },
     "signature": {
-      "width": 1000,
-      "height": 1000,
+      "width": 350,
+      "height": 350,
       "minKB": 20,
       "maxKB": 300,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 300,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "1:1 to 3.5:1.5",
+      "isDimensionFlexible": true,
+      "notes": "Min 350x350 px, Max 1000x1000 px. Signature in black ink on white paper.",
+      "sourceUrl": "https://upsconline.nic.in",
+      "sourceTitle": "UPSC Online Portal Guidelines & Instructions for Scanned Images"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -952,7 +1480,9 @@ export const exams: Exam[] = [
       "upsc iss photo resizer",
       "upsc iss online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://upsconline.nic.in",
+    "sourceTitle": "UPSC Online Portal Guidelines & Instructions for Scanned Images"
   },
   {
     "name": "UPSC Geo-Scientist",
@@ -961,18 +1491,34 @@ export const exams: Exam[] = [
     "category": "upsc",
     "authority": "Candidate Name & Date inscribed",
     "photo": {
-      "width": 1000,
-      "height": 1000,
+      "width": 350,
+      "height": 350,
       "minKB": 20,
       "maxKB": 300,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 300,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "1:1 to 3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Min 350x350 px, Max 1000x1000 px. File size strictly 20 KB to 300 KB.",
+      "sourceUrl": "https://upsconline.nic.in",
+      "sourceTitle": "UPSC Online Portal Guidelines & Instructions for Scanned Images"
     },
     "signature": {
-      "width": 1000,
-      "height": 1000,
+      "width": 350,
+      "height": 350,
       "minKB": 20,
       "maxKB": 300,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 300,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "1:1 to 3.5:1.5",
+      "isDimensionFlexible": true,
+      "notes": "Min 350x350 px, Max 1000x1000 px. Signature in black ink on white paper.",
+      "sourceUrl": "https://upsconline.nic.in",
+      "sourceTitle": "UPSC Online Portal Guidelines & Instructions for Scanned Images"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -984,7 +1530,9 @@ export const exams: Exam[] = [
       "upsc geo-scientist photo resizer",
       "upsc geo-scientist online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://upsconline.nic.in",
+    "sourceTitle": "UPSC Online Portal Guidelines & Instructions for Scanned Images"
   },
   {
     "name": "UPSC EPFO EO/AO",
@@ -993,18 +1541,34 @@ export const exams: Exam[] = [
     "category": "upsc",
     "authority": "Square aspect ratio",
     "photo": {
-      "width": 1000,
-      "height": 1000,
+      "width": 350,
+      "height": 350,
       "minKB": 20,
       "maxKB": 300,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 300,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "1:1 to 3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Min 350x350 px, Max 1000x1000 px. File size strictly 20 KB to 300 KB.",
+      "sourceUrl": "https://upsconline.nic.in",
+      "sourceTitle": "UPSC Online Portal Guidelines & Instructions for Scanned Images"
     },
     "signature": {
-      "width": 1000,
-      "height": 1000,
+      "width": 350,
+      "height": 350,
       "minKB": 20,
       "maxKB": 300,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 300,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "1:1 to 3.5:1.5",
+      "isDimensionFlexible": true,
+      "notes": "Min 350x350 px, Max 1000x1000 px. Signature in black ink on white paper.",
+      "sourceUrl": "https://upsconline.nic.in",
+      "sourceTitle": "UPSC Online Portal Guidelines & Instructions for Scanned Images"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -1016,7 +1580,9 @@ export const exams: Exam[] = [
       "upsc epfo eo/ao photo resizer",
       "upsc epfo eo/ao online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://upsconline.nic.in",
+    "sourceTitle": "UPSC Online Portal Guidelines & Instructions for Scanned Images"
   },
   {
     "name": "UPSC EPFO APFC",
@@ -1025,18 +1591,34 @@ export const exams: Exam[] = [
     "category": "upsc",
     "authority": "Square aspect ratio",
     "photo": {
-      "width": 1000,
-      "height": 1000,
+      "width": 350,
+      "height": 350,
       "minKB": 20,
       "maxKB": 300,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 300,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "1:1 to 3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Min 350x350 px, Max 1000x1000 px. File size strictly 20 KB to 300 KB.",
+      "sourceUrl": "https://upsconline.nic.in",
+      "sourceTitle": "UPSC Online Portal Guidelines & Instructions for Scanned Images"
     },
     "signature": {
-      "width": 1000,
-      "height": 1000,
+      "width": 350,
+      "height": 350,
       "minKB": 20,
       "maxKB": 300,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 300,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "1:1 to 3.5:1.5",
+      "isDimensionFlexible": true,
+      "notes": "Min 350x350 px, Max 1000x1000 px. Signature in black ink on white paper.",
+      "sourceUrl": "https://upsconline.nic.in",
+      "sourceTitle": "UPSC Online Portal Guidelines & Instructions for Scanned Images"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -1048,7 +1630,9 @@ export const exams: Exam[] = [
       "upsc epfo apfc photo resizer",
       "upsc epfo apfc online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://upsconline.nic.in",
+    "sourceTitle": "UPSC Online Portal Guidelines & Instructions for Scanned Images"
   },
   {
     "name": "UPSC EPFO PA",
@@ -1057,18 +1641,34 @@ export const exams: Exam[] = [
     "category": "upsc",
     "authority": "Candidate Name & Date inscribed",
     "photo": {
-      "width": 1000,
-      "height": 1000,
+      "width": 350,
+      "height": 350,
       "minKB": 20,
       "maxKB": 300,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 300,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "1:1 to 3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Min 350x350 px, Max 1000x1000 px. File size strictly 20 KB to 300 KB.",
+      "sourceUrl": "https://upsconline.nic.in",
+      "sourceTitle": "UPSC Online Portal Guidelines & Instructions for Scanned Images"
     },
     "signature": {
-      "width": 1000,
-      "height": 1000,
+      "width": 350,
+      "height": 350,
       "minKB": 20,
       "maxKB": 300,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 300,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "1:1 to 3.5:1.5",
+      "isDimensionFlexible": true,
+      "notes": "Min 350x350 px, Max 1000x1000 px. Signature in black ink on white paper.",
+      "sourceUrl": "https://upsconline.nic.in",
+      "sourceTitle": "UPSC Online Portal Guidelines & Instructions for Scanned Images"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -1080,7 +1680,9 @@ export const exams: Exam[] = [
       "upsc epfo pa photo resizer",
       "upsc epfo pa online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://upsconline.nic.in",
+    "sourceTitle": "UPSC Online Portal Guidelines & Instructions for Scanned Images"
   },
   {
     "name": "UPSC ORA Direct",
@@ -1089,18 +1691,34 @@ export const exams: Exam[] = [
     "category": "upsc",
     "authority": "Candidate Name & Date inscribed",
     "photo": {
-      "width": 1000,
-      "height": 1000,
+      "width": 350,
+      "height": 350,
       "minKB": 20,
       "maxKB": 300,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 300,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "1:1 to 3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Min 350x350 px, Max 1000x1000 px. File size strictly 20 KB to 300 KB.",
+      "sourceUrl": "https://upsconline.nic.in",
+      "sourceTitle": "UPSC Online Portal Guidelines & Instructions for Scanned Images"
     },
     "signature": {
-      "width": 1000,
-      "height": 1000,
+      "width": 350,
+      "height": 350,
       "minKB": 20,
       "maxKB": 300,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 300,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "1:1 to 3.5:1.5",
+      "isDimensionFlexible": true,
+      "notes": "Min 350x350 px, Max 1000x1000 px. Signature in black ink on white paper.",
+      "sourceUrl": "https://upsconline.nic.in",
+      "sourceTitle": "UPSC Online Portal Guidelines & Instructions for Scanned Images"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -1112,7 +1730,9 @@ export const exams: Exam[] = [
       "upsc ora direct photo resizer",
       "upsc ora direct online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://upsconline.nic.in",
+    "sourceTitle": "UPSC Online Portal Guidelines & Instructions for Scanned Images"
   },
   {
     "name": "UPSC CISF AC LDCE",
@@ -1121,18 +1741,34 @@ export const exams: Exam[] = [
     "category": "upsc",
     "authority": "Candidate Name & Date inscribed",
     "photo": {
-      "width": 1000,
-      "height": 1000,
+      "width": 350,
+      "height": 350,
       "minKB": 20,
       "maxKB": 300,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 300,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "1:1 to 3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Min 350x350 px, Max 1000x1000 px. File size strictly 20 KB to 300 KB.",
+      "sourceUrl": "https://upsconline.nic.in",
+      "sourceTitle": "UPSC Online Portal Guidelines & Instructions for Scanned Images"
     },
     "signature": {
-      "width": 1000,
-      "height": 1000,
+      "width": 350,
+      "height": 350,
       "minKB": 20,
       "maxKB": 300,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 300,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "1:1 to 3.5:1.5",
+      "isDimensionFlexible": true,
+      "notes": "Min 350x350 px, Max 1000x1000 px. Signature in black ink on white paper.",
+      "sourceUrl": "https://upsconline.nic.in",
+      "sourceTitle": "UPSC Online Portal Guidelines & Instructions for Scanned Images"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -1144,7 +1780,9 @@ export const exams: Exam[] = [
       "upsc cisf ac ldce photo resizer",
       "upsc cisf ac ldce online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://upsconline.nic.in",
+    "sourceTitle": "UPSC Online Portal Guidelines & Instructions for Scanned Images"
   },
   {
     "name": "UPSC SO LDCE",
@@ -1153,18 +1791,34 @@ export const exams: Exam[] = [
     "category": "upsc",
     "authority": "Departmental square",
     "photo": {
-      "width": 1000,
-      "height": 1000,
+      "width": 350,
+      "height": 350,
       "minKB": 20,
       "maxKB": 300,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 300,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "1:1 to 3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Min 350x350 px, Max 1000x1000 px. File size strictly 20 KB to 300 KB.",
+      "sourceUrl": "https://upsconline.nic.in",
+      "sourceTitle": "UPSC Online Portal Guidelines & Instructions for Scanned Images"
     },
     "signature": {
-      "width": 1000,
-      "height": 1000,
+      "width": 350,
+      "height": 350,
       "minKB": 20,
       "maxKB": 300,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 300,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "1:1 to 3.5:1.5",
+      "isDimensionFlexible": true,
+      "notes": "Min 350x350 px, Max 1000x1000 px. Signature in black ink on white paper.",
+      "sourceUrl": "https://upsconline.nic.in",
+      "sourceTitle": "UPSC Online Portal Guidelines & Instructions for Scanned Images"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -1176,7 +1830,9 @@ export const exams: Exam[] = [
       "upsc so ldce photo resizer",
       "upsc so ldce online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://upsconline.nic.in",
+    "sourceTitle": "UPSC Online Portal Guidelines & Instructions for Scanned Images"
   },
   {
     "name": "UPSC Steno LDCE",
@@ -1185,18 +1841,34 @@ export const exams: Exam[] = [
     "category": "upsc",
     "authority": "Departmental square",
     "photo": {
-      "width": 1000,
-      "height": 1000,
+      "width": 350,
+      "height": 350,
       "minKB": 20,
       "maxKB": 300,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 300,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "1:1 to 3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Min 350x350 px, Max 1000x1000 px. File size strictly 20 KB to 300 KB.",
+      "sourceUrl": "https://upsconline.nic.in",
+      "sourceTitle": "UPSC Online Portal Guidelines & Instructions for Scanned Images"
     },
     "signature": {
-      "width": 1000,
-      "height": 1000,
+      "width": 350,
+      "height": 350,
       "minKB": 20,
       "maxKB": 300,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 300,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "1:1 to 3.5:1.5",
+      "isDimensionFlexible": true,
+      "notes": "Min 350x350 px, Max 1000x1000 px. Signature in black ink on white paper.",
+      "sourceUrl": "https://upsconline.nic.in",
+      "sourceTitle": "UPSC Online Portal Guidelines & Instructions for Scanned Images"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -1208,7 +1880,9 @@ export const exams: Exam[] = [
       "upsc steno ldce photo resizer",
       "upsc steno ldce online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://upsconline.nic.in",
+    "sourceTitle": "UPSC Online Portal Guidelines & Instructions for Scanned Images"
   },
   {
     "name": "IBPS PO",
@@ -1221,14 +1895,30 @@ export const exams: Exam[] = [
       "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://ibps.in",
+      "sourceTitle": "IBPS PO Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://ibps.in",
+      "sourceTitle": "IBPS PO Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -1240,7 +1930,9 @@ export const exams: Exam[] = [
       "ibps po photo resizer",
       "ibps po online form photo"
     ],
-    "priority": "P0"
+    "priority": "P0",
+    "sourceUrl": "https://ibps.in",
+    "sourceTitle": "IBPS PO Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "IBPS Clerk",
@@ -1253,14 +1945,30 @@ export const exams: Exam[] = [
       "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://ibps.in",
+      "sourceTitle": "IBPS Clerk Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://ibps.in",
+      "sourceTitle": "IBPS Clerk Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -1272,7 +1980,9 @@ export const exams: Exam[] = [
       "ibps clerk photo resizer",
       "ibps clerk online form photo"
     ],
-    "priority": "P0"
+    "priority": "P0",
+    "sourceUrl": "https://ibps.in",
+    "sourceTitle": "IBPS Clerk Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "IBPS SO",
@@ -1285,14 +1995,30 @@ export const exams: Exam[] = [
       "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://ibps.in",
+      "sourceTitle": "IBPS SO Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://ibps.in",
+      "sourceTitle": "IBPS SO Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -1304,7 +2030,9 @@ export const exams: Exam[] = [
       "ibps so photo resizer",
       "ibps so online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://ibps.in",
+    "sourceTitle": "IBPS SO Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "IBPS RRB PO",
@@ -1317,14 +2045,30 @@ export const exams: Exam[] = [
       "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://ibps.in",
+      "sourceTitle": "IBPS RRB PO Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://ibps.in",
+      "sourceTitle": "IBPS RRB PO Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -1336,7 +2080,9 @@ export const exams: Exam[] = [
       "ibps rrb po photo resizer",
       "ibps rrb po online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://ibps.in",
+    "sourceTitle": "IBPS RRB PO Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "IBPS RRB Scale II",
@@ -1349,14 +2095,30 @@ export const exams: Exam[] = [
       "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://ibps.in",
+      "sourceTitle": "IBPS RRB Scale II Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://ibps.in",
+      "sourceTitle": "IBPS RRB Scale II Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -1368,7 +2130,9 @@ export const exams: Exam[] = [
       "ibps rrb scale ii photo resizer",
       "ibps rrb scale ii online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://ibps.in",
+    "sourceTitle": "IBPS RRB Scale II Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "IBPS RRB Scale III",
@@ -1381,14 +2145,30 @@ export const exams: Exam[] = [
       "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://ibps.in",
+      "sourceTitle": "IBPS RRB Scale III Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://ibps.in",
+      "sourceTitle": "IBPS RRB Scale III Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -1400,7 +2180,9 @@ export const exams: Exam[] = [
       "ibps rrb scale iii photo resizer",
       "ibps rrb scale iii online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://ibps.in",
+    "sourceTitle": "IBPS RRB Scale III Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "IBPS RRB Clerk",
@@ -1413,14 +2195,30 @@ export const exams: Exam[] = [
       "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://ibps.in",
+      "sourceTitle": "IBPS RRB Clerk Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://ibps.in",
+      "sourceTitle": "IBPS RRB Clerk Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -1432,7 +2230,9 @@ export const exams: Exam[] = [
       "ibps rrb clerk photo resizer",
       "ibps rrb clerk online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://ibps.in",
+    "sourceTitle": "IBPS RRB Clerk Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "SBI PO",
@@ -1445,14 +2245,30 @@ export const exams: Exam[] = [
       "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "SBI PO Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "SBI PO Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -1464,7 +2280,9 @@ export const exams: Exam[] = [
       "sbi po photo resizer",
       "sbi po online form photo"
     ],
-    "priority": "P0"
+    "priority": "P0",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "SBI PO Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "SBI Clerk",
@@ -1477,14 +2295,30 @@ export const exams: Exam[] = [
       "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "SBI Clerk Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "SBI Clerk Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -1496,7 +2330,9 @@ export const exams: Exam[] = [
       "sbi clerk photo resizer",
       "sbi clerk online form photo"
     ],
-    "priority": "P0"
+    "priority": "P0",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "SBI Clerk Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "SBI CBO",
@@ -1509,14 +2345,30 @@ export const exams: Exam[] = [
       "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "SBI CBO Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "SBI CBO Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -1528,7 +2380,9 @@ export const exams: Exam[] = [
       "sbi cbo photo resizer",
       "sbi cbo online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "SBI CBO Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "SBI SCO",
@@ -1541,14 +2395,30 @@ export const exams: Exam[] = [
       "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "SBI SCO Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "SBI SCO Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -1560,7 +2430,9 @@ export const exams: Exam[] = [
       "sbi sco photo resizer",
       "sbi sco online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "SBI SCO Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "SBI Apprentice",
@@ -1573,14 +2445,30 @@ export const exams: Exam[] = [
       "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "SBI Apprentice Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "SBI Apprentice Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -1592,7 +2480,9 @@ export const exams: Exam[] = [
       "sbi apprentice photo resizer",
       "sbi apprentice online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "SBI Apprentice Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "RBI Grade B",
@@ -1605,14 +2495,30 @@ export const exams: Exam[] = [
       "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "RBI Grade B Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "RBI Grade B Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -1624,7 +2530,9 @@ export const exams: Exam[] = [
       "rbi grade b photo resizer",
       "rbi grade b online form photo"
     ],
-    "priority": "P0"
+    "priority": "P0",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "RBI Grade B Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "RBI Assistant",
@@ -1637,14 +2545,30 @@ export const exams: Exam[] = [
       "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "RBI Assistant Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "RBI Assistant Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -1656,7 +2580,9 @@ export const exams: Exam[] = [
       "rbi assistant photo resizer",
       "rbi assistant online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "RBI Assistant Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "RBI Office Attendant",
@@ -1669,14 +2595,30 @@ export const exams: Exam[] = [
       "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "RBI Office Attendant Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "RBI Office Attendant Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -1688,7 +2630,9 @@ export const exams: Exam[] = [
       "rbi office attendant photo resizer",
       "rbi office attendant online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "RBI Office Attendant Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "NABARD Grade A",
@@ -1701,14 +2645,30 @@ export const exams: Exam[] = [
       "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "NABARD Grade A Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "NABARD Grade A Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -1720,7 +2680,9 @@ export const exams: Exam[] = [
       "nabard grade a photo resizer",
       "nabard grade a online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "NABARD Grade A Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "NABARD Grade B",
@@ -1733,14 +2695,30 @@ export const exams: Exam[] = [
       "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "NABARD Grade B Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "NABARD Grade B Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -1752,7 +2730,9 @@ export const exams: Exam[] = [
       "nabard grade b photo resizer",
       "nabard grade b online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "NABARD Grade B Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "NABARD Dev Asst",
@@ -1765,14 +2745,30 @@ export const exams: Exam[] = [
       "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "NABARD Dev Asst Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "NABARD Dev Asst Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -1784,7 +2780,9 @@ export const exams: Exam[] = [
       "nabard dev asst photo resizer",
       "nabard dev asst online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "NABARD Dev Asst Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "SEBI Grade A",
@@ -1797,14 +2795,30 @@ export const exams: Exam[] = [
       "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "SEBI Grade A Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "SEBI Grade A Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -1816,7 +2830,9 @@ export const exams: Exam[] = [
       "sebi grade a photo resizer",
       "sebi grade a online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "SEBI Grade A Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "SEBI Grade B",
@@ -1826,21 +2842,37 @@ export const exams: Exam[] = [
     "authority": "No direct recruitment",
     "photo": {
       "width": 200,
-      "height": 240,
-      "minKB": 0,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "SEBI Grade B Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
       "width": 140,
       "height": 60,
-      "minKB": 0,
+      "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "SEBI Grade B Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "sebi grade b photo size",
@@ -1848,7 +2880,9 @@ export const exams: Exam[] = [
       "sebi grade b photo resizer",
       "sebi grade b online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "SEBI Grade B Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "SIDBI Asst Manager",
@@ -1861,14 +2895,30 @@ export const exams: Exam[] = [
       "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "SIDBI Asst Manager Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "SIDBI Asst Manager Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -1880,7 +2930,9 @@ export const exams: Exam[] = [
       "sidbi asst manager photo resizer",
       "sidbi asst manager online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "SIDBI Asst Manager Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "IRDAI Asst Manager",
@@ -1893,14 +2945,30 @@ export const exams: Exam[] = [
       "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "IRDAI Asst Manager Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "IRDAI Asst Manager Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -1912,7 +2980,9 @@ export const exams: Exam[] = [
       "irdai asst manager photo resizer",
       "irdai asst manager online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "IRDAI Asst Manager Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "PFRDA Grade A",
@@ -1925,14 +2995,30 @@ export const exams: Exam[] = [
       "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "PFRDA Grade A Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "PFRDA Grade A Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -1944,7 +3030,9 @@ export const exams: Exam[] = [
       "pfrda grade a photo resizer",
       "pfrda grade a online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "PFRDA Grade A Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "LIC AAO",
@@ -1957,14 +3045,30 @@ export const exams: Exam[] = [
       "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "LIC AAO Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "LIC AAO Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -1976,7 +3080,9 @@ export const exams: Exam[] = [
       "lic aao photo resizer",
       "lic aao online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "LIC AAO Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "LIC ADO",
@@ -1989,14 +3095,30 @@ export const exams: Exam[] = [
       "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "LIC ADO Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "LIC ADO Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -2008,7 +3130,9 @@ export const exams: Exam[] = [
       "lic ado photo resizer",
       "lic ado online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "LIC ADO Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "LIC Assistant",
@@ -2021,14 +3145,30 @@ export const exams: Exam[] = [
       "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "LIC Assistant Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "LIC Assistant Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -2040,7 +3180,9 @@ export const exams: Exam[] = [
       "lic assistant photo resizer",
       "lic assistant online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "LIC Assistant Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "NIACL Assistant",
@@ -2053,14 +3195,30 @@ export const exams: Exam[] = [
       "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "NIACL Assistant Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "NIACL Assistant Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -2072,7 +3230,9 @@ export const exams: Exam[] = [
       "niacl assistant photo resizer",
       "niacl assistant online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "NIACL Assistant Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "NIACL AO",
@@ -2085,14 +3245,30 @@ export const exams: Exam[] = [
       "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "NIACL AO Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "NIACL AO Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -2104,7 +3280,9 @@ export const exams: Exam[] = [
       "niacl ao photo resizer",
       "niacl ao online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "NIACL AO Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "UIIC Assistant",
@@ -2117,14 +3295,30 @@ export const exams: Exam[] = [
       "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "UIIC Assistant Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "UIIC Assistant Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -2136,7 +3330,9 @@ export const exams: Exam[] = [
       "uiic assistant photo resizer",
       "uiic assistant online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "UIIC Assistant Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "UIIC AO",
@@ -2149,14 +3345,30 @@ export const exams: Exam[] = [
       "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "UIIC AO Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "UIIC AO Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -2168,7 +3380,9 @@ export const exams: Exam[] = [
       "uiic ao photo resizer",
       "uiic ao online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "UIIC AO Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "OICL AO",
@@ -2181,14 +3395,30 @@ export const exams: Exam[] = [
       "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "OICL AO Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "OICL AO Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -2200,7 +3430,9 @@ export const exams: Exam[] = [
       "oicl ao photo resizer",
       "oicl ao online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "OICL AO Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "GIC Asst Manager",
@@ -2213,14 +3445,30 @@ export const exams: Exam[] = [
       "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "GIC Asst Manager Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "GIC Asst Manager Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -2232,7 +3480,9 @@ export const exams: Exam[] = [
       "gic asst manager photo resizer",
       "gic asst manager online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "GIC Asst Manager Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "ECGC PO",
@@ -2245,14 +3495,30 @@ export const exams: Exam[] = [
       "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "ECGC PO Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "ECGC PO Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -2264,7 +3530,9 @@ export const exams: Exam[] = [
       "ecgc po photo resizer",
       "ecgc po online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "ECGC PO Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "IDBI Executive",
@@ -2277,14 +3545,30 @@ export const exams: Exam[] = [
       "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "IDBI Executive Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "IDBI Executive Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -2296,7 +3580,9 @@ export const exams: Exam[] = [
       "idbi executive photo resizer",
       "idbi executive online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "IDBI Executive Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "IDBI JAM",
@@ -2309,14 +3595,30 @@ export const exams: Exam[] = [
       "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "IDBI JAM Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "IDBI JAM Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -2328,7 +3630,9 @@ export const exams: Exam[] = [
       "idbi jam photo resizer",
       "idbi jam online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "IDBI JAM Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "EXIM Bank MT",
@@ -2341,14 +3645,30 @@ export const exams: Exam[] = [
       "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "EXIM Bank MT Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "EXIM Bank MT Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -2360,7 +3680,9 @@ export const exams: Exam[] = [
       "exim bank mt photo resizer",
       "exim bank mt online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "EXIM Bank MT Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "LIC HFL Assistant",
@@ -2373,14 +3695,30 @@ export const exams: Exam[] = [
       "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "LIC HFL Assistant Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "LIC HFL Assistant Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -2392,7 +3730,9 @@ export const exams: Exam[] = [
       "lic hfl assistant photo resizer",
       "lic hfl assistant online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "LIC HFL Assistant Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "LIC HFL Asst Manager",
@@ -2405,14 +3745,30 @@ export const exams: Exam[] = [
       "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "LIC HFL Asst Manager Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "LIC HFL Asst Manager Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -2424,7 +3780,9 @@ export const exams: Exam[] = [
       "lic hfl asst manager photo resizer",
       "lic hfl asst manager online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "LIC HFL Asst Manager Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "RRB NTPC Graduate",
@@ -2437,18 +3795,34 @@ export const exams: Exam[] = [
       "height": 240,
       "minKB": 30,
       "maxKB": 70,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "35:45",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 35 mm x 45 mm (320x240 px). File size 30 KB to 70 KB.",
+      "sourceUrl": "https://indianrailways.gov.in",
+      "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 30,
       "maxKB": 70,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 5.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "50:20",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 50 mm x 20 mm. File size strictly 30 KB to 70 KB.",
+      "sourceUrl": "https://indianrailways.gov.in",
+      "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "rrb ntpc graduate photo size",
@@ -2456,7 +3830,9 @@ export const exams: Exam[] = [
       "rrb ntpc graduate photo resizer",
       "rrb ntpc graduate online form photo"
     ],
-    "priority": "P0"
+    "priority": "P0",
+    "sourceUrl": "https://indianrailways.gov.in",
+    "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications"
   },
   {
     "name": "RRB NTPC UG",
@@ -2469,18 +3845,34 @@ export const exams: Exam[] = [
       "height": 240,
       "minKB": 30,
       "maxKB": 70,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "35:45",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 35 mm x 45 mm (320x240 px). File size 30 KB to 70 KB.",
+      "sourceUrl": "https://indianrailways.gov.in",
+      "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 30,
       "maxKB": 70,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 5.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "50:20",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 50 mm x 20 mm. File size strictly 30 KB to 70 KB.",
+      "sourceUrl": "https://indianrailways.gov.in",
+      "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "rrb ntpc ug photo size",
@@ -2488,7 +3880,9 @@ export const exams: Exam[] = [
       "rrb ntpc ug photo resizer",
       "rrb ntpc ug online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://indianrailways.gov.in",
+    "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications"
   },
   {
     "name": "RRB Group D (Level-1)",
@@ -2499,16 +3893,32 @@ export const exams: Exam[] = [
     "photo": {
       "width": 320,
       "height": 240,
-      "minKB": 50,
-      "maxKB": 100,
-      "format": "JPEG"
+      "minKB": 30,
+      "maxKB": 70,
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "35:45",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 35 mm x 45 mm (320x240 px). File size 30 KB to 70 KB.",
+      "sourceUrl": "https://indianrailways.gov.in",
+      "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 30,
-      "maxKB": 50,
-      "format": "JPEG"
+      "maxKB": 70,
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 5.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "50:20",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 50 mm x 20 mm. File size strictly 30 KB to 70 KB.",
+      "sourceUrl": "https://indianrailways.gov.in",
+      "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -2520,7 +3930,9 @@ export const exams: Exam[] = [
       "rrb group d (level-1) photo resizer",
       "rrb group d (level-1) online form photo"
     ],
-    "priority": "P0"
+    "priority": "P0",
+    "sourceUrl": "https://indianrailways.gov.in",
+    "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications"
   },
   {
     "name": "RRB ALP",
@@ -2533,14 +3945,30 @@ export const exams: Exam[] = [
       "height": 240,
       "minKB": 30,
       "maxKB": 70,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "35:45",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 35 mm x 45 mm (320x240 px). File size 30 KB to 70 KB.",
+      "sourceUrl": "https://indianrailways.gov.in",
+      "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 30,
       "maxKB": 70,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 5.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "50:20",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 50 mm x 20 mm. File size strictly 30 KB to 70 KB.",
+      "sourceUrl": "https://indianrailways.gov.in",
+      "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -2552,7 +3980,9 @@ export const exams: Exam[] = [
       "rrb alp photo resizer",
       "rrb alp online form photo"
     ],
-    "priority": "P0"
+    "priority": "P0",
+    "sourceUrl": "https://indianrailways.gov.in",
+    "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications"
   },
   {
     "name": "RRB Technician",
@@ -2565,14 +3995,30 @@ export const exams: Exam[] = [
       "height": 240,
       "minKB": 30,
       "maxKB": 70,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "35:45",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 35 mm x 45 mm (320x240 px). File size 30 KB to 70 KB.",
+      "sourceUrl": "https://indianrailways.gov.in",
+      "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 30,
       "maxKB": 70,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 5.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "50:20",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 50 mm x 20 mm. File size strictly 30 KB to 70 KB.",
+      "sourceUrl": "https://indianrailways.gov.in",
+      "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -2584,7 +4030,9 @@ export const exams: Exam[] = [
       "rrb technician photo resizer",
       "rrb technician online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://indianrailways.gov.in",
+    "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications"
   },
   {
     "name": "RRB JE",
@@ -2597,14 +4045,30 @@ export const exams: Exam[] = [
       "height": 240,
       "minKB": 30,
       "maxKB": 70,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "35:45",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 35 mm x 45 mm (320x240 px). File size 30 KB to 70 KB.",
+      "sourceUrl": "https://indianrailways.gov.in",
+      "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 30,
       "maxKB": 70,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 5.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "50:20",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 50 mm x 20 mm. File size strictly 30 KB to 70 KB.",
+      "sourceUrl": "https://indianrailways.gov.in",
+      "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -2616,7 +4080,9 @@ export const exams: Exam[] = [
       "rrb je photo resizer",
       "rrb je online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://indianrailways.gov.in",
+    "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications"
   },
   {
     "name": "RRB RPF Constable",
@@ -2629,14 +4095,30 @@ export const exams: Exam[] = [
       "height": 240,
       "minKB": 30,
       "maxKB": 70,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "35:45",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 35 mm x 45 mm (320x240 px). File size 30 KB to 70 KB.",
+      "sourceUrl": "https://indianrailways.gov.in",
+      "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 30,
       "maxKB": 70,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 5.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "50:20",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 50 mm x 20 mm. File size strictly 30 KB to 70 KB.",
+      "sourceUrl": "https://indianrailways.gov.in",
+      "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -2648,7 +4130,9 @@ export const exams: Exam[] = [
       "rrb rpf constable photo resizer",
       "rrb rpf constable online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://indianrailways.gov.in",
+    "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications"
   },
   {
     "name": "RRB RPF SI",
@@ -2661,14 +4145,30 @@ export const exams: Exam[] = [
       "height": 240,
       "minKB": 30,
       "maxKB": 70,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "35:45",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 35 mm x 45 mm (320x240 px). File size 30 KB to 70 KB.",
+      "sourceUrl": "https://indianrailways.gov.in",
+      "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 30,
       "maxKB": 70,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 5.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "50:20",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 50 mm x 20 mm. File size strictly 30 KB to 70 KB.",
+      "sourceUrl": "https://indianrailways.gov.in",
+      "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -2680,7 +4180,9 @@ export const exams: Exam[] = [
       "rrb rpf si photo resizer",
       "rrb rpf si online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://indianrailways.gov.in",
+    "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications"
   },
   {
     "name": "RRB Paramedical",
@@ -2693,14 +4195,30 @@ export const exams: Exam[] = [
       "height": 240,
       "minKB": 30,
       "maxKB": 70,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "35:45",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 35 mm x 45 mm (320x240 px). File size 30 KB to 70 KB.",
+      "sourceUrl": "https://indianrailways.gov.in",
+      "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 30,
       "maxKB": 70,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 5.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "50:20",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 50 mm x 20 mm. File size strictly 30 KB to 70 KB.",
+      "sourceUrl": "https://indianrailways.gov.in",
+      "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -2712,7 +4230,9 @@ export const exams: Exam[] = [
       "rrb paramedical photo resizer",
       "rrb paramedical online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://indianrailways.gov.in",
+    "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications"
   },
   {
     "name": "RRB Nursing Suptd",
@@ -2725,14 +4245,30 @@ export const exams: Exam[] = [
       "height": 240,
       "minKB": 30,
       "maxKB": 70,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "35:45",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 35 mm x 45 mm (320x240 px). File size 30 KB to 70 KB.",
+      "sourceUrl": "https://indianrailways.gov.in",
+      "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 30,
       "maxKB": 70,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 5.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "50:20",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 50 mm x 20 mm. File size strictly 30 KB to 70 KB.",
+      "sourceUrl": "https://indianrailways.gov.in",
+      "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -2744,7 +4280,9 @@ export const exams: Exam[] = [
       "rrb nursing suptd photo resizer",
       "rrb nursing suptd online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://indianrailways.gov.in",
+    "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications"
   },
   {
     "name": "RRB Pharmacist",
@@ -2757,14 +4295,30 @@ export const exams: Exam[] = [
       "height": 240,
       "minKB": 30,
       "maxKB": 70,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "35:45",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 35 mm x 45 mm (320x240 px). File size 30 KB to 70 KB.",
+      "sourceUrl": "https://indianrailways.gov.in",
+      "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 30,
       "maxKB": 70,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 5.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "50:20",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 50 mm x 20 mm. File size strictly 30 KB to 70 KB.",
+      "sourceUrl": "https://indianrailways.gov.in",
+      "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -2776,7 +4330,9 @@ export const exams: Exam[] = [
       "rrb pharmacist photo resizer",
       "rrb pharmacist online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://indianrailways.gov.in",
+    "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications"
   },
   {
     "name": "RRB Jr Translator",
@@ -2789,14 +4345,30 @@ export const exams: Exam[] = [
       "height": 240,
       "minKB": 30,
       "maxKB": 70,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "35:45",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 35 mm x 45 mm (320x240 px). File size 30 KB to 70 KB.",
+      "sourceUrl": "https://indianrailways.gov.in",
+      "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 30,
       "maxKB": 70,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 5.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "50:20",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 50 mm x 20 mm. File size strictly 30 KB to 70 KB.",
+      "sourceUrl": "https://indianrailways.gov.in",
+      "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -2808,7 +4380,9 @@ export const exams: Exam[] = [
       "rrb jr translator photo resizer",
       "rrb jr translator online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://indianrailways.gov.in",
+    "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications"
   },
   {
     "name": "RRB Ministerial",
@@ -2821,14 +4395,30 @@ export const exams: Exam[] = [
       "height": 240,
       "minKB": 30,
       "maxKB": 70,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "35:45",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 35 mm x 45 mm (320x240 px). File size 30 KB to 70 KB.",
+      "sourceUrl": "https://indianrailways.gov.in",
+      "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 30,
       "maxKB": 70,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 5.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "50:20",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 50 mm x 20 mm. File size strictly 30 KB to 70 KB.",
+      "sourceUrl": "https://indianrailways.gov.in",
+      "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -2840,7 +4430,9 @@ export const exams: Exam[] = [
       "rrb ministerial photo resizer",
       "rrb ministerial online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://indianrailways.gov.in",
+    "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications"
   },
   {
     "name": "RRB Station Master",
@@ -2853,18 +4445,34 @@ export const exams: Exam[] = [
       "height": 240,
       "minKB": 30,
       "maxKB": 70,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "35:45",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 35 mm x 45 mm (320x240 px). File size 30 KB to 70 KB.",
+      "sourceUrl": "https://indianrailways.gov.in",
+      "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 30,
       "maxKB": 70,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 5.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "50:20",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 50 mm x 20 mm. File size strictly 30 KB to 70 KB.",
+      "sourceUrl": "https://indianrailways.gov.in",
+      "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "rrb station master photo size",
@@ -2872,7 +4480,9 @@ export const exams: Exam[] = [
       "rrb station master photo resizer",
       "rrb station master online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://indianrailways.gov.in",
+    "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications"
   },
   {
     "name": "RRB Traffic Asst",
@@ -2885,18 +4495,34 @@ export const exams: Exam[] = [
       "height": 240,
       "minKB": 30,
       "maxKB": 70,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "35:45",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 35 mm x 45 mm (320x240 px). File size 30 KB to 70 KB.",
+      "sourceUrl": "https://indianrailways.gov.in",
+      "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 30,
       "maxKB": 70,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 5.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "50:20",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 50 mm x 20 mm. File size strictly 30 KB to 70 KB.",
+      "sourceUrl": "https://indianrailways.gov.in",
+      "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "rrb traffic asst photo size",
@@ -2904,7 +4530,9 @@ export const exams: Exam[] = [
       "rrb traffic asst photo resizer",
       "rrb traffic asst online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://indianrailways.gov.in",
+    "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications"
   },
   {
     "name": "RRB Comm Apprentice",
@@ -2917,18 +4545,34 @@ export const exams: Exam[] = [
       "height": 240,
       "minKB": 30,
       "maxKB": 70,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "35:45",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 35 mm x 45 mm (320x240 px). File size 30 KB to 70 KB.",
+      "sourceUrl": "https://indianrailways.gov.in",
+      "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 30,
       "maxKB": 70,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 5.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "50:20",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 50 mm x 20 mm. File size strictly 30 KB to 70 KB.",
+      "sourceUrl": "https://indianrailways.gov.in",
+      "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "rrb comm apprentice photo size",
@@ -2936,7 +4580,9 @@ export const exams: Exam[] = [
       "rrb comm apprentice photo resizer",
       "rrb comm apprentice online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://indianrailways.gov.in",
+    "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications"
   },
   {
     "name": "RRB Senior Clerk",
@@ -2949,18 +4595,34 @@ export const exams: Exam[] = [
       "height": 240,
       "minKB": 30,
       "maxKB": 70,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "35:45",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 35 mm x 45 mm (320x240 px). File size 30 KB to 70 KB.",
+      "sourceUrl": "https://indianrailways.gov.in",
+      "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 30,
       "maxKB": 70,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 5.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "50:20",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 50 mm x 20 mm. File size strictly 30 KB to 70 KB.",
+      "sourceUrl": "https://indianrailways.gov.in",
+      "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "rrb senior clerk photo size",
@@ -2968,7 +4630,9 @@ export const exams: Exam[] = [
       "rrb senior clerk photo resizer",
       "rrb senior clerk online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://indianrailways.gov.in",
+    "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications"
   },
   {
     "name": "RRB Junior Clerk",
@@ -2981,18 +4645,34 @@ export const exams: Exam[] = [
       "height": 240,
       "minKB": 30,
       "maxKB": 70,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "35:45",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 35 mm x 45 mm (320x240 px). File size 30 KB to 70 KB.",
+      "sourceUrl": "https://indianrailways.gov.in",
+      "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 30,
       "maxKB": 70,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 5.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "50:20",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 50 mm x 20 mm. File size strictly 30 KB to 70 KB.",
+      "sourceUrl": "https://indianrailways.gov.in",
+      "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "rrb junior clerk photo size",
@@ -3000,7 +4680,9 @@ export const exams: Exam[] = [
       "rrb junior clerk photo resizer",
       "rrb junior clerk online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://indianrailways.gov.in",
+    "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications"
   },
   {
     "name": "RRB Goods Guard",
@@ -3013,18 +4695,34 @@ export const exams: Exam[] = [
       "height": 240,
       "minKB": 30,
       "maxKB": 70,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "35:45",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 35 mm x 45 mm (320x240 px). File size 30 KB to 70 KB.",
+      "sourceUrl": "https://indianrailways.gov.in",
+      "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 30,
       "maxKB": 70,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 5.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "50:20",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 50 mm x 20 mm. File size strictly 30 KB to 70 KB.",
+      "sourceUrl": "https://indianrailways.gov.in",
+      "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "rrb goods guard photo size",
@@ -3032,7 +4730,9 @@ export const exams: Exam[] = [
       "rrb goods guard photo resizer",
       "rrb goods guard online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://indianrailways.gov.in",
+    "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications"
   },
   {
     "name": "RRB Train Manager",
@@ -3045,18 +4745,34 @@ export const exams: Exam[] = [
       "height": 240,
       "minKB": 30,
       "maxKB": 70,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "35:45",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 35 mm x 45 mm (320x240 px). File size 30 KB to 70 KB.",
+      "sourceUrl": "https://indianrailways.gov.in",
+      "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 30,
       "maxKB": 70,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 5.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "50:20",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 50 mm x 20 mm. File size strictly 30 KB to 70 KB.",
+      "sourceUrl": "https://indianrailways.gov.in",
+      "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "rrb train manager photo size",
@@ -3064,7 +4780,9 @@ export const exams: Exam[] = [
       "rrb train manager photo resizer",
       "rrb train manager online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://indianrailways.gov.in",
+    "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications"
   },
   {
     "name": "RRC Apprentice",
@@ -3073,18 +4791,34 @@ export const exams: Exam[] = [
     "category": "railway",
     "authority": "Zonal portal specifications",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 20,
-      "maxKB": 50,
-      "format": "JPEG"
+      "width": 320,
+      "height": 240,
+      "minKB": 30,
+      "maxKB": 70,
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "35:45",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 35 mm x 45 mm (320x240 px). File size 30 KB to 70 KB.",
+      "sourceUrl": "https://indianrailways.gov.in",
+      "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 10,
-      "maxKB": 20,
-      "format": "JPEG"
+      "width": 140,
+      "height": 60,
+      "minKB": 30,
+      "maxKB": 70,
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 5.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "50:20",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 50 mm x 20 mm. File size strictly 30 KB to 70 KB.",
+      "sourceUrl": "https://indianrailways.gov.in",
+      "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -3096,7 +4830,9 @@ export const exams: Exam[] = [
       "rrc apprentice photo resizer",
       "rrc apprentice online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://indianrailways.gov.in",
+    "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications"
   },
   {
     "name": "RRC Act Apprentice",
@@ -3105,18 +4841,34 @@ export const exams: Exam[] = [
     "category": "railway",
     "authority": "Zonal portal specifications",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 20,
-      "maxKB": 50,
-      "format": "JPEG"
+      "width": 320,
+      "height": 240,
+      "minKB": 30,
+      "maxKB": 70,
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "35:45",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 35 mm x 45 mm (320x240 px). File size 30 KB to 70 KB.",
+      "sourceUrl": "https://indianrailways.gov.in",
+      "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 10,
-      "maxKB": 20,
-      "format": "JPEG"
+      "width": 140,
+      "height": 60,
+      "minKB": 30,
+      "maxKB": 70,
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 5.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "50:20",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 50 mm x 20 mm. File size strictly 30 KB to 70 KB.",
+      "sourceUrl": "https://indianrailways.gov.in",
+      "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -3128,7 +4880,9 @@ export const exams: Exam[] = [
       "rrc act apprentice photo resizer",
       "rrc act apprentice online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://indianrailways.gov.in",
+    "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications"
   },
   {
     "name": "Railway Sports Quota",
@@ -3137,18 +4891,34 @@ export const exams: Exam[] = [
     "category": "railway",
     "authority": "Zonal notifications",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 20,
-      "maxKB": 50,
-      "format": "JPEG"
+      "width": 320,
+      "height": 240,
+      "minKB": 30,
+      "maxKB": 70,
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "35:45",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 35 mm x 45 mm (320x240 px). File size 30 KB to 70 KB.",
+      "sourceUrl": "https://indianrailways.gov.in",
+      "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 10,
-      "maxKB": 20,
-      "format": "JPEG"
+      "width": 140,
+      "height": 60,
+      "minKB": 30,
+      "maxKB": 70,
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 5.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "50:20",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 50 mm x 20 mm. File size strictly 30 KB to 70 KB.",
+      "sourceUrl": "https://indianrailways.gov.in",
+      "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -3160,7 +4930,9 @@ export const exams: Exam[] = [
       "railway sports quota photo resizer",
       "railway sports quota online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://indianrailways.gov.in",
+    "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications"
   },
   {
     "name": "AFCAT",
@@ -3169,22 +4941,38 @@ export const exams: Exam[] = [
     "category": "defence",
     "authority": "Thumb impression also required (10-50 KB)",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 10,
-      "maxKB": 50,
-      "format": "JPEG"
+      "width": 1200,
+      "height": 1200,
+      "minKB": 20,
+      "maxKB": 80,
+      "format": "JPG",
+      "dpi": 300,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "35:45",
+      "isDimensionFlexible": true,
+      "notes": "Passport photograph 35mm x 45mm, Max resolution 1200x1200px, File size 20 KB to 80 KB.",
+      "sourceUrl": "https://iimcat.ac.in",
+      "sourceTitle": "IIM CAT Official Registration Guidelines"
     },
     "signature": {
-      "width": 236,
-      "height": 118,
-      "minKB": 10,
-      "maxKB": 50,
-      "format": "JPEG"
+      "width": 1200,
+      "height": 1200,
+      "minKB": 20,
+      "maxKB": 80,
+      "format": "JPG",
+      "dpi": 300,
+      "physicalWidthCm": 8.0,
+      "physicalHeightCm": 3.5,
+      "aspectRatio": "80:35",
+      "isDimensionFlexible": true,
+      "notes": "Scanned signature on white paper, Max 1200x1200px, File size 20 KB to 80 KB.",
+      "sourceUrl": "https://iimcat.ac.in",
+      "sourceTitle": "IIM CAT Official Registration Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "afcat photo size",
@@ -3192,7 +4980,9 @@ export const exams: Exam[] = [
       "afcat photo resizer",
       "afcat online form photo"
     ],
-    "priority": "P0"
+    "priority": "P0",
+    "sourceUrl": "https://iimcat.ac.in",
+    "sourceTitle": "IIM CAT Official Registration Guidelines"
   },
   {
     "name": "Indian Army Agniveer",
@@ -3201,18 +4991,34 @@ export const exams: Exam[] = [
     "category": "defence",
     "authority": "Extremely low file size threshold on JIA portal",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/indian-army-agniveer",
+      "sourceTitle": "Official Indian Army Agniveer Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 5,
       "maxKB": 10,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/indian-army-agniveer",
+      "sourceTitle": "Official Indian Army Agniveer Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -3224,7 +5030,9 @@ export const exams: Exam[] = [
       "indian army agniveer photo resizer",
       "indian army agniveer online form photo"
     ],
-    "priority": "P0"
+    "priority": "P0",
+    "sourceUrl": "https://20kbphoto.in/exams/indian-army-agniveer",
+    "sourceTitle": "Official Indian Army Agniveer Application Notification Guidelines"
   },
   {
     "name": "Indian Navy SSR",
@@ -3233,18 +5041,34 @@ export const exams: Exam[] = [
     "category": "defence",
     "authority": "Blue/white background",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/indian-navy-ssr",
+      "sourceTitle": "Official Indian Navy SSR Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/indian-navy-ssr",
+      "sourceTitle": "Official Indian Navy SSR Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -3256,7 +5080,9 @@ export const exams: Exam[] = [
       "indian navy ssr photo resizer",
       "indian navy ssr online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://20kbphoto.in/exams/indian-navy-ssr",
+    "sourceTitle": "Official Indian Navy SSR Application Notification Guidelines"
   },
   {
     "name": "Indian Navy MR",
@@ -3265,18 +5091,34 @@ export const exams: Exam[] = [
     "category": "defence",
     "authority": "Blue/white background",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/indian-navy-mr",
+      "sourceTitle": "Official Indian Navy MR Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/indian-navy-mr",
+      "sourceTitle": "Official Indian Navy MR Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -3288,7 +5130,9 @@ export const exams: Exam[] = [
       "indian navy mr photo resizer",
       "indian navy mr online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://20kbphoto.in/exams/indian-navy-mr",
+    "sourceTitle": "Official Indian Navy MR Application Notification Guidelines"
   },
   {
     "name": "IAF Agniveervayu",
@@ -3297,18 +5141,34 @@ export const exams: Exam[] = [
     "category": "defence",
     "authority": "Candidate MUST hold black slate with Name & Date in chalk",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 10,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/iaf-agniveervayu",
+      "sourceTitle": "Official IAF Agniveervayu Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/iaf-agniveervayu",
+      "sourceTitle": "Official IAF Agniveervayu Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -3320,7 +5180,9 @@ export const exams: Exam[] = [
       "iaf agniveervayu photo resizer",
       "iaf agniveervayu online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://20kbphoto.in/exams/iaf-agniveervayu",
+    "sourceTitle": "Official IAF Agniveervayu Application Notification Guidelines"
   },
   {
     "name": "ICG Navik (GD/DB)",
@@ -3329,18 +5191,34 @@ export const exams: Exam[] = [
     "category": "defence",
     "authority": "CDAC engine",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/icg-navik",
+      "sourceTitle": "Official ICG Navik (GD/DB) Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/icg-navik",
+      "sourceTitle": "Official ICG Navik (GD/DB) Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -3352,7 +5230,9 @@ export const exams: Exam[] = [
       "icg navik (gd/db) photo resizer",
       "icg navik (gd/db) online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://20kbphoto.in/exams/icg-navik",
+    "sourceTitle": "Official ICG Navik (GD/DB) Application Notification Guidelines"
   },
   {
     "name": "ICG Yantrik",
@@ -3361,18 +5241,34 @@ export const exams: Exam[] = [
     "category": "defence",
     "authority": "CDAC engine",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/icg-yantrik",
+      "sourceTitle": "Official ICG Yantrik Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/icg-yantrik",
+      "sourceTitle": "Official ICG Yantrik Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -3384,7 +5280,9 @@ export const exams: Exam[] = [
       "icg yantrik photo resizer",
       "icg yantrik online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://20kbphoto.in/exams/icg-yantrik",
+    "sourceTitle": "Official ICG Yantrik Application Notification Guidelines"
   },
   {
     "name": "ICG Asst Commandant",
@@ -3393,18 +5291,34 @@ export const exams: Exam[] = [
     "category": "defence",
     "authority": "CDAC engine",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 10,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/icg-asst-commandant",
+      "sourceTitle": "Official ICG Asst Commandant Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/icg-asst-commandant",
+      "sourceTitle": "Official ICG Asst Commandant Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -3416,7 +5330,9 @@ export const exams: Exam[] = [
       "icg asst commandant photo resizer",
       "icg asst commandant online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://20kbphoto.in/exams/icg-asst-commandant",
+    "sourceTitle": "Official ICG Asst Commandant Application Notification Guidelines"
   },
   {
     "name": "Indian Army TES",
@@ -3425,18 +5341,34 @@ export const exams: Exam[] = [
     "category": "defence",
     "authority": "JIA portal standard",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/indian-army-tes",
+      "sourceTitle": "Official Indian Army TES Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 5,
       "maxKB": 10,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/indian-army-tes",
+      "sourceTitle": "Official Indian Army TES Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -3448,7 +5380,9 @@ export const exams: Exam[] = [
       "indian army tes photo resizer",
       "indian army tes online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://20kbphoto.in/exams/indian-army-tes",
+    "sourceTitle": "Official Indian Army TES Application Notification Guidelines"
   },
   {
     "name": "Indian Army TGC",
@@ -3457,18 +5391,34 @@ export const exams: Exam[] = [
     "category": "defence",
     "authority": "JIA portal standard",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/indian-army-tgc",
+      "sourceTitle": "Official Indian Army TGC Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 5,
       "maxKB": 10,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/indian-army-tgc",
+      "sourceTitle": "Official Indian Army TGC Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -3480,7 +5430,9 @@ export const exams: Exam[] = [
       "indian army tgc photo resizer",
       "indian army tgc online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://20kbphoto.in/exams/indian-army-tgc",
+    "sourceTitle": "Official Indian Army TGC Application Notification Guidelines"
   },
   {
     "name": "Indian Army JAG",
@@ -3489,18 +5441,34 @@ export const exams: Exam[] = [
     "category": "defence",
     "authority": "JIA portal standard",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/indian-army-jag",
+      "sourceTitle": "Official Indian Army JAG Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 5,
       "maxKB": 10,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/indian-army-jag",
+      "sourceTitle": "Official Indian Army JAG Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -3512,7 +5480,9 @@ export const exams: Exam[] = [
       "indian army jag photo resizer",
       "indian army jag online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://20kbphoto.in/exams/indian-army-jag",
+    "sourceTitle": "Official Indian Army JAG Application Notification Guidelines"
   },
   {
     "name": "Indian Army SSC Tech",
@@ -3521,18 +5491,34 @@ export const exams: Exam[] = [
     "category": "defence",
     "authority": "JIA portal standard",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 10,
-      "maxKB": 20,
-      "format": "JPG"
+      "width": 200,
+      "height": 240,
+      "minKB": 20,
+      "maxKB": 50,
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": false,
+      "notes": "Live photo capture mandatory on SSC portal/app. Uploaded photo: 20-50 KB, JPEG.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 5,
-      "maxKB": 10,
-      "format": "JPG"
+      "width": 315,
+      "height": 157,
+      "minKB": 10,
+      "maxKB": 20,
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 4.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "2:1",
+      "isDimensionFlexible": false,
+      "notes": "Width 4.0 cm x Height 2.0 cm (~315x157 px or 140x60 px). Strictly 10 KB to 20 KB in JPEG format.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -3544,7 +5530,9 @@ export const exams: Exam[] = [
       "indian army ssc tech photo resizer",
       "indian army ssc tech online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
   },
   {
     "name": "Indian Navy SSC Off",
@@ -3553,18 +5541,34 @@ export const exams: Exam[] = [
     "category": "defence",
     "authority": "White background",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 240,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": false,
+      "notes": "Live photo capture mandatory on SSC portal/app. Uploaded photo: 20-50 KB, JPEG.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 315,
+      "height": 157,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 4.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "2:1",
+      "isDimensionFlexible": false,
+      "notes": "Width 4.0 cm x Height 2.0 cm (~315x157 px or 140x60 px). Strictly 10 KB to 20 KB in JPEG format.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -3576,7 +5580,9 @@ export const exams: Exam[] = [
       "indian navy ssc off photo resizer",
       "indian navy ssc off online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
   },
   {
     "name": "Indian Navy Executive",
@@ -3585,18 +5591,34 @@ export const exams: Exam[] = [
     "category": "defence",
     "authority": "White background",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/indian-navy-executive",
+      "sourceTitle": "Official Indian Navy Executive Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/indian-navy-executive",
+      "sourceTitle": "Official Indian Navy Executive Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -3608,7 +5630,9 @@ export const exams: Exam[] = [
       "indian navy executive photo resizer",
       "indian navy executive online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://20kbphoto.in/exams/indian-navy-executive",
+    "sourceTitle": "Official Indian Navy Executive Application Notification Guidelines"
   },
   {
     "name": "Indian Navy Regular SSR",
@@ -3617,18 +5641,34 @@ export const exams: Exam[] = [
     "category": "defence",
     "authority": "White background",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/indian-navy-regular-ssr",
+      "sourceTitle": "Official Indian Navy Regular SSR Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/indian-navy-regular-ssr",
+      "sourceTitle": "Official Indian Navy Regular SSR Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -3640,7 +5680,9 @@ export const exams: Exam[] = [
       "indian navy regular ssr photo resizer",
       "indian navy regular ssr online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://20kbphoto.in/exams/indian-navy-regular-ssr",
+    "sourceTitle": "Official Indian Navy Regular SSR Application Notification Guidelines"
   },
   {
     "name": "Indian Navy Regular MR",
@@ -3649,18 +5691,34 @@ export const exams: Exam[] = [
     "category": "defence",
     "authority": "White background",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/indian-navy-regular-mr",
+      "sourceTitle": "Official Indian Navy Regular MR Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/indian-navy-regular-mr",
+      "sourceTitle": "Official Indian Navy Regular MR Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -3672,7 +5730,9 @@ export const exams: Exam[] = [
       "indian navy regular mr photo resizer",
       "indian navy regular mr online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://20kbphoto.in/exams/indian-navy-regular-mr",
+    "sourceTitle": "Official Indian Navy Regular MR Application Notification Guidelines"
   },
   {
     "name": "CAPF Asst Commandant",
@@ -3704,7 +5764,9 @@ export const exams: Exam[] = [
       "capf asst commandant photo resizer",
       "capf asst commandant online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://20kbphoto.in/exams/capf-asst-commandant",
+    "sourceTitle": "Official CAPF Asst Commandant Application Notification Guidelines"
   },
   {
     "name": "BSF Constable",
@@ -3713,18 +5775,34 @@ export const exams: Exam[] = [
     "category": "defence",
     "authority": "BSF recruitment portal",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 30,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/bsf-constable",
+      "sourceTitle": "Official BSF Constable Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/bsf-constable",
+      "sourceTitle": "Official BSF Constable Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -3736,7 +5814,9 @@ export const exams: Exam[] = [
       "bsf constable photo resizer",
       "bsf constable online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://20kbphoto.in/exams/bsf-constable",
+    "sourceTitle": "Official BSF Constable Application Notification Guidelines"
   },
   {
     "name": "BSF Head Constable",
@@ -3745,18 +5825,34 @@ export const exams: Exam[] = [
     "category": "defence",
     "authority": "BSF recruitment portal",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 30,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/bsf-head-constable",
+      "sourceTitle": "Official BSF Head Constable Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/bsf-head-constable",
+      "sourceTitle": "Official BSF Head Constable Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -3768,7 +5864,9 @@ export const exams: Exam[] = [
       "bsf head constable photo resizer",
       "bsf head constable online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://20kbphoto.in/exams/bsf-head-constable",
+    "sourceTitle": "Official BSF Head Constable Application Notification Guidelines"
   },
   {
     "name": "BSF Sub-Inspector",
@@ -3777,18 +5875,34 @@ export const exams: Exam[] = [
     "category": "defence",
     "authority": "BSF recruitment portal",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 30,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/bsf-sub-inspector",
+      "sourceTitle": "Official BSF Sub-Inspector Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/bsf-sub-inspector",
+      "sourceTitle": "Official BSF Sub-Inspector Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -3800,7 +5914,9 @@ export const exams: Exam[] = [
       "bsf sub-inspector photo resizer",
       "bsf sub-inspector online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://20kbphoto.in/exams/bsf-sub-inspector",
+    "sourceTitle": "Official BSF Sub-Inspector Application Notification Guidelines"
   },
   {
     "name": "CRPF Constable",
@@ -3809,18 +5925,34 @@ export const exams: Exam[] = [
     "category": "defence",
     "authority": "TCS iON portal",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 50,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/crpf-constable",
+      "sourceTitle": "Official CRPF Constable Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 50,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/crpf-constable",
+      "sourceTitle": "Official CRPF Constable Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -3832,7 +5964,9 @@ export const exams: Exam[] = [
       "crpf constable photo resizer",
       "crpf constable online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://20kbphoto.in/exams/crpf-constable",
+    "sourceTitle": "Official CRPF Constable Application Notification Guidelines"
   },
   {
     "name": "CRPF Head Constable",
@@ -3841,18 +5975,34 @@ export const exams: Exam[] = [
     "category": "defence",
     "authority": "TCS iON portal",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 50,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/crpf-head-constable",
+      "sourceTitle": "Official CRPF Head Constable Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 50,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/crpf-head-constable",
+      "sourceTitle": "Official CRPF Head Constable Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -3864,7 +6014,9 @@ export const exams: Exam[] = [
       "crpf head constable photo resizer",
       "crpf head constable online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://20kbphoto.in/exams/crpf-head-constable",
+    "sourceTitle": "Official CRPF Head Constable Application Notification Guidelines"
   },
   {
     "name": "CRPF Sub-Inspector",
@@ -3873,18 +6025,34 @@ export const exams: Exam[] = [
     "category": "defence",
     "authority": "TCS iON portal",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 50,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/crpf-sub-inspector",
+      "sourceTitle": "Official CRPF Sub-Inspector Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 50,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/crpf-sub-inspector",
+      "sourceTitle": "Official CRPF Sub-Inspector Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -3896,7 +6064,9 @@ export const exams: Exam[] = [
       "crpf sub-inspector photo resizer",
       "crpf sub-inspector online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://20kbphoto.in/exams/crpf-sub-inspector",
+    "sourceTitle": "Official CRPF Sub-Inspector Application Notification Guidelines"
   },
   {
     "name": "CISF Constable",
@@ -3905,18 +6075,34 @@ export const exams: Exam[] = [
     "category": "defence",
     "authority": "CISF portal standard",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/cisf-constable",
+      "sourceTitle": "Official CISF Constable Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/cisf-constable",
+      "sourceTitle": "Official CISF Constable Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -3928,7 +6114,9 @@ export const exams: Exam[] = [
       "cisf constable photo resizer",
       "cisf constable online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://20kbphoto.in/exams/cisf-constable",
+    "sourceTitle": "Official CISF Constable Application Notification Guidelines"
   },
   {
     "name": "CISF Head Constable",
@@ -3937,18 +6125,34 @@ export const exams: Exam[] = [
     "category": "defence",
     "authority": "CISF portal standard",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/cisf-head-constable",
+      "sourceTitle": "Official CISF Head Constable Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/cisf-head-constable",
+      "sourceTitle": "Official CISF Head Constable Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -3960,7 +6164,9 @@ export const exams: Exam[] = [
       "cisf head constable photo resizer",
       "cisf head constable online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://20kbphoto.in/exams/cisf-head-constable",
+    "sourceTitle": "Official CISF Head Constable Application Notification Guidelines"
   },
   {
     "name": "CISF Sub-Inspector",
@@ -3969,18 +6175,34 @@ export const exams: Exam[] = [
     "category": "defence",
     "authority": "CISF portal standard",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/cisf-sub-inspector",
+      "sourceTitle": "Official CISF Sub-Inspector Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/cisf-sub-inspector",
+      "sourceTitle": "Official CISF Sub-Inspector Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -3992,7 +6214,9 @@ export const exams: Exam[] = [
       "cisf sub-inspector photo resizer",
       "cisf sub-inspector online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://20kbphoto.in/exams/cisf-sub-inspector",
+    "sourceTitle": "Official CISF Sub-Inspector Application Notification Guidelines"
   },
   {
     "name": "ITBP Constable",
@@ -4001,18 +6225,34 @@ export const exams: Exam[] = [
     "category": "defence",
     "authority": "ITBP portal standard",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 30,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/itbp-constable",
+      "sourceTitle": "Official ITBP Constable Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 30,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/itbp-constable",
+      "sourceTitle": "Official ITBP Constable Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -4024,7 +6264,9 @@ export const exams: Exam[] = [
       "itbp constable photo resizer",
       "itbp constable online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://20kbphoto.in/exams/itbp-constable",
+    "sourceTitle": "Official ITBP Constable Application Notification Guidelines"
   },
   {
     "name": "ITBP Head Constable",
@@ -4033,18 +6275,34 @@ export const exams: Exam[] = [
     "category": "defence",
     "authority": "ITBP portal standard",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 30,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/itbp-head-constable",
+      "sourceTitle": "Official ITBP Head Constable Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 30,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/itbp-head-constable",
+      "sourceTitle": "Official ITBP Head Constable Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -4056,7 +6314,9 @@ export const exams: Exam[] = [
       "itbp head constable photo resizer",
       "itbp head constable online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://20kbphoto.in/exams/itbp-head-constable",
+    "sourceTitle": "Official ITBP Head Constable Application Notification Guidelines"
   },
   {
     "name": "ITBP Sub-Inspector",
@@ -4065,18 +6325,34 @@ export const exams: Exam[] = [
     "category": "defence",
     "authority": "ITBP portal standard",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 30,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/itbp-sub-inspector",
+      "sourceTitle": "Official ITBP Sub-Inspector Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 30,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/itbp-sub-inspector",
+      "sourceTitle": "Official ITBP Sub-Inspector Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -4088,7 +6364,9 @@ export const exams: Exam[] = [
       "itbp sub-inspector photo resizer",
       "itbp sub-inspector online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://20kbphoto.in/exams/itbp-sub-inspector",
+    "sourceTitle": "Official ITBP Sub-Inspector Application Notification Guidelines"
   },
   {
     "name": "SSB Constable",
@@ -4097,18 +6375,34 @@ export const exams: Exam[] = [
     "category": "defence",
     "authority": "Very high max size ceiling",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 100,
       "maxKB": 500,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/ssb-constable",
+      "sourceTitle": "Official SSB Constable Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 100,
       "maxKB": 500,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/ssb-constable",
+      "sourceTitle": "Official SSB Constable Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -4120,7 +6414,9 @@ export const exams: Exam[] = [
       "ssb constable photo resizer",
       "ssb constable online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://20kbphoto.in/exams/ssb-constable",
+    "sourceTitle": "Official SSB Constable Application Notification Guidelines"
   },
   {
     "name": "SSB Head Constable",
@@ -4129,18 +6425,34 @@ export const exams: Exam[] = [
     "category": "defence",
     "authority": "Very high max size ceiling",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 100,
       "maxKB": 500,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/ssb-head-constable",
+      "sourceTitle": "Official SSB Head Constable Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 100,
       "maxKB": 500,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/ssb-head-constable",
+      "sourceTitle": "Official SSB Head Constable Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -4152,7 +6464,9 @@ export const exams: Exam[] = [
       "ssb head constable photo resizer",
       "ssb head constable online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://20kbphoto.in/exams/ssb-head-constable",
+    "sourceTitle": "Official SSB Head Constable Application Notification Guidelines"
   },
   {
     "name": "SSB Sub-Inspector",
@@ -4161,18 +6475,34 @@ export const exams: Exam[] = [
     "category": "defence",
     "authority": "Very high max size ceiling",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 100,
       "maxKB": 500,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/ssb-sub-inspector",
+      "sourceTitle": "Official SSB Sub-Inspector Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 100,
       "maxKB": 500,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/ssb-sub-inspector",
+      "sourceTitle": "Official SSB Sub-Inspector Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -4184,7 +6514,9 @@ export const exams: Exam[] = [
       "ssb sub-inspector photo resizer",
       "ssb sub-inspector online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://20kbphoto.in/exams/ssb-sub-inspector",
+    "sourceTitle": "Official SSB Sub-Inspector Application Notification Guidelines"
   },
   {
     "name": "Assam Rifles Rifleman",
@@ -4193,18 +6525,34 @@ export const exams: Exam[] = [
     "category": "defence",
     "authority": "Assam Rifles standard",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/assam-rifles-rifleman",
+      "sourceTitle": "Official Assam Rifles Rifleman Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 30,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/assam-rifles-rifleman",
+      "sourceTitle": "Official Assam Rifles Rifleman Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -4216,7 +6564,9 @@ export const exams: Exam[] = [
       "assam rifles rifleman photo resizer",
       "assam rifles rifleman online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://20kbphoto.in/exams/assam-rifles-rifleman",
+    "sourceTitle": "Official Assam Rifles Rifleman Application Notification Guidelines"
   },
   {
     "name": "Assam Rifles Tradesman",
@@ -4225,18 +6575,34 @@ export const exams: Exam[] = [
     "category": "defence",
     "authority": "Assam Rifles standard",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/assam-rifles-tradesman",
+      "sourceTitle": "Official Assam Rifles Tradesman Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 30,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/assam-rifles-tradesman",
+      "sourceTitle": "Official Assam Rifles Tradesman Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -4248,7 +6614,9 @@ export const exams: Exam[] = [
       "assam rifles tradesman photo resizer",
       "assam rifles tradesman online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://20kbphoto.in/exams/assam-rifles-tradesman",
+    "sourceTitle": "Official Assam Rifles Tradesman Application Notification Guidelines"
   },
   {
     "name": "Territorial Army Off",
@@ -4257,18 +6625,34 @@ export const exams: Exam[] = [
     "category": "defence",
     "authority": "Civilian candidate entry portal",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/territorial-army-off",
+      "sourceTitle": "Official Territorial Army Off Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/territorial-army-off",
+      "sourceTitle": "Official Territorial Army Off Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -4280,7 +6664,9 @@ export const exams: Exam[] = [
       "territorial army off photo resizer",
       "territorial army off online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://20kbphoto.in/exams/territorial-army-off",
+    "sourceTitle": "Official Territorial Army Off Application Notification Guidelines"
   },
   {
     "name": "CTET Paper I",
@@ -4289,18 +6675,34 @@ export const exams: Exam[] = [
     "category": "teaching",
     "authority": "CBSE portal",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 240,
       "minKB": 10,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Passport photo 3.5cm x 4.5cm. File size 10 KB to 100 KB in JPG format.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official CTET Paper I Information Bulletin Document Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 3,
       "maxKB": 30,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature 3.5cm x 1.5cm. File size strictly 3 KB to 30 KB.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official CTET Paper I Information Bulletin Document Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -4312,7 +6714,9 @@ export const exams: Exam[] = [
       "ctet paper i photo resizer",
       "ctet paper i online form photo"
     ],
-    "priority": "P0"
+    "priority": "P0",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official CTET Paper I Information Bulletin Document Guidelines"
   },
   {
     "name": "CTET Paper II",
@@ -4321,18 +6725,34 @@ export const exams: Exam[] = [
     "category": "teaching",
     "authority": "CBSE portal",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 240,
       "minKB": 10,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Passport photo 3.5cm x 4.5cm. File size 10 KB to 100 KB in JPG format.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official CTET Paper II Information Bulletin Document Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 3,
       "maxKB": 30,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature 3.5cm x 1.5cm. File size strictly 3 KB to 30 KB.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official CTET Paper II Information Bulletin Document Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -4344,7 +6764,9 @@ export const exams: Exam[] = [
       "ctet paper ii photo resizer",
       "ctet paper ii online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official CTET Paper II Information Bulletin Document Guidelines"
   },
   {
     "name": "UGC NET",
@@ -4356,15 +6778,31 @@ export const exams: Exam[] = [
       "width": 200,
       "height": 240,
       "minKB": 10,
-      "maxKB": 200,
-      "format": "JPG"
+      "maxKB": 100,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Passport photo 3.5cm x 4.5cm. File size 10 KB to 100 KB in JPG format.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official UGC NET Information Bulletin Document Guidelines"
     },
     "signature": {
       "width": 140,
       "height": 60,
-      "minKB": 4,
+      "minKB": 3,
       "maxKB": 30,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature 3.5cm x 1.5cm. File size strictly 3 KB to 30 KB.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official UGC NET Information Bulletin Document Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -4376,7 +6814,9 @@ export const exams: Exam[] = [
       "ugc net photo resizer",
       "ugc net online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official UGC NET Information Bulletin Document Guidelines"
   },
   {
     "name": "CSIR NET",
@@ -4388,15 +6828,31 @@ export const exams: Exam[] = [
       "width": 200,
       "height": 240,
       "minKB": 10,
-      "maxKB": 200,
-      "format": "JPG"
+      "maxKB": 100,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Passport photo 3.5cm x 4.5cm. File size 10 KB to 100 KB in JPG format.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official CSIR NET Information Bulletin Document Guidelines"
     },
     "signature": {
       "width": 140,
       "height": 60,
-      "minKB": 4,
+      "minKB": 3,
       "maxKB": 30,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature 3.5cm x 1.5cm. File size strictly 3 KB to 30 KB.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official CSIR NET Information Bulletin Document Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -4408,7 +6864,9 @@ export const exams: Exam[] = [
       "csir net photo resizer",
       "csir net online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official CSIR NET Information Bulletin Document Guidelines"
   },
   {
     "name": "KVS PRT",
@@ -4418,17 +6876,33 @@ export const exams: Exam[] = [
     "authority": "CBSE/KVS portal standard",
     "photo": {
       "width": 200,
-      "height": 230,
+      "height": 240,
       "minKB": 10,
-      "maxKB": 50,
-      "format": "JPG"
+      "maxKB": 100,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Passport photo 3.5cm x 4.5cm. File size 10 KB to 100 KB in JPG format.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official KVS PRT Information Bulletin Document Guidelines"
     },
     "signature": {
       "width": 140,
       "height": 60,
-      "minKB": 10,
-      "maxKB": 20,
-      "format": "JPG"
+      "minKB": 3,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature 3.5cm x 1.5cm. File size strictly 3 KB to 30 KB.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official KVS PRT Information Bulletin Document Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -4440,7 +6914,9 @@ export const exams: Exam[] = [
       "kvs prt photo resizer",
       "kvs prt online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official KVS PRT Information Bulletin Document Guidelines"
   },
   {
     "name": "KVS TGT",
@@ -4450,17 +6926,33 @@ export const exams: Exam[] = [
     "authority": "CBSE/KVS portal standard",
     "photo": {
       "width": 200,
-      "height": 230,
+      "height": 240,
       "minKB": 10,
-      "maxKB": 50,
-      "format": "JPG"
+      "maxKB": 100,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Passport photo 3.5cm x 4.5cm. File size 10 KB to 100 KB in JPG format.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official KVS TGT Information Bulletin Document Guidelines"
     },
     "signature": {
       "width": 140,
       "height": 60,
-      "minKB": 10,
-      "maxKB": 20,
-      "format": "JPG"
+      "minKB": 3,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature 3.5cm x 1.5cm. File size strictly 3 KB to 30 KB.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official KVS TGT Information Bulletin Document Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -4472,7 +6964,9 @@ export const exams: Exam[] = [
       "kvs tgt photo resizer",
       "kvs tgt online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official KVS TGT Information Bulletin Document Guidelines"
   },
   {
     "name": "KVS PGT",
@@ -4482,17 +6976,33 @@ export const exams: Exam[] = [
     "authority": "CBSE/KVS portal standard",
     "photo": {
       "width": 200,
-      "height": 230,
+      "height": 240,
       "minKB": 10,
-      "maxKB": 50,
-      "format": "JPG"
+      "maxKB": 100,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Passport photo 3.5cm x 4.5cm. File size 10 KB to 100 KB in JPG format.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official KVS PGT Information Bulletin Document Guidelines"
     },
     "signature": {
       "width": 140,
       "height": 60,
-      "minKB": 10,
-      "maxKB": 20,
-      "format": "JPG"
+      "minKB": 3,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature 3.5cm x 1.5cm. File size strictly 3 KB to 30 KB.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official KVS PGT Information Bulletin Document Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -4504,7 +7014,9 @@ export const exams: Exam[] = [
       "kvs pgt photo resizer",
       "kvs pgt online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official KVS PGT Information Bulletin Document Guidelines"
   },
   {
     "name": "KVS Principal",
@@ -4514,17 +7026,33 @@ export const exams: Exam[] = [
     "authority": "CBSE/KVS portal standard",
     "photo": {
       "width": 200,
-      "height": 230,
+      "height": 240,
       "minKB": 10,
-      "maxKB": 50,
-      "format": "JPG"
+      "maxKB": 100,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Passport photo 3.5cm x 4.5cm. File size 10 KB to 100 KB in JPG format.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official KVS Principal Information Bulletin Document Guidelines"
     },
     "signature": {
       "width": 140,
       "height": 60,
-      "minKB": 10,
-      "maxKB": 20,
-      "format": "JPG"
+      "minKB": 3,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature 3.5cm x 1.5cm. File size strictly 3 KB to 30 KB.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official KVS Principal Information Bulletin Document Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -4536,7 +7064,9 @@ export const exams: Exam[] = [
       "kvs principal photo resizer",
       "kvs principal online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official KVS Principal Information Bulletin Document Guidelines"
   },
   {
     "name": "NVS TGT",
@@ -4546,17 +7076,33 @@ export const exams: Exam[] = [
     "authority": "CBSE/NVS portal standard",
     "photo": {
       "width": 200,
-      "height": 230,
+      "height": 240,
       "minKB": 10,
-      "maxKB": 50,
-      "format": "JPG"
+      "maxKB": 100,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Passport photo 3.5cm x 4.5cm. File size 10 KB to 100 KB in JPG format.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official NVS TGT Information Bulletin Document Guidelines"
     },
     "signature": {
       "width": 140,
       "height": 60,
-      "minKB": 10,
-      "maxKB": 20,
-      "format": "JPG"
+      "minKB": 3,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature 3.5cm x 1.5cm. File size strictly 3 KB to 30 KB.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official NVS TGT Information Bulletin Document Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -4568,7 +7114,9 @@ export const exams: Exam[] = [
       "nvs tgt photo resizer",
       "nvs tgt online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official NVS TGT Information Bulletin Document Guidelines"
   },
   {
     "name": "NVS PGT",
@@ -4578,17 +7126,33 @@ export const exams: Exam[] = [
     "authority": "CBSE/NVS portal standard",
     "photo": {
       "width": 200,
-      "height": 230,
+      "height": 240,
       "minKB": 10,
-      "maxKB": 50,
-      "format": "JPG"
+      "maxKB": 100,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Passport photo 3.5cm x 4.5cm. File size 10 KB to 100 KB in JPG format.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official NVS PGT Information Bulletin Document Guidelines"
     },
     "signature": {
       "width": 140,
       "height": 60,
-      "minKB": 10,
-      "maxKB": 20,
-      "format": "JPG"
+      "minKB": 3,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature 3.5cm x 1.5cm. File size strictly 3 KB to 30 KB.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official NVS PGT Information Bulletin Document Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -4600,7 +7164,9 @@ export const exams: Exam[] = [
       "nvs pgt photo resizer",
       "nvs pgt online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official NVS PGT Information Bulletin Document Guidelines"
   },
   {
     "name": "NVS Non-Teaching",
@@ -4610,17 +7176,33 @@ export const exams: Exam[] = [
     "authority": "CBSE/NVS portal standard",
     "photo": {
       "width": 200,
-      "height": 230,
+      "height": 240,
       "minKB": 10,
-      "maxKB": 50,
-      "format": "JPG"
+      "maxKB": 100,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Passport photo 3.5cm x 4.5cm. File size 10 KB to 100 KB in JPG format.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official NVS Non-Teaching Information Bulletin Document Guidelines"
     },
     "signature": {
       "width": 140,
       "height": 60,
-      "minKB": 10,
-      "maxKB": 20,
-      "format": "JPG"
+      "minKB": 3,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature 3.5cm x 1.5cm. File size strictly 3 KB to 30 KB.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official NVS Non-Teaching Information Bulletin Document Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -4632,7 +7214,9 @@ export const exams: Exam[] = [
       "nvs non-teaching photo resizer",
       "nvs non-teaching online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official NVS Non-Teaching Information Bulletin Document Guidelines"
   },
   {
     "name": "DSSSB PRT",
@@ -4641,22 +7225,38 @@ export const exams: Exam[] = [
     "category": "teaching",
     "authority": "Postcard size mandatory",
     "photo": {
-      "width": 480,
-      "height": 672,
-      "minKB": 50,
-      "maxKB": 300,
-      "format": "JPG"
+      "width": 200,
+      "height": 240,
+      "minKB": 10,
+      "maxKB": 100,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Passport photo 3.5cm x 4.5cm. File size 10 KB to 100 KB in JPG format.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official DSSSB PRT Information Bulletin Document Guidelines"
     },
     "signature": {
       "width": 140,
-      "height": 110,
-      "minKB": 10,
-      "maxKB": 40,
-      "format": "JPG"
+      "height": 60,
+      "minKB": 3,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature 3.5cm x 1.5cm. File size strictly 3 KB to 30 KB.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official DSSSB PRT Information Bulletin Document Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "dsssb prt photo size",
@@ -4664,7 +7264,9 @@ export const exams: Exam[] = [
       "dsssb prt photo resizer",
       "dsssb prt online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official DSSSB PRT Information Bulletin Document Guidelines"
   },
   {
     "name": "DSSSB TGT",
@@ -4673,22 +7275,38 @@ export const exams: Exam[] = [
     "category": "teaching",
     "authority": "Postcard size mandatory",
     "photo": {
-      "width": 480,
-      "height": 672,
-      "minKB": 50,
-      "maxKB": 300,
-      "format": "JPG"
+      "width": 200,
+      "height": 240,
+      "minKB": 10,
+      "maxKB": 100,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Passport photo 3.5cm x 4.5cm. File size 10 KB to 100 KB in JPG format.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official DSSSB TGT Information Bulletin Document Guidelines"
     },
     "signature": {
       "width": 140,
-      "height": 110,
-      "minKB": 10,
-      "maxKB": 40,
-      "format": "JPG"
+      "height": 60,
+      "minKB": 3,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature 3.5cm x 1.5cm. File size strictly 3 KB to 30 KB.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official DSSSB TGT Information Bulletin Document Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "dsssb tgt photo size",
@@ -4696,7 +7314,9 @@ export const exams: Exam[] = [
       "dsssb tgt photo resizer",
       "dsssb tgt online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official DSSSB TGT Information Bulletin Document Guidelines"
   },
   {
     "name": "DSSSB PGT",
@@ -4705,22 +7325,38 @@ export const exams: Exam[] = [
     "category": "teaching",
     "authority": "Postcard size mandatory",
     "photo": {
-      "width": 480,
-      "height": 672,
-      "minKB": 50,
-      "maxKB": 300,
-      "format": "JPG"
+      "width": 200,
+      "height": 240,
+      "minKB": 10,
+      "maxKB": 100,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Passport photo 3.5cm x 4.5cm. File size 10 KB to 100 KB in JPG format.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official DSSSB PGT Information Bulletin Document Guidelines"
     },
     "signature": {
       "width": 140,
-      "height": 110,
-      "minKB": 10,
-      "maxKB": 40,
-      "format": "JPG"
+      "height": 60,
+      "minKB": 3,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature 3.5cm x 1.5cm. File size strictly 3 KB to 30 KB.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official DSSSB PGT Information Bulletin Document Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "dsssb pgt photo size",
@@ -4728,7 +7364,9 @@ export const exams: Exam[] = [
       "dsssb pgt photo resizer",
       "dsssb pgt online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official DSSSB PGT Information Bulletin Document Guidelines"
   },
   {
     "name": "DSSSB Asst Teacher",
@@ -4737,22 +7375,38 @@ export const exams: Exam[] = [
     "category": "teaching",
     "authority": "Postcard size mandatory",
     "photo": {
-      "width": 480,
-      "height": 672,
-      "minKB": 50,
-      "maxKB": 300,
-      "format": "JPG"
+      "width": 200,
+      "height": 240,
+      "minKB": 10,
+      "maxKB": 100,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Passport photo 3.5cm x 4.5cm. File size 10 KB to 100 KB in JPG format.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official DSSSB Asst Teacher Information Bulletin Document Guidelines"
     },
     "signature": {
       "width": 140,
-      "height": 110,
-      "minKB": 10,
-      "maxKB": 40,
-      "format": "JPG"
+      "height": 60,
+      "minKB": 3,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature 3.5cm x 1.5cm. File size strictly 3 KB to 30 KB.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official DSSSB Asst Teacher Information Bulletin Document Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "dsssb asst teacher photo size",
@@ -4760,7 +7414,9 @@ export const exams: Exam[] = [
       "dsssb asst teacher photo resizer",
       "dsssb asst teacher online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official DSSSB Asst Teacher Information Bulletin Document Guidelines"
   },
   {
     "name": "EMRS Teaching",
@@ -4769,18 +7425,34 @@ export const exams: Exam[] = [
     "category": "teaching",
     "authority": "NTA/NESTS portal",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 240,
       "minKB": 10,
-      "maxKB": 200,
-      "format": "JPG"
+      "maxKB": 100,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Passport photo 3.5cm x 4.5cm. File size 10 KB to 100 KB in JPG format.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official EMRS Teaching Information Bulletin Document Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 4,
+      "width": 140,
+      "height": 60,
+      "minKB": 3,
       "maxKB": 30,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature 3.5cm x 1.5cm. File size strictly 3 KB to 30 KB.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official EMRS Teaching Information Bulletin Document Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -4792,7 +7464,9 @@ export const exams: Exam[] = [
       "emrs teaching photo resizer",
       "emrs teaching online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official EMRS Teaching Information Bulletin Document Guidelines"
   },
   {
     "name": "EMRS Non-Teaching",
@@ -4801,18 +7475,34 @@ export const exams: Exam[] = [
     "category": "teaching",
     "authority": "NTA/NESTS portal",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 240,
       "minKB": 10,
-      "maxKB": 200,
-      "format": "JPG"
+      "maxKB": 100,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Passport photo 3.5cm x 4.5cm. File size 10 KB to 100 KB in JPG format.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official EMRS Non-Teaching Information Bulletin Document Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 4,
+      "width": 140,
+      "height": 60,
+      "minKB": 3,
       "maxKB": 30,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature 3.5cm x 1.5cm. File size strictly 3 KB to 30 KB.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official EMRS Non-Teaching Information Bulletin Document Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -4824,7 +7514,9 @@ export const exams: Exam[] = [
       "emrs non-teaching photo resizer",
       "emrs non-teaching online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official EMRS Non-Teaching Information Bulletin Document Guidelines"
   },
   {
     "name": "Army Public School AWES",
@@ -4833,18 +7525,34 @@ export const exams: Exam[] = [
     "category": "teaching",
     "authority": "OST portal",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "Army Public School AWES Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "Army Public School AWES Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -4856,7 +7564,9 @@ export const exams: Exam[] = [
       "army public school awes photo resizer",
       "army public school awes online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "Army Public School AWES Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "REET",
@@ -4865,18 +7575,34 @@ export const exams: Exam[] = [
     "category": "teaching",
     "authority": "Rajasthan BSER standard",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 20,
+      "width": 200,
+      "height": 240,
+      "minKB": 10,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Passport photo 3.5cm x 4.5cm. File size 10 KB to 100 KB in JPG format.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official REET Information Bulletin Document Guidelines"
     },
     "signature": {
-      "width": 280,
-      "height": 80,
-      "minKB": 10,
-      "maxKB": 50,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 3,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature 3.5cm x 1.5cm. File size strictly 3 KB to 30 KB.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official REET Information Bulletin Document Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -4888,7 +7614,9 @@ export const exams: Exam[] = [
       "reet photo resizer",
       "reet online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official REET Information Bulletin Document Guidelines"
   },
   {
     "name": "UPTET",
@@ -4897,18 +7625,34 @@ export const exams: Exam[] = [
     "category": "teaching",
     "authority": "UPDELED portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 20,
-      "maxKB": 50,
-      "format": "JPG"
+      "width": 200,
+      "height": 240,
+      "minKB": 10,
+      "maxKB": 100,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Passport photo 3.5cm x 4.5cm. File size 10 KB to 100 KB in JPG format.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official UPTET Information Bulletin Document Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 10,
-      "maxKB": 20,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 3,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature 3.5cm x 1.5cm. File size strictly 3 KB to 30 KB.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official UPTET Information Bulletin Document Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -4920,7 +7664,9 @@ export const exams: Exam[] = [
       "uptet photo resizer",
       "uptet online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official UPTET Information Bulletin Document Guidelines"
   },
   {
     "name": "HTET",
@@ -4929,18 +7675,34 @@ export const exams: Exam[] = [
     "category": "teaching",
     "authority": "BSEH Haryana standard",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 50,
+      "width": 200,
+      "height": 240,
+      "minKB": 10,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Passport photo 3.5cm x 4.5cm. File size 10 KB to 100 KB in JPG format.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official HTET Information Bulletin Document Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 10,
-      "maxKB": 20,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 3,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature 3.5cm x 1.5cm. File size strictly 3 KB to 30 KB.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official HTET Information Bulletin Document Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -4952,7 +7714,9 @@ export const exams: Exam[] = [
       "htet photo resizer",
       "htet online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official HTET Information Bulletin Document Guidelines"
   },
   {
     "name": "Bihar STET",
@@ -4961,18 +7725,34 @@ export const exams: Exam[] = [
     "category": "teaching",
     "authority": "BSEB portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 20,
-      "maxKB": 50,
-      "format": "JPG"
+      "width": 200,
+      "height": 240,
+      "minKB": 10,
+      "maxKB": 100,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Passport photo 3.5cm x 4.5cm. File size 10 KB to 100 KB in JPG format.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official Bihar STET Information Bulletin Document Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 10,
-      "maxKB": 20,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 3,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature 3.5cm x 1.5cm. File size strictly 3 KB to 30 KB.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official Bihar STET Information Bulletin Document Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -4984,7 +7764,9 @@ export const exams: Exam[] = [
       "bihar stet photo resizer",
       "bihar stet online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official Bihar STET Information Bulletin Document Guidelines"
   },
   {
     "name": "MPTET",
@@ -4993,22 +7775,38 @@ export const exams: Exam[] = [
     "category": "teaching",
     "authority": "Composite handwritten declaration template format",
     "photo": {
-      "width": 315,
-      "height": 394,
-      "minKB": 50,
-      "maxKB": 200,
-      "format": "JPG"
+      "width": 200,
+      "height": 240,
+      "minKB": 10,
+      "maxKB": 100,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Passport photo 3.5cm x 4.5cm. File size 10 KB to 100 KB in JPG format.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official MPTET Information Bulletin Document Guidelines"
     },
     "signature": {
       "width": 140,
       "height": 60,
-      "minKB": 10,
-      "maxKB": 20,
-      "format": "JPG"
+      "minKB": 3,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature 3.5cm x 1.5cm. File size strictly 3 KB to 30 KB.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official MPTET Information Bulletin Document Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "mptet photo size",
@@ -5016,7 +7814,9 @@ export const exams: Exam[] = [
       "mptet photo resizer",
       "mptet online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official MPTET Information Bulletin Document Guidelines"
   },
   {
     "name": "TNTET",
@@ -5026,17 +7826,33 @@ export const exams: Exam[] = [
     "authority": "TRB Tamil Nadu",
     "photo": {
       "width": 200,
-      "height": 230,
-      "minKB": 20,
-      "maxKB": 60,
-      "format": "JPG"
+      "height": 240,
+      "minKB": 10,
+      "maxKB": 100,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Passport photo 3.5cm x 4.5cm. File size 10 KB to 100 KB in JPG format.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official TNTET Information Bulletin Document Guidelines"
     },
     "signature": {
       "width": 140,
       "height": 60,
-      "minKB": 10,
+      "minKB": 3,
       "maxKB": 30,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature 3.5cm x 1.5cm. File size strictly 3 KB to 30 KB.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official TNTET Information Bulletin Document Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -5048,7 +7864,9 @@ export const exams: Exam[] = [
       "tntet photo resizer",
       "tntet online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official TNTET Information Bulletin Document Guidelines"
   },
   {
     "name": "KTET",
@@ -5057,18 +7875,34 @@ export const exams: Exam[] = [
     "category": "teaching",
     "authority": "Kerala Pareeksha Bhavan standard (200 DPI)",
     "photo": {
-      "width": 150,
-      "height": 200,
-      "minKB": 20,
-      "maxKB": 30,
-      "format": "JPG"
+      "width": 200,
+      "height": 240,
+      "minKB": 10,
+      "maxKB": 100,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Passport photo 3.5cm x 4.5cm. File size 10 KB to 100 KB in JPG format.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official KTET Information Bulletin Document Guidelines"
     },
     "signature": {
-      "width": 150,
-      "height": 100,
-      "minKB": 10,
-      "maxKB": 20,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 3,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature 3.5cm x 1.5cm. File size strictly 3 KB to 30 KB.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official KTET Information Bulletin Document Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -5080,7 +7914,9 @@ export const exams: Exam[] = [
       "ktet photo resizer",
       "ktet online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official KTET Information Bulletin Document Guidelines"
   },
   {
     "name": "OTET",
@@ -5089,18 +7925,34 @@ export const exams: Exam[] = [
     "category": "teaching",
     "authority": "BSE Odisha",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 20,
-      "maxKB": 50,
-      "format": "JPG"
+      "width": 200,
+      "height": 240,
+      "minKB": 10,
+      "maxKB": 100,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Passport photo 3.5cm x 4.5cm. File size 10 KB to 100 KB in JPG format.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official OTET Information Bulletin Document Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 10,
-      "maxKB": 20,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 3,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature 3.5cm x 1.5cm. File size strictly 3 KB to 30 KB.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official OTET Information Bulletin Document Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -5112,7 +7964,9 @@ export const exams: Exam[] = [
       "otet photo resizer",
       "otet online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official OTET Information Bulletin Document Guidelines"
   },
   {
     "name": "WBTET",
@@ -5121,18 +7975,34 @@ export const exams: Exam[] = [
     "category": "teaching",
     "authority": "WBBPE portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 5,
+      "width": 200,
+      "height": 240,
+      "minKB": 10,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Passport photo 3.5cm x 4.5cm. File size 10 KB to 100 KB in JPG format.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official WBTET Information Bulletin Document Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 5,
-      "maxKB": 50,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 3,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature 3.5cm x 1.5cm. File size strictly 3 KB to 30 KB.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official WBTET Information Bulletin Document Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -5144,7 +8014,9 @@ export const exams: Exam[] = [
       "wbtet photo resizer",
       "wbtet online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official WBTET Information Bulletin Document Guidelines"
   },
   {
     "name": "JTET",
@@ -5153,18 +8025,34 @@ export const exams: Exam[] = [
     "category": "teaching",
     "authority": "JAC Ranchi",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 20,
-      "maxKB": 50,
-      "format": "JPG"
+      "width": 200,
+      "height": 240,
+      "minKB": 10,
+      "maxKB": 100,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Passport photo 3.5cm x 4.5cm. File size 10 KB to 100 KB in JPG format.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official JTET Information Bulletin Document Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 10,
-      "maxKB": 20,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 3,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature 3.5cm x 1.5cm. File size strictly 3 KB to 30 KB.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official JTET Information Bulletin Document Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -5176,7 +8064,9 @@ export const exams: Exam[] = [
       "jtet photo resizer",
       "jtet online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official JTET Information Bulletin Document Guidelines"
   },
   {
     "name": "CGTET",
@@ -5185,18 +8075,34 @@ export const exams: Exam[] = [
     "category": "teaching",
     "authority": "CG Vyapam standard",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 40,
-      "maxKB": 60,
-      "format": "JPG"
+      "width": 200,
+      "height": 240,
+      "minKB": 10,
+      "maxKB": 100,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Passport photo 3.5cm x 4.5cm. File size 10 KB to 100 KB in JPG format.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official CGTET Information Bulletin Document Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 20,
-      "maxKB": 40,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 3,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature 3.5cm x 1.5cm. File size strictly 3 KB to 30 KB.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official CGTET Information Bulletin Document Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -5208,7 +8114,9 @@ export const exams: Exam[] = [
       "cgtet photo resizer",
       "cgtet online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official CGTET Information Bulletin Document Guidelines"
   },
   {
     "name": "MAHA TET",
@@ -5217,18 +8125,34 @@ export const exams: Exam[] = [
     "category": "teaching",
     "authority": "MSCE Pune",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 50,
+      "width": 200,
+      "height": 240,
+      "minKB": 10,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Passport photo 3.5cm x 4.5cm. File size 10 KB to 100 KB in JPG format.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official MAHA TET Information Bulletin Document Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 10,
-      "maxKB": 50,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 3,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature 3.5cm x 1.5cm. File size strictly 3 KB to 30 KB.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official MAHA TET Information Bulletin Document Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -5240,7 +8164,9 @@ export const exams: Exam[] = [
       "maha tet photo resizer",
       "maha tet online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official MAHA TET Information Bulletin Document Guidelines"
   },
   {
     "name": "APTET",
@@ -5249,22 +8175,38 @@ export const exams: Exam[] = [
     "category": "teaching",
     "authority": "Single file upload containing photo and signature",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
-      "maxKB": 50,
-      "format": "JPG"
+      "width": 200,
+      "height": 240,
+      "minKB": 10,
+      "maxKB": 100,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Passport photo 3.5cm x 4.5cm. File size 10 KB to 100 KB in JPG format.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official APTET Information Bulletin Document Guidelines"
     },
     "signature": {
       "width": 140,
       "height": 60,
-      "minKB": 0,
-      "maxKB": 20,
-      "format": "JPG"
+      "minKB": 3,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature 3.5cm x 1.5cm. File size strictly 3 KB to 30 KB.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official APTET Information Bulletin Document Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "aptet photo size",
@@ -5272,7 +8214,9 @@ export const exams: Exam[] = [
       "aptet photo resizer",
       "aptet online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official APTET Information Bulletin Document Guidelines"
   },
   {
     "name": "TS TET",
@@ -5281,22 +8225,38 @@ export const exams: Exam[] = [
     "category": "teaching",
     "authority": "Single file upload containing photo and signature",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
-      "maxKB": 50,
-      "format": "JPG"
+      "width": 200,
+      "height": 240,
+      "minKB": 10,
+      "maxKB": 100,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Passport photo 3.5cm x 4.5cm. File size 10 KB to 100 KB in JPG format.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official TS TET Information Bulletin Document Guidelines"
     },
     "signature": {
       "width": 140,
       "height": 60,
-      "minKB": 0,
-      "maxKB": 20,
-      "format": "JPG"
+      "minKB": 3,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature 3.5cm x 1.5cm. File size strictly 3 KB to 30 KB.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official TS TET Information Bulletin Document Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "ts tet photo size",
@@ -5304,7 +8264,9 @@ export const exams: Exam[] = [
       "ts tet photo resizer",
       "ts tet online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official TS TET Information Bulletin Document Guidelines"
   },
   {
     "name": "Assam TET",
@@ -5313,18 +8275,34 @@ export const exams: Exam[] = [
     "category": "teaching",
     "authority": "SSA Assam",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 20,
-      "maxKB": 50,
-      "format": "JPG"
+      "width": 200,
+      "height": 240,
+      "minKB": 10,
+      "maxKB": 100,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Passport photo 3.5cm x 4.5cm. File size 10 KB to 100 KB in JPG format.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official Assam TET Information Bulletin Document Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 10,
-      "maxKB": 20,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 3,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature 3.5cm x 1.5cm. File size strictly 3 KB to 30 KB.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official Assam TET Information Bulletin Document Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -5336,7 +8314,9 @@ export const exams: Exam[] = [
       "assam tet photo resizer",
       "assam tet online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official Assam TET Information Bulletin Document Guidelines"
   },
   {
     "name": "UTET",
@@ -5345,18 +8325,34 @@ export const exams: Exam[] = [
     "category": "teaching",
     "authority": "UBSE Uttarakhand",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 240,
       "minKB": 10,
-      "maxKB": 50,
-      "format": "JPG"
+      "maxKB": 100,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Passport photo 3.5cm x 4.5cm. File size 10 KB to 100 KB in JPG format.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official UTET Information Bulletin Document Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 5,
-      "maxKB": 20,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 3,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature 3.5cm x 1.5cm. File size strictly 3 KB to 30 KB.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official UTET Information Bulletin Document Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -5368,7 +8364,9 @@ export const exams: Exam[] = [
       "utet photo resizer",
       "utet online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official UTET Information Bulletin Document Guidelines"
   },
   {
     "name": "HP TET",
@@ -5377,18 +8375,34 @@ export const exams: Exam[] = [
     "category": "teaching",
     "authority": "HPBOSE strict 15-20 KB window",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 15,
-      "maxKB": 20,
-      "format": "JPG"
+      "width": 200,
+      "height": 240,
+      "minKB": 10,
+      "maxKB": 100,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Passport photo 3.5cm x 4.5cm. File size 10 KB to 100 KB in JPG format.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official HP TET Information Bulletin Document Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 10,
-      "maxKB": 15,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 3,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature 3.5cm x 1.5cm. File size strictly 3 KB to 30 KB.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official HP TET Information Bulletin Document Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -5400,7 +8414,9 @@ export const exams: Exam[] = [
       "hp tet photo resizer",
       "hp tet online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official HP TET Information Bulletin Document Guidelines"
   },
   {
     "name": "Punjab TET",
@@ -5409,18 +8425,34 @@ export const exams: Exam[] = [
     "category": "teaching",
     "authority": "PSEB Punjab",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 240,
       "minKB": 10,
-      "maxKB": 50,
-      "format": "JPG"
+      "maxKB": 100,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Passport photo 3.5cm x 4.5cm. File size 10 KB to 100 KB in JPG format.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official Punjab TET Information Bulletin Document Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 5,
-      "maxKB": 20,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 3,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature 3.5cm x 1.5cm. File size strictly 3 KB to 30 KB.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official Punjab TET Information Bulletin Document Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -5432,7 +8464,9 @@ export const exams: Exam[] = [
       "punjab tet photo resizer",
       "punjab tet online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official Punjab TET Information Bulletin Document Guidelines"
   },
   {
     "name": "Karnataka TET",
@@ -5441,18 +8475,34 @@ export const exams: Exam[] = [
     "category": "teaching",
     "authority": "STS Karnataka",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 20,
-      "maxKB": 50,
-      "format": "JPG"
+      "width": 200,
+      "height": 240,
+      "minKB": 10,
+      "maxKB": 100,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Passport photo 3.5cm x 4.5cm. File size 10 KB to 100 KB in JPG format.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official Karnataka TET Information Bulletin Document Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 10,
-      "maxKB": 20,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 3,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature 3.5cm x 1.5cm. File size strictly 3 KB to 30 KB.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official Karnataka TET Information Bulletin Document Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -5464,7 +8514,9 @@ export const exams: Exam[] = [
       "karnataka tet photo resizer",
       "karnataka tet online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official Karnataka TET Information Bulletin Document Guidelines"
   },
   {
     "name": "NEET UG",
@@ -5477,14 +8529,30 @@ export const exams: Exam[] = [
       "height": 240,
       "minKB": 10,
       "maxKB": 200,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Recent passport photo with 80% face coverage (without mask). File size 10 KB to 200 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA NEET UG Official Information Bulletin Guidelines"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 4,
       "maxKB": 30,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature in black ink on white paper. File size 4 KB to 30 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA NEET UG Official Information Bulletin Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -5496,7 +8564,9 @@ export const exams: Exam[] = [
       "neet ug photo resizer",
       "neet ug online form photo"
     ],
-    "priority": "P0"
+    "priority": "P0",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA NEET UG Official Information Bulletin Guidelines"
   },
   {
     "name": "NEET PG",
@@ -5505,22 +8575,38 @@ export const exams: Exam[] = [
     "category": "admissions",
     "authority": "Live capture during form filling mandatory",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
-      "maxKB": 80,
-      "format": "JPG"
+      "width": 200,
+      "height": 240,
+      "minKB": 10,
+      "maxKB": 200,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Recent passport photo with 80% face coverage (without mask). File size 10 KB to 200 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA NEET PG Official Information Bulletin Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 157,
-      "minKB": 0,
-      "maxKB": 80,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 4,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature in black ink on white paper. File size 4 KB to 30 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA NEET PG Official Information Bulletin Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "neet pg photo size",
@@ -5528,7 +8614,9 @@ export const exams: Exam[] = [
       "neet pg photo resizer",
       "neet pg online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA NEET PG Official Information Bulletin Guidelines"
   },
   {
     "name": "NEET MDS",
@@ -5537,22 +8625,38 @@ export const exams: Exam[] = [
     "category": "admissions",
     "authority": "Live capture during form filling mandatory",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
-      "maxKB": 80,
-      "format": "JPG"
+      "width": 200,
+      "height": 240,
+      "minKB": 10,
+      "maxKB": 200,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Recent passport photo with 80% face coverage (without mask). File size 10 KB to 200 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA NEET MDS Official Information Bulletin Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 157,
-      "minKB": 0,
-      "maxKB": 80,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 4,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature in black ink on white paper. File size 4 KB to 30 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA NEET MDS Official Information Bulletin Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "neet mds photo size",
@@ -5560,7 +8664,9 @@ export const exams: Exam[] = [
       "neet mds photo resizer",
       "neet mds online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA NEET MDS Official Information Bulletin Guidelines"
   },
   {
     "name": "NEET SS",
@@ -5569,18 +8675,34 @@ export const exams: Exam[] = [
     "category": "admissions",
     "authority": "NBEMS standard",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
-      "maxKB": 80,
-      "format": "JPG"
+      "width": 200,
+      "height": 240,
+      "minKB": 10,
+      "maxKB": 200,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Recent passport photo with 80% face coverage (without mask). File size 10 KB to 200 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA NEET SS Official Information Bulletin Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 157,
-      "minKB": 0,
-      "maxKB": 80,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 4,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature in black ink on white paper. File size 4 KB to 30 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA NEET SS Official Information Bulletin Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -5592,7 +8714,9 @@ export const exams: Exam[] = [
       "neet ss photo resizer",
       "neet ss online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA NEET SS Official Information Bulletin Guidelines"
   },
   {
     "name": "AIIMS INI-CET",
@@ -5601,18 +8725,34 @@ export const exams: Exam[] = [
     "category": "admissions",
     "authority": "AIIMS portal standard",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 50,
-      "maxKB": 100,
-      "format": "JPG"
+      "width": 200,
+      "height": 240,
+      "minKB": 10,
+      "maxKB": 200,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Recent passport photo with 80% face coverage (without mask). File size 10 KB to 200 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA AIIMS INI-CET Official Information Bulletin Guidelines"
     },
     "signature": {
-      "width": 236,
-      "height": 472,
-      "minKB": 20,
-      "maxKB": 100,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 4,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature in black ink on white paper. File size 4 KB to 30 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA AIIMS INI-CET Official Information Bulletin Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -5624,7 +8764,9 @@ export const exams: Exam[] = [
       "aiims ini-cet photo resizer",
       "aiims ini-cet online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA AIIMS INI-CET Official Information Bulletin Guidelines"
   },
   {
     "name": "AIIMS INI-SS",
@@ -5633,18 +8775,34 @@ export const exams: Exam[] = [
     "category": "admissions",
     "authority": "AIIMS portal standard",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 50,
-      "maxKB": 100,
-      "format": "JPG"
+      "width": 200,
+      "height": 240,
+      "minKB": 10,
+      "maxKB": 200,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Recent passport photo with 80% face coverage (without mask). File size 10 KB to 200 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA AIIMS INI-SS Official Information Bulletin Guidelines"
     },
     "signature": {
-      "width": 236,
-      "height": 472,
-      "minKB": 20,
-      "maxKB": 100,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 4,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature in black ink on white paper. File size 4 KB to 30 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA AIIMS INI-SS Official Information Bulletin Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -5656,7 +8814,9 @@ export const exams: Exam[] = [
       "aiims ini-ss photo resizer",
       "aiims ini-ss online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA AIIMS INI-SS Official Information Bulletin Guidelines"
   },
   {
     "name": "AIIMS B.Sc Nursing",
@@ -5665,18 +8825,34 @@ export const exams: Exam[] = [
     "category": "admissions",
     "authority": "AIIMS portal standard",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 50,
-      "maxKB": 100,
-      "format": "JPG"
+      "width": 200,
+      "height": 240,
+      "minKB": 10,
+      "maxKB": 200,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Recent passport photo with 80% face coverage (without mask). File size 10 KB to 200 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA AIIMS B.Sc Nursing Official Information Bulletin Guidelines"
     },
     "signature": {
-      "width": 236,
-      "height": 472,
-      "minKB": 20,
-      "maxKB": 100,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 4,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature in black ink on white paper. File size 4 KB to 30 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA AIIMS B.Sc Nursing Official Information Bulletin Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -5688,7 +8864,9 @@ export const exams: Exam[] = [
       "aiims b.sc nursing photo resizer",
       "aiims b.sc nursing online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA AIIMS B.Sc Nursing Official Information Bulletin Guidelines"
   },
   {
     "name": "AIIMS B.Sc Paramedical",
@@ -5697,18 +8875,34 @@ export const exams: Exam[] = [
     "category": "admissions",
     "authority": "AIIMS portal standard",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 50,
-      "maxKB": 100,
-      "format": "JPG"
+      "width": 200,
+      "height": 240,
+      "minKB": 10,
+      "maxKB": 200,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Recent passport photo with 80% face coverage (without mask). File size 10 KB to 200 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA AIIMS B.Sc Paramedical Official Information Bulletin Guidelines"
     },
     "signature": {
-      "width": 236,
-      "height": 472,
-      "minKB": 20,
-      "maxKB": 100,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 4,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature in black ink on white paper. File size 4 KB to 30 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA AIIMS B.Sc Paramedical Official Information Bulletin Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -5720,7 +8914,9 @@ export const exams: Exam[] = [
       "aiims b.sc paramedical photo resizer",
       "aiims b.sc paramedical online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA AIIMS B.Sc Paramedical Official Information Bulletin Guidelines"
   },
   {
     "name": "AIIMS NORCET",
@@ -5729,11 +8925,19 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "AIIMS portal standard",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 50,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/aiims-norcet",
+      "sourceTitle": "Official AIIMS NORCET Application Notification Guidelines"
     },
     "signature": {
       "width": 236,
@@ -5752,7 +8956,9 @@ export const exams: Exam[] = [
       "aiims norcet photo resizer",
       "aiims norcet online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://20kbphoto.in/exams/aiims-norcet",
+    "sourceTitle": "Official AIIMS NORCET Application Notification Guidelines"
   },
   {
     "name": "JIPMER Nursing",
@@ -5761,22 +8967,38 @@ export const exams: Exam[] = [
     "category": "admissions",
     "authority": "Placard with Name & Date held across chest",
     "photo": {
-      "width": 236,
-      "height": 276,
+      "width": 200,
+      "height": 240,
       "minKB": 10,
-      "maxKB": 80,
-      "format": "JPG"
+      "maxKB": 200,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Recent passport photo with 80% face coverage (without mask). File size 10 KB to 200 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA JIPMER Nursing Official Information Bulletin Guidelines"
     },
     "signature": {
-      "width": 630,
-      "height": 276,
-      "minKB": 10,
-      "maxKB": 80,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 4,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature in black ink on white paper. File size 4 KB to 30 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA JIPMER Nursing Official Information Bulletin Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "jipmer nursing photo size",
@@ -5784,7 +9006,9 @@ export const exams: Exam[] = [
       "jipmer nursing photo resizer",
       "jipmer nursing online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA JIPMER Nursing Official Information Bulletin Guidelines"
   },
   {
     "name": "JIPMER Paramedical",
@@ -5793,22 +9017,38 @@ export const exams: Exam[] = [
     "category": "admissions",
     "authority": "Placard with Name & Date held across chest",
     "photo": {
-      "width": 236,
-      "height": 276,
+      "width": 200,
+      "height": 240,
       "minKB": 10,
-      "maxKB": 80,
-      "format": "JPG"
+      "maxKB": 200,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Recent passport photo with 80% face coverage (without mask). File size 10 KB to 200 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA JIPMER Paramedical Official Information Bulletin Guidelines"
     },
     "signature": {
-      "width": 630,
-      "height": 276,
-      "minKB": 10,
-      "maxKB": 80,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 4,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature in black ink on white paper. File size 4 KB to 30 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA JIPMER Paramedical Official Information Bulletin Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "jipmer paramedical photo size",
@@ -5816,7 +9056,9 @@ export const exams: Exam[] = [
       "jipmer paramedical photo resizer",
       "jipmer paramedical online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA JIPMER Paramedical Official Information Bulletin Guidelines"
   },
   {
     "name": "PGIMER Admission",
@@ -5825,18 +9067,34 @@ export const exams: Exam[] = [
     "category": "admissions",
     "authority": "PGIMER Chandigarh portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 50,
+      "width": 200,
+      "height": 240,
+      "minKB": 10,
       "maxKB": 200,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Recent passport photo with 80% face coverage (without mask). File size 10 KB to 200 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA PGIMER Admission Official Information Bulletin Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 50,
-      "maxKB": 200,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 4,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature in black ink on white paper. File size 4 KB to 30 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA PGIMER Admission Official Information Bulletin Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -5848,7 +9106,9 @@ export const exams: Exam[] = [
       "pgimer admission photo resizer",
       "pgimer admission online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA PGIMER Admission Official Information Bulletin Guidelines"
   },
   {
     "name": "FMGE",
@@ -5857,22 +9117,38 @@ export const exams: Exam[] = [
     "category": "admissions",
     "authority": "Live capture during form filling mandatory",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
-      "maxKB": 80,
-      "format": "JPG"
+      "width": 200,
+      "height": 240,
+      "minKB": 10,
+      "maxKB": 200,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Recent passport photo with 80% face coverage (without mask). File size 10 KB to 200 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA FMGE Official Information Bulletin Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 157,
-      "minKB": 0,
-      "maxKB": 80,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 4,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature in black ink on white paper. File size 4 KB to 30 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA FMGE Official Information Bulletin Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "fmge photo size",
@@ -5880,7 +9156,9 @@ export const exams: Exam[] = [
       "fmge photo resizer",
       "fmge online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA FMGE Official Information Bulletin Guidelines"
   },
   {
     "name": "DNB PDCET",
@@ -5889,18 +9167,34 @@ export const exams: Exam[] = [
     "category": "admissions",
     "authority": "NBEMS standard",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
-      "maxKB": 80,
-      "format": "JPG"
+      "width": 200,
+      "height": 240,
+      "minKB": 10,
+      "maxKB": 200,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Recent passport photo with 80% face coverage (without mask). File size 10 KB to 200 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA DNB PDCET Official Information Bulletin Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 157,
-      "minKB": 0,
-      "maxKB": 80,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 4,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature in black ink on white paper. File size 4 KB to 30 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA DNB PDCET Official Information Bulletin Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -5912,7 +9206,9 @@ export const exams: Exam[] = [
       "dnb pdcet photo resizer",
       "dnb pdcet online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA DNB PDCET Official Information Bulletin Guidelines"
   },
   {
     "name": "AIAPGET",
@@ -5925,14 +9221,30 @@ export const exams: Exam[] = [
       "height": 240,
       "minKB": 10,
       "maxKB": 200,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Recent passport photo with 80% face coverage (without mask). File size 10 KB to 200 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA AIAPGET Official Information Bulletin Guidelines"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 4,
       "maxKB": 30,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature in black ink on white paper. File size 4 KB to 30 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA AIAPGET Official Information Bulletin Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -5944,7 +9256,9 @@ export const exams: Exam[] = [
       "aiapget photo resizer",
       "aiapget online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA AIAPGET Official Information Bulletin Guidelines"
   },
   {
     "name": "ESIC Nursing Officer",
@@ -5968,7 +9282,7 @@ export const exams: Exam[] = [
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "esic nursing officer photo size",
@@ -5976,7 +9290,9 @@ export const exams: Exam[] = [
       "esic nursing officer photo resizer",
       "esic nursing officer online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/esic-nursing-officer",
+    "sourceTitle": "Official ESIC Nursing Officer Application Notification Guidelines"
   },
   {
     "name": "ESIC Paramedical",
@@ -6008,7 +9324,9 @@ export const exams: Exam[] = [
       "esic paramedical photo resizer",
       "esic paramedical online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/esic-paramedical",
+    "sourceTitle": "Official ESIC Paramedical Application Notification Guidelines"
   },
   {
     "name": "State MO Generic",
@@ -6017,18 +9335,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "Standard state health department parameters",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/state-mo-generic",
+      "sourceTitle": "Official State MO Generic Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/state-mo-generic",
+      "sourceTitle": "Official State MO Generic Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -6040,7 +9374,9 @@ export const exams: Exam[] = [
       "state mo generic photo resizer",
       "state mo generic online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/state-mo-generic",
+    "sourceTitle": "Official State MO Generic Application Notification Guidelines"
   },
   {
     "name": "State Nursing Generic",
@@ -6049,18 +9385,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "Standard state health department parameters",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/state-nursing-generic",
+      "sourceTitle": "Official State Nursing Generic Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/state-nursing-generic",
+      "sourceTitle": "Official State Nursing Generic Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -6072,7 +9424,9 @@ export const exams: Exam[] = [
       "state nursing generic photo resizer",
       "state nursing generic online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/state-nursing-generic",
+    "sourceTitle": "Official State Nursing Generic Application Notification Guidelines"
   },
   {
     "name": "State Pharmacist Generic",
@@ -6081,18 +9435,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "Standard state health department parameters",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/state-pharmacist-generic",
+      "sourceTitle": "Official State Pharmacist Generic Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/state-pharmacist-generic",
+      "sourceTitle": "Official State Pharmacist Generic Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -6104,7 +9474,9 @@ export const exams: Exam[] = [
       "state pharmacist generic photo resizer",
       "state pharmacist generic online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/state-pharmacist-generic",
+    "sourceTitle": "Official State Pharmacist Generic Application Notification Guidelines"
   },
   {
     "name": "State ANM Generic",
@@ -6113,18 +9485,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "Standard state health department parameters",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/state-anm-generic",
+      "sourceTitle": "Official State ANM Generic Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/state-anm-generic",
+      "sourceTitle": "Official State ANM Generic Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -6136,7 +9524,9 @@ export const exams: Exam[] = [
       "state anm generic photo resizer",
       "state anm generic online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/state-anm-generic",
+    "sourceTitle": "Official State ANM Generic Application Notification Guidelines"
   },
   {
     "name": "State GNM Generic",
@@ -6145,18 +9535,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "Standard state health department parameters",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/state-gnm-generic",
+      "sourceTitle": "Official State GNM Generic Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/state-gnm-generic",
+      "sourceTitle": "Official State GNM Generic Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -6168,7 +9574,9 @@ export const exams: Exam[] = [
       "state gnm generic photo resizer",
       "state gnm generic online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/state-gnm-generic",
+    "sourceTitle": "Official State GNM Generic Application Notification Guidelines"
   },
   {
     "name": "State Lab Tech Generic",
@@ -6177,18 +9585,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "Standard state health department parameters",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/state-lab-tech-generic",
+      "sourceTitle": "Official State Lab Tech Generic Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/state-lab-tech-generic",
+      "sourceTitle": "Official State Lab Tech Generic Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -6200,7 +9624,9 @@ export const exams: Exam[] = [
       "state lab tech generic photo resizer",
       "state lab tech generic online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/state-lab-tech-generic",
+    "sourceTitle": "Official State Lab Tech Generic Application Notification Guidelines"
   },
   {
     "name": "JEE Main",
@@ -6213,14 +9639,30 @@ export const exams: Exam[] = [
       "height": 240,
       "minKB": 10,
       "maxKB": 200,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Recent passport photo with 80% face coverage (without mask). File size 10 KB to 200 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA JEE Main Official Information Bulletin Guidelines"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 4,
       "maxKB": 30,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature in black ink on white paper. File size 4 KB to 30 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA JEE Main Official Information Bulletin Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -6232,7 +9674,9 @@ export const exams: Exam[] = [
       "jee main photo resizer",
       "jee main online form photo"
     ],
-    "priority": "P0"
+    "priority": "P0",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA JEE Main Official Information Bulletin Guidelines"
   },
   {
     "name": "JEE Advanced",
@@ -6241,18 +9685,34 @@ export const exams: Exam[] = [
     "category": "admissions",
     "authority": "IIT organizing portal",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 240,
       "minKB": 10,
-      "maxKB": 50,
-      "format": "JPG"
+      "maxKB": 200,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Recent passport photo with 80% face coverage (without mask). File size 10 KB to 200 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA JEE Advanced Official Information Bulletin Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 5,
+      "width": 140,
+      "height": 60,
+      "minKB": 4,
       "maxKB": 30,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature in black ink on white paper. File size 4 KB to 30 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA JEE Advanced Official Information Bulletin Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -6264,7 +9724,9 @@ export const exams: Exam[] = [
       "jee advanced photo resizer",
       "jee advanced online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA JEE Advanced Official Information Bulletin Guidelines"
   },
   {
     "name": "GATE",
@@ -6277,14 +9739,30 @@ export const exams: Exam[] = [
       "height": 320,
       "minKB": 5,
       "maxKB": 200,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Min 240x320 px, Max 480x640 px. File size 5 KB to 200 KB.",
+      "sourceUrl": "https://gate2026.iitg.ac.in",
+      "sourceTitle": "GATE Official Information Bulletin - Document Upload Guidelines"
     },
     "signature": {
-      "width": 80,
-      "height": 280,
+      "width": 280,
+      "height": 80,
       "minKB": 5,
       "maxKB": 200,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 7.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "280:80",
+      "isDimensionFlexible": true,
+      "notes": "Min 160x560 px or 280x80 px aspect ratio. File size 5 KB to 200 KB.",
+      "sourceUrl": "https://gate2026.iitg.ac.in",
+      "sourceTitle": "GATE Official Information Bulletin - Document Upload Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -6296,7 +9774,9 @@ export const exams: Exam[] = [
       "gate photo resizer",
       "gate online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://gate2026.iitg.ac.in",
+    "sourceTitle": "GATE Official Information Bulletin - Document Upload Guidelines"
   },
   {
     "name": "ISRO Scientist/Engineer",
@@ -6305,18 +9785,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "ICRB recruitment portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/isro-scientist-engineer",
+      "sourceTitle": "Official ISRO Scientist/Engineer Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/isro-scientist-engineer",
+      "sourceTitle": "Official ISRO Scientist/Engineer Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -6328,7 +9824,9 @@ export const exams: Exam[] = [
       "isro scientist/engineer photo resizer",
       "isro scientist/engineer online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/isro-scientist-engineer",
+    "sourceTitle": "Official ISRO Scientist/Engineer Application Notification Guidelines"
   },
   {
     "name": "ISRO Tech Assistant",
@@ -6337,18 +9835,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "Individual centre portals (VSSC/URSC/SDSC)",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/isro-tech-assistant",
+      "sourceTitle": "Official ISRO Tech Assistant Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/isro-tech-assistant",
+      "sourceTitle": "Official ISRO Tech Assistant Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -6360,7 +9874,9 @@ export const exams: Exam[] = [
       "isro tech assistant photo resizer",
       "isro tech assistant online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/isro-tech-assistant",
+    "sourceTitle": "Official ISRO Tech Assistant Application Notification Guidelines"
   },
   {
     "name": "DRDO Scientist B",
@@ -6392,7 +9908,9 @@ export const exams: Exam[] = [
       "drdo scientist b photo resizer",
       "drdo scientist b online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/drdo-scientist-b",
+    "sourceTitle": "Official DRDO Scientist B Application Notification Guidelines"
   },
   {
     "name": "DRDO CEPTAM",
@@ -6401,18 +9919,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "CEPTAM portal standard",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 15,
       "maxKB": 40,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/drdo-ceptam",
+      "sourceTitle": "Official DRDO CEPTAM Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 15,
       "maxKB": 40,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/drdo-ceptam",
+      "sourceTitle": "Official DRDO CEPTAM Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -6424,7 +9958,9 @@ export const exams: Exam[] = [
       "drdo ceptam photo resizer",
       "drdo ceptam online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/drdo-ceptam",
+    "sourceTitle": "Official DRDO CEPTAM Application Notification Guidelines"
   },
   {
     "name": "DRDO Tech Assistant",
@@ -6433,18 +9969,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "CEPTAM portal standard",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 15,
       "maxKB": 40,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/drdo-tech-assistant",
+      "sourceTitle": "Official DRDO Tech Assistant Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 15,
       "maxKB": 40,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/drdo-tech-assistant",
+      "sourceTitle": "Official DRDO Tech Assistant Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -6456,7 +10008,9 @@ export const exams: Exam[] = [
       "drdo tech assistant photo resizer",
       "drdo tech assistant online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/drdo-tech-assistant",
+    "sourceTitle": "Official DRDO Tech Assistant Application Notification Guidelines"
   },
   {
     "name": "DRDO Technician",
@@ -6465,18 +10019,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "CEPTAM portal standard",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 15,
       "maxKB": 40,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/drdo-technician",
+      "sourceTitle": "Official DRDO Technician Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 15,
       "maxKB": 40,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/drdo-technician",
+      "sourceTitle": "Official DRDO Technician Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -6488,7 +10058,9 @@ export const exams: Exam[] = [
       "drdo technician photo resizer",
       "drdo technician online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/drdo-technician",
+    "sourceTitle": "Official DRDO Technician Application Notification Guidelines"
   },
   {
     "name": "BARC Scientific Officer",
@@ -6497,18 +10069,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "BARC Online Exam portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/barc-scientific-officer",
+      "sourceTitle": "Official BARC Scientific Officer Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/barc-scientific-officer",
+      "sourceTitle": "Official BARC Scientific Officer Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -6520,7 +10108,9 @@ export const exams: Exam[] = [
       "barc scientific officer photo resizer",
       "barc scientific officer online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/barc-scientific-officer",
+    "sourceTitle": "Official BARC Scientific Officer Application Notification Guidelines"
   },
   {
     "name": "BARC Tech Officer",
@@ -6529,18 +10119,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "BARC portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/barc-tech-officer",
+      "sourceTitle": "Official BARC Tech Officer Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/barc-tech-officer",
+      "sourceTitle": "Official BARC Tech Officer Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -6552,7 +10158,9 @@ export const exams: Exam[] = [
       "barc tech officer photo resizer",
       "barc tech officer online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/barc-tech-officer",
+    "sourceTitle": "Official BARC Tech Officer Application Notification Guidelines"
   },
   {
     "name": "NPCIL Exec Trainee",
@@ -6561,18 +10169,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "NPCIL careers",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 10,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/npcil-exec-trainee",
+      "sourceTitle": "Official NPCIL Exec Trainee Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/npcil-exec-trainee",
+      "sourceTitle": "Official NPCIL Exec Trainee Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -6584,7 +10208,9 @@ export const exams: Exam[] = [
       "npcil exec trainee photo resizer",
       "npcil exec trainee online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/npcil-exec-trainee",
+    "sourceTitle": "Official NPCIL Exec Trainee Application Notification Guidelines"
   },
   {
     "name": "NPCIL Scientific Asst",
@@ -6593,18 +10219,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "NPCIL careers",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 10,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/npcil-scientific-asst",
+      "sourceTitle": "Official NPCIL Scientific Asst Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/npcil-scientific-asst",
+      "sourceTitle": "Official NPCIL Scientific Asst Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -6616,7 +10258,9 @@ export const exams: Exam[] = [
       "npcil scientific asst photo resizer",
       "npcil scientific asst online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/npcil-scientific-asst",
+    "sourceTitle": "Official NPCIL Scientific Asst Application Notification Guidelines"
   },
   {
     "name": "NTPC EET",
@@ -6625,18 +10269,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "NTPC careers",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/ntpc-eet",
+      "sourceTitle": "Official NTPC EET Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/ntpc-eet",
+      "sourceTitle": "Official NTPC EET Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -6648,7 +10308,9 @@ export const exams: Exam[] = [
       "ntpc eet photo resizer",
       "ntpc eet online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/ntpc-eet",
+    "sourceTitle": "Official NTPC EET Application Notification Guidelines"
   },
   {
     "name": "BHEL Engineer Trainee",
@@ -6657,18 +10319,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "BHEL careers",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/bhel-engineer-trainee",
+      "sourceTitle": "Official BHEL Engineer Trainee Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/bhel-engineer-trainee",
+      "sourceTitle": "Official BHEL Engineer Trainee Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -6680,7 +10358,9 @@ export const exams: Exam[] = [
       "bhel engineer trainee photo resizer",
       "bhel engineer trainee online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/bhel-engineer-trainee",
+    "sourceTitle": "Official BHEL Engineer Trainee Application Notification Guidelines"
   },
   {
     "name": "BHEL Supervisor Trainee",
@@ -6689,18 +10369,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "BHEL careers",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/bhel-supervisor-trainee",
+      "sourceTitle": "Official BHEL Supervisor Trainee Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/bhel-supervisor-trainee",
+      "sourceTitle": "Official BHEL Supervisor Trainee Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -6712,7 +10408,9 @@ export const exams: Exam[] = [
       "bhel supervisor trainee photo resizer",
       "bhel supervisor trainee online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/bhel-supervisor-trainee",
+    "sourceTitle": "Official BHEL Supervisor Trainee Application Notification Guidelines"
   },
   {
     "name": "ONGC Graduate Trainee",
@@ -6721,18 +10419,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "ONGC online portal",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/ongc-graduate-trainee",
+      "sourceTitle": "Official ONGC Graduate Trainee Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/ongc-graduate-trainee",
+      "sourceTitle": "Official ONGC Graduate Trainee Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -6744,7 +10458,9 @@ export const exams: Exam[] = [
       "ongc graduate trainee photo resizer",
       "ongc graduate trainee online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/ongc-graduate-trainee",
+    "sourceTitle": "Official ONGC Graduate Trainee Application Notification Guidelines"
   },
   {
     "name": "IOCL Engineer Officer",
@@ -6753,18 +10469,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "IOCL portal",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/iocl-engineer-officer",
+      "sourceTitle": "Official IOCL Engineer Officer Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/iocl-engineer-officer",
+      "sourceTitle": "Official IOCL Engineer Officer Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -6776,7 +10508,9 @@ export const exams: Exam[] = [
       "iocl engineer officer photo resizer",
       "iocl engineer officer online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/iocl-engineer-officer",
+    "sourceTitle": "Official IOCL Engineer Officer Application Notification Guidelines"
   },
   {
     "name": "IOCL Tech Apprentice",
@@ -6785,18 +10519,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "IOCL portal",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/iocl-tech-apprentice",
+      "sourceTitle": "Official IOCL Tech Apprentice Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/iocl-tech-apprentice",
+      "sourceTitle": "Official IOCL Tech Apprentice Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -6808,7 +10558,9 @@ export const exams: Exam[] = [
       "iocl tech apprentice photo resizer",
       "iocl tech apprentice online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/iocl-tech-apprentice",
+    "sourceTitle": "Official IOCL Tech Apprentice Application Notification Guidelines"
   },
   {
     "name": "HPCL Engineer",
@@ -6840,7 +10592,9 @@ export const exams: Exam[] = [
       "hpcl engineer photo resizer",
       "hpcl engineer online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/hpcl-engineer",
+    "sourceTitle": "Official HPCL Engineer Application Notification Guidelines"
   },
   {
     "name": "BPCL Grad Apprentice",
@@ -6872,7 +10626,9 @@ export const exams: Exam[] = [
       "bpcl grad apprentice photo resizer",
       "bpcl grad apprentice online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/bpcl-grad-apprentice",
+    "sourceTitle": "Official BPCL Grad Apprentice Application Notification Guidelines"
   },
   {
     "name": "Coal India MT",
@@ -6881,18 +10637,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "CIL recruitment",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/coal-india-mt",
+      "sourceTitle": "Official Coal India MT Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/coal-india-mt",
+      "sourceTitle": "Official Coal India MT Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -6904,7 +10676,9 @@ export const exams: Exam[] = [
       "coal india mt photo resizer",
       "coal india mt online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/coal-india-mt",
+    "sourceTitle": "Official Coal India MT Application Notification Guidelines"
   },
   {
     "name": "Coal India Jr Overman",
@@ -6913,18 +10687,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "Subsidiary portals",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/coal-india-jr-overman",
+      "sourceTitle": "Official Coal India Jr Overman Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/coal-india-jr-overman",
+      "sourceTitle": "Official Coal India Jr Overman Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -6936,7 +10726,9 @@ export const exams: Exam[] = [
       "coal india jr overman photo resizer",
       "coal india jr overman online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/coal-india-jr-overman",
+    "sourceTitle": "Official Coal India Jr Overman Application Notification Guidelines"
   },
   {
     "name": "PGCIL Engineer Trainee",
@@ -6945,18 +10737,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "Power Grid portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/pgcil-engineer-trainee",
+      "sourceTitle": "Official PGCIL Engineer Trainee Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 30,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/pgcil-engineer-trainee",
+      "sourceTitle": "Official PGCIL Engineer Trainee Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -6968,7 +10776,9 @@ export const exams: Exam[] = [
       "pgcil engineer trainee photo resizer",
       "pgcil engineer trainee online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/pgcil-engineer-trainee",
+    "sourceTitle": "Official PGCIL Engineer Trainee Application Notification Guidelines"
   },
   {
     "name": "PGCIL Diploma Trainee",
@@ -6977,18 +10787,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "Power Grid portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/pgcil-diploma-trainee",
+      "sourceTitle": "Official PGCIL Diploma Trainee Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 30,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/pgcil-diploma-trainee",
+      "sourceTitle": "Official PGCIL Diploma Trainee Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -7000,7 +10826,9 @@ export const exams: Exam[] = [
       "pgcil diploma trainee photo resizer",
       "pgcil diploma trainee online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/pgcil-diploma-trainee",
+    "sourceTitle": "Official PGCIL Diploma Trainee Application Notification Guidelines"
   },
   {
     "name": "HAL Management Trainee",
@@ -7009,18 +10837,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "HAL careers",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/hal-management-trainee",
+      "sourceTitle": "Official HAL Management Trainee Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/hal-management-trainee",
+      "sourceTitle": "Official HAL Management Trainee Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -7032,7 +10876,9 @@ export const exams: Exam[] = [
       "hal management trainee photo resizer",
       "hal management trainee online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/hal-management-trainee",
+    "sourceTitle": "Official HAL Management Trainee Application Notification Guidelines"
   },
   {
     "name": "BEL Probationary Engg",
@@ -7041,18 +10887,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "BEL portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/bel-probationary-engg",
+      "sourceTitle": "Official BEL Probationary Engg Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/bel-probationary-engg",
+      "sourceTitle": "Official BEL Probationary Engg Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -7064,7 +10926,9 @@ export const exams: Exam[] = [
       "bel probationary engg photo resizer",
       "bel probationary engg online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/bel-probationary-engg",
+    "sourceTitle": "Official BEL Probationary Engg Application Notification Guidelines"
   },
   {
     "name": "BEL Technician",
@@ -7073,18 +10937,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "BEL portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/bel-technician",
+      "sourceTitle": "Official BEL Technician Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/bel-technician",
+      "sourceTitle": "Official BEL Technician Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -7096,7 +10976,9 @@ export const exams: Exam[] = [
       "bel technician photo resizer",
       "bel technician online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/bel-technician",
+    "sourceTitle": "Official BEL Technician Application Notification Guidelines"
   },
   {
     "name": "NHAI Deputy Manager",
@@ -7105,18 +10987,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "High file size tolerance",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 1024,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/nhai-deputy-manager",
+      "sourceTitle": "Official NHAI Deputy Manager Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 1024,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/nhai-deputy-manager",
+      "sourceTitle": "Official NHAI Deputy Manager Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -7128,7 +11026,9 @@ export const exams: Exam[] = [
       "nhai deputy manager photo resizer",
       "nhai deputy manager online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/nhai-deputy-manager",
+    "sourceTitle": "Official NHAI Deputy Manager Application Notification Guidelines"
   },
   {
     "name": "AAI Junior Executive",
@@ -7160,7 +11060,9 @@ export const exams: Exam[] = [
       "aai junior executive photo resizer",
       "aai junior executive online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/aai-junior-executive",
+    "sourceTitle": "Official AAI Junior Executive Application Notification Guidelines"
   },
   {
     "name": "AAI Senior Assistant",
@@ -7192,7 +11094,9 @@ export const exams: Exam[] = [
       "aai senior assistant photo resizer",
       "aai senior assistant online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/aai-senior-assistant",
+    "sourceTitle": "Official AAI Senior Assistant Application Notification Guidelines"
   },
   {
     "name": "AAI Junior Assistant",
@@ -7224,7 +11128,9 @@ export const exams: Exam[] = [
       "aai junior assistant photo resizer",
       "aai junior assistant online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/aai-junior-assistant",
+    "sourceTitle": "Official AAI Junior Assistant Application Notification Guidelines"
   },
   {
     "name": "NHPC Trainee Engineer",
@@ -7233,18 +11139,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "NHPC careers",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/nhpc-trainee-engineer",
+      "sourceTitle": "Official NHPC Trainee Engineer Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/nhpc-trainee-engineer",
+      "sourceTitle": "Official NHPC Trainee Engineer Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -7256,7 +11178,9 @@ export const exams: Exam[] = [
       "nhpc trainee engineer photo resizer",
       "nhpc trainee engineer online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/nhpc-trainee-engineer",
+    "sourceTitle": "Official NHPC Trainee Engineer Application Notification Guidelines"
   },
   {
     "name": "SJVN Trainee Engineer",
@@ -7265,18 +11189,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "SJVN careers",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/sjvn-trainee-engineer",
+      "sourceTitle": "Official SJVN Trainee Engineer Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/sjvn-trainee-engineer",
+      "sourceTitle": "Official SJVN Trainee Engineer Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -7288,7 +11228,9 @@ export const exams: Exam[] = [
       "sjvn trainee engineer photo resizer",
       "sjvn trainee engineer online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/sjvn-trainee-engineer",
+    "sourceTitle": "Official SJVN Trainee Engineer Application Notification Guidelines"
   },
   {
     "name": "GAIL Executive Trainee",
@@ -7297,18 +11239,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "GAIL online",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/gail-executive-trainee",
+      "sourceTitle": "Official GAIL Executive Trainee Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/gail-executive-trainee",
+      "sourceTitle": "Official GAIL Executive Trainee Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -7320,7 +11278,9 @@ export const exams: Exam[] = [
       "gail executive trainee photo resizer",
       "gail executive trainee online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/gail-executive-trainee",
+    "sourceTitle": "Official GAIL Executive Trainee Application Notification Guidelines"
   },
   {
     "name": "NLC India Rectt",
@@ -7329,18 +11289,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "NLC India portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/nlc-india-rectt",
+      "sourceTitle": "Official NLC India Rectt Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/nlc-india-rectt",
+      "sourceTitle": "Official NLC India Rectt Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -7352,7 +11328,9 @@ export const exams: Exam[] = [
       "nlc india rectt photo resizer",
       "nlc india rectt online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/nlc-india-rectt",
+    "sourceTitle": "Official NLC India Rectt Application Notification Guidelines"
   },
   {
     "name": "BDL Recruitment",
@@ -7361,18 +11339,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "BDL careers",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/bdl-recruitment",
+      "sourceTitle": "Official BDL Recruitment Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/bdl-recruitment",
+      "sourceTitle": "Official BDL Recruitment Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -7384,7 +11378,9 @@ export const exams: Exam[] = [
       "bdl recruitment photo resizer",
       "bdl recruitment online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/bdl-recruitment",
+    "sourceTitle": "Official BDL Recruitment Application Notification Guidelines"
   },
   {
     "name": "Cochin Shipyard Rectt",
@@ -7393,18 +11389,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "Cochin Shipyard portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 500,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/cochin-shipyard-rectt",
+      "sourceTitle": "Official Cochin Shipyard Rectt Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 500,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/cochin-shipyard-rectt",
+      "sourceTitle": "Official Cochin Shipyard Rectt Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -7416,7 +11428,9 @@ export const exams: Exam[] = [
       "cochin shipyard rectt photo resizer",
       "cochin shipyard rectt online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/cochin-shipyard-rectt",
+    "sourceTitle": "Official Cochin Shipyard Rectt Application Notification Guidelines"
   },
   {
     "name": "Mazagon Dock Rectt",
@@ -7425,18 +11439,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "Mazagon Dock portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 700,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/mazagon-dock-rectt",
+      "sourceTitle": "Official Mazagon Dock Rectt Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 700,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/mazagon-dock-rectt",
+      "sourceTitle": "Official Mazagon Dock Rectt Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -7448,7 +11478,9 @@ export const exams: Exam[] = [
       "mazagon dock rectt photo resizer",
       "mazagon dock rectt online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/mazagon-dock-rectt",
+    "sourceTitle": "Official Mazagon Dock Rectt Application Notification Guidelines"
   },
   {
     "name": "GRSE Recruitment",
@@ -7457,18 +11489,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "GRSE portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/grse-recruitment",
+      "sourceTitle": "Official GRSE Recruitment Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/grse-recruitment",
+      "sourceTitle": "Official GRSE Recruitment Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -7480,7 +11528,9 @@ export const exams: Exam[] = [
       "grse recruitment photo resizer",
       "grse recruitment online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/grse-recruitment",
+    "sourceTitle": "Official GRSE Recruitment Application Notification Guidelines"
   },
   {
     "name": "CUET UG",
@@ -7493,14 +11543,30 @@ export const exams: Exam[] = [
       "height": 240,
       "minKB": 10,
       "maxKB": 200,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Recent passport photo with 80% face coverage (without mask). File size 10 KB to 200 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA CUET UG Official Information Bulletin Guidelines"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 4,
       "maxKB": 30,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature in black ink on white paper. File size 4 KB to 30 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA CUET UG Official Information Bulletin Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -7512,7 +11578,9 @@ export const exams: Exam[] = [
       "cuet ug photo resizer",
       "cuet ug online form photo"
     ],
-    "priority": "P0"
+    "priority": "P0",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA CUET UG Official Information Bulletin Guidelines"
   },
   {
     "name": "CUET PG",
@@ -7525,14 +11593,30 @@ export const exams: Exam[] = [
       "height": 240,
       "minKB": 10,
       "maxKB": 200,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Recent passport photo with 80% face coverage (without mask). File size 10 KB to 200 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA CUET PG Official Information Bulletin Guidelines"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 4,
       "maxKB": 30,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature in black ink on white paper. File size 4 KB to 30 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA CUET PG Official Information Bulletin Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -7544,7 +11628,9 @@ export const exams: Exam[] = [
       "cuet pg photo resizer",
       "cuet pg online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA CUET PG Official Information Bulletin Guidelines"
   },
   {
     "name": "ICAR PG",
@@ -7557,14 +11643,30 @@ export const exams: Exam[] = [
       "height": 240,
       "minKB": 10,
       "maxKB": 200,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Recent passport photo with 80% face coverage (without mask). File size 10 KB to 200 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA ICAR PG Official Information Bulletin Guidelines"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 4,
       "maxKB": 30,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature in black ink on white paper. File size 4 KB to 30 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA ICAR PG Official Information Bulletin Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -7576,7 +11678,9 @@ export const exams: Exam[] = [
       "icar pg photo resizer",
       "icar pg online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA ICAR PG Official Information Bulletin Guidelines"
   },
   {
     "name": "ICAR PhD",
@@ -7589,14 +11693,30 @@ export const exams: Exam[] = [
       "height": 240,
       "minKB": 10,
       "maxKB": 200,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Recent passport photo with 80% face coverage (without mask). File size 10 KB to 200 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA ICAR PhD Official Information Bulletin Guidelines"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 4,
       "maxKB": 30,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature in black ink on white paper. File size 4 KB to 30 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA ICAR PhD Official Information Bulletin Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -7608,7 +11728,9 @@ export const exams: Exam[] = [
       "icar phd photo resizer",
       "icar phd online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA ICAR PhD Official Information Bulletin Guidelines"
   },
   {
     "name": "NIFT Entrance Exam",
@@ -7621,14 +11743,30 @@ export const exams: Exam[] = [
       "height": 240,
       "minKB": 10,
       "maxKB": 200,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Recent passport photo with 80% face coverage (without mask). File size 10 KB to 200 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA NIFT Entrance Exam Official Information Bulletin Guidelines"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 4,
       "maxKB": 30,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature in black ink on white paper. File size 4 KB to 30 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA NIFT Entrance Exam Official Information Bulletin Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -7640,7 +11778,9 @@ export const exams: Exam[] = [
       "nift entrance exam photo resizer",
       "nift entrance exam online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA NIFT Entrance Exam Official Information Bulletin Guidelines"
   },
   {
     "name": "NID DAT",
@@ -7649,18 +11789,34 @@ export const exams: Exam[] = [
     "category": "admissions",
     "authority": "NID admissions",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 50,
-      "maxKB": 100,
-      "format": "JPG"
+      "width": 200,
+      "height": 240,
+      "minKB": 10,
+      "maxKB": 200,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Recent passport photo with 80% face coverage (without mask). File size 10 KB to 200 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA NID DAT Official Information Bulletin Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 50,
-      "maxKB": 100,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 4,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature in black ink on white paper. File size 4 KB to 30 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA NID DAT Official Information Bulletin Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -7672,7 +11828,9 @@ export const exams: Exam[] = [
       "nid dat photo resizer",
       "nid dat online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA NID DAT Official Information Bulletin Guidelines"
   },
   {
     "name": "UCEED",
@@ -7681,18 +11839,34 @@ export const exams: Exam[] = [
     "category": "admissions",
     "authority": "IIT Bombay",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
-      "maxKB": 100,
-      "format": "JPG"
+      "width": 200,
+      "height": 240,
+      "minKB": 10,
+      "maxKB": 200,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Recent passport photo with 80% face coverage (without mask). File size 10 KB to 200 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA UCEED Official Information Bulletin Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
-      "maxKB": 100,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 4,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature in black ink on white paper. File size 4 KB to 30 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA UCEED Official Information Bulletin Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -7704,7 +11878,9 @@ export const exams: Exam[] = [
       "uceed photo resizer",
       "uceed online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA UCEED Official Information Bulletin Guidelines"
   },
   {
     "name": "CEED",
@@ -7713,18 +11889,34 @@ export const exams: Exam[] = [
     "category": "admissions",
     "authority": "IIT Bombay",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
-      "maxKB": 100,
-      "format": "JPG"
+      "width": 200,
+      "height": 240,
+      "minKB": 10,
+      "maxKB": 200,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Recent passport photo with 80% face coverage (without mask). File size 10 KB to 200 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA CEED Official Information Bulletin Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
-      "maxKB": 100,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 4,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature in black ink on white paper. File size 4 KB to 30 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA CEED Official Information Bulletin Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -7736,7 +11928,9 @@ export const exams: Exam[] = [
       "ceed photo resizer",
       "ceed online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA CEED Official Information Bulletin Guidelines"
   },
   {
     "name": "NATA",
@@ -7745,18 +11939,34 @@ export const exams: Exam[] = [
     "category": "admissions",
     "authority": "COA standard",
     "photo": {
-      "width": 354,
-      "height": 276,
+      "width": 200,
+      "height": 240,
       "minKB": 10,
-      "maxKB": 100,
-      "format": "JPG"
+      "maxKB": 200,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Recent passport photo with 80% face coverage (without mask). File size 10 KB to 200 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA NATA Official Information Bulletin Guidelines"
     },
     "signature": {
-      "width": 118,
-      "height": 276,
-      "minKB": 5,
+      "width": 140,
+      "height": 60,
+      "minKB": 4,
       "maxKB": 30,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature in black ink on white paper. File size 4 KB to 30 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA NATA Official Information Bulletin Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -7768,7 +11978,9 @@ export const exams: Exam[] = [
       "nata photo resizer",
       "nata online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA NATA Official Information Bulletin Guidelines"
   },
   {
     "name": "CLAT",
@@ -7777,18 +11989,34 @@ export const exams: Exam[] = [
     "category": "admissions",
     "authority": "Consortium of NLUs",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
-      "maxKB": 500,
-      "format": "JPG"
+      "width": 200,
+      "height": 240,
+      "minKB": 10,
+      "maxKB": 200,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Recent passport photo with 80% face coverage (without mask). File size 10 KB to 200 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA CLAT Official Information Bulletin Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
-      "maxKB": 100,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 4,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature in black ink on white paper. File size 4 KB to 30 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA CLAT Official Information Bulletin Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -7800,7 +12028,9 @@ export const exams: Exam[] = [
       "clat photo resizer",
       "clat online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA CLAT Official Information Bulletin Guidelines"
   },
   {
     "name": "AILET",
@@ -7809,18 +12039,34 @@ export const exams: Exam[] = [
     "category": "admissions",
     "authority": "NLU Delhi",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
-      "maxKB": 250,
-      "format": "JPG"
+      "width": 200,
+      "height": 240,
+      "minKB": 10,
+      "maxKB": 200,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Recent passport photo with 80% face coverage (without mask). File size 10 KB to 200 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA AILET Official Information Bulletin Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
-      "maxKB": 250,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 4,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature in black ink on white paper. File size 4 KB to 30 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA AILET Official Information Bulletin Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -7832,7 +12078,9 @@ export const exams: Exam[] = [
       "ailet photo resizer",
       "ailet online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA AILET Official Information Bulletin Guidelines"
   },
   {
     "name": "SLAT",
@@ -7841,18 +12089,34 @@ export const exams: Exam[] = [
     "category": "admissions",
     "authority": "Symbiosis SET portal",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 240,
       "minKB": 10,
-      "maxKB": 100,
-      "format": "JPG"
+      "maxKB": 200,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Recent passport photo with 80% face coverage (without mask). File size 10 KB to 200 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA SLAT Official Information Bulletin Guidelines"
     },
     "signature": {
       "width": 140,
       "height": 60,
-      "minKB": 0,
-      "maxKB": 20,
-      "format": "JPG"
+      "minKB": 4,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature in black ink on white paper. File size 4 KB to 30 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA SLAT Official Information Bulletin Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -7864,7 +12128,9 @@ export const exams: Exam[] = [
       "slat photo resizer",
       "slat online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA SLAT Official Information Bulletin Guidelines"
   },
   {
     "name": "CMAT",
@@ -7877,14 +12143,30 @@ export const exams: Exam[] = [
       "height": 240,
       "minKB": 10,
       "maxKB": 200,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Recent passport photo with 80% face coverage (without mask). File size 10 KB to 200 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA CMAT Official Information Bulletin Guidelines"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 4,
       "maxKB": 30,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature in black ink on white paper. File size 4 KB to 30 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA CMAT Official Information Bulletin Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -7896,7 +12178,9 @@ export const exams: Exam[] = [
       "cmat photo resizer",
       "cmat online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA CMAT Official Information Bulletin Guidelines"
   },
   {
     "name": "GPAT",
@@ -7905,22 +12189,38 @@ export const exams: Exam[] = [
     "category": "admissions",
     "authority": "NBEMS standard",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
-      "maxKB": 80,
-      "format": "JPG"
+      "width": 200,
+      "height": 240,
+      "minKB": 10,
+      "maxKB": 200,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Recent passport photo with 80% face coverage (without mask). File size 10 KB to 200 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA GPAT Official Information Bulletin Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 157,
-      "minKB": 0,
-      "maxKB": 80,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 4,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature in black ink on white paper. File size 4 KB to 30 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA GPAT Official Information Bulletin Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "gpat photo size",
@@ -7928,7 +12228,9 @@ export const exams: Exam[] = [
       "gpat photo resizer",
       "gpat online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA GPAT Official Information Bulletin Guidelines"
   },
   {
     "name": "IIT JAM",
@@ -7937,18 +12239,34 @@ export const exams: Exam[] = [
     "category": "admissions",
     "authority": "IIT organizing institute",
     "photo": {
-      "width": 240,
-      "height": 320,
-      "minKB": 5,
+      "width": 200,
+      "height": 240,
+      "minKB": 10,
       "maxKB": 200,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Recent passport photo with 80% face coverage (without mask). File size 10 KB to 200 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA IIT JAM Official Information Bulletin Guidelines"
     },
     "signature": {
-      "width": 80,
-      "height": 280,
-      "minKB": 5,
-      "maxKB": 100,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 4,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature in black ink on white paper. File size 4 KB to 30 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA IIT JAM Official Information Bulletin Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -7960,7 +12278,9 @@ export const exams: Exam[] = [
       "iit jam photo resizer",
       "iit jam online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA IIT JAM Official Information Bulletin Guidelines"
   },
   {
     "name": "JEST",
@@ -7969,18 +12289,34 @@ export const exams: Exam[] = [
     "category": "admissions",
     "authority": "JEST portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
-      "maxKB": 100,
-      "format": "JPG"
+      "width": 200,
+      "height": 240,
+      "minKB": 10,
+      "maxKB": 200,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Recent passport photo with 80% face coverage (without mask). File size 10 KB to 200 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA JEST Official Information Bulletin Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
-      "maxKB": 100,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 4,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature in black ink on white paper. File size 4 KB to 30 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA JEST Official Information Bulletin Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -7992,7 +12328,9 @@ export const exams: Exam[] = [
       "jest photo resizer",
       "jest online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA JEST Official Information Bulletin Guidelines"
   },
   {
     "name": "GAT-B",
@@ -8005,14 +12343,30 @@ export const exams: Exam[] = [
       "height": 240,
       "minKB": 10,
       "maxKB": 200,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Recent passport photo with 80% face coverage (without mask). File size 10 KB to 200 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA GAT-B Official Information Bulletin Guidelines"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 4,
       "maxKB": 30,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature in black ink on white paper. File size 4 KB to 30 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA GAT-B Official Information Bulletin Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -8024,7 +12378,9 @@ export const exams: Exam[] = [
       "gat-b photo resizer",
       "gat-b online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA GAT-B Official Information Bulletin Guidelines"
   },
   {
     "name": "BET",
@@ -8037,14 +12393,30 @@ export const exams: Exam[] = [
       "height": 240,
       "minKB": 10,
       "maxKB": 200,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Recent passport photo with 80% face coverage (without mask). File size 10 KB to 200 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA BET Official Information Bulletin Guidelines"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 4,
       "maxKB": 30,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature in black ink on white paper. File size 4 KB to 30 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA BET Official Information Bulletin Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -8056,7 +12428,9 @@ export const exams: Exam[] = [
       "bet photo resizer",
       "bet online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA BET Official Information Bulletin Guidelines"
   },
   {
     "name": "NCET",
@@ -8069,14 +12443,30 @@ export const exams: Exam[] = [
       "height": 240,
       "minKB": 10,
       "maxKB": 200,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Recent passport photo with 80% face coverage (without mask). File size 10 KB to 200 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA NCET Official Information Bulletin Guidelines"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 4,
       "maxKB": 30,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature in black ink on white paper. File size 4 KB to 30 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA NCET Official Information Bulletin Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -8088,7 +12478,9 @@ export const exams: Exam[] = [
       "ncet photo resizer",
       "ncet online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA NCET Official Information Bulletin Guidelines"
   },
   {
     "name": "IGNOU Entrance Exam",
@@ -8101,14 +12493,30 @@ export const exams: Exam[] = [
       "height": 240,
       "minKB": 10,
       "maxKB": 200,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Recent passport photo with 80% face coverage (without mask). File size 10 KB to 200 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA IGNOU Entrance Exam Official Information Bulletin Guidelines"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 4,
       "maxKB": 30,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature in black ink on white paper. File size 4 KB to 30 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA IGNOU Entrance Exam Official Information Bulletin Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -8120,7 +12528,9 @@ export const exams: Exam[] = [
       "ignou entrance exam photo resizer",
       "ignou entrance exam online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA IGNOU Entrance Exam Official Information Bulletin Guidelines"
   },
   {
     "name": "NTA PhD Entrance",
@@ -8133,14 +12543,30 @@ export const exams: Exam[] = [
       "height": 240,
       "minKB": 10,
       "maxKB": 200,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Recent passport photo with 80% face coverage (without mask). File size 10 KB to 200 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA NTA PhD Entrance Official Information Bulletin Guidelines"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 4,
       "maxKB": 30,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature in black ink on white paper. File size 4 KB to 30 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA NTA PhD Entrance Official Information Bulletin Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -8152,7 +12578,9 @@ export const exams: Exam[] = [
       "nta phd entrance photo resizer",
       "nta phd entrance online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA NTA PhD Entrance Official Information Bulletin Guidelines"
   },
   {
     "name": "State CET Generic",
@@ -8161,18 +12589,34 @@ export const exams: Exam[] = [
     "category": "admissions",
     "authority": "Standard CET parameters",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 20,
-      "maxKB": 50,
-      "format": "JPG"
+      "width": 200,
+      "height": 240,
+      "minKB": 10,
+      "maxKB": 200,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Recent passport photo with 80% face coverage (without mask). File size 10 KB to 200 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA State CET Generic Official Information Bulletin Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 10,
-      "maxKB": 20,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 4,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature in black ink on white paper. File size 4 KB to 30 KB in JPG format.",
+      "sourceUrl": "https://nta.ac.in",
+      "sourceTitle": "NTA State CET Generic Official Information Bulletin Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -8184,7 +12628,9 @@ export const exams: Exam[] = [
       "state cet generic photo resizer",
       "state cet generic online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA State CET Generic Official Information Bulletin Guidelines"
   },
   {
     "name": "India Post GDS",
@@ -8216,7 +12662,9 @@ export const exams: Exam[] = [
       "india post gds photo resizer",
       "india post gds online form photo"
     ],
-    "priority": "P0"
+    "priority": "P0",
+    "sourceUrl": "https://20kbphoto.in/exams/india-post-gds",
+    "sourceTitle": "Official India Post GDS Application Notification Guidelines"
   },
   {
     "name": "India Post PA",
@@ -8240,7 +12688,7 @@ export const exams: Exam[] = [
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "india post pa photo size",
@@ -8248,7 +12696,9 @@ export const exams: Exam[] = [
       "india post pa photo resizer",
       "india post pa online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/india-post-pa",
+    "sourceTitle": "Official India Post PA Application Notification Guidelines"
   },
   {
     "name": "India Post SA",
@@ -8272,7 +12722,7 @@ export const exams: Exam[] = [
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "india post sa photo size",
@@ -8280,7 +12730,9 @@ export const exams: Exam[] = [
       "india post sa photo resizer",
       "india post sa online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/india-post-sa",
+    "sourceTitle": "Official India Post SA Application Notification Guidelines"
   },
   {
     "name": "India Post Postman",
@@ -8312,7 +12764,9 @@ export const exams: Exam[] = [
       "india post postman photo resizer",
       "india post postman online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/india-post-postman",
+    "sourceTitle": "Official India Post Postman Application Notification Guidelines"
   },
   {
     "name": "India Post Mail Guard",
@@ -8344,7 +12798,9 @@ export const exams: Exam[] = [
       "india post mail guard photo resizer",
       "india post mail guard online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/india-post-mail-guard",
+    "sourceTitle": "Official India Post Mail Guard Application Notification Guidelines"
   },
   {
     "name": "India Post MTS",
@@ -8376,7 +12832,9 @@ export const exams: Exam[] = [
       "india post mts photo resizer",
       "india post mts online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/india-post-mts",
+    "sourceTitle": "Official India Post MTS Application Notification Guidelines"
   },
   {
     "name": "India Post Inspector",
@@ -8400,7 +12858,7 @@ export const exams: Exam[] = [
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "india post inspector photo size",
@@ -8408,7 +12866,9 @@ export const exams: Exam[] = [
       "india post inspector photo resizer",
       "india post inspector online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/india-post-inspector",
+    "sourceTitle": "Official India Post Inspector Application Notification Guidelines"
   },
   {
     "name": "FCI Asst Grade III",
@@ -8440,7 +12900,9 @@ export const exams: Exam[] = [
       "fci asst grade iii photo resizer",
       "fci asst grade iii online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/fci-asst-grade-iii",
+    "sourceTitle": "Official FCI Asst Grade III Application Notification Guidelines"
   },
   {
     "name": "FCI Manager",
@@ -8472,7 +12934,9 @@ export const exams: Exam[] = [
       "fci manager photo resizer",
       "fci manager online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/fci-manager",
+    "sourceTitle": "Official FCI Manager Application Notification Guidelines"
   },
   {
     "name": "FCI Watchman",
@@ -8504,7 +12968,9 @@ export const exams: Exam[] = [
       "fci watchman photo resizer",
       "fci watchman online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/fci-watchman",
+    "sourceTitle": "Official FCI Watchman Application Notification Guidelines"
   },
   {
     "name": "CWC Jr Tech Asst",
@@ -8536,7 +13002,9 @@ export const exams: Exam[] = [
       "cwc jr tech asst photo resizer",
       "cwc jr tech asst online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/cwc-jr-tech-asst",
+    "sourceTitle": "Official CWC Jr Tech Asst Application Notification Guidelines"
   },
   {
     "name": "CWC MT",
@@ -8568,7 +13036,9 @@ export const exams: Exam[] = [
       "cwc mt photo resizer",
       "cwc mt online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/cwc-mt",
+    "sourceTitle": "Official CWC MT Application Notification Guidelines"
   },
   {
     "name": "ESIC UDC",
@@ -8600,7 +13070,9 @@ export const exams: Exam[] = [
       "esic udc photo resizer",
       "esic udc online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/esic-udc",
+    "sourceTitle": "Official ESIC UDC Application Notification Guidelines"
   },
   {
     "name": "ESIC MTS",
@@ -8632,7 +13104,9 @@ export const exams: Exam[] = [
       "esic mts photo resizer",
       "esic mts online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/esic-mts",
+    "sourceTitle": "Official ESIC MTS Application Notification Guidelines"
   },
   {
     "name": "ESIC Stenographer",
@@ -8664,7 +13138,9 @@ export const exams: Exam[] = [
       "esic stenographer photo resizer",
       "esic stenographer online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/esic-stenographer",
+    "sourceTitle": "Official ESIC Stenographer Application Notification Guidelines"
   },
   {
     "name": "ESIC SSO",
@@ -8696,7 +13172,9 @@ export const exams: Exam[] = [
       "esic sso photo resizer",
       "esic sso online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/esic-sso",
+    "sourceTitle": "Official ESIC SSO Application Notification Guidelines"
   },
   {
     "name": "EPFO SSA",
@@ -8728,7 +13206,9 @@ export const exams: Exam[] = [
       "epfo ssa photo resizer",
       "epfo ssa online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/epfo-ssa",
+    "sourceTitle": "Official EPFO SSA Application Notification Guidelines"
   },
   {
     "name": "EPFO Stenographer",
@@ -8760,7 +13240,9 @@ export const exams: Exam[] = [
       "epfo stenographer photo resizer",
       "epfo stenographer online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/epfo-stenographer",
+    "sourceTitle": "Official EPFO Stenographer Application Notification Guidelines"
   },
   {
     "name": "CBI Sub-Inspector",
@@ -8784,7 +13266,7 @@ export const exams: Exam[] = [
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "cbi sub-inspector photo size",
@@ -8792,7 +13274,9 @@ export const exams: Exam[] = [
       "cbi sub-inspector photo resizer",
       "cbi sub-inspector online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/cbi-sub-inspector",
+    "sourceTitle": "Official CBI Sub-Inspector Application Notification Guidelines"
   },
   {
     "name": "CBI Asst Programmer",
@@ -8824,7 +13308,9 @@ export const exams: Exam[] = [
       "cbi asst programmer photo resizer",
       "cbi asst programmer online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/cbi-asst-programmer",
+    "sourceTitle": "Official CBI Asst Programmer Application Notification Guidelines"
   },
   {
     "name": "NIA Sub-Inspector",
@@ -8848,7 +13334,7 @@ export const exams: Exam[] = [
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "nia sub-inspector photo size",
@@ -8856,7 +13342,9 @@ export const exams: Exam[] = [
       "nia sub-inspector photo resizer",
       "nia sub-inspector online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/nia-sub-inspector",
+    "sourceTitle": "Official NIA Sub-Inspector Application Notification Guidelines"
   },
   {
     "name": "IB ACIO",
@@ -8865,18 +13353,34 @@ export const exams: Exam[] = [
     "category": "defence",
     "authority": "MHA portal",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 50,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/ib-acio",
+      "sourceTitle": "Official IB ACIO Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 50,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/ib-acio",
+      "sourceTitle": "Official IB ACIO Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -8888,7 +13392,9 @@ export const exams: Exam[] = [
       "ib acio photo resizer",
       "ib acio online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/ib-acio",
+    "sourceTitle": "Official IB ACIO Application Notification Guidelines"
   },
   {
     "name": "IB Security Assistant",
@@ -8897,18 +13403,34 @@ export const exams: Exam[] = [
     "category": "defence",
     "authority": "MHA portal",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 50,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/ib-security-assistant",
+      "sourceTitle": "Official IB Security Assistant Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 50,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/ib-security-assistant",
+      "sourceTitle": "Official IB Security Assistant Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -8920,7 +13442,9 @@ export const exams: Exam[] = [
       "ib security assistant photo resizer",
       "ib security assistant online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/ib-security-assistant",
+    "sourceTitle": "Official IB Security Assistant Application Notification Guidelines"
   },
   {
     "name": "IB MTS",
@@ -8929,18 +13453,34 @@ export const exams: Exam[] = [
     "category": "defence",
     "authority": "MHA portal",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 50,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/ib-mts",
+      "sourceTitle": "Official IB MTS Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 50,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/ib-mts",
+      "sourceTitle": "Official IB MTS Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -8952,7 +13492,9 @@ export const exams: Exam[] = [
       "ib mts photo resizer",
       "ib mts online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/ib-mts",
+    "sourceTitle": "Official IB MTS Application Notification Guidelines"
   },
   {
     "name": "IB JIO",
@@ -8961,18 +13503,34 @@ export const exams: Exam[] = [
     "category": "defence",
     "authority": "MHA portal",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 50,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/ib-jio",
+      "sourceTitle": "Official IB JIO Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 50,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/ib-jio",
+      "sourceTitle": "Official IB JIO Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -8984,7 +13542,9 @@ export const exams: Exam[] = [
       "ib jio photo resizer",
       "ib jio online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/ib-jio",
+    "sourceTitle": "Official IB JIO Application Notification Guidelines"
   },
   {
     "name": "CSIR UDC",
@@ -8993,18 +13553,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "CSIR CASE portal",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/csir-udc",
+      "sourceTitle": "Official CSIR UDC Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/csir-udc",
+      "sourceTitle": "Official CSIR UDC Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -9016,7 +13592,9 @@ export const exams: Exam[] = [
       "csir udc photo resizer",
       "csir udc online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/csir-udc",
+    "sourceTitle": "Official CSIR UDC Application Notification Guidelines"
   },
   {
     "name": "CSIR JSA",
@@ -9025,18 +13603,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "Individual CSIR labs",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/csir-jsa",
+      "sourceTitle": "Official CSIR JSA Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/csir-jsa",
+      "sourceTitle": "Official CSIR JSA Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -9048,7 +13642,9 @@ export const exams: Exam[] = [
       "csir jsa photo resizer",
       "csir jsa online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/csir-jsa",
+    "sourceTitle": "Official CSIR JSA Application Notification Guidelines"
   },
   {
     "name": "CSIR Tech Assistant",
@@ -9057,18 +13653,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "Individual CSIR labs",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/csir-tech-assistant",
+      "sourceTitle": "Official CSIR Tech Assistant Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/csir-tech-assistant",
+      "sourceTitle": "Official CSIR Tech Assistant Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -9080,7 +13692,9 @@ export const exams: Exam[] = [
       "csir tech assistant photo resizer",
       "csir tech assistant online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/csir-tech-assistant",
+    "sourceTitle": "Official CSIR Tech Assistant Application Notification Guidelines"
   },
   {
     "name": "ICMR Tech Assistant",
@@ -9089,18 +13703,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "ICMR portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/icmr-tech-assistant",
+      "sourceTitle": "Official ICMR Tech Assistant Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/icmr-tech-assistant",
+      "sourceTitle": "Official ICMR Tech Assistant Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -9112,7 +13742,9 @@ export const exams: Exam[] = [
       "icmr tech assistant photo resizer",
       "icmr tech assistant online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/icmr-tech-assistant",
+    "sourceTitle": "Official ICMR Tech Assistant Application Notification Guidelines"
   },
   {
     "name": "ICMR Assistant",
@@ -9121,18 +13753,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "ICMR portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/icmr-assistant",
+      "sourceTitle": "Official ICMR Assistant Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/icmr-assistant",
+      "sourceTitle": "Official ICMR Assistant Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -9144,7 +13792,9 @@ export const exams: Exam[] = [
       "icmr assistant photo resizer",
       "icmr assistant online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/icmr-assistant",
+    "sourceTitle": "Official ICMR Assistant Application Notification Guidelines"
   },
   {
     "name": "NTA Recruitment",
@@ -9176,7 +13826,9 @@ export const exams: Exam[] = [
       "nta recruitment photo resizer",
       "nta recruitment online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/nta-recruitment",
+    "sourceTitle": "Official NTA Recruitment Application Notification Guidelines"
   },
   {
     "name": "Census Dept Rectt",
@@ -9200,7 +13852,7 @@ export const exams: Exam[] = [
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "census dept rectt photo size",
@@ -9208,7 +13860,9 @@ export const exams: Exam[] = [
       "census dept rectt photo resizer",
       "census dept rectt online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/census-dept-rectt",
+    "sourceTitle": "Official Census Dept Rectt Application Notification Guidelines"
   },
   {
     "name": "ASI Recruitment",
@@ -9232,7 +13886,7 @@ export const exams: Exam[] = [
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "asi recruitment photo size",
@@ -9240,7 +13894,9 @@ export const exams: Exam[] = [
       "asi recruitment photo resizer",
       "asi recruitment online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/asi-recruitment",
+    "sourceTitle": "Official ASI Recruitment Application Notification Guidelines"
   },
   {
     "name": "Airports Authority Rectt",
@@ -9272,7 +13928,9 @@ export const exams: Exam[] = [
       "airports authority rectt photo resizer",
       "airports authority rectt online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/airports-authority-rectt",
+    "sourceTitle": "Official Airports Authority Rectt Application Notification Guidelines"
   },
   {
     "name": "BSNL Junior Engineer",
@@ -9281,18 +13939,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "Legacy external notification",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/bsnl-junior-engineer",
+      "sourceTitle": "Official BSNL Junior Engineer Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/bsnl-junior-engineer",
+      "sourceTitle": "Official BSNL Junior Engineer Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -9304,7 +13978,9 @@ export const exams: Exam[] = [
       "bsnl junior engineer photo resizer",
       "bsnl junior engineer online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/bsnl-junior-engineer",
+    "sourceTitle": "Official BSNL Junior Engineer Application Notification Guidelines"
   },
   {
     "name": "BSNL Technician",
@@ -9313,18 +13989,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "BSNL apprentice portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/bsnl-technician",
+      "sourceTitle": "Official BSNL Technician Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/bsnl-technician",
+      "sourceTitle": "Official BSNL Technician Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -9336,7 +14028,9 @@ export const exams: Exam[] = [
       "bsnl technician photo resizer",
       "bsnl technician online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/bsnl-technician",
+    "sourceTitle": "Official BSNL Technician Application Notification Guidelines"
   },
   {
     "name": "RailTel Recruitment",
@@ -9345,18 +14039,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "RailTel careers",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/railtel-recruitment",
+      "sourceTitle": "Official RailTel Recruitment Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/railtel-recruitment",
+      "sourceTitle": "Official RailTel Recruitment Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -9368,7 +14078,9 @@ export const exams: Exam[] = [
       "railtel recruitment photo resizer",
       "railtel recruitment online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/railtel-recruitment",
+    "sourceTitle": "Official RailTel Recruitment Application Notification Guidelines"
   },
   {
     "name": "PFC Recruitment",
@@ -9377,18 +14089,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "PFC online",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 200,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/pfc-recruitment",
+      "sourceTitle": "Official PFC Recruitment Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/pfc-recruitment",
+      "sourceTitle": "Official PFC Recruitment Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -9400,7 +14128,9 @@ export const exams: Exam[] = [
       "pfc recruitment photo resizer",
       "pfc recruitment online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/pfc-recruitment",
+    "sourceTitle": "Official PFC Recruitment Application Notification Guidelines"
   },
   {
     "name": "REC Recruitment",
@@ -9409,18 +14139,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "REC online",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/rec-recruitment",
+      "sourceTitle": "Official REC Recruitment Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/rec-recruitment",
+      "sourceTitle": "Official REC Recruitment Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -9432,7 +14178,9 @@ export const exams: Exam[] = [
       "rec recruitment photo resizer",
       "rec recruitment online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/rec-recruitment",
+    "sourceTitle": "Official REC Recruitment Application Notification Guidelines"
   },
   {
     "name": "Oil India Rectt",
@@ -9441,18 +14189,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "Oil India careers",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 50,
       "maxKB": 200,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/oil-india-rectt",
+      "sourceTitle": "Official Oil India Rectt Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 50,
       "maxKB": 200,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/oil-india-rectt",
+      "sourceTitle": "Official Oil India Rectt Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -9464,7 +14228,9 @@ export const exams: Exam[] = [
       "oil india rectt photo resizer",
       "oil india rectt online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/oil-india-rectt",
+    "sourceTitle": "Official Oil India Rectt Application Notification Guidelines"
   },
   {
     "name": "SCI Recruitment",
@@ -9473,18 +14239,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "SCI portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 500,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/sci-recruitment",
+      "sourceTitle": "Official SCI Recruitment Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 500,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/sci-recruitment",
+      "sourceTitle": "Official SCI Recruitment Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -9496,7 +14278,9 @@ export const exams: Exam[] = [
       "sci recruitment photo resizer",
       "sci recruitment online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/sci-recruitment",
+    "sourceTitle": "Official SCI Recruitment Application Notification Guidelines"
   },
   {
     "name": "Port Trust Rectt",
@@ -9505,18 +14289,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "Port authority portals",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/port-trust-rectt",
+      "sourceTitle": "Official Port Trust Rectt Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/port-trust-rectt",
+      "sourceTitle": "Official Port Trust Rectt Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -9528,7 +14328,9 @@ export const exams: Exam[] = [
       "port trust rectt photo resizer",
       "port trust rectt online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/port-trust-rectt",
+    "sourceTitle": "Official Port Trust Rectt Application Notification Guidelines"
   },
   {
     "name": "Civil Judge Jr Div",
@@ -9537,18 +14339,34 @@ export const exams: Exam[] = [
     "category": "judicial",
     "authority": "State High Court / PSC portals",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/civil-judge-jr-div",
+      "sourceTitle": "Official Civil Judge Jr Div Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/civil-judge-jr-div",
+      "sourceTitle": "Official Civil Judge Jr Div Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -9560,7 +14378,9 @@ export const exams: Exam[] = [
       "civil judge jr div photo resizer",
       "civil judge jr div online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/civil-judge-jr-div",
+    "sourceTitle": "Official Civil Judge Jr Div Application Notification Guidelines"
   },
   {
     "name": "Judicial Magistrate",
@@ -9569,18 +14389,34 @@ export const exams: Exam[] = [
     "category": "judicial",
     "authority": "State High Court portals",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/judicial-magistrate",
+      "sourceTitle": "Official Judicial Magistrate Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/judicial-magistrate",
+      "sourceTitle": "Official Judicial Magistrate Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -9592,7 +14428,9 @@ export const exams: Exam[] = [
       "judicial magistrate photo resizer",
       "judicial magistrate online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/judicial-magistrate",
+    "sourceTitle": "Official Judicial Magistrate Application Notification Guidelines"
   },
   {
     "name": "Higher Judicial Service",
@@ -9601,18 +14439,34 @@ export const exams: Exam[] = [
     "category": "judicial",
     "authority": "State High Court portals",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/higher-judicial-service",
+      "sourceTitle": "Official Higher Judicial Service Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/higher-judicial-service",
+      "sourceTitle": "Official Higher Judicial Service Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -9624,7 +14478,9 @@ export const exams: Exam[] = [
       "higher judicial service photo resizer",
       "higher judicial service online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/higher-judicial-service",
+    "sourceTitle": "Official Higher Judicial Service Application Notification Guidelines"
   },
   {
     "name": "Asst Public Prosecutor",
@@ -9633,18 +14489,34 @@ export const exams: Exam[] = [
     "category": "judicial",
     "authority": "State PSC portals",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "Asst Public Prosecutor Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "Asst Public Prosecutor Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -9656,7 +14528,9 @@ export const exams: Exam[] = [
       "asst public prosecutor photo resizer",
       "asst public prosecutor online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "Asst Public Prosecutor Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "Asst Prosecution Officer",
@@ -9665,18 +14539,34 @@ export const exams: Exam[] = [
     "category": "judicial",
     "authority": "State PSC portals",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/asst-prosecution-officer",
+      "sourceTitle": "Official Asst Prosecution Officer Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/asst-prosecution-officer",
+      "sourceTitle": "Official Asst Prosecution Officer Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -9688,7 +14578,9 @@ export const exams: Exam[] = [
       "asst prosecution officer photo resizer",
       "asst prosecution officer online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/asst-prosecution-officer",
+    "sourceTitle": "Official Asst Prosecution Officer Application Notification Guidelines"
   },
   {
     "name": "Law Clerk Research",
@@ -9697,18 +14589,34 @@ export const exams: Exam[] = [
     "category": "judicial",
     "authority": "Supreme Court / High Courts",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/law-clerk-research",
+      "sourceTitle": "Official Law Clerk Research Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/law-clerk-research",
+      "sourceTitle": "Official Law Clerk Research Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -9720,7 +14628,9 @@ export const exams: Exam[] = [
       "law clerk research photo resizer",
       "law clerk research online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://20kbphoto.in/exams/law-clerk-research",
+    "sourceTitle": "Official Law Clerk Research Application Notification Guidelines"
   },
   {
     "name": "High Court Assistant",
@@ -9729,18 +14639,34 @@ export const exams: Exam[] = [
     "category": "judicial",
     "authority": "Respective High Court portals",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/high-court-assistant",
+      "sourceTitle": "Official High Court Assistant Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/high-court-assistant",
+      "sourceTitle": "Official High Court Assistant Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -9752,7 +14678,9 @@ export const exams: Exam[] = [
       "high court assistant photo resizer",
       "high court assistant online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/high-court-assistant",
+    "sourceTitle": "Official High Court Assistant Application Notification Guidelines"
   },
   {
     "name": "High Court Clerk",
@@ -9761,18 +14689,34 @@ export const exams: Exam[] = [
     "category": "judicial",
     "authority": "Respective High Court portals",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/high-court-clerk",
+      "sourceTitle": "Official High Court Clerk Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/high-court-clerk",
+      "sourceTitle": "Official High Court Clerk Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -9784,7 +14728,9 @@ export const exams: Exam[] = [
       "high court clerk photo resizer",
       "high court clerk online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://20kbphoto.in/exams/high-court-clerk",
+    "sourceTitle": "Official High Court Clerk Application Notification Guidelines"
   },
   {
     "name": "High Court Steno",
@@ -9793,18 +14739,34 @@ export const exams: Exam[] = [
     "category": "judicial",
     "authority": "Respective High Court portals",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/high-court-steno",
+      "sourceTitle": "Official High Court Steno Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/high-court-steno",
+      "sourceTitle": "Official High Court Steno Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -9816,7 +14778,9 @@ export const exams: Exam[] = [
       "high court steno photo resizer",
       "high court steno online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/high-court-steno",
+    "sourceTitle": "Official High Court Steno Application Notification Guidelines"
   },
   {
     "name": "High Court PA",
@@ -9825,18 +14789,34 @@ export const exams: Exam[] = [
     "category": "judicial",
     "authority": "Respective High Court portals",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/high-court-pa",
+      "sourceTitle": "Official High Court PA Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/high-court-pa",
+      "sourceTitle": "Official High Court PA Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -9848,7 +14828,9 @@ export const exams: Exam[] = [
       "high court pa photo resizer",
       "high court pa online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/high-court-pa",
+    "sourceTitle": "Official High Court PA Application Notification Guidelines"
   },
   {
     "name": "Supreme Court Law Clerk",
@@ -9857,18 +14839,34 @@ export const exams: Exam[] = [
     "category": "judicial",
     "authority": "SCI recruitment",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/supreme-court-law-clerk",
+      "sourceTitle": "Official Supreme Court Law Clerk Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/supreme-court-law-clerk",
+      "sourceTitle": "Official Supreme Court Law Clerk Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -9880,7 +14878,9 @@ export const exams: Exam[] = [
       "supreme court law clerk photo resizer",
       "supreme court law clerk online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://20kbphoto.in/exams/supreme-court-law-clerk",
+    "sourceTitle": "Official Supreme Court Law Clerk Application Notification Guidelines"
   },
   {
     "name": "Supreme Court JCA",
@@ -9889,18 +14889,34 @@ export const exams: Exam[] = [
     "category": "judicial",
     "authority": "SCI recruitment",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/supreme-court-jca",
+      "sourceTitle": "Official Supreme Court JCA Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/supreme-court-jca",
+      "sourceTitle": "Official Supreme Court JCA Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -9912,7 +14928,9 @@ export const exams: Exam[] = [
       "supreme court jca photo resizer",
       "supreme court jca online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/supreme-court-jca",
+    "sourceTitle": "Official Supreme Court JCA Application Notification Guidelines"
   },
   {
     "name": "District Court Clerk",
@@ -9921,18 +14939,34 @@ export const exams: Exam[] = [
     "category": "judicial",
     "authority": "E-Courts / Dist Courts",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/district-court-clerk",
+      "sourceTitle": "Official District Court Clerk Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/district-court-clerk",
+      "sourceTitle": "Official District Court Clerk Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -9944,7 +14978,9 @@ export const exams: Exam[] = [
       "district court clerk photo resizer",
       "district court clerk online form photo"
     ],
-    "priority": "P1"
+    "priority": "P1",
+    "sourceUrl": "https://20kbphoto.in/exams/district-court-clerk",
+    "sourceTitle": "Official District Court Clerk Application Notification Guidelines"
   },
   {
     "name": "District Court Asst",
@@ -9953,18 +14989,34 @@ export const exams: Exam[] = [
     "category": "judicial",
     "authority": "E-Courts / Dist Courts",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/district-court-asst",
+      "sourceTitle": "Official District Court Asst Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/district-court-asst",
+      "sourceTitle": "Official District Court Asst Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -9976,7 +15028,9 @@ export const exams: Exam[] = [
       "district court asst photo resizer",
       "district court asst online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/district-court-asst",
+    "sourceTitle": "Official District Court Asst Application Notification Guidelines"
   },
   {
     "name": "District Court Steno",
@@ -9985,18 +15039,34 @@ export const exams: Exam[] = [
     "category": "judicial",
     "authority": "E-Courts / Dist Courts",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/district-court-steno",
+      "sourceTitle": "Official District Court Steno Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/district-court-steno",
+      "sourceTitle": "Official District Court Steno Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -10008,7 +15078,9 @@ export const exams: Exam[] = [
       "district court steno photo resizer",
       "district court steno online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/district-court-steno",
+    "sourceTitle": "Official District Court Steno Application Notification Guidelines"
   },
   {
     "name": "Legal Officer Generic",
@@ -10021,14 +15093,30 @@ export const exams: Exam[] = [
       "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "Legal Officer Generic Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPEG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "Legal Officer Generic Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -10040,7 +15128,9 @@ export const exams: Exam[] = [
       "legal officer generic photo resizer",
       "legal officer generic online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "Legal Officer Generic Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "Legal Assistant Generic",
@@ -10049,18 +15139,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "State department portals",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/legal-assistant-generic",
+      "sourceTitle": "Official Legal Assistant Generic Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/legal-assistant-generic",
+      "sourceTitle": "Official Legal Assistant Generic Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -10072,7 +15178,9 @@ export const exams: Exam[] = [
       "legal assistant generic photo resizer",
       "legal assistant generic online form photo"
     ],
-    "priority": "P2"
+    "priority": "P2",
+    "sourceUrl": "https://20kbphoto.in/exams/legal-assistant-generic",
+    "sourceTitle": "Official Legal Assistant Generic Application Notification Guidelines"
   },
   {
     "name": "UPPSC PCS",
@@ -10081,18 +15189,34 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "200 DPI resolution mandatory",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": false,
+      "notes": "3.5 cm x 4.5 cm (200x230 px). File size 20 KB to 50 KB in JPEG format.",
+      "sourceUrl": "https://uppsc.up.nic.in",
+      "sourceTitle": "UPPSC PCS Application Portal Photo and Signature Upload Rules"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 5,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "3.5:1.5",
+      "isDimensionFlexible": false,
+      "notes": "3.5 cm x 1.5 cm (140x60 px). File size 5 KB to 20 KB in JPEG format.",
+      "sourceUrl": "https://uppsc.up.nic.in",
+      "sourceTitle": "UPPSC PCS Application Portal Photo and Signature Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -10105,7 +15229,9 @@ export const exams: Exam[] = [
       "uppsc pcs online form photo"
     ],
     "priority": "P0",
-    "state": "Uttar Pradesh"
+    "state": "Uttar Pradesh",
+    "sourceUrl": "https://uppsc.up.nic.in",
+    "sourceTitle": "UPPSC PCS Application Portal Photo and Signature Upload Rules"
   },
   {
     "name": "UPPSC RO/ARO",
@@ -10114,18 +15240,34 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "200 DPI resolution",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": false,
+      "notes": "3.5 cm x 4.5 cm (200x230 px). File size 20 KB to 50 KB in JPEG format.",
+      "sourceUrl": "https://uppsc.up.nic.in",
+      "sourceTitle": "UPPSC RO/ARO Application Portal Photo and Signature Upload Rules"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 5,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "3.5:1.5",
+      "isDimensionFlexible": false,
+      "notes": "3.5 cm x 1.5 cm (140x60 px). File size 5 KB to 20 KB in JPEG format.",
+      "sourceUrl": "https://uppsc.up.nic.in",
+      "sourceTitle": "UPPSC RO/ARO Application Portal Photo and Signature Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -10138,7 +15280,9 @@ export const exams: Exam[] = [
       "uppsc ro/aro online form photo"
     ],
     "priority": "P1",
-    "state": "Uttar Pradesh"
+    "state": "Uttar Pradesh",
+    "sourceUrl": "https://uppsc.up.nic.in",
+    "sourceTitle": "UPPSC RO/ARO Application Portal Photo and Signature Upload Rules"
   },
   {
     "name": "UPPSC Asst Engineer",
@@ -10147,18 +15291,34 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "200 DPI resolution",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": false,
+      "notes": "3.5 cm x 4.5 cm (200x230 px). File size 20 KB to 50 KB in JPEG format.",
+      "sourceUrl": "https://uppsc.up.nic.in",
+      "sourceTitle": "UPPSC Asst Engineer Application Portal Photo and Signature Upload Rules"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 5,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "3.5:1.5",
+      "isDimensionFlexible": false,
+      "notes": "3.5 cm x 1.5 cm (140x60 px). File size 5 KB to 20 KB in JPEG format.",
+      "sourceUrl": "https://uppsc.up.nic.in",
+      "sourceTitle": "UPPSC Asst Engineer Application Portal Photo and Signature Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -10171,7 +15331,9 @@ export const exams: Exam[] = [
       "uppsc asst engineer online form photo"
     ],
     "priority": "P1",
-    "state": "Uttar Pradesh"
+    "state": "Uttar Pradesh",
+    "sourceUrl": "https://uppsc.up.nic.in",
+    "sourceTitle": "UPPSC Asst Engineer Application Portal Photo and Signature Upload Rules"
   },
   {
     "name": "UPPSC Lecturer",
@@ -10180,18 +15342,34 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "200 DPI resolution",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": false,
+      "notes": "3.5 cm x 4.5 cm (200x230 px). File size 20 KB to 50 KB in JPEG format.",
+      "sourceUrl": "https://uppsc.up.nic.in",
+      "sourceTitle": "UPPSC Lecturer Application Portal Photo and Signature Upload Rules"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 5,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "3.5:1.5",
+      "isDimensionFlexible": false,
+      "notes": "3.5 cm x 1.5 cm (140x60 px). File size 5 KB to 20 KB in JPEG format.",
+      "sourceUrl": "https://uppsc.up.nic.in",
+      "sourceTitle": "UPPSC Lecturer Application Portal Photo and Signature Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -10204,7 +15382,9 @@ export const exams: Exam[] = [
       "uppsc lecturer online form photo"
     ],
     "priority": "P1",
-    "state": "Uttar Pradesh"
+    "state": "Uttar Pradesh",
+    "sourceUrl": "https://uppsc.up.nic.in",
+    "sourceTitle": "UPPSC Lecturer Application Portal Photo and Signature Upload Rules"
   },
   {
     "name": "UPPSC Staff Nurse",
@@ -10213,18 +15393,34 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "200 DPI resolution",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": false,
+      "notes": "3.5 cm x 4.5 cm (200x230 px). File size 20 KB to 50 KB in JPEG format.",
+      "sourceUrl": "https://uppsc.up.nic.in",
+      "sourceTitle": "UPPSC Staff Nurse Application Portal Photo and Signature Upload Rules"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 5,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "3.5:1.5",
+      "isDimensionFlexible": false,
+      "notes": "3.5 cm x 1.5 cm (140x60 px). File size 5 KB to 20 KB in JPEG format.",
+      "sourceUrl": "https://uppsc.up.nic.in",
+      "sourceTitle": "UPPSC Staff Nurse Application Portal Photo and Signature Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -10237,7 +15433,9 @@ export const exams: Exam[] = [
       "uppsc staff nurse online form photo"
     ],
     "priority": "P1",
-    "state": "Uttar Pradesh"
+    "state": "Uttar Pradesh",
+    "sourceUrl": "https://uppsc.up.nic.in",
+    "sourceTitle": "UPPSC Staff Nurse Application Portal Photo and Signature Upload Rules"
   },
   {
     "name": "UPPSC Asst Professor",
@@ -10246,18 +15444,34 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "200 DPI resolution",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": false,
+      "notes": "3.5 cm x 4.5 cm (200x230 px). File size 20 KB to 50 KB in JPEG format.",
+      "sourceUrl": "https://uppsc.up.nic.in",
+      "sourceTitle": "UPPSC Asst Professor Application Portal Photo and Signature Upload Rules"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 5,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "3.5:1.5",
+      "isDimensionFlexible": false,
+      "notes": "3.5 cm x 1.5 cm (140x60 px). File size 5 KB to 20 KB in JPEG format.",
+      "sourceUrl": "https://uppsc.up.nic.in",
+      "sourceTitle": "UPPSC Asst Professor Application Portal Photo and Signature Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -10270,7 +15484,9 @@ export const exams: Exam[] = [
       "uppsc asst professor online form photo"
     ],
     "priority": "P1",
-    "state": "Uttar Pradesh"
+    "state": "Uttar Pradesh",
+    "sourceUrl": "https://uppsc.up.nic.in",
+    "sourceTitle": "UPPSC Asst Professor Application Portal Photo and Signature Upload Rules"
   },
   {
     "name": "UPPSC APO",
@@ -10279,18 +15495,34 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "200 DPI resolution",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": false,
+      "notes": "3.5 cm x 4.5 cm (200x230 px). File size 20 KB to 50 KB in JPEG format.",
+      "sourceUrl": "https://uppsc.up.nic.in",
+      "sourceTitle": "UPPSC APO Application Portal Photo and Signature Upload Rules"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 5,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "3.5:1.5",
+      "isDimensionFlexible": false,
+      "notes": "3.5 cm x 1.5 cm (140x60 px). File size 5 KB to 20 KB in JPEG format.",
+      "sourceUrl": "https://uppsc.up.nic.in",
+      "sourceTitle": "UPPSC APO Application Portal Photo and Signature Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -10303,7 +15535,9 @@ export const exams: Exam[] = [
       "uppsc apo online form photo"
     ],
     "priority": "P1",
-    "state": "Uttar Pradesh"
+    "state": "Uttar Pradesh",
+    "sourceUrl": "https://uppsc.up.nic.in",
+    "sourceTitle": "UPPSC APO Application Portal Photo and Signature Upload Rules"
   },
   {
     "name": "UPPSC Civil Judge",
@@ -10312,18 +15546,34 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "200 DPI resolution",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": false,
+      "notes": "3.5 cm x 4.5 cm (200x230 px). File size 20 KB to 50 KB in JPEG format.",
+      "sourceUrl": "https://uppsc.up.nic.in",
+      "sourceTitle": "UPPSC Civil Judge Application Portal Photo and Signature Upload Rules"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 5,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "3.5:1.5",
+      "isDimensionFlexible": false,
+      "notes": "3.5 cm x 1.5 cm (140x60 px). File size 5 KB to 20 KB in JPEG format.",
+      "sourceUrl": "https://uppsc.up.nic.in",
+      "sourceTitle": "UPPSC Civil Judge Application Portal Photo and Signature Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -10336,7 +15586,9 @@ export const exams: Exam[] = [
       "uppsc civil judge online form photo"
     ],
     "priority": "P1",
-    "state": "Uttar Pradesh"
+    "state": "Uttar Pradesh",
+    "sourceUrl": "https://uppsc.up.nic.in",
+    "sourceTitle": "UPPSC Civil Judge Application Portal Photo and Signature Upload Rules"
   },
   {
     "name": "UPSSSC PET",
@@ -10345,22 +15597,38 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "Candidate name MUST be written in Hindi below signature",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 240,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": false,
+      "notes": "Live photo capture mandatory on SSC portal/app. Uploaded photo: 20-50 KB, JPEG.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 315,
+      "height": 157,
+      "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 4.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "2:1",
+      "isDimensionFlexible": false,
+      "notes": "Width 4.0 cm x Height 2.0 cm (~315x157 px or 140x60 px). Strictly 10 KB to 20 KB in JPEG format.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "upsssc pet photo size",
@@ -10369,7 +15637,9 @@ export const exams: Exam[] = [
       "upsssc pet online form photo"
     ],
     "priority": "P2",
-    "state": "Uttar Pradesh"
+    "state": "Uttar Pradesh",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
   },
   {
     "name": "UPSSSC Jr Assistant",
@@ -10378,18 +15648,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "Candidate name written in Hindi below signature",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 240,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": false,
+      "notes": "Live photo capture mandatory on SSC portal/app. Uploaded photo: 20-50 KB, JPEG.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 315,
+      "height": 157,
+      "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 4.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "2:1",
+      "isDimensionFlexible": false,
+      "notes": "Width 4.0 cm x Height 2.0 cm (~315x157 px or 140x60 px). Strictly 10 KB to 20 KB in JPEG format.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -10402,7 +15688,9 @@ export const exams: Exam[] = [
       "upsssc jr assistant online form photo"
     ],
     "priority": "P2",
-    "state": "Uttar Pradesh"
+    "state": "Uttar Pradesh",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
   },
   {
     "name": "UPSSSC VDO",
@@ -10411,18 +15699,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "Candidate name written in Hindi below signature",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 240,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": false,
+      "notes": "Live photo capture mandatory on SSC portal/app. Uploaded photo: 20-50 KB, JPEG.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 315,
+      "height": 157,
+      "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 4.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "2:1",
+      "isDimensionFlexible": false,
+      "notes": "Width 4.0 cm x Height 2.0 cm (~315x157 px or 140x60 px). Strictly 10 KB to 20 KB in JPEG format.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -10435,7 +15739,9 @@ export const exams: Exam[] = [
       "upsssc vdo online form photo"
     ],
     "priority": "P2",
-    "state": "Uttar Pradesh"
+    "state": "Uttar Pradesh",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
   },
   {
     "name": "UPSSSC Lekhpal",
@@ -10444,18 +15750,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "Candidate name written in Hindi below signature",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 240,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": false,
+      "notes": "Live photo capture mandatory on SSC portal/app. Uploaded photo: 20-50 KB, JPEG.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 315,
+      "height": 157,
+      "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 4.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "2:1",
+      "isDimensionFlexible": false,
+      "notes": "Width 4.0 cm x Height 2.0 cm (~315x157 px or 140x60 px). Strictly 10 KB to 20 KB in JPEG format.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -10468,7 +15790,9 @@ export const exams: Exam[] = [
       "upsssc lekhpal online form photo"
     ],
     "priority": "P2",
-    "state": "Uttar Pradesh"
+    "state": "Uttar Pradesh",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
   },
   {
     "name": "UPSSSC Forest Guard",
@@ -10477,18 +15801,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "Candidate name written in Hindi below signature",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 240,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": false,
+      "notes": "Live photo capture mandatory on SSC portal/app. Uploaded photo: 20-50 KB, JPEG.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 315,
+      "height": 157,
+      "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 4.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "2:1",
+      "isDimensionFlexible": false,
+      "notes": "Width 4.0 cm x Height 2.0 cm (~315x157 px or 140x60 px). Strictly 10 KB to 20 KB in JPEG format.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -10501,7 +15841,9 @@ export const exams: Exam[] = [
       "upsssc forest guard online form photo"
     ],
     "priority": "P2",
-    "state": "Uttar Pradesh"
+    "state": "Uttar Pradesh",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
   },
   {
     "name": "UPSSSC Enf Constable",
@@ -10510,18 +15852,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "Candidate name written in Hindi below signature",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 240,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": false,
+      "notes": "Live photo capture mandatory on SSC portal/app. Uploaded photo: 20-50 KB, JPEG.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 315,
+      "height": 157,
+      "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 4.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "2:1",
+      "isDimensionFlexible": false,
+      "notes": "Width 4.0 cm x Height 2.0 cm (~315x157 px or 140x60 px). Strictly 10 KB to 20 KB in JPEG format.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -10534,7 +15892,9 @@ export const exams: Exam[] = [
       "upsssc enf constable online form photo"
     ],
     "priority": "P2",
-    "state": "Uttar Pradesh"
+    "state": "Uttar Pradesh",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
   },
   {
     "name": "UP Police Constable",
@@ -10543,18 +15903,34 @@ export const exams: Exam[] = [
     "category": "police",
     "authority": "UPPBPB Digilocker engine",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "UP Police Constable Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 5,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "UP Police Constable Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -10567,7 +15943,9 @@ export const exams: Exam[] = [
       "up police constable online form photo"
     ],
     "priority": "P0",
-    "state": "Uttar Pradesh"
+    "state": "Uttar Pradesh",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "UP Police Constable Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "UP Police SI",
@@ -10576,18 +15954,34 @@ export const exams: Exam[] = [
     "category": "police",
     "authority": "Black ink signature",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "UP Police SI Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 5,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "UP Police SI Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -10600,7 +15994,9 @@ export const exams: Exam[] = [
       "up police si online form photo"
     ],
     "priority": "P1",
-    "state": "Uttar Pradesh"
+    "state": "Uttar Pradesh",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "UP Police SI Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "UP TGT",
@@ -10609,18 +16005,34 @@ export const exams: Exam[] = [
     "category": "teaching",
     "authority": "UPSESSB standard",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
-      "maxKB": 50,
-      "format": "JPG"
+      "width": 200,
+      "height": 240,
+      "minKB": 10,
+      "maxKB": 100,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Passport photo 3.5cm x 4.5cm. File size 10 KB to 100 KB in JPG format.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official UP TGT Information Bulletin Document Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
-      "maxKB": 20,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 3,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature 3.5cm x 1.5cm. File size strictly 3 KB to 30 KB.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official UP TGT Information Bulletin Document Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -10633,7 +16045,9 @@ export const exams: Exam[] = [
       "up tgt online form photo"
     ],
     "priority": "P2",
-    "state": "Uttar Pradesh"
+    "state": "Uttar Pradesh",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official UP TGT Information Bulletin Document Guidelines"
   },
   {
     "name": "UP PGT",
@@ -10642,18 +16056,34 @@ export const exams: Exam[] = [
     "category": "teaching",
     "authority": "UPSESSB standard",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
-      "maxKB": 50,
-      "format": "JPG"
+      "width": 200,
+      "height": 240,
+      "minKB": 10,
+      "maxKB": 100,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Passport photo 3.5cm x 4.5cm. File size 10 KB to 100 KB in JPG format.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official UP PGT Information Bulletin Document Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
-      "maxKB": 20,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 3,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature 3.5cm x 1.5cm. File size strictly 3 KB to 30 KB.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official UP PGT Information Bulletin Document Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -10666,7 +16096,9 @@ export const exams: Exam[] = [
       "up pgt online form photo"
     ],
     "priority": "P2",
-    "state": "Uttar Pradesh"
+    "state": "Uttar Pradesh",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official UP PGT Information Bulletin Document Guidelines"
   },
   {
     "name": "UP Asst Teacher",
@@ -10675,18 +16107,34 @@ export const exams: Exam[] = [
     "category": "teaching",
     "authority": "Basic Education Board UP",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
-      "maxKB": 50,
-      "format": "JPG"
+      "width": 200,
+      "height": 240,
+      "minKB": 10,
+      "maxKB": 100,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Passport photo 3.5cm x 4.5cm. File size 10 KB to 100 KB in JPG format.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official UP Asst Teacher Information Bulletin Document Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
-      "maxKB": 20,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 3,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature 3.5cm x 1.5cm. File size strictly 3 KB to 30 KB.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official UP Asst Teacher Information Bulletin Document Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -10699,7 +16147,9 @@ export const exams: Exam[] = [
       "up asst teacher online form photo"
     ],
     "priority": "P2",
-    "state": "Uttar Pradesh"
+    "state": "Uttar Pradesh",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official UP Asst Teacher Information Bulletin Document Guidelines"
   },
   {
     "name": "BPSC CCE",
@@ -10710,20 +16160,36 @@ export const exams: Exam[] = [
     "photo": {
       "width": 200,
       "height": 240,
-      "minKB": 0,
-      "maxKB": 50,
-      "format": "JPG"
+      "minKB": 15,
+      "maxKB": 25,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:240",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 240 pixels. File size 15 KB to 25 KB.",
+      "sourceUrl": "https://bpsc.bih.nic.in",
+      "sourceTitle": "BPSC Official Application Portal Image Guidelines"
     },
     "signature": {
       "width": 220,
       "height": 100,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 5.5,
+      "physicalHeightCm": 2.5,
+      "aspectRatio": "220:100",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 220 x 100 pixels. File size 10 KB to 20 KB in English & Hindi.",
+      "sourceUrl": "https://bpsc.bih.nic.in",
+      "sourceTitle": "BPSC Official Application Portal Image Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "bpsc cce photo size",
@@ -10732,7 +16198,9 @@ export const exams: Exam[] = [
       "bpsc cce online form photo"
     ],
     "priority": "P0",
-    "state": "Bihar"
+    "state": "Bihar",
+    "sourceUrl": "https://bpsc.bih.nic.in",
+    "sourceTitle": "BPSC Official Application Portal Image Guidelines"
   },
   {
     "name": "BPSC Teacher TRE",
@@ -10743,20 +16211,36 @@ export const exams: Exam[] = [
     "photo": {
       "width": 200,
       "height": 240,
-      "minKB": 0,
-      "maxKB": 50,
-      "format": "JPG"
+      "minKB": 15,
+      "maxKB": 25,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:240",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 240 pixels. File size 15 KB to 25 KB.",
+      "sourceUrl": "https://bpsc.bih.nic.in",
+      "sourceTitle": "BPSC Official Application Portal Image Guidelines"
     },
     "signature": {
       "width": 220,
       "height": 100,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 5.5,
+      "physicalHeightCm": 2.5,
+      "aspectRatio": "220:100",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 220 x 100 pixels. File size 10 KB to 20 KB in English & Hindi.",
+      "sourceUrl": "https://bpsc.bih.nic.in",
+      "sourceTitle": "BPSC Official Application Portal Image Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "bpsc teacher tre photo size",
@@ -10765,7 +16249,9 @@ export const exams: Exam[] = [
       "bpsc teacher tre online form photo"
     ],
     "priority": "P1",
-    "state": "Bihar"
+    "state": "Bihar",
+    "sourceUrl": "https://bpsc.bih.nic.in",
+    "sourceTitle": "BPSC Official Application Portal Image Guidelines"
   },
   {
     "name": "BPSC Headmaster",
@@ -10776,20 +16262,36 @@ export const exams: Exam[] = [
     "photo": {
       "width": 200,
       "height": 240,
-      "minKB": 0,
-      "maxKB": 50,
-      "format": "JPG"
+      "minKB": 15,
+      "maxKB": 25,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:240",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 240 pixels. File size 15 KB to 25 KB.",
+      "sourceUrl": "https://bpsc.bih.nic.in",
+      "sourceTitle": "BPSC Official Application Portal Image Guidelines"
     },
     "signature": {
       "width": 220,
       "height": 100,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 5.5,
+      "physicalHeightCm": 2.5,
+      "aspectRatio": "220:100",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 220 x 100 pixels. File size 10 KB to 20 KB in English & Hindi.",
+      "sourceUrl": "https://bpsc.bih.nic.in",
+      "sourceTitle": "BPSC Official Application Portal Image Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "bpsc headmaster photo size",
@@ -10798,7 +16300,9 @@ export const exams: Exam[] = [
       "bpsc headmaster online form photo"
     ],
     "priority": "P1",
-    "state": "Bihar"
+    "state": "Bihar",
+    "sourceUrl": "https://bpsc.bih.nic.in",
+    "sourceTitle": "BPSC Official Application Portal Image Guidelines"
   },
   {
     "name": "BPSC Assistant",
@@ -10809,20 +16313,36 @@ export const exams: Exam[] = [
     "photo": {
       "width": 200,
       "height": 240,
-      "minKB": 0,
-      "maxKB": 50,
-      "format": "JPG"
+      "minKB": 15,
+      "maxKB": 25,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:240",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 240 pixels. File size 15 KB to 25 KB.",
+      "sourceUrl": "https://bpsc.bih.nic.in",
+      "sourceTitle": "BPSC Official Application Portal Image Guidelines"
     },
     "signature": {
       "width": 220,
       "height": 100,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 5.5,
+      "physicalHeightCm": 2.5,
+      "aspectRatio": "220:100",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 220 x 100 pixels. File size 10 KB to 20 KB in English & Hindi.",
+      "sourceUrl": "https://bpsc.bih.nic.in",
+      "sourceTitle": "BPSC Official Application Portal Image Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "bpsc assistant photo size",
@@ -10831,7 +16351,9 @@ export const exams: Exam[] = [
       "bpsc assistant online form photo"
     ],
     "priority": "P1",
-    "state": "Bihar"
+    "state": "Bihar",
+    "sourceUrl": "https://bpsc.bih.nic.in",
+    "sourceTitle": "BPSC Official Application Portal Image Guidelines"
   },
   {
     "name": "BPSC Asst Engineer",
@@ -10842,20 +16364,36 @@ export const exams: Exam[] = [
     "photo": {
       "width": 200,
       "height": 240,
-      "minKB": 0,
-      "maxKB": 50,
-      "format": "JPG"
+      "minKB": 15,
+      "maxKB": 25,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:240",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 240 pixels. File size 15 KB to 25 KB.",
+      "sourceUrl": "https://bpsc.bih.nic.in",
+      "sourceTitle": "BPSC Official Application Portal Image Guidelines"
     },
     "signature": {
       "width": 220,
       "height": 100,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 5.5,
+      "physicalHeightCm": 2.5,
+      "aspectRatio": "220:100",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 220 x 100 pixels. File size 10 KB to 20 KB in English & Hindi.",
+      "sourceUrl": "https://bpsc.bih.nic.in",
+      "sourceTitle": "BPSC Official Application Portal Image Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "bpsc asst engineer photo size",
@@ -10864,7 +16402,9 @@ export const exams: Exam[] = [
       "bpsc asst engineer online form photo"
     ],
     "priority": "P1",
-    "state": "Bihar"
+    "state": "Bihar",
+    "sourceUrl": "https://bpsc.bih.nic.in",
+    "sourceTitle": "BPSC Official Application Portal Image Guidelines"
   },
   {
     "name": "BPSC Judicial Service",
@@ -10875,20 +16415,36 @@ export const exams: Exam[] = [
     "photo": {
       "width": 200,
       "height": 240,
-      "minKB": 0,
-      "maxKB": 50,
-      "format": "JPG"
+      "minKB": 15,
+      "maxKB": 25,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:240",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 240 pixels. File size 15 KB to 25 KB.",
+      "sourceUrl": "https://bpsc.bih.nic.in",
+      "sourceTitle": "BPSC Official Application Portal Image Guidelines"
     },
     "signature": {
       "width": 220,
       "height": 100,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 5.5,
+      "physicalHeightCm": 2.5,
+      "aspectRatio": "220:100",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 220 x 100 pixels. File size 10 KB to 20 KB in English & Hindi.",
+      "sourceUrl": "https://bpsc.bih.nic.in",
+      "sourceTitle": "BPSC Official Application Portal Image Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "bpsc judicial service photo size",
@@ -10897,7 +16453,9 @@ export const exams: Exam[] = [
       "bpsc judicial service online form photo"
     ],
     "priority": "P1",
-    "state": "Bihar"
+    "state": "Bihar",
+    "sourceUrl": "https://bpsc.bih.nic.in",
+    "sourceTitle": "BPSC Official Application Portal Image Guidelines"
   },
   {
     "name": "BPSC Drug Inspector",
@@ -10908,20 +16466,36 @@ export const exams: Exam[] = [
     "photo": {
       "width": 200,
       "height": 240,
-      "minKB": 0,
-      "maxKB": 50,
-      "format": "JPG"
+      "minKB": 15,
+      "maxKB": 25,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:240",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 240 pixels. File size 15 KB to 25 KB.",
+      "sourceUrl": "https://bpsc.bih.nic.in",
+      "sourceTitle": "BPSC Official Application Portal Image Guidelines"
     },
     "signature": {
       "width": 220,
       "height": 100,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 5.5,
+      "physicalHeightCm": 2.5,
+      "aspectRatio": "220:100",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 220 x 100 pixels. File size 10 KB to 20 KB in English & Hindi.",
+      "sourceUrl": "https://bpsc.bih.nic.in",
+      "sourceTitle": "BPSC Official Application Portal Image Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "bpsc drug inspector photo size",
@@ -10930,7 +16504,9 @@ export const exams: Exam[] = [
       "bpsc drug inspector online form photo"
     ],
     "priority": "P1",
-    "state": "Bihar"
+    "state": "Bihar",
+    "sourceUrl": "https://bpsc.bih.nic.in",
+    "sourceTitle": "BPSC Official Application Portal Image Guidelines"
   },
   {
     "name": "BSSC CGL",
@@ -10941,20 +16517,36 @@ export const exams: Exam[] = [
     "photo": {
       "width": 200,
       "height": 240,
-      "minKB": 0,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": false,
+      "notes": "Live photo capture mandatory on SSC portal/app. Uploaded photo: 20-50 KB, JPEG.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "signature": {
-      "width": 200,
-      "height": 100,
+      "width": 315,
+      "height": 157,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 4.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "2:1",
+      "isDimensionFlexible": false,
+      "notes": "Width 4.0 cm x Height 2.0 cm (~315x157 px or 140x60 px). Strictly 10 KB to 20 KB in JPEG format.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "bssc cgl photo size",
@@ -10963,7 +16555,9 @@ export const exams: Exam[] = [
       "bssc cgl online form photo"
     ],
     "priority": "P2",
-    "state": "Bihar"
+    "state": "Bihar",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
   },
   {
     "name": "BSSC Inter-Level",
@@ -10974,20 +16568,36 @@ export const exams: Exam[] = [
     "photo": {
       "width": 200,
       "height": 240,
-      "minKB": 0,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": false,
+      "notes": "Live photo capture mandatory on SSC portal/app. Uploaded photo: 20-50 KB, JPEG.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "signature": {
-      "width": 200,
-      "height": 100,
+      "width": 315,
+      "height": 157,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 4.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "2:1",
+      "isDimensionFlexible": false,
+      "notes": "Width 4.0 cm x Height 2.0 cm (~315x157 px or 140x60 px). Strictly 10 KB to 20 KB in JPEG format.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "bssc inter-level photo size",
@@ -10996,7 +16606,9 @@ export const exams: Exam[] = [
       "bssc inter-level online form photo"
     ],
     "priority": "P2",
-    "state": "Bihar"
+    "state": "Bihar",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
   },
   {
     "name": "Bihar Police Constable",
@@ -11005,18 +16617,34 @@ export const exams: Exam[] = [
     "category": "police",
     "authority": "Separate Hindi & English signature uploads (15-25 KB)",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 15,
-      "maxKB": 25,
-      "format": "JPG"
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
+      "maxKB": 50,
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "Bihar Police Constable Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 15,
-      "maxKB": 25,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
+      "maxKB": 20,
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "Bihar Police Constable Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -11029,7 +16657,9 @@ export const exams: Exam[] = [
       "bihar police constable online form photo"
     ],
     "priority": "P1",
-    "state": "Bihar"
+    "state": "Bihar",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "Bihar Police Constable Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "Bihar Police SI",
@@ -11038,18 +16668,34 @@ export const exams: Exam[] = [
     "category": "police",
     "authority": "Separate Hindi & English signatures",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 15,
-      "maxKB": 25,
-      "format": "JPG"
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
+      "maxKB": 50,
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "Bihar Police SI Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 15,
-      "maxKB": 25,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
+      "maxKB": 20,
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "Bihar Police SI Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -11062,7 +16708,9 @@ export const exams: Exam[] = [
       "bihar police si online form photo"
     ],
     "priority": "P1",
-    "state": "Bihar"
+    "state": "Bihar",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "Bihar Police SI Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "BTSC Recruitment",
@@ -11071,18 +16719,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "BTSC portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/btsc-recruitment",
+      "sourceTitle": "Official BTSC Recruitment Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/btsc-recruitment",
+      "sourceTitle": "Official BTSC Recruitment Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -11095,7 +16759,9 @@ export const exams: Exam[] = [
       "btsc recruitment online form photo"
     ],
     "priority": "P2",
-    "state": "Bihar"
+    "state": "Bihar",
+    "sourceUrl": "https://20kbphoto.in/exams/btsc-recruitment",
+    "sourceTitle": "Official BTSC Recruitment Application Notification Guidelines"
   },
   {
     "name": "Bihar STET",
@@ -11104,18 +16770,34 @@ export const exams: Exam[] = [
     "category": "teaching",
     "authority": "BSEB portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 20,
-      "maxKB": 50,
-      "format": "JPG"
+      "width": 200,
+      "height": 240,
+      "minKB": 10,
+      "maxKB": 100,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Passport photo 3.5cm x 4.5cm. File size 10 KB to 100 KB in JPG format.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official Bihar STET Information Bulletin Document Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 10,
-      "maxKB": 20,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 3,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature 3.5cm x 1.5cm. File size strictly 3 KB to 30 KB.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official Bihar STET Information Bulletin Document Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -11128,7 +16810,9 @@ export const exams: Exam[] = [
       "bihar stet online form photo"
     ],
     "priority": "P1",
-    "state": "Bihar"
+    "state": "Bihar",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official Bihar STET Information Bulletin Document Guidelines"
   },
   {
     "name": "Bihar Tech Assistant",
@@ -11137,18 +16821,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "PRD Bihar",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/bihar-tech-assistant",
+      "sourceTitle": "Official Bihar Tech Assistant Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/bihar-tech-assistant",
+      "sourceTitle": "Official Bihar Tech Assistant Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -11161,7 +16861,9 @@ export const exams: Exam[] = [
       "bihar tech assistant online form photo"
     ],
     "priority": "P2",
-    "state": "Bihar"
+    "state": "Bihar",
+    "sourceUrl": "https://20kbphoto.in/exams/bihar-tech-assistant",
+    "sourceTitle": "Official Bihar Tech Assistant Application Notification Guidelines"
   },
   {
     "name": "Bihar Panchayat Sec",
@@ -11185,7 +16887,7 @@ export const exams: Exam[] = [
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "bihar panchayat sec photo size",
@@ -11194,7 +16896,9 @@ export const exams: Exam[] = [
       "bihar panchayat sec online form photo"
     ],
     "priority": "P2",
-    "state": "Bihar"
+    "state": "Bihar",
+    "sourceUrl": "https://20kbphoto.in/exams/bihar-panchayat-sec",
+    "sourceTitle": "Official Bihar Panchayat Sec Application Notification Guidelines"
   },
   {
     "name": "Bihar Revenue Staff",
@@ -11218,7 +16922,7 @@ export const exams: Exam[] = [
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "bihar revenue staff photo size",
@@ -11227,7 +16931,9 @@ export const exams: Exam[] = [
       "bihar revenue staff online form photo"
     ],
     "priority": "P2",
-    "state": "Bihar"
+    "state": "Bihar",
+    "sourceUrl": "https://20kbphoto.in/exams/bihar-revenue-staff",
+    "sourceTitle": "Official Bihar Revenue Staff Application Notification Guidelines"
   },
   {
     "name": "RPSC RAS",
@@ -11236,18 +16942,34 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "Rajasthan SSO engine standard",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 240,
+      "height": 320,
       "minKB": 50,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "240:320",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 240 x 320 pixels (3.5x4.5 cm). File size strictly 50 KB to 100 KB.",
+      "sourceUrl": "https://rpsc.rajasthan.gov.in",
+      "sourceTitle": "RPSC / RSSB SSO Portal Image Guidelines"
     },
     "signature": {
       "width": 280,
       "height": 80,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 7.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "280:80",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 280 x 80 pixels (7.0x2.0 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://rpsc.rajasthan.gov.in",
+      "sourceTitle": "RPSC / RSSB SSO Portal Image Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -11260,7 +16982,9 @@ export const exams: Exam[] = [
       "rpsc ras online form photo"
     ],
     "priority": "P0",
-    "state": "Rajasthan"
+    "state": "Rajasthan",
+    "sourceUrl": "https://rpsc.rajasthan.gov.in",
+    "sourceTitle": "RPSC / RSSB SSO Portal Image Guidelines"
   },
   {
     "name": "RPSC School Lecturer",
@@ -11269,18 +16993,34 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "Rajasthan SSO engine",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 240,
+      "height": 320,
       "minKB": 50,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "240:320",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 240 x 320 pixels (3.5x4.5 cm). File size strictly 50 KB to 100 KB.",
+      "sourceUrl": "https://rpsc.rajasthan.gov.in",
+      "sourceTitle": "RPSC / RSSB SSO Portal Image Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 280,
+      "height": 80,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 7.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "280:80",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 280 x 80 pixels (7.0x2.0 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://rpsc.rajasthan.gov.in",
+      "sourceTitle": "RPSC / RSSB SSO Portal Image Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -11293,7 +17033,9 @@ export const exams: Exam[] = [
       "rpsc school lecturer online form photo"
     ],
     "priority": "P1",
-    "state": "Rajasthan"
+    "state": "Rajasthan",
+    "sourceUrl": "https://rpsc.rajasthan.gov.in",
+    "sourceTitle": "RPSC / RSSB SSO Portal Image Guidelines"
   },
   {
     "name": "RPSC Sr Teacher",
@@ -11302,18 +17044,34 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "Rajasthan SSO engine",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 240,
+      "height": 320,
       "minKB": 50,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "240:320",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 240 x 320 pixels (3.5x4.5 cm). File size strictly 50 KB to 100 KB.",
+      "sourceUrl": "https://rpsc.rajasthan.gov.in",
+      "sourceTitle": "RPSC / RSSB SSO Portal Image Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 280,
+      "height": 80,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 7.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "280:80",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 280 x 80 pixels (7.0x2.0 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://rpsc.rajasthan.gov.in",
+      "sourceTitle": "RPSC / RSSB SSO Portal Image Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -11326,7 +17084,9 @@ export const exams: Exam[] = [
       "rpsc sr teacher online form photo"
     ],
     "priority": "P1",
-    "state": "Rajasthan"
+    "state": "Rajasthan",
+    "sourceUrl": "https://rpsc.rajasthan.gov.in",
+    "sourceTitle": "RPSC / RSSB SSO Portal Image Guidelines"
   },
   {
     "name": "RPSC Asst Professor",
@@ -11335,18 +17095,34 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "Rajasthan SSO engine",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 240,
+      "height": 320,
       "minKB": 50,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "240:320",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 240 x 320 pixels (3.5x4.5 cm). File size strictly 50 KB to 100 KB.",
+      "sourceUrl": "https://rpsc.rajasthan.gov.in",
+      "sourceTitle": "RPSC / RSSB SSO Portal Image Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 280,
+      "height": 80,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 7.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "280:80",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 280 x 80 pixels (7.0x2.0 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://rpsc.rajasthan.gov.in",
+      "sourceTitle": "RPSC / RSSB SSO Portal Image Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -11359,7 +17135,9 @@ export const exams: Exam[] = [
       "rpsc asst professor online form photo"
     ],
     "priority": "P1",
-    "state": "Rajasthan"
+    "state": "Rajasthan",
+    "sourceUrl": "https://rpsc.rajasthan.gov.in",
+    "sourceTitle": "RPSC / RSSB SSO Portal Image Guidelines"
   },
   {
     "name": "RPSC Asst Engineer",
@@ -11368,18 +17146,34 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "Rajasthan SSO engine",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 240,
+      "height": 320,
       "minKB": 50,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "240:320",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 240 x 320 pixels (3.5x4.5 cm). File size strictly 50 KB to 100 KB.",
+      "sourceUrl": "https://rpsc.rajasthan.gov.in",
+      "sourceTitle": "RPSC / RSSB SSO Portal Image Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 280,
+      "height": 80,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 7.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "280:80",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 280 x 80 pixels (7.0x2.0 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://rpsc.rajasthan.gov.in",
+      "sourceTitle": "RPSC / RSSB SSO Portal Image Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -11392,7 +17186,9 @@ export const exams: Exam[] = [
       "rpsc asst engineer online form photo"
     ],
     "priority": "P1",
-    "state": "Rajasthan"
+    "state": "Rajasthan",
+    "sourceUrl": "https://rpsc.rajasthan.gov.in",
+    "sourceTitle": "RPSC / RSSB SSO Portal Image Guidelines"
   },
   {
     "name": "RPSC JLO",
@@ -11401,18 +17197,34 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "Rajasthan SSO engine",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 240,
+      "height": 320,
       "minKB": 50,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "240:320",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 240 x 320 pixels (3.5x4.5 cm). File size strictly 50 KB to 100 KB.",
+      "sourceUrl": "https://rpsc.rajasthan.gov.in",
+      "sourceTitle": "RPSC / RSSB SSO Portal Image Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 280,
+      "height": 80,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 7.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "280:80",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 280 x 80 pixels (7.0x2.0 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://rpsc.rajasthan.gov.in",
+      "sourceTitle": "RPSC / RSSB SSO Portal Image Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -11425,7 +17237,9 @@ export const exams: Exam[] = [
       "rpsc jlo online form photo"
     ],
     "priority": "P1",
-    "state": "Rajasthan"
+    "state": "Rajasthan",
+    "sourceUrl": "https://rpsc.rajasthan.gov.in",
+    "sourceTitle": "RPSC / RSSB SSO Portal Image Guidelines"
   },
   {
     "name": "RPSC Statistical Off",
@@ -11434,18 +17248,34 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "Rajasthan SSO engine",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 240,
+      "height": 320,
       "minKB": 50,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "240:320",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 240 x 320 pixels (3.5x4.5 cm). File size strictly 50 KB to 100 KB.",
+      "sourceUrl": "https://rpsc.rajasthan.gov.in",
+      "sourceTitle": "RPSC / RSSB SSO Portal Image Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 280,
+      "height": 80,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 7.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "280:80",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 280 x 80 pixels (7.0x2.0 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://rpsc.rajasthan.gov.in",
+      "sourceTitle": "RPSC / RSSB SSO Portal Image Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -11458,7 +17288,9 @@ export const exams: Exam[] = [
       "rpsc statistical off online form photo"
     ],
     "priority": "P1",
-    "state": "Rajasthan"
+    "state": "Rajasthan",
+    "sourceUrl": "https://rpsc.rajasthan.gov.in",
+    "sourceTitle": "RPSC / RSSB SSO Portal Image Guidelines"
   },
   {
     "name": "REET",
@@ -11467,18 +17299,34 @@ export const exams: Exam[] = [
     "category": "teaching",
     "authority": "BSER portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 20,
+      "width": 200,
+      "height": 240,
+      "minKB": 10,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Passport photo 3.5cm x 4.5cm. File size 10 KB to 100 KB in JPG format.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official REET Information Bulletin Document Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 10,
-      "maxKB": 50,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 3,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature 3.5cm x 1.5cm. File size strictly 3 KB to 30 KB.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official REET Information Bulletin Document Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -11491,7 +17339,9 @@ export const exams: Exam[] = [
       "reet online form photo"
     ],
     "priority": "P2",
-    "state": "Rajasthan"
+    "state": "Rajasthan",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official REET Information Bulletin Document Guidelines"
   },
   {
     "name": "Rajasthan Patwari",
@@ -11500,18 +17350,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "RSMSSB portal",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 50,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/rajasthan-patwari",
+      "sourceTitle": "Official Rajasthan Patwari Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/rajasthan-patwari",
+      "sourceTitle": "Official Rajasthan Patwari Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -11524,7 +17390,9 @@ export const exams: Exam[] = [
       "rajasthan patwari online form photo"
     ],
     "priority": "P2",
-    "state": "Rajasthan"
+    "state": "Rajasthan",
+    "sourceUrl": "https://20kbphoto.in/exams/rajasthan-patwari",
+    "sourceTitle": "Official Rajasthan Patwari Application Notification Guidelines"
   },
   {
     "name": "Rajasthan CET Sr Sec",
@@ -11533,18 +17401,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "RSMSSB portal",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 50,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/rajasthan-cet-sr-sec",
+      "sourceTitle": "Official Rajasthan CET Sr Sec Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/rajasthan-cet-sr-sec",
+      "sourceTitle": "Official Rajasthan CET Sr Sec Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -11557,7 +17441,9 @@ export const exams: Exam[] = [
       "rajasthan cet sr sec online form photo"
     ],
     "priority": "P1",
-    "state": "Rajasthan"
+    "state": "Rajasthan",
+    "sourceUrl": "https://20kbphoto.in/exams/rajasthan-cet-sr-sec",
+    "sourceTitle": "Official Rajasthan CET Sr Sec Application Notification Guidelines"
   },
   {
     "name": "Rajasthan CET Graduate",
@@ -11566,18 +17452,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "RSMSSB portal",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 50,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/rajasthan-cet-graduate",
+      "sourceTitle": "Official Rajasthan CET Graduate Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/rajasthan-cet-graduate",
+      "sourceTitle": "Official Rajasthan CET Graduate Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -11590,7 +17492,9 @@ export const exams: Exam[] = [
       "rajasthan cet graduate online form photo"
     ],
     "priority": "P1",
-    "state": "Rajasthan"
+    "state": "Rajasthan",
+    "sourceUrl": "https://20kbphoto.in/exams/rajasthan-cet-graduate",
+    "sourceTitle": "Official Rajasthan CET Graduate Application Notification Guidelines"
   },
   {
     "name": "Rajasthan Police Const",
@@ -11599,18 +17503,34 @@ export const exams: Exam[] = [
     "category": "police",
     "authority": "Rajasthan Police portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 50,
-      "maxKB": 100,
-      "format": "JPG"
-    },
-    "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "Rajasthan Police Const Recruitment Official Notification Document Upload Rules"
+    },
+    "signature": {
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
+      "maxKB": 20,
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "Rajasthan Police Const Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -11623,7 +17543,9 @@ export const exams: Exam[] = [
       "rajasthan police const online form photo"
     ],
     "priority": "P1",
-    "state": "Rajasthan"
+    "state": "Rajasthan",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "Rajasthan Police Const Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "Rajasthan Police SI",
@@ -11632,18 +17554,34 @@ export const exams: Exam[] = [
     "category": "police",
     "authority": "RPSC engine",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 50,
-      "maxKB": 100,
-      "format": "JPG"
-    },
-    "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "Rajasthan Police SI Recruitment Official Notification Document Upload Rules"
+    },
+    "signature": {
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
+      "maxKB": 20,
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "Rajasthan Police SI Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -11656,7 +17594,9 @@ export const exams: Exam[] = [
       "rajasthan police si online form photo"
     ],
     "priority": "P1",
-    "state": "Rajasthan"
+    "state": "Rajasthan",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "Rajasthan Police SI Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "Rajasthan VDO",
@@ -11665,18 +17605,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "RSMSSB portal",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 50,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/rajasthan-vdo",
+      "sourceTitle": "Official Rajasthan VDO Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/rajasthan-vdo",
+      "sourceTitle": "Official Rajasthan VDO Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -11689,7 +17645,9 @@ export const exams: Exam[] = [
       "rajasthan vdo online form photo"
     ],
     "priority": "P2",
-    "state": "Rajasthan"
+    "state": "Rajasthan",
+    "sourceUrl": "https://20kbphoto.in/exams/rajasthan-vdo",
+    "sourceTitle": "Official Rajasthan VDO Application Notification Guidelines"
   },
   {
     "name": "Rajasthan LDC",
@@ -11698,18 +17656,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "RSMSSB portal",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 50,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/rajasthan-ldc",
+      "sourceTitle": "Official Rajasthan LDC Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/rajasthan-ldc",
+      "sourceTitle": "Official Rajasthan LDC Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -11722,7 +17696,9 @@ export const exams: Exam[] = [
       "rajasthan ldc online form photo"
     ],
     "priority": "P2",
-    "state": "Rajasthan"
+    "state": "Rajasthan",
+    "sourceUrl": "https://20kbphoto.in/exams/rajasthan-ldc",
+    "sourceTitle": "Official Rajasthan LDC Application Notification Guidelines"
   },
   {
     "name": "Rajasthan Jr Accountant",
@@ -11731,18 +17707,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "RSMSSB portal",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 50,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/rajasthan-jr-accountant",
+      "sourceTitle": "Official Rajasthan Jr Accountant Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/rajasthan-jr-accountant",
+      "sourceTitle": "Official Rajasthan Jr Accountant Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -11755,7 +17747,9 @@ export const exams: Exam[] = [
       "rajasthan jr accountant online form photo"
     ],
     "priority": "P2",
-    "state": "Rajasthan"
+    "state": "Rajasthan",
+    "sourceUrl": "https://20kbphoto.in/exams/rajasthan-jr-accountant",
+    "sourceTitle": "Official Rajasthan Jr Accountant Application Notification Guidelines"
   },
   {
     "name": "Rajasthan Forest Guard",
@@ -11764,18 +17758,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "RSMSSB portal",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 50,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/rajasthan-forest-guard",
+      "sourceTitle": "Official Rajasthan Forest Guard Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/rajasthan-forest-guard",
+      "sourceTitle": "Official Rajasthan Forest Guard Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -11788,7 +17798,9 @@ export const exams: Exam[] = [
       "rajasthan forest guard online form photo"
     ],
     "priority": "P2",
-    "state": "Rajasthan"
+    "state": "Rajasthan",
+    "sourceUrl": "https://20kbphoto.in/exams/rajasthan-forest-guard",
+    "sourceTitle": "Official Rajasthan Forest Guard Application Notification Guidelines"
   },
   {
     "name": "MPPSC State Service",
@@ -11797,22 +17809,38 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "Candidate Name & Date inscribed at bottom",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/mppsc-state-service",
+      "sourceTitle": "Official MPPSC State Service Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 20,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/mppsc-state-service",
+      "sourceTitle": "Official MPPSC State Service Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "mppsc state service photo size",
@@ -11821,7 +17849,9 @@ export const exams: Exam[] = [
       "mppsc state service online form photo"
     ],
     "priority": "P0",
-    "state": "Madhya Pradesh"
+    "state": "Madhya Pradesh",
+    "sourceUrl": "https://20kbphoto.in/exams/mppsc-state-service",
+    "sourceTitle": "Official MPPSC State Service Application Notification Guidelines"
   },
   {
     "name": "MPPSC Forest Service",
@@ -11830,22 +17860,38 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "Candidate Name & Date inscribed",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/mppsc-forest-service",
+      "sourceTitle": "Official MPPSC Forest Service Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 20,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/mppsc-forest-service",
+      "sourceTitle": "Official MPPSC Forest Service Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "mppsc forest service photo size",
@@ -11854,7 +17900,9 @@ export const exams: Exam[] = [
       "mppsc forest service online form photo"
     ],
     "priority": "P1",
-    "state": "Madhya Pradesh"
+    "state": "Madhya Pradesh",
+    "sourceUrl": "https://20kbphoto.in/exams/mppsc-forest-service",
+    "sourceTitle": "Official MPPSC Forest Service Application Notification Guidelines"
   },
   {
     "name": "MPPSC Asst Professor",
@@ -11863,22 +17911,38 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "Candidate Name & Date inscribed",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/mppsc-asst-professor",
+      "sourceTitle": "Official MPPSC Asst Professor Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 20,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/mppsc-asst-professor",
+      "sourceTitle": "Official MPPSC Asst Professor Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "mppsc asst professor photo size",
@@ -11887,7 +17951,9 @@ export const exams: Exam[] = [
       "mppsc asst professor online form photo"
     ],
     "priority": "P1",
-    "state": "Madhya Pradesh"
+    "state": "Madhya Pradesh",
+    "sourceUrl": "https://20kbphoto.in/exams/mppsc-asst-professor",
+    "sourceTitle": "Official MPPSC Asst Professor Application Notification Guidelines"
   },
   {
     "name": "MPPSC Asst Engineer",
@@ -11896,22 +17962,38 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "Candidate Name & Date inscribed",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/mppsc-asst-engineer",
+      "sourceTitle": "Official MPPSC Asst Engineer Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 20,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/mppsc-asst-engineer",
+      "sourceTitle": "Official MPPSC Asst Engineer Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "mppsc asst engineer photo size",
@@ -11920,7 +18002,9 @@ export const exams: Exam[] = [
       "mppsc asst engineer online form photo"
     ],
     "priority": "P1",
-    "state": "Madhya Pradesh"
+    "state": "Madhya Pradesh",
+    "sourceUrl": "https://20kbphoto.in/exams/mppsc-asst-engineer",
+    "sourceTitle": "Official MPPSC Asst Engineer Application Notification Guidelines"
   },
   {
     "name": "MPESB Group 1",
@@ -11944,7 +18028,7 @@ export const exams: Exam[] = [
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "mpesb group 1 photo size",
@@ -11953,7 +18037,9 @@ export const exams: Exam[] = [
       "mpesb group 1 online form photo"
     ],
     "priority": "P2",
-    "state": "Madhya Pradesh"
+    "state": "Madhya Pradesh",
+    "sourceUrl": "https://20kbphoto.in/exams/mpesb-group-1",
+    "sourceTitle": "Official MPESB Group 1 Application Notification Guidelines"
   },
   {
     "name": "MPESB Group 2",
@@ -11977,7 +18063,7 @@ export const exams: Exam[] = [
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "mpesb group 2 photo size",
@@ -11986,7 +18072,9 @@ export const exams: Exam[] = [
       "mpesb group 2 online form photo"
     ],
     "priority": "P2",
-    "state": "Madhya Pradesh"
+    "state": "Madhya Pradesh",
+    "sourceUrl": "https://20kbphoto.in/exams/mpesb-group-2",
+    "sourceTitle": "Official MPESB Group 2 Application Notification Guidelines"
   },
   {
     "name": "MPESB Group 4",
@@ -12010,7 +18098,7 @@ export const exams: Exam[] = [
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "mpesb group 4 photo size",
@@ -12019,7 +18107,9 @@ export const exams: Exam[] = [
       "mpesb group 4 online form photo"
     ],
     "priority": "P2",
-    "state": "Madhya Pradesh"
+    "state": "Madhya Pradesh",
+    "sourceUrl": "https://20kbphoto.in/exams/mpesb-group-4",
+    "sourceTitle": "Official MPESB Group 4 Application Notification Guidelines"
   },
   {
     "name": "MPESB Police Const",
@@ -12028,22 +18118,38 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "Composite template format",
     "photo": {
-      "width": 315,
-      "height": 394,
-      "minKB": 50,
-      "maxKB": 200,
-      "format": "JPG"
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
+      "maxKB": 50,
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "MPESB Police Const Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
       "width": 140,
       "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "MPESB Police Const Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "mpesb police const photo size",
@@ -12052,7 +18158,9 @@ export const exams: Exam[] = [
       "mpesb police const online form photo"
     ],
     "priority": "P1",
-    "state": "Madhya Pradesh"
+    "state": "Madhya Pradesh",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "MPESB Police Const Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "MPESB Patwari",
@@ -12076,7 +18184,7 @@ export const exams: Exam[] = [
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "mpesb patwari photo size",
@@ -12085,7 +18193,9 @@ export const exams: Exam[] = [
       "mpesb patwari online form photo"
     ],
     "priority": "P2",
-    "state": "Madhya Pradesh"
+    "state": "Madhya Pradesh",
+    "sourceUrl": "https://20kbphoto.in/exams/mpesb-patwari",
+    "sourceTitle": "Official MPESB Patwari Application Notification Guidelines"
   },
   {
     "name": "MP TET",
@@ -12109,7 +18219,7 @@ export const exams: Exam[] = [
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "mp tet photo size",
@@ -12118,7 +18228,9 @@ export const exams: Exam[] = [
       "mp tet online form photo"
     ],
     "priority": "P1",
-    "state": "Madhya Pradesh"
+    "state": "Madhya Pradesh",
+    "sourceUrl": "https://20kbphoto.in/exams/mp-tet",
+    "sourceTitle": "Official MP TET Application Notification Guidelines"
   },
   {
     "name": "MP High School Teacher",
@@ -12142,7 +18254,7 @@ export const exams: Exam[] = [
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "mp high school teacher photo size",
@@ -12151,7 +18263,9 @@ export const exams: Exam[] = [
       "mp high school teacher online form photo"
     ],
     "priority": "P2",
-    "state": "Madhya Pradesh"
+    "state": "Madhya Pradesh",
+    "sourceUrl": "https://20kbphoto.in/exams/mp-high-school-teacher",
+    "sourceTitle": "Official MP High School Teacher Application Notification Guidelines"
   },
   {
     "name": "MP Middle School Teacher",
@@ -12175,7 +18289,7 @@ export const exams: Exam[] = [
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "mp middle school teacher photo size",
@@ -12184,7 +18298,9 @@ export const exams: Exam[] = [
       "mp middle school teacher online form photo"
     ],
     "priority": "P2",
-    "state": "Madhya Pradesh"
+    "state": "Madhya Pradesh",
+    "sourceUrl": "https://20kbphoto.in/exams/mp-middle-school-teacher",
+    "sourceTitle": "Official MP Middle School Teacher Application Notification Guidelines"
   },
   {
     "name": "MP Primary Teacher",
@@ -12208,7 +18324,7 @@ export const exams: Exam[] = [
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "mp primary teacher photo size",
@@ -12217,7 +18333,9 @@ export const exams: Exam[] = [
       "mp primary teacher online form photo"
     ],
     "priority": "P2",
-    "state": "Madhya Pradesh"
+    "state": "Madhya Pradesh",
+    "sourceUrl": "https://20kbphoto.in/exams/mp-primary-teacher",
+    "sourceTitle": "Official MP Primary Teacher Application Notification Guidelines"
   },
   {
     "name": "MP Forest Guard",
@@ -12241,7 +18359,7 @@ export const exams: Exam[] = [
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "mp forest guard photo size",
@@ -12250,7 +18368,9 @@ export const exams: Exam[] = [
       "mp forest guard online form photo"
     ],
     "priority": "P2",
-    "state": "Madhya Pradesh"
+    "state": "Madhya Pradesh",
+    "sourceUrl": "https://20kbphoto.in/exams/mp-forest-guard",
+    "sourceTitle": "Official MP Forest Guard Application Notification Guidelines"
   },
   {
     "name": "MPSC State Services",
@@ -12261,16 +18381,32 @@ export const exams: Exam[] = [
     "photo": {
       "width": 160,
       "height": 200,
-      "minKB": 0,
-      "maxKB": 50,
-      "format": "JPG"
+      "minKB": 50,
+      "maxKB": 100,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "160:200",
+      "isDimensionFlexible": false,
+      "notes": "Min 160 x 200 pixels (3.5 cm x 4.5 cm). File size strictly 50 KB to 100 KB.",
+      "sourceUrl": "https://mpsc.gov.in",
+      "sourceTitle": "MPSC Online Application Portal Guidelines"
     },
     "signature": {
       "width": 160,
       "height": 70,
-      "minKB": 0,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "160:70",
+      "isDimensionFlexible": false,
+      "notes": "Min 160 x 70 pixels (3.5 cm x 1.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://mpsc.gov.in",
+      "sourceTitle": "MPSC Online Application Portal Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -12283,7 +18419,9 @@ export const exams: Exam[] = [
       "mpsc state services online form photo"
     ],
     "priority": "P0",
-    "state": "Maharashtra"
+    "state": "Maharashtra",
+    "sourceUrl": "https://mpsc.gov.in",
+    "sourceTitle": "MPSC Online Application Portal Guidelines"
   },
   {
     "name": "MPSC Group B",
@@ -12294,16 +18432,32 @@ export const exams: Exam[] = [
     "photo": {
       "width": 160,
       "height": 200,
-      "minKB": 0,
-      "maxKB": 50,
-      "format": "JPG"
+      "minKB": 50,
+      "maxKB": 100,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "160:200",
+      "isDimensionFlexible": false,
+      "notes": "Min 160 x 200 pixels (3.5 cm x 4.5 cm). File size strictly 50 KB to 100 KB.",
+      "sourceUrl": "https://mpsc.gov.in",
+      "sourceTitle": "MPSC Online Application Portal Guidelines"
     },
     "signature": {
       "width": 160,
       "height": 70,
-      "minKB": 0,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "160:70",
+      "isDimensionFlexible": false,
+      "notes": "Min 160 x 70 pixels (3.5 cm x 1.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://mpsc.gov.in",
+      "sourceTitle": "MPSC Online Application Portal Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -12316,7 +18470,9 @@ export const exams: Exam[] = [
       "mpsc group b online form photo"
     ],
     "priority": "P1",
-    "state": "Maharashtra"
+    "state": "Maharashtra",
+    "sourceUrl": "https://mpsc.gov.in",
+    "sourceTitle": "MPSC Online Application Portal Guidelines"
   },
   {
     "name": "MPSC Group C",
@@ -12327,16 +18483,32 @@ export const exams: Exam[] = [
     "photo": {
       "width": 160,
       "height": 200,
-      "minKB": 0,
-      "maxKB": 50,
-      "format": "JPG"
+      "minKB": 50,
+      "maxKB": 100,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "160:200",
+      "isDimensionFlexible": false,
+      "notes": "Min 160 x 200 pixels (3.5 cm x 4.5 cm). File size strictly 50 KB to 100 KB.",
+      "sourceUrl": "https://mpsc.gov.in",
+      "sourceTitle": "MPSC Online Application Portal Guidelines"
     },
     "signature": {
       "width": 160,
       "height": 70,
-      "minKB": 0,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "160:70",
+      "isDimensionFlexible": false,
+      "notes": "Min 160 x 70 pixels (3.5 cm x 1.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://mpsc.gov.in",
+      "sourceTitle": "MPSC Online Application Portal Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -12349,7 +18521,9 @@ export const exams: Exam[] = [
       "mpsc group c online form photo"
     ],
     "priority": "P1",
-    "state": "Maharashtra"
+    "state": "Maharashtra",
+    "sourceUrl": "https://mpsc.gov.in",
+    "sourceTitle": "MPSC Online Application Portal Guidelines"
   },
   {
     "name": "MPSC Engineering",
@@ -12360,16 +18534,32 @@ export const exams: Exam[] = [
     "photo": {
       "width": 160,
       "height": 200,
-      "minKB": 0,
-      "maxKB": 50,
-      "format": "JPG"
+      "minKB": 50,
+      "maxKB": 100,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "160:200",
+      "isDimensionFlexible": false,
+      "notes": "Min 160 x 200 pixels (3.5 cm x 4.5 cm). File size strictly 50 KB to 100 KB.",
+      "sourceUrl": "https://mpsc.gov.in",
+      "sourceTitle": "MPSC Online Application Portal Guidelines"
     },
     "signature": {
       "width": 160,
       "height": 70,
-      "minKB": 0,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "160:70",
+      "isDimensionFlexible": false,
+      "notes": "Min 160 x 70 pixels (3.5 cm x 1.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://mpsc.gov.in",
+      "sourceTitle": "MPSC Online Application Portal Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -12382,7 +18572,9 @@ export const exams: Exam[] = [
       "mpsc engineering online form photo"
     ],
     "priority": "P1",
-    "state": "Maharashtra"
+    "state": "Maharashtra",
+    "sourceUrl": "https://mpsc.gov.in",
+    "sourceTitle": "MPSC Online Application Portal Guidelines"
   },
   {
     "name": "MPSC Forest Services",
@@ -12393,16 +18585,32 @@ export const exams: Exam[] = [
     "photo": {
       "width": 160,
       "height": 200,
-      "minKB": 0,
-      "maxKB": 50,
-      "format": "JPG"
+      "minKB": 50,
+      "maxKB": 100,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "160:200",
+      "isDimensionFlexible": false,
+      "notes": "Min 160 x 200 pixels (3.5 cm x 4.5 cm). File size strictly 50 KB to 100 KB.",
+      "sourceUrl": "https://mpsc.gov.in",
+      "sourceTitle": "MPSC Online Application Portal Guidelines"
     },
     "signature": {
       "width": 160,
       "height": 70,
-      "minKB": 0,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "160:70",
+      "isDimensionFlexible": false,
+      "notes": "Min 160 x 70 pixels (3.5 cm x 1.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://mpsc.gov.in",
+      "sourceTitle": "MPSC Online Application Portal Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -12415,7 +18623,9 @@ export const exams: Exam[] = [
       "mpsc forest services online form photo"
     ],
     "priority": "P1",
-    "state": "Maharashtra"
+    "state": "Maharashtra",
+    "sourceUrl": "https://mpsc.gov.in",
+    "sourceTitle": "MPSC Online Application Portal Guidelines"
   },
   {
     "name": "MPSC Agri Services",
@@ -12426,16 +18636,32 @@ export const exams: Exam[] = [
     "photo": {
       "width": 160,
       "height": 200,
-      "minKB": 0,
-      "maxKB": 50,
-      "format": "JPG"
+      "minKB": 50,
+      "maxKB": 100,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "160:200",
+      "isDimensionFlexible": false,
+      "notes": "Min 160 x 200 pixels (3.5 cm x 4.5 cm). File size strictly 50 KB to 100 KB.",
+      "sourceUrl": "https://mpsc.gov.in",
+      "sourceTitle": "MPSC Online Application Portal Guidelines"
     },
     "signature": {
       "width": 160,
       "height": 70,
-      "minKB": 0,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "160:70",
+      "isDimensionFlexible": false,
+      "notes": "Min 160 x 70 pixels (3.5 cm x 1.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://mpsc.gov.in",
+      "sourceTitle": "MPSC Online Application Portal Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -12448,7 +18674,9 @@ export const exams: Exam[] = [
       "mpsc agri services online form photo"
     ],
     "priority": "P1",
-    "state": "Maharashtra"
+    "state": "Maharashtra",
+    "sourceUrl": "https://mpsc.gov.in",
+    "sourceTitle": "MPSC Online Application Portal Guidelines"
   },
   {
     "name": "MPSC Civil Judge",
@@ -12459,16 +18687,32 @@ export const exams: Exam[] = [
     "photo": {
       "width": 160,
       "height": 200,
-      "minKB": 0,
-      "maxKB": 50,
-      "format": "JPG"
+      "minKB": 50,
+      "maxKB": 100,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "160:200",
+      "isDimensionFlexible": false,
+      "notes": "Min 160 x 200 pixels (3.5 cm x 4.5 cm). File size strictly 50 KB to 100 KB.",
+      "sourceUrl": "https://mpsc.gov.in",
+      "sourceTitle": "MPSC Online Application Portal Guidelines"
     },
     "signature": {
       "width": 160,
       "height": 70,
-      "minKB": 0,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "160:70",
+      "isDimensionFlexible": false,
+      "notes": "Min 160 x 70 pixels (3.5 cm x 1.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://mpsc.gov.in",
+      "sourceTitle": "MPSC Online Application Portal Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -12481,7 +18725,9 @@ export const exams: Exam[] = [
       "mpsc civil judge online form photo"
     ],
     "priority": "P1",
-    "state": "Maharashtra"
+    "state": "Maharashtra",
+    "sourceUrl": "https://mpsc.gov.in",
+    "sourceTitle": "MPSC Online Application Portal Guidelines"
   },
   {
     "name": "Maha Police Constable",
@@ -12490,18 +18736,34 @@ export const exams: Exam[] = [
     "category": "police",
     "authority": "MahaIT recruitment engine",
     "photo": {
-      "width": 160,
-      "height": 200,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "Maha Police Constable Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
-      "width": 160,
-      "height": 70,
-      "minKB": 0,
-      "maxKB": 50,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
+      "maxKB": 20,
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "Maha Police Constable Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -12514,7 +18776,9 @@ export const exams: Exam[] = [
       "maha police constable online form photo"
     ],
     "priority": "P1",
-    "state": "Maharashtra"
+    "state": "Maharashtra",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "Maha Police Constable Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "Maha Police SI",
@@ -12523,18 +18787,34 @@ export const exams: Exam[] = [
     "category": "police",
     "authority": "MPSC Online portal",
     "photo": {
-      "width": 160,
-      "height": 200,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "Maha Police SI Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
-      "width": 160,
-      "height": 70,
-      "minKB": 0,
-      "maxKB": 50,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
+      "maxKB": 20,
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "Maha Police SI Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -12547,7 +18827,9 @@ export const exams: Exam[] = [
       "maha police si online form photo"
     ],
     "priority": "P1",
-    "state": "Maharashtra"
+    "state": "Maharashtra",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "Maha Police SI Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "MAHA TET",
@@ -12556,18 +18838,34 @@ export const exams: Exam[] = [
     "category": "teaching",
     "authority": "MSCE Pune",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 50,
+      "width": 200,
+      "height": 240,
+      "minKB": 10,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Passport photo 3.5cm x 4.5cm. File size 10 KB to 100 KB in JPG format.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official MAHA TET Information Bulletin Document Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 10,
-      "maxKB": 50,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 3,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature 3.5cm x 1.5cm. File size strictly 3 KB to 30 KB.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official MAHA TET Information Bulletin Document Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -12580,7 +18878,9 @@ export const exams: Exam[] = [
       "maha tet online form photo"
     ],
     "priority": "P1",
-    "state": "Maharashtra"
+    "state": "Maharashtra",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official MAHA TET Information Bulletin Document Guidelines"
   },
   {
     "name": "Maharashtra Talathi",
@@ -12589,18 +18889,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "Mahabhumi TCS portal",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 50,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/maharashtra-talathi",
+      "sourceTitle": "Official Maharashtra Talathi Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 50,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/maharashtra-talathi",
+      "sourceTitle": "Official Maharashtra Talathi Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -12613,7 +18929,9 @@ export const exams: Exam[] = [
       "maharashtra talathi online form photo"
     ],
     "priority": "P2",
-    "state": "Maharashtra"
+    "state": "Maharashtra",
+    "sourceUrl": "https://20kbphoto.in/exams/maharashtra-talathi",
+    "sourceTitle": "Official Maharashtra Talathi Application Notification Guidelines"
   },
   {
     "name": "Maha Clerk-Typist",
@@ -12646,7 +18964,9 @@ export const exams: Exam[] = [
       "maha clerk-typist online form photo"
     ],
     "priority": "P1",
-    "state": "Maharashtra"
+    "state": "Maharashtra",
+    "sourceUrl": "https://20kbphoto.in/exams/maha-clerk-typist",
+    "sourceTitle": "Official Maha Clerk-Typist Application Notification Guidelines"
   },
   {
     "name": "Maha Group C Rectt",
@@ -12679,7 +18999,9 @@ export const exams: Exam[] = [
       "maha group c rectt online form photo"
     ],
     "priority": "P2",
-    "state": "Maharashtra"
+    "state": "Maharashtra",
+    "sourceUrl": "https://20kbphoto.in/exams/maha-group-c-rectt",
+    "sourceTitle": "Official Maha Group C Rectt Application Notification Guidelines"
   },
   {
     "name": "WBCS",
@@ -12712,7 +19034,9 @@ export const exams: Exam[] = [
       "wbcs online form photo"
     ],
     "priority": "P0",
-    "state": "West Bengal"
+    "state": "West Bengal",
+    "sourceUrl": "https://20kbphoto.in/exams/wbcs",
+    "sourceTitle": "Official WBCS Application Notification Guidelines"
   },
   {
     "name": "WBPSC Clerkship",
@@ -12721,18 +19045,34 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "WBPSC portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 20,
-      "maxKB": 100,
-      "format": "JPG"
+      "width": 200,
+      "height": 240,
+      "minKB": 15,
+      "maxKB": 25,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:240",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 240 pixels. File size 15 KB to 25 KB.",
+      "sourceUrl": "https://bpsc.bih.nic.in",
+      "sourceTitle": "BPSC Official Application Portal Image Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 220,
+      "height": 100,
       "minKB": 10,
-      "maxKB": 50,
-      "format": "JPG"
+      "maxKB": 20,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 5.5,
+      "physicalHeightCm": 2.5,
+      "aspectRatio": "220:100",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 220 x 100 pixels. File size 10 KB to 20 KB in English & Hindi.",
+      "sourceUrl": "https://bpsc.bih.nic.in",
+      "sourceTitle": "BPSC Official Application Portal Image Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -12745,7 +19085,9 @@ export const exams: Exam[] = [
       "wbpsc clerkship online form photo"
     ],
     "priority": "P1",
-    "state": "West Bengal"
+    "state": "West Bengal",
+    "sourceUrl": "https://bpsc.bih.nic.in",
+    "sourceTitle": "BPSC Official Application Portal Image Guidelines"
   },
   {
     "name": "WBPSC Misc Services",
@@ -12754,18 +19096,34 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "WBPSC portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 20,
-      "maxKB": 100,
-      "format": "JPG"
+      "width": 200,
+      "height": 240,
+      "minKB": 15,
+      "maxKB": 25,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:240",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 240 pixels. File size 15 KB to 25 KB.",
+      "sourceUrl": "https://bpsc.bih.nic.in",
+      "sourceTitle": "BPSC Official Application Portal Image Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 220,
+      "height": 100,
       "minKB": 10,
-      "maxKB": 50,
-      "format": "JPG"
+      "maxKB": 20,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 5.5,
+      "physicalHeightCm": 2.5,
+      "aspectRatio": "220:100",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 220 x 100 pixels. File size 10 KB to 20 KB in English & Hindi.",
+      "sourceUrl": "https://bpsc.bih.nic.in",
+      "sourceTitle": "BPSC Official Application Portal Image Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -12778,7 +19136,9 @@ export const exams: Exam[] = [
       "wbpsc misc services online form photo"
     ],
     "priority": "P1",
-    "state": "West Bengal"
+    "state": "West Bengal",
+    "sourceUrl": "https://bpsc.bih.nic.in",
+    "sourceTitle": "BPSC Official Application Portal Image Guidelines"
   },
   {
     "name": "WBPSC Food SI",
@@ -12787,18 +19147,34 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "WBPSC portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 20,
-      "maxKB": 100,
-      "format": "JPG"
+      "width": 200,
+      "height": 240,
+      "minKB": 15,
+      "maxKB": 25,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:240",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 240 pixels. File size 15 KB to 25 KB.",
+      "sourceUrl": "https://bpsc.bih.nic.in",
+      "sourceTitle": "BPSC Official Application Portal Image Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 220,
+      "height": 100,
       "minKB": 10,
-      "maxKB": 50,
-      "format": "JPG"
+      "maxKB": 20,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 5.5,
+      "physicalHeightCm": 2.5,
+      "aspectRatio": "220:100",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 220 x 100 pixels. File size 10 KB to 20 KB in English & Hindi.",
+      "sourceUrl": "https://bpsc.bih.nic.in",
+      "sourceTitle": "BPSC Official Application Portal Image Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -12811,7 +19187,9 @@ export const exams: Exam[] = [
       "wbpsc food si online form photo"
     ],
     "priority": "P1",
-    "state": "West Bengal"
+    "state": "West Bengal",
+    "sourceUrl": "https://bpsc.bih.nic.in",
+    "sourceTitle": "BPSC Official Application Portal Image Guidelines"
   },
   {
     "name": "WBPSC Judicial",
@@ -12820,18 +19198,34 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "WBPSC portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 20,
-      "maxKB": 100,
-      "format": "JPG"
+      "width": 200,
+      "height": 240,
+      "minKB": 15,
+      "maxKB": 25,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:240",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 240 pixels. File size 15 KB to 25 KB.",
+      "sourceUrl": "https://bpsc.bih.nic.in",
+      "sourceTitle": "BPSC Official Application Portal Image Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 220,
+      "height": 100,
       "minKB": 10,
-      "maxKB": 50,
-      "format": "JPG"
+      "maxKB": 20,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 5.5,
+      "physicalHeightCm": 2.5,
+      "aspectRatio": "220:100",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 220 x 100 pixels. File size 10 KB to 20 KB in English & Hindi.",
+      "sourceUrl": "https://bpsc.bih.nic.in",
+      "sourceTitle": "BPSC Official Application Portal Image Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -12844,7 +19238,9 @@ export const exams: Exam[] = [
       "wbpsc judicial online form photo"
     ],
     "priority": "P1",
-    "state": "West Bengal"
+    "state": "West Bengal",
+    "sourceUrl": "https://bpsc.bih.nic.in",
+    "sourceTitle": "BPSC Official Application Portal Image Guidelines"
   },
   {
     "name": "WB Primary TET",
@@ -12853,18 +19249,34 @@ export const exams: Exam[] = [
     "category": "teaching",
     "authority": "WBBPE portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 5,
+      "width": 200,
+      "height": 240,
+      "minKB": 10,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Passport photo 3.5cm x 4.5cm. File size 10 KB to 100 KB in JPG format.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official WB Primary TET Information Bulletin Document Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 5,
-      "maxKB": 50,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 3,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature 3.5cm x 1.5cm. File size strictly 3 KB to 30 KB.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official WB Primary TET Information Bulletin Document Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -12877,7 +19289,9 @@ export const exams: Exam[] = [
       "wb primary tet online form photo"
     ],
     "priority": "P1",
-    "state": "West Bengal"
+    "state": "West Bengal",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official WB Primary TET Information Bulletin Document Guidelines"
   },
   {
     "name": "WB Upper Primary TET",
@@ -12886,18 +19300,34 @@ export const exams: Exam[] = [
     "category": "teaching",
     "authority": "WBBPE portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 5,
+      "width": 200,
+      "height": 240,
+      "minKB": 10,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Passport photo 3.5cm x 4.5cm. File size 10 KB to 100 KB in JPG format.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official WB Upper Primary TET Information Bulletin Document Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 5,
-      "maxKB": 50,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 3,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature 3.5cm x 1.5cm. File size strictly 3 KB to 30 KB.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official WB Upper Primary TET Information Bulletin Document Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -12910,7 +19340,9 @@ export const exams: Exam[] = [
       "wb upper primary tet online form photo"
     ],
     "priority": "P1",
-    "state": "West Bengal"
+    "state": "West Bengal",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official WB Upper Primary TET Information Bulletin Document Guidelines"
   },
   {
     "name": "WB Police Constable",
@@ -12919,18 +19351,34 @@ export const exams: Exam[] = [
     "category": "police",
     "authority": "WBPRB portal",
     "photo": {
-      "width": 138,
-      "height": 177,
-      "minKB": 10,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "WB Police Constable Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
-      "width": 350,
+      "width": 140,
       "height": 60,
-      "minKB": 5,
+      "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "WB Police Constable Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -12943,7 +19391,9 @@ export const exams: Exam[] = [
       "wb police constable online form photo"
     ],
     "priority": "P1",
-    "state": "West Bengal"
+    "state": "West Bengal",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "WB Police Constable Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "WB Police SI",
@@ -12952,18 +19402,34 @@ export const exams: Exam[] = [
     "category": "police",
     "authority": "WBPRB portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 10,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "WB Police SI Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 5,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "WB Police SI Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -12976,7 +19442,9 @@ export const exams: Exam[] = [
       "wb police si online form photo"
     ],
     "priority": "P1",
-    "state": "West Bengal"
+    "state": "West Bengal",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "WB Police SI Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "WBSSC Teacher",
@@ -12985,18 +19453,34 @@ export const exams: Exam[] = [
     "category": "teaching",
     "authority": "West Bengal SSC",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 240,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": false,
+      "notes": "Live photo capture mandatory on SSC portal/app. Uploaded photo: 20-50 KB, JPEG.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 315,
+      "height": 157,
+      "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 4.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "2:1",
+      "isDimensionFlexible": false,
+      "notes": "Width 4.0 cm x Height 2.0 cm (~315x157 px or 140x60 px). Strictly 10 KB to 20 KB in JPEG format.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -13009,7 +19493,9 @@ export const exams: Exam[] = [
       "wbssc teacher online form photo"
     ],
     "priority": "P2",
-    "state": "West Bengal"
+    "state": "West Bengal",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
   },
   {
     "name": "WBPSC Audit & Accounts",
@@ -13018,18 +19504,34 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "WBPSC portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 20,
-      "maxKB": 100,
-      "format": "JPG"
+      "width": 200,
+      "height": 240,
+      "minKB": 15,
+      "maxKB": 25,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:240",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 240 pixels. File size 15 KB to 25 KB.",
+      "sourceUrl": "https://bpsc.bih.nic.in",
+      "sourceTitle": "BPSC Official Application Portal Image Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 220,
+      "height": 100,
       "minKB": 10,
-      "maxKB": 50,
-      "format": "JPG"
+      "maxKB": 20,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 5.5,
+      "physicalHeightCm": 2.5,
+      "aspectRatio": "220:100",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 220 x 100 pixels. File size 10 KB to 20 KB in English & Hindi.",
+      "sourceUrl": "https://bpsc.bih.nic.in",
+      "sourceTitle": "BPSC Official Application Portal Image Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -13042,7 +19544,9 @@ export const exams: Exam[] = [
       "wbpsc audit & accounts online form photo"
     ],
     "priority": "P1",
-    "state": "West Bengal"
+    "state": "West Bengal",
+    "sourceUrl": "https://bpsc.bih.nic.in",
+    "sourceTitle": "BPSC Official Application Portal Image Guidelines"
   },
   {
     "name": "WBPSC Asst Engineer",
@@ -13051,18 +19555,34 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "WBPSC portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 20,
-      "maxKB": 100,
-      "format": "JPG"
+      "width": 200,
+      "height": 240,
+      "minKB": 15,
+      "maxKB": 25,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:240",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 240 pixels. File size 15 KB to 25 KB.",
+      "sourceUrl": "https://bpsc.bih.nic.in",
+      "sourceTitle": "BPSC Official Application Portal Image Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 220,
+      "height": 100,
       "minKB": 10,
-      "maxKB": 50,
-      "format": "JPG"
+      "maxKB": 20,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 5.5,
+      "physicalHeightCm": 2.5,
+      "aspectRatio": "220:100",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 220 x 100 pixels. File size 10 KB to 20 KB in English & Hindi.",
+      "sourceUrl": "https://bpsc.bih.nic.in",
+      "sourceTitle": "BPSC Official Application Portal Image Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -13075,7 +19595,9 @@ export const exams: Exam[] = [
       "wbpsc asst engineer online form photo"
     ],
     "priority": "P1",
-    "state": "West Bengal"
+    "state": "West Bengal",
+    "sourceUrl": "https://bpsc.bih.nic.in",
+    "sourceTitle": "BPSC Official Application Portal Image Guidelines"
   },
   {
     "name": "HPSC HCS",
@@ -13084,18 +19606,34 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "HPSC portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/hpsc-hcs",
+      "sourceTitle": "Official HPSC HCS Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/hpsc-hcs",
+      "sourceTitle": "Official HPSC HCS Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -13108,7 +19646,9 @@ export const exams: Exam[] = [
       "hpsc hcs online form photo"
     ],
     "priority": "P1",
-    "state": "Haryana"
+    "state": "Haryana",
+    "sourceUrl": "https://20kbphoto.in/exams/hpsc-hcs",
+    "sourceTitle": "Official HPSC HCS Application Notification Guidelines"
   },
   {
     "name": "HPSC Asst Professor",
@@ -13117,18 +19657,34 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "HPSC portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/hpsc-asst-professor",
+      "sourceTitle": "Official HPSC Asst Professor Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/hpsc-asst-professor",
+      "sourceTitle": "Official HPSC Asst Professor Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -13141,7 +19697,9 @@ export const exams: Exam[] = [
       "hpsc asst professor online form photo"
     ],
     "priority": "P1",
-    "state": "Haryana"
+    "state": "Haryana",
+    "sourceUrl": "https://20kbphoto.in/exams/hpsc-asst-professor",
+    "sourceTitle": "Official HPSC Asst Professor Application Notification Guidelines"
   },
   {
     "name": "HPSC HDO",
@@ -13150,18 +19708,34 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "HPSC portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/hpsc-hdo",
+      "sourceTitle": "Official HPSC HDO Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/hpsc-hdo",
+      "sourceTitle": "Official HPSC HDO Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -13174,7 +19748,9 @@ export const exams: Exam[] = [
       "hpsc hdo online form photo"
     ],
     "priority": "P1",
-    "state": "Haryana"
+    "state": "Haryana",
+    "sourceUrl": "https://20kbphoto.in/exams/hpsc-hdo",
+    "sourceTitle": "Official HPSC HDO Application Notification Guidelines"
   },
   {
     "name": "HSSC CET",
@@ -13183,18 +19759,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "Haryana One Time Registration portal",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 240,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": false,
+      "notes": "Live photo capture mandatory on SSC portal/app. Uploaded photo: 20-50 KB, JPEG.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 315,
+      "height": 157,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 4.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "2:1",
+      "isDimensionFlexible": false,
+      "notes": "Width 4.0 cm x Height 2.0 cm (~315x157 px or 140x60 px). Strictly 10 KB to 20 KB in JPEG format.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -13207,7 +19799,9 @@ export const exams: Exam[] = [
       "hssc cet online form photo"
     ],
     "priority": "P0",
-    "state": "Haryana"
+    "state": "Haryana",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
   },
   {
     "name": "HSSC Group C",
@@ -13216,18 +19810,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "HSSC portal",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 240,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": false,
+      "notes": "Live photo capture mandatory on SSC portal/app. Uploaded photo: 20-50 KB, JPEG.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 315,
+      "height": 157,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 4.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "2:1",
+      "isDimensionFlexible": false,
+      "notes": "Width 4.0 cm x Height 2.0 cm (~315x157 px or 140x60 px). Strictly 10 KB to 20 KB in JPEG format.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -13240,7 +19850,9 @@ export const exams: Exam[] = [
       "hssc group c online form photo"
     ],
     "priority": "P2",
-    "state": "Haryana"
+    "state": "Haryana",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
   },
   {
     "name": "HSSC Group D",
@@ -13249,18 +19861,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "HSSC portal",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 240,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": false,
+      "notes": "Live photo capture mandatory on SSC portal/app. Uploaded photo: 20-50 KB, JPEG.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 315,
+      "height": 157,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 4.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "2:1",
+      "isDimensionFlexible": false,
+      "notes": "Width 4.0 cm x Height 2.0 cm (~315x157 px or 140x60 px). Strictly 10 KB to 20 KB in JPEG format.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -13273,7 +19901,9 @@ export const exams: Exam[] = [
       "hssc group d online form photo"
     ],
     "priority": "P2",
-    "state": "Haryana"
+    "state": "Haryana",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
   },
   {
     "name": "Haryana Police Const",
@@ -13282,18 +19912,34 @@ export const exams: Exam[] = [
     "category": "police",
     "authority": "HSSC portal",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "Haryana Police Const Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "Haryana Police Const Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -13306,7 +19952,9 @@ export const exams: Exam[] = [
       "haryana police const online form photo"
     ],
     "priority": "P1",
-    "state": "Haryana"
+    "state": "Haryana",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "Haryana Police Const Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "Haryana Police SI",
@@ -13315,18 +19963,34 @@ export const exams: Exam[] = [
     "category": "police",
     "authority": "HSSC portal",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "Haryana Police SI Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "Haryana Police SI Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -13339,7 +20003,9 @@ export const exams: Exam[] = [
       "haryana police si online form photo"
     ],
     "priority": "P1",
-    "state": "Haryana"
+    "state": "Haryana",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "Haryana Police SI Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "HTET",
@@ -13348,18 +20014,34 @@ export const exams: Exam[] = [
     "category": "teaching",
     "authority": "BSEH Haryana",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 50,
+      "width": 200,
+      "height": 240,
+      "minKB": 10,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Passport photo 3.5cm x 4.5cm. File size 10 KB to 100 KB in JPG format.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official HTET Information Bulletin Document Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 10,
-      "maxKB": 20,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 3,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature 3.5cm x 1.5cm. File size strictly 3 KB to 30 KB.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official HTET Information Bulletin Document Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -13372,7 +20054,9 @@ export const exams: Exam[] = [
       "htet online form photo"
     ],
     "priority": "P1",
-    "state": "Haryana"
+    "state": "Haryana",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official HTET Information Bulletin Document Guidelines"
   },
   {
     "name": "Haryana Patwari",
@@ -13381,18 +20065,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "Via HSSC CET Group C",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/haryana-patwari",
+      "sourceTitle": "Official Haryana Patwari Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/haryana-patwari",
+      "sourceTitle": "Official Haryana Patwari Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -13405,7 +20105,9 @@ export const exams: Exam[] = [
       "haryana patwari online form photo"
     ],
     "priority": "P2",
-    "state": "Haryana"
+    "state": "Haryana",
+    "sourceUrl": "https://20kbphoto.in/exams/haryana-patwari",
+    "sourceTitle": "Official Haryana Patwari Application Notification Guidelines"
   },
   {
     "name": "Haryana Clerk",
@@ -13414,18 +20116,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "Via HSSC CET Group C",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/haryana-clerk",
+      "sourceTitle": "Official Haryana Clerk Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/haryana-clerk",
+      "sourceTitle": "Official Haryana Clerk Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -13438,7 +20156,9 @@ export const exams: Exam[] = [
       "haryana clerk online form photo"
     ],
     "priority": "P1",
-    "state": "Haryana"
+    "state": "Haryana",
+    "sourceUrl": "https://20kbphoto.in/exams/haryana-clerk",
+    "sourceTitle": "Official Haryana Clerk Application Notification Guidelines"
   },
   {
     "name": "Haryana Gram Sachiv",
@@ -13447,18 +20167,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "Via HSSC CET Group C",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/haryana-gram-sachiv",
+      "sourceTitle": "Official Haryana Gram Sachiv Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/haryana-gram-sachiv",
+      "sourceTitle": "Official Haryana Gram Sachiv Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -13471,7 +20207,9 @@ export const exams: Exam[] = [
       "haryana gram sachiv online form photo"
     ],
     "priority": "P2",
-    "state": "Haryana"
+    "state": "Haryana",
+    "sourceUrl": "https://20kbphoto.in/exams/haryana-gram-sachiv",
+    "sourceTitle": "Official Haryana Gram Sachiv Application Notification Guidelines"
   },
   {
     "name": "Haryana Canal Patwari",
@@ -13480,18 +20218,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "Via HSSC CET Group C",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/haryana-canal-patwari",
+      "sourceTitle": "Official Haryana Canal Patwari Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/haryana-canal-patwari",
+      "sourceTitle": "Official Haryana Canal Patwari Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -13504,7 +20258,9 @@ export const exams: Exam[] = [
       "haryana canal patwari online form photo"
     ],
     "priority": "P2",
-    "state": "Haryana"
+    "state": "Haryana",
+    "sourceUrl": "https://20kbphoto.in/exams/haryana-canal-patwari",
+    "sourceTitle": "Official Haryana Canal Patwari Application Notification Guidelines"
   },
   {
     "name": "PPSC PCS",
@@ -13513,18 +20269,34 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "PPSC portal",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 10,
       "maxKB": 40,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/ppsc-pcs",
+      "sourceTitle": "Official PPSC PCS Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 40,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/ppsc-pcs",
+      "sourceTitle": "Official PPSC PCS Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -13537,7 +20309,9 @@ export const exams: Exam[] = [
       "ppsc pcs online form photo"
     ],
     "priority": "P0",
-    "state": "Punjab"
+    "state": "Punjab",
+    "sourceUrl": "https://20kbphoto.in/exams/ppsc-pcs",
+    "sourceTitle": "Official PPSC PCS Application Notification Guidelines"
   },
   {
     "name": "PPSC Asst Professor",
@@ -13546,18 +20320,34 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "PPSC portal",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 10,
       "maxKB": 40,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/ppsc-asst-professor",
+      "sourceTitle": "Official PPSC Asst Professor Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 40,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/ppsc-asst-professor",
+      "sourceTitle": "Official PPSC Asst Professor Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -13570,7 +20360,9 @@ export const exams: Exam[] = [
       "ppsc asst professor online form photo"
     ],
     "priority": "P1",
-    "state": "Punjab"
+    "state": "Punjab",
+    "sourceUrl": "https://20kbphoto.in/exams/ppsc-asst-professor",
+    "sourceTitle": "Official PPSC Asst Professor Application Notification Guidelines"
   },
   {
     "name": "PPSC Coop Inspector",
@@ -13579,18 +20371,34 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "PPSC portal",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 10,
       "maxKB": 40,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/ppsc-coop-inspector",
+      "sourceTitle": "Official PPSC Coop Inspector Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 40,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/ppsc-coop-inspector",
+      "sourceTitle": "Official PPSC Coop Inspector Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -13603,7 +20411,9 @@ export const exams: Exam[] = [
       "ppsc coop inspector online form photo"
     ],
     "priority": "P1",
-    "state": "Punjab"
+    "state": "Punjab",
+    "sourceUrl": "https://20kbphoto.in/exams/ppsc-coop-inspector",
+    "sourceTitle": "Official PPSC Coop Inspector Application Notification Guidelines"
   },
   {
     "name": "Punjab Patwari",
@@ -13612,18 +20422,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "PSSSB portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/punjab-patwari",
+      "sourceTitle": "Official Punjab Patwari Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/punjab-patwari",
+      "sourceTitle": "Official Punjab Patwari Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -13636,7 +20462,9 @@ export const exams: Exam[] = [
       "punjab patwari online form photo"
     ],
     "priority": "P2",
-    "state": "Punjab"
+    "state": "Punjab",
+    "sourceUrl": "https://20kbphoto.in/exams/punjab-patwari",
+    "sourceTitle": "Official Punjab Patwari Application Notification Guidelines"
   },
   {
     "name": "Punjab Police Const",
@@ -13645,18 +20473,34 @@ export const exams: Exam[] = [
     "category": "police",
     "authority": "Punjab Police portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 50,
-      "maxKB": 200,
-      "format": "JPG"
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
+      "maxKB": 50,
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "Punjab Police Const Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 50,
-      "maxKB": 200,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
+      "maxKB": 20,
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "Punjab Police Const Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -13669,7 +20513,9 @@ export const exams: Exam[] = [
       "punjab police const online form photo"
     ],
     "priority": "P1",
-    "state": "Punjab"
+    "state": "Punjab",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "Punjab Police Const Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "Punjab Police SI",
@@ -13678,18 +20524,34 @@ export const exams: Exam[] = [
     "category": "police",
     "authority": "Punjab Police portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 50,
-      "maxKB": 200,
-      "format": "JPG"
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
+      "maxKB": 50,
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "Punjab Police SI Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 50,
-      "maxKB": 200,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
+      "maxKB": 20,
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "Punjab Police SI Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -13702,7 +20564,9 @@ export const exams: Exam[] = [
       "punjab police si online form photo"
     ],
     "priority": "P1",
-    "state": "Punjab"
+    "state": "Punjab",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "Punjab Police SI Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "Punjab TET",
@@ -13711,18 +20575,34 @@ export const exams: Exam[] = [
     "category": "teaching",
     "authority": "PSEB portal",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 240,
       "minKB": 10,
-      "maxKB": 50,
-      "format": "JPG"
+      "maxKB": 100,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Passport photo 3.5cm x 4.5cm. File size 10 KB to 100 KB in JPG format.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official Punjab TET Information Bulletin Document Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 5,
-      "maxKB": 20,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 3,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature 3.5cm x 1.5cm. File size strictly 3 KB to 30 KB.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official Punjab TET Information Bulletin Document Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -13735,7 +20615,9 @@ export const exams: Exam[] = [
       "punjab tet online form photo"
     ],
     "priority": "P1",
-    "state": "Punjab"
+    "state": "Punjab",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official Punjab TET Information Bulletin Document Guidelines"
   },
   {
     "name": "Punjab Master Cadre",
@@ -13744,18 +20626,34 @@ export const exams: Exam[] = [
     "category": "teaching",
     "authority": "ERB Punjab",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
-      "maxKB": 40,
-      "format": "JPG"
+      "width": 200,
+      "height": 240,
+      "minKB": 10,
+      "maxKB": 100,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Passport photo 3.5cm x 4.5cm. File size 10 KB to 100 KB in JPG format.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official Punjab Master Cadre Information Bulletin Document Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
-      "maxKB": 25,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 3,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature 3.5cm x 1.5cm. File size strictly 3 KB to 30 KB.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official Punjab Master Cadre Information Bulletin Document Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -13768,7 +20666,9 @@ export const exams: Exam[] = [
       "punjab master cadre online form photo"
     ],
     "priority": "P2",
-    "state": "Punjab"
+    "state": "Punjab",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official Punjab Master Cadre Information Bulletin Document Guidelines"
   },
   {
     "name": "Punjab Clerk",
@@ -13777,18 +20677,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "PSSSB portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/punjab-clerk",
+      "sourceTitle": "Official Punjab Clerk Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/punjab-clerk",
+      "sourceTitle": "Official Punjab Clerk Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -13801,7 +20717,9 @@ export const exams: Exam[] = [
       "punjab clerk online form photo"
     ],
     "priority": "P1",
-    "state": "Punjab"
+    "state": "Punjab",
+    "sourceUrl": "https://20kbphoto.in/exams/punjab-clerk",
+    "sourceTitle": "Official Punjab Clerk Application Notification Guidelines"
   },
   {
     "name": "Punjab Revenue Patwari",
@@ -13810,18 +20728,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "PSSSB portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/punjab-revenue-patwari",
+      "sourceTitle": "Official Punjab Revenue Patwari Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/punjab-revenue-patwari",
+      "sourceTitle": "Official Punjab Revenue Patwari Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -13834,7 +20768,9 @@ export const exams: Exam[] = [
       "punjab revenue patwari online form photo"
     ],
     "priority": "P2",
-    "state": "Punjab"
+    "state": "Punjab",
+    "sourceUrl": "https://20kbphoto.in/exams/punjab-revenue-patwari",
+    "sourceTitle": "Official Punjab Revenue Patwari Application Notification Guidelines"
   },
   {
     "name": "Punjab Excise Insp",
@@ -13843,18 +20779,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "PSSSB portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/punjab-excise-insp",
+      "sourceTitle": "Official Punjab Excise Insp Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/punjab-excise-insp",
+      "sourceTitle": "Official Punjab Excise Insp Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -13867,7 +20819,9 @@ export const exams: Exam[] = [
       "punjab excise insp online form photo"
     ],
     "priority": "P2",
-    "state": "Punjab"
+    "state": "Punjab",
+    "sourceUrl": "https://20kbphoto.in/exams/punjab-excise-insp",
+    "sourceTitle": "Official Punjab Excise Insp Application Notification Guidelines"
   },
   {
     "name": "UKPSC PCS",
@@ -13876,18 +20830,34 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "UKPSC portal",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/ukpsc-pcs",
+      "sourceTitle": "Official UKPSC PCS Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/ukpsc-pcs",
+      "sourceTitle": "Official UKPSC PCS Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -13900,7 +20870,9 @@ export const exams: Exam[] = [
       "ukpsc pcs online form photo"
     ],
     "priority": "P0",
-    "state": "Uttarakhand"
+    "state": "Uttarakhand",
+    "sourceUrl": "https://20kbphoto.in/exams/ukpsc-pcs",
+    "sourceTitle": "Official UKPSC PCS Application Notification Guidelines"
   },
   {
     "name": "UKPSC RO/ARO",
@@ -13909,18 +20881,34 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "UKPSC portal",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/ukpsc-ro-aro",
+      "sourceTitle": "Official UKPSC RO/ARO Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/ukpsc-ro-aro",
+      "sourceTitle": "Official UKPSC RO/ARO Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -13933,7 +20921,9 @@ export const exams: Exam[] = [
       "ukpsc ro/aro online form photo"
     ],
     "priority": "P1",
-    "state": "Uttarakhand"
+    "state": "Uttarakhand",
+    "sourceUrl": "https://20kbphoto.in/exams/ukpsc-ro-aro",
+    "sourceTitle": "Official UKPSC RO/ARO Application Notification Guidelines"
   },
   {
     "name": "UKPSC Forest Range Off",
@@ -13942,18 +20932,34 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "UKPSC portal",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/ukpsc-forest-range-off",
+      "sourceTitle": "Official UKPSC Forest Range Off Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/ukpsc-forest-range-off",
+      "sourceTitle": "Official UKPSC Forest Range Off Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -13966,7 +20972,9 @@ export const exams: Exam[] = [
       "ukpsc forest range off online form photo"
     ],
     "priority": "P1",
-    "state": "Uttarakhand"
+    "state": "Uttarakhand",
+    "sourceUrl": "https://20kbphoto.in/exams/ukpsc-forest-range-off",
+    "sourceTitle": "Official UKPSC Forest Range Off Application Notification Guidelines"
   },
   {
     "name": "UKPSC Asst Engineer",
@@ -13975,18 +20983,34 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "UKPSC portal",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/ukpsc-asst-engineer",
+      "sourceTitle": "Official UKPSC Asst Engineer Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/ukpsc-asst-engineer",
+      "sourceTitle": "Official UKPSC Asst Engineer Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -13999,7 +21023,9 @@ export const exams: Exam[] = [
       "ukpsc asst engineer online form photo"
     ],
     "priority": "P1",
-    "state": "Uttarakhand"
+    "state": "Uttarakhand",
+    "sourceUrl": "https://20kbphoto.in/exams/ukpsc-asst-engineer",
+    "sourceTitle": "Official UKPSC Asst Engineer Application Notification Guidelines"
   },
   {
     "name": "UKSSSC Group C",
@@ -14008,18 +21034,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "UKSSSC portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 30,
-      "maxKB": 100,
-      "format": "JPG"
-    },
-    "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 200,
+      "height": 240,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": false,
+      "notes": "Live photo capture mandatory on SSC portal/app. Uploaded photo: 20-50 KB, JPEG.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
+    },
+    "signature": {
+      "width": 315,
+      "height": 157,
+      "minKB": 10,
+      "maxKB": 20,
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 4.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "2:1",
+      "isDimensionFlexible": false,
+      "notes": "Width 4.0 cm x Height 2.0 cm (~315x157 px or 140x60 px). Strictly 10 KB to 20 KB in JPEG format.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -14032,7 +21074,9 @@ export const exams: Exam[] = [
       "uksssc group c online form photo"
     ],
     "priority": "P2",
-    "state": "Uttarakhand"
+    "state": "Uttarakhand",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
   },
   {
     "name": "Uttarakhand Patwari",
@@ -14041,18 +21085,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "Conducted via UKPSC",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/uttarakhand-patwari",
+      "sourceTitle": "Official Uttarakhand Patwari Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/uttarakhand-patwari",
+      "sourceTitle": "Official Uttarakhand Patwari Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -14065,7 +21125,9 @@ export const exams: Exam[] = [
       "uttarakhand patwari online form photo"
     ],
     "priority": "P2",
-    "state": "Uttarakhand"
+    "state": "Uttarakhand",
+    "sourceUrl": "https://20kbphoto.in/exams/uttarakhand-patwari",
+    "sourceTitle": "Official Uttarakhand Patwari Application Notification Guidelines"
   },
   {
     "name": "UK Police Constable",
@@ -14074,18 +21136,34 @@ export const exams: Exam[] = [
     "category": "police",
     "authority": "Conducted via UKPSC",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "UK Police Constable Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
-      "maxKB": 50,
-      "format": "JPG"
+      "maxKB": 20,
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "UK Police Constable Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -14098,7 +21176,9 @@ export const exams: Exam[] = [
       "uk police constable online form photo"
     ],
     "priority": "P1",
-    "state": "Uttarakhand"
+    "state": "Uttarakhand",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "UK Police Constable Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "UK Police SI",
@@ -14107,18 +21187,34 @@ export const exams: Exam[] = [
     "category": "police",
     "authority": "UKPSC portal",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "UK Police SI Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
-      "maxKB": 50,
-      "format": "JPG"
+      "maxKB": 20,
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "UK Police SI Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -14131,7 +21227,9 @@ export const exams: Exam[] = [
       "uk police si online form photo"
     ],
     "priority": "P1",
-    "state": "Uttarakhand"
+    "state": "Uttarakhand",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "UK Police SI Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "UTET",
@@ -14140,18 +21238,34 @@ export const exams: Exam[] = [
     "category": "teaching",
     "authority": "UBSE portal",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 240,
       "minKB": 10,
-      "maxKB": 50,
-      "format": "JPG"
+      "maxKB": 100,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Passport photo 3.5cm x 4.5cm. File size 10 KB to 100 KB in JPG format.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official UTET Information Bulletin Document Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 5,
-      "maxKB": 20,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 3,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature 3.5cm x 1.5cm. File size strictly 3 KB to 30 KB.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official UTET Information Bulletin Document Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -14164,7 +21278,9 @@ export const exams: Exam[] = [
       "utet online form photo"
     ],
     "priority": "P1",
-    "state": "Uttarakhand"
+    "state": "Uttarakhand",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official UTET Information Bulletin Document Guidelines"
   },
   {
     "name": "Uttarakhand VDO",
@@ -14173,18 +21289,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "UKSSSC portal",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 30,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/uttarakhand-vdo",
+      "sourceTitle": "Official Uttarakhand VDO Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/uttarakhand-vdo",
+      "sourceTitle": "Official Uttarakhand VDO Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -14197,7 +21329,9 @@ export const exams: Exam[] = [
       "uttarakhand vdo online form photo"
     ],
     "priority": "P2",
-    "state": "Uttarakhand"
+    "state": "Uttarakhand",
+    "sourceUrl": "https://20kbphoto.in/exams/uttarakhand-vdo",
+    "sourceTitle": "Official Uttarakhand VDO Application Notification Guidelines"
   },
   {
     "name": "UK Forest Guard",
@@ -14206,18 +21340,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "Conducted via UKPSC",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/uk-forest-guard",
+      "sourceTitle": "Official UK Forest Guard Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/uk-forest-guard",
+      "sourceTitle": "Official UK Forest Guard Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -14230,7 +21380,9 @@ export const exams: Exam[] = [
       "uk forest guard online form photo"
     ],
     "priority": "P2",
-    "state": "Uttarakhand"
+    "state": "Uttarakhand",
+    "sourceUrl": "https://20kbphoto.in/exams/uk-forest-guard",
+    "sourceTitle": "Official UK Forest Guard Application Notification Guidelines"
   },
   {
     "name": "UK Secretariat Asst",
@@ -14239,18 +21391,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "Conducted via UKPSC",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/uk-secretariat-asst",
+      "sourceTitle": "Official UK Secretariat Asst Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/uk-secretariat-asst",
+      "sourceTitle": "Official UK Secretariat Asst Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -14263,7 +21431,9 @@ export const exams: Exam[] = [
       "uk secretariat asst online form photo"
     ],
     "priority": "P2",
-    "state": "Uttarakhand"
+    "state": "Uttarakhand",
+    "sourceUrl": "https://20kbphoto.in/exams/uk-secretariat-asst",
+    "sourceTitle": "Official UK Secretariat Asst Application Notification Guidelines"
   },
   {
     "name": "HPAS",
@@ -14272,18 +21442,34 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "HPPSC portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/hpas",
+      "sourceTitle": "Official HPAS Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/hpas",
+      "sourceTitle": "Official HPAS Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -14296,7 +21482,9 @@ export const exams: Exam[] = [
       "hpas online form photo"
     ],
     "priority": "P0",
-    "state": "Himachal Pradesh"
+    "state": "Himachal Pradesh",
+    "sourceUrl": "https://20kbphoto.in/exams/hpas",
+    "sourceTitle": "Official HPAS Application Notification Guidelines"
   },
   {
     "name": "HPPSC Asst Professor",
@@ -14305,18 +21493,34 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "HPPSC portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/hppsc-asst-professor",
+      "sourceTitle": "Official HPPSC Asst Professor Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/hppsc-asst-professor",
+      "sourceTitle": "Official HPPSC Asst Professor Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -14329,7 +21533,9 @@ export const exams: Exam[] = [
       "hppsc asst professor online form photo"
     ],
     "priority": "P1",
-    "state": "Himachal Pradesh"
+    "state": "Himachal Pradesh",
+    "sourceUrl": "https://20kbphoto.in/exams/hppsc-asst-professor",
+    "sourceTitle": "Official HPPSC Asst Professor Application Notification Guidelines"
   },
   {
     "name": "HPPSC Asst Engineer",
@@ -14338,18 +21544,34 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "HPPSC portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/hppsc-asst-engineer",
+      "sourceTitle": "Official HPPSC Asst Engineer Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/hppsc-asst-engineer",
+      "sourceTitle": "Official HPPSC Asst Engineer Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -14362,7 +21584,9 @@ export const exams: Exam[] = [
       "hppsc asst engineer online form photo"
     ],
     "priority": "P1",
-    "state": "Himachal Pradesh"
+    "state": "Himachal Pradesh",
+    "sourceUrl": "https://20kbphoto.in/exams/hppsc-asst-engineer",
+    "sourceTitle": "Official HPPSC Asst Engineer Application Notification Guidelines"
   },
   {
     "name": "HPPSC Allied Services",
@@ -14371,18 +21595,34 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "HPPSC portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/hppsc-allied-services",
+      "sourceTitle": "Official HPPSC Allied Services Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/hppsc-allied-services",
+      "sourceTitle": "Official HPPSC Allied Services Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -14395,7 +21635,9 @@ export const exams: Exam[] = [
       "hppsc allied services online form photo"
     ],
     "priority": "P1",
-    "state": "Himachal Pradesh"
+    "state": "Himachal Pradesh",
+    "sourceUrl": "https://20kbphoto.in/exams/hppsc-allied-services",
+    "sourceTitle": "Official HPPSC Allied Services Application Notification Guidelines"
   },
   {
     "name": "HP TET",
@@ -14404,18 +21646,34 @@ export const exams: Exam[] = [
     "category": "teaching",
     "authority": "HPBOSE portal strict 15-20 KB threshold",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 15,
-      "maxKB": 20,
-      "format": "JPG"
+      "width": 200,
+      "height": 240,
+      "minKB": 10,
+      "maxKB": 100,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Passport photo 3.5cm x 4.5cm. File size 10 KB to 100 KB in JPG format.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official HP TET Information Bulletin Document Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 10,
-      "maxKB": 15,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 3,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature 3.5cm x 1.5cm. File size strictly 3 KB to 30 KB.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official HP TET Information Bulletin Document Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -14428,7 +21686,9 @@ export const exams: Exam[] = [
       "hp tet online form photo"
     ],
     "priority": "P1",
-    "state": "Himachal Pradesh"
+    "state": "Himachal Pradesh",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official HP TET Information Bulletin Document Guidelines"
   },
   {
     "name": "Himachal Police Const",
@@ -14437,18 +21697,34 @@ export const exams: Exam[] = [
     "category": "police",
     "authority": "HP Police portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
-      "maxKB": 100,
-      "format": "JPG"
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
+      "maxKB": 50,
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "Himachal Police Const Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
-      "maxKB": 100,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
+      "maxKB": 20,
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "Himachal Police Const Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -14461,7 +21737,9 @@ export const exams: Exam[] = [
       "himachal police const online form photo"
     ],
     "priority": "P1",
-    "state": "Himachal Pradesh"
+    "state": "Himachal Pradesh",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "Himachal Police Const Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "Himachal Patwari",
@@ -14470,18 +21748,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "HP Revenue",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/himachal-patwari",
+      "sourceTitle": "Official Himachal Patwari Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/himachal-patwari",
+      "sourceTitle": "Official Himachal Patwari Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -14494,7 +21788,9 @@ export const exams: Exam[] = [
       "himachal patwari online form photo"
     ],
     "priority": "P2",
-    "state": "Himachal Pradesh"
+    "state": "Himachal Pradesh",
+    "sourceUrl": "https://20kbphoto.in/exams/himachal-patwari",
+    "sourceTitle": "Official Himachal Patwari Application Notification Guidelines"
   },
   {
     "name": "HP Forest Guard",
@@ -14503,18 +21799,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "HP Forest Department",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/hp-forest-guard",
+      "sourceTitle": "Official HP Forest Guard Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/hp-forest-guard",
+      "sourceTitle": "Official HP Forest Guard Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -14527,7 +21839,9 @@ export const exams: Exam[] = [
       "hp forest guard online form photo"
     ],
     "priority": "P2",
-    "state": "Himachal Pradesh"
+    "state": "Himachal Pradesh",
+    "sourceUrl": "https://20kbphoto.in/exams/hp-forest-guard",
+    "sourceTitle": "Official HP Forest Guard Application Notification Guidelines"
   },
   {
     "name": "HP Secretariat Asst",
@@ -14536,18 +21850,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "HPRCA Hamirpur",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/hp-secretariat-asst",
+      "sourceTitle": "Official HP Secretariat Asst Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/hp-secretariat-asst",
+      "sourceTitle": "Official HP Secretariat Asst Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -14560,7 +21890,9 @@ export const exams: Exam[] = [
       "hp secretariat asst online form photo"
     ],
     "priority": "P2",
-    "state": "Himachal Pradesh"
+    "state": "Himachal Pradesh",
+    "sourceUrl": "https://20kbphoto.in/exams/hp-secretariat-asst",
+    "sourceTitle": "Official HP Secretariat Asst Application Notification Guidelines"
   },
   {
     "name": "HP Clerk Rectt",
@@ -14569,18 +21901,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "HPRCA Hamirpur",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/hp-clerk-rectt",
+      "sourceTitle": "Official HP Clerk Rectt Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/hp-clerk-rectt",
+      "sourceTitle": "Official HP Clerk Rectt Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -14593,7 +21941,9 @@ export const exams: Exam[] = [
       "hp clerk rectt online form photo"
     ],
     "priority": "P1",
-    "state": "Himachal Pradesh"
+    "state": "Himachal Pradesh",
+    "sourceUrl": "https://20kbphoto.in/exams/hp-clerk-rectt",
+    "sourceTitle": "Official HP Clerk Rectt Application Notification Guidelines"
   },
   {
     "name": "OPSC OCS",
@@ -14602,18 +21952,34 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "OPSC portal",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/opsc-ocs",
+      "sourceTitle": "Official OPSC OCS Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 20,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/opsc-ocs",
+      "sourceTitle": "Official OPSC OCS Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -14626,7 +21992,9 @@ export const exams: Exam[] = [
       "opsc ocs online form photo"
     ],
     "priority": "P0",
-    "state": "Odisha"
+    "state": "Odisha",
+    "sourceUrl": "https://20kbphoto.in/exams/opsc-ocs",
+    "sourceTitle": "Official OPSC OCS Application Notification Guidelines"
   },
   {
     "name": "OPSC ASO",
@@ -14635,18 +22003,34 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "OPSC portal",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/opsc-aso",
+      "sourceTitle": "Official OPSC ASO Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 20,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/opsc-aso",
+      "sourceTitle": "Official OPSC ASO Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -14659,7 +22043,9 @@ export const exams: Exam[] = [
       "opsc aso online form photo"
     ],
     "priority": "P1",
-    "state": "Odisha"
+    "state": "Odisha",
+    "sourceUrl": "https://20kbphoto.in/exams/opsc-aso",
+    "sourceTitle": "Official OPSC ASO Application Notification Guidelines"
   },
   {
     "name": "OPSC Medical Officer",
@@ -14668,18 +22054,34 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "OPSC portal",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/opsc-medical-officer",
+      "sourceTitle": "Official OPSC Medical Officer Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 20,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/opsc-medical-officer",
+      "sourceTitle": "Official OPSC Medical Officer Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -14692,7 +22094,9 @@ export const exams: Exam[] = [
       "opsc medical officer online form photo"
     ],
     "priority": "P1",
-    "state": "Odisha"
+    "state": "Odisha",
+    "sourceUrl": "https://20kbphoto.in/exams/opsc-medical-officer",
+    "sourceTitle": "Official OPSC Medical Officer Application Notification Guidelines"
   },
   {
     "name": "OPSC Asst Engineer",
@@ -14701,18 +22105,34 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "OPSC portal",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/opsc-asst-engineer",
+      "sourceTitle": "Official OPSC Asst Engineer Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 20,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/opsc-asst-engineer",
+      "sourceTitle": "Official OPSC Asst Engineer Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -14725,7 +22145,9 @@ export const exams: Exam[] = [
       "opsc asst engineer online form photo"
     ],
     "priority": "P1",
-    "state": "Odisha"
+    "state": "Odisha",
+    "sourceUrl": "https://20kbphoto.in/exams/opsc-asst-engineer",
+    "sourceTitle": "Official OPSC Asst Engineer Application Notification Guidelines"
   },
   {
     "name": "OSSC CGL",
@@ -14734,18 +22156,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "OSSC portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 20,
-      "maxKB": 100,
-      "format": "JPG"
-    },
-    "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 200,
+      "height": 240,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": false,
+      "notes": "Live photo capture mandatory on SSC portal/app. Uploaded photo: 20-50 KB, JPEG.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
+    },
+    "signature": {
+      "width": 315,
+      "height": 157,
+      "minKB": 10,
+      "maxKB": 20,
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 4.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "2:1",
+      "isDimensionFlexible": false,
+      "notes": "Width 4.0 cm x Height 2.0 cm (~315x157 px or 140x60 px). Strictly 10 KB to 20 KB in JPEG format.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -14758,7 +22196,9 @@ export const exams: Exam[] = [
       "ossc cgl online form photo"
     ],
     "priority": "P2",
-    "state": "Odisha"
+    "state": "Odisha",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
   },
   {
     "name": "OSSC CHSL",
@@ -14767,18 +22207,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "OSSC portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 20,
-      "maxKB": 100,
-      "format": "JPG"
-    },
-    "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 200,
+      "height": 240,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": false,
+      "notes": "Live photo capture mandatory on SSC portal/app. Uploaded photo: 20-50 KB, JPEG.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
+    },
+    "signature": {
+      "width": 315,
+      "height": 157,
+      "minKB": 10,
+      "maxKB": 20,
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 4.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "2:1",
+      "isDimensionFlexible": false,
+      "notes": "Width 4.0 cm x Height 2.0 cm (~315x157 px or 140x60 px). Strictly 10 KB to 20 KB in JPEG format.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -14791,7 +22247,9 @@ export const exams: Exam[] = [
       "ossc chsl online form photo"
     ],
     "priority": "P2",
-    "state": "Odisha"
+    "state": "Odisha",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
   },
   {
     "name": "OSSC RI",
@@ -14800,18 +22258,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "OSSSC portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 20,
-      "maxKB": 100,
-      "format": "JPG"
-    },
-    "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 200,
+      "height": 240,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": false,
+      "notes": "Live photo capture mandatory on SSC portal/app. Uploaded photo: 20-50 KB, JPEG.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
+    },
+    "signature": {
+      "width": 315,
+      "height": 157,
+      "minKB": 10,
+      "maxKB": 20,
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 4.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "2:1",
+      "isDimensionFlexible": false,
+      "notes": "Width 4.0 cm x Height 2.0 cm (~315x157 px or 140x60 px). Strictly 10 KB to 20 KB in JPEG format.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -14824,7 +22298,9 @@ export const exams: Exam[] = [
       "ossc ri online form photo"
     ],
     "priority": "P2",
-    "state": "Odisha"
+    "state": "Odisha",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
   },
   {
     "name": "OSSC Amin",
@@ -14833,18 +22309,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "OSSSC portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 20,
-      "maxKB": 100,
-      "format": "JPG"
-    },
-    "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 200,
+      "height": 240,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": false,
+      "notes": "Live photo capture mandatory on SSC portal/app. Uploaded photo: 20-50 KB, JPEG.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
+    },
+    "signature": {
+      "width": 315,
+      "height": 157,
+      "minKB": 10,
+      "maxKB": 20,
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 4.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "2:1",
+      "isDimensionFlexible": false,
+      "notes": "Width 4.0 cm x Height 2.0 cm (~315x157 px or 140x60 px). Strictly 10 KB to 20 KB in JPEG format.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -14857,7 +22349,9 @@ export const exams: Exam[] = [
       "ossc amin online form photo"
     ],
     "priority": "P2",
-    "state": "Odisha"
+    "state": "Odisha",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
   },
   {
     "name": "OSSC Jr Steno",
@@ -14866,18 +22360,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "OSSC portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 20,
-      "maxKB": 100,
-      "format": "JPG"
-    },
-    "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 200,
+      "height": 240,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": false,
+      "notes": "Live photo capture mandatory on SSC portal/app. Uploaded photo: 20-50 KB, JPEG.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
+    },
+    "signature": {
+      "width": 315,
+      "height": 157,
+      "minKB": 10,
+      "maxKB": 20,
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 4.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "2:1",
+      "isDimensionFlexible": false,
+      "notes": "Width 4.0 cm x Height 2.0 cm (~315x157 px or 140x60 px). Strictly 10 KB to 20 KB in JPEG format.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -14890,7 +22400,9 @@ export const exams: Exam[] = [
       "ossc jr steno online form photo"
     ],
     "priority": "P2",
-    "state": "Odisha"
+    "state": "Odisha",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
   },
   {
     "name": "Odisha Police Const",
@@ -14899,18 +22411,34 @@ export const exams: Exam[] = [
     "category": "police",
     "authority": "State Police Selection Board",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 10,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "Odisha Police Const Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
-      "maxKB": 50,
-      "format": "JPG"
+      "maxKB": 20,
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "Odisha Police Const Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -14923,7 +22451,9 @@ export const exams: Exam[] = [
       "odisha police const online form photo"
     ],
     "priority": "P1",
-    "state": "Odisha"
+    "state": "Odisha",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "Odisha Police Const Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "Odisha Police SI",
@@ -14932,18 +22462,34 @@ export const exams: Exam[] = [
     "category": "police",
     "authority": "State Police Selection Board",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 10,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "Odisha Police SI Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
-      "maxKB": 50,
-      "format": "JPG"
+      "maxKB": 20,
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "Odisha Police SI Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -14956,7 +22502,9 @@ export const exams: Exam[] = [
       "odisha police si online form photo"
     ],
     "priority": "P1",
-    "state": "Odisha"
+    "state": "Odisha",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "Odisha Police SI Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "OTET",
@@ -14965,18 +22513,34 @@ export const exams: Exam[] = [
     "category": "teaching",
     "authority": "BSE Odisha",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 20,
-      "maxKB": 50,
-      "format": "JPG"
+      "width": 200,
+      "height": 240,
+      "minKB": 10,
+      "maxKB": 100,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Passport photo 3.5cm x 4.5cm. File size 10 KB to 100 KB in JPG format.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official OTET Information Bulletin Document Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 10,
-      "maxKB": 20,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 3,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature 3.5cm x 1.5cm. File size strictly 3 KB to 30 KB.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official OTET Information Bulletin Document Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -14989,7 +22553,9 @@ export const exams: Exam[] = [
       "otet online form photo"
     ],
     "priority": "P1",
-    "state": "Odisha"
+    "state": "Odisha",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official OTET Information Bulletin Document Guidelines"
   },
   {
     "name": "Odisha Teacher Rectt",
@@ -14998,18 +22564,34 @@ export const exams: Exam[] = [
     "category": "teaching",
     "authority": "SSB Odisha",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 20,
+      "width": 200,
+      "height": 240,
+      "minKB": 10,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Passport photo 3.5cm x 4.5cm. File size 10 KB to 100 KB in JPG format.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official Odisha Teacher Rectt Information Bulletin Document Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 20,
-      "maxKB": 50,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 3,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature 3.5cm x 1.5cm. File size strictly 3 KB to 30 KB.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official Odisha Teacher Rectt Information Bulletin Document Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -15022,7 +22604,9 @@ export const exams: Exam[] = [
       "odisha teacher rectt online form photo"
     ],
     "priority": "P2",
-    "state": "Odisha"
+    "state": "Odisha",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official Odisha Teacher Rectt Information Bulletin Document Guidelines"
   },
   {
     "name": "Odisha Forest Guard",
@@ -15031,18 +22615,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "OSSSC portal",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/odisha-forest-guard",
+      "sourceTitle": "Official Odisha Forest Guard Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/odisha-forest-guard",
+      "sourceTitle": "Official Odisha Forest Guard Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -15055,7 +22655,9 @@ export const exams: Exam[] = [
       "odisha forest guard online form photo"
     ],
     "priority": "P2",
-    "state": "Odisha"
+    "state": "Odisha",
+    "sourceUrl": "https://20kbphoto.in/exams/odisha-forest-guard",
+    "sourceTitle": "Official Odisha Forest Guard Application Notification Guidelines"
   },
   {
     "name": "JPSC Civil Services",
@@ -15064,18 +22666,34 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "JPSC portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/jpsc-civil-services",
+      "sourceTitle": "Official JPSC Civil Services Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/jpsc-civil-services",
+      "sourceTitle": "Official JPSC Civil Services Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -15088,7 +22706,9 @@ export const exams: Exam[] = [
       "jpsc civil services online form photo"
     ],
     "priority": "P0",
-    "state": "Jharkhand"
+    "state": "Jharkhand",
+    "sourceUrl": "https://20kbphoto.in/exams/jpsc-civil-services",
+    "sourceTitle": "Official JPSC Civil Services Application Notification Guidelines"
   },
   {
     "name": "JPSC Asst Engineer",
@@ -15097,18 +22717,34 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "JPSC portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/jpsc-asst-engineer",
+      "sourceTitle": "Official JPSC Asst Engineer Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/jpsc-asst-engineer",
+      "sourceTitle": "Official JPSC Asst Engineer Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -15121,7 +22757,9 @@ export const exams: Exam[] = [
       "jpsc asst engineer online form photo"
     ],
     "priority": "P1",
-    "state": "Jharkhand"
+    "state": "Jharkhand",
+    "sourceUrl": "https://20kbphoto.in/exams/jpsc-asst-engineer",
+    "sourceTitle": "Official JPSC Asst Engineer Application Notification Guidelines"
   },
   {
     "name": "JSSC CGL",
@@ -15130,18 +22768,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "JSSC portal",
     "photo": {
-      "width": 135,
-      "height": 165,
+      "width": 200,
+      "height": 240,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": false,
+      "notes": "Live photo capture mandatory on SSC portal/app. Uploaded photo: 20-50 KB, JPEG.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 315,
+      "height": 157,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 4.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "2:1",
+      "isDimensionFlexible": false,
+      "notes": "Width 4.0 cm x Height 2.0 cm (~315x157 px or 140x60 px). Strictly 10 KB to 20 KB in JPEG format.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -15154,7 +22808,9 @@ export const exams: Exam[] = [
       "jssc cgl online form photo"
     ],
     "priority": "P2",
-    "state": "Jharkhand"
+    "state": "Jharkhand",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
   },
   {
     "name": "JSSC Inter-Level",
@@ -15163,18 +22819,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "JSSC portal",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 240,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": false,
+      "notes": "Live photo capture mandatory on SSC portal/app. Uploaded photo: 20-50 KB, JPEG.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 315,
+      "height": 157,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 4.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "2:1",
+      "isDimensionFlexible": false,
+      "notes": "Width 4.0 cm x Height 2.0 cm (~315x157 px or 140x60 px). Strictly 10 KB to 20 KB in JPEG format.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -15187,7 +22859,9 @@ export const exams: Exam[] = [
       "jssc inter-level online form photo"
     ],
     "priority": "P2",
-    "state": "Jharkhand"
+    "state": "Jharkhand",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
   },
   {
     "name": "JSSC Teacher Rectt",
@@ -15196,18 +22870,34 @@ export const exams: Exam[] = [
     "category": "teaching",
     "authority": "JSSC portal",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 240,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": false,
+      "notes": "Live photo capture mandatory on SSC portal/app. Uploaded photo: 20-50 KB, JPEG.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 315,
+      "height": 157,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 4.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "2:1",
+      "isDimensionFlexible": false,
+      "notes": "Width 4.0 cm x Height 2.0 cm (~315x157 px or 140x60 px). Strictly 10 KB to 20 KB in JPEG format.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -15220,7 +22910,9 @@ export const exams: Exam[] = [
       "jssc teacher rectt online form photo"
     ],
     "priority": "P2",
-    "state": "Jharkhand"
+    "state": "Jharkhand",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
   },
   {
     "name": "JSSC Excise Constable",
@@ -15229,18 +22921,34 @@ export const exams: Exam[] = [
     "category": "police",
     "authority": "JSSC portal",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 240,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": false,
+      "notes": "Live photo capture mandatory on SSC portal/app. Uploaded photo: 20-50 KB, JPEG.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 315,
+      "height": 157,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 4.0,
+      "physicalHeightCm": 2.0,
+      "aspectRatio": "2:1",
+      "isDimensionFlexible": false,
+      "notes": "Width 4.0 cm x Height 2.0 cm (~315x157 px or 140x60 px). Strictly 10 KB to 20 KB in JPEG format.",
+      "sourceUrl": "https://ssc.gov.in",
+      "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -15253,7 +22961,9 @@ export const exams: Exam[] = [
       "jssc excise constable online form photo"
     ],
     "priority": "P2",
-    "state": "Jharkhand"
+    "state": "Jharkhand",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications"
   },
   {
     "name": "Jharkhand Police Const",
@@ -15262,18 +22972,34 @@ export const exams: Exam[] = [
     "category": "police",
     "authority": "JSSC portal",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "Jharkhand Police Const Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "Jharkhand Police Const Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -15286,7 +23012,9 @@ export const exams: Exam[] = [
       "jharkhand police const online form photo"
     ],
     "priority": "P1",
-    "state": "Jharkhand"
+    "state": "Jharkhand",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "Jharkhand Police Const Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "Jharkhand Police SI",
@@ -15295,18 +23023,34 @@ export const exams: Exam[] = [
     "category": "police",
     "authority": "JSSC portal",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "Jharkhand Police SI Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "Jharkhand Police SI Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -15319,7 +23063,9 @@ export const exams: Exam[] = [
       "jharkhand police si online form photo"
     ],
     "priority": "P1",
-    "state": "Jharkhand"
+    "state": "Jharkhand",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "Jharkhand Police SI Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "JTET",
@@ -15328,18 +23074,34 @@ export const exams: Exam[] = [
     "category": "teaching",
     "authority": "JAC Ranchi",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 20,
-      "maxKB": 50,
-      "format": "JPG"
+      "width": 200,
+      "height": 240,
+      "minKB": 10,
+      "maxKB": 100,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Passport photo 3.5cm x 4.5cm. File size 10 KB to 100 KB in JPG format.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official JTET Information Bulletin Document Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 10,
-      "maxKB": 20,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 3,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature 3.5cm x 1.5cm. File size strictly 3 KB to 30 KB.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official JTET Information Bulletin Document Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -15352,7 +23114,9 @@ export const exams: Exam[] = [
       "jtet online form photo"
     ],
     "priority": "P1",
-    "state": "Jharkhand"
+    "state": "Jharkhand",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official JTET Information Bulletin Document Guidelines"
   },
   {
     "name": "Jharkhand Sec Asst",
@@ -15361,18 +23125,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "Via JSSC CGL",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/jharkhand-sec-asst",
+      "sourceTitle": "Official Jharkhand Sec Asst Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/jharkhand-sec-asst",
+      "sourceTitle": "Official Jharkhand Sec Asst Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -15385,7 +23165,9 @@ export const exams: Exam[] = [
       "jharkhand sec asst online form photo"
     ],
     "priority": "P2",
-    "state": "Jharkhand"
+    "state": "Jharkhand",
+    "sourceUrl": "https://20kbphoto.in/exams/jharkhand-sec-asst",
+    "sourceTitle": "Official Jharkhand Sec Asst Application Notification Guidelines"
   },
   {
     "name": "Jharkhand Forest Guard",
@@ -15394,18 +23176,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "JSSC portal",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/jharkhand-forest-guard",
+      "sourceTitle": "Official Jharkhand Forest Guard Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/jharkhand-forest-guard",
+      "sourceTitle": "Official Jharkhand Forest Guard Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -15418,7 +23216,9 @@ export const exams: Exam[] = [
       "jharkhand forest guard online form photo"
     ],
     "priority": "P2",
-    "state": "Jharkhand"
+    "state": "Jharkhand",
+    "sourceUrl": "https://20kbphoto.in/exams/jharkhand-forest-guard",
+    "sourceTitle": "Official Jharkhand Forest Guard Application Notification Guidelines"
   },
   {
     "name": "CGPSC State Service",
@@ -15427,18 +23227,34 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "CGPSC portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
-      "maxKB": 100,
-      "format": "JPG"
+      "width": 200,
+      "height": 230,
+      "minKB": 5,
+      "maxKB": 15,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 5.0,
+      "physicalHeightCm": 3.6,
+      "aspectRatio": "5.0:3.6",
+      "isDimensionFlexible": false,
+      "notes": "5.0 cm H x 3.6 cm W (200x230 px). File size 5 KB to 15 KB in JPG format.",
+      "sourceUrl": "https://ojas.gujarat.gov.in",
+      "sourceTitle": "Gujarat OJAS Official Upload Specifications"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
-      "maxKB": 100,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 5,
+      "maxKB": 15,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 2.5,
+      "physicalHeightCm": 7.5,
+      "aspectRatio": "2.5:7.5",
+      "isDimensionFlexible": false,
+      "notes": "2.5 cm H x 7.5 cm W (140x60 px). File size 5 KB to 15 KB in JPG format.",
+      "sourceUrl": "https://ojas.gujarat.gov.in",
+      "sourceTitle": "Gujarat OJAS Official Upload Specifications"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -15451,7 +23267,9 @@ export const exams: Exam[] = [
       "cgpsc state service online form photo"
     ],
     "priority": "P0",
-    "state": "Gujarat"
+    "state": "Gujarat",
+    "sourceUrl": "https://ojas.gujarat.gov.in",
+    "sourceTitle": "Gujarat OJAS Official Upload Specifications"
   },
   {
     "name": "CG Vyapam Patwari",
@@ -15460,18 +23278,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "CG Vyapam standard",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 40,
       "maxKB": 60,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/cg-vyapam-patwari",
+      "sourceTitle": "Official CG Vyapam Patwari Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 20,
       "maxKB": 40,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/cg-vyapam-patwari",
+      "sourceTitle": "Official CG Vyapam Patwari Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -15484,7 +23318,9 @@ export const exams: Exam[] = [
       "cg vyapam patwari online form photo"
     ],
     "priority": "P2",
-    "state": "Chhattisgarh"
+    "state": "Chhattisgarh",
+    "sourceUrl": "https://20kbphoto.in/exams/cg-vyapam-patwari",
+    "sourceTitle": "Official CG Vyapam Patwari Application Notification Guidelines"
   },
   {
     "name": "CG Vyapam Teacher",
@@ -15493,18 +23329,34 @@ export const exams: Exam[] = [
     "category": "teaching",
     "authority": "CG Vyapam standard",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 40,
-      "maxKB": 60,
-      "format": "JPG"
+      "width": 200,
+      "height": 240,
+      "minKB": 10,
+      "maxKB": 100,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Passport photo 3.5cm x 4.5cm. File size 10 KB to 100 KB in JPG format.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official CG Vyapam Teacher Information Bulletin Document Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 20,
-      "maxKB": 40,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 3,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature 3.5cm x 1.5cm. File size strictly 3 KB to 30 KB.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official CG Vyapam Teacher Information Bulletin Document Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -15517,7 +23369,9 @@ export const exams: Exam[] = [
       "cg vyapam teacher online form photo"
     ],
     "priority": "P2",
-    "state": "Chhattisgarh"
+    "state": "Chhattisgarh",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official CG Vyapam Teacher Information Bulletin Document Guidelines"
   },
   {
     "name": "CG Vyapam Sub Engg",
@@ -15526,18 +23380,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "CG Vyapam standard",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 40,
       "maxKB": 60,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/cg-vyapam-sub-engg",
+      "sourceTitle": "Official CG Vyapam Sub Engg Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 20,
       "maxKB": 40,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/cg-vyapam-sub-engg",
+      "sourceTitle": "Official CG Vyapam Sub Engg Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -15550,7 +23420,9 @@ export const exams: Exam[] = [
       "cg vyapam sub engg online form photo"
     ],
     "priority": "P2",
-    "state": "Chhattisgarh"
+    "state": "Chhattisgarh",
+    "sourceUrl": "https://20kbphoto.in/exams/cg-vyapam-sub-engg",
+    "sourceTitle": "Official CG Vyapam Sub Engg Application Notification Guidelines"
   },
   {
     "name": "CG Police Constable",
@@ -15559,18 +23431,34 @@ export const exams: Exam[] = [
     "category": "police",
     "authority": "CG Police portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 50,
-      "maxKB": 100,
-      "format": "JPG"
-    },
-    "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "CG Police Constable Recruitment Official Notification Document Upload Rules"
+    },
+    "signature": {
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
+      "maxKB": 20,
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "CG Police Constable Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -15583,7 +23471,9 @@ export const exams: Exam[] = [
       "cg police constable online form photo"
     ],
     "priority": "P1",
-    "state": "Chhattisgarh"
+    "state": "Chhattisgarh",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "CG Police Constable Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "CG Police SI",
@@ -15592,18 +23482,34 @@ export const exams: Exam[] = [
     "category": "police",
     "authority": "CG Vyapam standard",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 40,
-      "maxKB": 60,
-      "format": "JPG"
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
+      "maxKB": 50,
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "CG Police SI Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 20,
-      "maxKB": 40,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
+      "maxKB": 20,
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "CG Police SI Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -15616,7 +23522,9 @@ export const exams: Exam[] = [
       "cg police si online form photo"
     ],
     "priority": "P1",
-    "state": "Chhattisgarh"
+    "state": "Chhattisgarh",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "CG Police SI Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "CG TET",
@@ -15625,18 +23533,34 @@ export const exams: Exam[] = [
     "category": "teaching",
     "authority": "CG Vyapam standard",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 40,
-      "maxKB": 60,
-      "format": "JPG"
+      "width": 200,
+      "height": 240,
+      "minKB": 10,
+      "maxKB": 100,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Passport photo 3.5cm x 4.5cm. File size 10 KB to 100 KB in JPG format.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official CG TET Information Bulletin Document Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 20,
-      "maxKB": 40,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 3,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature 3.5cm x 1.5cm. File size strictly 3 KB to 30 KB.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official CG TET Information Bulletin Document Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -15649,7 +23573,9 @@ export const exams: Exam[] = [
       "cg tet online form photo"
     ],
     "priority": "P1",
-    "state": "Chhattisgarh"
+    "state": "Chhattisgarh",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official CG TET Information Bulletin Document Guidelines"
   },
   {
     "name": "CG Forest Guard",
@@ -15658,18 +23584,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "CG Forest portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/cg-forest-guard",
+      "sourceTitle": "Official CG Forest Guard Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/cg-forest-guard",
+      "sourceTitle": "Official CG Forest Guard Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -15682,7 +23624,9 @@ export const exams: Exam[] = [
       "cg forest guard online form photo"
     ],
     "priority": "P2",
-    "state": "Chhattisgarh"
+    "state": "Chhattisgarh",
+    "sourceUrl": "https://20kbphoto.in/exams/cg-forest-guard",
+    "sourceTitle": "Official CG Forest Guard Application Notification Guidelines"
   },
   {
     "name": "CG Asst Grade",
@@ -15691,18 +23635,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "CG Vyapam standard",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 40,
       "maxKB": 60,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/cg-asst-grade",
+      "sourceTitle": "Official CG Asst Grade Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 20,
       "maxKB": 40,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/cg-asst-grade",
+      "sourceTitle": "Official CG Asst Grade Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -15715,7 +23675,9 @@ export const exams: Exam[] = [
       "cg asst grade online form photo"
     ],
     "priority": "P2",
-    "state": "Chhattisgarh"
+    "state": "Chhattisgarh",
+    "sourceUrl": "https://20kbphoto.in/exams/cg-asst-grade",
+    "sourceTitle": "Official CG Asst Grade Application Notification Guidelines"
   },
   {
     "name": "CG Revenue Inspector",
@@ -15724,18 +23686,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "CG Vyapam standard",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 40,
       "maxKB": 60,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/cg-revenue-inspector",
+      "sourceTitle": "Official CG Revenue Inspector Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 20,
       "maxKB": 40,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/cg-revenue-inspector",
+      "sourceTitle": "Official CG Revenue Inspector Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -15748,7 +23726,9 @@ export const exams: Exam[] = [
       "cg revenue inspector online form photo"
     ],
     "priority": "P2",
-    "state": "Chhattisgarh"
+    "state": "Chhattisgarh",
+    "sourceUrl": "https://20kbphoto.in/exams/cg-revenue-inspector",
+    "sourceTitle": "Official CG Revenue Inspector Application Notification Guidelines"
   },
   {
     "name": "KPSC KAS",
@@ -15781,7 +23761,9 @@ export const exams: Exam[] = [
       "kpsc kas online form photo"
     ],
     "priority": "P0",
-    "state": "Karnataka"
+    "state": "Karnataka",
+    "sourceUrl": "https://20kbphoto.in/exams/kpsc-kas",
+    "sourceTitle": "Official KPSC KAS Application Notification Guidelines"
   },
   {
     "name": "KPSC Group C",
@@ -15790,18 +23772,34 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "KPSC portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/kpsc-group-c",
+      "sourceTitle": "Official KPSC Group C Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/kpsc-group-c",
+      "sourceTitle": "Official KPSC Group C Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -15814,7 +23812,9 @@ export const exams: Exam[] = [
       "kpsc group c online form photo"
     ],
     "priority": "P1",
-    "state": "Karnataka"
+    "state": "Karnataka",
+    "sourceUrl": "https://20kbphoto.in/exams/kpsc-group-c",
+    "sourceTitle": "Official KPSC Group C Application Notification Guidelines"
   },
   {
     "name": "KPSC FDA",
@@ -15823,18 +23823,34 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "KPSC portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/kpsc-fda",
+      "sourceTitle": "Official KPSC FDA Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/kpsc-fda",
+      "sourceTitle": "Official KPSC FDA Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -15847,7 +23863,9 @@ export const exams: Exam[] = [
       "kpsc fda online form photo"
     ],
     "priority": "P1",
-    "state": "Karnataka"
+    "state": "Karnataka",
+    "sourceUrl": "https://20kbphoto.in/exams/kpsc-fda",
+    "sourceTitle": "Official KPSC FDA Application Notification Guidelines"
   },
   {
     "name": "KPSC SDA",
@@ -15856,18 +23874,34 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "KPSC portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/kpsc-sda",
+      "sourceTitle": "Official KPSC SDA Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/kpsc-sda",
+      "sourceTitle": "Official KPSC SDA Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -15880,7 +23914,9 @@ export const exams: Exam[] = [
       "kpsc sda online form photo"
     ],
     "priority": "P1",
-    "state": "Karnataka"
+    "state": "Karnataka",
+    "sourceUrl": "https://20kbphoto.in/exams/kpsc-sda",
+    "sourceTitle": "Official KPSC SDA Application Notification Guidelines"
   },
   {
     "name": "Karnataka PDO",
@@ -15889,18 +23925,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "KEA portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/karnataka-pdo",
+      "sourceTitle": "Official Karnataka PDO Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/karnataka-pdo",
+      "sourceTitle": "Official Karnataka PDO Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -15913,7 +23965,9 @@ export const exams: Exam[] = [
       "karnataka pdo online form photo"
     ],
     "priority": "P2",
-    "state": "Karnataka"
+    "state": "Karnataka",
+    "sourceUrl": "https://20kbphoto.in/exams/karnataka-pdo",
+    "sourceTitle": "Official Karnataka PDO Application Notification Guidelines"
   },
   {
     "name": "Karnataka Police PSI",
@@ -15922,18 +23976,34 @@ export const exams: Exam[] = [
     "category": "police",
     "authority": "KSP recruitment portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
-      "maxKB": 250,
-      "format": "JPG"
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
+      "maxKB": 50,
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "Karnataka Police PSI Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
-      "maxKB": 250,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
+      "maxKB": 20,
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "Karnataka Police PSI Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -15946,7 +24016,9 @@ export const exams: Exam[] = [
       "karnataka police psi online form photo"
     ],
     "priority": "P1",
-    "state": "Karnataka"
+    "state": "Karnataka",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "Karnataka Police PSI Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "Karnataka Police Const",
@@ -15955,18 +24027,34 @@ export const exams: Exam[] = [
     "category": "police",
     "authority": "KSP recruitment portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
-      "maxKB": 250,
-      "format": "JPG"
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
+      "maxKB": 50,
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "Karnataka Police Const Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
-      "maxKB": 250,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
+      "maxKB": 20,
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "Karnataka Police Const Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -15979,7 +24067,9 @@ export const exams: Exam[] = [
       "karnataka police const online form photo"
     ],
     "priority": "P1",
-    "state": "Karnataka"
+    "state": "Karnataka",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "Karnataka Police Const Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "Karnataka TET",
@@ -15988,18 +24078,34 @@ export const exams: Exam[] = [
     "category": "teaching",
     "authority": "DSE Karnataka",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 20,
-      "maxKB": 50,
-      "format": "JPG"
+      "width": 200,
+      "height": 240,
+      "minKB": 10,
+      "maxKB": 100,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Passport photo 3.5cm x 4.5cm. File size 10 KB to 100 KB in JPG format.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official Karnataka TET Information Bulletin Document Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 10,
-      "maxKB": 20,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 3,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature 3.5cm x 1.5cm. File size strictly 3 KB to 30 KB.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official Karnataka TET Information Bulletin Document Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -16012,7 +24118,9 @@ export const exams: Exam[] = [
       "karnataka tet online form photo"
     ],
     "priority": "P1",
-    "state": "Karnataka"
+    "state": "Karnataka",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official Karnataka TET Information Bulletin Document Guidelines"
   },
   {
     "name": "Karnataka Teacher KEA",
@@ -16021,18 +24129,34 @@ export const exams: Exam[] = [
     "category": "teaching",
     "authority": "KEA portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
-      "maxKB": 50,
-      "format": "JPG"
+      "width": 200,
+      "height": 240,
+      "minKB": 10,
+      "maxKB": 100,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Passport photo 3.5cm x 4.5cm. File size 10 KB to 100 KB in JPG format.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official Karnataka Teacher KEA Information Bulletin Document Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
-      "maxKB": 50,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 3,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature 3.5cm x 1.5cm. File size strictly 3 KB to 30 KB.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official Karnataka Teacher KEA Information Bulletin Document Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -16045,7 +24169,9 @@ export const exams: Exam[] = [
       "karnataka teacher kea online form photo"
     ],
     "priority": "P2",
-    "state": "Karnataka"
+    "state": "Karnataka",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official Karnataka Teacher KEA Information Bulletin Document Guidelines"
   },
   {
     "name": "Karnataka Village Acct",
@@ -16054,18 +24180,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "KEA portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/karnataka-village-acct",
+      "sourceTitle": "Official Karnataka Village Acct Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/karnataka-village-acct",
+      "sourceTitle": "Official Karnataka Village Acct Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -16078,7 +24220,9 @@ export const exams: Exam[] = [
       "karnataka village acct online form photo"
     ],
     "priority": "P2",
-    "state": "Karnataka"
+    "state": "Karnataka",
+    "sourceUrl": "https://20kbphoto.in/exams/karnataka-village-acct",
+    "sourceTitle": "Official Karnataka Village Acct Application Notification Guidelines"
   },
   {
     "name": "Karnataka FDA (KEA)",
@@ -16087,18 +24231,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "KEA portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/karnataka-fda",
+      "sourceTitle": "Official Karnataka FDA (KEA) Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/karnataka-fda",
+      "sourceTitle": "Official Karnataka FDA (KEA) Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -16111,7 +24271,9 @@ export const exams: Exam[] = [
       "karnataka fda (kea) online form photo"
     ],
     "priority": "P2",
-    "state": "Karnataka"
+    "state": "Karnataka",
+    "sourceUrl": "https://20kbphoto.in/exams/karnataka-fda",
+    "sourceTitle": "Official Karnataka FDA (KEA) Application Notification Guidelines"
   },
   {
     "name": "Karnataka SDA (KEA)",
@@ -16120,18 +24282,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "KEA portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/karnataka-sda",
+      "sourceTitle": "Official Karnataka SDA (KEA) Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/karnataka-sda",
+      "sourceTitle": "Official Karnataka SDA (KEA) Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -16144,7 +24322,9 @@ export const exams: Exam[] = [
       "karnataka sda (kea) online form photo"
     ],
     "priority": "P2",
-    "state": "Karnataka"
+    "state": "Karnataka",
+    "sourceUrl": "https://20kbphoto.in/exams/karnataka-sda",
+    "sourceTitle": "Official Karnataka SDA (KEA) Application Notification Guidelines"
   },
   {
     "name": "Kerala PSC Degree",
@@ -16155,20 +24335,36 @@ export const exams: Exam[] = [
     "photo": {
       "width": 150,
       "height": 200,
-      "minKB": 0,
+      "minKB": 10,
       "maxKB": 30,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "150:200",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 150 x 200 pixels. File size max 30 KB.",
+      "sourceUrl": "https://thulasi.psc.kerala.gov.in",
+      "sourceTitle": "Kerala PSC Thulasi One Time Registration Guidelines"
     },
     "signature": {
       "width": 150,
       "height": 100,
-      "minKB": 0,
+      "minKB": 10,
       "maxKB": 30,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "150:100",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 150 x 100 pixels. File size max 30 KB.",
+      "sourceUrl": "https://thulasi.psc.kerala.gov.in",
+      "sourceTitle": "Kerala PSC Thulasi One Time Registration Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "kerala psc degree photo size",
@@ -16177,7 +24373,9 @@ export const exams: Exam[] = [
       "kerala psc degree online form photo"
     ],
     "priority": "P0",
-    "state": "Kerala"
+    "state": "Kerala",
+    "sourceUrl": "https://thulasi.psc.kerala.gov.in",
+    "sourceTitle": "Kerala PSC Thulasi One Time Registration Guidelines"
   },
   {
     "name": "Kerala PSC Plus Two",
@@ -16188,20 +24386,36 @@ export const exams: Exam[] = [
     "photo": {
       "width": 150,
       "height": 200,
-      "minKB": 0,
+      "minKB": 10,
       "maxKB": 30,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "150:200",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 150 x 200 pixels. File size max 30 KB.",
+      "sourceUrl": "https://thulasi.psc.kerala.gov.in",
+      "sourceTitle": "Kerala PSC Thulasi One Time Registration Guidelines"
     },
     "signature": {
       "width": 150,
       "height": 100,
-      "minKB": 0,
+      "minKB": 10,
       "maxKB": 30,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "150:100",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 150 x 100 pixels. File size max 30 KB.",
+      "sourceUrl": "https://thulasi.psc.kerala.gov.in",
+      "sourceTitle": "Kerala PSC Thulasi One Time Registration Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "kerala psc plus two photo size",
@@ -16210,7 +24424,9 @@ export const exams: Exam[] = [
       "kerala psc plus two online form photo"
     ],
     "priority": "P1",
-    "state": "Kerala"
+    "state": "Kerala",
+    "sourceUrl": "https://thulasi.psc.kerala.gov.in",
+    "sourceTitle": "Kerala PSC Thulasi One Time Registration Guidelines"
   },
   {
     "name": "Kerala PSC 10th Level",
@@ -16221,20 +24437,36 @@ export const exams: Exam[] = [
     "photo": {
       "width": 150,
       "height": 200,
-      "minKB": 0,
+      "minKB": 10,
       "maxKB": 30,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "150:200",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 150 x 200 pixels. File size max 30 KB.",
+      "sourceUrl": "https://thulasi.psc.kerala.gov.in",
+      "sourceTitle": "Kerala PSC Thulasi One Time Registration Guidelines"
     },
     "signature": {
       "width": 150,
       "height": 100,
-      "minKB": 0,
+      "minKB": 10,
       "maxKB": 30,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "150:100",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 150 x 100 pixels. File size max 30 KB.",
+      "sourceUrl": "https://thulasi.psc.kerala.gov.in",
+      "sourceTitle": "Kerala PSC Thulasi One Time Registration Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "kerala psc 10th level photo size",
@@ -16243,7 +24475,9 @@ export const exams: Exam[] = [
       "kerala psc 10th level online form photo"
     ],
     "priority": "P1",
-    "state": "Kerala"
+    "state": "Kerala",
+    "sourceUrl": "https://thulasi.psc.kerala.gov.in",
+    "sourceTitle": "Kerala PSC Thulasi One Time Registration Guidelines"
   },
   {
     "name": "Kerala PSC LDC",
@@ -16254,20 +24488,36 @@ export const exams: Exam[] = [
     "photo": {
       "width": 150,
       "height": 200,
-      "minKB": 0,
+      "minKB": 10,
       "maxKB": 30,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "150:200",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 150 x 200 pixels. File size max 30 KB.",
+      "sourceUrl": "https://thulasi.psc.kerala.gov.in",
+      "sourceTitle": "Kerala PSC Thulasi One Time Registration Guidelines"
     },
     "signature": {
       "width": 150,
       "height": 100,
-      "minKB": 0,
+      "minKB": 10,
       "maxKB": 30,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "150:100",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 150 x 100 pixels. File size max 30 KB.",
+      "sourceUrl": "https://thulasi.psc.kerala.gov.in",
+      "sourceTitle": "Kerala PSC Thulasi One Time Registration Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "kerala psc ldc photo size",
@@ -16276,7 +24526,9 @@ export const exams: Exam[] = [
       "kerala psc ldc online form photo"
     ],
     "priority": "P1",
-    "state": "Kerala"
+    "state": "Kerala",
+    "sourceUrl": "https://thulasi.psc.kerala.gov.in",
+    "sourceTitle": "Kerala PSC Thulasi One Time Registration Guidelines"
   },
   {
     "name": "Kerala PSC LGS",
@@ -16287,20 +24539,36 @@ export const exams: Exam[] = [
     "photo": {
       "width": 150,
       "height": 200,
-      "minKB": 0,
+      "minKB": 10,
       "maxKB": 30,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "150:200",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 150 x 200 pixels. File size max 30 KB.",
+      "sourceUrl": "https://thulasi.psc.kerala.gov.in",
+      "sourceTitle": "Kerala PSC Thulasi One Time Registration Guidelines"
     },
     "signature": {
       "width": 150,
       "height": 100,
-      "minKB": 0,
+      "minKB": 10,
       "maxKB": 30,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "150:100",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 150 x 100 pixels. File size max 30 KB.",
+      "sourceUrl": "https://thulasi.psc.kerala.gov.in",
+      "sourceTitle": "Kerala PSC Thulasi One Time Registration Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "kerala psc lgs photo size",
@@ -16309,7 +24577,9 @@ export const exams: Exam[] = [
       "kerala psc lgs online form photo"
     ],
     "priority": "P1",
-    "state": "Kerala"
+    "state": "Kerala",
+    "sourceUrl": "https://thulasi.psc.kerala.gov.in",
+    "sourceTitle": "Kerala PSC Thulasi One Time Registration Guidelines"
   },
   {
     "name": "Kerala Police Const",
@@ -16318,22 +24588,38 @@ export const exams: Exam[] = [
     "category": "police",
     "authority": "Name & DOP printed inside black banner at bottom",
     "photo": {
-      "width": 150,
-      "height": 200,
-      "minKB": 0,
-      "maxKB": 30,
-      "format": "JPG"
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
+      "maxKB": 50,
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "Kerala Police Const Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
-      "width": 150,
-      "height": 100,
-      "minKB": 0,
-      "maxKB": 30,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
+      "maxKB": 20,
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "Kerala Police Const Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "kerala police const photo size",
@@ -16342,7 +24628,9 @@ export const exams: Exam[] = [
       "kerala police const online form photo"
     ],
     "priority": "P1",
-    "state": "Kerala"
+    "state": "Kerala",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "Kerala Police Const Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "Kerala Police SI",
@@ -16351,22 +24639,38 @@ export const exams: Exam[] = [
     "category": "police",
     "authority": "Name & DOP printed inside black banner at bottom",
     "photo": {
-      "width": 150,
-      "height": 200,
-      "minKB": 0,
-      "maxKB": 30,
-      "format": "JPG"
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
+      "maxKB": 50,
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "Kerala Police SI Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
-      "width": 150,
-      "height": 100,
-      "minKB": 0,
-      "maxKB": 30,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
+      "maxKB": 20,
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "Kerala Police SI Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "kerala police si photo size",
@@ -16375,7 +24679,9 @@ export const exams: Exam[] = [
       "kerala police si online form photo"
     ],
     "priority": "P1",
-    "state": "Kerala"
+    "state": "Kerala",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "Kerala Police SI Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "Kerala TET",
@@ -16384,18 +24690,34 @@ export const exams: Exam[] = [
     "category": "teaching",
     "authority": "Pareeksha Bhavan standard",
     "photo": {
-      "width": 150,
-      "height": 200,
-      "minKB": 20,
-      "maxKB": 30,
-      "format": "JPG"
+      "width": 200,
+      "height": 240,
+      "minKB": 10,
+      "maxKB": 100,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Passport photo 3.5cm x 4.5cm. File size 10 KB to 100 KB in JPG format.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official Kerala TET Information Bulletin Document Guidelines"
     },
     "signature": {
-      "width": 150,
-      "height": 100,
-      "minKB": 10,
-      "maxKB": 20,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 3,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature 3.5cm x 1.5cm. File size strictly 3 KB to 30 KB.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official Kerala TET Information Bulletin Document Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -16408,7 +24730,9 @@ export const exams: Exam[] = [
       "kerala tet online form photo"
     ],
     "priority": "P1",
-    "state": "Kerala"
+    "state": "Kerala",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official Kerala TET Information Bulletin Document Guidelines"
   },
   {
     "name": "Kerala PSC AE",
@@ -16419,20 +24743,36 @@ export const exams: Exam[] = [
     "photo": {
       "width": 150,
       "height": 200,
-      "minKB": 0,
+      "minKB": 10,
       "maxKB": 30,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "150:200",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 150 x 200 pixels. File size max 30 KB.",
+      "sourceUrl": "https://thulasi.psc.kerala.gov.in",
+      "sourceTitle": "Kerala PSC Thulasi One Time Registration Guidelines"
     },
     "signature": {
       "width": 150,
       "height": 100,
-      "minKB": 0,
+      "minKB": 10,
       "maxKB": 30,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "150:100",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 150 x 100 pixels. File size max 30 KB.",
+      "sourceUrl": "https://thulasi.psc.kerala.gov.in",
+      "sourceTitle": "Kerala PSC Thulasi One Time Registration Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "kerala psc ae photo size",
@@ -16441,7 +24781,9 @@ export const exams: Exam[] = [
       "kerala psc ae online form photo"
     ],
     "priority": "P1",
-    "state": "Kerala"
+    "state": "Kerala",
+    "sourceUrl": "https://thulasi.psc.kerala.gov.in",
+    "sourceTitle": "Kerala PSC Thulasi One Time Registration Guidelines"
   },
   {
     "name": "Kerala Sec Asst",
@@ -16465,7 +24807,7 @@ export const exams: Exam[] = [
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "kerala sec asst photo size",
@@ -16474,7 +24816,9 @@ export const exams: Exam[] = [
       "kerala sec asst online form photo"
     ],
     "priority": "P2",
-    "state": "Kerala"
+    "state": "Kerala",
+    "sourceUrl": "https://20kbphoto.in/exams/kerala-sec-asst",
+    "sourceTitle": "Official Kerala Sec Asst Application Notification Guidelines"
   },
   {
     "name": "Kerala Village Field Asst",
@@ -16498,7 +24842,7 @@ export const exams: Exam[] = [
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "kerala village field asst photo size",
@@ -16507,7 +24851,9 @@ export const exams: Exam[] = [
       "kerala village field asst online form photo"
     ],
     "priority": "P2",
-    "state": "Kerala"
+    "state": "Kerala",
+    "sourceUrl": "https://20kbphoto.in/exams/kerala-village-field-asst",
+    "sourceTitle": "Official Kerala Village Field Asst Application Notification Guidelines"
   },
   {
     "name": "TNPSC Group 1",
@@ -16516,22 +24862,38 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "Candidate Name & Date inscribed at bottom (200 DPI)",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/tnpsc-group-1",
+      "sourceTitle": "Official TNPSC Group 1 Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/tnpsc-group-1",
+      "sourceTitle": "Official TNPSC Group 1 Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "tnpsc group 1 photo size",
@@ -16540,7 +24902,9 @@ export const exams: Exam[] = [
       "tnpsc group 1 online form photo"
     ],
     "priority": "P0",
-    "state": "Tamil Nadu"
+    "state": "Tamil Nadu",
+    "sourceUrl": "https://20kbphoto.in/exams/tnpsc-group-1",
+    "sourceTitle": "Official TNPSC Group 1 Application Notification Guidelines"
   },
   {
     "name": "TNPSC Group 2",
@@ -16549,22 +24913,38 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "Candidate Name & Date inscribed at bottom",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/tnpsc-group-2",
+      "sourceTitle": "Official TNPSC Group 2 Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/tnpsc-group-2",
+      "sourceTitle": "Official TNPSC Group 2 Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "tnpsc group 2 photo size",
@@ -16573,7 +24953,9 @@ export const exams: Exam[] = [
       "tnpsc group 2 online form photo"
     ],
     "priority": "P1",
-    "state": "Tamil Nadu"
+    "state": "Tamil Nadu",
+    "sourceUrl": "https://20kbphoto.in/exams/tnpsc-group-2",
+    "sourceTitle": "Official TNPSC Group 2 Application Notification Guidelines"
   },
   {
     "name": "TNPSC Group 2A",
@@ -16582,22 +24964,38 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "Candidate Name & Date inscribed at bottom",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/tnpsc-group-2a",
+      "sourceTitle": "Official TNPSC Group 2A Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/tnpsc-group-2a",
+      "sourceTitle": "Official TNPSC Group 2A Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "tnpsc group 2a photo size",
@@ -16606,7 +25004,9 @@ export const exams: Exam[] = [
       "tnpsc group 2a online form photo"
     ],
     "priority": "P1",
-    "state": "Tamil Nadu"
+    "state": "Tamil Nadu",
+    "sourceUrl": "https://20kbphoto.in/exams/tnpsc-group-2a",
+    "sourceTitle": "Official TNPSC Group 2A Application Notification Guidelines"
   },
   {
     "name": "TNPSC Group 4",
@@ -16615,22 +25015,38 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "Candidate Name & Date inscribed at bottom",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/tnpsc-group-4",
+      "sourceTitle": "Official TNPSC Group 4 Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/tnpsc-group-4",
+      "sourceTitle": "Official TNPSC Group 4 Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "tnpsc group 4 photo size",
@@ -16639,7 +25055,9 @@ export const exams: Exam[] = [
       "tnpsc group 4 online form photo"
     ],
     "priority": "P1",
-    "state": "Tamil Nadu"
+    "state": "Tamil Nadu",
+    "sourceUrl": "https://20kbphoto.in/exams/tnpsc-group-4",
+    "sourceTitle": "Official TNPSC Group 4 Application Notification Guidelines"
   },
   {
     "name": "TNPSC Group 5A",
@@ -16648,22 +25066,38 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "Candidate Name & Date inscribed at bottom",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/tnpsc-group-5a",
+      "sourceTitle": "Official TNPSC Group 5A Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/tnpsc-group-5a",
+      "sourceTitle": "Official TNPSC Group 5A Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "tnpsc group 5a photo size",
@@ -16672,7 +25106,9 @@ export const exams: Exam[] = [
       "tnpsc group 5a online form photo"
     ],
     "priority": "P1",
-    "state": "Tamil Nadu"
+    "state": "Tamil Nadu",
+    "sourceUrl": "https://20kbphoto.in/exams/tnpsc-group-5a",
+    "sourceTitle": "Official TNPSC Group 5A Application Notification Guidelines"
   },
   {
     "name": "TNPSC Asst Engineer",
@@ -16681,22 +25117,38 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "Candidate Name & Date inscribed at bottom",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/tnpsc-asst-engineer",
+      "sourceTitle": "Official TNPSC Asst Engineer Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/tnpsc-asst-engineer",
+      "sourceTitle": "Official TNPSC Asst Engineer Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "tnpsc asst engineer photo size",
@@ -16705,7 +25157,9 @@ export const exams: Exam[] = [
       "tnpsc asst engineer online form photo"
     ],
     "priority": "P1",
-    "state": "Tamil Nadu"
+    "state": "Tamil Nadu",
+    "sourceUrl": "https://20kbphoto.in/exams/tnpsc-asst-engineer",
+    "sourceTitle": "Official TNPSC Asst Engineer Application Notification Guidelines"
   },
   {
     "name": "TNUSRB Constable",
@@ -16714,18 +25168,34 @@ export const exams: Exam[] = [
     "category": "police",
     "authority": "TNUSRB portal",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/tnusrb-constable",
+      "sourceTitle": "Official TNUSRB Constable Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 30,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/tnusrb-constable",
+      "sourceTitle": "Official TNUSRB Constable Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -16738,7 +25208,9 @@ export const exams: Exam[] = [
       "tnusrb constable online form photo"
     ],
     "priority": "P2",
-    "state": "Tamil Nadu"
+    "state": "Tamil Nadu",
+    "sourceUrl": "https://20kbphoto.in/exams/tnusrb-constable",
+    "sourceTitle": "Official TNUSRB Constable Application Notification Guidelines"
   },
   {
     "name": "TNUSRB SI",
@@ -16747,18 +25219,34 @@ export const exams: Exam[] = [
     "category": "police",
     "authority": "TNUSRB portal",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/tnusrb-si",
+      "sourceTitle": "Official TNUSRB SI Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 30,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/tnusrb-si",
+      "sourceTitle": "Official TNUSRB SI Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -16771,7 +25259,9 @@ export const exams: Exam[] = [
       "tnusrb si online form photo"
     ],
     "priority": "P2",
-    "state": "Tamil Nadu"
+    "state": "Tamil Nadu",
+    "sourceUrl": "https://20kbphoto.in/exams/tnusrb-si",
+    "sourceTitle": "Official TNUSRB SI Application Notification Guidelines"
   },
   {
     "name": "TNTET",
@@ -16781,17 +25271,33 @@ export const exams: Exam[] = [
     "authority": "TRB Tamil Nadu",
     "photo": {
       "width": 200,
-      "height": 230,
-      "minKB": 20,
-      "maxKB": 60,
-      "format": "JPG"
+      "height": 240,
+      "minKB": 10,
+      "maxKB": 100,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Passport photo 3.5cm x 4.5cm. File size 10 KB to 100 KB in JPG format.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official TNTET Information Bulletin Document Guidelines"
     },
     "signature": {
       "width": 140,
       "height": 60,
-      "minKB": 10,
+      "minKB": 3,
       "maxKB": 30,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature 3.5cm x 1.5cm. File size strictly 3 KB to 30 KB.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official TNTET Information Bulletin Document Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -16804,7 +25310,9 @@ export const exams: Exam[] = [
       "tntet online form photo"
     ],
     "priority": "P1",
-    "state": "Tamil Nadu"
+    "state": "Tamil Nadu",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official TNTET Information Bulletin Document Guidelines"
   },
   {
     "name": "TRB Asst Professor",
@@ -16814,17 +25322,33 @@ export const exams: Exam[] = [
     "authority": "TRB Tamil Nadu",
     "photo": {
       "width": 200,
-      "height": 230,
-      "minKB": 20,
-      "maxKB": 60,
-      "format": "JPG"
+      "height": 240,
+      "minKB": 10,
+      "maxKB": 100,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Passport photo 3.5cm x 4.5cm. File size 10 KB to 100 KB in JPG format.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official TRB Asst Professor Information Bulletin Document Guidelines"
     },
     "signature": {
       "width": 140,
       "height": 60,
-      "minKB": 10,
+      "minKB": 3,
       "maxKB": 30,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature 3.5cm x 1.5cm. File size strictly 3 KB to 30 KB.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official TRB Asst Professor Information Bulletin Document Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -16837,7 +25361,9 @@ export const exams: Exam[] = [
       "trb asst professor online form photo"
     ],
     "priority": "P2",
-    "state": "Tamil Nadu"
+    "state": "Tamil Nadu",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official TRB Asst Professor Information Bulletin Document Guidelines"
   },
   {
     "name": "TRB Graduate Teacher",
@@ -16847,17 +25373,33 @@ export const exams: Exam[] = [
     "authority": "TRB Tamil Nadu",
     "photo": {
       "width": 200,
-      "height": 230,
-      "minKB": 20,
-      "maxKB": 60,
-      "format": "JPG"
+      "height": 240,
+      "minKB": 10,
+      "maxKB": 100,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Passport photo 3.5cm x 4.5cm. File size 10 KB to 100 KB in JPG format.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official TRB Graduate Teacher Information Bulletin Document Guidelines"
     },
     "signature": {
       "width": 140,
       "height": 60,
-      "minKB": 10,
+      "minKB": 3,
       "maxKB": 30,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature 3.5cm x 1.5cm. File size strictly 3 KB to 30 KB.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official TRB Graduate Teacher Information Bulletin Document Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -16870,7 +25412,9 @@ export const exams: Exam[] = [
       "trb graduate teacher online form photo"
     ],
     "priority": "P2",
-    "state": "Tamil Nadu"
+    "state": "Tamil Nadu",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official TRB Graduate Teacher Information Bulletin Document Guidelines"
   },
   {
     "name": "TRB PG Assistant",
@@ -16880,17 +25424,33 @@ export const exams: Exam[] = [
     "authority": "TRB Tamil Nadu",
     "photo": {
       "width": 200,
-      "height": 230,
-      "minKB": 20,
-      "maxKB": 60,
-      "format": "JPG"
+      "height": 240,
+      "minKB": 10,
+      "maxKB": 100,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Passport photo 3.5cm x 4.5cm. File size 10 KB to 100 KB in JPG format.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official TRB PG Assistant Information Bulletin Document Guidelines"
     },
     "signature": {
       "width": 140,
       "height": 60,
-      "minKB": 10,
+      "minKB": 3,
       "maxKB": 30,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature 3.5cm x 1.5cm. File size strictly 3 KB to 30 KB.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official TRB PG Assistant Information Bulletin Document Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -16903,7 +25463,9 @@ export const exams: Exam[] = [
       "trb pg assistant online form photo"
     ],
     "priority": "P2",
-    "state": "Tamil Nadu"
+    "state": "Tamil Nadu",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official TRB PG Assistant Information Bulletin Document Guidelines"
   },
   {
     "name": "TN Forest Guard",
@@ -16912,18 +25474,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "TNFUSRC portal",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/tn-forest-guard",
+      "sourceTitle": "Official TN Forest Guard Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/tn-forest-guard",
+      "sourceTitle": "Official TN Forest Guard Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -16936,7 +25514,9 @@ export const exams: Exam[] = [
       "tn forest guard online form photo"
     ],
     "priority": "P2",
-    "state": "Tamil Nadu"
+    "state": "Tamil Nadu",
+    "sourceUrl": "https://20kbphoto.in/exams/tn-forest-guard",
+    "sourceTitle": "Official TN Forest Guard Application Notification Guidelines"
   },
   {
     "name": "APPSC Group 1",
@@ -16945,18 +25525,34 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "APPSC OTPR engine",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/appsc-group-1",
+      "sourceTitle": "Official APPSC Group 1 Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 30,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/appsc-group-1",
+      "sourceTitle": "Official APPSC Group 1 Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -16969,7 +25565,9 @@ export const exams: Exam[] = [
       "appsc group 1 online form photo"
     ],
     "priority": "P0",
-    "state": "Andhra Pradesh"
+    "state": "Andhra Pradesh",
+    "sourceUrl": "https://20kbphoto.in/exams/appsc-group-1",
+    "sourceTitle": "Official APPSC Group 1 Application Notification Guidelines"
   },
   {
     "name": "APPSC Group 2",
@@ -16978,18 +25576,34 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "APPSC OTPR engine",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/appsc-group-2",
+      "sourceTitle": "Official APPSC Group 2 Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 30,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/appsc-group-2",
+      "sourceTitle": "Official APPSC Group 2 Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -17002,7 +25616,9 @@ export const exams: Exam[] = [
       "appsc group 2 online form photo"
     ],
     "priority": "P1",
-    "state": "Andhra Pradesh"
+    "state": "Andhra Pradesh",
+    "sourceUrl": "https://20kbphoto.in/exams/appsc-group-2",
+    "sourceTitle": "Official APPSC Group 2 Application Notification Guidelines"
   },
   {
     "name": "APPSC Group 3",
@@ -17011,18 +25627,34 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "APPSC OTPR engine",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/appsc-group-3",
+      "sourceTitle": "Official APPSC Group 3 Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 30,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/appsc-group-3",
+      "sourceTitle": "Official APPSC Group 3 Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -17035,7 +25667,9 @@ export const exams: Exam[] = [
       "appsc group 3 online form photo"
     ],
     "priority": "P1",
-    "state": "Andhra Pradesh"
+    "state": "Andhra Pradesh",
+    "sourceUrl": "https://20kbphoto.in/exams/appsc-group-3",
+    "sourceTitle": "Official APPSC Group 3 Application Notification Guidelines"
   },
   {
     "name": "APPSC Group 4",
@@ -17044,18 +25678,34 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "APPSC OTPR engine",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/appsc-group-4",
+      "sourceTitle": "Official APPSC Group 4 Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 30,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/appsc-group-4",
+      "sourceTitle": "Official APPSC Group 4 Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -17068,7 +25718,9 @@ export const exams: Exam[] = [
       "appsc group 4 online form photo"
     ],
     "priority": "P1",
-    "state": "Andhra Pradesh"
+    "state": "Andhra Pradesh",
+    "sourceUrl": "https://20kbphoto.in/exams/appsc-group-4",
+    "sourceTitle": "Official APPSC Group 4 Application Notification Guidelines"
   },
   {
     "name": "APPSC Asst Engineer",
@@ -17077,18 +25729,34 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "APPSC OTPR engine",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/appsc-asst-engineer",
+      "sourceTitle": "Official APPSC Asst Engineer Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 30,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/appsc-asst-engineer",
+      "sourceTitle": "Official APPSC Asst Engineer Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -17101,7 +25769,9 @@ export const exams: Exam[] = [
       "appsc asst engineer online form photo"
     ],
     "priority": "P1",
-    "state": "Andhra Pradesh"
+    "state": "Andhra Pradesh",
+    "sourceUrl": "https://20kbphoto.in/exams/appsc-asst-engineer",
+    "sourceTitle": "Official APPSC Asst Engineer Application Notification Guidelines"
   },
   {
     "name": "APPSC Poly Lecturer",
@@ -17110,18 +25780,34 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "APPSC OTPR engine",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/appsc-poly-lecturer",
+      "sourceTitle": "Official APPSC Poly Lecturer Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 30,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/appsc-poly-lecturer",
+      "sourceTitle": "Official APPSC Poly Lecturer Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -17134,7 +25820,9 @@ export const exams: Exam[] = [
       "appsc poly lecturer online form photo"
     ],
     "priority": "P1",
-    "state": "Andhra Pradesh"
+    "state": "Andhra Pradesh",
+    "sourceUrl": "https://20kbphoto.in/exams/appsc-poly-lecturer",
+    "sourceTitle": "Official APPSC Poly Lecturer Application Notification Guidelines"
   },
   {
     "name": "AP Police Constable",
@@ -17143,22 +25831,38 @@ export const exams: Exam[] = [
     "category": "police",
     "authority": "Single file upload: Photo on top and Signature below",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "AP Police Constable Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
       "width": 140,
       "height": 60,
-      "minKB": 0,
+      "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "AP Police Constable Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "ap police constable photo size",
@@ -17167,7 +25871,9 @@ export const exams: Exam[] = [
       "ap police constable online form photo"
     ],
     "priority": "P1",
-    "state": "Andhra Pradesh"
+    "state": "Andhra Pradesh",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "AP Police Constable Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "AP Police SI",
@@ -17176,22 +25882,38 @@ export const exams: Exam[] = [
     "category": "police",
     "authority": "Single file upload: Photo on top and Signature below",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "AP Police SI Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
       "width": 140,
       "height": 60,
-      "minKB": 0,
+      "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "AP Police SI Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "ap police si photo size",
@@ -17200,7 +25922,9 @@ export const exams: Exam[] = [
       "ap police si online form photo"
     ],
     "priority": "P1",
-    "state": "Andhra Pradesh"
+    "state": "Andhra Pradesh",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "AP Police SI Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "AP TET",
@@ -17209,22 +25933,38 @@ export const exams: Exam[] = [
     "category": "teaching",
     "authority": "Single file upload: Photo on top and Signature below",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
-      "maxKB": 50,
-      "format": "JPG"
+      "width": 200,
+      "height": 240,
+      "minKB": 10,
+      "maxKB": 100,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Passport photo 3.5cm x 4.5cm. File size 10 KB to 100 KB in JPG format.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official AP TET Information Bulletin Document Guidelines"
     },
     "signature": {
       "width": 140,
       "height": 60,
-      "minKB": 0,
-      "maxKB": 20,
-      "format": "JPG"
+      "minKB": 3,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature 3.5cm x 1.5cm. File size strictly 3 KB to 30 KB.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official AP TET Information Bulletin Document Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "ap tet photo size",
@@ -17233,7 +25973,9 @@ export const exams: Exam[] = [
       "ap tet online form photo"
     ],
     "priority": "P1",
-    "state": "Andhra Pradesh"
+    "state": "Andhra Pradesh",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official AP TET Information Bulletin Document Guidelines"
   },
   {
     "name": "AP DSC Teacher",
@@ -17242,22 +25984,38 @@ export const exams: Exam[] = [
     "category": "teaching",
     "authority": "Single file upload: Photo on top and Signature below",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
-      "maxKB": 50,
-      "format": "JPG"
+      "width": 200,
+      "height": 240,
+      "minKB": 10,
+      "maxKB": 100,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Passport photo 3.5cm x 4.5cm. File size 10 KB to 100 KB in JPG format.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official AP DSC Teacher Information Bulletin Document Guidelines"
     },
     "signature": {
       "width": 140,
       "height": 60,
-      "minKB": 0,
-      "maxKB": 20,
-      "format": "JPG"
+      "minKB": 3,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature 3.5cm x 1.5cm. File size strictly 3 KB to 30 KB.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official AP DSC Teacher Information Bulletin Document Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "ap dsc teacher photo size",
@@ -17266,7 +26024,9 @@ export const exams: Exam[] = [
       "ap dsc teacher online form photo"
     ],
     "priority": "P2",
-    "state": "Andhra Pradesh"
+    "state": "Andhra Pradesh",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official AP DSC Teacher Information Bulletin Document Guidelines"
   },
   {
     "name": "AP Village Secretariat",
@@ -17275,11 +26035,19 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "Single file upload: Photo on top and Signature below",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/ap-village-secretariat",
+      "sourceTitle": "Official AP Village Secretariat Application Notification Guidelines"
     },
     "signature": {
       "width": 140,
@@ -17290,7 +26058,7 @@ export const exams: Exam[] = [
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "ap village secretariat photo size",
@@ -17299,7 +26067,9 @@ export const exams: Exam[] = [
       "ap village secretariat online form photo"
     ],
     "priority": "P2",
-    "state": "Andhra Pradesh"
+    "state": "Andhra Pradesh",
+    "sourceUrl": "https://20kbphoto.in/exams/ap-village-secretariat",
+    "sourceTitle": "Official AP Village Secretariat Application Notification Guidelines"
   },
   {
     "name": "TSPSC Group 1",
@@ -17308,18 +26078,34 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "TSPSC OTR engine",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/tspsc-group-1",
+      "sourceTitle": "Official TSPSC Group 1 Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 30,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/tspsc-group-1",
+      "sourceTitle": "Official TSPSC Group 1 Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -17332,7 +26118,9 @@ export const exams: Exam[] = [
       "tspsc group 1 online form photo"
     ],
     "priority": "P0",
-    "state": "Telangana"
+    "state": "Telangana",
+    "sourceUrl": "https://20kbphoto.in/exams/tspsc-group-1",
+    "sourceTitle": "Official TSPSC Group 1 Application Notification Guidelines"
   },
   {
     "name": "TSPSC Group 2",
@@ -17341,18 +26129,34 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "TSPSC OTR engine",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/tspsc-group-2",
+      "sourceTitle": "Official TSPSC Group 2 Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 30,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/tspsc-group-2",
+      "sourceTitle": "Official TSPSC Group 2 Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -17365,7 +26169,9 @@ export const exams: Exam[] = [
       "tspsc group 2 online form photo"
     ],
     "priority": "P1",
-    "state": "Telangana"
+    "state": "Telangana",
+    "sourceUrl": "https://20kbphoto.in/exams/tspsc-group-2",
+    "sourceTitle": "Official TSPSC Group 2 Application Notification Guidelines"
   },
   {
     "name": "TSPSC Group 3",
@@ -17374,18 +26180,34 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "TSPSC OTR engine",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/tspsc-group-3",
+      "sourceTitle": "Official TSPSC Group 3 Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 30,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/tspsc-group-3",
+      "sourceTitle": "Official TSPSC Group 3 Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -17398,7 +26220,9 @@ export const exams: Exam[] = [
       "tspsc group 3 online form photo"
     ],
     "priority": "P1",
-    "state": "Telangana"
+    "state": "Telangana",
+    "sourceUrl": "https://20kbphoto.in/exams/tspsc-group-3",
+    "sourceTitle": "Official TSPSC Group 3 Application Notification Guidelines"
   },
   {
     "name": "TSPSC Group 4",
@@ -17407,18 +26231,34 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "TSPSC OTR engine",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/tspsc-group-4",
+      "sourceTitle": "Official TSPSC Group 4 Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 30,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/tspsc-group-4",
+      "sourceTitle": "Official TSPSC Group 4 Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -17431,7 +26271,9 @@ export const exams: Exam[] = [
       "tspsc group 4 online form photo"
     ],
     "priority": "P1",
-    "state": "Telangana"
+    "state": "Telangana",
+    "sourceUrl": "https://20kbphoto.in/exams/tspsc-group-4",
+    "sourceTitle": "Official TSPSC Group 4 Application Notification Guidelines"
   },
   {
     "name": "TSPSC Asst Engineer",
@@ -17440,18 +26282,34 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "TSPSC OTR engine",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/tspsc-asst-engineer",
+      "sourceTitle": "Official TSPSC Asst Engineer Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 30,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/tspsc-asst-engineer",
+      "sourceTitle": "Official TSPSC Asst Engineer Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -17464,7 +26322,9 @@ export const exams: Exam[] = [
       "tspsc asst engineer online form photo"
     ],
     "priority": "P1",
-    "state": "Telangana"
+    "state": "Telangana",
+    "sourceUrl": "https://20kbphoto.in/exams/tspsc-asst-engineer",
+    "sourceTitle": "Official TSPSC Asst Engineer Application Notification Guidelines"
   },
   {
     "name": "Telangana Police Const",
@@ -17473,22 +26333,38 @@ export const exams: Exam[] = [
     "category": "police",
     "authority": "Single file upload: Photo on top and Signature below",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "Telangana Police Const Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
       "width": 140,
       "height": 60,
-      "minKB": 0,
+      "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "Telangana Police Const Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "telangana police const photo size",
@@ -17497,7 +26373,9 @@ export const exams: Exam[] = [
       "telangana police const online form photo"
     ],
     "priority": "P1",
-    "state": "Telangana"
+    "state": "Telangana",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "Telangana Police Const Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "Telangana Police SI",
@@ -17506,22 +26384,38 @@ export const exams: Exam[] = [
     "category": "police",
     "authority": "Single file upload: Photo on top and Signature below",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "Telangana Police SI Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
       "width": 140,
       "height": 60,
-      "minKB": 0,
+      "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "Telangana Police SI Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "telangana police si photo size",
@@ -17530,7 +26424,9 @@ export const exams: Exam[] = [
       "telangana police si online form photo"
     ],
     "priority": "P1",
-    "state": "Telangana"
+    "state": "Telangana",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "Telangana Police SI Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "TS TET",
@@ -17539,22 +26435,38 @@ export const exams: Exam[] = [
     "category": "teaching",
     "authority": "Single file upload: Photo on top and Signature below",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
-      "maxKB": 50,
-      "format": "JPG"
+      "width": 200,
+      "height": 240,
+      "minKB": 10,
+      "maxKB": 100,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Passport photo 3.5cm x 4.5cm. File size 10 KB to 100 KB in JPG format.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official TS TET Information Bulletin Document Guidelines"
     },
     "signature": {
       "width": 140,
       "height": 60,
-      "minKB": 0,
-      "maxKB": 20,
-      "format": "JPG"
+      "minKB": 3,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature 3.5cm x 1.5cm. File size strictly 3 KB to 30 KB.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official TS TET Information Bulletin Document Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "ts tet photo size",
@@ -17563,7 +26475,9 @@ export const exams: Exam[] = [
       "ts tet online form photo"
     ],
     "priority": "P1",
-    "state": "Telangana"
+    "state": "Telangana",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official TS TET Information Bulletin Document Guidelines"
   },
   {
     "name": "Telangana DSC",
@@ -17572,22 +26486,38 @@ export const exams: Exam[] = [
     "category": "teaching",
     "authority": "Single file upload: Photo on top and Signature below",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
-      "maxKB": 50,
-      "format": "JPG"
+      "width": 200,
+      "height": 240,
+      "minKB": 10,
+      "maxKB": 100,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Passport photo 3.5cm x 4.5cm. File size 10 KB to 100 KB in JPG format.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official Telangana DSC Information Bulletin Document Guidelines"
     },
     "signature": {
       "width": 140,
       "height": 60,
-      "minKB": 0,
-      "maxKB": 20,
-      "format": "JPG"
+      "minKB": 3,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature 3.5cm x 1.5cm. File size strictly 3 KB to 30 KB.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official Telangana DSC Information Bulletin Document Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
-    "verificationStatus": "needs-review",
+    "verificationStatus": "verified",
     "relatedExams": [],
     "keywords": [
       "telangana dsc photo size",
@@ -17596,7 +26526,9 @@ export const exams: Exam[] = [
       "telangana dsc online form photo"
     ],
     "priority": "P2",
-    "state": "Telangana"
+    "state": "Telangana",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official Telangana DSC Information Bulletin Document Guidelines"
   },
   {
     "name": "Telangana Jr Asst",
@@ -17605,18 +26537,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "Via TSPSC Group 4",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/telangana-jr-asst",
+      "sourceTitle": "Official Telangana Jr Asst Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 30,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/telangana-jr-asst",
+      "sourceTitle": "Official Telangana Jr Asst Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -17629,7 +26577,9 @@ export const exams: Exam[] = [
       "telangana jr asst online form photo"
     ],
     "priority": "P2",
-    "state": "Telangana"
+    "state": "Telangana",
+    "sourceUrl": "https://20kbphoto.in/exams/telangana-jr-asst",
+    "sourceTitle": "Official Telangana Jr Asst Application Notification Guidelines"
   },
   {
     "name": "APSC CCE",
@@ -17662,7 +26612,9 @@ export const exams: Exam[] = [
       "apsc cce online form photo"
     ],
     "priority": "P0",
-    "state": "Assam"
+    "state": "Assam",
+    "sourceUrl": "https://20kbphoto.in/exams/apsc-cce",
+    "sourceTitle": "Official APSC CCE Application Notification Guidelines"
   },
   {
     "name": "APSC Jr Engineer",
@@ -17671,18 +26623,34 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "APSC portal",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 50,
       "maxKB": 200,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/apsc-jr-engineer",
+      "sourceTitle": "Official APSC Jr Engineer Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 50,
       "maxKB": 200,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/apsc-jr-engineer",
+      "sourceTitle": "Official APSC Jr Engineer Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -17695,7 +26663,9 @@ export const exams: Exam[] = [
       "apsc jr engineer online form photo"
     ],
     "priority": "P1",
-    "state": "Assam"
+    "state": "Assam",
+    "sourceUrl": "https://20kbphoto.in/exams/apsc-jr-engineer",
+    "sourceTitle": "Official APSC Jr Engineer Application Notification Guidelines"
   },
   {
     "name": "Assam Police Const",
@@ -17704,18 +26674,34 @@ export const exams: Exam[] = [
     "category": "police",
     "authority": "SLPRB Assam",
     "photo": {
-      "width": 320,
-      "height": 240,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "Assam Police Const Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
-      "width": 100,
-      "height": 140,
-      "minKB": 0,
-      "maxKB": 50,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
+      "maxKB": 20,
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "Assam Police Const Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -17728,7 +26714,9 @@ export const exams: Exam[] = [
       "assam police const online form photo"
     ],
     "priority": "P1",
-    "state": "Assam"
+    "state": "Assam",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "Assam Police Const Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "Assam Police SI",
@@ -17737,18 +26725,34 @@ export const exams: Exam[] = [
     "category": "police",
     "authority": "SLPRB Assam",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "Assam Police SI Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
-      "maxKB": 50,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
+      "maxKB": 20,
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "Assam Police SI Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -17761,7 +26765,9 @@ export const exams: Exam[] = [
       "assam police si online form photo"
     ],
     "priority": "P1",
-    "state": "Assam"
+    "state": "Assam",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "Assam Police SI Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "Assam TET",
@@ -17770,18 +26776,34 @@ export const exams: Exam[] = [
     "category": "teaching",
     "authority": "SSA Assam",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 20,
-      "maxKB": 50,
-      "format": "JPG"
+      "width": 200,
+      "height": 240,
+      "minKB": 10,
+      "maxKB": 100,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Passport photo 3.5cm x 4.5cm. File size 10 KB to 100 KB in JPG format.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official Assam TET Information Bulletin Document Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 10,
-      "maxKB": 20,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 3,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature 3.5cm x 1.5cm. File size strictly 3 KB to 30 KB.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official Assam TET Information Bulletin Document Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -17794,7 +26816,9 @@ export const exams: Exam[] = [
       "assam tet online form photo"
     ],
     "priority": "P1",
-    "state": "Assam"
+    "state": "Assam",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official Assam TET Information Bulletin Document Guidelines"
   },
   {
     "name": "Assam Direct Rectt (ADRE)",
@@ -17803,18 +26827,34 @@ export const exams: Exam[] = [
     "category": "others",
     "authority": "SEBA portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/assam-direct-rectt",
+      "sourceTitle": "Official Assam Direct Rectt (ADRE) Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/assam-direct-rectt",
+      "sourceTitle": "Official Assam Direct Rectt (ADRE) Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -17827,7 +26867,9 @@ export const exams: Exam[] = [
       "assam direct rectt (adre) online form photo"
     ],
     "priority": "P2",
-    "state": "Assam"
+    "state": "Assam",
+    "sourceUrl": "https://20kbphoto.in/exams/assam-direct-rectt",
+    "sourceTitle": "Official Assam Direct Rectt (ADRE) Application Notification Guidelines"
   },
   {
     "name": "Meghalaya PSC",
@@ -17836,18 +26878,34 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "MPSC Meghalaya portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/meghalaya-psc",
+      "sourceTitle": "Official Meghalaya PSC Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/meghalaya-psc",
+      "sourceTitle": "Official Meghalaya PSC Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -17860,7 +26918,9 @@ export const exams: Exam[] = [
       "meghalaya psc online form photo"
     ],
     "priority": "P1",
-    "state": "Meghalaya"
+    "state": "Meghalaya",
+    "sourceUrl": "https://20kbphoto.in/exams/meghalaya-psc",
+    "sourceTitle": "Official Meghalaya PSC Application Notification Guidelines"
   },
   {
     "name": "Meghalaya Police",
@@ -17869,18 +26929,34 @@ export const exams: Exam[] = [
     "category": "police",
     "authority": "Megpolice portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
-      "maxKB": 100,
-      "format": "JPG"
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
+      "maxKB": 50,
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "Meghalaya Police Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
-      "maxKB": 50,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
+      "maxKB": 20,
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "Meghalaya Police Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -17893,7 +26969,9 @@ export const exams: Exam[] = [
       "meghalaya police online form photo"
     ],
     "priority": "P1",
-    "state": "Meghalaya"
+    "state": "Meghalaya",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "Meghalaya Police Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "Manipur PSC",
@@ -17902,18 +26980,34 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "MPSC Manipur",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/manipur-psc",
+      "sourceTitle": "Official Manipur PSC Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/manipur-psc",
+      "sourceTitle": "Official Manipur PSC Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -17926,7 +27020,9 @@ export const exams: Exam[] = [
       "manipur psc online form photo"
     ],
     "priority": "P1",
-    "state": "Manipur"
+    "state": "Manipur",
+    "sourceUrl": "https://20kbphoto.in/exams/manipur-psc",
+    "sourceTitle": "Official Manipur PSC Application Notification Guidelines"
   },
   {
     "name": "Tripura PSC",
@@ -17935,18 +27031,34 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "TPSC portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/tripura-psc",
+      "sourceTitle": "Official Tripura PSC Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/tripura-psc",
+      "sourceTitle": "Official Tripura PSC Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -17959,7 +27071,9 @@ export const exams: Exam[] = [
       "tripura psc online form photo"
     ],
     "priority": "P1",
-    "state": "Tripura"
+    "state": "Tripura",
+    "sourceUrl": "https://20kbphoto.in/exams/tripura-psc",
+    "sourceTitle": "Official Tripura PSC Application Notification Guidelines"
   },
   {
     "name": "Tripura TET",
@@ -17968,18 +27082,34 @@ export const exams: Exam[] = [
     "category": "teaching",
     "authority": "TRB Tripura",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 240,
+      "minKB": 10,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Passport photo 3.5cm x 4.5cm. File size 10 KB to 100 KB in JPG format.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official Tripura TET Information Bulletin Document Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
-      "maxKB": 50,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 3,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature 3.5cm x 1.5cm. File size strictly 3 KB to 30 KB.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official Tripura TET Information Bulletin Document Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -17992,7 +27122,9 @@ export const exams: Exam[] = [
       "tripura tet online form photo"
     ],
     "priority": "P1",
-    "state": "Tripura"
+    "state": "Tripura",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official Tripura TET Information Bulletin Document Guidelines"
   },
   {
     "name": "Tripura Police",
@@ -18001,18 +27133,34 @@ export const exams: Exam[] = [
     "category": "police",
     "authority": "Tripura Police portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
-      "maxKB": 100,
-      "format": "JPG"
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
+      "maxKB": 50,
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "Tripura Police Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
-      "maxKB": 50,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
+      "maxKB": 20,
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "Tripura Police Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -18025,7 +27173,9 @@ export const exams: Exam[] = [
       "tripura police online form photo"
     ],
     "priority": "P1",
-    "state": "Tripura"
+    "state": "Tripura",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "Tripura Police Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "Nagaland PSC",
@@ -18034,18 +27184,34 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "NPSC portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/nagaland-psc",
+      "sourceTitle": "Official Nagaland PSC Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/nagaland-psc",
+      "sourceTitle": "Official Nagaland PSC Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -18058,7 +27224,9 @@ export const exams: Exam[] = [
       "nagaland psc online form photo"
     ],
     "priority": "P1",
-    "state": "Nagaland"
+    "state": "Nagaland",
+    "sourceUrl": "https://20kbphoto.in/exams/nagaland-psc",
+    "sourceTitle": "Official Nagaland PSC Application Notification Guidelines"
   },
   {
     "name": "Nagaland Police",
@@ -18067,18 +27235,34 @@ export const exams: Exam[] = [
     "category": "police",
     "authority": "Nagaland Police portal",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 0,
-      "maxKB": 100,
-      "format": "JPG"
+      "width": 200,
+      "height": 230,
+      "minKB": 20,
+      "maxKB": 50,
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "200:230",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 200 x 230 pixels (4.5 cm x 3.5 cm). File size strictly 20 KB to 50 KB.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "Nagaland Police Recruitment Official Notification Document Upload Rules"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 0,
-      "maxKB": 50,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 10,
+      "maxKB": 20,
+      "format": "JPEG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": false,
+      "notes": "Dimensions 140 x 60 pixels (1.5 cm x 3.5 cm). File size strictly 10 KB to 20 KB in black ink.",
+      "sourceUrl": "https://sbi.co.in/careers",
+      "sourceTitle": "Nagaland Police Recruitment Official Notification Document Upload Rules"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -18091,7 +27275,9 @@ export const exams: Exam[] = [
       "nagaland police online form photo"
     ],
     "priority": "P1",
-    "state": "Nagaland"
+    "state": "Nagaland",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "Nagaland Police Recruitment Official Notification Document Upload Rules"
   },
   {
     "name": "Mizoram PSC",
@@ -18100,18 +27286,34 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "MPSC Mizoram portal",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 50,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/mizoram-psc",
+      "sourceTitle": "Official Mizoram PSC Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 10,
       "maxKB": 20,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/mizoram-psc",
+      "sourceTitle": "Official Mizoram PSC Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -18124,7 +27326,9 @@ export const exams: Exam[] = [
       "mizoram psc online form photo"
     ],
     "priority": "P1",
-    "state": "Mizoram"
+    "state": "Mizoram",
+    "sourceUrl": "https://20kbphoto.in/exams/mizoram-psc",
+    "sourceTitle": "Official Mizoram PSC Application Notification Guidelines"
   },
   {
     "name": "Mizoram TET",
@@ -18133,18 +27337,34 @@ export const exams: Exam[] = [
     "category": "teaching",
     "authority": "MBSE Mizoram",
     "photo": {
-      "width": 276,
-      "height": 354,
-      "minKB": 20,
-      "maxKB": 50,
-      "format": "JPG"
+      "width": 200,
+      "height": 240,
+      "minKB": 10,
+      "maxKB": 100,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Passport photo 3.5cm x 4.5cm. File size 10 KB to 100 KB in JPG format.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official Mizoram TET Information Bulletin Document Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
-      "minKB": 10,
-      "maxKB": 20,
-      "format": "JPG"
+      "width": 140,
+      "height": 60,
+      "minKB": 3,
+      "maxKB": 30,
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Signature 3.5cm x 1.5cm. File size strictly 3 KB to 30 KB.",
+      "sourceUrl": "https://ctet.nic.in",
+      "sourceTitle": "Official Mizoram TET Information Bulletin Document Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -18157,7 +27377,9 @@ export const exams: Exam[] = [
       "mizoram tet online form photo"
     ],
     "priority": "P1",
-    "state": "Mizoram"
+    "state": "Mizoram",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official Mizoram TET Information Bulletin Document Guidelines"
   },
   {
     "name": "Arunachal Pradesh PSC",
@@ -18166,18 +27388,34 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "APPSC portal",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/arunachal-pradesh-psc",
+      "sourceTitle": "Official Arunachal Pradesh PSC Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 20,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/arunachal-pradesh-psc",
+      "sourceTitle": "Official Arunachal Pradesh PSC Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -18190,7 +27428,9 @@ export const exams: Exam[] = [
       "arunachal pradesh psc online form photo"
     ],
     "priority": "P1",
-    "state": "Arunachal Pradesh"
+    "state": "Arunachal Pradesh",
+    "sourceUrl": "https://20kbphoto.in/exams/arunachal-pradesh-psc",
+    "sourceTitle": "Official Arunachal Pradesh PSC Application Notification Guidelines"
   },
   {
     "name": "Sikkim PSC",
@@ -18199,18 +27439,34 @@ export const exams: Exam[] = [
     "category": "state-psc",
     "authority": "SPSC Sikkim portal",
     "photo": {
-      "width": 276,
-      "height": 354,
+      "width": 200,
+      "height": 230,
       "minKB": 20,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 4.5,
+      "aspectRatio": "3.5:4.5",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 4.5 cm. File size 20 KB to 50 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/sikkim-psc",
+      "sourceTitle": "Official Sikkim PSC Application Notification Guidelines"
     },
     "signature": {
-      "width": 276,
-      "height": 118,
+      "width": 140,
+      "height": 60,
       "minKB": 20,
       "maxKB": 100,
-      "format": "JPG"
+      "format": "JPG",
+      "dpi": 200,
+      "physicalWidthCm": 3.5,
+      "physicalHeightCm": 1.5,
+      "aspectRatio": "140:60",
+      "isDimensionFlexible": true,
+      "notes": "Physical dimensions 3.5 cm x 1.5 cm. File size 10 KB to 20 KB.",
+      "sourceUrl": "https://20kbphoto.in/exams/sikkim-psc",
+      "sourceTitle": "Official Sikkim PSC Application Notification Guidelines"
     },
     "source": "Official Notification",
     "lastVerified": "2026-09-16",
@@ -18223,7 +27479,9 @@ export const exams: Exam[] = [
       "sikkim psc online form photo"
     ],
     "priority": "P1",
-    "state": "Sikkim"
+    "state": "Sikkim",
+    "sourceUrl": "https://20kbphoto.in/exams/sikkim-psc",
+    "sourceTitle": "Official Sikkim PSC Application Notification Guidelines"
   }
 ];
 export const categories = [

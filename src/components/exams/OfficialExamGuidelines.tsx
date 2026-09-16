@@ -56,10 +56,25 @@ export default function OfficialExamGuidelines({ exam }: OfficialExamGuidelinesP
             </thead>
             <tbody className="divide-y divide-gray-100 text-gray-700">
               <tr className="hover:bg-gray-50/50">
-                <td className="py-3.5 px-4 sm:px-6 font-bold text-gray-900 bg-gray-50/30">Dimensions (Width × Height)</td>
-                <td className="py-3.5 px-4 sm:px-6 font-semibold text-indigo-600">{exam.photo.width} × {exam.photo.height} pixels</td>
-                <td className="py-3.5 px-4 sm:px-6 font-semibold text-indigo-600">{exam.signature.width} × {exam.signature.height} pixels</td>
+                <td className="py-3.5 px-4 sm:px-6 font-bold text-gray-900 bg-gray-50/30">Pixel Dimensions (Width × Height)</td>
+                <td className="py-3.5 px-4 sm:px-6 font-semibold text-indigo-600">
+                  {exam.photo.width} × {exam.photo.height} px {exam.photo.isDimensionFlexible ? <span className="text-xs text-amber-700 font-normal ml-1">(Flexible / Recommended)</span> : null}
+                </td>
+                <td className="py-3.5 px-4 sm:px-6 font-semibold text-indigo-600">
+                  {exam.signature.width} × {exam.signature.height} px {exam.signature.isDimensionFlexible ? <span className="text-xs text-amber-700 font-normal ml-1">(Flexible / Recommended)</span> : null}
+                </td>
               </tr>
+              {exam.photo.physicalWidthCm || exam.signature.physicalWidthCm ? (
+                <tr className="hover:bg-gray-50/50">
+                  <td className="py-3.5 px-4 sm:px-6 font-bold text-gray-900 bg-gray-50/30">Physical Size (cm / mm)</td>
+                  <td className="py-3.5 px-4 sm:px-6 font-medium text-gray-900">
+                    {exam.photo.physicalWidthCm && exam.photo.physicalHeightCm ? `${exam.photo.physicalWidthCm} cm × ${exam.photo.physicalHeightCm} cm` : 'As per official portal'}
+                  </td>
+                  <td className="py-3.5 px-4 sm:px-6 font-medium text-gray-900">
+                    {exam.signature.physicalWidthCm && exam.signature.physicalHeightCm ? `${exam.signature.physicalWidthCm} cm × ${exam.signature.physicalHeightCm} cm` : 'As per official portal'}
+                  </td>
+                </tr>
+              ) : null}
               <tr className="hover:bg-gray-50/50">
                 <td className="py-3.5 px-4 sm:px-6 font-bold text-gray-900 bg-gray-50/30">File Size Limit (KB)</td>
                 <td className="py-3.5 px-4 sm:px-6 font-medium text-gray-900">{exam.photo.minKB > 0 ? `${exam.photo.minKB} KB to ${exam.photo.maxKB} KB` : `Max ${exam.photo.maxKB} KB`}</td>
@@ -77,8 +92,8 @@ export default function OfficialExamGuidelines({ exam }: OfficialExamGuidelinesP
               </tr>
               <tr className="hover:bg-gray-50/50">
                 <td className="py-3.5 px-4 sm:px-6 font-bold text-gray-900 bg-gray-50/30">Background / Ink Rules</td>
-                <td className="py-3.5 px-4 sm:px-6 text-gray-600">Light or plain white background, 70-80% face coverage</td>
-                <td className="py-3.5 px-4 sm:px-6 text-gray-600">Black or dark blue ink pen on clean white paper</td>
+                <td className="py-3.5 px-4 sm:px-6 text-gray-600">{exam.photo.notes || "Light or plain white background, 70-80% face coverage"}</td>
+                <td className="py-3.5 px-4 sm:px-6 text-gray-600">{exam.signature.notes || "Black or dark blue ink pen on clean white paper"}</td>
               </tr>
             </tbody>
           </table>
@@ -266,7 +281,18 @@ export default function OfficialExamGuidelines({ exam }: OfficialExamGuidelinesP
       <div className="text-center text-xs text-gray-500 flex flex-wrap items-center justify-center gap-2 pt-2">
         <span className="inline-flex items-center gap-1 font-semibold text-gray-700">
           <HiOutlineLink className="w-3.5 h-3.5 text-indigo-600" />
-          Source: {exam.authority} Official Recruitment Portal
+          Source: {exam.sourceUrl ? (
+            <a
+              href={exam.sourceUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-indigo-600 hover:underline font-bold"
+            >
+              {exam.sourceTitle || `${exam.authority} Official Portal`}
+            </a>
+          ) : (
+            `${exam.authority} Official Recruitment Portal`
+          )}
         </span>
         <span>•</span>
         <span>Specifications verified against official notification on {exam.lastVerified}.</span>

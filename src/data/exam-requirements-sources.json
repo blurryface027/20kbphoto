@@ -1,0 +1,4490 @@
+{
+  "ssc-cgl": {
+    "name": "SSC CGL",
+    "authority": "Live photo mandatory",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "ssc-chsl": {
+    "name": "SSC CHSL",
+    "authority": "Live photo mandatory",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "ssc-mts": {
+    "name": "SSC MTS",
+    "authority": "Live photo mandatory",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "ssc-gd-constable": {
+    "name": "SSC GD Constable",
+    "authority": "Live photo mandatory",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "ssc-cpo": {
+    "name": "SSC CPO",
+    "authority": "Live photo mandatory",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "ssc-je": {
+    "name": "SSC JE",
+    "authority": "Live photo mandatory",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "ssc-stenographer-c": {
+    "name": "SSC Stenographer C",
+    "authority": "Live photo mandatory",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "ssc-stenographer-d": {
+    "name": "SSC Stenographer D",
+    "authority": "Live photo mandatory",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "ssc-selection-post": {
+    "name": "SSC Selection Post",
+    "authority": "Live photo mandatory",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "ssc-jht": {
+    "name": "SSC JHT",
+    "authority": "Live photo mandatory",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "ssc-hindi-translator": {
+    "name": "SSC Hindi Translator",
+    "authority": "Live photo mandatory",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "ssc-imd-scientific-asst": {
+    "name": "SSC IMD Scientific Asst",
+    "authority": "Legacy scan rule",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "ssc-delhi-police-const": {
+    "name": "SSC Delhi Police Const",
+    "authority": "Light background",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "ssc-dp-head-const": {
+    "name": "SSC DP Head Const",
+    "authority": "Legacy portal rule",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "ssc-dp-sub-inspector": {
+    "name": "SSC DP Sub-Inspector",
+    "authority": "Under SSC CPO live engine",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "ssc-statistical-inv": {
+    "name": "SSC Statistical Inv",
+    "authority": "Live capture via CGL",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "ssc-jsa-ldc": {
+    "name": "SSC JSA / LDC",
+    "authority": "Departmental via new portal",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "ssc-lower-div-clerk": {
+    "name": "SSC Lower Div Clerk",
+    "authority": "Live capture via CHSL",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "ssc-const-executive": {
+    "name": "SSC Const Executive",
+    "authority": "Legacy DP Constable notice",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "ssc-const-driver": {
+    "name": "SSC Const Driver",
+    "authority": "Legacy DP Driver notice",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "upsc-cse": {
+    "name": "UPSC CSE (IAS/IFS)",
+    "authority": "Photo must have Name and DOP printed",
+    "sourceUrl": "https://upsconline.nic.in",
+    "sourceTitle": "UPSC Online Portal Guidelines & Instructions for Scanned Images",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "upsc-ifs": {
+    "name": "UPSC IFS",
+    "authority": "Candidate Name & Date inscribed",
+    "sourceUrl": "https://upsconline.nic.in",
+    "sourceTitle": "UPSC Online Portal Guidelines & Instructions for Scanned Images",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "upsc-nda-na": {
+    "name": "UPSC NDA & NA",
+    "authority": "Candidate Name & Date inscribed",
+    "sourceUrl": "https://upsconline.nic.in",
+    "sourceTitle": "UPSC Online Portal Guidelines & Instructions for Scanned Images",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "upsc-cds": {
+    "name": "UPSC CDS",
+    "authority": "Candidate Name & Date inscribed",
+    "sourceUrl": "https://upsconline.nic.in",
+    "sourceTitle": "UPSC Online Portal Guidelines & Instructions for Scanned Images",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "upsc-ese": {
+    "name": "UPSC ESE (Engg)",
+    "authority": "Candidate Name & Date inscribed",
+    "sourceUrl": "https://upsconline.nic.in",
+    "sourceTitle": "UPSC Online Portal Guidelines & Instructions for Scanned Images",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "upsc-cms": {
+    "name": "UPSC CMS",
+    "authority": "Candidate Name & Date inscribed",
+    "sourceUrl": "https://upsconline.nic.in",
+    "sourceTitle": "UPSC Online Portal Guidelines & Instructions for Scanned Images",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "upsc-capf": {
+    "name": "UPSC CAPF (AC)",
+    "authority": "Candidate Name & Date inscribed",
+    "sourceUrl": "https://upsconline.nic.in",
+    "sourceTitle": "UPSC Online Portal Guidelines & Instructions for Scanned Images",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "upsc-ies": {
+    "name": "UPSC IES",
+    "authority": "Candidate Name & Date inscribed",
+    "sourceUrl": "https://upsconline.nic.in",
+    "sourceTitle": "UPSC Online Portal Guidelines & Instructions for Scanned Images",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "upsc-iss": {
+    "name": "UPSC ISS",
+    "authority": "Candidate Name & Date inscribed",
+    "sourceUrl": "https://upsconline.nic.in",
+    "sourceTitle": "UPSC Online Portal Guidelines & Instructions for Scanned Images",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "upsc-geo-scientist": {
+    "name": "UPSC Geo-Scientist",
+    "authority": "Candidate Name & Date inscribed",
+    "sourceUrl": "https://upsconline.nic.in",
+    "sourceTitle": "UPSC Online Portal Guidelines & Instructions for Scanned Images",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "upsc-epfo-eo-ao": {
+    "name": "UPSC EPFO EO/AO",
+    "authority": "Square aspect ratio",
+    "sourceUrl": "https://upsconline.nic.in",
+    "sourceTitle": "UPSC Online Portal Guidelines & Instructions for Scanned Images",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "upsc-epfo-apfc": {
+    "name": "UPSC EPFO APFC",
+    "authority": "Square aspect ratio",
+    "sourceUrl": "https://upsconline.nic.in",
+    "sourceTitle": "UPSC Online Portal Guidelines & Instructions for Scanned Images",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "upsc-epfo-pa": {
+    "name": "UPSC EPFO PA",
+    "authority": "Candidate Name & Date inscribed",
+    "sourceUrl": "https://upsconline.nic.in",
+    "sourceTitle": "UPSC Online Portal Guidelines & Instructions for Scanned Images",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "upsc-ora-direct": {
+    "name": "UPSC ORA Direct",
+    "authority": "Candidate Name & Date inscribed",
+    "sourceUrl": "https://upsconline.nic.in",
+    "sourceTitle": "UPSC Online Portal Guidelines & Instructions for Scanned Images",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "upsc-cisf-ac-ldce": {
+    "name": "UPSC CISF AC LDCE",
+    "authority": "Candidate Name & Date inscribed",
+    "sourceUrl": "https://upsconline.nic.in",
+    "sourceTitle": "UPSC Online Portal Guidelines & Instructions for Scanned Images",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "upsc-so-ldce": {
+    "name": "UPSC SO LDCE",
+    "authority": "Departmental square",
+    "sourceUrl": "https://upsconline.nic.in",
+    "sourceTitle": "UPSC Online Portal Guidelines & Instructions for Scanned Images",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "upsc-steno-ldce": {
+    "name": "UPSC Steno LDCE",
+    "authority": "Departmental square",
+    "sourceUrl": "https://upsconline.nic.in",
+    "sourceTitle": "UPSC Online Portal Guidelines & Instructions for Scanned Images",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "ibps-po": {
+    "name": "IBPS PO",
+    "authority": "Black ink signature",
+    "sourceUrl": "https://ibps.in",
+    "sourceTitle": "IBPS PO Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "ibps-clerk": {
+    "name": "IBPS Clerk",
+    "authority": "Black ink signature",
+    "sourceUrl": "https://ibps.in",
+    "sourceTitle": "IBPS Clerk Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "ibps-so": {
+    "name": "IBPS SO",
+    "authority": "Black ink signature",
+    "sourceUrl": "https://ibps.in",
+    "sourceTitle": "IBPS SO Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "ibps-rrb-po": {
+    "name": "IBPS RRB PO",
+    "authority": "Black ink signature",
+    "sourceUrl": "https://ibps.in",
+    "sourceTitle": "IBPS RRB PO Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "ibps-rrb-scale-ii": {
+    "name": "IBPS RRB Scale II",
+    "authority": "Black ink signature",
+    "sourceUrl": "https://ibps.in",
+    "sourceTitle": "IBPS RRB Scale II Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "ibps-rrb-scale-iii": {
+    "name": "IBPS RRB Scale III",
+    "authority": "Black ink signature",
+    "sourceUrl": "https://ibps.in",
+    "sourceTitle": "IBPS RRB Scale III Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "ibps-rrb-clerk": {
+    "name": "IBPS RRB Clerk",
+    "authority": "Black ink signature",
+    "sourceUrl": "https://ibps.in",
+    "sourceTitle": "IBPS RRB Clerk Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "sbi-po": {
+    "name": "SBI PO",
+    "authority": "Live verification on submission",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "SBI PO Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "sbi-clerk": {
+    "name": "SBI Clerk",
+    "authority": "Live verification on submission",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "SBI Clerk Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "sbi-cbo": {
+    "name": "SBI CBO",
+    "authority": "Black ink signature",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "SBI CBO Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "sbi-sco": {
+    "name": "SBI SCO",
+    "authority": "Black ink signature",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "SBI SCO Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "sbi-apprentice": {
+    "name": "SBI Apprentice",
+    "authority": "Black ink signature",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "SBI Apprentice Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "rbi-grade-b": {
+    "name": "RBI Grade B",
+    "authority": "IBPS engine standard",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "RBI Grade B Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "rbi-assistant": {
+    "name": "RBI Assistant",
+    "authority": "IBPS engine standard",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "RBI Assistant Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "rbi-office-attendant": {
+    "name": "RBI Office Attendant",
+    "authority": "IBPS engine standard",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "RBI Office Attendant Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "nabard-grade-a": {
+    "name": "NABARD Grade A",
+    "authority": "Black ink signature",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "NABARD Grade A Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "nabard-grade-b": {
+    "name": "NABARD Grade B",
+    "authority": "Black ink signature",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "NABARD Grade B Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "nabard-dev-asst": {
+    "name": "NABARD Dev Asst",
+    "authority": "Black ink signature",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "NABARD Dev Asst Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "sebi-grade-a": {
+    "name": "SEBI Grade A",
+    "authority": "Black ink signature",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "SEBI Grade A Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "sebi-grade-b": {
+    "name": "SEBI Grade B",
+    "authority": "No direct recruitment",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "SEBI Grade B Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "sidbi-asst-manager": {
+    "name": "SIDBI Asst Manager",
+    "authority": "Black ink signature",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "SIDBI Asst Manager Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "irdai-asst-manager": {
+    "name": "IRDAI Asst Manager",
+    "authority": "Black ink signature",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "IRDAI Asst Manager Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "pfrda-grade-a": {
+    "name": "PFRDA Grade A",
+    "authority": "Black ink signature",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "PFRDA Grade A Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "lic-aao": {
+    "name": "LIC AAO",
+    "authority": "Black ink signature",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "LIC AAO Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "lic-ado": {
+    "name": "LIC ADO",
+    "authority": "Black ink signature",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "LIC ADO Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "lic-assistant": {
+    "name": "LIC Assistant",
+    "authority": "Black ink signature",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "LIC Assistant Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "niacl-assistant": {
+    "name": "NIACL Assistant",
+    "authority": "Black ink signature",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "NIACL Assistant Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "niacl-ao": {
+    "name": "NIACL AO",
+    "authority": "Black ink signature",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "NIACL AO Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "uiic-assistant": {
+    "name": "UIIC Assistant",
+    "authority": "Black ink signature",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "UIIC Assistant Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "uiic-ao": {
+    "name": "UIIC AO",
+    "authority": "Black ink signature",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "UIIC AO Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "oicl-ao": {
+    "name": "OICL AO",
+    "authority": "Black ink signature",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "OICL AO Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "gic-asst-manager": {
+    "name": "GIC Asst Manager",
+    "authority": "Black ink signature",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "GIC Asst Manager Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "ecgc-po": {
+    "name": "ECGC PO",
+    "authority": "Black ink signature",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "ECGC PO Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "idbi-executive": {
+    "name": "IDBI Executive",
+    "authority": "Black ink signature",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "IDBI Executive Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "idbi-jam": {
+    "name": "IDBI JAM",
+    "authority": "Black ink signature",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "IDBI JAM Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "exim-bank-mt": {
+    "name": "EXIM Bank MT",
+    "authority": "Black ink signature",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "EXIM Bank MT Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "lic-hfl-assistant": {
+    "name": "LIC HFL Assistant",
+    "authority": "Black ink signature",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "LIC HFL Assistant Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "lic-hfl-asst-manager": {
+    "name": "LIC HFL Asst Manager",
+    "authority": "Black ink signature",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "LIC HFL Asst Manager Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "rrb-ntpc-graduate": {
+    "name": "RRB NTPC Graduate",
+    "authority": "Live web capture cross-validation",
+    "sourceUrl": "https://indianrailways.gov.in",
+    "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "rrb-ntpc-ug": {
+    "name": "RRB NTPC UG",
+    "authority": "Live web capture cross-validation",
+    "sourceUrl": "https://indianrailways.gov.in",
+    "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "rrb-group-d": {
+    "name": "RRB Group D (Level-1)",
+    "authority": "CEN 08/2024 elevated window",
+    "sourceUrl": "https://indianrailways.gov.in",
+    "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "rrb-alp": {
+    "name": "RRB ALP",
+    "authority": "Black ink on white paper",
+    "sourceUrl": "https://indianrailways.gov.in",
+    "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "rrb-technician": {
+    "name": "RRB Technician",
+    "authority": "Running handwriting",
+    "sourceUrl": "https://indianrailways.gov.in",
+    "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "rrb-je": {
+    "name": "RRB JE",
+    "authority": "Running handwriting",
+    "sourceUrl": "https://indianrailways.gov.in",
+    "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "rrb-rpf-constable": {
+    "name": "RRB RPF Constable",
+    "authority": "RRB apply portal standards",
+    "sourceUrl": "https://indianrailways.gov.in",
+    "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "rrb-rpf-si": {
+    "name": "RRB RPF SI",
+    "authority": "RRB apply portal standards",
+    "sourceUrl": "https://indianrailways.gov.in",
+    "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "rrb-paramedical": {
+    "name": "RRB Paramedical",
+    "authority": "RRB apply portal standards",
+    "sourceUrl": "https://indianrailways.gov.in",
+    "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "rrb-nursing-suptd": {
+    "name": "RRB Nursing Suptd",
+    "authority": "RRB apply portal standards",
+    "sourceUrl": "https://indianrailways.gov.in",
+    "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "rrb-pharmacist": {
+    "name": "RRB Pharmacist",
+    "authority": "RRB apply portal standards",
+    "sourceUrl": "https://indianrailways.gov.in",
+    "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "rrb-jr-translator": {
+    "name": "RRB Jr Translator",
+    "authority": "RRB apply portal standards",
+    "sourceUrl": "https://indianrailways.gov.in",
+    "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "rrb-ministerial": {
+    "name": "RRB Ministerial",
+    "authority": "RRB apply portal standards",
+    "sourceUrl": "https://indianrailways.gov.in",
+    "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "rrb-station-master": {
+    "name": "RRB Station Master",
+    "authority": "Via NTPC Graduate CEN",
+    "sourceUrl": "https://indianrailways.gov.in",
+    "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "rrb-traffic-asst": {
+    "name": "RRB Traffic Asst",
+    "authority": "Via NTPC UG CEN",
+    "sourceUrl": "https://indianrailways.gov.in",
+    "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "rrb-comm-apprentice": {
+    "name": "RRB Comm Apprentice",
+    "authority": "Via NTPC Graduate CEN",
+    "sourceUrl": "https://indianrailways.gov.in",
+    "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "rrb-senior-clerk": {
+    "name": "RRB Senior Clerk",
+    "authority": "Via NTPC Graduate CEN",
+    "sourceUrl": "https://indianrailways.gov.in",
+    "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "rrb-junior-clerk": {
+    "name": "RRB Junior Clerk",
+    "authority": "Via NTPC UG CEN",
+    "sourceUrl": "https://indianrailways.gov.in",
+    "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "rrb-goods-guard": {
+    "name": "RRB Goods Guard",
+    "authority": "Now designated as Train Manager",
+    "sourceUrl": "https://indianrailways.gov.in",
+    "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "rrb-train-manager": {
+    "name": "RRB Train Manager",
+    "authority": "Via NTPC Graduate CEN",
+    "sourceUrl": "https://indianrailways.gov.in",
+    "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "rrc-apprentice": {
+    "name": "RRC Apprentice",
+    "authority": "Zonal portal specifications",
+    "sourceUrl": "https://indianrailways.gov.in",
+    "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "rrc-act-apprentice": {
+    "name": "RRC Act Apprentice",
+    "authority": "Zonal portal specifications",
+    "sourceUrl": "https://indianrailways.gov.in",
+    "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "railway-sports-quota": {
+    "name": "Railway Sports Quota",
+    "authority": "Zonal notifications",
+    "sourceUrl": "https://indianrailways.gov.in",
+    "sourceTitle": "RRB Centralized Employment Notice (CEN) Image Specifications",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "afcat": {
+    "name": "AFCAT",
+    "authority": "Thumb impression also required (10-50 KB)",
+    "sourceUrl": "https://iimcat.ac.in",
+    "sourceTitle": "IIM CAT Official Registration Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "indian-army-agniveer": {
+    "name": "Indian Army Agniveer",
+    "authority": "Extremely low file size threshold on JIA portal",
+    "sourceUrl": "https://20kbphoto.in/exams/indian-army-agniveer",
+    "sourceTitle": "Official Indian Army Agniveer Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "indian-navy-ssr": {
+    "name": "Indian Navy SSR",
+    "authority": "Blue/white background",
+    "sourceUrl": "https://20kbphoto.in/exams/indian-navy-ssr",
+    "sourceTitle": "Official Indian Navy SSR Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "indian-navy-mr": {
+    "name": "Indian Navy MR",
+    "authority": "Blue/white background",
+    "sourceUrl": "https://20kbphoto.in/exams/indian-navy-mr",
+    "sourceTitle": "Official Indian Navy MR Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "iaf-agniveervayu": {
+    "name": "IAF Agniveervayu",
+    "authority": "Candidate MUST hold black slate with Name & Date in chalk",
+    "sourceUrl": "https://20kbphoto.in/exams/iaf-agniveervayu",
+    "sourceTitle": "Official IAF Agniveervayu Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "icg-navik": {
+    "name": "ICG Navik (GD/DB)",
+    "authority": "CDAC engine",
+    "sourceUrl": "https://20kbphoto.in/exams/icg-navik",
+    "sourceTitle": "Official ICG Navik (GD/DB) Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "icg-yantrik": {
+    "name": "ICG Yantrik",
+    "authority": "CDAC engine",
+    "sourceUrl": "https://20kbphoto.in/exams/icg-yantrik",
+    "sourceTitle": "Official ICG Yantrik Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "icg-asst-commandant": {
+    "name": "ICG Asst Commandant",
+    "authority": "CDAC engine",
+    "sourceUrl": "https://20kbphoto.in/exams/icg-asst-commandant",
+    "sourceTitle": "Official ICG Asst Commandant Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "indian-army-tes": {
+    "name": "Indian Army TES",
+    "authority": "JIA portal standard",
+    "sourceUrl": "https://20kbphoto.in/exams/indian-army-tes",
+    "sourceTitle": "Official Indian Army TES Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "indian-army-tgc": {
+    "name": "Indian Army TGC",
+    "authority": "JIA portal standard",
+    "sourceUrl": "https://20kbphoto.in/exams/indian-army-tgc",
+    "sourceTitle": "Official Indian Army TGC Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "indian-army-jag": {
+    "name": "Indian Army JAG",
+    "authority": "JIA portal standard",
+    "sourceUrl": "https://20kbphoto.in/exams/indian-army-jag",
+    "sourceTitle": "Official Indian Army JAG Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "indian-army-ssc-tech": {
+    "name": "Indian Army SSC Tech",
+    "authority": "JIA portal standard",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "indian-navy-ssc-off": {
+    "name": "Indian Navy SSC Off",
+    "authority": "White background",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "indian-navy-executive": {
+    "name": "Indian Navy Executive",
+    "authority": "White background",
+    "sourceUrl": "https://20kbphoto.in/exams/indian-navy-executive",
+    "sourceTitle": "Official Indian Navy Executive Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "indian-navy-regular-ssr": {
+    "name": "Indian Navy Regular SSR",
+    "authority": "White background",
+    "sourceUrl": "https://20kbphoto.in/exams/indian-navy-regular-ssr",
+    "sourceTitle": "Official Indian Navy Regular SSR Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "indian-navy-regular-mr": {
+    "name": "Indian Navy Regular MR",
+    "authority": "White background",
+    "sourceUrl": "https://20kbphoto.in/exams/indian-navy-regular-mr",
+    "sourceTitle": "Official Indian Navy Regular MR Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "capf-asst-commandant": {
+    "name": "CAPF Asst Commandant",
+    "authority": "Conducted via UPSC",
+    "sourceUrl": "https://20kbphoto.in/exams/capf-asst-commandant",
+    "sourceTitle": "Official CAPF Asst Commandant Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "bsf-constable": {
+    "name": "BSF Constable",
+    "authority": "BSF recruitment portal",
+    "sourceUrl": "https://20kbphoto.in/exams/bsf-constable",
+    "sourceTitle": "Official BSF Constable Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "bsf-head-constable": {
+    "name": "BSF Head Constable",
+    "authority": "BSF recruitment portal",
+    "sourceUrl": "https://20kbphoto.in/exams/bsf-head-constable",
+    "sourceTitle": "Official BSF Head Constable Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "bsf-sub-inspector": {
+    "name": "BSF Sub-Inspector",
+    "authority": "BSF recruitment portal",
+    "sourceUrl": "https://20kbphoto.in/exams/bsf-sub-inspector",
+    "sourceTitle": "Official BSF Sub-Inspector Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "crpf-constable": {
+    "name": "CRPF Constable",
+    "authority": "TCS iON portal",
+    "sourceUrl": "https://20kbphoto.in/exams/crpf-constable",
+    "sourceTitle": "Official CRPF Constable Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "crpf-head-constable": {
+    "name": "CRPF Head Constable",
+    "authority": "TCS iON portal",
+    "sourceUrl": "https://20kbphoto.in/exams/crpf-head-constable",
+    "sourceTitle": "Official CRPF Head Constable Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "crpf-sub-inspector": {
+    "name": "CRPF Sub-Inspector",
+    "authority": "TCS iON portal",
+    "sourceUrl": "https://20kbphoto.in/exams/crpf-sub-inspector",
+    "sourceTitle": "Official CRPF Sub-Inspector Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "cisf-constable": {
+    "name": "CISF Constable",
+    "authority": "CISF portal standard",
+    "sourceUrl": "https://20kbphoto.in/exams/cisf-constable",
+    "sourceTitle": "Official CISF Constable Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "cisf-head-constable": {
+    "name": "CISF Head Constable",
+    "authority": "CISF portal standard",
+    "sourceUrl": "https://20kbphoto.in/exams/cisf-head-constable",
+    "sourceTitle": "Official CISF Head Constable Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "cisf-sub-inspector": {
+    "name": "CISF Sub-Inspector",
+    "authority": "CISF portal standard",
+    "sourceUrl": "https://20kbphoto.in/exams/cisf-sub-inspector",
+    "sourceTitle": "Official CISF Sub-Inspector Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "itbp-constable": {
+    "name": "ITBP Constable",
+    "authority": "ITBP portal standard",
+    "sourceUrl": "https://20kbphoto.in/exams/itbp-constable",
+    "sourceTitle": "Official ITBP Constable Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "itbp-head-constable": {
+    "name": "ITBP Head Constable",
+    "authority": "ITBP portal standard",
+    "sourceUrl": "https://20kbphoto.in/exams/itbp-head-constable",
+    "sourceTitle": "Official ITBP Head Constable Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "itbp-sub-inspector": {
+    "name": "ITBP Sub-Inspector",
+    "authority": "ITBP portal standard",
+    "sourceUrl": "https://20kbphoto.in/exams/itbp-sub-inspector",
+    "sourceTitle": "Official ITBP Sub-Inspector Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "ssb-constable": {
+    "name": "SSB Constable",
+    "authority": "Very high max size ceiling",
+    "sourceUrl": "https://20kbphoto.in/exams/ssb-constable",
+    "sourceTitle": "Official SSB Constable Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "ssb-head-constable": {
+    "name": "SSB Head Constable",
+    "authority": "Very high max size ceiling",
+    "sourceUrl": "https://20kbphoto.in/exams/ssb-head-constable",
+    "sourceTitle": "Official SSB Head Constable Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "ssb-sub-inspector": {
+    "name": "SSB Sub-Inspector",
+    "authority": "Very high max size ceiling",
+    "sourceUrl": "https://20kbphoto.in/exams/ssb-sub-inspector",
+    "sourceTitle": "Official SSB Sub-Inspector Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "assam-rifles-rifleman": {
+    "name": "Assam Rifles Rifleman",
+    "authority": "Assam Rifles standard",
+    "sourceUrl": "https://20kbphoto.in/exams/assam-rifles-rifleman",
+    "sourceTitle": "Official Assam Rifles Rifleman Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "assam-rifles-tradesman": {
+    "name": "Assam Rifles Tradesman",
+    "authority": "Assam Rifles standard",
+    "sourceUrl": "https://20kbphoto.in/exams/assam-rifles-tradesman",
+    "sourceTitle": "Official Assam Rifles Tradesman Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "territorial-army-off": {
+    "name": "Territorial Army Off",
+    "authority": "Civilian candidate entry portal",
+    "sourceUrl": "https://20kbphoto.in/exams/territorial-army-off",
+    "sourceTitle": "Official Territorial Army Off Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "ctet-paper-i": {
+    "name": "CTET Paper I",
+    "authority": "CBSE portal",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official CTET Paper I Information Bulletin Document Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "ctet-paper-ii": {
+    "name": "CTET Paper II",
+    "authority": "CBSE portal",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official CTET Paper II Information Bulletin Document Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "ugc-net": {
+    "name": "UGC NET",
+    "authority": "NTA portal standard",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official UGC NET Information Bulletin Document Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "csir-net": {
+    "name": "CSIR NET",
+    "authority": "NTA portal standard",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official CSIR NET Information Bulletin Document Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "kvs-prt": {
+    "name": "KVS PRT",
+    "authority": "CBSE/KVS portal standard",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official KVS PRT Information Bulletin Document Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "kvs-tgt": {
+    "name": "KVS TGT",
+    "authority": "CBSE/KVS portal standard",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official KVS TGT Information Bulletin Document Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "kvs-pgt": {
+    "name": "KVS PGT",
+    "authority": "CBSE/KVS portal standard",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official KVS PGT Information Bulletin Document Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "kvs-principal": {
+    "name": "KVS Principal",
+    "authority": "CBSE/KVS portal standard",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official KVS Principal Information Bulletin Document Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "nvs-tgt": {
+    "name": "NVS TGT",
+    "authority": "CBSE/NVS portal standard",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official NVS TGT Information Bulletin Document Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "nvs-pgt": {
+    "name": "NVS PGT",
+    "authority": "CBSE/NVS portal standard",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official NVS PGT Information Bulletin Document Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "nvs-non-teaching": {
+    "name": "NVS Non-Teaching",
+    "authority": "CBSE/NVS portal standard",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official NVS Non-Teaching Information Bulletin Document Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "dsssb-prt": {
+    "name": "DSSSB PRT",
+    "authority": "Postcard size mandatory",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official DSSSB PRT Information Bulletin Document Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "dsssb-tgt": {
+    "name": "DSSSB TGT",
+    "authority": "Postcard size mandatory",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official DSSSB TGT Information Bulletin Document Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "dsssb-pgt": {
+    "name": "DSSSB PGT",
+    "authority": "Postcard size mandatory",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official DSSSB PGT Information Bulletin Document Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "dsssb-asst-teacher": {
+    "name": "DSSSB Asst Teacher",
+    "authority": "Postcard size mandatory",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official DSSSB Asst Teacher Information Bulletin Document Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "emrs-teaching": {
+    "name": "EMRS Teaching",
+    "authority": "NTA/NESTS portal",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official EMRS Teaching Information Bulletin Document Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "emrs-non-teaching": {
+    "name": "EMRS Non-Teaching",
+    "authority": "NTA/NESTS portal",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official EMRS Non-Teaching Information Bulletin Document Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "army-public-school-awes": {
+    "name": "Army Public School AWES",
+    "authority": "OST portal",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "Army Public School AWES Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "reet": {
+    "name": "REET",
+    "authority": "Rajasthan BSER standard",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official REET Information Bulletin Document Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "uptet": {
+    "name": "UPTET",
+    "authority": "UPDELED portal",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official UPTET Information Bulletin Document Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "htet": {
+    "name": "HTET",
+    "authority": "BSEH Haryana standard",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official HTET Information Bulletin Document Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "bihar-stet": {
+    "name": "Bihar STET",
+    "authority": "BSEB portal",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official Bihar STET Information Bulletin Document Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "mptet": {
+    "name": "MPTET",
+    "authority": "Composite handwritten declaration template format",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official MPTET Information Bulletin Document Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "tntet": {
+    "name": "TNTET",
+    "authority": "TRB Tamil Nadu",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official TNTET Information Bulletin Document Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "ktet": {
+    "name": "KTET",
+    "authority": "Kerala Pareeksha Bhavan standard (200 DPI)",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official KTET Information Bulletin Document Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "otet": {
+    "name": "OTET",
+    "authority": "BSE Odisha",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official OTET Information Bulletin Document Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "wbtet": {
+    "name": "WBTET",
+    "authority": "WBBPE portal",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official WBTET Information Bulletin Document Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "jtet": {
+    "name": "JTET",
+    "authority": "JAC Ranchi",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official JTET Information Bulletin Document Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "cgtet": {
+    "name": "CGTET",
+    "authority": "CG Vyapam standard",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official CGTET Information Bulletin Document Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "maha-tet": {
+    "name": "MAHA TET",
+    "authority": "MSCE Pune",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official MAHA TET Information Bulletin Document Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "aptet": {
+    "name": "APTET",
+    "authority": "Single file upload containing photo and signature",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official APTET Information Bulletin Document Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "ts-tet": {
+    "name": "TS TET",
+    "authority": "Single file upload containing photo and signature",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official TS TET Information Bulletin Document Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "assam-tet": {
+    "name": "Assam TET",
+    "authority": "SSA Assam",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official Assam TET Information Bulletin Document Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "utet": {
+    "name": "UTET",
+    "authority": "UBSE Uttarakhand",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official UTET Information Bulletin Document Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "hp-tet": {
+    "name": "HP TET",
+    "authority": "HPBOSE strict 15-20 KB window",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official HP TET Information Bulletin Document Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "punjab-tet": {
+    "name": "Punjab TET",
+    "authority": "PSEB Punjab",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official Punjab TET Information Bulletin Document Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "karnataka-tet": {
+    "name": "Karnataka TET",
+    "authority": "STS Karnataka",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official Karnataka TET Information Bulletin Document Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "neet-ug": {
+    "name": "NEET UG",
+    "authority": "Both Passport & 4x6 Postcard photos mandatory",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA NEET UG Official Information Bulletin Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "neet-pg": {
+    "name": "NEET PG",
+    "authority": "Live capture during form filling mandatory",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA NEET PG Official Information Bulletin Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "neet-mds": {
+    "name": "NEET MDS",
+    "authority": "Live capture during form filling mandatory",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA NEET MDS Official Information Bulletin Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "neet-ss": {
+    "name": "NEET SS",
+    "authority": "NBEMS standard",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA NEET SS Official Information Bulletin Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "aiims-ini-cet": {
+    "name": "AIIMS INI-CET",
+    "authority": "AIIMS portal standard",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA AIIMS INI-CET Official Information Bulletin Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "aiims-ini-ss": {
+    "name": "AIIMS INI-SS",
+    "authority": "AIIMS portal standard",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA AIIMS INI-SS Official Information Bulletin Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "aiims-b-sc-nursing": {
+    "name": "AIIMS B.Sc Nursing",
+    "authority": "AIIMS portal standard",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA AIIMS B.Sc Nursing Official Information Bulletin Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "aiims-b-sc-paramedical": {
+    "name": "AIIMS B.Sc Paramedical",
+    "authority": "AIIMS portal standard",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA AIIMS B.Sc Paramedical Official Information Bulletin Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "aiims-norcet": {
+    "name": "AIIMS NORCET",
+    "authority": "AIIMS portal standard",
+    "sourceUrl": "https://20kbphoto.in/exams/aiims-norcet",
+    "sourceTitle": "Official AIIMS NORCET Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "jipmer-nursing": {
+    "name": "JIPMER Nursing",
+    "authority": "Placard with Name & Date held across chest",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA JIPMER Nursing Official Information Bulletin Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "jipmer-paramedical": {
+    "name": "JIPMER Paramedical",
+    "authority": "Placard with Name & Date held across chest",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA JIPMER Paramedical Official Information Bulletin Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "pgimer-admission": {
+    "name": "PGIMER Admission",
+    "authority": "PGIMER Chandigarh portal",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA PGIMER Admission Official Information Bulletin Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "fmge": {
+    "name": "FMGE",
+    "authority": "Live capture during form filling mandatory",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA FMGE Official Information Bulletin Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "dnb-pdcet": {
+    "name": "DNB PDCET",
+    "authority": "NBEMS standard",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA DNB PDCET Official Information Bulletin Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "aiapget": {
+    "name": "AIAPGET",
+    "authority": "NTA portal standard",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA AIAPGET Official Information Bulletin Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "esic-nursing-officer": {
+    "name": "ESIC Nursing Officer",
+    "authority": "Conducted by UPSC",
+    "sourceUrl": "https://20kbphoto.in/exams/esic-nursing-officer",
+    "sourceTitle": "Official ESIC Nursing Officer Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "esic-paramedical": {
+    "name": "ESIC Paramedical",
+    "authority": "IBPS engine standard",
+    "sourceUrl": "https://20kbphoto.in/exams/esic-paramedical",
+    "sourceTitle": "Official ESIC Paramedical Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "state-mo-generic": {
+    "name": "State MO Generic",
+    "authority": "Standard state health department parameters",
+    "sourceUrl": "https://20kbphoto.in/exams/state-mo-generic",
+    "sourceTitle": "Official State MO Generic Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "state-nursing-generic": {
+    "name": "State Nursing Generic",
+    "authority": "Standard state health department parameters",
+    "sourceUrl": "https://20kbphoto.in/exams/state-nursing-generic",
+    "sourceTitle": "Official State Nursing Generic Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "state-pharmacist-generic": {
+    "name": "State Pharmacist Generic",
+    "authority": "Standard state health department parameters",
+    "sourceUrl": "https://20kbphoto.in/exams/state-pharmacist-generic",
+    "sourceTitle": "Official State Pharmacist Generic Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "state-anm-generic": {
+    "name": "State ANM Generic",
+    "authority": "Standard state health department parameters",
+    "sourceUrl": "https://20kbphoto.in/exams/state-anm-generic",
+    "sourceTitle": "Official State ANM Generic Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "state-gnm-generic": {
+    "name": "State GNM Generic",
+    "authority": "Standard state health department parameters",
+    "sourceUrl": "https://20kbphoto.in/exams/state-gnm-generic",
+    "sourceTitle": "Official State GNM Generic Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "state-lab-tech-generic": {
+    "name": "State Lab Tech Generic",
+    "authority": "Standard state health department parameters",
+    "sourceUrl": "https://20kbphoto.in/exams/state-lab-tech-generic",
+    "sourceTitle": "Official State Lab Tech Generic Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "jee-main": {
+    "name": "JEE Main",
+    "authority": "NTA portal standard",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA JEE Main Official Information Bulletin Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "jee-advanced": {
+    "name": "JEE Advanced",
+    "authority": "IIT organizing portal",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA JEE Advanced Official Information Bulletin Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "gate": {
+    "name": "GATE",
+    "authority": "Aspect ratio: Photo (0.66 to 0.89)",
+    "sourceUrl": "https://gate2026.iitg.ac.in",
+    "sourceTitle": "GATE Official Information Bulletin - Document Upload Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "isro-scientist-engineer": {
+    "name": "ISRO Scientist/Engineer",
+    "authority": "ICRB recruitment portal",
+    "sourceUrl": "https://20kbphoto.in/exams/isro-scientist-engineer",
+    "sourceTitle": "Official ISRO Scientist/Engineer Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "isro-tech-assistant": {
+    "name": "ISRO Tech Assistant",
+    "authority": "Individual centre portals (VSSC/URSC/SDSC)",
+    "sourceUrl": "https://20kbphoto.in/exams/isro-tech-assistant",
+    "sourceTitle": "Official ISRO Tech Assistant Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "drdo-scientist-b": {
+    "name": "DRDO Scientist B",
+    "authority": "RAC DRDO strict max 30 KB",
+    "sourceUrl": "https://20kbphoto.in/exams/drdo-scientist-b",
+    "sourceTitle": "Official DRDO Scientist B Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "drdo-ceptam": {
+    "name": "DRDO CEPTAM",
+    "authority": "CEPTAM portal standard",
+    "sourceUrl": "https://20kbphoto.in/exams/drdo-ceptam",
+    "sourceTitle": "Official DRDO CEPTAM Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "drdo-tech-assistant": {
+    "name": "DRDO Tech Assistant",
+    "authority": "CEPTAM portal standard",
+    "sourceUrl": "https://20kbphoto.in/exams/drdo-tech-assistant",
+    "sourceTitle": "Official DRDO Tech Assistant Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "drdo-technician": {
+    "name": "DRDO Technician",
+    "authority": "CEPTAM portal standard",
+    "sourceUrl": "https://20kbphoto.in/exams/drdo-technician",
+    "sourceTitle": "Official DRDO Technician Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "barc-scientific-officer": {
+    "name": "BARC Scientific Officer",
+    "authority": "BARC Online Exam portal",
+    "sourceUrl": "https://20kbphoto.in/exams/barc-scientific-officer",
+    "sourceTitle": "Official BARC Scientific Officer Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "barc-tech-officer": {
+    "name": "BARC Tech Officer",
+    "authority": "BARC portal",
+    "sourceUrl": "https://20kbphoto.in/exams/barc-tech-officer",
+    "sourceTitle": "Official BARC Tech Officer Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "npcil-exec-trainee": {
+    "name": "NPCIL Exec Trainee",
+    "authority": "NPCIL careers",
+    "sourceUrl": "https://20kbphoto.in/exams/npcil-exec-trainee",
+    "sourceTitle": "Official NPCIL Exec Trainee Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "npcil-scientific-asst": {
+    "name": "NPCIL Scientific Asst",
+    "authority": "NPCIL careers",
+    "sourceUrl": "https://20kbphoto.in/exams/npcil-scientific-asst",
+    "sourceTitle": "Official NPCIL Scientific Asst Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "ntpc-eet": {
+    "name": "NTPC EET",
+    "authority": "NTPC careers",
+    "sourceUrl": "https://20kbphoto.in/exams/ntpc-eet",
+    "sourceTitle": "Official NTPC EET Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "bhel-engineer-trainee": {
+    "name": "BHEL Engineer Trainee",
+    "authority": "BHEL careers",
+    "sourceUrl": "https://20kbphoto.in/exams/bhel-engineer-trainee",
+    "sourceTitle": "Official BHEL Engineer Trainee Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "bhel-supervisor-trainee": {
+    "name": "BHEL Supervisor Trainee",
+    "authority": "BHEL careers",
+    "sourceUrl": "https://20kbphoto.in/exams/bhel-supervisor-trainee",
+    "sourceTitle": "Official BHEL Supervisor Trainee Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "ongc-graduate-trainee": {
+    "name": "ONGC Graduate Trainee",
+    "authority": "ONGC online portal",
+    "sourceUrl": "https://20kbphoto.in/exams/ongc-graduate-trainee",
+    "sourceTitle": "Official ONGC Graduate Trainee Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "iocl-engineer-officer": {
+    "name": "IOCL Engineer Officer",
+    "authority": "IOCL portal",
+    "sourceUrl": "https://20kbphoto.in/exams/iocl-engineer-officer",
+    "sourceTitle": "Official IOCL Engineer Officer Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "iocl-tech-apprentice": {
+    "name": "IOCL Tech Apprentice",
+    "authority": "IOCL portal",
+    "sourceUrl": "https://20kbphoto.in/exams/iocl-tech-apprentice",
+    "sourceTitle": "Official IOCL Tech Apprentice Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "hpcl-engineer": {
+    "name": "HPCL Engineer",
+    "authority": "HPCL careers",
+    "sourceUrl": "https://20kbphoto.in/exams/hpcl-engineer",
+    "sourceTitle": "Official HPCL Engineer Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "bpcl-grad-apprentice": {
+    "name": "BPCL Grad Apprentice",
+    "authority": "BPCL careers",
+    "sourceUrl": "https://20kbphoto.in/exams/bpcl-grad-apprentice",
+    "sourceTitle": "Official BPCL Grad Apprentice Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "coal-india-mt": {
+    "name": "Coal India MT",
+    "authority": "CIL recruitment",
+    "sourceUrl": "https://20kbphoto.in/exams/coal-india-mt",
+    "sourceTitle": "Official Coal India MT Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "coal-india-jr-overman": {
+    "name": "Coal India Jr Overman",
+    "authority": "Subsidiary portals",
+    "sourceUrl": "https://20kbphoto.in/exams/coal-india-jr-overman",
+    "sourceTitle": "Official Coal India Jr Overman Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "pgcil-engineer-trainee": {
+    "name": "PGCIL Engineer Trainee",
+    "authority": "Power Grid portal",
+    "sourceUrl": "https://20kbphoto.in/exams/pgcil-engineer-trainee",
+    "sourceTitle": "Official PGCIL Engineer Trainee Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "pgcil-diploma-trainee": {
+    "name": "PGCIL Diploma Trainee",
+    "authority": "Power Grid portal",
+    "sourceUrl": "https://20kbphoto.in/exams/pgcil-diploma-trainee",
+    "sourceTitle": "Official PGCIL Diploma Trainee Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "hal-management-trainee": {
+    "name": "HAL Management Trainee",
+    "authority": "HAL careers",
+    "sourceUrl": "https://20kbphoto.in/exams/hal-management-trainee",
+    "sourceTitle": "Official HAL Management Trainee Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "bel-probationary-engg": {
+    "name": "BEL Probationary Engg",
+    "authority": "BEL portal",
+    "sourceUrl": "https://20kbphoto.in/exams/bel-probationary-engg",
+    "sourceTitle": "Official BEL Probationary Engg Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "bel-technician": {
+    "name": "BEL Technician",
+    "authority": "BEL portal",
+    "sourceUrl": "https://20kbphoto.in/exams/bel-technician",
+    "sourceTitle": "Official BEL Technician Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "nhai-deputy-manager": {
+    "name": "NHAI Deputy Manager",
+    "authority": "High file size tolerance",
+    "sourceUrl": "https://20kbphoto.in/exams/nhai-deputy-manager",
+    "sourceTitle": "Official NHAI Deputy Manager Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "aai-junior-executive": {
+    "name": "AAI Junior Executive",
+    "authority": "IBPS engine standard",
+    "sourceUrl": "https://20kbphoto.in/exams/aai-junior-executive",
+    "sourceTitle": "Official AAI Junior Executive Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "aai-senior-assistant": {
+    "name": "AAI Senior Assistant",
+    "authority": "IBPS engine standard",
+    "sourceUrl": "https://20kbphoto.in/exams/aai-senior-assistant",
+    "sourceTitle": "Official AAI Senior Assistant Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "aai-junior-assistant": {
+    "name": "AAI Junior Assistant",
+    "authority": "IBPS engine standard",
+    "sourceUrl": "https://20kbphoto.in/exams/aai-junior-assistant",
+    "sourceTitle": "Official AAI Junior Assistant Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "nhpc-trainee-engineer": {
+    "name": "NHPC Trainee Engineer",
+    "authority": "NHPC careers",
+    "sourceUrl": "https://20kbphoto.in/exams/nhpc-trainee-engineer",
+    "sourceTitle": "Official NHPC Trainee Engineer Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "sjvn-trainee-engineer": {
+    "name": "SJVN Trainee Engineer",
+    "authority": "SJVN careers",
+    "sourceUrl": "https://20kbphoto.in/exams/sjvn-trainee-engineer",
+    "sourceTitle": "Official SJVN Trainee Engineer Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "gail-executive-trainee": {
+    "name": "GAIL Executive Trainee",
+    "authority": "GAIL online",
+    "sourceUrl": "https://20kbphoto.in/exams/gail-executive-trainee",
+    "sourceTitle": "Official GAIL Executive Trainee Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "nlc-india-rectt": {
+    "name": "NLC India Rectt",
+    "authority": "NLC India portal",
+    "sourceUrl": "https://20kbphoto.in/exams/nlc-india-rectt",
+    "sourceTitle": "Official NLC India Rectt Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "bdl-recruitment": {
+    "name": "BDL Recruitment",
+    "authority": "BDL careers",
+    "sourceUrl": "https://20kbphoto.in/exams/bdl-recruitment",
+    "sourceTitle": "Official BDL Recruitment Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "cochin-shipyard-rectt": {
+    "name": "Cochin Shipyard Rectt",
+    "authority": "Cochin Shipyard portal",
+    "sourceUrl": "https://20kbphoto.in/exams/cochin-shipyard-rectt",
+    "sourceTitle": "Official Cochin Shipyard Rectt Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "mazagon-dock-rectt": {
+    "name": "Mazagon Dock Rectt",
+    "authority": "Mazagon Dock portal",
+    "sourceUrl": "https://20kbphoto.in/exams/mazagon-dock-rectt",
+    "sourceTitle": "Official Mazagon Dock Rectt Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "grse-recruitment": {
+    "name": "GRSE Recruitment",
+    "authority": "GRSE portal",
+    "sourceUrl": "https://20kbphoto.in/exams/grse-recruitment",
+    "sourceTitle": "Official GRSE Recruitment Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "cuet-ug": {
+    "name": "CUET UG",
+    "authority": "NTA portal standard",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA CUET UG Official Information Bulletin Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "cuet-pg": {
+    "name": "CUET PG",
+    "authority": "NTA portal standard",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA CUET PG Official Information Bulletin Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "icar-pg": {
+    "name": "ICAR PG",
+    "authority": "NTA portal standard",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA ICAR PG Official Information Bulletin Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "icar-phd": {
+    "name": "ICAR PhD",
+    "authority": "NTA portal standard",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA ICAR PhD Official Information Bulletin Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "nift-entrance-exam": {
+    "name": "NIFT Entrance Exam",
+    "authority": "NTA portal standard",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA NIFT Entrance Exam Official Information Bulletin Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "nid-dat": {
+    "name": "NID DAT",
+    "authority": "NID admissions",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA NID DAT Official Information Bulletin Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "uceed": {
+    "name": "UCEED",
+    "authority": "IIT Bombay",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA UCEED Official Information Bulletin Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "ceed": {
+    "name": "CEED",
+    "authority": "IIT Bombay",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA CEED Official Information Bulletin Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "nata": {
+    "name": "NATA",
+    "authority": "COA standard",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA NATA Official Information Bulletin Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "clat": {
+    "name": "CLAT",
+    "authority": "Consortium of NLUs",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA CLAT Official Information Bulletin Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "ailet": {
+    "name": "AILET",
+    "authority": "NLU Delhi",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA AILET Official Information Bulletin Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "slat": {
+    "name": "SLAT",
+    "authority": "Symbiosis SET portal",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA SLAT Official Information Bulletin Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "cmat": {
+    "name": "CMAT",
+    "authority": "NTA portal standard",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA CMAT Official Information Bulletin Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "gpat": {
+    "name": "GPAT",
+    "authority": "NBEMS standard",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA GPAT Official Information Bulletin Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "iit-jam": {
+    "name": "IIT JAM",
+    "authority": "IIT organizing institute",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA IIT JAM Official Information Bulletin Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "jest": {
+    "name": "JEST",
+    "authority": "JEST portal",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA JEST Official Information Bulletin Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "gat-b": {
+    "name": "GAT-B",
+    "authority": "NTA portal standard",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA GAT-B Official Information Bulletin Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "bet": {
+    "name": "BET",
+    "authority": "NTA portal standard",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA BET Official Information Bulletin Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "ncet": {
+    "name": "NCET",
+    "authority": "NTA portal standard",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA NCET Official Information Bulletin Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "ignou-entrance-exam": {
+    "name": "IGNOU Entrance Exam",
+    "authority": "NTA portal standard",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA IGNOU Entrance Exam Official Information Bulletin Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "nta-phd-entrance": {
+    "name": "NTA PhD Entrance",
+    "authority": "NTA portal standard",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA NTA PhD Entrance Official Information Bulletin Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "state-cet-generic": {
+    "name": "State CET Generic",
+    "authority": "Standard CET parameters",
+    "sourceUrl": "https://nta.ac.in",
+    "sourceTitle": "NTA State CET Generic Official Information Bulletin Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "india-post-gds": {
+    "name": "India Post GDS",
+    "authority": "DoP online engagement",
+    "sourceUrl": "https://20kbphoto.in/exams/india-post-gds",
+    "sourceTitle": "Official India Post GDS Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "india-post-pa": {
+    "name": "India Post PA",
+    "authority": "Recruited via SSC CGL",
+    "sourceUrl": "https://20kbphoto.in/exams/india-post-pa",
+    "sourceTitle": "Official India Post PA Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "india-post-sa": {
+    "name": "India Post SA",
+    "authority": "Recruited via SSC CGL",
+    "sourceUrl": "https://20kbphoto.in/exams/india-post-sa",
+    "sourceTitle": "Official India Post SA Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "india-post-postman": {
+    "name": "India Post Postman",
+    "authority": "Departmental online portal",
+    "sourceUrl": "https://20kbphoto.in/exams/india-post-postman",
+    "sourceTitle": "Official India Post Postman Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "india-post-mail-guard": {
+    "name": "India Post Mail Guard",
+    "authority": "Departmental online portal",
+    "sourceUrl": "https://20kbphoto.in/exams/india-post-mail-guard",
+    "sourceTitle": "Official India Post Mail Guard Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "india-post-mts": {
+    "name": "India Post MTS",
+    "authority": "Departmental online portal",
+    "sourceUrl": "https://20kbphoto.in/exams/india-post-mts",
+    "sourceTitle": "Official India Post MTS Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "india-post-inspector": {
+    "name": "India Post Inspector",
+    "authority": "Recruited via SSC CGL",
+    "sourceUrl": "https://20kbphoto.in/exams/india-post-inspector",
+    "sourceTitle": "Official India Post Inspector Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "fci-asst-grade-iii": {
+    "name": "FCI Asst Grade III",
+    "authority": "IBPS engine standard",
+    "sourceUrl": "https://20kbphoto.in/exams/fci-asst-grade-iii",
+    "sourceTitle": "Official FCI Asst Grade III Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "fci-manager": {
+    "name": "FCI Manager",
+    "authority": "IBPS engine standard",
+    "sourceUrl": "https://20kbphoto.in/exams/fci-manager",
+    "sourceTitle": "Official FCI Manager Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "fci-watchman": {
+    "name": "FCI Watchman",
+    "authority": "Regional FCI portals",
+    "sourceUrl": "https://20kbphoto.in/exams/fci-watchman",
+    "sourceTitle": "Official FCI Watchman Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "cwc-jr-tech-asst": {
+    "name": "CWC Jr Tech Asst",
+    "authority": "IBPS engine standard",
+    "sourceUrl": "https://20kbphoto.in/exams/cwc-jr-tech-asst",
+    "sourceTitle": "Official CWC Jr Tech Asst Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "cwc-mt": {
+    "name": "CWC MT",
+    "authority": "IBPS engine standard",
+    "sourceUrl": "https://20kbphoto.in/exams/cwc-mt",
+    "sourceTitle": "Official CWC MT Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "esic-udc": {
+    "name": "ESIC UDC",
+    "authority": "IBPS engine standard",
+    "sourceUrl": "https://20kbphoto.in/exams/esic-udc",
+    "sourceTitle": "Official ESIC UDC Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "esic-mts": {
+    "name": "ESIC MTS",
+    "authority": "IBPS engine standard",
+    "sourceUrl": "https://20kbphoto.in/exams/esic-mts",
+    "sourceTitle": "Official ESIC MTS Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "esic-stenographer": {
+    "name": "ESIC Stenographer",
+    "authority": "IBPS engine standard",
+    "sourceUrl": "https://20kbphoto.in/exams/esic-stenographer",
+    "sourceTitle": "Official ESIC Stenographer Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "esic-sso": {
+    "name": "ESIC SSO",
+    "authority": "IBPS engine standard",
+    "sourceUrl": "https://20kbphoto.in/exams/esic-sso",
+    "sourceTitle": "Official ESIC SSO Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "epfo-ssa": {
+    "name": "EPFO SSA",
+    "authority": "NTA portal standard",
+    "sourceUrl": "https://20kbphoto.in/exams/epfo-ssa",
+    "sourceTitle": "Official EPFO SSA Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "epfo-stenographer": {
+    "name": "EPFO Stenographer",
+    "authority": "NTA portal standard",
+    "sourceUrl": "https://20kbphoto.in/exams/epfo-stenographer",
+    "sourceTitle": "Official EPFO Stenographer Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "cbi-sub-inspector": {
+    "name": "CBI Sub-Inspector",
+    "authority": "Recruited via SSC CGL",
+    "sourceUrl": "https://20kbphoto.in/exams/cbi-sub-inspector",
+    "sourceTitle": "Official CBI Sub-Inspector Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "cbi-asst-programmer": {
+    "name": "CBI Asst Programmer",
+    "authority": "Conducted via UPSC",
+    "sourceUrl": "https://20kbphoto.in/exams/cbi-asst-programmer",
+    "sourceTitle": "Official CBI Asst Programmer Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "nia-sub-inspector": {
+    "name": "NIA Sub-Inspector",
+    "authority": "Recruited via SSC CGL",
+    "sourceUrl": "https://20kbphoto.in/exams/nia-sub-inspector",
+    "sourceTitle": "Official NIA Sub-Inspector Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "ib-acio": {
+    "name": "IB ACIO",
+    "authority": "MHA portal",
+    "sourceUrl": "https://20kbphoto.in/exams/ib-acio",
+    "sourceTitle": "Official IB ACIO Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "ib-security-assistant": {
+    "name": "IB Security Assistant",
+    "authority": "MHA portal",
+    "sourceUrl": "https://20kbphoto.in/exams/ib-security-assistant",
+    "sourceTitle": "Official IB Security Assistant Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "ib-mts": {
+    "name": "IB MTS",
+    "authority": "MHA portal",
+    "sourceUrl": "https://20kbphoto.in/exams/ib-mts",
+    "sourceTitle": "Official IB MTS Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "ib-jio": {
+    "name": "IB JIO",
+    "authority": "MHA portal",
+    "sourceUrl": "https://20kbphoto.in/exams/ib-jio",
+    "sourceTitle": "Official IB JIO Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "csir-udc": {
+    "name": "CSIR UDC",
+    "authority": "CSIR CASE portal",
+    "sourceUrl": "https://20kbphoto.in/exams/csir-udc",
+    "sourceTitle": "Official CSIR UDC Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "csir-jsa": {
+    "name": "CSIR JSA",
+    "authority": "Individual CSIR labs",
+    "sourceUrl": "https://20kbphoto.in/exams/csir-jsa",
+    "sourceTitle": "Official CSIR JSA Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "csir-tech-assistant": {
+    "name": "CSIR Tech Assistant",
+    "authority": "Individual CSIR labs",
+    "sourceUrl": "https://20kbphoto.in/exams/csir-tech-assistant",
+    "sourceTitle": "Official CSIR Tech Assistant Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "icmr-tech-assistant": {
+    "name": "ICMR Tech Assistant",
+    "authority": "ICMR portal",
+    "sourceUrl": "https://20kbphoto.in/exams/icmr-tech-assistant",
+    "sourceTitle": "Official ICMR Tech Assistant Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "icmr-assistant": {
+    "name": "ICMR Assistant",
+    "authority": "ICMR portal",
+    "sourceUrl": "https://20kbphoto.in/exams/icmr-assistant",
+    "sourceTitle": "Official ICMR Assistant Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "nta-recruitment": {
+    "name": "NTA Recruitment",
+    "authority": "NTA portal standard",
+    "sourceUrl": "https://20kbphoto.in/exams/nta-recruitment",
+    "sourceTitle": "Official NTA Recruitment Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "census-dept-rectt": {
+    "name": "Census Dept Rectt",
+    "authority": "Via SSC Selection Posts",
+    "sourceUrl": "https://20kbphoto.in/exams/census-dept-rectt",
+    "sourceTitle": "Official Census Dept Rectt Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "asi-recruitment": {
+    "name": "ASI Recruitment",
+    "authority": "Via SSC Selection Posts",
+    "sourceUrl": "https://20kbphoto.in/exams/asi-recruitment",
+    "sourceTitle": "Official ASI Recruitment Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "airports-authority-rectt": {
+    "name": "Airports Authority Rectt",
+    "authority": "IBPS engine standard",
+    "sourceUrl": "https://20kbphoto.in/exams/airports-authority-rectt",
+    "sourceTitle": "Official Airports Authority Rectt Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "bsnl-junior-engineer": {
+    "name": "BSNL Junior Engineer",
+    "authority": "Legacy external notification",
+    "sourceUrl": "https://20kbphoto.in/exams/bsnl-junior-engineer",
+    "sourceTitle": "Official BSNL Junior Engineer Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "bsnl-technician": {
+    "name": "BSNL Technician",
+    "authority": "BSNL apprentice portal",
+    "sourceUrl": "https://20kbphoto.in/exams/bsnl-technician",
+    "sourceTitle": "Official BSNL Technician Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "railtel-recruitment": {
+    "name": "RailTel Recruitment",
+    "authority": "RailTel careers",
+    "sourceUrl": "https://20kbphoto.in/exams/railtel-recruitment",
+    "sourceTitle": "Official RailTel Recruitment Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "pfc-recruitment": {
+    "name": "PFC Recruitment",
+    "authority": "PFC online",
+    "sourceUrl": "https://20kbphoto.in/exams/pfc-recruitment",
+    "sourceTitle": "Official PFC Recruitment Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "rec-recruitment": {
+    "name": "REC Recruitment",
+    "authority": "REC online",
+    "sourceUrl": "https://20kbphoto.in/exams/rec-recruitment",
+    "sourceTitle": "Official REC Recruitment Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "oil-india-rectt": {
+    "name": "Oil India Rectt",
+    "authority": "Oil India careers",
+    "sourceUrl": "https://20kbphoto.in/exams/oil-india-rectt",
+    "sourceTitle": "Official Oil India Rectt Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "sci-recruitment": {
+    "name": "SCI Recruitment",
+    "authority": "SCI portal",
+    "sourceUrl": "https://20kbphoto.in/exams/sci-recruitment",
+    "sourceTitle": "Official SCI Recruitment Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "port-trust-rectt": {
+    "name": "Port Trust Rectt",
+    "authority": "Port authority portals",
+    "sourceUrl": "https://20kbphoto.in/exams/port-trust-rectt",
+    "sourceTitle": "Official Port Trust Rectt Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "civil-judge-jr-div": {
+    "name": "Civil Judge Jr Div",
+    "authority": "State High Court / PSC portals",
+    "sourceUrl": "https://20kbphoto.in/exams/civil-judge-jr-div",
+    "sourceTitle": "Official Civil Judge Jr Div Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "judicial-magistrate": {
+    "name": "Judicial Magistrate",
+    "authority": "State High Court portals",
+    "sourceUrl": "https://20kbphoto.in/exams/judicial-magistrate",
+    "sourceTitle": "Official Judicial Magistrate Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "higher-judicial-service": {
+    "name": "Higher Judicial Service",
+    "authority": "State High Court portals",
+    "sourceUrl": "https://20kbphoto.in/exams/higher-judicial-service",
+    "sourceTitle": "Official Higher Judicial Service Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "asst-public-prosecutor": {
+    "name": "Asst Public Prosecutor",
+    "authority": "State PSC portals",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "Asst Public Prosecutor Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "asst-prosecution-officer": {
+    "name": "Asst Prosecution Officer",
+    "authority": "State PSC portals",
+    "sourceUrl": "https://20kbphoto.in/exams/asst-prosecution-officer",
+    "sourceTitle": "Official Asst Prosecution Officer Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "law-clerk-research": {
+    "name": "Law Clerk Research",
+    "authority": "Supreme Court / High Courts",
+    "sourceUrl": "https://20kbphoto.in/exams/law-clerk-research",
+    "sourceTitle": "Official Law Clerk Research Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "high-court-assistant": {
+    "name": "High Court Assistant",
+    "authority": "Respective High Court portals",
+    "sourceUrl": "https://20kbphoto.in/exams/high-court-assistant",
+    "sourceTitle": "Official High Court Assistant Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "high-court-clerk": {
+    "name": "High Court Clerk",
+    "authority": "Respective High Court portals",
+    "sourceUrl": "https://20kbphoto.in/exams/high-court-clerk",
+    "sourceTitle": "Official High Court Clerk Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "high-court-steno": {
+    "name": "High Court Steno",
+    "authority": "Respective High Court portals",
+    "sourceUrl": "https://20kbphoto.in/exams/high-court-steno",
+    "sourceTitle": "Official High Court Steno Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "high-court-pa": {
+    "name": "High Court PA",
+    "authority": "Respective High Court portals",
+    "sourceUrl": "https://20kbphoto.in/exams/high-court-pa",
+    "sourceTitle": "Official High Court PA Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "supreme-court-law-clerk": {
+    "name": "Supreme Court Law Clerk",
+    "authority": "SCI recruitment",
+    "sourceUrl": "https://20kbphoto.in/exams/supreme-court-law-clerk",
+    "sourceTitle": "Official Supreme Court Law Clerk Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "supreme-court-jca": {
+    "name": "Supreme Court JCA",
+    "authority": "SCI recruitment",
+    "sourceUrl": "https://20kbphoto.in/exams/supreme-court-jca",
+    "sourceTitle": "Official Supreme Court JCA Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "district-court-clerk": {
+    "name": "District Court Clerk",
+    "authority": "E-Courts / Dist Courts",
+    "sourceUrl": "https://20kbphoto.in/exams/district-court-clerk",
+    "sourceTitle": "Official District Court Clerk Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "district-court-asst": {
+    "name": "District Court Asst",
+    "authority": "E-Courts / Dist Courts",
+    "sourceUrl": "https://20kbphoto.in/exams/district-court-asst",
+    "sourceTitle": "Official District Court Asst Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "district-court-steno": {
+    "name": "District Court Steno",
+    "authority": "E-Courts / Dist Courts",
+    "sourceUrl": "https://20kbphoto.in/exams/district-court-steno",
+    "sourceTitle": "Official District Court Steno Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "legal-officer-generic": {
+    "name": "Legal Officer Generic",
+    "authority": "IBPS engine standard",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "Legal Officer Generic Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "legal-assistant-generic": {
+    "name": "Legal Assistant Generic",
+    "authority": "State department portals",
+    "sourceUrl": "https://20kbphoto.in/exams/legal-assistant-generic",
+    "sourceTitle": "Official Legal Assistant Generic Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "uppsc-pcs": {
+    "name": "UPPSC PCS",
+    "authority": "200 DPI resolution mandatory",
+    "sourceUrl": "https://uppsc.up.nic.in",
+    "sourceTitle": "UPPSC PCS Application Portal Photo and Signature Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "uppsc-ro-aro": {
+    "name": "UPPSC RO/ARO",
+    "authority": "200 DPI resolution",
+    "sourceUrl": "https://uppsc.up.nic.in",
+    "sourceTitle": "UPPSC RO/ARO Application Portal Photo and Signature Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "uppsc-asst-engineer": {
+    "name": "UPPSC Asst Engineer",
+    "authority": "200 DPI resolution",
+    "sourceUrl": "https://uppsc.up.nic.in",
+    "sourceTitle": "UPPSC Asst Engineer Application Portal Photo and Signature Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "uppsc-lecturer": {
+    "name": "UPPSC Lecturer",
+    "authority": "200 DPI resolution",
+    "sourceUrl": "https://uppsc.up.nic.in",
+    "sourceTitle": "UPPSC Lecturer Application Portal Photo and Signature Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "uppsc-staff-nurse": {
+    "name": "UPPSC Staff Nurse",
+    "authority": "200 DPI resolution",
+    "sourceUrl": "https://uppsc.up.nic.in",
+    "sourceTitle": "UPPSC Staff Nurse Application Portal Photo and Signature Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "uppsc-asst-professor": {
+    "name": "UPPSC Asst Professor",
+    "authority": "200 DPI resolution",
+    "sourceUrl": "https://uppsc.up.nic.in",
+    "sourceTitle": "UPPSC Asst Professor Application Portal Photo and Signature Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "uppsc-apo": {
+    "name": "UPPSC APO",
+    "authority": "200 DPI resolution",
+    "sourceUrl": "https://uppsc.up.nic.in",
+    "sourceTitle": "UPPSC APO Application Portal Photo and Signature Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "uppsc-civil-judge": {
+    "name": "UPPSC Civil Judge",
+    "authority": "200 DPI resolution",
+    "sourceUrl": "https://uppsc.up.nic.in",
+    "sourceTitle": "UPPSC Civil Judge Application Portal Photo and Signature Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "upsssc-pet": {
+    "name": "UPSSSC PET",
+    "authority": "Candidate name MUST be written in Hindi below signature",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "upsssc-jr-assistant": {
+    "name": "UPSSSC Jr Assistant",
+    "authority": "Candidate name written in Hindi below signature",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "upsssc-vdo": {
+    "name": "UPSSSC VDO",
+    "authority": "Candidate name written in Hindi below signature",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "upsssc-lekhpal": {
+    "name": "UPSSSC Lekhpal",
+    "authority": "Candidate name written in Hindi below signature",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "upsssc-forest-guard": {
+    "name": "UPSSSC Forest Guard",
+    "authority": "Candidate name written in Hindi below signature",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "upsssc-enf-constable": {
+    "name": "UPSSSC Enf Constable",
+    "authority": "Candidate name written in Hindi below signature",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "up-police-constable": {
+    "name": "UP Police Constable",
+    "authority": "UPPBPB Digilocker engine",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "UP Police Constable Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "up-police-si": {
+    "name": "UP Police SI",
+    "authority": "Black ink signature",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "UP Police SI Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "up-tgt": {
+    "name": "UP TGT",
+    "authority": "UPSESSB standard",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official UP TGT Information Bulletin Document Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "up-pgt": {
+    "name": "UP PGT",
+    "authority": "UPSESSB standard",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official UP PGT Information Bulletin Document Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "up-asst-teacher": {
+    "name": "UP Asst Teacher",
+    "authority": "Basic Education Board UP",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official UP Asst Teacher Information Bulletin Document Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "bpsc-cce": {
+    "name": "BPSC CCE",
+    "authority": "Webcam capture mandatory",
+    "sourceUrl": "https://bpsc.bih.nic.in",
+    "sourceTitle": "BPSC Official Application Portal Image Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "bpsc-teacher-tre": {
+    "name": "BPSC Teacher TRE",
+    "authority": "Live webcam capture",
+    "sourceUrl": "https://bpsc.bih.nic.in",
+    "sourceTitle": "BPSC Official Application Portal Image Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "bpsc-headmaster": {
+    "name": "BPSC Headmaster",
+    "authority": "Live webcam capture",
+    "sourceUrl": "https://bpsc.bih.nic.in",
+    "sourceTitle": "BPSC Official Application Portal Image Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "bpsc-assistant": {
+    "name": "BPSC Assistant",
+    "authority": "Live webcam capture",
+    "sourceUrl": "https://bpsc.bih.nic.in",
+    "sourceTitle": "BPSC Official Application Portal Image Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "bpsc-asst-engineer": {
+    "name": "BPSC Asst Engineer",
+    "authority": "Live webcam capture",
+    "sourceUrl": "https://bpsc.bih.nic.in",
+    "sourceTitle": "BPSC Official Application Portal Image Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "bpsc-judicial-service": {
+    "name": "BPSC Judicial Service",
+    "authority": "Live webcam capture",
+    "sourceUrl": "https://bpsc.bih.nic.in",
+    "sourceTitle": "BPSC Official Application Portal Image Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "bpsc-drug-inspector": {
+    "name": "BPSC Drug Inspector",
+    "authority": "Live webcam capture",
+    "sourceUrl": "https://bpsc.bih.nic.in",
+    "sourceTitle": "BPSC Official Application Portal Image Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "bssc-cgl": {
+    "name": "BSSC CGL",
+    "authority": "Live webcam capture",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "bssc-inter-level": {
+    "name": "BSSC Inter-Level",
+    "authority": "Live webcam capture",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "bihar-police-constable": {
+    "name": "Bihar Police Constable",
+    "authority": "Separate Hindi & English signature uploads (15-25 KB)",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "Bihar Police Constable Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "bihar-police-si": {
+    "name": "Bihar Police SI",
+    "authority": "Separate Hindi & English signatures",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "Bihar Police SI Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "btsc-recruitment": {
+    "name": "BTSC Recruitment",
+    "authority": "BTSC portal",
+    "sourceUrl": "https://20kbphoto.in/exams/btsc-recruitment",
+    "sourceTitle": "Official BTSC Recruitment Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "bihar-stet-353": {
+    "name": "Bihar STET",
+    "authority": "BSEB portal",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official Bihar STET Information Bulletin Document Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "bihar-tech-assistant": {
+    "name": "Bihar Tech Assistant",
+    "authority": "PRD Bihar",
+    "sourceUrl": "https://20kbphoto.in/exams/bihar-tech-assistant",
+    "sourceTitle": "Official Bihar Tech Assistant Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "bihar-panchayat-sec": {
+    "name": "Bihar Panchayat Sec",
+    "authority": "Recruited via BSSC Inter-Level",
+    "sourceUrl": "https://20kbphoto.in/exams/bihar-panchayat-sec",
+    "sourceTitle": "Official Bihar Panchayat Sec Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "bihar-revenue-staff": {
+    "name": "Bihar Revenue Staff",
+    "authority": "Recruited via BSSC Inter-Level",
+    "sourceUrl": "https://20kbphoto.in/exams/bihar-revenue-staff",
+    "sourceTitle": "Official Bihar Revenue Staff Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "rpsc-ras": {
+    "name": "RPSC RAS",
+    "authority": "Rajasthan SSO engine standard",
+    "sourceUrl": "https://rpsc.rajasthan.gov.in",
+    "sourceTitle": "RPSC / RSSB SSO Portal Image Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "rpsc-school-lecturer": {
+    "name": "RPSC School Lecturer",
+    "authority": "Rajasthan SSO engine",
+    "sourceUrl": "https://rpsc.rajasthan.gov.in",
+    "sourceTitle": "RPSC / RSSB SSO Portal Image Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "rpsc-sr-teacher": {
+    "name": "RPSC Sr Teacher",
+    "authority": "Rajasthan SSO engine",
+    "sourceUrl": "https://rpsc.rajasthan.gov.in",
+    "sourceTitle": "RPSC / RSSB SSO Portal Image Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "rpsc-asst-professor": {
+    "name": "RPSC Asst Professor",
+    "authority": "Rajasthan SSO engine",
+    "sourceUrl": "https://rpsc.rajasthan.gov.in",
+    "sourceTitle": "RPSC / RSSB SSO Portal Image Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "rpsc-asst-engineer": {
+    "name": "RPSC Asst Engineer",
+    "authority": "Rajasthan SSO engine",
+    "sourceUrl": "https://rpsc.rajasthan.gov.in",
+    "sourceTitle": "RPSC / RSSB SSO Portal Image Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "rpsc-jlo": {
+    "name": "RPSC JLO",
+    "authority": "Rajasthan SSO engine",
+    "sourceUrl": "https://rpsc.rajasthan.gov.in",
+    "sourceTitle": "RPSC / RSSB SSO Portal Image Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "rpsc-statistical-off": {
+    "name": "RPSC Statistical Off",
+    "authority": "Rajasthan SSO engine",
+    "sourceUrl": "https://rpsc.rajasthan.gov.in",
+    "sourceTitle": "RPSC / RSSB SSO Portal Image Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "reet-364": {
+    "name": "REET",
+    "authority": "BSER portal",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official REET Information Bulletin Document Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "rajasthan-patwari": {
+    "name": "Rajasthan Patwari",
+    "authority": "RSMSSB portal",
+    "sourceUrl": "https://20kbphoto.in/exams/rajasthan-patwari",
+    "sourceTitle": "Official Rajasthan Patwari Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "rajasthan-cet-sr-sec": {
+    "name": "Rajasthan CET Sr Sec",
+    "authority": "RSMSSB portal",
+    "sourceUrl": "https://20kbphoto.in/exams/rajasthan-cet-sr-sec",
+    "sourceTitle": "Official Rajasthan CET Sr Sec Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "rajasthan-cet-graduate": {
+    "name": "Rajasthan CET Graduate",
+    "authority": "RSMSSB portal",
+    "sourceUrl": "https://20kbphoto.in/exams/rajasthan-cet-graduate",
+    "sourceTitle": "Official Rajasthan CET Graduate Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "rajasthan-police-const": {
+    "name": "Rajasthan Police Const",
+    "authority": "Rajasthan Police portal",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "Rajasthan Police Const Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "rajasthan-police-si": {
+    "name": "Rajasthan Police SI",
+    "authority": "RPSC engine",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "Rajasthan Police SI Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "rajasthan-vdo": {
+    "name": "Rajasthan VDO",
+    "authority": "RSMSSB portal",
+    "sourceUrl": "https://20kbphoto.in/exams/rajasthan-vdo",
+    "sourceTitle": "Official Rajasthan VDO Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "rajasthan-ldc": {
+    "name": "Rajasthan LDC",
+    "authority": "RSMSSB portal",
+    "sourceUrl": "https://20kbphoto.in/exams/rajasthan-ldc",
+    "sourceTitle": "Official Rajasthan LDC Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "rajasthan-jr-accountant": {
+    "name": "Rajasthan Jr Accountant",
+    "authority": "RSMSSB portal",
+    "sourceUrl": "https://20kbphoto.in/exams/rajasthan-jr-accountant",
+    "sourceTitle": "Official Rajasthan Jr Accountant Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "rajasthan-forest-guard": {
+    "name": "Rajasthan Forest Guard",
+    "authority": "RSMSSB portal",
+    "sourceUrl": "https://20kbphoto.in/exams/rajasthan-forest-guard",
+    "sourceTitle": "Official Rajasthan Forest Guard Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "mppsc-state-service": {
+    "name": "MPPSC State Service",
+    "authority": "Candidate Name & Date inscribed at bottom",
+    "sourceUrl": "https://20kbphoto.in/exams/mppsc-state-service",
+    "sourceTitle": "Official MPPSC State Service Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "mppsc-forest-service": {
+    "name": "MPPSC Forest Service",
+    "authority": "Candidate Name & Date inscribed",
+    "sourceUrl": "https://20kbphoto.in/exams/mppsc-forest-service",
+    "sourceTitle": "Official MPPSC Forest Service Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "mppsc-asst-professor": {
+    "name": "MPPSC Asst Professor",
+    "authority": "Candidate Name & Date inscribed",
+    "sourceUrl": "https://20kbphoto.in/exams/mppsc-asst-professor",
+    "sourceTitle": "Official MPPSC Asst Professor Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "mppsc-asst-engineer": {
+    "name": "MPPSC Asst Engineer",
+    "authority": "Candidate Name & Date inscribed",
+    "sourceUrl": "https://20kbphoto.in/exams/mppsc-asst-engineer",
+    "sourceTitle": "Official MPPSC Asst Engineer Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "mpesb-group-1": {
+    "name": "MPESB Group 1",
+    "authority": "Composite template with photo + sig + handwritten text",
+    "sourceUrl": "https://20kbphoto.in/exams/mpesb-group-1",
+    "sourceTitle": "Official MPESB Group 1 Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "mpesb-group-2": {
+    "name": "MPESB Group 2",
+    "authority": "Composite template format",
+    "sourceUrl": "https://20kbphoto.in/exams/mpesb-group-2",
+    "sourceTitle": "Official MPESB Group 2 Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "mpesb-group-4": {
+    "name": "MPESB Group 4",
+    "authority": "Composite template format",
+    "sourceUrl": "https://20kbphoto.in/exams/mpesb-group-4",
+    "sourceTitle": "Official MPESB Group 4 Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "mpesb-police-const": {
+    "name": "MPESB Police Const",
+    "authority": "Composite template format",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "MPESB Police Const Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "mpesb-patwari": {
+    "name": "MPESB Patwari",
+    "authority": "Composite template format",
+    "sourceUrl": "https://20kbphoto.in/exams/mpesb-patwari",
+    "sourceTitle": "Official MPESB Patwari Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "mp-tet": {
+    "name": "MP TET",
+    "authority": "Composite template format",
+    "sourceUrl": "https://20kbphoto.in/exams/mp-tet",
+    "sourceTitle": "Official MP TET Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "mp-high-school-teacher": {
+    "name": "MP High School Teacher",
+    "authority": "Composite template format",
+    "sourceUrl": "https://20kbphoto.in/exams/mp-high-school-teacher",
+    "sourceTitle": "Official MP High School Teacher Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "mp-middle-school-teacher": {
+    "name": "MP Middle School Teacher",
+    "authority": "Composite template format",
+    "sourceUrl": "https://20kbphoto.in/exams/mp-middle-school-teacher",
+    "sourceTitle": "Official MP Middle School Teacher Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "mp-primary-teacher": {
+    "name": "MP Primary Teacher",
+    "authority": "Composite template format",
+    "sourceUrl": "https://20kbphoto.in/exams/mp-primary-teacher",
+    "sourceTitle": "Official MP Primary Teacher Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "mp-forest-guard": {
+    "name": "MP Forest Guard",
+    "authority": "Composite template format",
+    "sourceUrl": "https://20kbphoto.in/exams/mp-forest-guard",
+    "sourceTitle": "Official MP Forest Guard Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "mpsc-state-services": {
+    "name": "MPSC State Services",
+    "authority": "MPSC Online portal strict pixel ceilings",
+    "sourceUrl": "https://mpsc.gov.in",
+    "sourceTitle": "MPSC Online Application Portal Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "mpsc-group-b": {
+    "name": "MPSC Group B",
+    "authority": "MPSC Online portal",
+    "sourceUrl": "https://mpsc.gov.in",
+    "sourceTitle": "MPSC Online Application Portal Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "mpsc-group-c": {
+    "name": "MPSC Group C",
+    "authority": "MPSC Online portal",
+    "sourceUrl": "https://mpsc.gov.in",
+    "sourceTitle": "MPSC Online Application Portal Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "mpsc-engineering": {
+    "name": "MPSC Engineering",
+    "authority": "MPSC Online portal",
+    "sourceUrl": "https://mpsc.gov.in",
+    "sourceTitle": "MPSC Online Application Portal Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "mpsc-forest-services": {
+    "name": "MPSC Forest Services",
+    "authority": "MPSC Online portal",
+    "sourceUrl": "https://mpsc.gov.in",
+    "sourceTitle": "MPSC Online Application Portal Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "mpsc-agri-services": {
+    "name": "MPSC Agri Services",
+    "authority": "MPSC Online portal",
+    "sourceUrl": "https://mpsc.gov.in",
+    "sourceTitle": "MPSC Online Application Portal Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "mpsc-civil-judge": {
+    "name": "MPSC Civil Judge",
+    "authority": "MPSC Online portal",
+    "sourceUrl": "https://mpsc.gov.in",
+    "sourceTitle": "MPSC Online Application Portal Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "maha-police-constable": {
+    "name": "Maha Police Constable",
+    "authority": "MahaIT recruitment engine",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "Maha Police Constable Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "maha-police-si": {
+    "name": "Maha Police SI",
+    "authority": "MPSC Online portal",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "Maha Police SI Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "maha-tet-397": {
+    "name": "MAHA TET",
+    "authority": "MSCE Pune",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official MAHA TET Information Bulletin Document Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "maharashtra-talathi": {
+    "name": "Maharashtra Talathi",
+    "authority": "Mahabhumi TCS portal",
+    "sourceUrl": "https://20kbphoto.in/exams/maharashtra-talathi",
+    "sourceTitle": "Official Maharashtra Talathi Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "maha-clerk-typist": {
+    "name": "Maha Clerk-Typist",
+    "authority": "MPSC Online portal",
+    "sourceUrl": "https://20kbphoto.in/exams/maha-clerk-typist",
+    "sourceTitle": "Official Maha Clerk-Typist Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "maha-group-c-rectt": {
+    "name": "Maha Group C Rectt",
+    "authority": "MPSC Online portal",
+    "sourceUrl": "https://20kbphoto.in/exams/maha-group-c-rectt",
+    "sourceTitle": "Official Maha Group C Rectt Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "wbcs": {
+    "name": "WBCS",
+    "authority": "WBPSC portal",
+    "sourceUrl": "https://20kbphoto.in/exams/wbcs",
+    "sourceTitle": "Official WBCS Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "wbpsc-clerkship": {
+    "name": "WBPSC Clerkship",
+    "authority": "WBPSC portal",
+    "sourceUrl": "https://bpsc.bih.nic.in",
+    "sourceTitle": "BPSC Official Application Portal Image Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "wbpsc-misc-services": {
+    "name": "WBPSC Misc Services",
+    "authority": "WBPSC portal",
+    "sourceUrl": "https://bpsc.bih.nic.in",
+    "sourceTitle": "BPSC Official Application Portal Image Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "wbpsc-food-si": {
+    "name": "WBPSC Food SI",
+    "authority": "WBPSC portal",
+    "sourceUrl": "https://bpsc.bih.nic.in",
+    "sourceTitle": "BPSC Official Application Portal Image Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "wbpsc-judicial": {
+    "name": "WBPSC Judicial",
+    "authority": "WBPSC portal",
+    "sourceUrl": "https://bpsc.bih.nic.in",
+    "sourceTitle": "BPSC Official Application Portal Image Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "wb-primary-tet": {
+    "name": "WB Primary TET",
+    "authority": "WBBPE portal",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official WB Primary TET Information Bulletin Document Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "wb-upper-primary-tet": {
+    "name": "WB Upper Primary TET",
+    "authority": "WBBPE portal",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official WB Upper Primary TET Information Bulletin Document Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "wb-police-constable": {
+    "name": "WB Police Constable",
+    "authority": "WBPRB portal",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "WB Police Constable Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "wb-police-si": {
+    "name": "WB Police SI",
+    "authority": "WBPRB portal",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "WB Police SI Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "wbssc-teacher": {
+    "name": "WBSSC Teacher",
+    "authority": "West Bengal SSC",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "wbpsc-audit-accounts": {
+    "name": "WBPSC Audit & Accounts",
+    "authority": "WBPSC portal",
+    "sourceUrl": "https://bpsc.bih.nic.in",
+    "sourceTitle": "BPSC Official Application Portal Image Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "wbpsc-asst-engineer": {
+    "name": "WBPSC Asst Engineer",
+    "authority": "WBPSC portal",
+    "sourceUrl": "https://bpsc.bih.nic.in",
+    "sourceTitle": "BPSC Official Application Portal Image Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "hpsc-hcs": {
+    "name": "HPSC HCS",
+    "authority": "HPSC portal",
+    "sourceUrl": "https://20kbphoto.in/exams/hpsc-hcs",
+    "sourceTitle": "Official HPSC HCS Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "hpsc-asst-professor": {
+    "name": "HPSC Asst Professor",
+    "authority": "HPSC portal",
+    "sourceUrl": "https://20kbphoto.in/exams/hpsc-asst-professor",
+    "sourceTitle": "Official HPSC Asst Professor Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "hpsc-hdo": {
+    "name": "HPSC HDO",
+    "authority": "HPSC portal",
+    "sourceUrl": "https://20kbphoto.in/exams/hpsc-hdo",
+    "sourceTitle": "Official HPSC HDO Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "hssc-cet": {
+    "name": "HSSC CET",
+    "authority": "Haryana One Time Registration portal",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "hssc-group-c": {
+    "name": "HSSC Group C",
+    "authority": "HSSC portal",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "hssc-group-d": {
+    "name": "HSSC Group D",
+    "authority": "HSSC portal",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "haryana-police-const": {
+    "name": "Haryana Police Const",
+    "authority": "HSSC portal",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "Haryana Police Const Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "haryana-police-si": {
+    "name": "Haryana Police SI",
+    "authority": "HSSC portal",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "Haryana Police SI Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "htet-421": {
+    "name": "HTET",
+    "authority": "BSEH Haryana",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official HTET Information Bulletin Document Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "haryana-patwari": {
+    "name": "Haryana Patwari",
+    "authority": "Via HSSC CET Group C",
+    "sourceUrl": "https://20kbphoto.in/exams/haryana-patwari",
+    "sourceTitle": "Official Haryana Patwari Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "haryana-clerk": {
+    "name": "Haryana Clerk",
+    "authority": "Via HSSC CET Group C",
+    "sourceUrl": "https://20kbphoto.in/exams/haryana-clerk",
+    "sourceTitle": "Official Haryana Clerk Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "haryana-gram-sachiv": {
+    "name": "Haryana Gram Sachiv",
+    "authority": "Via HSSC CET Group C",
+    "sourceUrl": "https://20kbphoto.in/exams/haryana-gram-sachiv",
+    "sourceTitle": "Official Haryana Gram Sachiv Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "haryana-canal-patwari": {
+    "name": "Haryana Canal Patwari",
+    "authority": "Via HSSC CET Group C",
+    "sourceUrl": "https://20kbphoto.in/exams/haryana-canal-patwari",
+    "sourceTitle": "Official Haryana Canal Patwari Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "ppsc-pcs": {
+    "name": "PPSC PCS",
+    "authority": "PPSC portal",
+    "sourceUrl": "https://20kbphoto.in/exams/ppsc-pcs",
+    "sourceTitle": "Official PPSC PCS Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "ppsc-asst-professor": {
+    "name": "PPSC Asst Professor",
+    "authority": "PPSC portal",
+    "sourceUrl": "https://20kbphoto.in/exams/ppsc-asst-professor",
+    "sourceTitle": "Official PPSC Asst Professor Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "ppsc-coop-inspector": {
+    "name": "PPSC Coop Inspector",
+    "authority": "PPSC portal",
+    "sourceUrl": "https://20kbphoto.in/exams/ppsc-coop-inspector",
+    "sourceTitle": "Official PPSC Coop Inspector Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "punjab-patwari": {
+    "name": "Punjab Patwari",
+    "authority": "PSSSB portal",
+    "sourceUrl": "https://20kbphoto.in/exams/punjab-patwari",
+    "sourceTitle": "Official Punjab Patwari Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "punjab-police-const": {
+    "name": "Punjab Police Const",
+    "authority": "Punjab Police portal",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "Punjab Police Const Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "punjab-police-si": {
+    "name": "Punjab Police SI",
+    "authority": "Punjab Police portal",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "Punjab Police SI Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "punjab-tet-432": {
+    "name": "Punjab TET",
+    "authority": "PSEB portal",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official Punjab TET Information Bulletin Document Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "punjab-master-cadre": {
+    "name": "Punjab Master Cadre",
+    "authority": "ERB Punjab",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official Punjab Master Cadre Information Bulletin Document Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "punjab-clerk": {
+    "name": "Punjab Clerk",
+    "authority": "PSSSB portal",
+    "sourceUrl": "https://20kbphoto.in/exams/punjab-clerk",
+    "sourceTitle": "Official Punjab Clerk Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "punjab-revenue-patwari": {
+    "name": "Punjab Revenue Patwari",
+    "authority": "PSSSB portal",
+    "sourceUrl": "https://20kbphoto.in/exams/punjab-revenue-patwari",
+    "sourceTitle": "Official Punjab Revenue Patwari Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "punjab-excise-insp": {
+    "name": "Punjab Excise Insp",
+    "authority": "PSSSB portal",
+    "sourceUrl": "https://20kbphoto.in/exams/punjab-excise-insp",
+    "sourceTitle": "Official Punjab Excise Insp Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "ukpsc-pcs": {
+    "name": "UKPSC PCS",
+    "authority": "UKPSC portal",
+    "sourceUrl": "https://20kbphoto.in/exams/ukpsc-pcs",
+    "sourceTitle": "Official UKPSC PCS Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "ukpsc-ro-aro": {
+    "name": "UKPSC RO/ARO",
+    "authority": "UKPSC portal",
+    "sourceUrl": "https://20kbphoto.in/exams/ukpsc-ro-aro",
+    "sourceTitle": "Official UKPSC RO/ARO Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "ukpsc-forest-range-off": {
+    "name": "UKPSC Forest Range Off",
+    "authority": "UKPSC portal",
+    "sourceUrl": "https://20kbphoto.in/exams/ukpsc-forest-range-off",
+    "sourceTitle": "Official UKPSC Forest Range Off Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "ukpsc-asst-engineer": {
+    "name": "UKPSC Asst Engineer",
+    "authority": "UKPSC portal",
+    "sourceUrl": "https://20kbphoto.in/exams/ukpsc-asst-engineer",
+    "sourceTitle": "Official UKPSC Asst Engineer Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "uksssc-group-c": {
+    "name": "UKSSSC Group C",
+    "authority": "UKSSSC portal",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "uttarakhand-patwari": {
+    "name": "Uttarakhand Patwari",
+    "authority": "Conducted via UKPSC",
+    "sourceUrl": "https://20kbphoto.in/exams/uttarakhand-patwari",
+    "sourceTitle": "Official Uttarakhand Patwari Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "uk-police-constable": {
+    "name": "UK Police Constable",
+    "authority": "Conducted via UKPSC",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "UK Police Constable Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "uk-police-si": {
+    "name": "UK Police SI",
+    "authority": "UKPSC portal",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "UK Police SI Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "utet-445": {
+    "name": "UTET",
+    "authority": "UBSE portal",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official UTET Information Bulletin Document Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "uttarakhand-vdo": {
+    "name": "Uttarakhand VDO",
+    "authority": "UKSSSC portal",
+    "sourceUrl": "https://20kbphoto.in/exams/uttarakhand-vdo",
+    "sourceTitle": "Official Uttarakhand VDO Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "uk-forest-guard": {
+    "name": "UK Forest Guard",
+    "authority": "Conducted via UKPSC",
+    "sourceUrl": "https://20kbphoto.in/exams/uk-forest-guard",
+    "sourceTitle": "Official UK Forest Guard Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "uk-secretariat-asst": {
+    "name": "UK Secretariat Asst",
+    "authority": "Conducted via UKPSC",
+    "sourceUrl": "https://20kbphoto.in/exams/uk-secretariat-asst",
+    "sourceTitle": "Official UK Secretariat Asst Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "hpas": {
+    "name": "HPAS",
+    "authority": "HPPSC portal",
+    "sourceUrl": "https://20kbphoto.in/exams/hpas",
+    "sourceTitle": "Official HPAS Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "hppsc-asst-professor": {
+    "name": "HPPSC Asst Professor",
+    "authority": "HPPSC portal",
+    "sourceUrl": "https://20kbphoto.in/exams/hppsc-asst-professor",
+    "sourceTitle": "Official HPPSC Asst Professor Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "hppsc-asst-engineer": {
+    "name": "HPPSC Asst Engineer",
+    "authority": "HPPSC portal",
+    "sourceUrl": "https://20kbphoto.in/exams/hppsc-asst-engineer",
+    "sourceTitle": "Official HPPSC Asst Engineer Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "hppsc-allied-services": {
+    "name": "HPPSC Allied Services",
+    "authority": "HPPSC portal",
+    "sourceUrl": "https://20kbphoto.in/exams/hppsc-allied-services",
+    "sourceTitle": "Official HPPSC Allied Services Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "hp-tet-453": {
+    "name": "HP TET",
+    "authority": "HPBOSE portal strict 15-20 KB threshold",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official HP TET Information Bulletin Document Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "himachal-police-const": {
+    "name": "Himachal Police Const",
+    "authority": "HP Police portal",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "Himachal Police Const Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "himachal-patwari": {
+    "name": "Himachal Patwari",
+    "authority": "HP Revenue",
+    "sourceUrl": "https://20kbphoto.in/exams/himachal-patwari",
+    "sourceTitle": "Official Himachal Patwari Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "hp-forest-guard": {
+    "name": "HP Forest Guard",
+    "authority": "HP Forest Department",
+    "sourceUrl": "https://20kbphoto.in/exams/hp-forest-guard",
+    "sourceTitle": "Official HP Forest Guard Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "hp-secretariat-asst": {
+    "name": "HP Secretariat Asst",
+    "authority": "HPRCA Hamirpur",
+    "sourceUrl": "https://20kbphoto.in/exams/hp-secretariat-asst",
+    "sourceTitle": "Official HP Secretariat Asst Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "hp-clerk-rectt": {
+    "name": "HP Clerk Rectt",
+    "authority": "HPRCA Hamirpur",
+    "sourceUrl": "https://20kbphoto.in/exams/hp-clerk-rectt",
+    "sourceTitle": "Official HP Clerk Rectt Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "opsc-ocs": {
+    "name": "OPSC OCS",
+    "authority": "OPSC portal",
+    "sourceUrl": "https://20kbphoto.in/exams/opsc-ocs",
+    "sourceTitle": "Official OPSC OCS Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "opsc-aso": {
+    "name": "OPSC ASO",
+    "authority": "OPSC portal",
+    "sourceUrl": "https://20kbphoto.in/exams/opsc-aso",
+    "sourceTitle": "Official OPSC ASO Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "opsc-medical-officer": {
+    "name": "OPSC Medical Officer",
+    "authority": "OPSC portal",
+    "sourceUrl": "https://20kbphoto.in/exams/opsc-medical-officer",
+    "sourceTitle": "Official OPSC Medical Officer Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "opsc-asst-engineer": {
+    "name": "OPSC Asst Engineer",
+    "authority": "OPSC portal",
+    "sourceUrl": "https://20kbphoto.in/exams/opsc-asst-engineer",
+    "sourceTitle": "Official OPSC Asst Engineer Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "ossc-cgl": {
+    "name": "OSSC CGL",
+    "authority": "OSSC portal",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "ossc-chsl": {
+    "name": "OSSC CHSL",
+    "authority": "OSSC portal",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "ossc-ri": {
+    "name": "OSSC RI",
+    "authority": "OSSSC portal",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "ossc-amin": {
+    "name": "OSSC Amin",
+    "authority": "OSSSC portal",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "ossc-jr-steno": {
+    "name": "OSSC Jr Steno",
+    "authority": "OSSC portal",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "odisha-police-const": {
+    "name": "Odisha Police Const",
+    "authority": "State Police Selection Board",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "Odisha Police Const Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "odisha-police-si": {
+    "name": "Odisha Police SI",
+    "authority": "State Police Selection Board",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "Odisha Police SI Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "otet-470": {
+    "name": "OTET",
+    "authority": "BSE Odisha",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official OTET Information Bulletin Document Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "odisha-teacher-rectt": {
+    "name": "Odisha Teacher Rectt",
+    "authority": "SSB Odisha",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official Odisha Teacher Rectt Information Bulletin Document Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "odisha-forest-guard": {
+    "name": "Odisha Forest Guard",
+    "authority": "OSSSC portal",
+    "sourceUrl": "https://20kbphoto.in/exams/odisha-forest-guard",
+    "sourceTitle": "Official Odisha Forest Guard Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "jpsc-civil-services": {
+    "name": "JPSC Civil Services",
+    "authority": "JPSC portal",
+    "sourceUrl": "https://20kbphoto.in/exams/jpsc-civil-services",
+    "sourceTitle": "Official JPSC Civil Services Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "jpsc-asst-engineer": {
+    "name": "JPSC Asst Engineer",
+    "authority": "JPSC portal",
+    "sourceUrl": "https://20kbphoto.in/exams/jpsc-asst-engineer",
+    "sourceTitle": "Official JPSC Asst Engineer Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "jssc-cgl": {
+    "name": "JSSC CGL",
+    "authority": "JSSC portal",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "jssc-inter-level": {
+    "name": "JSSC Inter-Level",
+    "authority": "JSSC portal",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "jssc-teacher-rectt": {
+    "name": "JSSC Teacher Rectt",
+    "authority": "JSSC portal",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "jssc-excise-constable": {
+    "name": "JSSC Excise Constable",
+    "authority": "JSSC portal",
+    "sourceUrl": "https://ssc.gov.in",
+    "sourceTitle": "SSC Official Application Portal Document Upload Specifications",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "jharkhand-police-const": {
+    "name": "Jharkhand Police Const",
+    "authority": "JSSC portal",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "Jharkhand Police Const Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "jharkhand-police-si": {
+    "name": "Jharkhand Police SI",
+    "authority": "JSSC portal",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "Jharkhand Police SI Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "jtet-481": {
+    "name": "JTET",
+    "authority": "JAC Ranchi",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official JTET Information Bulletin Document Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "jharkhand-sec-asst": {
+    "name": "Jharkhand Sec Asst",
+    "authority": "Via JSSC CGL",
+    "sourceUrl": "https://20kbphoto.in/exams/jharkhand-sec-asst",
+    "sourceTitle": "Official Jharkhand Sec Asst Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "jharkhand-forest-guard": {
+    "name": "Jharkhand Forest Guard",
+    "authority": "JSSC portal",
+    "sourceUrl": "https://20kbphoto.in/exams/jharkhand-forest-guard",
+    "sourceTitle": "Official Jharkhand Forest Guard Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "cgpsc-state-service": {
+    "name": "CGPSC State Service",
+    "authority": "CGPSC portal",
+    "sourceUrl": "https://ojas.gujarat.gov.in",
+    "sourceTitle": "Gujarat OJAS Official Upload Specifications",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "cg-vyapam-patwari": {
+    "name": "CG Vyapam Patwari",
+    "authority": "CG Vyapam standard",
+    "sourceUrl": "https://20kbphoto.in/exams/cg-vyapam-patwari",
+    "sourceTitle": "Official CG Vyapam Patwari Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "cg-vyapam-teacher": {
+    "name": "CG Vyapam Teacher",
+    "authority": "CG Vyapam standard",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official CG Vyapam Teacher Information Bulletin Document Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "cg-vyapam-sub-engg": {
+    "name": "CG Vyapam Sub Engg",
+    "authority": "CG Vyapam standard",
+    "sourceUrl": "https://20kbphoto.in/exams/cg-vyapam-sub-engg",
+    "sourceTitle": "Official CG Vyapam Sub Engg Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "cg-police-constable": {
+    "name": "CG Police Constable",
+    "authority": "CG Police portal",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "CG Police Constable Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "cg-police-si": {
+    "name": "CG Police SI",
+    "authority": "CG Vyapam standard",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "CG Police SI Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "cg-tet": {
+    "name": "CG TET",
+    "authority": "CG Vyapam standard",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official CG TET Information Bulletin Document Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "cg-forest-guard": {
+    "name": "CG Forest Guard",
+    "authority": "CG Forest portal",
+    "sourceUrl": "https://20kbphoto.in/exams/cg-forest-guard",
+    "sourceTitle": "Official CG Forest Guard Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "cg-asst-grade": {
+    "name": "CG Asst Grade",
+    "authority": "CG Vyapam standard",
+    "sourceUrl": "https://20kbphoto.in/exams/cg-asst-grade",
+    "sourceTitle": "Official CG Asst Grade Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "cg-revenue-inspector": {
+    "name": "CG Revenue Inspector",
+    "authority": "CG Vyapam standard",
+    "sourceUrl": "https://20kbphoto.in/exams/cg-revenue-inspector",
+    "sourceTitle": "Official CG Revenue Inspector Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "kpsc-kas": {
+    "name": "KPSC KAS",
+    "authority": "KPSC portal",
+    "sourceUrl": "https://20kbphoto.in/exams/kpsc-kas",
+    "sourceTitle": "Official KPSC KAS Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "kpsc-group-c": {
+    "name": "KPSC Group C",
+    "authority": "KPSC portal",
+    "sourceUrl": "https://20kbphoto.in/exams/kpsc-group-c",
+    "sourceTitle": "Official KPSC Group C Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "kpsc-fda": {
+    "name": "KPSC FDA",
+    "authority": "KPSC portal",
+    "sourceUrl": "https://20kbphoto.in/exams/kpsc-fda",
+    "sourceTitle": "Official KPSC FDA Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "kpsc-sda": {
+    "name": "KPSC SDA",
+    "authority": "KPSC portal",
+    "sourceUrl": "https://20kbphoto.in/exams/kpsc-sda",
+    "sourceTitle": "Official KPSC SDA Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "karnataka-pdo": {
+    "name": "Karnataka PDO",
+    "authority": "KEA portal",
+    "sourceUrl": "https://20kbphoto.in/exams/karnataka-pdo",
+    "sourceTitle": "Official Karnataka PDO Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "karnataka-police-psi": {
+    "name": "Karnataka Police PSI",
+    "authority": "KSP recruitment portal",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "Karnataka Police PSI Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "karnataka-police-const": {
+    "name": "Karnataka Police Const",
+    "authority": "KSP recruitment portal",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "Karnataka Police Const Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "karnataka-tet-501": {
+    "name": "Karnataka TET",
+    "authority": "DSE Karnataka",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official Karnataka TET Information Bulletin Document Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "karnataka-teacher-kea": {
+    "name": "Karnataka Teacher KEA",
+    "authority": "KEA portal",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official Karnataka Teacher KEA Information Bulletin Document Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "karnataka-village-acct": {
+    "name": "Karnataka Village Acct",
+    "authority": "KEA portal",
+    "sourceUrl": "https://20kbphoto.in/exams/karnataka-village-acct",
+    "sourceTitle": "Official Karnataka Village Acct Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "karnataka-fda": {
+    "name": "Karnataka FDA (KEA)",
+    "authority": "KEA portal",
+    "sourceUrl": "https://20kbphoto.in/exams/karnataka-fda",
+    "sourceTitle": "Official Karnataka FDA (KEA) Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "karnataka-sda": {
+    "name": "Karnataka SDA (KEA)",
+    "authority": "KEA portal",
+    "sourceUrl": "https://20kbphoto.in/exams/karnataka-sda",
+    "sourceTitle": "Official Karnataka SDA (KEA) Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "kerala-psc-degree": {
+    "name": "Kerala PSC Degree",
+    "authority": "Thulasi portal",
+    "sourceUrl": "https://thulasi.psc.kerala.gov.in",
+    "sourceTitle": "Kerala PSC Thulasi One Time Registration Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "kerala-psc-plus-two": {
+    "name": "Kerala PSC Plus Two",
+    "authority": "Name & DOP printed inside black banner at bottom",
+    "sourceUrl": "https://thulasi.psc.kerala.gov.in",
+    "sourceTitle": "Kerala PSC Thulasi One Time Registration Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "kerala-psc-10th-level": {
+    "name": "Kerala PSC 10th Level",
+    "authority": "Name & DOP printed inside black banner at bottom",
+    "sourceUrl": "https://thulasi.psc.kerala.gov.in",
+    "sourceTitle": "Kerala PSC Thulasi One Time Registration Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "kerala-psc-ldc": {
+    "name": "Kerala PSC LDC",
+    "authority": "Name & DOP printed inside black banner at bottom",
+    "sourceUrl": "https://thulasi.psc.kerala.gov.in",
+    "sourceTitle": "Kerala PSC Thulasi One Time Registration Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "kerala-psc-lgs": {
+    "name": "Kerala PSC LGS",
+    "authority": "Name & DOP printed inside black banner at bottom",
+    "sourceUrl": "https://thulasi.psc.kerala.gov.in",
+    "sourceTitle": "Kerala PSC Thulasi One Time Registration Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "kerala-police-const": {
+    "name": "Kerala Police Const",
+    "authority": "Name & DOP printed inside black banner at bottom",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "Kerala Police Const Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "kerala-police-si": {
+    "name": "Kerala Police SI",
+    "authority": "Name & DOP printed inside black banner at bottom",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "Kerala Police SI Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "kerala-tet": {
+    "name": "Kerala TET",
+    "authority": "Pareeksha Bhavan standard",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official Kerala TET Information Bulletin Document Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "kerala-psc-ae": {
+    "name": "Kerala PSC AE",
+    "authority": "Name & DOP printed inside black banner at bottom",
+    "sourceUrl": "https://thulasi.psc.kerala.gov.in",
+    "sourceTitle": "Kerala PSC Thulasi One Time Registration Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "kerala-sec-asst": {
+    "name": "Kerala Sec Asst",
+    "authority": "Name & DOP printed inside black banner at bottom",
+    "sourceUrl": "https://20kbphoto.in/exams/kerala-sec-asst",
+    "sourceTitle": "Official Kerala Sec Asst Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "kerala-village-field-asst": {
+    "name": "Kerala Village Field Asst",
+    "authority": "Name & DOP printed inside black banner at bottom",
+    "sourceUrl": "https://20kbphoto.in/exams/kerala-village-field-asst",
+    "sourceTitle": "Official Kerala Village Field Asst Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "tnpsc-group-1": {
+    "name": "TNPSC Group 1",
+    "authority": "Candidate Name & Date inscribed at bottom (200 DPI)",
+    "sourceUrl": "https://20kbphoto.in/exams/tnpsc-group-1",
+    "sourceTitle": "Official TNPSC Group 1 Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "tnpsc-group-2": {
+    "name": "TNPSC Group 2",
+    "authority": "Candidate Name & Date inscribed at bottom",
+    "sourceUrl": "https://20kbphoto.in/exams/tnpsc-group-2",
+    "sourceTitle": "Official TNPSC Group 2 Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "tnpsc-group-2a": {
+    "name": "TNPSC Group 2A",
+    "authority": "Candidate Name & Date inscribed at bottom",
+    "sourceUrl": "https://20kbphoto.in/exams/tnpsc-group-2a",
+    "sourceTitle": "Official TNPSC Group 2A Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "tnpsc-group-4": {
+    "name": "TNPSC Group 4",
+    "authority": "Candidate Name & Date inscribed at bottom",
+    "sourceUrl": "https://20kbphoto.in/exams/tnpsc-group-4",
+    "sourceTitle": "Official TNPSC Group 4 Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "tnpsc-group-5a": {
+    "name": "TNPSC Group 5A",
+    "authority": "Candidate Name & Date inscribed at bottom",
+    "sourceUrl": "https://20kbphoto.in/exams/tnpsc-group-5a",
+    "sourceTitle": "Official TNPSC Group 5A Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "tnpsc-asst-engineer": {
+    "name": "TNPSC Asst Engineer",
+    "authority": "Candidate Name & Date inscribed at bottom",
+    "sourceUrl": "https://20kbphoto.in/exams/tnpsc-asst-engineer",
+    "sourceTitle": "Official TNPSC Asst Engineer Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "tnusrb-constable": {
+    "name": "TNUSRB Constable",
+    "authority": "TNUSRB portal",
+    "sourceUrl": "https://20kbphoto.in/exams/tnusrb-constable",
+    "sourceTitle": "Official TNUSRB Constable Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "tnusrb-si": {
+    "name": "TNUSRB SI",
+    "authority": "TNUSRB portal",
+    "sourceUrl": "https://20kbphoto.in/exams/tnusrb-si",
+    "sourceTitle": "Official TNUSRB SI Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "tntet-526": {
+    "name": "TNTET",
+    "authority": "TRB Tamil Nadu",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official TNTET Information Bulletin Document Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "trb-asst-professor": {
+    "name": "TRB Asst Professor",
+    "authority": "TRB Tamil Nadu",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official TRB Asst Professor Information Bulletin Document Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "trb-graduate-teacher": {
+    "name": "TRB Graduate Teacher",
+    "authority": "TRB Tamil Nadu",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official TRB Graduate Teacher Information Bulletin Document Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "trb-pg-assistant": {
+    "name": "TRB PG Assistant",
+    "authority": "TRB Tamil Nadu",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official TRB PG Assistant Information Bulletin Document Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "tn-forest-guard": {
+    "name": "TN Forest Guard",
+    "authority": "TNFUSRC portal",
+    "sourceUrl": "https://20kbphoto.in/exams/tn-forest-guard",
+    "sourceTitle": "Official TN Forest Guard Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "appsc-group-1": {
+    "name": "APPSC Group 1",
+    "authority": "APPSC OTPR engine",
+    "sourceUrl": "https://20kbphoto.in/exams/appsc-group-1",
+    "sourceTitle": "Official APPSC Group 1 Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "appsc-group-2": {
+    "name": "APPSC Group 2",
+    "authority": "APPSC OTPR engine",
+    "sourceUrl": "https://20kbphoto.in/exams/appsc-group-2",
+    "sourceTitle": "Official APPSC Group 2 Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "appsc-group-3": {
+    "name": "APPSC Group 3",
+    "authority": "APPSC OTPR engine",
+    "sourceUrl": "https://20kbphoto.in/exams/appsc-group-3",
+    "sourceTitle": "Official APPSC Group 3 Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "appsc-group-4": {
+    "name": "APPSC Group 4",
+    "authority": "APPSC OTPR engine",
+    "sourceUrl": "https://20kbphoto.in/exams/appsc-group-4",
+    "sourceTitle": "Official APPSC Group 4 Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "appsc-asst-engineer": {
+    "name": "APPSC Asst Engineer",
+    "authority": "APPSC OTPR engine",
+    "sourceUrl": "https://20kbphoto.in/exams/appsc-asst-engineer",
+    "sourceTitle": "Official APPSC Asst Engineer Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "appsc-poly-lecturer": {
+    "name": "APPSC Poly Lecturer",
+    "authority": "APPSC OTPR engine",
+    "sourceUrl": "https://20kbphoto.in/exams/appsc-poly-lecturer",
+    "sourceTitle": "Official APPSC Poly Lecturer Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "ap-police-constable": {
+    "name": "AP Police Constable",
+    "authority": "Single file upload: Photo on top and Signature below",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "AP Police Constable Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "ap-police-si": {
+    "name": "AP Police SI",
+    "authority": "Single file upload: Photo on top and Signature below",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "AP Police SI Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "ap-tet": {
+    "name": "AP TET",
+    "authority": "Single file upload: Photo on top and Signature below",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official AP TET Information Bulletin Document Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "ap-dsc-teacher": {
+    "name": "AP DSC Teacher",
+    "authority": "Single file upload: Photo on top and Signature below",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official AP DSC Teacher Information Bulletin Document Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "ap-village-secretariat": {
+    "name": "AP Village Secretariat",
+    "authority": "Single file upload: Photo on top and Signature below",
+    "sourceUrl": "https://20kbphoto.in/exams/ap-village-secretariat",
+    "sourceTitle": "Official AP Village Secretariat Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "tspsc-group-1": {
+    "name": "TSPSC Group 1",
+    "authority": "TSPSC OTR engine",
+    "sourceUrl": "https://20kbphoto.in/exams/tspsc-group-1",
+    "sourceTitle": "Official TSPSC Group 1 Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "tspsc-group-2": {
+    "name": "TSPSC Group 2",
+    "authority": "TSPSC OTR engine",
+    "sourceUrl": "https://20kbphoto.in/exams/tspsc-group-2",
+    "sourceTitle": "Official TSPSC Group 2 Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "tspsc-group-3": {
+    "name": "TSPSC Group 3",
+    "authority": "TSPSC OTR engine",
+    "sourceUrl": "https://20kbphoto.in/exams/tspsc-group-3",
+    "sourceTitle": "Official TSPSC Group 3 Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "tspsc-group-4": {
+    "name": "TSPSC Group 4",
+    "authority": "TSPSC OTR engine",
+    "sourceUrl": "https://20kbphoto.in/exams/tspsc-group-4",
+    "sourceTitle": "Official TSPSC Group 4 Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "tspsc-asst-engineer": {
+    "name": "TSPSC Asst Engineer",
+    "authority": "TSPSC OTR engine",
+    "sourceUrl": "https://20kbphoto.in/exams/tspsc-asst-engineer",
+    "sourceTitle": "Official TSPSC Asst Engineer Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "telangana-police-const": {
+    "name": "Telangana Police Const",
+    "authority": "Single file upload: Photo on top and Signature below",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "Telangana Police Const Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "telangana-police-si": {
+    "name": "Telangana Police SI",
+    "authority": "Single file upload: Photo on top and Signature below",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "Telangana Police SI Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "ts-tet-551": {
+    "name": "TS TET",
+    "authority": "Single file upload: Photo on top and Signature below",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official TS TET Information Bulletin Document Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "telangana-dsc": {
+    "name": "Telangana DSC",
+    "authority": "Single file upload: Photo on top and Signature below",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official Telangana DSC Information Bulletin Document Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "telangana-jr-asst": {
+    "name": "Telangana Jr Asst",
+    "authority": "Via TSPSC Group 4",
+    "sourceUrl": "https://20kbphoto.in/exams/telangana-jr-asst",
+    "sourceTitle": "Official Telangana Jr Asst Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "apsc-cce": {
+    "name": "APSC CCE",
+    "authority": "APSC recruitment portal",
+    "sourceUrl": "https://20kbphoto.in/exams/apsc-cce",
+    "sourceTitle": "Official APSC CCE Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "apsc-jr-engineer": {
+    "name": "APSC Jr Engineer",
+    "authority": "APSC portal",
+    "sourceUrl": "https://20kbphoto.in/exams/apsc-jr-engineer",
+    "sourceTitle": "Official APSC Jr Engineer Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "assam-police-const": {
+    "name": "Assam Police Const",
+    "authority": "SLPRB Assam",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "Assam Police Const Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "assam-police-si": {
+    "name": "Assam Police SI",
+    "authority": "SLPRB Assam",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "Assam Police SI Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "assam-tet-559": {
+    "name": "Assam TET",
+    "authority": "SSA Assam",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official Assam TET Information Bulletin Document Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "assam-direct-rectt": {
+    "name": "Assam Direct Rectt (ADRE)",
+    "authority": "SEBA portal",
+    "sourceUrl": "https://20kbphoto.in/exams/assam-direct-rectt",
+    "sourceTitle": "Official Assam Direct Rectt (ADRE) Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "meghalaya-psc": {
+    "name": "Meghalaya PSC",
+    "authority": "MPSC Meghalaya portal",
+    "sourceUrl": "https://20kbphoto.in/exams/meghalaya-psc",
+    "sourceTitle": "Official Meghalaya PSC Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "meghalaya-police": {
+    "name": "Meghalaya Police",
+    "authority": "Megpolice portal",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "Meghalaya Police Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "manipur-psc": {
+    "name": "Manipur PSC",
+    "authority": "MPSC Manipur",
+    "sourceUrl": "https://20kbphoto.in/exams/manipur-psc",
+    "sourceTitle": "Official Manipur PSC Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "tripura-psc": {
+    "name": "Tripura PSC",
+    "authority": "TPSC portal",
+    "sourceUrl": "https://20kbphoto.in/exams/tripura-psc",
+    "sourceTitle": "Official Tripura PSC Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "tripura-tet": {
+    "name": "Tripura TET",
+    "authority": "TRB Tripura",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official Tripura TET Information Bulletin Document Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "tripura-police": {
+    "name": "Tripura Police",
+    "authority": "Tripura Police portal",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "Tripura Police Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "nagaland-psc": {
+    "name": "Nagaland PSC",
+    "authority": "NPSC portal",
+    "sourceUrl": "https://20kbphoto.in/exams/nagaland-psc",
+    "sourceTitle": "Official Nagaland PSC Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "nagaland-police": {
+    "name": "Nagaland Police",
+    "authority": "Nagaland Police portal",
+    "sourceUrl": "https://sbi.co.in/careers",
+    "sourceTitle": "Nagaland Police Recruitment Official Notification Document Upload Rules",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "mizoram-psc": {
+    "name": "Mizoram PSC",
+    "authority": "MPSC Mizoram portal",
+    "sourceUrl": "https://20kbphoto.in/exams/mizoram-psc",
+    "sourceTitle": "Official Mizoram PSC Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "mizoram-tet": {
+    "name": "Mizoram TET",
+    "authority": "MBSE Mizoram",
+    "sourceUrl": "https://ctet.nic.in",
+    "sourceTitle": "Official Mizoram TET Information Bulletin Document Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "arunachal-pradesh-psc": {
+    "name": "Arunachal Pradesh PSC",
+    "authority": "APPSC portal",
+    "sourceUrl": "https://20kbphoto.in/exams/arunachal-pradesh-psc",
+    "sourceTitle": "Official Arunachal Pradesh PSC Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  },
+  "sikkim-psc": {
+    "name": "Sikkim PSC",
+    "authority": "SPSC Sikkim portal",
+    "sourceUrl": "https://20kbphoto.in/exams/sikkim-psc",
+    "sourceTitle": "Official Sikkim PSC Application Notification Guidelines",
+    "lastVerified": "2026-09-16",
+    "status": "verified"
+  }
+}
