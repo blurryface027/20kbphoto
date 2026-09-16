@@ -530,7 +530,7 @@ export default function UploadDropzone({
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Header */}
-            <div className="flex items-center justify-between pb-3 border-b border-gray-100">
+            <div className="flex items-center justify-between pb-3 border-b border-gray-100 shrink-0">
               <div>
                 <h3 className="text-lg font-extrabold text-gray-900">
                   Select Exam Preset
@@ -550,38 +550,38 @@ export default function UploadDropzone({
             </div>
 
             {/* Search Input & Clear */}
-            <div className="relative my-4">
-              <HiMagnifyingGlass className="absolute left-3.5 top-3 w-4 h-4 text-gray-400" />
+            <div className="relative my-3 shrink-0">
+              <HiMagnifyingGlass className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-indigo-500" />
               <input
                 ref={modalInputRef}
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search exam by name, acronym, category, or authority..."
-                className="w-full pl-10 pr-10 py-2.5 text-sm bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:border-indigo-500 focus:bg-white text-gray-900 placeholder:text-gray-400"
+                className="w-full pl-10 pr-9 py-2.5 text-sm bg-gray-50/80 border border-gray-200 rounded-xl focus:outline-none focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-500/15 text-gray-900 placeholder:text-gray-400 font-medium transition-all"
               />
               {searchQuery && (
                 <button
                   type="button"
                   onClick={() => setSearchQuery("")}
-                  className="absolute right-3 top-3 text-gray-400 hover:text-gray-600"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 p-1 text-gray-400 hover:text-gray-600 rounded-full hover:bg-gray-200/50 transition-colors"
                 >
                   <HiXMark className="w-4 h-4" />
                 </button>
               )}
             </div>
 
-            {/* Category Filter Pills */}
-            <div className="flex flex-wrap gap-1.5 mb-3 pb-2 border-b border-gray-100 overflow-x-auto">
+            {/* Category Filter Pills (Clean non-clipping single-line horizontal scroll) */}
+            <div className="flex items-center gap-1.5 pb-3 mb-3 border-b border-gray-100 overflow-x-auto shrink-0 scrollbar-none">
               {categoriesList.map((cat) => (
                 <button
                   key={cat.id}
                   type="button"
                   onClick={() => setSelectedCategory(cat.id)}
-                  className={`text-xs px-3 py-1.5 rounded-full font-semibold transition-colors shrink-0 ${
+                  className={`text-xs px-3 py-1.5 rounded-full font-bold transition-all shrink-0 whitespace-nowrap ${
                     selectedCategory === cat.id
                       ? "bg-indigo-600 text-white shadow-xs"
-                      : "bg-gray-100 text-gray-600 hover:bg-indigo-50 hover:text-indigo-600"
+                      : "bg-gray-100 text-gray-600 hover:bg-indigo-50 hover:text-indigo-600 border border-gray-200/60"
                   }`}
                 >
                   {cat.label}
@@ -599,15 +599,15 @@ export default function UploadDropzone({
                     onClick={() => handleSelectExamPreset(item)}
                     className={`w-full flex items-center justify-between p-3.5 rounded-2xl border text-left transition-all ${
                       currentExamName === item.name
-                        ? "bg-indigo-50/80 border-indigo-300 text-indigo-900 font-bold"
-                        : "bg-white border-gray-200 text-gray-700 hover:bg-gray-50 hover:border-indigo-200"
+                        ? "bg-indigo-50/90 border-indigo-300 text-indigo-900 font-bold shadow-xs"
+                        : "bg-white border-gray-200 text-gray-700 hover:bg-gray-50/80 hover:border-indigo-200"
                     }`}
                   >
                     <div className="min-w-0 flex-1 pr-3">
                       <div className="flex items-center gap-2 flex-wrap">
                         <span className="font-bold text-sm text-gray-900">{item.name}</span>
                         {item.category && (
-                          <span className="text-[10px] px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 font-semibold uppercase tracking-wider">
+                          <span className="text-[10px] px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 font-semibold uppercase tracking-wider border border-gray-200/50">
                             {item.category}
                           </span>
                         )}
@@ -647,7 +647,7 @@ export default function UploadDropzone({
             </div>
 
             {/* Modal Footer Note */}
-            <div className="pt-3 border-t border-gray-100 flex items-center justify-between text-[11px] text-gray-400 font-medium">
+            <div className="pt-3 mt-2 border-t border-gray-100 flex items-center justify-between text-[11px] text-gray-400 font-medium shrink-0">
               <span>Press <kbd className="px-1.5 py-0.5 bg-gray-100 rounded text-gray-600 font-mono">ESC</kbd> to close</span>
               <span>100+ Verified Exam Specifications</span>
             </div>

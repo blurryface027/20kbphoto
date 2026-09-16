@@ -23,6 +23,12 @@ import {
   HiOutlineArchiveBox,
   HiOutlineAdjustmentsHorizontal,
   HiOutlineArrowPath,
+  HiOutlineDocumentText,
+  HiOutlineDocumentCheck,
+  HiOutlineSparkles,
+  HiOutlineScissors,
+  HiOutlineEyeSlash,
+  HiOutlineSquare2Stack,
 } from "react-icons/hi2";
 
 const navItems = [
@@ -38,16 +44,29 @@ const navItems = [
     ],
   },
   {
+    label: "Document & PDF",
+    href: "/tools/jpg-to-pdf",
+    children: [
+      { label: "JPG to PDF", href: "/tools/jpg-to-pdf", icon: <HiOutlineDocumentText className="w-5 h-5 text-indigo-600" /> },
+      { label: "PDF to JPG", href: "/tools/pdf-to-jpg", icon: <HiOutlineDocumentCheck className="w-5 h-5 text-indigo-600" /> },
+      { label: "Image to PDF", href: "/tools/image-to-pdf", icon: <HiOutlineDocumentText className="w-5 h-5 text-indigo-600" /> },
+      { label: "PDF to Image", href: "/tools/pdf-to-image", icon: <HiOutlineDocumentCheck className="w-5 h-5 text-indigo-600" /> },
+      { label: "Document Scanner", href: "/tools/document-scanner", icon: <HiOutlineDocumentCheck className="w-5 h-5 text-indigo-600" /> },
+      { label: "Photos to PDF", href: "/tools/photos-to-pdf", icon: <HiOutlineDocumentText className="w-5 h-5 text-indigo-600" /> },
+    ],
+  },
+  {
     label: "Image Tools",
     href: "/tools/image-resizer",
     children: [
       { label: "Image Resizer", href: "/tools/image-resizer", icon: <HiOutlinePhoto className="w-5 h-5 text-indigo-600" /> },
-      { label: "Photo Resizer", href: "/tools/photo-resizer", icon: <HiOutlineCamera className="w-5 h-5 text-indigo-600" /> },
+      { label: "Background Remover", href: "/tools/background-remover", icon: <HiOutlineSparkles className="w-5 h-5 text-indigo-600" /> },
+      { label: "Image Cropper", href: "/tools/image-cropper", icon: <HiOutlineScissors className="w-5 h-5 text-indigo-600" /> },
+      { label: "Blur Image / Face Blur", href: "/tools/blur-image", icon: <HiOutlineEyeSlash className="w-5 h-5 text-indigo-600" /> },
+      { label: "Image Stitcher", href: "/tools/image-stitcher", icon: <HiOutlineSquare2Stack className="w-5 h-5 text-indigo-600" /> },
       { label: "Passport Photo Maker", href: "/tools/passport-photo-maker", icon: <HiOutlineIdentification className="w-5 h-5 text-indigo-600" /> },
-      { label: "Resize Image to 20KB", href: "/resize-image-to-20kb", icon: <HiOutlineArrowDownRight className="w-5 h-5 text-indigo-600" /> },
-      { label: "Resize Image to 50KB", href: "/resize-image-to-50kb", icon: <HiOutlineArrowDownRight className="w-5 h-5 text-indigo-600" /> },
-      { label: "Add Name & Date", href: "/add-name-and-date-to-photo", icon: <HiOutlinePencilSquare className="w-5 h-5 text-indigo-600" /> },
-      { label: "PAN Card Photo", href: "/pan-card-photo-resizer", icon: <HiOutlineCreditCard className="w-5 h-5 text-indigo-600" /> },
+      { label: "EXIF / Metadata Viewer", href: "/tools/image-metadata", icon: <HiOutlinePhoto className="w-5 h-5 text-indigo-600" /> },
+      { label: "Image Format Converter", href: "/tools/image-format-converter", icon: <HiOutlineArrowPath className="w-5 h-5 text-indigo-600" /> },
     ],
   },
   {
@@ -62,12 +81,13 @@ const navItems = [
     ],
   },
   {
-    label: "Compress",
+    label: "Compress & Bulk",
     href: "/tools/image-compressor",
     children: [
       { label: "Image Compressor", href: "/tools/image-compressor", icon: <HiOutlineArchiveBox className="w-5 h-5 text-indigo-600" /> },
+      { label: "Bulk Image Compressor", href: "/tools/bulk-image-compressor", icon: <HiOutlineArchiveBox className="w-5 h-5 text-indigo-600" /> },
+      { label: "Bulk Image Resizer", href: "/tools/bulk-image-resizer", icon: <HiOutlineSquare2Stack className="w-5 h-5 text-indigo-600" /> },
       { label: "Compress to 20KB", href: "/resize-image-to-20kb", icon: <HiOutlineArrowDownRight className="w-5 h-5 text-indigo-600" /> },
-      { label: "Compress to 30KB", href: "/resize-image-to-30kb", icon: <HiOutlineArrowDownRight className="w-5 h-5 text-indigo-600" /> },
       { label: "Compress to 50KB", href: "/resize-image-to-50kb", icon: <HiOutlineArrowDownRight className="w-5 h-5 text-indigo-600" /> },
       { label: "Compress to 100KB", href: "/resize-image-to-100kb", icon: <HiOutlineArrowDownRight className="w-5 h-5 text-indigo-600" /> },
     ],
@@ -76,13 +96,13 @@ const navItems = [
     label: "Convert",
     href: "/tools/image-to-jpg",
     children: [
+      { label: "Image Format Converter", href: "/tools/image-format-converter", icon: <HiOutlineArrowPath className="w-5 h-5 text-indigo-600" /> },
       { label: "Image to JPG", href: "/tools/image-to-jpg", icon: <HiOutlineArrowPath className="w-5 h-5 text-indigo-600" /> },
       { label: "PNG to JPG", href: "/tools/png-to-jpg", icon: <HiOutlineArrowPath className="w-5 h-5 text-indigo-600" /> },
       { label: "WebP to JPG", href: "/tools/webp-to-jpg", icon: <HiOutlineArrowPath className="w-5 h-5 text-indigo-600" /> },
       { label: "JPG to PNG", href: "/tools/jpg-to-png", icon: <HiOutlineArrowPath className="w-5 h-5 text-indigo-600" /> },
       { label: "JPG to WebP", href: "/tools/jpg-to-webp", icon: <HiOutlineArrowPath className="w-5 h-5 text-indigo-600" /> },
       { label: "PNG to WebP", href: "/tools/png-to-webp", icon: <HiOutlineArrowPath className="w-5 h-5 text-indigo-600" /> },
-      { label: "Signature to JPG", href: "/tools/signature-to-jpg", icon: <HiOutlineArrowPath className="w-5 h-5 text-indigo-600" /> },
     ],
   },
 ];

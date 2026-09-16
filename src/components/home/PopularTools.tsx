@@ -4,7 +4,7 @@ import {
   HiOutlineArchiveBox,
   HiOutlinePencilSquare,
   HiOutlineArrowPath,
-  HiOutlineIdentification,
+  HiOutlineUser,
   HiOutlineAdjustmentsHorizontal,
 } from "react-icons/hi2";
 
@@ -15,7 +15,7 @@ const tools = [
   { name: "Image Compressor", href: "/tools/image-compressor", icon: <HiOutlineArchiveBox className="w-5 h-5 text-indigo-600" />, desc: "Reduce file size to any target KB" },
   { name: "Signature Resizer", href: "/tools/signature-resizer", icon: <HiOutlinePencilSquare className="w-5 h-5 text-indigo-600" />, desc: "Resize signatures to exact dimensions" },
   { name: "Image to JPG", href: "/tools/image-to-jpg", icon: <HiOutlineArrowPath className="w-5 h-5 text-indigo-600" />, desc: "Convert PNG, WebP to JPG format" },
-  { name: "Passport Photo Maker", href: "/tools/passport-photo-maker", icon: <HiOutlineIdentification className="w-5 h-5 text-indigo-600" />, desc: "Create perfect passport photos" },
+  { name: "Passport Photo Maker", href: "/tools/passport-photo-maker", icon: <HiOutlineUser className="w-5 h-5 text-indigo-600" />, desc: "Create perfect passport photos" },
   { name: "Add Name & Date", href: "/add-name-and-date-to-photo", icon: <HiOutlinePencilSquare className="w-5 h-5 text-indigo-600" />, desc: "Add name and date to your photo" },
   { name: "Signature 140×60", href: "/signature-resizer-140x60", icon: <HiOutlineAdjustmentsHorizontal className="w-5 h-5 text-indigo-600" />, desc: "Resize signature to 140x60 pixels" },
 ];

@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
 import { exams } from "@/data/exams";
+import { states } from "@/data/states";
 import { tools, exactKBTools, dimensionTools } from "@/data/tools";
 
 export const dynamic = "force-static";
@@ -60,6 +61,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
+  // State pages
+  const statePages: MetadataRoute.Sitemap = states.map((s) => ({
+    url: `${BASE_URL}/exams/state/${s.slug}/`,
+    lastModified: now,
+    changeFrequency: "weekly" as const,
+    priority: 0.8,
+  }));
+
   // Exam hub pages
   const examHubPages: MetadataRoute.Sitemap = exams.map((exam) => ({
     url: `${BASE_URL}/exams/${exam.slug}/`,
@@ -107,6 +116,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...dimPages,
     ...sigDimPages,
     ...categoryPages,
+    ...statePages,
     ...examHubPages,
     ...examPhotoPages,
     ...examSigPages,

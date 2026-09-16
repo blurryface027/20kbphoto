@@ -12,7 +12,7 @@ import {
   HiOutlineArrowPath,
   HiOutlineAdjustmentsHorizontal,
   HiOutlineScissors,
-  HiOutlineIdentification,
+  HiOutlineUser,
   HiOutlineArrowDownRight,
   HiOutlineDocumentText,
   HiOutlineWrenchScrewdriver,
@@ -27,7 +27,7 @@ const iconMap: Record<string, React.ReactNode> = {
   HiOutlineArrowPath: <HiOutlineArrowPath className="w-5 h-5 text-indigo-600" />,
   HiOutlineAdjustmentsHorizontal: <HiOutlineAdjustmentsHorizontal className="w-5 h-5 text-indigo-600" />,
   HiOutlineScissors: <HiOutlineScissors className="w-5 h-5 text-indigo-600" />,
-  HiOutlineIdentification: <HiOutlineIdentification className="w-5 h-5 text-indigo-600" />,
+  HiOutlineIdentification: <HiOutlineUser className="w-5 h-5 text-indigo-600" />,
   HiOutlineArrowDownRight: <HiOutlineArrowDownRight className="w-5 h-5 text-indigo-600" />,
   HiOutlineDocumentText: <HiOutlineDocumentText className="w-5 h-5 text-indigo-600" />,
 };
@@ -73,10 +73,12 @@ export default function ToolsDirectoryClient({ tools, exactKBTools, dimensionToo
 
   const categories = [
     { id: "all", label: "All Tools" },
+    { id: "document", label: "Document & PDF Tools" },
     { id: "resize", label: "Image Resizer" },
     { id: "compress", label: "Compressor Tools" },
     { id: "signature", label: "Signature Tools" },
     { id: "convert", label: "Converters" },
+    { id: "utility", label: "Utility Tools" },
     { id: "kb", label: "Exact KB Sizes" },
     { id: "dimension", label: "Dimension Presets" },
   ];
@@ -114,12 +116,12 @@ export default function ToolsDirectoryClient({ tools, exactKBTools, dimensionToo
         </div>
 
         {/* Category Tabs */}
-        <div className="flex flex-wrap items-center gap-1.5 w-full md:w-auto overflow-x-auto pb-1 md:pb-0">
+        <div className="flex items-center gap-1.5 w-full md:w-auto overflow-x-auto scrollbar-none py-1">
           {categories.map((cat) => (
             <button
               key={cat.id}
               onClick={() => setActiveCategory(cat.id)}
-              className={`px-3.5 py-2 text-xs sm:text-sm font-semibold rounded-xl transition-all shrink-0 ${
+              className={`px-3.5 py-2 text-xs sm:text-sm font-semibold rounded-xl transition-all shrink-0 whitespace-nowrap ${
                 activeCategory === cat.id
                   ? "bg-indigo-600 text-white shadow-sm"
                   : "bg-gray-50 text-gray-600 hover:bg-gray-100 hover:text-gray-900 border border-gray-200"
@@ -132,11 +134,7 @@ export default function ToolsDirectoryClient({ tools, exactKBTools, dimensionToo
       </div>
 
       {/* Main Tools Section */}
-      {(activeCategory === "all" ||
-        activeCategory === "resize" ||
-        activeCategory === "compress" ||
-        activeCategory === "signature" ||
-        activeCategory === "convert") && (
+      {activeCategory !== "kb" && activeCategory !== "dimension" && (
         <section>
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-xl sm:text-2xl font-bold text-gray-900">General Tools</h2>

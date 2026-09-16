@@ -2,20 +2,31 @@ import Link from "next/link";
 import Logo from "@/components/layout/Logo";
 
 const footerLinks = {
-  "Photo Tools": [
+  "Photo & Editing": [
     { label: "Image Resizer", href: "/tools/image-resizer" },
-    { label: "Photo Resizer", href: "/tools/photo-resizer" },
+    { label: "Background Remover", href: "/tools/background-remover" },
+    { label: "Image Cropper", href: "/tools/image-cropper" },
+    { label: "Blur Image / Face Blur", href: "/tools/blur-image" },
+    { label: "Image Stitcher", href: "/tools/image-stitcher" },
     { label: "Passport Photo Maker", href: "/tools/passport-photo-maker" },
-    { label: "Add Name & Date", href: "/add-name-and-date-to-photo" },
-    { label: "PAN Card Photo", href: "/pan-card-photo-resizer" },
-    { label: "Document Resizer", href: "/tools/document-image-resizer" },
+    { label: "Image Upscaler", href: "/tools/image-upscaler" },
+    { label: "EXIF Metadata Viewer", href: "/tools/image-metadata" },
   ],
-  "Signature Tools": [
+  "Document & PDF Tools": [
+    { label: "JPG to PDF", href: "/tools/jpg-to-pdf" },
+    { label: "PDF to JPG", href: "/tools/pdf-to-jpg" },
+    { label: "Image to PDF", href: "/tools/image-to-pdf" },
+    { label: "PDF to Image", href: "/tools/pdf-to-image" },
+    { label: "Document Scanner", href: "/tools/document-scanner" },
+    { label: "Photos to PDF", href: "/tools/photos-to-pdf" },
+  ],
+  "Signature & Bulk": [
     { label: "Signature Resizer", href: "/tools/signature-resizer" },
     { label: "Signature Compressor", href: "/tools/signature-compressor" },
+    { label: "Bulk Image Compressor", href: "/tools/bulk-image-compressor" },
+    { label: "Bulk Image Resizer", href: "/tools/bulk-image-resizer" },
     { label: "Signature 140×60", href: "/signature-resizer-140x60" },
     { label: "Signature 200×80", href: "/signature-resizer-200x80" },
-    { label: "Signature to JPG", href: "/tools/signature-to-jpg" },
   ],
   "Popular Sizes": [
     { label: "Resize Image to 20KB", href: "/resize-image-to-20kb" },
@@ -24,21 +35,13 @@ const footerLinks = {
     { label: "Resize Image to 100KB", href: "/resize-image-to-100kb" },
     { label: "Resize Image to 200KB", href: "/resize-image-to-200kb" },
   ],
-  "Exam Categories": [
-    { label: "All Exam Presets", href: "/exams" },
-    { label: "SSC Exams", href: "/exams/ssc" },
-    { label: "UPSC Exams", href: "/exams/upsc" },
-    { label: "Banking Exams", href: "/exams/banking" },
-    { label: "Railway Exams", href: "/exams/railway" },
-    { label: "State PSCs", href: "/exams/state-psc" },
-  ],
   "Converters & Format": [
+    { label: "Image Format Converter", href: "/tools/image-format-converter" },
     { label: "Image to JPG", href: "/tools/image-to-jpg" },
     { label: "PNG to JPG", href: "/tools/png-to-jpg" },
     { label: "WebP to JPG", href: "/tools/webp-to-jpg" },
     { label: "JPG to PNG", href: "/tools/jpg-to-png" },
     { label: "JPG to WebP", href: "/tools/jpg-to-webp" },
-    { label: "PNG to WebP", href: "/tools/png-to-webp" },
   ],
 };
 

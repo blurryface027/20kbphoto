@@ -7,7 +7,7 @@ import {
   HiOutlineArrowPath,
   HiOutlineAdjustmentsHorizontal,
   HiOutlineScissors,
-  HiOutlineIdentification,
+  HiOutlineUser,
   HiOutlineArrowDownRight,
   HiOutlineDocumentText,
   HiOutlineWrenchScrewdriver,
@@ -21,7 +21,7 @@ const iconMap: Record<string, React.ReactNode> = {
   HiOutlineArrowPath: <HiOutlineArrowPath className="w-6 h-6 text-indigo-600" />,
   HiOutlineAdjustmentsHorizontal: <HiOutlineAdjustmentsHorizontal className="w-6 h-6 text-indigo-600" />,
   HiOutlineScissors: <HiOutlineScissors className="w-6 h-6 text-indigo-600" />,
-  HiOutlineIdentification: <HiOutlineIdentification className="w-6 h-6 text-indigo-600" />,
+  HiOutlineIdentification: <HiOutlineUser className="w-6 h-6 text-indigo-600" />,
   HiOutlineArrowDownRight: <HiOutlineArrowDownRight className="w-6 h-6 text-indigo-600" />,
   HiOutlineDocumentText: <HiOutlineDocumentText className="w-6 h-6 text-indigo-600" />,
 };

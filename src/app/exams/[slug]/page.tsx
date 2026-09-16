@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getExamBySlug, getExamsByCategory, getAllSlugs, categories, exams as allExams } from '@/data/exams';
+import { states, getStateBySlug, getExamsForState } from '@/data/states';
 import ExamCard from '@/components/cards/ExamCard';
 import ExamToolClient from '@/components/exams/ExamToolClient';
 import OfficialExamGuidelines from '@/components/exams/OfficialExamGuidelines';
@@ -14,7 +15,8 @@ import Link from 'next/link';
 export function generateStaticParams() {
   const examSlugs = getAllSlugs().map(slug => ({ slug }));
   const categorySlugs = categories.map(c => ({ slug: c.slug }));
-  return [...categorySlugs, ...examSlugs];
+  const stateSlugs = states.map(s => ({ slug: s.slug }));
+  return [...categorySlugs, ...stateSlugs, ...examSlugs];
 }
 
 type Props = {
@@ -24,18 +26,16 @@ type Props = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
 
-  const category = categories.find(c => c.slug === slug);
-
-  if (category) {
-    const title = `${category.name} Photo & Signature Resizer - 20KB Photo`;
-    const description = `Check photo and signature requirements for ${category.name} exams. View official pixel dimensions, file size limits in KB, accepted formats, and resize tools online.`;
+  // Check state slug
+  const stateData = getStateBySlug(slug);
+  if (stateData) {
+    const title = `${stateData.name} Exam Photo & Signature Resizers - 20KB Photo`;
+    const description = `Official photo and signature requirements for ${stateData.name} competitive exams (${stateData.count}+ presets). Verified dimensions, KB limits, format rules, and resizer tools for ${stateData.name} PSC, Police, TET, and recruitment boards.`;
     const canonical = `https://20kbphoto.in/exams/${slug}`;
     return {
       title,
       description,
-      alternates: {
-        canonical,
-      },
+      alternates: { canonical },
       openGraph: {
         title,
         description,
@@ -52,8 +52,34 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
-  const exam = getExamBySlug(slug);
+  // Check category slug
+  const category = categories.find(c => c.slug === slug);
+  if (category) {
+    const title = `${category.name} Photo & Signature Resizer - 20KB Photo`;
+    const description = `Check photo and signature requirements for ${category.name} exams. View official pixel dimensions, file size limits in KB, accepted formats, and resize tools online.`;
+    const canonical = `https://20kbphoto.in/exams/${slug}`;
+    return {
+      title,
+      description,
+      alternates: { canonical },
+      openGraph: {
+        title,
+        description,
+        url: canonical,
+        siteName: '20KB Photo',
+        locale: 'en_IN',
+        type: 'website',
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title,
+        description,
+      },
+    };
+  }
 
+  // Check exam slug
+  const exam = getExamBySlug(slug);
   if (exam) {
     const photo = exam.photo;
     const signature = exam.signature;
@@ -64,9 +90,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return {
       title,
       description,
-      alternates: {
-        canonical,
-      },
+      alternates: { canonical },
       openGraph: {
         title,
         description,
@@ -85,17 +109,71 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: 'Not Found - 20KB Photo',
-    robots: {
-      index: false,
-      follow: false,
-    },
+    robots: { index: false, follow: false },
   };
 }
 
 export default async function ExamHubPage({ params }: Props) {
   const { slug } = await params;
+
+  // 1. Check state slug
+  const stateData = getStateBySlug(slug);
+  if (stateData) {
+    const stateExams = getExamsForState(slug);
+    return (
+      <div className="container mx-auto px-4 py-8 max-w-6xl">
+        <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Exams', href: '/exams' }, { label: stateData.name }]} />
+        <div className="mt-6 mb-8">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-50 border border-indigo-200 text-indigo-800 text-xs font-semibold mb-3">
+            Verified Portal Rules • {stateExams.length} Presets Available
+          </div>
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">
+            {stateData.name} Exam Photo & Signature Resizers
+          </h1>
+          <p className="mt-2 text-sm sm:text-base text-gray-600 leading-relaxed max-w-3xl">
+            Official document specifications and instant online resizer tools for competitive exams and recruitment boards in <strong className="text-gray-900 font-semibold">{stateData.name}</strong>.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          {stateExams.map((exam) => (
+            <ExamCard
+              key={exam.slug}
+              name={exam.name}
+              slug={exam.slug}
+              category={exam.category}
+              photo={exam.photo}
+              signature={exam.signature}
+              verificationStatus={exam.verificationStatus}
+            />
+          ))}
+        </div>
+
+        <AdUnit className="my-10" />
+
+        {/* Explore Other States */}
+        <div>
+          <h2 className="text-xl font-bold text-gray-900 mb-4">Explore Exams in Other States</h2>
+          <div className="flex flex-wrap gap-2">
+            {states
+              .filter((s) => s.slug !== slug)
+              .slice(0, 15)
+              .map((s) => (
+                <Link
+                  key={s.slug}
+                  href={`/exams/${s.slug}`}
+                  className="text-xs font-semibold px-3 py-1.5 bg-white border border-gray-200 hover:border-indigo-300 hover:bg-indigo-50 hover:text-indigo-600 rounded-xl transition-all"
+                >
+                  {s.name} ({s.count})
+                </Link>
+              ))}
+          </div>
+        </div>
+      </div>
+    );
+  }
   
-  // Check if it's a category
+  // 2. Check category slug
   const category = categories.find(c => c.slug === slug);
   if (category) {
     const categoryExams = getExamsByCategory(slug);
@@ -123,7 +201,7 @@ export default async function ExamHubPage({ params }: Props) {
     );
   }
 
-  // Check if it's an exam
+  // 3. Check exam slug
   const exam = getExamBySlug(slug);
   if (!exam) {
     notFound();

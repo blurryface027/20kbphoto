@@ -3,7 +3,9 @@ import type { Metadata } from "next";
 import HomeHero from "@/components/home/HomeHero";
 import HowItWorksSection from "@/components/home/HowItWorksSection";
 import PopularTools from "@/components/home/PopularTools";
+import DocumentToolsSection from "@/components/home/DocumentToolsSection";
 import PopularExams from "@/components/home/PopularExams";
+import StatewiseExamsSection from "@/components/home/StatewiseExamsSection";
 import BrowseCategories from "@/components/home/BrowseCategories";
 import WhyUseSection from "@/components/home/WhyUseSection";
 import WhyChooseTable from "@/components/home/WhyChooseTable";
@@ -23,7 +25,9 @@ export default function HomePage() {
       <HomeHero />
       <HowItWorksSection />
       <PopularTools />
+      <DocumentToolsSection />
       <PopularExams />
+      <StatewiseExamsSection />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AdUnit className="my-8" />
       </div>
