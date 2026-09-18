@@ -2,6 +2,7 @@ import Breadcrumbs from '../layout/Breadcrumbs';
 import FAQSection from '../seo/FAQSection';
 import RelatedTools from '../seo/RelatedTools';
 import AdUnit from '../ads/AdUnit';
+import WhatsAppChannelCTA from './WhatsAppChannelCTA';
 
 interface ToolShellProps {
   title: string;
@@ -56,6 +57,8 @@ export default function ToolShell({
       <div className="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-4 sm:p-6 lg:p-7 mb-8">
         {children}
       </div>
+
+      <WhatsAppChannelCTA toolName={title} className="mb-8" />
 
       <AdUnit className="my-8" />
       

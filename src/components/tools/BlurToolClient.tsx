@@ -7,6 +7,7 @@ import {
   HiOutlineArrowDownTray,
   HiOutlineEyeSlash,
   HiOutlineArrowPath,
+  HiOutlineLightBulb,
 } from "react-icons/hi2";
 import { trackEvent } from "@/lib/gtag";
 
@@ -251,8 +252,9 @@ export default function BlurToolClient() {
           </div>
 
           {!fullBlur && (
-            <div className="bg-indigo-50 border border-indigo-200 p-3 rounded-xl text-xs text-indigo-800 font-semibold text-center">
-              💡 Tip: Click and drag your mouse across the image below to select areas to blur.
+            <div className="bg-indigo-50 border border-indigo-200 p-3 rounded-xl text-xs text-indigo-800 font-semibold text-center flex items-center justify-center gap-1.5">
+              <HiOutlineLightBulb className="w-4 h-4 text-indigo-600 shrink-0" />
+              <span><strong>Tip:</strong> Click and drag your mouse across the image below to select areas to blur.</span>
             </div>
           )}
 

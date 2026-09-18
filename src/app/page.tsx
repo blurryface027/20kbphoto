@@ -6,6 +6,7 @@ import PopularTools from "@/components/home/PopularTools";
 import DocumentToolsSection from "@/components/home/DocumentToolsSection";
 import PopularExams from "@/components/home/PopularExams";
 import StatewiseExamsSection from "@/components/home/StatewiseExamsSection";
+import WhatsAppHomeCTA from "@/components/home/WhatsAppHomeCTA";
 import BrowseCategories from "@/components/home/BrowseCategories";
 import WhyUseSection from "@/components/home/WhyUseSection";
 import WhyChooseTable from "@/components/home/WhyChooseTable";
@@ -27,6 +28,7 @@ export default function HomePage() {
       <PopularTools />
       <DocumentToolsSection />
       <PopularExams />
+      <WhatsAppHomeCTA />
       <StatewiseExamsSection />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AdUnit className="my-8" />

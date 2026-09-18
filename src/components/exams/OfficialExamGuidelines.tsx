@@ -8,6 +8,7 @@ import {
   HiExclamationTriangle,
   HiOutlineCheckBadge,
   HiOutlineLink,
+  HiOutlineXCircle,
 } from "react-icons/hi2";
 
 interface OfficialExamGuidelinesProps {
@@ -259,19 +260,19 @@ export default function OfficialExamGuidelines({ exam }: OfficialExamGuidelinesP
 
         <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs sm:text-sm text-amber-900/90 font-medium">
           <li className="flex items-start gap-2 bg-white/70 p-3 rounded-xl border border-amber-200/60">
-            <span className="text-amber-600 font-bold">✕</span>
+            <HiOutlineXCircle className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
             <span>Uploading a photo with shadows, patterned background, or non-white backdrop.</span>
           </li>
           <li className="flex items-start gap-2 bg-white/70 p-3 rounded-xl border border-amber-200/60">
-            <span className="text-amber-600 font-bold">✕</span>
+            <HiOutlineXCircle className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
             <span>Signing in capital block letters or using a light gel/pencil pen.</span>
           </li>
           <li className="flex items-start gap-2 bg-white/70 p-3 rounded-xl border border-amber-200/60">
-            <span className="text-amber-600 font-bold">✕</span>
+            <HiOutlineXCircle className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
             <span>Uploading file sizes smaller than {exam.photo.minKB}KB or larger than {exam.photo.maxKB}KB.</span>
           </li>
           <li className="flex items-start gap-2 bg-white/70 p-3 rounded-xl border border-amber-200/60">
-            <span className="text-amber-600 font-bold">✕</span>
+            <HiOutlineXCircle className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
             <span>Submitting blurry, distorted, or tilted scans taken from a phone camera without cropping.</span>
           </li>
         </ul>

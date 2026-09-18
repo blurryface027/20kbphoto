@@ -21,6 +21,7 @@ import {
   type CropRect,
 } from "@/lib/imageProcessor";
 import { trackEvent } from "@/lib/gtag";
+import WhatsAppChannelCTA from "@/components/tools/WhatsAppChannelCTA";
 
 interface ExamToolClientProps {
   exam: Exam;
@@ -251,6 +252,8 @@ export default function ExamToolClient({
           </div>
         )}
       </div>
+
+      <WhatsAppChannelCTA toolName={`${exam.name} ${activeDocType} resizer`} className="mt-8" />
     </div>
   );
 }

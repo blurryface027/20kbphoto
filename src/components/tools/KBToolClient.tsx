@@ -11,6 +11,7 @@ import DownloadPanel from "@/components/tools/DownloadPanel";
 import { processImage, getImageInfo, getMimeType, type ImageInfo, type ProcessingResult } from "@/lib/imageProcessor";
 import { trackEvent } from "@/lib/gtag";
 import { getShortDownloadFilename } from "@/lib/filenameUtils";
+import { HiOutlineCheckCircle, HiOutlineLockClosed } from "react-icons/hi2";
 
 interface KBToolClientProps {
   targetKB: number;
@@ -411,7 +412,7 @@ export default function KBToolClient({ targetKB: initialTargetKB }: KBToolClient
           <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs sm:text-sm text-gray-700">
             {sizeGuidance.tips.map((tip) => (
               <li key={tip} className="flex items-start gap-2 bg-white p-3 rounded-2xl border border-gray-200/70 shadow-2xs font-medium">
-                <span className="text-emerald-600 font-bold">✓</span>
+                <HiOutlineCheckCircle className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                 <span>{tip}</span>
               </li>
             ))}
@@ -459,8 +460,9 @@ export default function KBToolClient({ targetKB: initialTargetKB }: KBToolClient
 
         {/* PRIVACY GUARANTEE */}
         <div className="bg-indigo-50/70 border border-indigo-100 rounded-3xl p-6 max-w-4xl mx-auto text-xs sm:text-sm text-indigo-950 leading-relaxed">
-          <h4 className="font-bold text-base mb-1.5 text-indigo-900">
-            🔒 100% Secure Browser Compression
+          <h4 className="font-bold text-base mb-1.5 text-indigo-900 flex items-center gap-1.5">
+            <HiOutlineLockClosed className="w-5 h-5 text-indigo-600 shrink-0" />
+            <span>100% Secure Browser Compression</span>
           </h4>
           <p>
             When compressing images to {currentTargetKB}KB on 20KBPhoto.in, all image encoding algorithms execute locally on your device. Your sensitive documents, photographs, and signatures remain 100% private and are never uploaded to any remote server or third-party cloud service.

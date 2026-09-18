@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { HiOutlineCheckCircle, HiOutlineXCircle, HiOutlineShieldCheck } from "react-icons/hi2";
+import { HiOutlineCheckCircle, HiOutlineXCircle, HiOutlineShieldCheck, HiOutlineExclamationTriangle } from "react-icons/hi2";
 
 interface ValidationBadgesProps {
   checks: {
@@ -105,13 +105,23 @@ export default function ValidationBadges({
         </div>
 
         <div
-          className={`text-xs font-bold px-3 py-1 rounded-full border ${
+          className={`text-xs font-bold px-3 py-1 rounded-full border flex items-center gap-1.5 ${
             allPassed
               ? "bg-emerald-50 text-emerald-800 border-emerald-200"
               : "bg-rose-50 text-rose-800 border-rose-200"
           }`}
         >
-          {allPassed ? "✓ 100% Spec Compliant" : "⚠️ Requirements Mismatch"}
+          {allPassed ? (
+            <>
+              <HiOutlineCheckCircle className="w-4 h-4 text-emerald-600 shrink-0" />
+              <span>100% Spec Compliant</span>
+            </>
+          ) : (
+            <>
+              <HiOutlineExclamationTriangle className="w-4 h-4 text-rose-600 shrink-0" />
+              <span>Requirements Mismatch</span>
+            </>
+          )}
         </div>
       </div>
 

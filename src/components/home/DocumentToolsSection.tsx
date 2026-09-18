@@ -106,7 +106,8 @@ export default function DocumentToolsSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10 max-w-3xl mx-auto">
           <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-indigo-100 text-indigo-800 text-xs font-bold rounded-full mb-3">
-            ✨ Complete Document & Image Suite
+            <HiOutlineSparkles className="w-3.5 h-3.5 text-indigo-600" />
+            <span>Complete Document &amp; Image Suite</span>
           </span>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight">
             Free Online Image & Document Tools

@@ -8,6 +8,7 @@ import ValidationBadges from "@/components/tools/ValidationBadges";
 import DownloadPanel from "@/components/tools/DownloadPanel";
 import { resizeImage, getImageInfo, type ImageInfo, type ProcessingResult } from "@/lib/imageProcessor";
 import { trackEvent } from "@/lib/gtag";
+import { HiOutlineLockClosed } from "react-icons/hi2";
 
 interface DimensionToolClientProps {
   targetWidth: number;
@@ -261,8 +262,9 @@ export default function DimensionToolClient({
 
         {/* PRIVACY GUARANTEE */}
         <div className="bg-indigo-50/70 border border-indigo-100 rounded-3xl p-6 max-w-4xl mx-auto text-xs sm:text-sm text-indigo-950 leading-relaxed">
-          <h4 className="font-bold text-base mb-1.5 text-indigo-900">
-            🔒 Client-Side Browser Security
+          <h4 className="font-bold text-base mb-1.5 text-indigo-900 flex items-center gap-1.5">
+            <HiOutlineLockClosed className="w-5 h-5 text-indigo-600 shrink-0" />
+            <span>Client-Side Browser Security</span>
           </h4>
           <p>
             Your privacy is completely protected. When resizing images to {targetWidth}×{targetHeight}px on 20KBPhoto.in, all canvas transformations and metadata embedding execute locally inside your web browser. No copy of your photo or signature is sent to any server.

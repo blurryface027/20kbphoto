@@ -6,6 +6,7 @@ import {
   HiOutlineScissors,
   HiSparkles,
   HiOutlineArrowPath,
+  HiOutlineLightBulb,
 } from "react-icons/hi2";
 import { autoCropSignature, type CropRect, type ImageInfo } from "@/lib/imageProcessor";
 
@@ -471,8 +472,9 @@ export default function ImageCropper({
         )}
       </div>
 
-      <p className="text-xs text-slate-500 text-center font-medium">
-        💡 Click and drag inside the selection box to reposition crop. Drag white handles to adjust boundaries.
+      <p className="text-xs text-slate-500 text-center font-medium flex items-center justify-center gap-1.5">
+        <HiOutlineLightBulb className="w-4 h-4 text-indigo-600 shrink-0" />
+        <span>Click and drag inside the selection box to reposition crop. Drag white handles to adjust boundaries.</span>
       </p>
     </div>
   );

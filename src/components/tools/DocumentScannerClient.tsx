@@ -9,6 +9,10 @@ import {
   HiOutlineDocumentCheck,
   HiOutlineArrowPath,
   HiOutlineSparkles,
+  HiOutlineDocumentText,
+  HiOutlineAdjustmentsHorizontal,
+  HiOutlineSwatch,
+  HiOutlineCamera,
 } from "react-icons/hi2";
 import { trackEvent } from "@/lib/gtag";
 
@@ -247,11 +251,11 @@ export default function DocumentScannerClient() {
             <label className="block text-xs font-bold text-slate-700">Scan Filter Enhancement Mode</label>
             <div className="flex flex-wrap gap-2">
               {[
-                { id: "bw", label: "Magic B&W Scanner (High Contrast)", icon: "✨" },
-                { id: "grayscale", label: "Grayscale Document", icon: "📄" },
-                { id: "contrast", label: "Contrast Boost", icon: "🎨" },
-                { id: "color", label: "Magic Color", icon: "🌈" },
-                { id: "original", label: "Original Photo", icon: "📷" },
+                { id: "bw", label: "Magic B&W Scanner (High Contrast)", icon: <HiOutlineSparkles className="w-4 h-4" /> },
+                { id: "grayscale", label: "Grayscale Document", icon: <HiOutlineDocumentText className="w-4 h-4" /> },
+                { id: "contrast", label: "Contrast Boost", icon: <HiOutlineAdjustmentsHorizontal className="w-4 h-4" /> },
+                { id: "color", label: "Magic Color", icon: <HiOutlineSwatch className="w-4 h-4" /> },
+                { id: "original", label: "Original Photo", icon: <HiOutlineCamera className="w-4 h-4" /> },
               ].map((f) => (
                 <button
                   key={f.id}
@@ -262,7 +266,7 @@ export default function DocumentScannerClient() {
                       : "bg-slate-100 text-slate-700 hover:bg-slate-200"
                   }`}
                 >
-                  <span>{f.icon}</span>
+                  {f.icon}
                   <span>{f.label}</span>
                 </button>
               ))}
