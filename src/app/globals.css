@@ -265,3 +265,29 @@ body {
   box-shadow: 0 10px 25px -5px rgba(238, 241, 255, 0.8);
   transform: translateY(-2px);
 }
+
+/* Bulletproof Header Dropdown Hover */
+.nav-dropdown-group {
+  position: relative;
+}
+
+.nav-dropdown-group:hover .nav-dropdown-menu,
+.nav-dropdown-group:focus-within .nav-dropdown-menu {
+  visibility: visible !important;
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  pointer-events: auto !important;
+}
+
+.nav-dropdown-group:hover .nav-dropdown-arrow,
+.nav-dropdown-group:focus-within .nav-dropdown-arrow {
+  transform: rotate(180deg) !important;
+  color: #1B2CC1 !important;
+}
+
+.nav-dropdown-group:hover .nav-dropdown-btn,
+.nav-dropdown-group:focus-within .nav-dropdown-btn {
+  color: #1B2CC1 !important;
+  background-color: #EEF1FF !important;
+}
+

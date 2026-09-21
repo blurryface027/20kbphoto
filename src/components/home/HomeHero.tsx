@@ -20,7 +20,7 @@ import {
   type CropRect,
 } from "@/lib/imageProcessor";
 import { trackEvent } from "@/lib/gtag";
-import { HiOutlineScissors, HiOutlineArrowPath } from "react-icons/hi2";
+import { HiOutlineScissors, HiOutlineArrowPath, HiCheckBadge } from "react-icons/hi2";
 
 const searchSuggestions = [
   "SSC CGL",
@@ -173,10 +173,17 @@ export default function HomeHero() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 text-xs sm:text-sm font-semibold">
-            <span className="w-2 h-2 rounded-full bg-[#1B2CC1] animate-pulse" />
-            100% Free & Private — Browser-Based Resizer
+          {/* Badges / Social Proof */}
+          <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 mb-6">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 text-xs sm:text-sm font-semibold">
+              <span className="w-2 h-2 rounded-full bg-[#1B2CC1] animate-pulse" />
+              100% Free & Private — Browser-Based Resizer
+            </div>
+
+            <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200/80 text-emerald-800 text-xs sm:text-sm font-semibold shadow-xs">
+              <HiCheckBadge className="w-4 h-4 text-emerald-600 shrink-0" />
+              <span>Trusted by 10K+ Aspirants</span>
+            </div>
           </div>
 
           {/* Main H1 */}

@@ -111,7 +111,6 @@ const navItems = [
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -119,16 +118,6 @@ export default function Header() {
     const handleScroll = () => setScrolled(window.scrollY > 8);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  useEffect(() => {
-    const handleClickOutside = (e: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
-        setActiveDropdown(null);
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   useEffect(() => {
@@ -159,76 +148,74 @@ export default function Header() {
             {/* Desktop Nav */}
             <nav
               ref={dropdownRef}
-              className="hidden lg:flex items-center gap-1"
+              className="hidden lg:flex items-center gap-0.5 xl:gap-1 shrink-0"
               role="navigation"
               aria-label="Main navigation"
             >
               {navItems.map((item) => (
-                <div key={item.label} className="relative">
+                <div
+                  key={item.label}
+                  className="nav-dropdown-group relative"
+                >
                   <button
-                    className={`px-3.5 py-2 text-sm font-semibold rounded-xl transition-colors flex items-center gap-1 ${
-                      activeDropdown === item.label
-                        ? "text-indigo-600 bg-indigo-50"
-                        : "text-gray-700 hover:text-indigo-600 hover:bg-gray-50"
-                    }`}
-                    onMouseEnter={() => setActiveDropdown(item.label)}
-                    onClick={() =>
-                      setActiveDropdown(activeDropdown === item.label ? null : item.label)
-                    }
-                    aria-expanded={activeDropdown === item.label}
+                    type="button"
+                    className="nav-dropdown-btn px-2.5 py-2 xl:px-3 xl:py-2 text-[13px] xl:text-sm font-semibold rounded-xl transition-all duration-150 flex items-center gap-1 whitespace-nowrap shrink-0 cursor-pointer text-gray-700 hover:text-indigo-600 hover:bg-gray-50"
                     aria-haspopup="true"
                   >
-                    {item.label}
-                    <svg className="w-4 h-4 text-gray-400 group-hover:text-indigo-600 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <span>{item.label}</span>
+                    <svg
+                      className="nav-dropdown-arrow w-3.5 h-3.5 shrink-0 text-gray-400 transition-transform duration-200"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
                   </button>
 
-                  {/* Dropdown */}
-                  {activeDropdown === item.label && (
-                    <div
-                      className="absolute top-full left-0 mt-1 w-64 bg-white rounded-2xl shadow-xl border border-gray-200 p-2 animate-slide-down z-50"
-                      onMouseLeave={() => setActiveDropdown(null)}
-                    >
+                  {/* Dropdown Menu - pure CSS hover with zero delay, zero JS race conditions */}
+                  <div className="nav-dropdown-menu absolute top-full left-0 pt-2 w-64 z-50 invisible opacity-0 translate-y-1 pointer-events-none transition-all duration-150 ease-out">
+                    {/* Invisible bridge to catch the cursor across any gap */}
+                    <div className="absolute -top-3 left-0 right-0 h-4 bg-transparent" />
+                    <div className="bg-white rounded-2xl shadow-xl border border-gray-200 p-2">
                       {item.children?.map((child) => (
                         <Link
                           key={child.href}
                           href={child.href}
                           className="flex items-center gap-3 px-3 py-2.5 text-sm font-medium text-gray-700 hover:text-indigo-600 hover:bg-indigo-50/60 rounded-xl transition-colors"
-                          onClick={() => setActiveDropdown(null)}
                         >
                           <span className="text-base flex-shrink-0">{child.icon}</span>
                           <span>{child.label}</span>
                         </Link>
                       ))}
                     </div>
-                  )}
+                  </div>
                 </div>
               ))}
               <Link
                 href="/blog"
-                className="px-3.5 py-2 text-sm font-semibold text-gray-700 hover:text-indigo-600 hover:bg-gray-50 rounded-xl transition-colors"
+                className="px-2.5 py-2 xl:px-3 xl:py-2 text-[13px] xl:text-sm font-semibold text-gray-700 hover:text-indigo-600 hover:bg-gray-50 rounded-xl transition-colors whitespace-nowrap shrink-0"
               >
                 Blog
               </Link>
             </nav>
 
             {/* Right actions */}
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-1.5 xl:gap-2 shrink-0">
               <button
                 onClick={() => setSearchOpen(true)}
-                className="p-2.5 text-gray-500 hover:text-indigo-600 hover:bg-gray-50 rounded-xl transition-colors flex items-center gap-2 text-sm font-semibold"
+                className="p-2 xl:px-2.5 xl:py-2 text-gray-500 hover:text-indigo-600 hover:bg-gray-50 rounded-xl transition-colors flex items-center gap-1.5 text-xs xl:text-sm font-semibold shrink-0 cursor-pointer"
                 aria-label="Open search"
               >
-                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="w-4 h-4 xl:w-5 xl:h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
-                <span className="hidden sm:inline">Search</span>
+                <span className="hidden xl:inline">Search</span>
               </button>
 
               <Link
                 href="/tools/image-resizer"
-                className="hidden sm:inline-flex items-center justify-center px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-xl text-sm transition-all shadow-md shadow-indigo-200"
+                className="hidden sm:inline-flex items-center justify-center px-3.5 py-2 xl:px-4 xl:py-2 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-xl text-xs xl:text-sm transition-all shadow-md shadow-indigo-200 whitespace-nowrap shrink-0"
               >
                 Upload Photo
               </Link>

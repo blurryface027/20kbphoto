@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import Breadcrumbs from "@/components/layout/Breadcrumbs";
 import BlogCard from "@/components/blog/BlogCard";
+import BlogFilterSection from "@/components/blog/BlogFilterSection";
 import { getAllArticles, getAllCategories } from "@/data/blog";
 import Link from "next/link";
 import { HiOutlineBookOpen, HiOutlineWrenchScrewdriver } from "react-icons/hi2";
@@ -35,8 +37,7 @@ export default function BlogIndexPage() {
     { label: "Blog" },
   ];
 
-  const featuredArticle = articles[0];
-  const regularArticles = articles.slice(1);
+
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 space-y-12">
@@ -55,32 +56,38 @@ export default function BlogIndexPage() {
         </p>
       </div>
 
-      {/* Category Pills */}
-      <div className="flex items-center justify-center flex-wrap gap-2 pt-2">
-        {categories.map((cat, idx) => (
-          <span
-            key={idx}
-            className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-colors cursor-default ${
-              idx === 0
-                ? "bg-indigo-600 text-white shadow-sm"
-                : "bg-white text-gray-700 border border-gray-200 hover:border-indigo-300"
-            }`}
-          >
-            {cat}
-          </span>
-        ))}
-      </div>
-
-      {/* Articles Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {/* Featured Card */}
-        {featuredArticle && <BlogCard article={featuredArticle} featured />}
-
-        {/* Remaining Cards */}
-        {regularArticles.map((article) => (
-          <BlogCard key={article.slug} article={article} />
-        ))}
-      </div>
+      {/* Interactive Blog Filtering & Articles Grid */}
+      <Suspense
+        fallback={
+          <div className="space-y-8">
+            <div className="flex items-center justify-center flex-wrap gap-2 pt-2">
+              {categories.map((cat, idx) => (
+                <span
+                  key={idx}
+                  className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold ${
+                    idx === 0
+                      ? "bg-indigo-600 text-white shadow-sm"
+                      : "bg-white text-gray-700 border border-gray-200"
+                  }`}
+                >
+                  {cat}
+                </span>
+              ))}
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {articles.map((article, idx) => (
+                <BlogCard
+                  key={article.slug}
+                  article={article}
+                  featured={idx === 0}
+                />
+              ))}
+            </div>
+          </div>
+        }
+      >
+        <BlogFilterSection articles={articles} categories={categories} />
+      </Suspense>
 
       {/* Bottom Tool CTA Banner */}
       <div className="bg-gradient-to-r from-gray-900 via-slate-900 to-indigo-950 text-white rounded-3xl p-8 sm:p-12 border border-gray-800 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl">
