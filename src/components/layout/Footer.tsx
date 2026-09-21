@@ -43,6 +43,14 @@ const footerLinks = {
     { label: "JPG to PNG", href: "/tools/jpg-to-png" },
     { label: "JPG to WebP", href: "/tools/jpg-to-webp" },
   ],
+  "Blog & Guides": [
+    { label: "All Blog Articles", href: "/blog" },
+    { label: "Reduce Photo to 20KB", href: "/blog/how-to-reduce-photo-size-to-20kb" },
+    { label: "Compress Image to 50KB", href: "/blog/how-to-compress-an-image-to-50kb" },
+    { label: "Resize to Exact Pixels", href: "/blog/how-to-resize-an-image-to-exact-pixels" },
+    { label: "Passport Photo Guide", href: "/blog/how-to-make-a-passport-size-photo" },
+    { label: "Fix Upload Size Errors", href: "/blog/how-to-fix-photo-upload-size-errors" },
+  ],
 };
 
 const popularExams = [
@@ -134,6 +142,9 @@ export default function Footer() {
               </a>
             </div>
             <div className="flex flex-wrap items-center gap-4 text-xs text-gray-400">
+              <Link href="/blog" className="hover:text-white transition-colors">
+                Blog
+              </Link>
               <Link href="/about" className="hover:text-white transition-colors">
                 About Us
               </Link>

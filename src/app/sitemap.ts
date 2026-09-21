@@ -2,6 +2,7 @@ import { MetadataRoute } from "next";
 import { exams } from "@/data/exams";
 import { states } from "@/data/states";
 import { tools, exactKBTools, dimensionTools } from "@/data/tools";
+import { getAllArticles } from "@/data/blog";
 
 export const dynamic = "force-static";
 
@@ -14,7 +15,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages: MetadataRoute.Sitemap = [
     { url: `${BASE_URL}/`, lastModified: now, changeFrequency: "weekly", priority: 1.0 },
     { url: `${BASE_URL}/exams/`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${BASE_URL}/blog/`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
   ];
+
+  // Blog article pages
+  const blogArticlePages: MetadataRoute.Sitemap = getAllArticles().map((article) => ({
+    url: `${BASE_URL}/blog/${article.slug}/`,
+    lastModified: article.updatedAt ? new Date(article.updatedAt).toISOString() : now,
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }));
 
   // Tool pages
   const toolPages: MetadataRoute.Sitemap = tools.map((tool) => ({
@@ -111,6 +121,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     ...staticPages,
+    ...blogArticlePages,
     ...toolPages,
     ...kbPages,
     ...dimPages,
@@ -124,3 +135,4 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...specialPages,
   ];
 }
+
