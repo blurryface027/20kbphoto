@@ -5,12 +5,12 @@ export const metadata: Metadata = {
   title: "Resize Signature to 140x60px Online - 20KB Photo",
   description: "Resize and crop your signature to exact 140x60 pixels online for exam and form applications.",
   alternates: {
-    canonical: "https://20kbphoto.in/signature-resizer-140x60",
+    canonical: "https://20kbphoto.in/signature-resizer-140x60/",
   },
   openGraph: {
     title: "Resize Signature to 140x60px Online - 20KB Photo",
     description: "Resize and crop your signature to exact 140x60 pixels online for exam and form applications.",
-    url: "https://20kbphoto.in/signature-resizer-140x60",
+    url: "https://20kbphoto.in/signature-resizer-140x60/",
     siteName: "20KB Photo",
     locale: "en_IN",
     type: "website",

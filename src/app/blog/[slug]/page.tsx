@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const title = `${article.title} - 20KB Photo`;
   const description = article.description;
-  const canonical = `https://20kbphoto.in/blog/${resolvedParams.slug}`;
+  const canonical = `https://20kbphoto.in/blog/${resolvedParams.slug}/`;
 
   return {
     title,
@@ -71,7 +71,7 @@ export default async function BlogArticlePage({ params }: Props) {
 
   const breadcrumbs = [
     { label: "Home", href: "/" },
-    { label: "Blog", href: "/blog" },
+    { label: "Blog", href: "/blog/" },
     { label: article.title },
   ];
 
@@ -85,16 +85,16 @@ export default async function BlogArticlePage({ params }: Props) {
     author: {
       "@type": "Organization",
       name: article.author.name,
-      url: "https://20kbphoto.in",
+      url: "https://20kbphoto.in/",
     },
     publisher: {
       "@type": "Organization",
       name: "20KB Photo",
-      url: "https://20kbphoto.in",
+      url: "https://20kbphoto.in/",
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `https://20kbphoto.in/blog/${article.slug}`,
+      "@id": `https://20kbphoto.in/blog/${article.slug}/`,
     },
   };
 
@@ -109,7 +109,7 @@ export default async function BlogArticlePage({ params }: Props) {
       {/* Navigation & Breadcrumbs */}
       <div className="space-y-4">
         <Link
-          href="/blog"
+          href="/blog/"
           className="inline-flex items-center gap-1.5 text-xs font-bold text-indigo-600 hover:text-indigo-700 transition-colors"
         >
           <HiOutlineArrowLeft className="w-4 h-4" />
@@ -171,7 +171,7 @@ export default async function BlogArticlePage({ params }: Props) {
           </p>
         </div>
         <Link
-          href="/tools/image-resizer"
+          href="/tools/image-resizer/"
           className="px-6 py-3 bg-white hover:bg-indigo-50 text-indigo-900 font-bold rounded-xl text-sm transition-all shadow-md shrink-0 inline-flex items-center justify-center gap-2"
         >
           <HiOutlineWrenchScrewdriver className="w-4 h-4 text-indigo-700" />

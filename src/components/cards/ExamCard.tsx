@@ -20,7 +20,7 @@ export default function ExamCard({
 
   return (
     <Link
-      href={`/exams/${slug}`}
+      href={`/exams/${slug}/`}
       className="related-tool-card group relative bg-white rounded-2xl border border-gray-200 p-4 sm:p-5 hover:border-indigo-300 hover:shadow-lg hover:shadow-indigo-100/50 transition-all duration-300 flex flex-col justify-between gap-3 overflow-hidden h-full"
       style={{ contentVisibility: "auto", containIntrinsicSize: "0 140px" }}
     >
@@ -42,9 +42,7 @@ export default function ExamCard({
         </div>
 
         <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-200 shrink-0 mt-1">
-          <svg className="w-4 h-4 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-          </svg>
+          <span className="text-indigo-500 font-bold text-sm" aria-hidden="true">&rarr;</span>
         </div>
       </div>
 

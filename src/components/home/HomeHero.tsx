@@ -2,8 +2,6 @@
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
-import { searchAll } from "@/lib/searchIndex";
 import UploadDropzone, { RequirementSpec } from "@/components/tools/UploadDropzone";
 import PreviewPanel from "@/components/tools/PreviewPanel";
 import ValidationBadges from "@/components/tools/ValidationBadges";
@@ -62,13 +60,22 @@ export default function HomeHero() {
   const handleExecuteSearch = (term: string) => {
     const trimmed = term.trim();
     if (!trimmed) return;
+    const lower = trimmed.toLowerCase();
 
-    const results = searchAll(trimmed);
-    if (results.length > 0 && results[0].priority >= 80) {
-      router.push(results[0].url);
-    } else {
-      router.push(`/exams?q=${encodeURIComponent(trimmed)}`);
+    if (lower === "ssc cgl") return router.push("/exams/ssc-cgl");
+    if (lower === "upsc cse" || lower === "upsc") return router.push("/exams/upsc-cse");
+    if (lower === "ibps po") return router.push("/exams/ibps-po");
+    if (lower === "neet ug" || lower === "neet") return router.push("/exams/neet-ug");
+    if (lower === "jee main" || lower === "jee") return router.push("/exams/jee-main");
+    if (lower.includes("passport")) return router.push("/tools/passport-photo-maker");
+    if (lower.includes("signature 140x60") || lower.includes("140×60") || lower.includes("140x60")) return router.push("/signature-resizer-140x60");
+
+    const kbMatch = lower.match(/(\d+)\s*kb/);
+    if (kbMatch) {
+      return router.push(`/resize-image-to-${kbMatch[1]}kb`);
     }
+
+    router.push(`/exams?q=${encodeURIComponent(trimmed)}`);
   };
 
   const handleSearch = (e: React.FormEvent) => {

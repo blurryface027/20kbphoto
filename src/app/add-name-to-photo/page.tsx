@@ -5,12 +5,12 @@ export const metadata: Metadata = {
   title: "Add Name to Photo Online - 20KB Photo",
   description:
     "Overlay candidate name onto your photo for exam applications online. 100% private in browser.",
-  alternates: { canonical: "https://20kbphoto.in/add-name-to-photo" },
+  alternates: { canonical: "https://20kbphoto.in/add-name-to-photo/" },
   openGraph: {
     title: "Add Name to Photo Online - 20KB Photo",
     description:
       "Overlay candidate name onto your photo for exam applications online. 100% private in browser.",
-    url: "https://20kbphoto.in/add-name-to-photo",
+    url: "https://20kbphoto.in/add-name-to-photo/",
     siteName: "20KB Photo",
     locale: "en_IN",
     type: "website",

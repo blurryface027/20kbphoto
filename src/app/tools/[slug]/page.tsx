@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
   const title = `${formattedTitle} - 20KB Photo`;
   const description = config.subtitle;
-  const canonical = `https://20kbphoto.in/tools/${resolvedParams.slug}`;
+  const canonical = `https://20kbphoto.in/tools/${resolvedParams.slug}/`;
 
   return {
     title,
@@ -45,11 +45,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
+import ToolSEOContent from "@/components/tools/ToolSEOContent";
+
 export default async function ToolPage({ params }: Props) {
   const resolvedParams = await params;
   if (!resolvedParams?.slug) {
     notFound();
   }
 
-  return <ToolPageClient slug={resolvedParams.slug} />;
+  return (
+    <>
+      <ToolPageClient slug={resolvedParams.slug} />
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+        <ToolSEOContent slug={resolvedParams.slug} />
+      </div>
+    </>
+  );
 }

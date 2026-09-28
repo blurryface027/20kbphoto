@@ -12,12 +12,12 @@ export const metadata: Metadata = {
   title: "Blog & Guides - Photo Resizing, Compression, & Document Tips | 20KB Photo",
   description:
     "Explore original, practical guides on photo size reduction, image compression to 20KB and 50KB, pixel resizing, passport photo preparation, and document scanning.",
-  alternates: { canonical: "https://20kbphoto.in/blog" },
+  alternates: { canonical: "https://20kbphoto.in/blog/" },
   openGraph: {
     title: "Blog & Guides - 20KB Photo",
     description:
       "Explore original, practical guides on photo size reduction, image compression to 20KB and 50KB, pixel resizing, passport photo preparation, and document scanning.",
-    url: "https://20kbphoto.in/blog",
+    url: "https://20kbphoto.in/blog/",
     siteName: "20KB Photo",
     locale: "en_IN",
     type: "website",
@@ -103,7 +103,7 @@ export default function BlogIndexPage() {
           </p>
         </div>
         <Link
-          href="/tools/image-resizer"
+          href="/tools/image-resizer/"
           className="px-6 py-3.5 bg-indigo-600 hover:bg-indigo-500 text-white font-bold rounded-xl text-sm transition-all shadow-md shrink-0 inline-flex items-center gap-2"
         >
           <HiOutlineWrenchScrewdriver className="w-5 h-5" />
@@ -119,7 +119,7 @@ export default function BlogIndexPage() {
             "@context": "https://schema.org",
             "@type": "CollectionPage",
             name: "20KB Photo Blog & Guides",
-            url: "https://20kbphoto.in/blog",
+            url: "https://20kbphoto.in/blog/",
             description:
               "Guides on photo compression, image resizing, passport photo preparation, and form submission tips.",
           }),

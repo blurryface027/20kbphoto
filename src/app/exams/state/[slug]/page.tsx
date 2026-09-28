@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const title = `${stateData.name} Exam Photo & Signature Resizers - 20KB Photo`;
   const description = `Official photo and signature requirements for ${stateData.name} competitive exams (${stateData.count}+ presets). Verified dimensions, KB limits, format rules, and resizer tools for ${stateData.name} PSC, Police, TET, and recruitment boards.`;
-  const canonical = `https://20kbphoto.in/exams/state/${slug}`;
+  const canonical = `https://20kbphoto.in/exams/state/${slug}/`;
 
   return {
     title,

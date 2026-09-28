@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { signature } = exam;
   const title = `${exam.name} Signature Resizer - ${signature.width}x${signature.height}px, ${signature.minKB}-${signature.maxKB}KB - 20KB Photo`;
   const description = `Resize the signature required for ${exam.name} applications to ${signature.width}x${signature.height}px and ${signature.minKB}-${signature.maxKB}KB ${signature.format} format online. Free signature resizer for ${exam.fullName} forms.`;
-  const canonical = `https://20kbphoto.in/exams/${slug}/signature-resizer`;
+  const canonical = `https://20kbphoto.in/exams/${slug}/signature-resizer/`;
 
   return {
     title,
@@ -53,8 +53,8 @@ export default async function ExamSignatureResizerPage({ params }: Props) {
 
   const breadcrumbs = [
     { label: "Home", href: "/" },
-    { label: "Exams", href: "/exams" },
-    { label: exam.name, href: `/exams/${exam.slug}` },
+    { label: "Exams", href: "/exams/" },
+    { label: exam.name, href: `/exams/${exam.slug}/` },
     { label: "Signature Resizer" },
   ];
 

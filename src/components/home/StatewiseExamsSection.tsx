@@ -1,6 +1,3 @@
-"use client";
-
-import { useState } from "react";
 import Link from "next/link";
 import {
   HiOutlineBuildingLibrary,
@@ -14,7 +11,6 @@ import {
   HiOutlineUserGroup,
   HiOutlineDocumentText,
   HiOutlineGlobeAsiaAustralia,
-  HiOutlineChevronRight,
   HiOutlineSparkles,
 } from "react-icons/hi2";
 
@@ -74,21 +70,12 @@ const centralCategories = [
 ];
 
 export default function StatewiseExamsSection() {
-  const [activeTab, setActiveTab] = useState<"all-india" | "statewise">("statewise");
-  const [selectedRegion, setSelectedRegion] = useState<string>("All");
-
-  const regions = ["All", "North", "South", "East", "West", "Central", "North-East"];
-
-  const filteredStates = selectedRegion === "All"
-    ? indianStates
-    : indianStates.filter(s => s.region === selectedRegion);
-
   return (
     <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-gray-50 via-white to-gray-50 border-t border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header Section */}
-        <div className="text-center max-w-3xl mx-auto mb-10">
+        <div className="text-center max-w-3xl mx-auto mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 text-xs font-bold mb-3">
             <HiOutlineSparkles className="w-4 h-4 text-indigo-600" />
             573+ Official Indian Exam Presets
@@ -101,148 +88,118 @@ export default function StatewiseExamsSection() {
           </p>
         </div>
 
-        {/* Tab Switcher */}
-        <div className="flex justify-center mb-8">
-          <div className="inline-flex p-1.5 bg-gray-100/90 rounded-2xl border border-gray-200/80 shadow-inner">
-            <button
-              onClick={() => setActiveTab("statewise")}
-              className={`flex items-center gap-2 px-5 py-2.5 rounded-xl font-bold text-xs sm:text-sm transition-all duration-200 ${
-                activeTab === "statewise"
-                  ? "bg-white text-indigo-600 shadow-md shadow-indigo-100/50"
-                  : "text-gray-600 hover:text-gray-900"
-              }`}
-            >
-              <HiOutlineMapPin className="w-4 h-4 text-indigo-600" />
-              State-Wise Exams ({indianStates.reduce((sum, s) => sum + s.count, 0)}+ Presets)
-            </button>
-            <button
-              onClick={() => setActiveTab("all-india")}
-              className={`flex items-center gap-2 px-5 py-2.5 rounded-xl font-bold text-xs sm:text-sm transition-all duration-200 ${
-                activeTab === "all-india"
-                  ? "bg-white text-indigo-600 shadow-md shadow-indigo-100/50"
-                  : "text-gray-600 hover:text-gray-900"
-              }`}
-            >
-              <HiOutlineGlobeAsiaAustralia className="w-4 h-4 text-indigo-600" />
-              All-India Central Exams (SSC, UPSC, Bank, RRB)
-            </button>
-          </div>
-        </div>
-
-        {/* TAB 1: STATE-WISE EXAMS */}
-        {activeTab === "statewise" && (
-          <div className="space-y-6">
-            {/* Region Filter Pills */}
-            <div className="flex flex-wrap items-center justify-center gap-2 mb-6">
-              <span className="text-xs font-bold text-gray-400 uppercase tracking-wider mr-2">Filter Region:</span>
-              {regions.map((region) => (
-                <button
-                  key={region}
-                  onClick={() => setSelectedRegion(region)}
-                  className={`text-xs font-semibold px-3.5 py-1.5 rounded-full border transition-all ${
-                    selectedRegion === region
-                      ? "bg-indigo-600 text-white border-indigo-600 shadow-sm"
-                      : "bg-white text-gray-600 border-gray-200 hover:bg-gray-50 hover:border-gray-300"
-                  }`}
-                >
-                  {region} {region !== "All" && `Region`}
-                </button>
-              ))}
+        {/* SECTION 1: ALL-INDIA CENTRAL EXAMS */}
+        <div className="mb-14">
+          <div className="flex items-center justify-between mb-6">
+            <div className="flex items-center gap-2">
+              <HiOutlineGlobeAsiaAustralia className="w-5 h-5 text-indigo-600" />
+              <h3 className="text-lg sm:text-xl font-bold text-gray-900">
+                All-India Central Examination Boards
+              </h3>
             </div>
-
-            {/* States Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-              {filteredStates.map((state) => (
-                <Link
-                  key={state.slug}
-                  href={`/exams/state/${state.slug}`}
-                  className="group bg-white rounded-2xl border border-gray-200 p-4 sm:p-5 hover:border-indigo-300 hover:shadow-lg hover:shadow-indigo-100/50 transition-all duration-300 flex flex-col justify-between gap-3"
-                >
-                  <div>
-                    <div className="flex items-center justify-between gap-2 mb-2">
-                      <div className="flex items-center gap-2.5">
-                        <div className="w-9 h-9 rounded-xl bg-indigo-50 border border-indigo-100 flex items-center justify-center text-indigo-700 font-extrabold text-xs sm:text-sm shrink-0 group-hover:bg-indigo-600 group-hover:text-white group-hover:border-indigo-600 transition-colors shadow-xs">
-                          {state.code}
-                        </div>
-                        <h3 className="font-bold text-sm sm:text-base text-gray-900 group-hover:text-indigo-600 transition-colors">
-                          {state.name}
-                        </h3>
-                      </div>
-                      <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-indigo-50 text-indigo-700 border border-indigo-100 shrink-0">
-                        {state.count} Presets
-                      </span>
-                    </div>
-
-                    <div className="flex flex-wrap gap-1.5 mt-3">
-                      {state.featuredExams.map((ex) => (
-                        <span
-                          key={ex}
-                          className="text-[10px] font-semibold px-2 py-0.5 rounded-md bg-gray-100 text-gray-700 border border-gray-200/60"
-                        >
-                          {ex}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="pt-3 border-t border-gray-100 flex items-center justify-between text-xs font-semibold text-indigo-600 group-hover:text-indigo-700">
-                    <span>View {state.name} Presets</span>
-                    <HiOutlineChevronRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
-                  </div>
-                </Link>
-              ))}
-            </div>
+            <span className="text-xs font-semibold text-gray-500 bg-gray-100 px-3 py-1 rounded-full">
+              10 Major Boards
+            </span>
           </div>
-        )}
 
-        {/* TAB 2: ALL-INDIA CENTRAL EXAMS */}
-        {activeTab === "all-india" && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
             {centralCategories.map((cat) => (
               <Link
                 key={cat.slug}
-                href={`/exams/${cat.slug}`}
+                href={`/exams/${cat.slug}/`}
+                className="group bg-white rounded-2xl border border-gray-200 p-4 hover:border-indigo-300 hover:shadow-lg hover:shadow-indigo-100/50 transition-all duration-300 flex flex-col justify-between gap-3"
+              >
+                <div>
+                  <div className="flex items-center justify-between gap-2 mb-2">
+                    <div className="w-8 h-8 rounded-xl bg-indigo-50 border border-indigo-100 flex items-center justify-center shrink-0 group-hover:bg-indigo-100 transition-colors">
+                      {cat.icon}
+                    </div>
+                    <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-100">
+                      {cat.count}+ Presets
+                    </span>
+                  </div>
+                  <h4 className="font-bold text-sm text-gray-900 group-hover:text-indigo-600 transition-colors">
+                    {cat.name}
+                  </h4>
+                  <p className="text-xs text-gray-500 mt-1 line-clamp-2 leading-relaxed">
+                    {cat.desc}
+                  </p>
+                </div>
+
+                <div className="pt-2 border-t border-gray-100 flex items-center justify-between text-xs font-semibold text-indigo-600 group-hover:text-indigo-700">
+                  <span>Browse {cat.code}</span>
+                  <span className="transform group-hover:translate-x-1 transition-transform" aria-hidden="true">&rarr;</span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        {/* SECTION 2: STATE-WISE EXAMS */}
+        <div>
+          <div className="flex items-center justify-between mb-6">
+            <div className="flex items-center gap-2">
+              <HiOutlineMapPin className="w-5 h-5 text-indigo-600" />
+              <h3 className="text-lg sm:text-xl font-bold text-gray-900">
+                State Recruitment & PSC Exam Presets
+              </h3>
+            </div>
+            <span className="text-xs font-semibold text-gray-500 bg-gray-100 px-3 py-1 rounded-full">
+              {indianStates.reduce((sum, s) => sum + s.count, 0)}+ State Presets
+            </span>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+            {indianStates.map((state) => (
+              <Link
+                key={state.slug}
+                href={`/exams/state/${state.slug}/`}
                 className="group bg-white rounded-2xl border border-gray-200 p-4 sm:p-5 hover:border-indigo-300 hover:shadow-lg hover:shadow-indigo-100/50 transition-all duration-300 flex flex-col justify-between gap-3"
               >
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-2">
                     <div className="flex items-center gap-2.5">
-                      <div className="w-9 h-9 rounded-xl bg-indigo-50 border border-indigo-100 flex items-center justify-center shrink-0 group-hover:bg-indigo-100 transition-colors">
-                        {cat.icon}
+                      <div className="w-9 h-9 rounded-xl bg-indigo-50 border border-indigo-100 flex items-center justify-center text-indigo-700 font-extrabold text-xs sm:text-sm shrink-0 group-hover:bg-indigo-600 group-hover:text-white group-hover:border-indigo-600 transition-colors shadow-xs">
+                        {state.code}
                       </div>
-                      <div>
-                        <h3 className="font-bold text-sm sm:text-base text-gray-900 group-hover:text-indigo-600 transition-colors">
-                          {cat.name}
-                        </h3>
-                        <span className="text-[10px] text-gray-400 font-mono uppercase">{cat.code}</span>
-                      </div>
+                      <h4 className="font-bold text-sm sm:text-base text-gray-900 group-hover:text-indigo-600 transition-colors">
+                        {state.name}
+                      </h4>
                     </div>
-                    <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-100 shrink-0">
-                      {cat.count}+ Presets
+                    <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-indigo-50 text-indigo-700 border border-indigo-100 shrink-0">
+                      {state.count} Presets
                     </span>
                   </div>
-                  <p className="text-xs text-gray-500 mt-2 line-clamp-2 leading-relaxed">
-                    {cat.desc}
-                  </p>
+
+                  <div className="flex flex-wrap gap-1.5 mt-3">
+                    {state.featuredExams.map((ex) => (
+                      <span
+                        key={ex}
+                        className="text-[10px] font-semibold px-2 py-0.5 rounded-md bg-gray-100 text-gray-700 border border-gray-200/60"
+                      >
+                        {ex}
+                      </span>
+                    ))}
+                  </div>
                 </div>
 
                 <div className="pt-3 border-t border-gray-100 flex items-center justify-between text-xs font-semibold text-indigo-600 group-hover:text-indigo-700">
-                  <span>Browse {cat.code} Presets</span>
-                  <HiOutlineChevronRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
+                  <span>View {state.name} Presets</span>
+                  <span className="transform group-hover:translate-x-1 transition-transform" aria-hidden="true">&rarr;</span>
                 </div>
               </Link>
             ))}
           </div>
-        )}
+        </div>
 
         {/* Bottom CTA */}
-        <div className="mt-10 text-center">
+        <div className="mt-12 text-center">
           <Link
-            href="/exams"
+            href="/exams/"
             className="inline-flex items-center gap-2 px-6 py-3.5 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-2xl transition-all shadow-md shadow-indigo-200 text-sm"
           >
             Search All 573+ Exam Presets Index
-            <HiOutlineChevronRight className="w-4 h-4" />
+            <span aria-hidden="true">&rarr;</span>
           </Link>
         </div>
 

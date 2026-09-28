@@ -8,102 +8,78 @@ import Logo from "@/components/layout/Logo";
 const GlobalSearch = dynamic(() => import("@/components/search/GlobalSearch"), {
   ssr: false,
 });
-import {
-  HiOutlineClipboardDocumentList,
-  HiOutlineBuildingLibrary,
-  HiOutlineBuildingStorefront,
-  HiOutlineTruck,
-  HiOutlineMapPin,
-  HiOutlinePhoto,
-  HiOutlineCamera,
-  HiOutlineIdentification,
-  HiOutlineArrowDownRight,
-  HiOutlinePencilSquare,
-  HiOutlineCreditCard,
-  HiOutlineArchiveBox,
-  HiOutlineAdjustmentsHorizontal,
-  HiOutlineArrowPath,
-  HiOutlineDocumentText,
-  HiOutlineDocumentCheck,
-  HiOutlineSparkles,
-  HiOutlineScissors,
-  HiOutlineEyeSlash,
-  HiOutlineSquare2Stack,
-  HiOutlineBookOpen,
-} from "react-icons/hi2";
-
 const navItems = [
   {
     label: "Exam Tools",
-    href: "/exams",
+    href: "/exams/",
     children: [
-      { label: "All Exam Presets", href: "/exams", icon: <HiOutlineClipboardDocumentList className="w-5 h-5 text-indigo-600" /> },
-      { label: "Central Exams (UPSC, SSC)", href: "/exams/ssc", icon: <HiOutlineBuildingLibrary className="w-5 h-5 text-indigo-600" /> },
-      { label: "Banking Exams (IBPS, SBI)", href: "/exams/banking", icon: <HiOutlineBuildingStorefront className="w-5 h-5 text-indigo-600" /> },
-      { label: "Railway Exams (RRB)", href: "/exams/railway", icon: <HiOutlineTruck className="w-5 h-5 text-indigo-600" /> },
-      { label: "State PSCs & Police", href: "/exams/state-psc", icon: <HiOutlineMapPin className="w-5 h-5 text-indigo-600" /> },
+      { label: "All Exam Presets", href: "/exams/" },
+      { label: "Central Exams (UPSC, SSC)", href: "/exams/ssc/" },
+      { label: "Banking Exams (IBPS, SBI)", href: "/exams/banking/" },
+      { label: "Railway Exams (RRB)", href: "/exams/railway/" },
+      { label: "State PSCs & Police", href: "/exams/state-psc/" },
     ],
   },
   {
     label: "Document & PDF",
-    href: "/tools/jpg-to-pdf",
+    href: "/tools/jpg-to-pdf/",
     children: [
-      { label: "JPG to PDF", href: "/tools/jpg-to-pdf", icon: <HiOutlineDocumentText className="w-5 h-5 text-indigo-600" /> },
-      { label: "PDF to JPG", href: "/tools/pdf-to-jpg", icon: <HiOutlineDocumentCheck className="w-5 h-5 text-indigo-600" /> },
-      { label: "Image to PDF", href: "/tools/image-to-pdf", icon: <HiOutlineDocumentText className="w-5 h-5 text-indigo-600" /> },
-      { label: "PDF to Image", href: "/tools/pdf-to-image", icon: <HiOutlineDocumentCheck className="w-5 h-5 text-indigo-600" /> },
-      { label: "Document Scanner", href: "/tools/document-scanner", icon: <HiOutlineDocumentCheck className="w-5 h-5 text-indigo-600" /> },
-      { label: "Photos to PDF", href: "/tools/photos-to-pdf", icon: <HiOutlineDocumentText className="w-5 h-5 text-indigo-600" /> },
+      { label: "JPG to PDF", href: "/tools/jpg-to-pdf/" },
+      { label: "PDF to JPG", href: "/tools/pdf-to-jpg/" },
+      { label: "Image to PDF", href: "/tools/image-to-pdf/" },
+      { label: "PDF to Image", href: "/tools/pdf-to-image/" },
+      { label: "Document Scanner", href: "/tools/document-scanner/" },
+      { label: "Photos to PDF", href: "/tools/photos-to-pdf/" },
     ],
   },
   {
     label: "Image Tools",
-    href: "/tools/image-resizer",
+    href: "/tools/image-resizer/",
     children: [
-      { label: "Image Resizer", href: "/tools/image-resizer", icon: <HiOutlinePhoto className="w-5 h-5 text-indigo-600" /> },
-      { label: "Background Remover", href: "/tools/background-remover", icon: <HiOutlineSparkles className="w-5 h-5 text-indigo-600" /> },
-      { label: "Image Cropper", href: "/tools/image-cropper", icon: <HiOutlineScissors className="w-5 h-5 text-indigo-600" /> },
-      { label: "Blur Image / Face Blur", href: "/tools/blur-image", icon: <HiOutlineEyeSlash className="w-5 h-5 text-indigo-600" /> },
-      { label: "Image Stitcher", href: "/tools/image-stitcher", icon: <HiOutlineSquare2Stack className="w-5 h-5 text-indigo-600" /> },
-      { label: "Passport Photo Maker", href: "/tools/passport-photo-maker", icon: <HiOutlineIdentification className="w-5 h-5 text-indigo-600" /> },
-      { label: "EXIF / Metadata Viewer", href: "/tools/image-metadata", icon: <HiOutlinePhoto className="w-5 h-5 text-indigo-600" /> },
-      { label: "Image Format Converter", href: "/tools/image-format-converter", icon: <HiOutlineArrowPath className="w-5 h-5 text-indigo-600" /> },
+      { label: "Image Resizer", href: "/tools/image-resizer/" },
+      { label: "Background Remover", href: "/tools/background-remover/" },
+      { label: "Image Cropper", href: "/tools/image-cropper/" },
+      { label: "Blur Image / Face Blur", href: "/tools/blur-image/" },
+      { label: "Image Stitcher", href: "/tools/image-stitcher/" },
+      { label: "Passport Photo Maker", href: "/tools/passport-photo-maker/" },
+      { label: "EXIF / Metadata Viewer", href: "/tools/image-metadata/" },
+      { label: "Image Format Converter", href: "/tools/image-format-converter/" },
     ],
   },
   {
     label: "Signature",
-    href: "/tools/signature-resizer",
+    href: "/tools/signature-resizer/",
     children: [
-      { label: "Signature Resizer", href: "/tools/signature-resizer", icon: <HiOutlinePencilSquare className="w-5 h-5 text-indigo-600" /> },
-      { label: "Signature Compressor", href: "/tools/signature-compressor", icon: <HiOutlineArchiveBox className="w-5 h-5 text-indigo-600" /> },
-      { label: "Signature 140×60", href: "/signature-resizer-140x60", icon: <HiOutlineAdjustmentsHorizontal className="w-5 h-5 text-indigo-600" /> },
-      { label: "Signature 200×80", href: "/signature-resizer-200x80", icon: <HiOutlineAdjustmentsHorizontal className="w-5 h-5 text-indigo-600" /> },
-      { label: "Signature to JPG", href: "/tools/signature-to-jpg", icon: <HiOutlineArrowPath className="w-5 h-5 text-indigo-600" /> },
+      { label: "Signature Resizer", href: "/tools/signature-resizer/" },
+      { label: "Signature Compressor", href: "/tools/signature-compressor/" },
+      { label: "Signature 140×60", href: "/signature-resizer-140x60/" },
+      { label: "Signature 200×80", href: "/signature-resizer-200x80/" },
+      { label: "Signature to JPG", href: "/tools/signature-to-jpg/" },
     ],
   },
   {
     label: "Compress & Bulk",
-    href: "/tools/image-compressor",
+    href: "/tools/image-compressor/",
     children: [
-      { label: "Image Compressor", href: "/tools/image-compressor", icon: <HiOutlineArchiveBox className="w-5 h-5 text-indigo-600" /> },
-      { label: "Bulk Image Compressor", href: "/tools/bulk-image-compressor", icon: <HiOutlineArchiveBox className="w-5 h-5 text-indigo-600" /> },
-      { label: "Bulk Image Resizer", href: "/tools/bulk-image-resizer", icon: <HiOutlineSquare2Stack className="w-5 h-5 text-indigo-600" /> },
-      { label: "Compress to 20KB", href: "/resize-image-to-20kb", icon: <HiOutlineArrowDownRight className="w-5 h-5 text-indigo-600" /> },
-      { label: "Compress to 50KB", href: "/resize-image-to-50kb", icon: <HiOutlineArrowDownRight className="w-5 h-5 text-indigo-600" /> },
-      { label: "Compress to 100KB", href: "/resize-image-to-100kb", icon: <HiOutlineArrowDownRight className="w-5 h-5 text-indigo-600" /> },
+      { label: "Image Compressor", href: "/tools/image-compressor/" },
+      { label: "Bulk Image Compressor", href: "/tools/bulk-image-compressor/" },
+      { label: "Bulk Image Resizer", href: "/tools/bulk-image-resizer/" },
+      { label: "Compress to 20KB", href: "/resize-image-to-20kb/" },
+      { label: "Compress to 50KB", href: "/resize-image-to-50kb/" },
+      { label: "Compress to 100KB", href: "/resize-image-to-100kb/" },
     ],
   },
   {
     label: "Convert",
-    href: "/tools/image-to-jpg",
+    href: "/tools/image-to-jpg/",
     children: [
-      { label: "Image Format Converter", href: "/tools/image-format-converter", icon: <HiOutlineArrowPath className="w-5 h-5 text-indigo-600" /> },
-      { label: "Image to JPG", href: "/tools/image-to-jpg", icon: <HiOutlineArrowPath className="w-5 h-5 text-indigo-600" /> },
-      { label: "PNG to JPG", href: "/tools/png-to-jpg", icon: <HiOutlineArrowPath className="w-5 h-5 text-indigo-600" /> },
-      { label: "WebP to JPG", href: "/tools/webp-to-jpg", icon: <HiOutlineArrowPath className="w-5 h-5 text-indigo-600" /> },
-      { label: "JPG to PNG", href: "/tools/jpg-to-png", icon: <HiOutlineArrowPath className="w-5 h-5 text-indigo-600" /> },
-      { label: "JPG to WebP", href: "/tools/jpg-to-webp", icon: <HiOutlineArrowPath className="w-5 h-5 text-indigo-600" /> },
-      { label: "PNG to WebP", href: "/tools/png-to-webp", icon: <HiOutlineArrowPath className="w-5 h-5 text-indigo-600" /> },
+      { label: "Image Format Converter", href: "/tools/image-format-converter/" },
+      { label: "Image to JPG", href: "/tools/image-to-jpg/" },
+      { label: "PNG to JPG", href: "/tools/png-to-jpg/" },
+      { label: "WebP to JPG", href: "/tools/webp-to-jpg/" },
+      { label: "JPG to PNG", href: "/tools/jpg-to-png/" },
+      { label: "JPG to WebP", href: "/tools/jpg-to-webp/" },
+      { label: "PNG to WebP", href: "/tools/png-to-webp/" },
     ],
   },
 ];
@@ -182,9 +158,9 @@ export default function Header() {
                         <Link
                           key={child.href}
                           href={child.href}
-                          className="flex items-center gap-3 px-3 py-2.5 text-sm font-medium text-gray-700 hover:text-indigo-600 hover:bg-indigo-50/60 rounded-xl transition-colors"
+                          className="group flex items-center gap-2.5 px-3 py-2 text-xs sm:text-sm font-medium text-gray-700 hover:text-indigo-600 hover:bg-indigo-50/60 rounded-xl transition-colors"
                         >
-                          <span className="text-base flex-shrink-0">{child.icon}</span>
+                          <span className="w-1.5 h-1.5 rounded-full bg-indigo-500/40 group-hover:bg-indigo-600 transition-all shrink-0" />
                           <span>{child.label}</span>
                         </Link>
                       ))}
@@ -193,7 +169,7 @@ export default function Header() {
                 </div>
               ))}
               <Link
-                href="/blog"
+                href="/blog/"
                 className="px-2.5 py-2 xl:px-3 xl:py-2 text-[13px] xl:text-sm font-semibold text-gray-700 hover:text-indigo-600 hover:bg-gray-50 rounded-xl transition-colors whitespace-nowrap shrink-0"
               >
                 Blog
@@ -214,7 +190,7 @@ export default function Header() {
               </button>
 
               <Link
-                href="/tools/image-resizer"
+                href="/tools/image-resizer/"
                 className="hidden sm:inline-flex items-center justify-center px-3.5 py-2 xl:px-4 xl:py-2 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-xl text-xs xl:text-sm transition-all shadow-md shadow-indigo-200 whitespace-nowrap shrink-0"
               >
                 Upload Photo
@@ -254,10 +230,10 @@ export default function Header() {
                     <Link
                       key={child.href}
                       href={child.href}
-                      className="flex items-center gap-3 px-3 py-2.5 text-sm font-medium text-gray-700 hover:text-indigo-600 hover:bg-indigo-50 rounded-xl transition-colors"
+                      className="flex items-center gap-2.5 px-3 py-2 text-sm font-medium text-gray-700 hover:text-indigo-600 hover:bg-indigo-50 rounded-xl transition-colors"
                       onClick={() => setMobileOpen(false)}
                     >
-                      <span className="flex-shrink-0">{child.icon}</span>
+                      <span className="w-1.5 h-1.5 rounded-full bg-indigo-500/40 shrink-0" />
                       <span>{child.label}</span>
                     </Link>
                   ))}
@@ -268,11 +244,11 @@ export default function Header() {
                   Blog & Guides
                 </div>
                 <Link
-                  href="/blog"
-                  className="flex items-center gap-3 px-3 py-2.5 text-sm font-medium text-gray-700 hover:text-indigo-600 hover:bg-indigo-50 rounded-xl transition-colors"
+                  href="/blog/"
+                  className="flex items-center gap-2.5 px-3 py-2 text-sm font-medium text-gray-700 hover:text-indigo-600 hover:bg-indigo-50 rounded-xl transition-colors"
                   onClick={() => setMobileOpen(false)}
                 >
-                  <HiOutlineBookOpen className="w-5 h-5 text-indigo-600 flex-shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-indigo-600 shrink-0" />
                   <span>Blog & Articles</span>
                 </Link>
               </div>

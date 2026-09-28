@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { Tool, ExactKBTool, DimensionTool } from "@/data/tools";
 import {
@@ -37,7 +36,7 @@ const extraSpecialTools = [
     slug: "add-name-and-date-to-photo",
     name: "Add Name & Date to Photo",
     description: "Overlay candidate name and date of photo for SSC and UPSC forms.",
-    path: "/add-name-and-date-to-photo",
+    path: "/add-name-and-date-to-photo/",
     category: "photo",
     icon: "HiOutlinePencilSquare",
   },
@@ -45,7 +44,7 @@ const extraSpecialTools = [
     slug: "pan-card-photo-resizer",
     name: "PAN Card Photo Resizer",
     description: "Resize photo to 213x213 pixels and 50KB for PAN Card portal.",
-    path: "/pan-card-photo-resizer",
+    path: "/pan-card-photo-resizer/",
     category: "photo",
     icon: "HiOutlineIdentification",
   },
@@ -58,16 +57,16 @@ interface Props {
 }
 
 export default function ToolsDirectoryClient({ tools, exactKBTools, dimensionTools }: Props) {
-  const searchParams = useSearchParams();
-  const qParam = searchParams ? searchParams.get("q") || "" : "";
-  const [search, setSearch] = useState(qParam);
+  const [search, setSearch] = useState("");
   const [activeCategory, setActiveCategory] = useState<string>("all");
 
   useEffect(() => {
-    if (qParam) {
-      setSearch(qParam);
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      const q = params.get("q");
+      if (q) setSearch(q);
     }
-  }, [qParam]);
+  }, []);
 
   const allMainTools = [...tools, ...extraSpecialTools];
 
@@ -152,7 +151,7 @@ export default function ToolsDirectoryClient({ tools, exactKBTools, dimensionToo
               return (
                 <Link
                   key={tool.slug}
-                  href={tool.path}
+                  href={tool.path.replace(/\/+$/, "") + "/"}
                   className="group flex items-start gap-4 p-5 bg-white rounded-2xl border border-gray-200 hover:border-indigo-300 hover:shadow-lg hover:shadow-indigo-100/50 transition-all duration-300 hover:-translate-y-0.5"
                 >
                   <div className="w-11 h-11 rounded-xl bg-indigo-50 border border-indigo-100 flex items-center justify-center shrink-0 group-hover:bg-indigo-100 transition-colors">
@@ -166,19 +165,12 @@ export default function ToolsDirectoryClient({ tools, exactKBTools, dimensionToo
                       {tool.description}
                     </div>
                   </div>
-                  <svg
-                    className="w-5 h-5 text-gray-300 group-hover:text-indigo-600 shrink-0 mt-0.5 opacity-0 group-hover:opacity-100 transition-all"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
+                  <span
+                    className="text-gray-300 group-hover:text-indigo-600 shrink-0 mt-0.5 opacity-0 group-hover:opacity-100 transition-all font-bold text-sm"
+                    aria-hidden="true"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
+                    &rarr;
+                  </span>
                 </Link>
               );
             })}
@@ -200,11 +192,11 @@ export default function ToolsDirectoryClient({ tools, exactKBTools, dimensionToo
             {filteredKBs.map((kb) => (
               <Link
                 key={kb.slug}
-                href={`/resize-image-to-${kb.kb}kb`}
+                href={`/resize-image-to-${kb.kb}kb/`}
                 className="group p-4 bg-white rounded-2xl border border-gray-200 hover:border-indigo-300 hover:shadow-md hover:shadow-indigo-100/50 text-center transition-all duration-300"
               >
-                <div className="w-9 h-9 mx-auto rounded-xl bg-indigo-50 border border-indigo-100 flex items-center justify-center text-indigo-600 group-hover:bg-indigo-100 transition-colors mb-2">
-                  <HiOutlineArrowDownRight className="w-5 h-5" />
+                <div className="w-8 h-8 mx-auto rounded-xl bg-indigo-50 border border-indigo-100 flex items-center justify-center text-indigo-700 font-extrabold text-xs group-hover:bg-indigo-600 group-hover:text-white transition-colors mb-2">
+                  KB
                 </div>
                 <div className="font-bold text-sm text-gray-900 group-hover:text-indigo-600 transition-colors">
                   {kb.kb} KB
@@ -230,8 +222,8 @@ export default function ToolsDirectoryClient({ tools, exactKBTools, dimensionToo
             {filteredDims.map((dim) => {
               const href =
                 dim.type === "signature"
-                  ? `/signature-resizer-${dim.slug}`
-                  : `/image-resizer-${dim.slug}`;
+                  ? `/signature-resizer-${dim.slug}/`
+                  : `/image-resizer-${dim.slug}/`;
 
               return (
                 <Link
@@ -239,12 +231,8 @@ export default function ToolsDirectoryClient({ tools, exactKBTools, dimensionToo
                   href={href}
                   className="group p-4 bg-white rounded-2xl border border-gray-200 hover:border-indigo-300 hover:shadow-md hover:shadow-indigo-100/50 text-center transition-all duration-300"
                 >
-                  <div className="w-9 h-9 mx-auto rounded-xl bg-indigo-50 border border-indigo-100 flex items-center justify-center text-indigo-600 group-hover:bg-indigo-100 transition-colors mb-2">
-                    {dim.type === "signature" ? (
-                      <HiOutlinePencilSquare className="w-5 h-5" />
-                    ) : (
-                      <HiOutlinePhoto className="w-5 h-5" />
-                    )}
+                  <div className="w-8 h-8 mx-auto rounded-xl bg-indigo-50 border border-indigo-100 flex items-center justify-center text-indigo-700 font-extrabold text-[10px] group-hover:bg-indigo-600 group-hover:text-white transition-colors mb-2">
+                    {dim.type === "signature" ? "SIG" : "IMG"}
                   </div>
                   <div className="font-bold text-sm text-gray-900 group-hover:text-indigo-600 transition-colors">
                     {dim.width}×{dim.height}

@@ -1,6 +1,3 @@
-"use client";
-
-import { useState } from "react";
 import { Exam } from "@/data/exams";
 import { HiChevronDown } from "react-icons/hi2";
 
@@ -9,14 +6,6 @@ interface ExamFAQSectionProps {
 }
 
 export default function ExamFAQSection({ exam }: ExamFAQSectionProps) {
-  const [openIndices, setOpenIndices] = useState<number[]>([]);
-
-  const toggleFAQ = (index: number) => {
-    setOpenIndices((prev) =>
-      prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
-    );
-  };
-
   const faqs = [
     {
       question: `Is my ${exam.name} photo uploaded to any server?`,
@@ -73,51 +62,27 @@ export default function ExamFAQSection({ exam }: ExamFAQSectionProps) {
           </p>
         </div>
 
-        {/* 2-Column Grid Accordion */}
+        {/* 2-Column Grid Accordion with semantic details/summary */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
-          {faqs.map((faq, index) => {
-            const isOpen = openIndices.includes(index);
-            return (
-              <div
-                key={index}
-                className={`bg-white rounded-2xl border transition-all duration-200 overflow-hidden ${
-                  isOpen
-                    ? "border-indigo-300 shadow-sm ring-1 ring-indigo-500/10"
-                    : "border-gray-200/90 hover:border-indigo-200 hover:shadow-xs"
-                }`}
-              >
-                <button
-                  type="button"
-                  onClick={() => toggleFAQ(index)}
-                  className="w-full flex items-center justify-between p-4 sm:p-5 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
-                  aria-expanded={isOpen}
-                >
-                  <span
-                    className={`font-bold text-sm sm:text-base pr-4 transition-colors ${
-                      isOpen ? "text-indigo-600" : "text-gray-900"
-                    }`}
-                  >
-                    {faq.question}
-                  </span>
-                  <span
-                    className={`shrink-0 w-8 h-8 rounded-full border flex items-center justify-center transition-all ${
-                      isOpen
-                        ? "bg-indigo-50 border-indigo-200 text-indigo-600 rotate-180"
-                        : "bg-gray-50 border-gray-200 text-gray-400"
-                    }`}
-                  >
-                    <HiChevronDown className="w-4 h-4" />
-                  </span>
-                </button>
-
-                {isOpen && (
-                  <div className="px-4 sm:px-5 pb-5 pt-0 text-xs sm:text-sm text-gray-600 leading-relaxed border-t border-gray-100/60 mt-1">
-                    <p className="pt-3">{faq.answer}</p>
-                  </div>
-                )}
+          {faqs.map((faq, index) => (
+            <details
+              key={index}
+              open={index === 0}
+              className="group bg-white rounded-2xl border border-gray-200/90 hover:border-indigo-200 transition-all duration-200 overflow-hidden [&[open]]:border-indigo-300 [&[open]]:shadow-sm [&[open]]:ring-1 [&[open]]:ring-indigo-500/10"
+            >
+              <summary className="w-full flex items-center justify-between p-4 sm:p-5 text-left cursor-pointer list-none select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">
+                <span className="font-bold text-sm sm:text-base pr-4 text-gray-900 group-hover:text-indigo-600 transition-colors group-open:text-indigo-600">
+                  {faq.question}
+                </span>
+                <span className="shrink-0 w-8 h-8 rounded-full border border-gray-200 bg-gray-50 flex items-center justify-center text-gray-400 group-hover:text-indigo-600 group-open:bg-indigo-50 group-open:border-indigo-200 group-open:text-indigo-600 group-open:rotate-180 transition-all">
+                  <HiChevronDown className="w-4 h-4" />
+                </span>
+              </summary>
+              <div className="px-4 sm:px-5 pb-5 pt-0 text-xs sm:text-sm text-gray-600 leading-relaxed border-t border-gray-100/60 mt-1">
+                <p className="pt-3">{faq.answer}</p>
               </div>
-            );
-          })}
+            </details>
+          ))}
         </div>
       </div>
     </section>

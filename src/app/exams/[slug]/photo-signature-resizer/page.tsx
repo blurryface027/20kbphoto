@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const title = `${exam.name} Photo and Signature Resizer - 20KB Photo`;
   const description = `Resize the photo and signature required for ${exam.name} applications online. Format both documents to official pixel dimensions and file size limits for ${exam.fullName}.`;
-  const canonical = `https://20kbphoto.in/exams/${slug}/photo-signature-resizer`;
+  const canonical = `https://20kbphoto.in/exams/${slug}/`;
 
   return {
     title,
@@ -56,9 +56,9 @@ export default async function CombinedResizerPage({ params }: Props) {
   const categoryData = categories.find(c => c.slug === exam.category);
   const breadcrumbs = [
     { label: 'Home', href: '/' },
-    { label: 'Exams', href: '/exams' },
-    { label: categoryData?.name || exam.category, href: `/exams/${exam.category}` },
-    { label: exam.name, href: `/exams/${slug}` },
+    { label: 'Exams', href: '/exams/' },
+    { label: categoryData?.name || exam.category, href: `/exams/${exam.category}/` },
+    { label: exam.name, href: `/exams/${slug}/` },
     { label: 'Photo & Signature Resizer' }
   ];
 

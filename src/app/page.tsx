@@ -8,6 +8,7 @@ import StatewiseExamsSection from "@/components/home/StatewiseExamsSection";
 import BrowseCategories from "@/components/home/BrowseCategories";
 import WhyUseSection from "@/components/home/WhyUseSection";
 import WhyChooseTable from "@/components/home/WhyChooseTable";
+import HomeGuideSection from "@/components/home/HomeGuideSection";
 import HomeFAQSection from "@/components/home/HomeFAQSection";
 import { WeforAdsHeader, WeforAdsInContent } from "@/components/ads";
 
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
   title: "20KB Photo - Resize Photos and Signatures for Applications and Exams",
   description:
     "Free online tools to resize, compress, convert and prepare your photos, signatures and documents for exams, government forms, admissions and applications. 100% private - processed in your browser.",
-  alternates: { canonical: "https://20kbphoto.in" },
+  alternates: { canonical: "https://20kbphoto.in/" },
 };
 
 export default function HomePage() {
@@ -36,6 +37,7 @@ export default function HomePage() {
       <BrowseCategories />
       <WhyChooseTable />
       <WhyUseSection />
+      <HomeGuideSection />
       <HomeFAQSection />
 
       {/* Structured Data */}
@@ -46,7 +48,7 @@ export default function HomePage() {
             "@context": "https://schema.org",
             "@type": "WebApplication",
             name: "20KB Photo",
-            url: "https://20kbphoto.in",
+            url: "https://20kbphoto.in/",
             applicationCategory: "UtilitiesApplication",
             operatingSystem: "All",
             browserRequirements: "Requires JavaScript",

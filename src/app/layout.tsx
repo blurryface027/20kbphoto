@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "https://20kbphoto.in",
+    url: "https://20kbphoto.in/",
     siteName: "20KB Photo",
     title: "20KB Photo - Resize Photos and Signatures for Applications and Exams",
     description:
@@ -117,7 +117,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               "@context": "https://schema.org",
               "@type": "Organization",
               name: "20KB Photo",
-              url: "https://20kbphoto.in",
+              url: "https://20kbphoto.in/",
               description:
                 "Free online tools for preparing photos, signatures and documents for applications and forms.",
               sameAs: [],

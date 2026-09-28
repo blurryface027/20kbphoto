@@ -38,7 +38,6 @@ import PassportMakerClient from "./PassportMakerClient";
 import ImageUpscalerClient from "./ImageUpscalerClient";
 import ExifViewerClient from "./ExifViewerClient";
 import ImageFormatConverterClient from "./ImageFormatConverterClient";
-import ToolSEOContent from "@/components/tools/ToolSEOContent";
 import { getToolConfig, type ToolConfig } from "@/lib/toolConfig";
 
 
@@ -273,7 +272,6 @@ export default function ToolPageClient({ slug }: Props) {
     return (
       <ToolShell title={config.title} subtitle={config.subtitle} breadcrumbs={breadcrumbs}>
         <JspdfConverterClient toolSlug={slug as any} />
-        <ToolSEOContent slug={slug} />
       </ToolShell>
     );
   }
@@ -282,7 +280,6 @@ export default function ToolPageClient({ slug }: Props) {
     return (
       <ToolShell title={config.title} subtitle={config.subtitle} breadcrumbs={breadcrumbs}>
         <PdfToJpgClient toolSlug={slug as any} />
-        <ToolSEOContent slug={slug} />
       </ToolShell>
     );
   }
@@ -291,7 +288,6 @@ export default function ToolPageClient({ slug }: Props) {
     return (
       <ToolShell title={config.title} subtitle={config.subtitle} breadcrumbs={breadcrumbs}>
         <BackgroundRemoverClient />
-        <ToolSEOContent slug={slug} />
       </ToolShell>
     );
   }
@@ -300,7 +296,6 @@ export default function ToolPageClient({ slug }: Props) {
     return (
       <ToolShell title={config.title} subtitle={config.subtitle} breadcrumbs={breadcrumbs}>
         <BlurToolClient />
-        <ToolSEOContent slug={slug} />
       </ToolShell>
     );
   }
@@ -309,7 +304,6 @@ export default function ToolPageClient({ slug }: Props) {
     return (
       <ToolShell title={config.title} subtitle={config.subtitle} breadcrumbs={breadcrumbs}>
         <ImageStitcherClient />
-        <ToolSEOContent slug={slug} />
       </ToolShell>
     );
   }
@@ -318,7 +312,6 @@ export default function ToolPageClient({ slug }: Props) {
     return (
       <ToolShell title={config.title} subtitle={config.subtitle} breadcrumbs={breadcrumbs}>
         <DocumentScannerClient />
-        <ToolSEOContent slug={slug} />
       </ToolShell>
     );
   }
@@ -327,7 +320,6 @@ export default function ToolPageClient({ slug }: Props) {
     return (
       <ToolShell title={config.title} subtitle={config.subtitle} breadcrumbs={breadcrumbs}>
         <BulkCompressorClient />
-        <ToolSEOContent slug={slug} />
       </ToolShell>
     );
   }
@@ -336,7 +328,6 @@ export default function ToolPageClient({ slug }: Props) {
     return (
       <ToolShell title={config.title} subtitle={config.subtitle} breadcrumbs={breadcrumbs}>
         <BulkResizerClient />
-        <ToolSEOContent slug={slug} />
       </ToolShell>
     );
   }
@@ -345,7 +336,6 @@ export default function ToolPageClient({ slug }: Props) {
     return (
       <ToolShell title={config.title} subtitle={config.subtitle} breadcrumbs={breadcrumbs}>
         <PassportMakerClient />
-        <ToolSEOContent slug={slug} />
       </ToolShell>
     );
   }
@@ -354,7 +344,6 @@ export default function ToolPageClient({ slug }: Props) {
     return (
       <ToolShell title={config.title} subtitle={config.subtitle} breadcrumbs={breadcrumbs}>
         <ImageUpscalerClient />
-        <ToolSEOContent slug={slug} />
       </ToolShell>
     );
   }
@@ -363,7 +352,6 @@ export default function ToolPageClient({ slug }: Props) {
     return (
       <ToolShell title={config.title} subtitle={config.subtitle} breadcrumbs={breadcrumbs}>
         <ExifViewerClient />
-        <ToolSEOContent slug={slug} />
       </ToolShell>
     );
   }
@@ -372,7 +360,6 @@ export default function ToolPageClient({ slug }: Props) {
     return (
       <ToolShell title={config.title} subtitle={config.subtitle} breadcrumbs={breadcrumbs}>
         <ImageFormatConverterClient />
-        <ToolSEOContent slug={slug} />
       </ToolShell>
     );
   }
@@ -876,8 +863,6 @@ function StandardToolPageClient({ slug, config, breadcrumbs }: StandardProps) {
         </div>
       )}
 
-      {/* HIGH DENSITY CONTENT & SEO SECTION FOR ADSENSE COMPLIANCE */}
-      <ToolSEOContent slug={slug} />
     </ToolShell>
   );
 }

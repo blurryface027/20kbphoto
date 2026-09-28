@@ -9,15 +9,15 @@ import {
 } from "react-icons/hi2";
 
 const tools = [
-  { name: "Resize Image to 20KB", href: "/resize-image-to-20kb", icon: <HiOutlineArrowDownRight className="w-5 h-5 text-indigo-600" />, desc: "Compress any image to exactly 20KB" },
-  { name: "Resize Image to 50KB", href: "/resize-image-to-50kb", icon: <HiOutlineArrowDownRight className="w-5 h-5 text-indigo-600" />, desc: "Compress any image to exactly 50KB" },
-  { name: "Resize Image to 100KB", href: "/resize-image-to-100kb", icon: <HiOutlineArrowDownRight className="w-5 h-5 text-indigo-600" />, desc: "Compress any image to exactly 100KB" },
-  { name: "Image Compressor", href: "/tools/image-compressor", icon: <HiOutlineArchiveBox className="w-5 h-5 text-indigo-600" />, desc: "Reduce file size to any target KB" },
-  { name: "Signature Resizer", href: "/tools/signature-resizer", icon: <HiOutlinePencilSquare className="w-5 h-5 text-indigo-600" />, desc: "Resize signatures to exact dimensions" },
-  { name: "Image to JPG", href: "/tools/image-to-jpg", icon: <HiOutlineArrowPath className="w-5 h-5 text-indigo-600" />, desc: "Convert PNG, WebP to JPG format" },
-  { name: "Passport Photo Maker", href: "/tools/passport-photo-maker", icon: <HiOutlineUser className="w-5 h-5 text-indigo-600" />, desc: "Create perfect passport photos" },
-  { name: "Add Name & Date", href: "/add-name-and-date-to-photo", icon: <HiOutlinePencilSquare className="w-5 h-5 text-indigo-600" />, desc: "Add name and date to your photo" },
-  { name: "Signature 140×60", href: "/signature-resizer-140x60", icon: <HiOutlineAdjustmentsHorizontal className="w-5 h-5 text-indigo-600" />, desc: "Resize signature to 140x60 pixels" },
+  { name: "Resize Image to 20KB", href: "/resize-image-to-20kb/", icon: <HiOutlineArrowDownRight className="w-5 h-5 text-indigo-600" />, desc: "Compress any image to exactly 20KB" },
+  { name: "Resize Image to 50KB", href: "/resize-image-to-50kb/", icon: <HiOutlineArrowDownRight className="w-5 h-5 text-indigo-600" />, desc: "Compress any image to exactly 50KB" },
+  { name: "Resize Image to 100KB", href: "/resize-image-to-100kb/", icon: <HiOutlineArrowDownRight className="w-5 h-5 text-indigo-600" />, desc: "Compress any image to exactly 100KB" },
+  { name: "Image Compressor", href: "/tools/image-compressor/", icon: <HiOutlineArchiveBox className="w-5 h-5 text-indigo-600" />, desc: "Reduce file size to any target KB" },
+  { name: "Signature Resizer", href: "/tools/signature-resizer/", icon: <HiOutlinePencilSquare className="w-5 h-5 text-indigo-600" />, desc: "Resize signatures to exact dimensions" },
+  { name: "Image to JPG", href: "/tools/image-to-jpg/", icon: <HiOutlineArrowPath className="w-5 h-5 text-indigo-600" />, desc: "Convert PNG, WebP to JPG format" },
+  { name: "Passport Photo Maker", href: "/tools/passport-photo-maker/", icon: <HiOutlineUser className="w-5 h-5 text-indigo-600" />, desc: "Create perfect passport photos" },
+  { name: "Add Name & Date", href: "/add-name-and-date-to-photo/", icon: <HiOutlinePencilSquare className="w-5 h-5 text-indigo-600" />, desc: "Add name and date to your photo" },
+  { name: "Signature 140×60", href: "/signature-resizer-140x60/", icon: <HiOutlineAdjustmentsHorizontal className="w-5 h-5 text-indigo-600" />, desc: "Resize signature to 140x60 pixels" },
 ];
 
 export default function PopularTools() {
@@ -47,22 +47,17 @@ export default function PopularTools() {
                 </div>
                 <div className="text-xs text-gray-500 mt-1 line-clamp-2">{tool.desc}</div>
               </div>
-              <svg className="w-5 h-5 text-gray-300 group-hover:text-indigo-600 shrink-0 mt-0.5 opacity-0 group-hover:opacity-100 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
+              <span className="text-gray-300 group-hover:text-indigo-600 shrink-0 mt-0.5 opacity-0 group-hover:opacity-100 transition-all font-bold text-sm" aria-hidden="true">&rarr;</span>
             </Link>
           ))}
         </div>
 
         <div className="text-center mt-8">
           <Link
-            href="/tools"
+            href="/tools/"
             className="inline-flex items-center gap-2 text-sm font-semibold text-indigo-600 hover:text-indigo-700 transition-colors"
           >
-            View all tools
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-            </svg>
+            View all tools <span aria-hidden="true">&rarr;</span>
           </Link>
         </div>
       </div>

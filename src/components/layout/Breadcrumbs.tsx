@@ -30,14 +30,20 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
         <ol className="flex items-center text-sm text-gray-500">
           {items.map((item, index) => {
             const isLast = index === items.length - 1;
+            const normalizedHref = item.href
+              ? item.href === "/"
+                ? "/"
+                : `${item.href.replace(/\/+$/, "")}/`
+              : undefined;
+
             return (
               <li key={index} className="flex items-center">
-                {isLast || !item.href ? (
+                {isLast || !normalizedHref ? (
                   <span className="font-semibold text-gray-900" aria-current={isLast ? 'page' : undefined}>
                     {item.label}
                   </span>
                 ) : (
-                  <Link href={item.href} className="hover:text-indigo-600 transition-colors focus:outline-none focus:underline font-medium">
+                  <Link href={normalizedHref} className="hover:text-indigo-600 transition-colors focus:outline-none focus:underline font-medium">
                     {item.label}
                   </Link>
                 )}

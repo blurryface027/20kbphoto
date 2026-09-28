@@ -5,12 +5,12 @@ export const metadata: Metadata = {
   title: "Resize Image to 100KB Online - 20KB Photo",
   description: "Compress and resize any photo or signature image to under 100KB for online exam applications and recruitment forms.",
   alternates: {
-    canonical: "https://20kbphoto.in/resize-image-to-100kb",
+    canonical: "https://20kbphoto.in/resize-image-to-100kb/",
   },
   openGraph: {
     title: "Resize Image to 100KB Online - 20KB Photo",
     description: "Compress and resize any photo or signature image to under 100KB for online exam applications and recruitment forms.",
-    url: "https://20kbphoto.in/resize-image-to-100kb",
+    url: "https://20kbphoto.in/resize-image-to-100kb/",
     siteName: "20KB Photo",
     locale: "en_IN",
     type: "website",

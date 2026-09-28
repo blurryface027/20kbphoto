@@ -42,22 +42,22 @@ export default function WhyChooseTable() {
                   </td>
                   <td className="p-4 sm:p-5 bg-indigo-50/30">
                     <div className="flex items-center gap-2">
-                      <span className="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0">
-                        <HiCheck className="w-4 h-4 stroke-2" />
+                      <span className="w-6 h-6 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 font-bold text-xs" aria-label="Yes">
+                        ✓
                       </span>
                     </div>
                   </td>
                   <td className="p-4 sm:p-5">
                     <div className="flex flex-col items-start gap-1">
-                      <span className="w-6 h-6 rounded-full bg-rose-100 text-rose-500 flex items-center justify-center shrink-0">
-                        <HiXMark className="w-4 h-4 stroke-2" />
+                      <span className="w-6 h-6 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center shrink-0 font-bold text-xs" aria-label="No">
+                        ✕
                       </span>
                       <span className="text-[11px] text-gray-400 font-medium">Uploads to server</span>
                     </div>
                   </td>
                   <td className="p-4 sm:p-5">
-                    <span className="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0">
-                      <HiCheck className="w-4 h-4 stroke-2" />
+                    <span className="w-6 h-6 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 font-bold text-xs" aria-label="Yes">
+                      ✓
                     </span>
                   </td>
                 </tr>
@@ -68,8 +68,8 @@ export default function WhyChooseTable() {
                     Pre-set Exam Dimensions
                   </td>
                   <td className="p-4 sm:p-5 bg-indigo-50/30">
-                    <span className="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0">
-                      <HiCheck className="w-4 h-4 stroke-2" />
+                    <span className="w-6 h-6 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 font-bold text-xs" aria-label="Yes">
+                      ✓
                     </span>
                   </td>
                   <td className="p-4 sm:p-5">
@@ -82,8 +82,8 @@ export default function WhyChooseTable() {
                   </td>
                   <td className="p-4 sm:p-5">
                     <div className="flex flex-col items-start gap-1">
-                      <span className="w-6 h-6 rounded-full bg-rose-100 text-rose-500 flex items-center justify-center shrink-0">
-                        <HiXMark className="w-4 h-4 stroke-2" />
+                      <span className="w-6 h-6 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center shrink-0 font-bold text-xs" aria-label="No">
+                        ✕
                       </span>
                       <span className="text-[11px] text-gray-400 font-medium">Manual setup needed</span>
                     </div>
@@ -96,8 +96,8 @@ export default function WhyChooseTable() {
                     Automatic File Size Compression
                   </td>
                   <td className="p-4 sm:p-5 bg-indigo-50/30">
-                    <span className="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0">
-                      <HiCheck className="w-4 h-4 stroke-2" />
+                    <span className="w-6 h-6 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 font-bold text-xs" aria-label="Yes">
+                      ✓
                     </span>
                   </td>
                   <td className="p-4 sm:p-5">
@@ -107,8 +107,8 @@ export default function WhyChooseTable() {
                   </td>
                   <td className="p-4 sm:p-5">
                     <div className="flex flex-col items-start gap-1">
-                      <span className="w-6 h-6 rounded-full bg-rose-100 text-rose-500 flex items-center justify-center shrink-0">
-                        <HiXMark className="w-4 h-4 stroke-2" />
+                      <span className="w-6 h-6 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center shrink-0 font-bold text-xs" aria-label="No">
+                        ✕
                       </span>
                       <span className="text-[11px] text-gray-400 font-medium">Hard to control exact KB</span>
                     </div>
@@ -121,14 +121,14 @@ export default function WhyChooseTable() {
                     Add Name & Date
                   </td>
                   <td className="p-4 sm:p-5 bg-indigo-50/30">
-                    <span className="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0">
-                      <HiCheck className="w-4 h-4 stroke-2" />
+                    <span className="w-6 h-6 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 font-bold text-xs" aria-label="Yes">
+                      ✓
                     </span>
                   </td>
                   <td className="p-4 sm:p-5">
                     <div className="flex flex-col items-start gap-1">
-                      <span className="w-6 h-6 rounded-full bg-rose-100 text-rose-500 flex items-center justify-center shrink-0">
-                        <HiXMark className="w-4 h-4 stroke-2" />
+                      <span className="w-6 h-6 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center shrink-0 font-bold text-xs" aria-label="No">
+                        ✕
                       </span>
                       <span className="text-[11px] text-gray-400 font-medium">Rarely supported</span>
                     </div>
@@ -150,16 +150,16 @@ export default function WhyChooseTable() {
                   </td>
                   <td className="p-4 sm:p-5 bg-indigo-50/30">
                     <div className="flex flex-col items-start gap-1">
-                      <span className="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0">
-                        <HiCheck className="w-4 h-4 stroke-2" />
+                      <span className="w-6 h-6 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 font-bold text-xs" aria-label="Yes">
+                        ✓
                       </span>
                       <span className="text-[11px] font-semibold text-emerald-600">Native support</span>
                     </div>
                   </td>
                   <td className="p-4 sm:p-5">
                     <div className="flex flex-col items-start gap-1">
-                      <span className="w-6 h-6 rounded-full bg-rose-100 text-rose-500 flex items-center justify-center shrink-0">
-                        <HiXMark className="w-4 h-4 stroke-2" />
+                      <span className="w-6 h-6 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center shrink-0 font-bold text-xs" aria-label="No">
+                        ✕
                       </span>
                       <span className="text-[11px] text-gray-400 font-medium">Requires converter</span>
                     </div>

@@ -3,69 +3,69 @@ import Logo from "@/components/layout/Logo";
 
 const footerLinks = {
   "Photo & Editing": [
-    { label: "Image Resizer", href: "/tools/image-resizer" },
-    { label: "Background Remover", href: "/tools/background-remover" },
-    { label: "Image Cropper", href: "/tools/image-cropper" },
-    { label: "Blur Image / Face Blur", href: "/tools/blur-image" },
-    { label: "Image Stitcher", href: "/tools/image-stitcher" },
-    { label: "Passport Photo Maker", href: "/tools/passport-photo-maker" },
-    { label: "Image Upscaler", href: "/tools/image-upscaler" },
-    { label: "EXIF Metadata Viewer", href: "/tools/image-metadata" },
+    { label: "Image Resizer", href: "/tools/image-resizer/" },
+    { label: "Background Remover", href: "/tools/background-remover/" },
+    { label: "Image Cropper", href: "/tools/image-cropper/" },
+    { label: "Blur Image / Face Blur", href: "/tools/blur-image/" },
+    { label: "Image Stitcher", href: "/tools/image-stitcher/" },
+    { label: "Passport Photo Maker", href: "/tools/passport-photo-maker/" },
+    { label: "Image Upscaler", href: "/tools/image-upscaler/" },
+    { label: "EXIF Metadata Viewer", href: "/tools/image-metadata/" },
   ],
   "Document & PDF Tools": [
-    { label: "JPG to PDF", href: "/tools/jpg-to-pdf" },
-    { label: "PDF to JPG", href: "/tools/pdf-to-jpg" },
-    { label: "Image to PDF", href: "/tools/image-to-pdf" },
-    { label: "PDF to Image", href: "/tools/pdf-to-image" },
-    { label: "Document Scanner", href: "/tools/document-scanner" },
-    { label: "Photos to PDF", href: "/tools/photos-to-pdf" },
+    { label: "JPG to PDF", href: "/tools/jpg-to-pdf/" },
+    { label: "PDF to JPG", href: "/tools/pdf-to-jpg/" },
+    { label: "Image to PDF", href: "/tools/image-to-pdf/" },
+    { label: "PDF to Image", href: "/tools/pdf-to-image/" },
+    { label: "Document Scanner", href: "/tools/document-scanner/" },
+    { label: "Photos to PDF", href: "/tools/photos-to-pdf/" },
   ],
   "Signature & Bulk": [
-    { label: "Signature Resizer", href: "/tools/signature-resizer" },
-    { label: "Signature Compressor", href: "/tools/signature-compressor" },
-    { label: "Bulk Image Compressor", href: "/tools/bulk-image-compressor" },
-    { label: "Bulk Image Resizer", href: "/tools/bulk-image-resizer" },
-    { label: "Signature 140×60", href: "/signature-resizer-140x60" },
-    { label: "Signature 200×80", href: "/signature-resizer-200x80" },
+    { label: "Signature Resizer", href: "/tools/signature-resizer/" },
+    { label: "Signature Compressor", href: "/tools/signature-compressor/" },
+    { label: "Bulk Image Compressor", href: "/tools/bulk-image-compressor/" },
+    { label: "Bulk Image Resizer", href: "/tools/bulk-image-resizer/" },
+    { label: "Signature 140×60", href: "/signature-resizer-140x60/" },
+    { label: "Signature 200×80", href: "/signature-resizer-200x80/" },
   ],
   "Popular Sizes": [
-    { label: "Resize Image to 20KB", href: "/resize-image-to-20kb" },
-    { label: "Resize Image to 30KB", href: "/resize-image-to-30kb" },
-    { label: "Resize Image to 50KB", href: "/resize-image-to-50kb" },
-    { label: "Resize Image to 100KB", href: "/resize-image-to-100kb" },
-    { label: "Resize Image to 200KB", href: "/resize-image-to-200kb" },
+    { label: "Resize Image to 20KB", href: "/resize-image-to-20kb/" },
+    { label: "Resize Image to 30KB", href: "/resize-image-to-30kb/" },
+    { label: "Resize Image to 50KB", href: "/resize-image-to-50kb/" },
+    { label: "Resize Image to 100KB", href: "/resize-image-to-100kb/" },
+    { label: "Resize Image to 200KB", href: "/resize-image-to-200kb/" },
   ],
   "Converters & Format": [
-    { label: "Image Format Converter", href: "/tools/image-format-converter" },
-    { label: "Image to JPG", href: "/tools/image-to-jpg" },
-    { label: "PNG to JPG", href: "/tools/png-to-jpg" },
-    { label: "WebP to JPG", href: "/tools/webp-to-jpg" },
-    { label: "JPG to PNG", href: "/tools/jpg-to-png" },
-    { label: "JPG to WebP", href: "/tools/jpg-to-webp" },
+    { label: "Image Format Converter", href: "/tools/image-format-converter/" },
+    { label: "Image to JPG", href: "/tools/image-to-jpg/" },
+    { label: "PNG to JPG", href: "/tools/png-to-jpg/" },
+    { label: "WebP to JPG", href: "/tools/webp-to-jpg/" },
+    { label: "JPG to PNG", href: "/tools/jpg-to-png/" },
+    { label: "JPG to WebP", href: "/tools/jpg-to-webp/" },
   ],
   "Blog & Guides": [
-    { label: "All Blog Articles", href: "/blog" },
-    { label: "Reduce Photo to 20KB", href: "/blog/how-to-reduce-photo-size-to-20kb" },
-    { label: "Compress Image to 50KB", href: "/blog/how-to-compress-an-image-to-50kb" },
-    { label: "Resize to Exact Pixels", href: "/blog/how-to-resize-an-image-to-exact-pixels" },
-    { label: "Passport Photo Guide", href: "/blog/how-to-make-a-passport-size-photo" },
-    { label: "Fix Upload Size Errors", href: "/blog/how-to-fix-photo-upload-size-errors" },
+    { label: "All Blog Articles", href: "/blog/" },
+    { label: "Reduce Photo to 20KB", href: "/blog/how-to-reduce-photo-size-to-20kb/" },
+    { label: "Compress Image to 50KB", href: "/blog/how-to-compress-an-image-to-50kb/" },
+    { label: "Resize to Exact Pixels", href: "/blog/how-to-resize-an-image-to-exact-pixels/" },
+    { label: "Passport Photo Guide", href: "/blog/how-to-make-a-passport-size-photo/" },
+    { label: "Fix Upload Size Errors", href: "/blog/how-to-fix-photo-upload-size-errors/" },
   ],
 };
 
 const popularExams = [
-  { label: "SSC CGL", href: "/exams/ssc-cgl" },
-  { label: "SSC CHSL", href: "/exams/ssc-chsl" },
-  { label: "SSC GD", href: "/exams/ssc-gd" },
-  { label: "UPSC CSE", href: "/exams/upsc-cse" },
-  { label: "IBPS PO", href: "/exams/ibps-po" },
-  { label: "SBI PO", href: "/exams/sbi-po" },
-  { label: "SBI Clerk", href: "/exams/sbi-clerk" },
-  { label: "RBI Grade B", href: "/exams/rbi-grade-b" },
-  { label: "RRB NTPC", href: "/exams/rrb-ntpc" },
-  { label: "NEET UG", href: "/exams/neet-ug" },
-  { label: "JEE Main", href: "/exams/jee-main" },
-  { label: "India Post GDS", href: "/exams/india-post-gds" },
+  { label: "SSC CGL", href: "/exams/ssc-cgl/" },
+  { label: "SSC CHSL", href: "/exams/ssc-chsl/" },
+  { label: "SSC GD", href: "/exams/ssc-gd-constable/" },
+  { label: "UPSC CSE", href: "/exams/upsc-cse/" },
+  { label: "IBPS PO", href: "/exams/ibps-po/" },
+  { label: "SBI PO", href: "/exams/sbi-po/" },
+  { label: "SBI Clerk", href: "/exams/sbi-clerk/" },
+  { label: "RBI Grade B", href: "/exams/rbi-grade-b/" },
+  { label: "RRB ALP", href: "/exams/rrb-alp/" },
+  { label: "NEET UG", href: "/exams/neet-ug/" },
+  { label: "JEE Main", href: "/exams/jee-main/" },
+  { label: "India Post GDS", href: "/exams/india-post-gds/" },
 ];
 
 export default function Footer() {
@@ -130,7 +130,7 @@ export default function Footer() {
               <a
                 href="https://www.producthunt.com/products/20kb-photo?utm_source=badge-follow&utm_medium=badge&utm_source=badge-20kb-photo"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener noreferrer nofollow"
                 className="inline-flex items-center hover:opacity-80 transition-opacity sm:border-l sm:border-gray-800 sm:pl-3"
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -142,22 +142,22 @@ export default function Footer() {
               </a>
             </div>
             <div className="flex flex-wrap items-center gap-4 text-xs text-gray-400">
-              <Link href="/blog" className="hover:text-white transition-colors">
+              <Link href="/blog/" className="hover:text-white transition-colors">
                 Blog
               </Link>
-              <Link href="/about" className="hover:text-white transition-colors">
+              <Link href="/about/" className="hover:text-white transition-colors">
                 About Us
               </Link>
-              <Link href="/privacy-policy" className="hover:text-white transition-colors">
+              <Link href="/privacy-policy/" className="hover:text-white transition-colors">
                 Privacy Policy
               </Link>
-              <Link href="/terms-of-service" className="hover:text-white transition-colors">
+              <Link href="/terms-of-service/" className="hover:text-white transition-colors">
                 Terms of Service
               </Link>
-              <Link href="/contact" className="hover:text-white transition-colors">
+              <Link href="/contact/" className="hover:text-white transition-colors">
                 Contact
               </Link>
-              <Link href="/disclaimer" className="hover:text-white transition-colors">
+              <Link href="/disclaimer/" className="hover:text-white transition-colors">
                 Disclaimer
               </Link>
             </div>

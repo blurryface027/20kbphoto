@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { photo } = exam;
   const title = `${exam.name} Photo Resizer - ${photo.width}x${photo.height}px, ${photo.minKB}-${photo.maxKB}KB - 20KB Photo`;
   const description = `Resize the photo required for ${exam.name} applications to ${photo.width}x${photo.height}px and ${photo.minKB}-${photo.maxKB}KB ${photo.format} format online. Free resizer tool for ${exam.fullName} online forms.`;
-  const canonical = `https://20kbphoto.in/exams/${slug}/photo-resizer`;
+  const canonical = `https://20kbphoto.in/exams/${slug}/photo-resizer/`;
 
   return {
     title,
@@ -67,9 +67,9 @@ export default async function PhotoResizerPage({ params }: Props) {
   const categoryData = categories.find(c => c.slug === exam.category);
   const breadcrumbs = [
     { label: 'Home', href: '/' },
-    { label: 'Exams', href: '/exams' },
-    { label: categoryData?.name || exam.category, href: `/exams/${exam.category}` },
-    { label: exam.name, href: `/exams/${slug}` },
+    { label: 'Exams', href: '/exams/' },
+    { label: categoryData?.name || exam.category, href: `/exams/${exam.category}/` },
+    { label: exam.name, href: `/exams/${slug}/` },
     { label: 'Photo Resizer' }
   ];
 

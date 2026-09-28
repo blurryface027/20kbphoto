@@ -132,7 +132,7 @@ export default function GlobalSearch({ onClose }: GlobalSearchProps) {
             <div className="p-8 text-center">
               <div className="text-gray-500 text-sm font-medium">No results found for &ldquo;{query}&rdquo;</div>
               <Link
-                href="/tools/image-resizer"
+                href="/tools/image-resizer/"
                 onClick={onClose}
                 className="text-indigo-600 font-semibold text-sm mt-2 inline-block hover:underline"
               >

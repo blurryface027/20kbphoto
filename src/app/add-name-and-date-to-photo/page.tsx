@@ -5,12 +5,12 @@ export const metadata: Metadata = {
   title: "Add Name and Date to Photo Online - 20KB Photo",
   description:
     "Add candidate name and date of photo overlay to your photograph for SSC, UPSC, and official government exam forms.",
-  alternates: { canonical: "https://20kbphoto.in/add-name-and-date-to-photo" },
+  alternates: { canonical: "https://20kbphoto.in/add-name-and-date-to-photo/" },
   openGraph: {
     title: "Add Name and Date to Photo Online - 20KB Photo",
     description:
       "Add candidate name and date of photo overlay to your photograph for SSC, UPSC, and official government exam forms.",
-    url: "https://20kbphoto.in/add-name-and-date-to-photo",
+    url: "https://20kbphoto.in/add-name-and-date-to-photo/",
     siteName: "20KB Photo",
     locale: "en_IN",
     type: "website",

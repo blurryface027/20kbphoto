@@ -389,8 +389,6 @@ export function getToolConfig(slug: string): ToolConfig {
 export function getAllToolSlugs(): string[] {
   const masterSlugs = Object.keys(masterConfigs);
   const dataSlugs = tools.map((t) => t.slug);
-  const kbSlugs = exactKbs.map((k) => k.slug);
-  const dimSlugs = dimensions.map((d) => d.slug);
-  const set = new Set([...masterSlugs, ...dataSlugs, ...kbSlugs, ...dimSlugs]);
+  const set = new Set([...masterSlugs, ...dataSlugs]);
   return Array.from(set);
 }

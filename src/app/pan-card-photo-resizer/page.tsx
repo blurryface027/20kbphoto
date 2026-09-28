@@ -5,12 +5,12 @@ export const metadata: Metadata = {
   title: "PAN Card Photo Resizer Online - 213x213px, 50KB - 20KB Photo",
   description:
     "Resize photo and signature for NSDL and UTIITSL online PAN card applications to exact 213x213 pixels, 300 DPI, and 50KB limit.",
-  alternates: { canonical: "https://20kbphoto.in/pan-card-photo-resizer" },
+  alternates: { canonical: "https://20kbphoto.in/pan-card-photo-resizer/" },
   openGraph: {
     title: "PAN Card Photo Resizer Online - 213x213px, 50KB - 20KB Photo",
     description:
       "Resize photo and signature for NSDL and UTIITSL online PAN card applications to exact 213x213 pixels, 300 DPI, and 50KB limit.",
-    url: "https://20kbphoto.in/pan-card-photo-resizer",
+    url: "https://20kbphoto.in/pan-card-photo-resizer/",
     siteName: "20KB Photo",
     locale: "en_IN",
     type: "website",

@@ -60,9 +60,9 @@ const TOOL_SEO_DATABASE: Record<string, ToolSEOData> = {
       { question: "Can I use the output photo for SSC or UPSC forms?", answer: "Yes! Choose the Solid White or Light Blue background fill option to match official SSC CGL and UPSC application photo standards." }
     ],
     related: [
-      { name: "Passport Photo Maker", href: "/tools/passport-photo-maker", desc: "Format photos to exact passport dimensions" },
-      { name: "Image Cropper", href: "/tools/image-cropper", desc: "Crop photos to 1:1 or 3.5x4.5cm aspect ratio" },
-      { name: "Blur Image", href: "/tools/blur-image", desc: "Blur sensitive details in documents" }
+      { name: "Passport Photo Maker", href: "/tools/passport-photo-maker/", desc: "Format photos to exact passport dimensions" },
+      { name: "Image Cropper", href: "/tools/image-cropper/", desc: "Crop photos to 1:1 or 3.5x4.5cm aspect ratio" },
+      { name: "Blur Image", href: "/tools/blur-image/", desc: "Blur sensitive details in documents" }
     ]
   },
 
@@ -96,8 +96,8 @@ const TOOL_SEO_DATABASE: Record<string, ToolSEOData> = {
       { question: "Can I crop signatures?", answer: "Yes, use the Free Crop or Signature preset to crop white space around signatures." }
     ],
     related: [
-      { name: "Passport Photo Maker", href: "/tools/passport-photo-maker", desc: "Create passport size photos" },
-      { name: "Image Resizer", href: "/tools/image-resizer", desc: "Resize dimensions in pixels" }
+      { name: "Passport Photo Maker", href: "/tools/passport-photo-maker/", desc: "Create passport size photos" },
+      { name: "Image Resizer", href: "/tools/image-resizer/", desc: "Resize dimensions in pixels" }
     ]
   },
 
@@ -131,8 +131,8 @@ const TOOL_SEO_DATABASE: Record<string, ToolSEOData> = {
       { question: "Can blurred text be reversed?", answer: "No. Once downloaded, the pixels are permanently overwritten with Gaussian blur data." }
     ],
     related: [
-      { name: "EXIF Metadata Viewer", href: "/tools/image-metadata", desc: "Remove camera & location tags" },
-      { name: "Document Scanner", href: "/tools/document-scanner", desc: "Scan and enhance documents" }
+      { name: "EXIF Metadata Viewer", href: "/tools/image-metadata/", desc: "Remove camera & location tags" },
+      { name: "Document Scanner", href: "/tools/document-scanner/", desc: "Scan and enhance documents" }
     ]
   },
 
@@ -165,8 +165,8 @@ const TOOL_SEO_DATABASE: Record<string, ToolSEOData> = {
       { question: "How many images can I combine?", answer: "You can combine up to 20 images into one single image file." }
     ],
     related: [
-      { name: "JPG to PDF", href: "/tools/jpg-to-pdf", desc: "Convert images to multi-page PDF" },
-      { name: "Bulk Resizer", href: "/tools/bulk-image-resizer", desc: "Resize multiple images" }
+      { name: "JPG to PDF", href: "/tools/jpg-to-pdf/", desc: "Convert images to multi-page PDF" },
+      { name: "Bulk Resizer", href: "/tools/bulk-image-resizer/", desc: "Resize multiple images" }
     ]
   },
 
@@ -200,8 +200,8 @@ const TOOL_SEO_DATABASE: Record<string, ToolSEOData> = {
       { question: "Is there a limit on number of pages?", answer: "No, you can convert dozens of images into a single PDF document." }
     ],
     related: [
-      { name: "PDF to JPG", href: "/tools/pdf-to-jpg", desc: "Convert PDF pages back into images" },
-      { name: "Document Scanner", href: "/tools/document-scanner", desc: "Scan documents to PDF" }
+      { name: "PDF to JPG", href: "/tools/pdf-to-jpg/", desc: "Convert PDF pages back into images" },
+      { name: "Document Scanner", href: "/tools/document-scanner/", desc: "Scan documents to PDF" }
     ]
   },
 
@@ -235,8 +235,8 @@ const TOOL_SEO_DATABASE: Record<string, ToolSEOData> = {
       { question: "Are my PDF files stored online?", answer: "No. PDF rendering happens 100% locally in your browser memory." }
     ],
     related: [
-      { name: "JPG to PDF", href: "/tools/jpg-to-pdf", desc: "Convert images into PDF" },
-      { name: "PDF to Image", href: "/tools/pdf-to-image", desc: "Extract PDF pages to PNG/JPG" }
+      { name: "JPG to PDF", href: "/tools/jpg-to-pdf/", desc: "Convert images into PDF" },
+      { name: "PDF to Image", href: "/tools/pdf-to-image/", desc: "Extract PDF pages to PNG/JPG" }
     ]
   },
 
@@ -258,7 +258,7 @@ const TOOL_SEO_DATABASE: Record<string, ToolSEOData> = {
     tips: ["Use PNG for scanned certificates for crisp text."],
     troubleshooting: [{ issue: "Page order incorrect", fix: "Use Up/Down arrows to sequence pages before downloading." }],
     faqs: [{ question: "Is this tool free?", answer: "Yes, 100% free with no limits." }],
-    related: [{ name: "JPG to PDF", href: "/tools/jpg-to-pdf", desc: "JPG to PDF Converter" }]
+    related: [{ name: "JPG to PDF", href: "/tools/jpg-to-pdf/", desc: "JPG to PDF Converter" }]
   },
 
   "pdf-to-image": {
@@ -276,7 +276,7 @@ const TOOL_SEO_DATABASE: Record<string, ToolSEOData> = {
     tips: ["Download ZIP to get all pages at once."],
     troubleshooting: [{ issue: "Encrypted PDF", fix: "Unlock PDF first." }],
     faqs: [{ question: "Can I extract specific pages?", answer: "Yes, preview allows downloading any page individually." }],
-    related: [{ name: "PDF to JPG", href: "/tools/pdf-to-jpg", desc: "PDF to JPG Tool" }]
+    related: [{ name: "PDF to JPG", href: "/tools/pdf-to-jpg/", desc: "PDF to JPG Tool" }]
   },
 
   "document-scanner": {
@@ -297,7 +297,7 @@ const TOOL_SEO_DATABASE: Record<string, ToolSEOData> = {
     tips: ["Magic B&W Scanner filter removes grey paper shadows automatically."],
     troubleshooting: [{ issue: "Document looks dark", fix: "Use Contrast Boost or Magic B&W filter to brighten document background." }],
     faqs: [{ question: "Does it work on mobile?", answer: "Yes, take a photo on mobile and scan directly in your browser." }],
-    related: [{ name: "JPG to PDF", href: "/tools/jpg-to-pdf", desc: "Convert images to PDF" }]
+    related: [{ name: "JPG to PDF", href: "/tools/jpg-to-pdf/", desc: "Convert images to PDF" }]
   },
 
   "photos-to-pdf": {
@@ -313,7 +313,7 @@ const TOOL_SEO_DATABASE: Record<string, ToolSEOData> = {
     tips: ["Order marksheets chronologically."],
     troubleshooting: [{ issue: "Wrong page order", fix: "Reorder list items before export." }],
     faqs: [{ question: "Is registration required?", answer: "No registration required." }],
-    related: [{ name: "JPG to PDF", href: "/tools/jpg-to-pdf", desc: "JPG to PDF Tool" }]
+    related: [{ name: "JPG to PDF", href: "/tools/jpg-to-pdf/", desc: "JPG to PDF Tool" }]
   },
 
   "bulk-image-compressor": {
@@ -336,7 +336,7 @@ const TOOL_SEO_DATABASE: Record<string, ToolSEOData> = {
     tips: ["Check table breakdown to verify file size savings for each file."],
     troubleshooting: [{ issue: "File still larger than target", fix: "Lower target KB or resize image dimensions slightly." }],
     faqs: [{ question: "Can I download all at once?", answer: "Yes, click Download All ZIP." }],
-    related: [{ name: "Image Compressor", href: "/tools/image-compressor", desc: "Single Image Compressor" }]
+    related: [{ name: "Image Compressor", href: "/tools/image-compressor/", desc: "Single Image Compressor" }]
   },
 
   "bulk-image-resizer": {
@@ -352,7 +352,7 @@ const TOOL_SEO_DATABASE: Record<string, ToolSEOData> = {
     tips: ["Lock aspect ratio to prevent stretching."],
     troubleshooting: [{ issue: "Stretched images", fix: "Enable Keep Aspect Ratio option." }],
     faqs: [{ question: "Is batch resizing fast?", answer: "Yes, processes dozens of photos per second in browser." }],
-    related: [{ name: "Image Resizer", href: "/tools/image-resizer", desc: "Single Image Resizer" }]
+    related: [{ name: "Image Resizer", href: "/tools/image-resizer/", desc: "Single Image Resizer" }]
   },
 
   "passport-photo-maker": {
@@ -376,7 +376,7 @@ const TOOL_SEO_DATABASE: Record<string, ToolSEOData> = {
     tips: ["Print 4x6 photo sheet on glossy photo paper at any local printing shop."],
     troubleshooting: [{ issue: "Background tint not clean", fix: "Ensure original photo was taken against a plain light wall." }],
     faqs: [{ question: "Are these dimensions accepted by SSC & UPSC?", answer: "Yes, 3.5×4.5 cm (413×531 px) complies with official SSC and UPSC photo specifications." }],
-    related: [{ name: "Background Remover", href: "/tools/background-remover", desc: "Remove photo background" }]
+    related: [{ name: "Background Remover", href: "/tools/background-remover/", desc: "Remove photo background" }]
   },
 
   "image-format-converter": {
@@ -392,7 +392,7 @@ const TOOL_SEO_DATABASE: Record<string, ToolSEOData> = {
     tips: ["Converting PNG to JPG adds a clean white background automatically."],
     troubleshooting: [{ issue: "Lost transparency", fix: "JPG does not support transparency; convert to PNG or WebP to keep transparent background." }],
     faqs: [{ question: "Is quality lost during conversion?", answer: "No, conversions use high quality 0.95 quantization encoding." }],
-    related: [{ name: "Image to JPG", href: "/tools/image-to-jpg", desc: "Convert to JPG format" }]
+    related: [{ name: "Image to JPG", href: "/tools/image-to-jpg/", desc: "Convert to JPG format" }]
   },
 
   "image-upscaler": {
@@ -408,7 +408,7 @@ const TOOL_SEO_DATABASE: Record<string, ToolSEOData> = {
     tips: ["Use 2x for small signatures to meet minimum pixel dimension rules."],
     troubleshooting: [{ issue: "Output looks grainy", fix: "Slightly reduce the edge sharpening filter slider." }],
     faqs: [{ question: "Can it make blurry photos clear?", answer: "Upscaling increases pixel count and sharpens edges significantly." }],
-    related: [{ name: "Image Resizer", href: "/tools/image-resizer", desc: "Resize dimensions" }]
+    related: [{ name: "Image Resizer", href: "/tools/image-resizer/", desc: "Resize dimensions" }]
   },
 
   "image-metadata": {
@@ -424,7 +424,7 @@ const TOOL_SEO_DATABASE: Record<string, ToolSEOData> = {
     tips: ["Strip GPS tags before uploading personal photos to public forums."],
     troubleshooting: [{ issue: "No EXIF data shown", fix: "Screenshots and messaging app photos have EXIF stripped automatically by apps." }],
     faqs: [{ question: "Does stripping EXIF alter image visual quality?", answer: "No, visual pixel quality remains 100% identical." }],
-    related: [{ name: "Blur Image", href: "/tools/blur-image", desc: "Blur sensitive details" }]
+    related: [{ name: "Blur Image", href: "/tools/blur-image/", desc: "Blur sensitive details" }]
   }
 };
 
@@ -467,9 +467,9 @@ export default function ToolSEOContent({ slug }: ToolSEOContentProps) {
       { question: "Are my uploaded photos safe?", answer: "Yes! All calculations run strictly inside your local web browser memory. No photos are ever uploaded to external servers." }
     ],
     related: [
-      { name: "Image Resizer", href: "/tools/image-resizer", desc: "Resize pixel dimensions" },
-      { name: "Image Compressor", href: "/tools/image-compressor", desc: "Compress file size in KB" },
-      { name: "Passport Photo Maker", href: "/tools/passport-photo-maker", desc: "Format passport photos" }
+      { name: "Image Resizer", href: "/tools/image-resizer/", desc: "Resize pixel dimensions" },
+      { name: "Image Compressor", href: "/tools/image-compressor/", desc: "Compress file size in KB" },
+      { name: "Passport Photo Maker", href: "/tools/passport-photo-maker/", desc: "Format passport photos" }
     ]
   };
 

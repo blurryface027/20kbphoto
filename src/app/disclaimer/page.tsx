@@ -5,12 +5,12 @@ export const metadata: Metadata = {
   title: "Disclaimer - 20KB Photo",
   description:
     "Disclaimer regarding exam portal specifications, third-party government trademarks, and image processing tools.",
-  alternates: { canonical: "https://20kbphoto.in/disclaimer" },
+  alternates: { canonical: "https://20kbphoto.in/disclaimer/" },
   openGraph: {
     title: "Disclaimer - 20KB Photo",
     description:
       "Disclaimer regarding exam portal specifications, third-party government trademarks, and image processing tools.",
-    url: "https://20kbphoto.in/disclaimer",
+    url: "https://20kbphoto.in/disclaimer/",
     siteName: "20KB Photo",
     locale: "en_IN",
     type: "website",

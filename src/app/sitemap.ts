@@ -14,8 +14,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Static pages
   const staticPages: MetadataRoute.Sitemap = [
     { url: `${BASE_URL}/`, lastModified: now, changeFrequency: "weekly", priority: 1.0 },
+    { url: `${BASE_URL}/tools/`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
     { url: `${BASE_URL}/exams/`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
     { url: `${BASE_URL}/blog/`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${BASE_URL}/about/`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${BASE_URL}/contact/`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${BASE_URL}/privacy-policy/`, lastModified: now, changeFrequency: "monthly", priority: 0.5 },
+    { url: `${BASE_URL}/terms-of-service/`, lastModified: now, changeFrequency: "monthly", priority: 0.5 },
+    { url: `${BASE_URL}/disclaimer/`, lastModified: now, changeFrequency: "monthly", priority: 0.5 },
   ];
 
   // Blog article pages
@@ -28,7 +34,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Tool pages
   const toolPages: MetadataRoute.Sitemap = tools.map((tool) => ({
-    url: `${BASE_URL}${tool.path}/`,
+    url: `${BASE_URL}${tool.path.replace(/\/+$/, '')}/`,
     lastModified: now,
     changeFrequency: "monthly" as const,
     priority: tool.priority === "P0" ? 0.8 : 0.6,
@@ -63,7 +69,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }));
 
   // Exam category pages
-  const categories = ["ssc", "upsc", "banking", "railway", "police", "defence", "state-psc", "teaching", "judicial", "admissions"];
+  const categories = ["ssc", "upsc", "banking", "railway", "police", "defence", "state-psc", "teaching", "judicial", "admissions", "others"];
   const categoryPages: MetadataRoute.Sitemap = categories.map((cat) => ({
     url: `${BASE_URL}/exams/${cat}/`,
     lastModified: now,
@@ -111,12 +117,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: exam.priority === "P0" ? 0.7 : 0.5,
   }));
 
-  // Special pages
+  // Special pages (unique standalone tools not under /tools/)
   const specialPages: MetadataRoute.Sitemap = [
     { url: `${BASE_URL}/add-name-and-date-to-photo/`, lastModified: now, changeFrequency: "monthly" as const, priority: 0.8 },
     { url: `${BASE_URL}/add-name-to-photo/`, lastModified: now, changeFrequency: "monthly" as const, priority: 0.7 },
     { url: `${BASE_URL}/pan-card-photo-resizer/`, lastModified: now, changeFrequency: "monthly" as const, priority: 0.8 },
-    { url: `${BASE_URL}/passport-photo-maker/`, lastModified: now, changeFrequency: "monthly" as const, priority: 0.8 },
   ];
 
   return [
@@ -131,7 +136,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...examHubPages,
     ...examPhotoPages,
     ...examSigPages,
-    ...examPhotoSigPages,
     ...specialPages,
   ];
 }

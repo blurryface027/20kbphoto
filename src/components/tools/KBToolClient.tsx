@@ -173,16 +173,28 @@ export default function KBToolClient({ targetKB: initialTargetKB }: KBToolClient
 
   const faqs = [
     {
-      question: `How do I compress an image to under ${currentTargetKB}KB?`,
-      answer: `Upload your image file (JPG, PNG, WEBP). Our browser binary-search compressor automatically optimizes image encoding quality until the output file size is strictly under ${currentTargetKB}KB.`,
+      question: `How do I compress an image to strictly under ${currentTargetKB}KB without losing facial clarity?`,
+      answer: `Upload your image file (JPG, PNG, WEBP, or iPhone HEIC). Our client-side compression algorithm executes a binary-search quantization process directly within your browser. It progressively tests JPEG quality levels to find the exact threshold where the file size remains strictly under ${currentTargetKB}KB while retaining maximum pixel sharpness, facial contrast, and required 300 DPI metadata.`,
     },
     {
-      question: "Is my photo uploaded to any server during compression?",
-      answer: "No. 100% of image compression happens locally inside your browser's memory using HTML5 Canvas API technology. Your photo never leaves your device.",
+      question: `Which Indian competitive exams and government application forms require ${currentTargetKB}KB image uploads?`,
+      answer: `Depending on the specific document type, ${currentTargetKB}KB limits are standard across major Indian recruitment portals. For example, Staff Selection Commission (SSC CGL, CHSL, MTS, GD) mandates photos between 20KB and 50KB and signatures between 10KB and 20KB. Banking portals (IBPS PO, Clerk, SBI PO, RBI) require 20KB to 50KB photos. UPSC, Railway RRB, and NTA (NEET, JEE) specify exact ranges from 10KB up to ${currentTargetKB}KB.`,
     },
     {
-      question: `Which government exam forms require ${currentTargetKB}KB photo size?`,
-      answer: `Many central and state government recruitment portals (including SSC CGL, IBPS PO, RRB NTPC, UPSC, and State PSCs) strictly require photograph or signature uploads between 10KB and ${currentTargetKB}KB.`,
+      question: `What are the standard pixel dimensions recommended for a ${currentTargetKB}KB application photo or signature?`,
+      answer: `For competitive exam photographs, standard passport dimensions are 3.5 cm × 4.5 cm, corresponding to 200×230 pixels or 275×354 pixels at 200–300 DPI. For candidate signatures, official dimensions are typically 140×60 pixels (3.5 cm × 1.5 cm) or 200×80 pixels. Setting both the correct pixel dimensions and the ${currentTargetKB}KB target file size ensures 100% portal acceptance.`,
+    },
+    {
+      question: `Why do online application portals reject photos even when the file size is under ${currentTargetKB}KB?`,
+      answer: `Application portals reject images for reasons beyond file size: (1) incorrect pixel dimensions (e.g. uploading a square 500×500 px image when 200×230 px was specified), (2) non-compliant background (must be plain white or off-white with 70–80% face coverage), (3) wearing dark sunglasses, caps, or masks, (4) signature written in CAPITAL or BLOCK letters, and (5) unsupported file formats (such as WEBP or PDF when JPG is required).`,
+    },
+    {
+      question: `Can I compress iPhone HEIC, PNG, and WebP images to ${currentTargetKB}KB JPG for official forms?`,
+      answer: `Yes. Our browser tool automatically decodes iPhone HEIC/HEIF files, PNG screenshots, and modern WebP formats into standard JPEG/JPG format. When converting transparent PNG signatures, the tool automatically adds a solid white background to comply with portal specifications.`,
+    },
+    {
+      question: `Is my personal photo, signature, or document uploaded to any external server during compression?`,
+      answer: `No. 20KB Photo operates with a strict 100% client-side privacy architecture. All image processing, canvas resizing, color quantization, and file generation execute strictly within your local browser memory. No image data, metadata, or candidate information is ever transmitted to or stored on remote servers.`,
     },
   ];
 
@@ -433,6 +445,66 @@ export default function KBToolClient({ targetKB: initialTargetKB }: KBToolClient
           </ol>
         </div>
 
+        {/* OFFICIAL NOTIFICATION SPECIFICATIONS MATRIX */}
+        <div className="bg-white rounded-3xl border border-gray-200 shadow-xs overflow-hidden max-w-4xl mx-auto space-y-4">
+          <div className="p-4 sm:p-5 bg-gradient-to-r from-slate-900 to-indigo-950 text-white flex items-center justify-between">
+            <h3 className="font-extrabold text-sm sm:text-base">
+              Exam Board Photo & Signature Standards ({currentTargetKB}KB Target)
+            </h3>
+            <span className="text-[11px] font-semibold bg-white/10 px-2.5 py-1 rounded-full text-indigo-200">
+              Verified Guidelines
+            </span>
+          </div>
+          <div className="p-5 pt-1 space-y-3 text-xs sm:text-sm text-gray-700 leading-relaxed">
+            <p>
+              Different government examination authorities enforce varying limits on file size, dimensions, and formats. When preparing files for a <strong>{currentTargetKB}KB</strong> limit, verify whether the notification mandates an exact pixel dimension or allows flexible resizing within a strict KB ceiling.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+              <div className="bg-gray-50 p-4 rounded-2xl border border-gray-200/80 space-y-2">
+                <h4 className="font-bold text-gray-900 text-sm">Photograph Requirements Checklist:</h4>
+                <ul className="list-disc list-inside space-y-1 text-gray-600">
+                  <li>Recent color photograph taken within the last 3 months.</li>
+                  <li>Plain white, off-white, or light grey background with even illumination.</li>
+                  <li>Frontal view showing full face with both ears clearly visible.</li>
+                  <li>Face should occupy 70% to 80% of the total frame area.</li>
+                  <li>Spectacles must be non-tinted with zero flash reflection on lenses.</li>
+                  <li>Caps, hats, hoodies, masks, and religious headwear covering the face are strictly barred.</li>
+                </ul>
+              </div>
+              <div className="bg-gray-50 p-4 rounded-2xl border border-gray-200/80 space-y-2">
+                <h4 className="font-bold text-gray-900 text-sm">Signature Requirements Checklist:</h4>
+                <ul className="list-disc list-inside space-y-1 text-gray-600">
+                  <li>Signed on clean, unruled pure white paper using dark black or blue ink pen.</li>
+                  <li>Must be in your natural running cursive handwriting.</li>
+                  <li>Signatures in CAPITAL or BLOCK letters are rejected by all major boards.</li>
+                  <li>Crop closely around the signature without leaving excessive white margins.</li>
+                  <li>Resolution must be sharp and legible at 200–300 DPI without pixel blur.</li>
+                  <li>File size must strictly stay within the specified {currentTargetKB}KB ceiling.</li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Standard Dimension Presets Guide */}
+            <div className="mt-4 pt-4 border-t border-gray-200">
+              <h4 className="font-bold text-gray-900 text-sm mb-2">Recommended Pixel Dimension Pairings for {currentTargetKB}KB Files:</h4>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+                <div className="bg-white p-3 rounded-xl border border-gray-200">
+                  <strong className="text-indigo-600 block font-bold">200 × 230 Pixels</strong>
+                  <span className="text-gray-500">Official passport photo aspect ratio for SSC, IBPS, and SBI registration forms.</span>
+                </div>
+                <div className="bg-white p-3 rounded-xl border border-gray-200">
+                  <strong className="text-indigo-600 block font-bold">140 × 60 Pixels</strong>
+                  <span className="text-gray-500">Official signature dimension preset for central recruitment gateways.</span>
+                </div>
+                <div className="bg-white p-3 rounded-xl border border-gray-200">
+                  <strong className="text-indigo-600 block font-bold">350 × 350 Pixels</strong>
+                  <span className="text-gray-500">Square dimension standard used by UPSC CSE, NDA, and CDS candidate profiles.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* APPLICATION PORTAL USAGE LIST */}
         <div className="max-w-4xl mx-auto space-y-4">
           <h3 className="text-lg sm:text-xl font-extrabold text-gray-900 text-center">
@@ -454,6 +526,39 @@ export default function KBToolClient({ targetKB: initialTargetKB }: KBToolClient
             <div className="bg-white p-3 rounded-2xl border border-gray-200 shadow-2xs">
               <span className="font-bold text-gray-900 block text-sm">State Govt Jobs</span>
               <span>UPPSC, BPSC, MPPSC Online Forms</span>
+            </div>
+          </div>
+        </div>
+
+        {/* REJECTION PREVENTION TIPS */}
+        <div className="max-w-4xl mx-auto space-y-3 bg-white p-6 rounded-3xl border border-gray-200 shadow-2xs">
+          <h3 className="text-lg font-bold text-gray-900">
+            How to Ensure 100% Acceptance on Government Application Portals
+          </h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm text-gray-600 leading-relaxed">
+            <div className="space-y-1.5">
+              <strong className="text-gray-900 block font-semibold">1. Proper Lighting & Plain Background</strong>
+              <p>
+                Take your photo facing natural light with a solid white or light-colored background. Avoid harsh flash shadows behind your ears or uneven shadows across the face.
+              </p>
+            </div>
+            <div className="space-y-1.5">
+              <strong className="text-gray-900 block font-semibold">2. Clean Signature Strokes</strong>
+              <p>
+                Sign on unruled clean white paper using a dark black or deep blue ballpoint pen. Avoid textured paper or pens that produce uneven ink strokes.
+              </p>
+            </div>
+            <div className="space-y-1.5">
+              <strong className="text-gray-900 block font-semibold">3. No Accessories or Dark Glasses</strong>
+              <p>
+                Never wear caps, hats, dark sunglasses, or tinted spectacles. Regular prescription eyeglasses must show the eyes clearly without camera flash reflection.
+              </p>
+            </div>
+            <div className="space-y-1.5">
+              <strong className="text-gray-900 block font-semibold">4. Maintain Correct Aspect Ratio</strong>
+              <p>
+                Set the exact pixel dimensions matching your exam board requirements (e.g. 200×230 px for SSC or 140×60 px for signatures) to prevent distorted images.
+              </p>
             </div>
           </div>
         </div>

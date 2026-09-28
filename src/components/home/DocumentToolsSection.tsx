@@ -16,84 +16,84 @@ import {
 const documentAndUniqueTools = [
   {
     name: "JPG to PDF Converter",
-    href: "/tools/jpg-to-pdf",
+    href: "/tools/jpg-to-pdf/",
     icon: <HiOutlineDocumentText className="w-6 h-6 text-indigo-600" />,
     desc: "Convert one or multiple JPG images into a formatted PDF document.",
     badge: "Popular PDF",
   },
   {
     name: "Background Remover",
-    href: "/tools/background-remover",
+    href: "/tools/background-remover/",
     icon: <HiOutlineSparkles className="w-6 h-6 text-indigo-600" />,
     desc: "Remove image background instantly with transparent PNG export.",
     badge: "Instant PNG",
   },
   {
     name: "PDF to JPG / Image",
-    href: "/tools/pdf-to-jpg",
+    href: "/tools/pdf-to-jpg/",
     icon: <HiOutlineDocumentCheck className="w-6 h-6 text-indigo-600" />,
     desc: "Convert PDF pages into high quality JPG or PNG images with ZIP download.",
     badge: "PDF Converter",
   },
   {
     name: "Online Document Scanner",
-    href: "/tools/document-scanner",
+    href: "/tools/document-scanner/",
     icon: <HiOutlineDocumentCheck className="w-6 h-6 text-indigo-600" />,
     desc: "Scan document photos with B&W & grayscale filters & export to PDF.",
     badge: "Scan & Enhance",
   },
   {
     name: "Blur Image / Face Blur",
-    href: "/tools/blur-image",
+    href: "/tools/blur-image/",
     icon: <HiOutlineEyeSlash className="w-6 h-6 text-indigo-600" />,
     desc: "Blur sensitive details, text, roll numbers, or faces in your photos.",
     badge: "Privacy Tool",
   },
   {
     name: "Bulk Image Compressor",
-    href: "/tools/bulk-image-compressor",
+    href: "/tools/bulk-image-compressor/",
     icon: <HiOutlineArchiveBox className="w-6 h-6 text-indigo-600" />,
     desc: "Compress multiple images to exact KB size (20KB, 50KB) in batch.",
     badge: "Batch ZIP",
   },
   {
     name: "Passport Photo Maker",
-    href: "/tools/passport-photo-maker",
+    href: "/tools/passport-photo-maker/",
     icon: <HiOutlineUser className="w-6 h-6 text-indigo-600" />,
     desc: "Create passport size photos & 4x6 inch 6-photo printable sheets.",
     badge: "Print Sheet",
   },
   {
     name: "Image Format Converter",
-    href: "/tools/image-format-converter",
+    href: "/tools/image-format-converter/",
     icon: <HiOutlineArrowPath className="w-6 h-6 text-indigo-600" />,
     desc: "Convert JPG to PNG, PNG to JPG, WebP to JPG seamlessly.",
     badge: "Format Convert",
   },
   {
     name: "Image Upscaler",
-    href: "/tools/image-upscaler",
+    href: "/tools/image-upscaler/",
     icon: <HiOutlineArrowUpRight className="w-6 h-6 text-indigo-600" />,
     desc: "Upscale photo resolution by 2x or 4x with clarity & edge sharpening.",
     badge: "High Res",
   },
   {
     name: "EXIF / Metadata Viewer",
-    href: "/tools/image-metadata",
+    href: "/tools/image-metadata/",
     icon: <HiOutlineInformationCircle className="w-6 h-6 text-indigo-600" />,
     desc: "Inspect file specs, camera info, GPS location, and strip metadata.",
     badge: "Clean EXIF",
   },
   {
     name: "Image Stitcher",
-    href: "/tools/image-stitcher",
+    href: "/tools/image-stitcher/",
     icon: <HiOutlineSquare2Stack className="w-6 h-6 text-indigo-600" />,
     desc: "Combine multiple photos vertically or horizontally into one image.",
     badge: "Combine Photos",
   },
   {
     name: "Bulk Image Resizer",
-    href: "/tools/bulk-image-resizer",
+    href: "/tools/bulk-image-resizer/",
     icon: <HiOutlineAdjustmentsHorizontal className="w-6 h-6 text-indigo-600" />,
     desc: "Batch resize multiple images simultaneously with ZIP export.",
     badge: "Batch Resize",
@@ -144,9 +144,7 @@ export default function DocumentToolsSection() {
 
               <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-indigo-600 group-hover:text-indigo-700">
                 <span>Use Tool Now</span>
-                <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
+                <span className="transform group-hover:translate-x-1 transition-transform font-bold text-sm" aria-hidden="true">&rarr;</span>
               </div>
             </Link>
           ))}
@@ -154,7 +152,7 @@ export default function DocumentToolsSection() {
 
         <div className="text-center mt-10">
           <Link
-            href="/tools"
+            href="/tools/"
             className="inline-flex items-center gap-2 px-7 py-3.5 bg-slate-900 hover:bg-slate-800 text-white font-extrabold text-xs sm:text-sm rounded-2xl shadow-lg transition-all"
           >
             Explore All Tools Directory →
