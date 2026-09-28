@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import { states, getStateBySlug, getExamsForState } from '@/data/states';
 import ExamCard from '@/components/cards/ExamCard';
 import Breadcrumbs from '@/components/layout/Breadcrumbs';
-import AdUnit from '@/components/ads/AdUnit';
+import { WeforAdsHeader, WeforAdsInContent } from '@/components/ads';
 import Link from 'next/link';
 
 export function generateStaticParams() {
@@ -82,6 +82,8 @@ export default async function StateExamsPage({ params }: Props) {
         </p>
       </div>
 
+      <WeforAdsHeader className="mb-6" />
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
         {stateExams.map((exam) => (
           <ExamCard
@@ -96,7 +98,7 @@ export default async function StateExamsPage({ params }: Props) {
         ))}
       </div>
 
-      <AdUnit className="my-10" />
+      <WeforAdsInContent className="my-10" />
 
       {/* State Overview and Guidelines Box */}
       <div className="bg-gradient-to-br from-indigo-50/60 via-white to-gray-50 border border-indigo-100 rounded-3xl p-6 sm:p-8 mb-12 shadow-sm">

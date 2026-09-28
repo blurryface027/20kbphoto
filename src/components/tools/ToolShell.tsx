@@ -1,7 +1,7 @@
 import Breadcrumbs from '../layout/Breadcrumbs';
 import FAQSection from '../seo/FAQSection';
 import RelatedTools from '../seo/RelatedTools';
-import AdUnit from '../ads/AdUnit';
+import { WeforAdsHeader, WeforAdsInContent } from '../ads';
 
 interface ToolShellProps {
   title: string;
@@ -53,12 +53,13 @@ export default function ToolShell({
         )}
       </div>
       
+      <WeforAdsHeader className="mb-6" />
+
       <div className="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-4 sm:p-6 lg:p-7 mb-8">
         {children}
       </div>
 
-
-      <AdUnit className="my-8" />
+      <WeforAdsInContent className="my-8" />
       
       {faqs && faqs.length > 0 && <FAQSection faqs={faqs} />}
       

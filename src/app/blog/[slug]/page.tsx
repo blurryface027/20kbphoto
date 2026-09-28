@@ -8,6 +8,7 @@ import FAQSection from "@/components/seo/FAQSection";
 import RelatedTools from "@/components/seo/RelatedTools";
 import { getAllArticles, getArticleBySlug, getRelatedArticles } from "@/data/blog";
 import { HiOutlineCalendar, HiOutlineClock, HiOutlineUser, HiOutlineWrenchScrewdriver, HiOutlineArrowLeft } from "react-icons/hi2";
+import { WeforAdsHeader } from "@/components/ads";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -149,6 +150,9 @@ export default async function BlogArticlePage({ params }: Props) {
           </div>
         </div>
       </header>
+
+      {/* Header Leaderboard Ad */}
+      <WeforAdsHeader className="my-8" />
 
       {/* Main Body Content */}
       <ArticleContent sections={article.sections} />

@@ -85,6 +85,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="apple-touch-icon" href="/apple-icon.png" />
         <script
           async
+          data-no-minify="1"
+          data-no-optimize="1"
+          data-cfasync="false"
+          src="https://weforads.com/tag/wfa_2bb9cc54e3d707a1c5e99e7b1a7926cc.js"
+        />
+        <script
+          async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2237662953479277"
           crossOrigin="anonymous"
         />

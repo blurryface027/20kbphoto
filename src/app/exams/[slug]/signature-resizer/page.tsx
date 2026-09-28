@@ -1,11 +1,12 @@
 import { notFound } from "next/navigation";
 import { HiOutlineLockClosed } from "react-icons/hi2";
 import type { Metadata } from "next";
-import { exams, getExamBySlug, getAllSlugs } from "@/data/exams";
+import { getExamBySlug, getAllSlugs } from "@/data/exams";
 import Breadcrumbs from "@/components/layout/Breadcrumbs";
 import ExamToolClient from "@/components/exams/ExamToolClient";
 import OfficialExamGuidelines from "@/components/exams/OfficialExamGuidelines";
 import ExamFAQSection from "@/components/exams/ExamFAQSection";
+import { WeforAdsHeader, WeforAdsInContent } from "@/components/ads";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -82,6 +83,8 @@ export default async function ExamSignatureResizerPage({ params }: Props) {
         </div>
       </div>
 
+      <WeforAdsHeader className="mb-6" />
+
       <ExamToolClient
         exam={JSON.parse(JSON.stringify(exam))}
         type="signature"
@@ -89,6 +92,8 @@ export default async function ExamSignatureResizerPage({ params }: Props) {
 
       {/* Official Guidelines Section */}
       <OfficialExamGuidelines exam={exam} />
+
+      <WeforAdsInContent className="my-8" />
 
       {/* FAQ Section */}
       <ExamFAQSection exam={exam} />

@@ -1,15 +1,14 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { getExamBySlug, getExamsByCategory, getAllSlugs, categories, exams as allExams } from '@/data/exams';
+import { getExamBySlug, getExamsByCategory, getAllSlugs, categories } from '@/data/exams';
 import { states, getStateBySlug, getExamsForState } from '@/data/states';
 import ExamCard from '@/components/cards/ExamCard';
 import ExamToolClient from '@/components/exams/ExamToolClient';
 import OfficialExamGuidelines from '@/components/exams/OfficialExamGuidelines';
 import ExamFAQSection from '@/components/exams/ExamFAQSection';
 import Breadcrumbs from '@/components/layout/Breadcrumbs';
-import FAQSection from '@/components/seo/FAQSection';
 import RelatedTools from '@/components/seo/RelatedTools';
-import AdUnit from '@/components/ads/AdUnit';
+import { WeforAdsHeader, WeforAdsInContent } from '@/components/ads';
 import Link from 'next/link';
 
 export function generateStaticParams() {
@@ -135,6 +134,8 @@ export default async function ExamHubPage({ params }: Props) {
           </p>
         </div>
 
+        <WeforAdsHeader className="mb-6" />
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {stateExams.map((exam) => (
             <ExamCard
@@ -149,7 +150,7 @@ export default async function ExamHubPage({ params }: Props) {
           ))}
         </div>
 
-        <AdUnit className="my-10" />
+        <WeforAdsInContent className="my-10" />
 
         {/* Explore Other States */}
         <div>
@@ -182,8 +183,10 @@ export default async function ExamHubPage({ params }: Props) {
       <div className="container mx-auto px-4 py-8 max-w-6xl">
         <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Exams', href: '/exams' }, { label: category.name }]} />
         <h1 className="text-3xl font-bold mt-4 mb-2">{category.name} Photo & Signature Resizer</h1>
-        <p className="text-gray-600 mb-8">{category.description}</p>
+        <p className="text-gray-600 mb-6">{category.description}</p>
         
+        <WeforAdsHeader className="mb-6" />
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {categoryExams.map(exam => (
             <ExamCard
@@ -237,6 +240,8 @@ export default async function ExamHubPage({ params }: Props) {
         </p>
       </div>
 
+      <WeforAdsHeader className="mb-6" />
+
       <div className="mb-12">
         <ExamToolClient exam={exam} type="photo" allowDocTypeToggle={true} />
       </div>
@@ -283,12 +288,12 @@ export default async function ExamHubPage({ params }: Props) {
           <li>Select the specific document type (Photo or Signature) from above.</li>
           <li>Upload your original scanned image or photo.</li>
           <li>Our tool will automatically crop and resize to the required dimensions.</li>
-          <li>We'll compress the file to ensure it falls strictly between the required {exam.photo.minKB}–{exam.photo.maxKB}KB and {exam.signature.minKB}–{exam.signature.maxKB}KB limits.</li>
+          <li>We&apos;ll compress the file to ensure it falls strictly between the required {exam.photo.minKB}–{exam.photo.maxKB}KB and {exam.signature.minKB}–{exam.signature.maxKB}KB limits.</li>
           <li>Download the final validated file, ready for upload.</li>
         </ol>
       </div>
 
-      <AdUnit className="my-10" />
+      <WeforAdsInContent className="my-10" />
 
       {/* 2-Column Grid FAQ Section */}
       <ExamFAQSection exam={exam} />

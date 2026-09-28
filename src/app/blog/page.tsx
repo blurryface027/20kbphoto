@@ -6,6 +6,7 @@ import BlogFilterSection from "@/components/blog/BlogFilterSection";
 import { getAllArticles, getAllCategories } from "@/data/blog";
 import Link from "next/link";
 import { HiOutlineBookOpen, HiOutlineWrenchScrewdriver } from "react-icons/hi2";
+import { WeforAdsHeader, WeforAdsInContent } from "@/components/ads";
 
 export const metadata: Metadata = {
   title: "Blog & Guides - Photo Resizing, Compression, & Document Tips | 20KB Photo",
@@ -56,6 +57,8 @@ export default function BlogIndexPage() {
         </p>
       </div>
 
+      <WeforAdsHeader className="my-8" />
+
       {/* Interactive Blog Filtering & Articles Grid */}
       <Suspense
         fallback={
@@ -88,6 +91,8 @@ export default function BlogIndexPage() {
       >
         <BlogFilterSection articles={articles} categories={categories} />
       </Suspense>
+
+      <WeforAdsInContent className="my-10" />
 
       {/* Bottom Tool CTA Banner */}
       <div className="bg-gradient-to-r from-gray-900 via-slate-900 to-indigo-950 text-white rounded-3xl p-8 sm:p-12 border border-gray-800 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl">

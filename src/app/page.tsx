@@ -1,4 +1,3 @@
-import Link from "next/link";
 import type { Metadata } from "next";
 import HomeHero from "@/components/home/HomeHero";
 import HowItWorksSection from "@/components/home/HowItWorksSection";
@@ -10,7 +9,7 @@ import BrowseCategories from "@/components/home/BrowseCategories";
 import WhyUseSection from "@/components/home/WhyUseSection";
 import WhyChooseTable from "@/components/home/WhyChooseTable";
 import HomeFAQSection from "@/components/home/HomeFAQSection";
-import AdUnit from "@/components/ads/AdUnit";
+import { WeforAdsHeader, WeforAdsInContent } from "@/components/ads";
 
 export const metadata: Metadata = {
   title: "20KB Photo - Resize Photos and Signatures for Applications and Exams",
@@ -23,13 +22,16 @@ export default function HomePage() {
   return (
     <>
       <HomeHero />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <WeforAdsHeader className="my-6" />
+      </div>
       <HowItWorksSection />
       <PopularTools />
       <DocumentToolsSection />
       <PopularExams />
       <StatewiseExamsSection />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <AdUnit className="my-8" />
+        <WeforAdsInContent className="my-8" />
       </div>
       <BrowseCategories />
       <WhyChooseTable />

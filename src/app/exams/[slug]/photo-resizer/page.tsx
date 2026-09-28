@@ -5,6 +5,7 @@ import ExamToolClient from '@/components/exams/ExamToolClient';
 import OfficialExamGuidelines from '@/components/exams/OfficialExamGuidelines';
 import ExamFAQSection from '@/components/exams/ExamFAQSection';
 import Breadcrumbs from '@/components/layout/Breadcrumbs';
+import { WeforAdsHeader, WeforAdsInContent } from '@/components/ads';
 
 export function generateStaticParams() {
   return getAllSlugs().map(slug => ({ slug }));
@@ -83,10 +84,14 @@ export default async function PhotoResizerPage({ params }: Props) {
         </p>
       </div>
 
+      <WeforAdsHeader className="mb-6" />
+
       <ExamToolClient exam={exam} type="photo" />
 
       {/* Official Guidelines Section */}
       <OfficialExamGuidelines exam={exam} />
+
+      <WeforAdsInContent className="my-8" />
 
       {/* FAQ Section */}
       <ExamFAQSection exam={exam} />
