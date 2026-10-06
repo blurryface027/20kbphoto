@@ -928,6 +928,7 @@ risecodes.com, 6a96c62bdd67120001aa344a, DIRECT
 lijit.com, 613988, DIRECT, fafdf38b16bf6b2b
 adtarget.me, 239607445, DIRECT
 adagio.io, 1633, DIRECT, 39e84d9c8f25b68d
+rtbhouse.com, XPSLDtnX92XNGGFB6ith, RESELLER, 4f3b94578e85950c
 
 # ---- WeForAds platform authorization ----
 weforads.com, 1228, DIRECT
