@@ -929,6 +929,26 @@ lijit.com, 613988, DIRECT, fafdf38b16bf6b2b
 adtarget.me, 239607445, DIRECT
 adagio.io, 1633, DIRECT, 39e84d9c8f25b68d
 rtbhouse.com, XPSLDtnX92XNGGFB6ith, RESELLER, 4f3b94578e85950c
+omni-dex.io, 100115, DIRECT
+themediagrid.com, HW1PGR, RESELLER, 9fac4a4a87c2a44f
+spotim.market, e9a771d72c076dbe3cafc2c6477f9238, RESELLER, 077e5f709d15bdbb
+improvedigital.com, 2116, RESELLER
+sharethrough.com, 4284, RESELLER, d53b998a7bd4ecd2
+Contextweb.com, 560138, RESELLER, 89ff185a4c4e857c
+dauup.com, 34138, RESELLER, 4daba13e2b0dfd92
+opera.com, pub9444418699648, RESELLER, 55a0c5fd61378de3
+zetaglobal.net, 748, RESELLER
+adform.com, 3418, RESELLER, 9f5210a2f0999e32
+imds.tv, 82786, RESELLER, ae6c32151e71f19d
+advertising.com, 82786, RESELLER, ae6c32151e71f19d
+themediagrid.com, KMX76A, DIRECT, 35d5010d7789b49d
+video.unrulymedia.com, 592590137, RESELLER
+improvedigital.com, 1669, RESELLER # ImproveDigital
+google.com, pub-7604146523106400, DIRECT, f08c47fec0942fa0
+media.net, 8CU58PCO4, RESELLER
+richaudience.com, iKKFhsvJ2v, RESELLER
+zetaglobal.net, 757, RESELLER
+insticator.com, 7184c7ca-645a-4e0f-a78c-6d5822b3449f, RESELLER, b3511ffcafb23a32
 
 # ---- WeForAds platform authorization ----
 weforads.com, 1228, DIRECT
