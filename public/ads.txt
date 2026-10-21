@@ -949,6 +949,31 @@ media.net, 8CU58PCO4, RESELLER
 richaudience.com, iKKFhsvJ2v, RESELLER
 zetaglobal.net, 757, RESELLER
 insticator.com, 7184c7ca-645a-4e0f-a78c-6d5822b3449f, RESELLER, b3511ffcafb23a32
+pubstack.io, b428edab-4a07-41a3-b1e7-98c0d22f6b63, DIRECT
+adagio.io, 1437, RESELLER
+adform.com, 3272, RESELLER
+appnexus.com, 15871, RESELLER
+connectad.io, 586, RESELLER, 85ac85a30c93b3e5
+adform.com, 768, RESELLER, 9f5210a2f0999e32
+openx.com, 537145117, RESELLER, 6a698e2ec38604c6
+improvedigital.com, 2559, RESELLER
+rubiconproject.com, 26972, RESELLER, 0bfd66d529a55807
+onetag.com, 87d1f0db05b6e24, RESELLER
+openx.com, 566642314, RESELLER, 6a698e2ec38604c6
+pubmatic.com, 166516, RESELLER, 5d62403b186f2ace
+richaudience.com, B45mvBz0n6, RESELLER
+rtbhouse.com, TY1XNyxHAKlNth2R2lBg, RESELLER
+seedtag.com, 65a6761b39be3f0007c13e98, RESELLER
+adform.com, 3083, RESELLER
+lijit.com, 400766, RESELLER, fafdf38b16bf6b2b
+freewheel.tv, 1137745, RESELLER
+sonobi.com, b43e9530e7, RESELLER, d1a215d9eb5aee9e
+smartadserver.com, 3050, RESELLER
+smartadserver.com, 4937, RESELLER, 060d053dcf45cbf3
+sharethrough.com, 4937, RESELLER, d53b998a7bd4ecd2
+smilewanted.com, 6078, RESELLER
+triplelift.com, 14588, RESELLER, 6c33edb13117fd86
+themediagrid.com, GODNC4, RESELLER, 9fac4a4a87c2a44f
 
 # ---- WeForAds platform authorization ----
 weforads.com, 1228, DIRECT
